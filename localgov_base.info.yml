@@ -1,5 +1,6 @@
 name: LocalGov
 type: theme
 description: 'EXPERIMENTAL: (do not use yet). A base theme to use with LocalGov Drupal websites.'
-base theme: stable
+# We will use Stable as our base theme, since classy is going to be removed from Core soon.
+base theme: "stable"
 core_version_requirement: ^8 || ^9
