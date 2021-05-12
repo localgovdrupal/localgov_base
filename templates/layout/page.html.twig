@@ -1,0 +1,126 @@
+{#
+/**
+* @file
+* LocalGovDrupal theme implementation to display a single page.
+*
+* The doctype, html, head and body tags are not in this template. Instead they
+* can be found in the html.html.twig template in this directory.
+*
+* Available variables:
+*
+* General utility variables:
+* - base_path: The base URL path of the Drupal installation. Will usually be
+*   "/" unless you have installed Drupal in a sub-directory.
+* - is_front: A flag indicating if the current page is the front page.
+* - logged_in: A flag indicating if the user is registered and signed in.
+* - is_admin: A flag indicating if the user has permission to access
+*   administration pages.
+* - has_sidebar_first: Can we expect any content in the first sidebar?
+* - has_sidebar_second: See above.
+*
+* Site identity:
+* - front_page: The URL of the front page. Use this instead of base_path when
+*   linking to the front page. This includes the language domain or prefix.
+*
+* Page content (in order of occurrence in the default page.html.twig):
+* - messages: Status and error messages. Should be displayed prominently.
+* - node: Fully loaded node, if there is an automatically-loaded node
+*   associated with the page and the node ID is the second argument in the
+*   page's path (e.g. node/12345 and node/12345/revisions, but not
+*   comment/reply/12345).
+*
+* Regions:
+* - page.header
+* - page.search
+* - page.mobile_search
+* - page.primary_menu
+* - page.secondary_menu
+* - page.banner
+* - page.breadcrumb
+* - page.messages
+* - page.content_top
+* - page.content
+* - page.content_bottom
+* - page.sidebar_first
+* - page.sidebar_second
+* - page.footer_first
+* - page.footer_second
+* - page.disabled
+* @see template_preprocess_page()
+* @see html.html.twig
+*
+* @ingroup themeable
+*/
+#}
+
+{# Set up some variables to check for sidebars #}
+{% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
+{% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
+{% set has_sidebars = has_sidebar_first or has_sidebar_second %}
+
+{{ attach_library('localgov_base/grid') }}
+
+  {{ page.header }}
+  {{ page.search }}
+  {{ page.mobile_search }}
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+  {{ page.banner }}
+  {{ page.breadcrumb }}
+  {{ page.messages }}
+  {{ page.content_top }}
+
+  <div class="lgd-container">
+    <main id="main-content"> {# The "skip to content" link jumps to here. #}
+      <div class="lgd-row">
+
+        {# Begins Sidebars #}
+        {% if has_sidebars %}
+          {% if has_sidebar_first and not has_sidebar_second %}
+            <div class="lgd-row__one-third">
+              {{ page.sidebar_first }}
+            </div>
+            <div class="lgd-row__two-thirds">
+              {{ page.content }}
+            </div>
+          {% endif %}
+        
+          {% if has_sidebar_second and not has_sidebar_first %}
+            <div class="lgd-row__two-thirds">
+              {{ page.content }}
+            </div>
+            <div class="lgd-row__one-third">
+              {{ page.sidebar_second }}
+            </div>
+          {% endif %}
+
+          {% if has_sidebar_first and has_sidebar_second %}
+            <div class="lgd-row__one-quarter">
+              {{ page.sidebar_first }}
+            </div>
+            <div class="lgd-row__one-half">
+              {{ page.content }}
+            </div>
+            <div class="lgd-row__one-quarter">
+              {{ page.sidebar_second }}
+            </div>
+          {% endif %}
+
+          {% else %}
+            {# If there are no sidebars, the content region take up 100% of the space #}
+            <div class="lgd-row__full">
+            {{ page.content }}
+            </div>
+        {% endif %} {# Ends Sidebars #}
+
+      </div>
+    </main>
+  </div>
+
+  {{ page.content_bottom }}
+  {{ page.footer_first }}
+  {{ page.footer_second }}
+  {{ page.footer_third }}
+  {{ page.lower_footer_first }}
+  {{ page.lower_footer_second }}
+  {{ page.lower_footer_third }}
