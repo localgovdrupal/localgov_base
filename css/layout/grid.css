@@ -1,0 +1,67 @@
+/* 
+  This is a basic grid system, that should be very easy to use.
+  To use, simply add an element with a class of .lgd-row, then add
+  another element as a direct descendant(s) of this with the widths
+  you want:
+   - .lgd-row__full
+   - .lgd-row__three-quarters
+   - .lgd-row__two-thirds
+   - .lgd-row__one-half
+   - .lgd-row__one-third
+   - .lgd-row__one-quarter
+
+  In some cases, this might mean adding more templates than we want, so
+  we have further classes that will give the same result by adding a modifier
+  class to the parent .lgd-row element (e.g. <div class="lgd-row lgd-row--halves">).
+  - .lgd-row--halves - direct descendants are all 50% each
+  - .lgd-row--thirds - direct descendants are all 33% each
+  - .lgd-row--quarters - direct descendants are all 25% each
+*/
+
+/* The main container class that defines how wide our content area is */
+.lgd-container {
+  max-width: 60rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+
+  .lgd-row > * {
+    margin-right: .5rem;
+    margin-left: .5rem;
+  }
+
+  .lgd-row__one-quarter,
+  .lgd-row--quarters > * {
+    width: calc(25% - 1rem);
+  }
+  
+  .lgd-row__one-third,
+  .lgd-row--thirds > * {
+    width: calc(33% - 1rem);
+  }
+  
+  .lgd-row__one-half,
+  .lgd-row--halves > * {
+    width: calc(50% - 1rem);
+  }
+  
+  .lgd-row__two-thirds {
+    width: calc((100% / 3 * 2) - 1rem);
+  }
+  
+  .lgd-row__three-quarters {
+    width: calc(75% - 1rem);
+  }
+
+  .lgd-row__full {
+    width: calc(100% - 1rem);
+  }
+}
