@@ -1,9 +1,10 @@
-name: LocalGov
+name: "LocalGov Base"
+description: "LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
 type: theme
-description: 'EXPERIMENTAL: (do not use yet). A base theme to use with LocalGov Drupal websites.'
-# We will use Stable as our base theme, since classy is going to be removed from Core soon.
+core_version_requirement: ^8.8 || ^9
 base theme: "stable"
-core_version_requirement: ^8 || ^9
+libraries:
+  - localgov_base/global
 
 regions:
   header: "Header"

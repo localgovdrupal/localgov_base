@@ -1,3 +1,8 @@
+global:
+  css:
+    base:
+      css/base/variables.css: {}
+
 grid:
   css:
     layout:
