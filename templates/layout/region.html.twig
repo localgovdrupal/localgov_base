@@ -21,12 +21,46 @@
   ]
 %}
 
+{# 
+  Often if we need a custom region template, it's because that region
+  needs to be full-width. Let's (at least for now), create an 
+  array of regions that might need that, and then not print the container
+  class for those regions.
+
+  If it comes to an issue later, we can easily create a region template
+  for each of these.
+#}
+{% 
+  set full_width_regions = [
+    'banner',
+  ] 
+%}
+
+{# 
+  If we need to create a new template just to add a library to it, 
+  let's do that here instead. We could do this in hook_preprocess_region()
+  but I prefer to keep as much as I can in these templates so we don't 
+  have to go hunting so much.
+#}
+
+{% if region == 'tabs' %}
+  {{ attach_library('localgov_base/tabs') }}
+{% endif %}
+
 {% if content %}
   <section{{ attributes.addClass(classes) }}>
-    <div class="lgd-container">
-      <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">
-        {{ content }}
-      </div>
+    
+    {% if region not in full_width_regions %}
+      <div class="lgd-container">
+    {% endif %}
+
+    <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">
+      {{ content }}
     </div>
+    
+    {% if not region in full_width_regions %}
+      </div>
+    {% endif %}
+
   </section>
 {% endif %}
