@@ -2,8 +2,14 @@ global:
   css:
     base:
       css/base/variables.css: {}
+      css/base/base.css: {}
 
 grid:
   css:
     layout:
       css/layout/grid.css: {}
+
+tabs:
+  css:
+    theme:
+      css/theme/tabs.css: {}

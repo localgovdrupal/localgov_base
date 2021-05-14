@@ -1,12 +1,14 @@
 name: "LocalGov Base"
-description: "LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
+description: "EXPERIMENTAL: DO NOT USE YET: LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
 type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "stable"
 libraries:
+  - localgov_base/grid
   - localgov_base/global
 
 regions:
+  tabs: "Tabs"
   header: "Header"
   search: "Search"
   mobile_search: "Mobile search"
@@ -23,6 +25,7 @@ regions:
   footer_first: "Footer first"
   footer_second: "Footer second"
   footer_third: "Footer third"
+  footer: "Footer"
   lower_footer_first: "Lower footer first"
   lower_footer_second: "Lower footer second"
   lower_footer_third: "Lower footer third"
