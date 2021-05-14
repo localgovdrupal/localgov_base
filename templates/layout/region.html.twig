@@ -22,6 +22,16 @@
 %}
 
 {# 
+  If we need to create a new template just to add a library to it, 
+  let's do that here instead. We could do this in hook_preprocess_region()
+  but I prefer to keep as much as I can in these templates so we don't 
+  have to go hunting so much.
+#}
+{% if region == 'tabs' %}
+  {{ attach_library('localgov_base/tabs') }}
+{% endif %}
+
+{# 
   Often if we need a custom region template, it's because that region
   needs to be full-width. Let's (at least for now), create an 
   array of regions that might need that, and then not print the container
@@ -35,17 +45,6 @@
     'banner',
   ] 
 %}
-
-{# 
-  If we need to create a new template just to add a library to it, 
-  let's do that here instead. We could do this in hook_preprocess_region()
-  but I prefer to keep as much as I can in these templates so we don't 
-  have to go hunting so much.
-#}
-
-{% if region == 'tabs' %}
-  {{ attach_library('localgov_base/tabs') }}
-{% endif %}
 
 {% if content %}
   <section{{ attributes.addClass(classes) }}>
