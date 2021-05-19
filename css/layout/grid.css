@@ -22,10 +22,6 @@
   .lgd-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -1rem; /* IE11 */
-    margin-right: calc(var(--spacing) * -1);
-    margin-left: -1rem; /* IE11 */
-    margin-left: calc(var(--spacing) * -1);
   }
 
   .lgd-row > * {

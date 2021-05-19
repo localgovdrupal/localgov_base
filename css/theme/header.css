@@ -5,9 +5,16 @@
 .lgd-region--header {
   background-color: #652c95; /* IE11 */
   background-color: var(--color-section-bg);
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical));
 }
 
 .lgd-region--header a {
   color: white; /* IE11 */
   color: var(--color-white);
+}
+
+.branding__item--logo {
+  width: 160px; /* IE11 */
+  width: var(--width-logo);
 }

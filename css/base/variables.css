@@ -8,8 +8,10 @@
 :root {
   --width-container: 60rem;
   --width-tablet: 48rem;
+  --width-logo: 10rem;
   --spacing: 1rem;
   --spacing-padding-horizontal: var(--spacing);
+  --section-spacing-vertical: calc(var(--spacing) * 3);
   --line-height: 1.5;
   --vertical-rhythm-spacing: calc(var(--line-height) * 1rem);
 

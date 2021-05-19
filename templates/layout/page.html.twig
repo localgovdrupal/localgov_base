@@ -55,18 +55,13 @@
 
 {# Set up some variables to check that regions have content #}
 {% set has_tabs = page.tabs|render|striptags|trim is not empty %}
-{% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
-{% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
-{% set has_sidebars = has_sidebar_first or has_sidebar_second %}
-{% set has_content_bottom = page.content_bottom|render|striptags|trim is not empty %}
-{% set has_footer_first = page.footer_first|render|striptags|trim is not empty %}
-{% set has_footer_second = page.footer_second|render|striptags|trim is not empty %}
-{% set has_footer_third = page.footer_third|render|striptags|trim is not empty %}
-{% set has_footer = page.footer|render|striptags|trim is not empty %}
-{% set has_lower_footer_first = page.lower_footer_first|render|striptags|trim is not empty %}
-{% set has_lower_footer_second = page.lower_footer_second|render|striptags|trim is not empty %}
-{% set has_lower_footer_third = page.lower_footer_third|render|striptags|trim is not empty %}
-{% set has_header = page.header|render|striptags|trim is not empty %}
+{#
+  If the only thing in the header is the logo in the branding block, the region renders
+  as empty while waiting on the logo, which means the has_header check returns as
+  false. Let's do a less severe check; it's probably fair to presume we will always
+  have a header.
+#}
+{% set has_header = page.header %}
 {% set has_search = page.search|render|striptags|trim is not empty %}
 {% set has_mobile_search = page.mobile_search|render|striptags|trim is not empty %}
 {% set has_primary_menu = page.primary_menu|render|striptags|trim is not empty %}
@@ -79,6 +74,17 @@
 {% set has_breadcrumb = page.breadcrumb|render|striptags|trim is not empty %}
 {% set has_messages = page.messages|render|striptags|trim is not empty %}
 {% set has_content_top = page.content_top|render|striptags|trim is not empty %}
+{% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
+{% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
+{% set has_sidebars = has_sidebar_first or has_sidebar_second %}
+{% set has_content_bottom = page.content_bottom|render|striptags|trim is not empty %}
+{% set has_footer_first = page.footer_first|render|striptags|trim is not empty %}
+{% set has_footer_second = page.footer_second|render|striptags|trim is not empty %}
+{% set has_footer_third = page.footer_third|render|striptags|trim is not empty %}
+{% set has_footer = page.footer|render|striptags|trim is not empty %}
+{% set has_lower_footer_first = page.lower_footer_first|render|striptags|trim is not empty %}
+{% set has_lower_footer_second = page.lower_footer_second|render|striptags|trim is not empty %}
+{% set has_lower_footer_third = page.lower_footer_third|render|striptags|trim is not empty %}
 
 {#
   We'll use this `footer_regions` array later to check if there is content in 
