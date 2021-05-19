@@ -3,6 +3,7 @@ global:
     base:
       css/base/variables.css: {}
       css/base/base.css: {}
+      css/layout/layout-utilities.css: {}
 
 grid:
   css:
@@ -13,3 +14,13 @@ tabs:
   css:
     theme:
       css/theme/tabs.css: {}
+
+header:
+  css:
+    theme:
+      css/theme/header.css: {}
+
+breadcrumbs:
+  css:
+    theme:
+      css/theme/breadcrumbs.css: {}

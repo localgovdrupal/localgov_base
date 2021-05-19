@@ -4,8 +4,8 @@ type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "stable"
 libraries:
-  - localgov_base/grid
   - localgov_base/global
+  - localgov_base/grid
 
 regions:
   tabs: "Tabs"
