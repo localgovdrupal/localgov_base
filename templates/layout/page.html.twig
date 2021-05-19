@@ -72,7 +72,7 @@
 {% set has_primary_menu = page.primary_menu|render|striptags|trim is not empty %}
 {% set has_secondary_menu = page.secondary_menu|render|striptags|trim is not empty %}
 {# 
-  Items in banner are getting rendered a little too late, so we can't do a full
+  Alerts in banner are getting rendered a little too late, so we can't do a full
   search, or else the banner `if` statement will stop the region from displaying.
 #}
 {% set has_banner = page.banner %}
@@ -154,9 +154,9 @@
       {# Begins Sidebars #}
       {% if has_sidebars %}
         {% if has_sidebar_first and not has_sidebar_second %}
-          asidev class="lgd-row__one-third">
+          <aside class="lgd-row__one-third">
             {{ page.sidebar_first }}
-          </iv>
+          </aside>
           <div class="lgd-row__two-thirds">
             {{ page.content }}
           </div>
@@ -166,9 +166,9 @@
           <div class="lgd-row__two-thirds">
             {{ page.content }}
           </div>
-          asidev class="lgd-row__one-third">
+          <aside class="lgd-row__one-third">
             {{ page.sidebar_second }}
-          </iv>
+          </aside>
         {% endif %}
 
         {% if has_sidebar_first and has_sidebar_second %}
