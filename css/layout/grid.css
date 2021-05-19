@@ -18,61 +18,53 @@
   - .lgd-row--quarters - direct descendants are all 25% each
 */
 
-/* The main container class that defines how wide our content area is */
-.lgd-container {
-  max-width: 60rem; /* IE11 fallback */
-  max-width: var(--width-container);
-  margin-right: auto;
-  margin-left: auto;
-}
-
 @media screen and (min-width: 48rem) {
   .lgd-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -1rem; /* IE11 fallback */
+    margin-right: -1rem; /* IE11 */
     margin-right: calc(var(--spacing) * -1);
-    margin-left: -1rem; /* IE11 fallback */
+    margin-left: -1rem; /* IE11 */
     margin-left: calc(var(--spacing) * -1);
   }
 
   .lgd-row > * {
-    margin-right: .5rem; /* IE11 fallback */
+    margin-right: .5rem; /* IE11 */
     margin-right: calc(var(--spacing) / 2);
-    margin-left: .5rem; /* IE11 fallback */
+    margin-left: .5rem; /* IE11 */
     margin-left: calc(var(--spacing) / 2);
   }
 
   .lgd-row__one-quarter,
   .lgd-row--quarters > * {
-    width: calc(25% - 1rem); /* IE11 fallback */
+    width: calc(25% - 1rem); /* IE11 */
     width: calc(25% - var(--spacing));
   }
   
   .lgd-row__one-third,
   .lgd-row--thirds > * {
-    width: calc(33% - 1rem); /* IE11 fallback */
+    width: calc(33% - 1rem); /* IE11 */
     width: calc(33% - var(--spacing));
   }
   
   .lgd-row__one-half,
   .lgd-row--halves > * {
-    width: calc(50% - 1rem); /* IE11 fallback */
+    width: calc(50% - 1rem); /* IE11 */
     width: calc(50% - var(--spacing));
   }
   
   .lgd-row__two-thirds {
-    width: calc((100% / 3 * 2) - 1rem); /* IE11 fallback */
+    width: calc((100% / 3 * 2) - 1rem); /* IE11 */
     width: calc((100% / 3 * 2) - var(--spacing));
   }
   
   .lgd-row__three-quarters {
-    width: calc(75% - 1rem); /* IE11 fallback */
+    width: calc(75% - 1rem); /* IE11 */
     width: calc(75% - var(--spacing));
   }
 
   .lgd-row__full {
-    width: calc(100% - 1rem); /* IE11 fallback */
+    width: calc(100% - 1rem); /* IE11 */
     width: calc(100% - var(--spacing));
   }
 }
