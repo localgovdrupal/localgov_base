@@ -1,0 +1,22 @@
+.breadcrumbs {
+  padding: .5rem 0; /* IE11 */
+  padding: calc(var(--spacing) / 2) 0;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.breadcrumbs__list {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  margin-right: .25rem;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  display: inline-block;
+  margin-right: .25rem;
+  content: "\00BB";
+}

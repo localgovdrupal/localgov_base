@@ -31,6 +31,10 @@
   {{ attach_library('localgov_base/tabs') }}
 {% endif %}
 
+{% if region == 'header' %}
+  {{ attach_library('localgov_base/header') }}
+{% endif %}
+
 {# 
   Often if we need a custom region template, it's because that region
   needs to be full-width. Let's (at least for now), create an 
@@ -50,7 +54,7 @@
   <section{{ attributes.addClass(classes) }}>
     
     {% if region not in full_width_regions %}
-      <div class="lgd-container">
+      <div class="lgd-container padding-horizontal">
     {% endif %}
 
     <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">

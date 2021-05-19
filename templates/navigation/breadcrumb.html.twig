@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{{ attach_library('localgov_base/breadcrumbs') }}
+
+{% if breadcrumb %}
+  <nav class="breadcrumbs" role="navigation" aria-labelledby="system-breadcrumbs">
+    <h2 id="system-breadcrumbs" class="visually-hidden">{{ 'Breadcrumbs'|t }}</h2>
+    <ol class="breadcrumbs__list">
+      {% for item in breadcrumb %}
+        <li class="breadcrumbs__item">
+          {% if item.url %}
+            <a class="breadcrumbs__link" href="{{ item.url }}">{{ item.text }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

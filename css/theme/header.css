@@ -1,0 +1,13 @@
+/* 
+  @file Theming for the header region.
+*/
+
+.lgd-region--header {
+  background-color: #652c95; /* IE11 */
+  background-color: var(--color-section-bg);
+}
+
+.lgd-region--header a {
+  color: white; /* IE11 */
+  color: var(--color-white);
+}
