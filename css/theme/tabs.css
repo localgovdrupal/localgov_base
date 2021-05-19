@@ -1,3 +1,10 @@
+/* 
+  @file Theming for the tabs region.
+
+  We are theming this in a very generic manner so no site should need to 
+  override it.
+*/
+
 .lgd-region--tabs {
   background-color: black;
 }
