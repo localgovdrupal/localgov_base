@@ -1,5 +1,69 @@
+/* 
+  @file This is our file to create the variables that will be used across the theme.
+
+  To override these in your sub-theme, just create a new variables.css file and
+  library, and add that to your theme.info.yml file.
+*/
+/* Widths and Spacing */
 :root {
   --width-container: 60rem;
   --width-tablet: 48rem;
   --spacing: 1rem;
+  --spacing-padding-horizontal: var(--spacing);
+  --line-height: 1.5;
+  --vertical-rhythm-spacing: calc(var(--line-height) * 1rem);
+
+  /* Colours */
+  /* 
+    Colours Defined
+    In this section, we define the colours available in our theme.
+    We should not refer to these directly in our CSS however. Instead,
+    we use the names at our "Colours Applied" section.
+  */
+  --color-accent: #652c95;
+  --color-green: #1ba11b;
+  --color-red: #e4251b;
+  --color-orange: #ed7522;
+  --color-yellow: #ffdd00;
+  /* 
+    Grey Scale
+    In this section, we define our greys; let's not have 50 shades 
+  */
+  --color-white: #ffffff;
+  --color-grey-light: #f3f2f1;
+  --color-grey-medium: #b1b4b6;
+  --color-grey-dark: #505a5f;
+  --color-black: #0b0c0c;
+  /* 
+    Colours Applied
+    In this section, we "apply" our colours.
+  */
+  --color-success: #1ba11b;
+  --color-danger: #e4251b;
+  --color-warning: #ed7522;
+  --color-link: var(--color-accent);
+  --color-focus: var(--color-yellow);
+  --color-section-bg: var(--color-accent);
+
+  /* Fonts */
+  /* 
+    We choose basic fonts that most people have in browser cache from visiting other websites.
+    This will help with page speed, rather than calling fonts from Google Fonts or somewhere.
+  */
+  --font-primary: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-secondary: Georgia, 'Times New Roman', Times, serif;
+  /* 
+    Font sizes based on vertical rhythm of:
+    - Font size: 16px;
+    - Scale factor: 1.303
+    - Details: https://www.gridlover.net/try
+  */
+  --font-size: 1rem;
+  --font-size-smallest: calc(var(--font-size) * .3);
+  --font-size-smaller: calc(var(--font-size) * .5);
+  --font-size-small: calc(var(--font-size) * .75);
+  --font-size-medium: calc(var(--font-size) * 1);
+  --font-size-large: calc(var(--font-size) * 1.3125);
+  --font-size-larger: calc(var(--font-size) * 1.6875);
+  --font-size-largest: calc(var(--font-size) * 2.875);
 }

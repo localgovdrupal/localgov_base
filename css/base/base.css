@@ -1,3 +1,133 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
+  line-height: 1.5; /* IE11 */
+  line-height: var(--line-height);
+  font-size: 1rem; /* IE11 */
+  font-size: var(--font-size);
+  font-family: Roboto, Arial, Helvetica, sans-serif; /* IE11 */
+  font-family: var(--font-primary);
+}
+
+a {
+  color: #652c95; /* IE11 */
+  color: var(--color-link);
+}
+
+a:hover {
+  text-decoration-thickness: max(3px, .1875rem, .12em);
+}
+
+a:focus {
+  outline: 3px solid transparent;
+  color: black; /* IE11 */
+  color: var(--color-black);
+  background-color: var(--color-focus);
+  -webkit-box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
+  box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
+  text-decoration: none;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-bottom: 1.5rem; /* IE11 */
+  margin-bottom: var(--vertical-rhythm-spacing);
+  font-family: Georgia, 'Times New Roman', Times, serif; /* IE11 */
+  font-family: var(--font-secondary);
+}
+
+h1,
+.h1 {
+  font-size: 2.875rem; /* IE11 */
+  font-size: clamp(var(--font-size-larger), 10vw, var(--font-size-largest));
+}
+
+h2,
+.h2 {
+  font-size: 1.685rem; /* IE11 */
+  font-size: clamp(var(--font-size-large), 8vw, var(--font-size-larger));
+}
+
+h3,
+.h3 {
+  font-size: 1.3125rem; /* IE11 */
+  font-size: clamp(var(--font-size-medium), 6vw, var(--font-size-large));
+}
+
+h4,
+.h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+  font-variant: small-caps;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  font-variant: small-caps;
+  text-decoration: underline;
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-bottom: 1.5rem; /* IE11 */
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5rem;
+}
+
+sub {
+  bottom: -0.25rem;
 }
