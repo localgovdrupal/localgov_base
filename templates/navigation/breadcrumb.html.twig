@@ -18,6 +18,8 @@
         <li class="breadcrumbs__item">
           {% if item.url %}
             <a class="breadcrumbs__link" href="{{ item.url }}">{{ item.text }}</a>
+            {% else %}
+              {{ item.text }}
           {% endif %}
         </li>
       {% endfor %}
