@@ -1,0 +1,60 @@
+<noscript>
+  {#
+    If JavaScript is disabled, we show all header items and hide
+    the toggle buttons.
+  #}
+  <style>
+    .lgd-header__nav {
+      display: block !important;
+    }
+    .lgd-header__toggle {
+      display: none !important;
+    }
+  </style>
+</noscript>
+
+<header class="lgd-header">
+	<div class="lgd-container">
+		<div class="lgd-row">
+			<div class="lgd-row__full">
+				<div class="lgd-header__inner">
+
+					{% if has_header %}
+						{{ page.header }}
+					{% endif %}
+
+					{% if has_secondary_menu %}
+            <button data-target="lgd-header__nav--secondary" aria-controls="lgd-header__nav--secondary" aria-expanded="false" aria=label={{ 'Toggle Secondary Navigation'|t }} class="lgd-header__toggle lgd-header__toggle--secondary">
+              <span class="lgd-header__toggle-text lgd-header__toggle-text--secondary">{{ 'Services'|t }}</span>
+              <span class="lgd-header__toggle-icon lgd-header__toggle-icon--secondary"></span>
+            </button>
+					{% endif %}
+
+          {% if has_primary_menu or has_search %}
+            <button data-target="lgd-header__nav--primary" aria-controls="lgd-header__nav--primary" aria-expanded="false" aria=label={{ 'Toggle Primary Navigation'|t }} class="lgd-header__toggle lgd-header__toggle--primary">
+              <span class="lgd-header__toggle-text lgd-header__toggle-text--primary">{{ 'Menu'|t }}</span>
+              <span class="lgd-header__toggle-icon lgd-header__toggle-icon--primary"></span>
+            </button>
+  
+            <div id="lgd-header__nav--primary" class="lgd-header__nav lgd-header__nav--primary">
+					  	{% if has_primary_menu %}
+					  		{{ page.primary_menu }}
+					  	{% endif %}
+
+					  	{% if has_search %}
+					  		{{ page.search }}
+					  	{% endif %}
+					  </div>
+          {% endif %}
+
+					{% if has_secondary_menu %}
+						<div id="lgd-header__nav--secondary" class="lgd-header__nav lgd-header__nav--secondary">
+							{{ page.secondary_menu }}
+						</div>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

@@ -19,8 +19,17 @@ header:
   css:
     theme:
       css/theme/header.css: {}
+  js:
+    js/header.js: {}
+  dependencies:
+    - core/drupal
 
 breadcrumbs:
   css:
     theme:
       css/theme/breadcrumbs.css: {}
+
+menu-main:
+  css:
+    theme:
+      css/theme/menu-main.css: {}

@@ -53,6 +53,9 @@
 */
 #}
 
+{# Attach libraries that render on every page #}
+{{ attach_library('localgov_base/header') }}
+
 {# Set up some variables to check that regions have content #}
 {% set has_tabs = page.tabs|render|striptags|trim is not empty %}
 {#
@@ -62,7 +65,6 @@
   have a header.
 #}
 {% set has_header = page.header %}
-{% set has_search = page.search|render|striptags|trim is not empty %}
 {% set has_mobile_search = page.mobile_search|render|striptags|trim is not empty %}
 {% set has_primary_menu = page.primary_menu|render|striptags|trim is not empty %}
 {% set has_secondary_menu = page.secondary_menu|render|striptags|trim is not empty %}
@@ -73,6 +75,10 @@
 {% set has_banner = page.banner %}
 {% set has_breadcrumb = page.breadcrumb|render|striptags|trim is not empty %}
 {% set has_messages = page.messages|render|striptags|trim is not empty %}
+{# 
+  We need a less strict check for the messages regions, or else dpm() will not render.
+#}
+{% set has_messages = page.messages is not empty %}
 {% set has_content_top = page.content_top|render|striptags|trim is not empty %}
 {% set has_sidebar_first = page.sidebar_first|render|striptags|trim is not empty %}
 {% set has_sidebar_second = page.sidebar_second|render|striptags|trim is not empty %}
@@ -118,23 +124,7 @@
 {% endif %}
 
 {% if has_header %}
-  {{ page.header }}
-{% endif %}
-
-{% if has_search %}
-  {{ page.search }}
-{% endif %}
-
-{% if has_mobile_search %}
-  {{ page.mobile_search }}
-{% endif %}
-
-{% if has_primary_menu %}
-  {{ page.primary_menu }}
-{% endif %}
-
-{% if has_secondary_menu %}
-  {{ page.secondary_menu }}
+  {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 {% endif %}
 
 {% if has_banner %}

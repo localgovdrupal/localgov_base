@@ -1,15 +1,101 @@
 /* 
-  @file Theming for the header region.
+  @file Theming for the header area.
+  Note: The header area is NOT just the header region. It is the 
+  header region, but also the containing wrapper, which places
+  - primary menu
+  - search
+  - mobile search, and
+  - secondary menu
+
+  We will theme those individual regions in their own files. This 
+  file is for the general area layout and the specific header region.
 */
 
-.lgd-region--header {
+.lgd-header {
   background-color: #652c95; /* IE11 */
   background-color: var(--color-section-bg);
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical));
 }
 
-.lgd-region--header a {
+.lgd-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.lgd-header__nav--primary {
+  display: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-header__nav--primary {
+    display: block;
+    width: auto;
+  }
+}
+
+.lgd-header__nav--secondary {
+  width: 100%;
+  display: none;
+  background-color: pink; /* @todo remove */
+}
+
+.lgd-header__nav--active {
+  display: block;
+}
+
+/* Theming the Header Toggles */
+.lgd-header__toggle {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: var(--spacing);
+  line-height: 1;
+  font-size: 1rem;
+  font-size: var(--font-size-medium);
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+}
+.lgd-header__toggle:focus,
+.lgd-header__toggle:hover {
+  background-color: white; /* IE11 */
+  background-color: var(--color-white);
+  color: black; /* IE11 */
+  color: var(--color-black);
+}
+
+.lgd-header__toggle-icon::after {
+  display: inline-block;
+  margin-left: .5rem; /* IE11 */
+  margin-left: calc(var(--spacing) / 2);
+  margin-top: calc(var(--font-size-larger) * -0.1);
+  transform: rotate(90deg);
+  font-size: 1.6875rem; /* IE11 */
+  font-size: var(--font-size-larger);
+  transition: var(--transition-time);
+  content: "\203A";
+}
+
+.lgd-header__toggle--active .lgd-header__toggle-icon::after {
+  transform: rotate(270deg);
+}
+
+/* Overrides for Specific Toggles */
+.lgd-header__toggle--primary {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-header__toggle--primary {
+    display: none;    
+  }
+}
+
+.lgd-header a {
   color: white; /* IE11 */
   color: var(--color-white);
 }

@@ -31,10 +31,6 @@
   {{ attach_library('localgov_base/tabs') }}
 {% endif %}
 
-{% if region == 'header' %}
-  {{ attach_library('localgov_base/header') }}
-{% endif %}
-
 {# 
   Often if we need a custom region template, it's because that region
   needs to be full-width. Let's (at least for now), create an 
@@ -43,10 +39,18 @@
 
   If it comes to an issue later, we can easily create a region template
   for each of these.
+
+  The reason the header regions are listed here is because we want them to
+  take up 100% of their container, rather than the screen. We will take care 
+  of their layout via CSS in the header.css file.
 #}
 {% 
   set full_width_regions = [
     'banner',
+    'header',
+    'primary_menu',
+    'secondary_menu',
+    'search',
   ] 
 %}
 
