@@ -39,3 +39,9 @@ menu-main:
     theme:
       css/components/menu-main.ie11.css: {}
       css/components/menu-main.css: {}
+
+page-title-block:
+  css:
+    theme:
+      css/components/page-title-block.ie11.css: {}
+      css/components/page-title-block.css: {}

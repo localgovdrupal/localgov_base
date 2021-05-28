@@ -1,0 +1,8 @@
+/* 
+  @file Theming for the page title and lede block.
+*/
+
+.lgd-page-title-block {
+  margin-bottom: var(--section-spacing-vertical);
+  border-bottom: var(--border);
+}

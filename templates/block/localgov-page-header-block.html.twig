@@ -1,0 +1,32 @@
+{#
+/**
+* @file
+* Default theme implementation of localgov_header_block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+
+{{ attach_library('localgov_base/page-title-block') }}
+
+{% 
+  set classes = [
+    'lgd-page-title-block'
+  ] 
+%}
+
+{% if title or lede %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if title %}
+      <h1 class="lgd-page-title-block__title">{{ title }}</h1>
+    {% endif %}
+
+    {% if lede %}
+      <div class="lgd-page-title-block__subheader h3">{{ lede }}</div>
+    {% endif %}
+
+  </div>
+{% endif %}
