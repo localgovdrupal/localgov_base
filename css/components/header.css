@@ -11,8 +11,44 @@
   file is for the general area layout and the specific header region.
 */
 
+/* IE11 Fallbacks */
 .lgd-header {
-  background-color: #652c95; /* IE11 */
+  background-color: #652c95;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.lgd-header .lgd-region--header {
+  margin-right: 2rem;
+}
+
+/* Theming the Header Toggles */
+.lgd-header__toggle {
+  padding: 1rem;
+  font-size: 1rem;
+}
+.lgd-header__toggle:focus,
+.lgd-header__toggle:hover {
+  background-color: white;
+  color: black;
+}
+
+.lgd-header__toggle-icon::after {
+  margin-left: .5rem;
+  font-size: 1.6875rem;
+}
+
+/* Overrides for Specific Toggles */
+.lgd-header a {
+  color: white;
+}
+
+.branding__item--logo {
+  width: 160px;
+}
+
+/* Modern Browsers */
+.lgd-header {
   background-color: var(--color-section-bg);
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical));
@@ -24,6 +60,18 @@
   align-items: center;
 }
 
+.lgd-header .lgd-region--header {
+  margin-right: calc(var(--spacing) * 2);
+}
+
+/* 
+  Layout for the Nav Sections.
+  Theming for individual sections in within each individual section's
+  CSS file.
+
+  Primary: Primary Menu and Search Block
+  Secondary: Secondary Menu area (services list)
+*/
 .lgd-header__nav--primary {
   display: none;
   width: 100%;
@@ -39,7 +87,6 @@
 .lgd-header__nav--secondary {
   width: 100%;
   display: none;
-  background-color: pink; /* @todo remove */
 }
 
 .lgd-header__nav--active {
@@ -50,10 +97,10 @@
 .lgd-header__toggle {
   display: flex;
   align-items: center;
+  margin-left: auto;
   height: 100%;
   padding: var(--spacing);
   line-height: 1;
-  font-size: 1rem;
   font-size: var(--font-size-medium);
   border: 1px solid white;
   color: white;
@@ -62,19 +109,15 @@
 }
 .lgd-header__toggle:focus,
 .lgd-header__toggle:hover {
-  background-color: white; /* IE11 */
   background-color: var(--color-white);
-  color: black; /* IE11 */
   color: var(--color-black);
 }
 
 .lgd-header__toggle-icon::after {
   display: inline-block;
-  margin-left: .5rem; /* IE11 */
   margin-left: calc(var(--spacing) / 2);
   margin-top: calc(var(--font-size-larger) * -0.1);
   transform: rotate(90deg);
-  font-size: 1.6875rem; /* IE11 */
   font-size: var(--font-size-larger);
   transition: var(--transition-time);
   content: "\203A";
@@ -85,10 +128,6 @@
 }
 
 /* Overrides for Specific Toggles */
-.lgd-header__toggle--primary {
-  margin-left: auto;
-}
-
 @media screen and (min-width: 48rem) {
   .lgd-header__toggle--primary {
     display: none;    
@@ -96,11 +135,9 @@
 }
 
 .lgd-header a {
-  color: white; /* IE11 */
   color: var(--color-white);
 }
 
 .branding__item--logo {
-  width: 160px; /* IE11 */
   width: var(--width-logo);
 }

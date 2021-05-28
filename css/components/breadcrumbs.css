@@ -1,0 +1,41 @@
+/* 
+  @file Theming the breadcrumbs region.
+
+  This CSS is very generic. Most themes will not need to override it,
+  except perhaps to change the what is used as a divider between items.
+  The breadcrumbs divider can be changed via the --breadcrumbs-divider
+  variable.
+*/
+
+/* IE11 Fallbacks */
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  content: "»";
+}
+
+.breadcrumbs {
+  border-bottom-color: #f3f2f1;
+}
+
+/* Modern Browsers */
+.breadcrumbs {
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.breadcrumbs__list {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  margin-right: .25rem;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  display: inline-block;
+  margin-right: .25rem;
+  content: var(--breadcrumbs-divider);
+}

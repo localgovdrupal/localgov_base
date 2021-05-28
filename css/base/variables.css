@@ -71,4 +71,7 @@
 
   /* Animation */
   --transition-time: .3s;
+
+  /* Content */
+  --breadcrumbs-divider: "»";
 }

@@ -27,6 +27,7 @@
   padding: var(--spacing);
 }
 
+.menu--main > .menu-item--active-trail a,
 .menu--main > .menu-item a:focus,
 .menu--main > .menu-item a:hover {
   color: var(--color-black);
