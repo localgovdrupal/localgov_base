@@ -4,5 +4,6 @@
 }
 
 .breadcrumbs {
-  border-bottom-color: #f3f2f1;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #f3f2f1;
 }
