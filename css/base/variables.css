@@ -9,7 +9,14 @@
   --width-container: 73.75rem; /* 1180px */
   --width-tablet: 48rem;
   --width-logo: 10rem;
+  --spacing-smallest: 0.25rem;
+  --spacing-smaller: 0.5rem;
+  --spacing-small: 0.75rem;
   --spacing: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-larger: 2rem;
+  --spacing-largest: 2.5rem;
+  --spacing-mega: 3rem;
   --spacing-padding-horizontal: var(--spacing);
   --section-spacing-vertical: var(--spacing);
   --line-height: 1.5;
@@ -73,8 +80,8 @@
   /* Borders */
   --border-width: 1px;
   --border-style: solid;
-  --border-radius: 4px;
   --border: var(--border-width) var(--border-style) var(--color-border);
+  --border-radius: var(--spacing-smallest);
 
   /* Animation */
   --transition-time: .3s;
