@@ -5,7 +5,7 @@
   well as font sizes, vertical rhythm, etc.
 */
 
-/* IE11 Overrides */
+/* IE11 Fallbacks */
 body {
   line-height: 1.5;
   font-size: 1rem;

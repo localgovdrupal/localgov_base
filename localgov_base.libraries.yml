@@ -13,12 +13,12 @@ grid:
 tabs:
   css:
     theme:
-      css/theme/tabs.css: {}
+      css/components/tabs.css: {}
 
 header:
   css:
     theme:
-      css/theme/header.css: {}
+      css/components/header.css: {}
   js:
     js/header.js: {}
   dependencies:
@@ -27,9 +27,9 @@ header:
 breadcrumbs:
   css:
     theme:
-      css/theme/breadcrumbs.css: {}
+      css/components/breadcrumbs.css: {}
 
 menu-main:
   css:
     theme:
-      css/theme/menu-main.css: {}
+      css/components/menu-main.css: {}
