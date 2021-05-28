@@ -24,7 +24,13 @@
 					{% endif %}
 
           {% if has_primary_menu or has_search %}
-            <button class="lgd-header__toggle lgd-header__toggle--primary data-target="lgd-header__nav--primary" aria-controls="lgd-header__nav--primary" aria-expanded="false" aria=label={{ 'Toggle Primary Navigation'|t }}">
+            <button 
+							class="lgd-header__toggle lgd-header__toggle--primary" 
+							data-target="lgd-header__nav--primary" 
+							aria-controls="lgd-header__nav--primary" 
+							aria-expanded="false" 
+							aria-label="{{ 'Toggle Primary Navigation'|t }}"
+						>
               <span class="lgd-header__toggle-text lgd-header__toggle-text--primary">{{ 'Menu'|t }}</span>
               <span class="lgd-header__toggle-icon lgd-header__toggle-icon--primary"></span>
             </button>
@@ -41,7 +47,13 @@
           {% endif %}
 
 					{% if has_secondary_menu %}
-            <button class="lgd-header__toggle lgd-header__toggle--secondary data-target="lgd-header__nav--secondary" aria-controls="lgd-header__nav--secondary" aria-expanded="false" aria=label={{ 'Toggle Secondary Navigation'|t }}">
+            <button 
+							class="lgd-header__toggle lgd-header__toggle--secondary" 
+							data-target="lgd-header__nav--secondary" 
+							aria-controls="lgd-header__nav--secondary" 
+							aria-expanded="false" 
+							aria-label="{{ 'Toggle Secondary Navigation'|t }}"
+						>
               <span class="lgd-header__toggle-text lgd-header__toggle-text--secondary">{{ 'Services'|t }}</span>
               <span class="lgd-header__toggle-icon lgd-header__toggle-icon--secondary"></span>
             </button>
