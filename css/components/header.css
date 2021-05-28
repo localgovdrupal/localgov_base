@@ -11,19 +11,15 @@
   file is for the general area layout and the specific header region.
 */
 
-/* IE11 Fallbacks */
-.lgd-header {
-  background-color: #652c95;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.lgd-header .lgd-region--header {
-  margin-right: 2rem;
-}
-
 /* Theming the Header Toggles */
+@media screen and (min-width: 48rem) {
+  .lgd-header__toggles {
+    margin-right: 1rem;
+  }
+}
+
 .lgd-header__toggle {
+  margin-left: 1rem;
   padding: 1rem;
   font-size: 1rem;
 }
@@ -94,10 +90,21 @@
 }
 
 /* Theming the Header Toggles */
+.lgd-header__toggles {
+  display: flex;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-header__toggles {
+    margin-right: var(--spacing);
+  }
+}
+
 .lgd-header__toggle {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  margin-left: var(--spacing);
   height: 100%;
   padding: var(--spacing);
   line-height: 1;

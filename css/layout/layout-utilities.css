@@ -2,17 +2,6 @@
   @file Utility classes to drop into templates.
 */
 
-/* IE11 Fallbacks */
-.lgd-container {
-  max-width: 60rem;
-}
-
-.padding-horizontal {
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-/* Modern Browsers */
 /* 
   The main container class that defines how wide our content area is 
 */

@@ -1,0 +1,10 @@
+/* IE11 Fallbacks */
+.lgd-header {
+  background-color: #652c95;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.lgd-header .lgd-region--header {
+  margin-right: 2rem;
+}

@@ -123,9 +123,7 @@
   {{ page.tabs }}
 {% endif %}
 
-{% if has_header %}
-  {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
-{% endif %}
+{% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 
 {% if has_banner %}
   {{ page.banner }}

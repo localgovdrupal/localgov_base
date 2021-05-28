@@ -18,43 +18,6 @@
   - .lgd-row--quarters - direct descendants are all 25% each
 */
 
-/* IE11 Fallbacks */
-@media screen and (min-width: 48rem) {
-
-  .lgd-row > * {
-    margin-right: .5rem;
-    margin-left: .5rem;
-  }
-
-  .lgd-row__one-quarter,
-  .lgd-row--quarters > * {
-    width: calc(25% - 1rem);
-  }
-  
-  .lgd-row__one-third,
-  .lgd-row--thirds > * {
-    width: calc(33% - 1rem);
-  }
-  
-  .lgd-row__one-half,
-  .lgd-row--halves > * {
-    width: calc(50% - 1rem);
-  }
-  
-  .lgd-row__two-thirds {
-    width: calc((100% / 3 * 2) - 1rem);
-  }
-  
-  .lgd-row__three-quarters {
-    width: calc(75% - 1rem);
-  }
-
-  .lgd-row__full {
-    width: calc(100% - 1rem);
-  }
-}
-
-/* Modern Browsers */
 @media screen and (min-width: 48rem) {
   .lgd-row {
     display: flex;

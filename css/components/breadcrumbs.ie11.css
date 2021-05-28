@@ -1,0 +1,8 @@
+/* IE11 Fallbacks */
+.breadcrumbs__item + .breadcrumbs__item::before {
+  content: "»";
+}
+
+.breadcrumbs {
+  border-bottom-color: #f3f2f1;
+}

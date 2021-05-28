@@ -1,25 +1,15 @@
-/* IE11 Fallbacks */
-.menu--main > .menu-item a {
-  padding: 1rem 0.5rem;
-}
+/* 
+  @file Theming main menu.
+*/
 
-.menu--main > .menu-item a:focus,
-.menu--main > .menu-item a:hover {
-  color: black;
-  background-color: white;
-}
-
-@media screen and (min-width: 48rem) {
-  .menu--main > .menu-item a:hover {
-    border-color: white;
-  }
-}
-
-/* Modern Browsers */
 .menu--main {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+}
+
+.menu--main > .menu-item + .menu-item {
+  margin-left: var(--spacing);
 }
 
 .menu--main > .menu-item a {
