@@ -79,6 +79,7 @@
 
   /* Borders */
   --border-width: 1px;
+  --border-width-large: 5px;
   --border-style: solid;
   --border: var(--border-width) var(--border-style) var(--color-border);
   --border-radius: var(--spacing-smallest);

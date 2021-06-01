@@ -1,0 +1,9 @@
+{% set icon_wrapper_element = icon_wrapper_element|default('div') %}
+{% set attributes = create_attribute()
+    .setAttribute('aria-hidden', decoration|default('true'))
+    .addClass(icon_classes)
+  %}
+
+<{{ icon_wrapper_element }}{{ attributes }}>
+  {% include "@localgov_base/includes/icons/" ~ icon_name ~ '.svg' %}
+</{{ icon_wrapper_element }}>

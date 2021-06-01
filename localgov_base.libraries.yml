@@ -45,3 +45,9 @@ page-title-block:
     theme:
       css/components/page-title-block.ie11.css: {}
       css/components/page-title-block.css: {}
+
+service-landing-page:
+  css:
+    theme:
+      css/components/service-landing-page.ie11.css: {}
+      css/components/service-landing-page.css: {}
