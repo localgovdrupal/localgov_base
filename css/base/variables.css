@@ -30,11 +30,10 @@
     we use the names at our "Colours Applied" section.
   */
   --color-accent: #652c95;
-  --color-green: #048a04;
+  --color-green: #1ba11b;
   --color-red: #e4251b;
   --color-orange: #ed7522;
   --color-yellow: #ffdd00;
-  --color-blue: #297bbb;
   /* 
     Grey Scale
     In this section, we define our greys; let's not have 50 shades 
@@ -48,10 +47,9 @@
     Colours Applied
     In this section, we "apply" our colours.
   */
-  --color-info: var(--color-blue);
-  --color-success: var(--color-green);
-  --color-danger: var(--color-red);
-  --color-warning: var(--color-orange);
+  --color-success: #1ba11b;
+  --color-danger: #e4251b;
+  --color-warning: #ed7522;
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
   --color-section-bg: var(--color-accent);

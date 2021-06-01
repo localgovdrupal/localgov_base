@@ -5,9 +5,6 @@
  */
 #}
 
-{{ attach_library('localgov_base/service-landing-page') }}
-{{ attach_library('localgov_base/service-cta-block') }}
-
 {# 
   Set icon names here, so we can override them in subthemes by calling
   'include @localgov_base/content/-nodee--localgov-services-landing--full.twig with {
@@ -37,6 +34,8 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+
+{{ attach_library('localgov_base/service-landing-page') }}
 
 <article{{ attributes.addClass(classes) }}>
   <div class="lgd-row">

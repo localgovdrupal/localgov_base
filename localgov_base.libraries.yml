@@ -51,9 +51,3 @@ service-landing-page:
     theme:
       css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
-
-service-cta-block:
-  css:
-    theme:
-      css/components/service-cta-block.ie11.css: {}
-      css/components/service-cta-block.css: {}

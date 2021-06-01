@@ -3,6 +3,6 @@
 */
 
 .lgd-page-title-block {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-bottom: var(--section-spacing-vertical);
   border-bottom: var(--border);
 }
