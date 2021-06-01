@@ -5,9 +5,12 @@
  */
 #}
 
+{{ attach_library('localgov_base/service-landing-page') }}
+{{ attach_library('localgov_base/service-cta-block') }}
+
 {# 
   Set icon names here, so we can override them in subthemes by calling
-  'include @localgov_base/content/-nodee--localgov-services-landing--full.twig with {
+  'include @localgov_base/content/-node--localgov-services-landing--full.twig with {
     facebook_icon = 'facebook-f',
     twitter_icon = 'twitter',
   }
@@ -35,13 +38,11 @@
   ]
 %}
 
-{{ attach_library('localgov_base/service-landing-page') }}
-
 <article{{ attributes.addClass(classes) }}>
   <div class="lgd-row">
+  
     {# Begin Main Content #}
-    <div class="lgd-row__two-thirds">
-
+    <div class="lgd-row__full">
       {# Begin Services List #}
       {% if node.localgov_destinations.value %}
         <section class="slp__services">
@@ -52,11 +53,15 @@
       
       {# Begin Service Updates #}
       {% if service_updates %}
-        <div class="slp__updates">
+        <section class="slp__updates">
           {{ service_updates }}
-        </div>
+        </section>
       {% endif %}
       {# End Service Updates #}
+    </div>
+
+    {# Begin Grid Main Column #}
+    <div class="lgd-row__two-thirds">
 
       {% if 
         node.localgov_email_address.value 
@@ -192,7 +197,7 @@
       {# End Contact Section #}
 
     </div>
-    {# End Main Content #}
+    {# End Grid Main Column #}
     
     {# Begin Sidebar #}
     {% if node.localgov_popular_topics.value %}

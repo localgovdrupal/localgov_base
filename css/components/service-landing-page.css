@@ -29,3 +29,17 @@
   border-bottom-color: var(--color-grey-medium);
   margin-bottom: var(--vertical-rhythm-spacing);
 }
+
+.slp__service {
+  display: flex;
+  margin-bottom: var(--vertical-rhythm-spacing);
+  padding-bottom: var(--vertical-rhythm-spacing);
+  border-bottom: var(--border);
+}
+
+.slp__service-icon svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: auto;
+  margin-right: var(--spacing-small);
+}
