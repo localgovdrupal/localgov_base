@@ -15,3 +15,26 @@
   padding-right: var(--spacing-padding-horizontal);
   padding-left: var(--spacing-padding-horizontal);
 }
+
+.lgd-icon svg {
+  width: var(--spacing);
+  height: auto;
+}
+.lgd-icon--large svg {
+  width: var(--spacing-large);
+}
+.lgd-icon--larger svg {
+  width: var(--spacing-larger);
+}
+.lgd-icon--largest svg {
+  width: var(--spacing-largest);
+}
+.lgd-icon--small svg {
+  width: var(--spacing-small);
+}
+.lgd-icon--smaller svg {
+  width: var(--spacing-smaller);
+}
+.lgd-icon--smallest svg {
+  width: var(--spacing-smallest);
+}
