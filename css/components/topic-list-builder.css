@@ -1,0 +1,26 @@
+/*
+  @file Theming the topic list paragraph type.
+*/
+
+.lgd-tlb__service {
+  display: flex;
+}
+
+.lgd-tlb__service-icon svg {
+  flex-shrink: 0;
+  margin-right: var(--spacing-small);
+}
+
+.lgd-tlb .field--name-topic-list-term {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.lgd-tlb__show-more {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.lgd-tlb__show-more .lgd-icon {
+  margin-right: var(--spacing-smaller);
+}
