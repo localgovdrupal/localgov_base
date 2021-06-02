@@ -7,3 +7,25 @@
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+.lgd-icon svg {
+  width: 1rem;
+}
+.lgd-icon--large svg {
+  width: 1.5rem;
+}
+.lgd-icon--larger svg {
+  width: 2rem;
+}
+.lgd-icon--largest svg {
+  width: 2.5rem;
+}
+.lgd-icon--small svg {
+  width: 0.75rem;
+}
+.lgd-icon--smaller svg {
+  width: 0.5rem;
+}
+.lgd-icon--smallest svg {
+  width: 0.25rem;
+}
