@@ -83,6 +83,10 @@
   ]
 %}
 
+{% if use_css %}
+  {{ attach_library('localgov_base/teaser') }}
+{% endif %}
+
 <article{{ attributes.addClass(classes) }}>
 
   {# 
@@ -107,6 +111,13 @@
     {% endif %}
     {{ title_suffix }}
 
+    {# 
+      We render the full content variable here, so any new fields added 
+      are visible. 
+
+      @todo figure out how to remove teaser image, date, etc since they 
+      have different names depending on content type.
+    #}
     {{ content }}
 
     {# 

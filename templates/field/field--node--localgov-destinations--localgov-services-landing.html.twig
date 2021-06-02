@@ -61,6 +61,21 @@
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('slp__service', 'field__item') }}>
+          {% include "@localgov_base/includes/icons/icon.html.twig" with {
+            icon_name: service_icon,
+            icon_wrapper_element: 'div',
+            icon_classes: 'slp__service-icon',
+            } 
+          %}
+          <div class="slp__service-item">
+            {{ item.content }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(classes, 'slp__service', 'field__item') }}>
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: service_icon,
           icon_wrapper_element: 'div',
@@ -70,21 +85,6 @@
         <div class="slp__service-item">
           {{ item.content }}
         </div>
-        </div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass(classes, 'slp__service', 'field__item') }}>
-      {% include "@localgov_base/includes/icons/icon.html.twig" with {
-        icon_name: service_icon,
-        icon_wrapper_element: 'div',
-        icon_classes: 'slp__service-icon',
-        } 
-      %}
-      <div class="slp__service-item">
-        {{ item.content }}
-      </div>
       </div>
     {% endfor %}
   {% endif %}
@@ -96,15 +96,15 @@
     {% endif %}
     {% for item in items %}
       <div{{ item.attributes.addClass('slp__service', 'field__item') }}>
-      {% include "@localgov_base/includes/icons/icon.html.twig" with {
-        icon_name: service_icon,
-        icon_wrapper_element: 'div',
-        icon_classes: 'slp__service-icon',
-        } 
-      %}
-      <div class="slp__service-item">
-        {{ item.content }}
-      </div>
+        {% include "@localgov_base/includes/icons/icon.html.twig" with {
+          icon_name: service_icon,
+          icon_wrapper_element: 'div',
+          icon_classes: 'slp__service-icon',
+          } 
+        %}
+        <div class="slp__service-item">
+          {{ item.content }}
+        </div>
       </div>
     {% endfor %}
     {% if multiple %}

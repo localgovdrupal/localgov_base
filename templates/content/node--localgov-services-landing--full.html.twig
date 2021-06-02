@@ -6,7 +6,14 @@
 #}
 
 {{ attach_library('localgov_base/service-landing-page') }}
-{{ attach_library('localgov_base/service-cta-block') }}
+
+{% if use_css %}
+  {{ attach_library('localgov_base/service-cta-block') }}
+{% endif %}
+
+{% if use_js %}
+  {{ attach_library('localgov_base/service-cta-block-js') }}
+{% endif %}
 
 {# 
   Set icon names here, so we can override them in subthemes by calling
@@ -45,7 +52,7 @@
     <div class="lgd-row__full">
       {# Begin Services List #}
       {% if node.localgov_destinations.value %}
-        <section class="slp__services">
+        <section class="slp__services lgd-teaser-list">
           {{ content.localgov_destinations }}
         </section>
       {% endif %}

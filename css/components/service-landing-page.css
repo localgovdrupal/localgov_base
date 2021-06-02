@@ -19,11 +19,6 @@
   margin-bottom: 0;
 }
 
-.slp__contact svg {
-  max-width: 1rem;
-  height: auto;
-}
-
 .slp__contact-containers {
   border-bottom: var(--border);
   border-bottom-color: var(--color-grey-medium);
@@ -32,14 +27,9 @@
 
 .slp__service {
   display: flex;
-  margin-bottom: var(--vertical-rhythm-spacing);
-  padding-bottom: var(--vertical-rhythm-spacing);
-  border-bottom: var(--border);
 }
 
 .slp__service-icon svg {
   flex-shrink: 0;
-  width: 1rem;
-  height: auto;
   margin-right: var(--spacing-small);
 }

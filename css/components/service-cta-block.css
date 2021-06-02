@@ -34,11 +34,6 @@
   transition: var(--transition-time);
 }
 
-.sctab__link-icon svg {
-  max-width: 1rem;
-  height: auto;
-}
-
 .sctab__link-icon svg path {
   fill: var(--color-white);
 }

@@ -57,3 +57,16 @@ service-cta-block:
     theme:
       css/components/service-cta-block.ie11.css: {}
       css/components/service-cta-block.css: {}
+
+teaser:
+  css:
+    theme:
+      css/components/teaser.ie11.css: {}
+      css/components/teaser.css: {}
+
+
+topic-list-builder:
+  css:
+    theme:
+      css/components/topic-list-builder.ie11.css: {}
+      css/components/topic-list-builder.css: {}
