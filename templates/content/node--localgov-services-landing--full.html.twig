@@ -7,14 +7,6 @@
 
 {{ attach_library('localgov_base/service-landing-page') }}
 
-{% if use_css %}
-  {{ attach_library('localgov_base/service-cta-block') }}
-{% endif %}
-
-{% if use_js %}
-  {{ attach_library('localgov_base/service-cta-block-js') }}
-{% endif %}
-
 {# 
   Set icon names here, so we can override them in subthemes by calling
   'include @localgov_base/content/-node--localgov-services-landing--full.twig with {
