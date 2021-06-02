@@ -3,3 +3,24 @@
 /**
  * @file Theme hooks to support the LocalGov Base Theme.
  */
+
+function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['localgov_base_use_css'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Add CSS from theme.'),
+    '#default_value' => theme_get_setting('localgov_base_use_css'),
+    '#description'   => t("Uncheck this box if you want to disable the theme's CSS"),
+  );
+
+  $form['localgov_base_use_js'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Add JS from theme.'),
+    '#default_value' => theme_get_setting('localgov_base_use_js'),
+    '#description'   => t("Uncheck this box if you want to disable the theme's JavaScript"),
+  );
+}
