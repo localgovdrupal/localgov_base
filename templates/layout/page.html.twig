@@ -203,17 +203,17 @@
 {# Begin Footer Regions #}
 {% if footer_regions %}
   {# 
-    Wrap all of the "footers" in a `footer` element for semantics.
+    Wrap all of the "lgd-footers" in a `footer` element for semantics.
     This should ensure that all the contact/housekeeping links/etc 
     are within the footer element to assist screenreaders and other
     automated tools.
   #}
-  <footer class="footer">
+  <footer class="lgd-footer">
 {% endif %}
   
   {# Begin Pre-footer #}
   {% if has_footer_first or has_footer_second or has_footer_third %}
-    <div class="footer__pre-footer">
+    <div class="lgd-footer__pre-footer">
       <div class="lgd-container">
         <div class="lgd-row">
           {% if has_footer_first %}
@@ -241,7 +241,7 @@
 
   {# Begin Footer #}
   {% if has_footer %}
-    <div class="footer__footer">
+    <div class="lgd-footer__footer">
       <div class="lgd-container">
         <div class="lgd-row">
           <div class="lgd-row__full">
@@ -255,7 +255,7 @@
 
   {# Begin Post-footer #}
   {% if has_lower_footer_first or has_lower_footer_second or has_lower_footer_third %}
-    <div class="footer__post-footer">
+    <div class="lgd-footer__post-footer">
       <div class="lgd-container">
         <div class="lgd-row">
           {% if has_lower_footer_first %}

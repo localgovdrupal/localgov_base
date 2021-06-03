@@ -18,6 +18,11 @@ tabs:
     theme:
       css/components/tabs.css: {}
 
+messages:
+  css:
+    theme:
+      css/components/messages.css: {}
+
 header:
   css:
     theme:
