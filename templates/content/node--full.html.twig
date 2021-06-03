@@ -70,10 +70,12 @@
  *   in different view modes.
  */
 #}
+
+{% set content_type = node.bundle %}
 {%
   set classes = [
     'node',
-    'node--type-' ~ node.bundle|clean_class,
+    'node--type-' ~ content_type|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
@@ -84,6 +86,19 @@
 {% if localgov_base_use_css %}
   {{ attach_library('localgov_base/teaser') }}
 {% endif %}
+
+{# 
+  For "sensible defaults", we'll place each node in full view mode that 
+  doesn't have a dedicated template within a two-thirds container. 
+  
+  If the only reason we need a template is to make the container full 
+  width, let's list those content types here.
+#}
+{% set full_width_content_types = 
+  [
+    'localgov_services_sublanding',
+  ] 
+%}
 
 <article{{ attributes.addClass(classes) }}>
 
@@ -107,7 +122,11 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="lgd-row">
-      <div class="lgd-row__two-thirds">
+      {% if content_type in full_width_content_types %}
+        <div class="lgd-row__full">
+        {% else %}
+          <div class="lgd-row__two-thirds">
+      {% endif %}
         {{ content }}
       </div>
     </div>
