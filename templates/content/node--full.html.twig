@@ -81,6 +81,10 @@
   ]
 %}
 
+{% if localgov_base_use_css %}
+  {{ attach_library('localgov_base/teaser') }}
+{% endif %}
+
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}

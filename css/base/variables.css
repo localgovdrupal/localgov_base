@@ -18,7 +18,6 @@
   --spacing-largest: 2.5rem;
   --spacing-mega: 3rem;
   --spacing-padding-horizontal: var(--spacing);
-  --section-spacing-vertical: var(--spacing);
   --line-height: 1.5;
   --vertical-rhythm-spacing: calc(var(--line-height) * 1rem);
 
@@ -91,4 +90,24 @@
 
   /* Content */
   --breadcrumbs-divider: "»";
+}
+
+/* 
+  Applying Variables
+
+  By taking this approach of setting variables above, and then applying them here
+  to specific items, we can easily override these in sub-themes to change items
+  one-by-one without the CSS cascade affecting us (unless we want it to - in that case,
+  override the defined variables above instead).
+*/
+:root {
+  --color-section-header-bg: var(--color-section-bg);
+  --color-section-pre-footer-bg: var(--color-grey-dark);
+  --color-section-footer-bg: var(--color-white);
+  --color-section-post-footer-bg: var(--color-white);
+  --section-spacing-vertical-header: var(--spacing);
+  --section-spacing-vertical-pre-footer: var(--spacing-largest);
+  --section-spacing-vertical-footer: var(--spacing);
+  --section-spacing-vertical-post-footer: var(--spacing);
+  --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
 }

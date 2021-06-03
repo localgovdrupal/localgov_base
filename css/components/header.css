@@ -11,43 +11,10 @@
   file is for the general area layout and the specific header region.
 */
 
-/* Theming the Header Toggles */
-@media screen and (min-width: 48rem) {
-  .lgd-header__toggles {
-    margin-right: 1rem;
-  }
-}
-
-.lgd-header__toggle {
-  margin-left: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
-}
-.lgd-header__toggle:focus,
-.lgd-header__toggle:hover {
-  background-color: white;
-  color: black;
-}
-
-.lgd-header__toggle-icon::after {
-  margin-left: .5rem;
-  font-size: 1.6875rem;
-}
-
-/* Overrides for Specific Toggles */
-.lgd-header a {
-  color: white;
-}
-
-.branding__item--logo {
-  width: 160px;
-}
-
-/* Modern Browsers */
 .lgd-header {
-  background-color: var(--color-section-bg);
-  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical));
-  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical));
+  background-color: var(--color-section-header-bg);
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
 }
 
 .lgd-header__inner {

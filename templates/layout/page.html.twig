@@ -54,7 +54,14 @@
 #}
 
 {# Attach libraries that render on every page #}
-{{ attach_library('localgov_base/header') }}
+{% if localgov_base_use_css %}
+  {{ attach_library('localgov_base/header') }}
+  {{ attach_library('localgov_base/footer') }}
+{% endif %}
+
+{% if localgov_base_use_js %}
+  {{ attach_library('localgov_base/header-js') }}
+{% endif %}
 
 {# Set up some variables to check that regions have content #}
 {% set has_tabs = page.tabs|render|striptags|trim is not empty %}
@@ -145,7 +152,7 @@
   <main id="main-content"> {# The "skip to content" link jumps to here. #}
     <div class="lgd-row">
 
-      {# Begins Sidebars #}
+      {# Begin Sidebars #}
       {% if has_sidebars %}
         {% if has_sidebar_first and not has_sidebar_second %}
           <aside class="lgd-row__one-third">
@@ -182,7 +189,8 @@
           <div class="lgd-row__full">
           {{ page.content }}
           </div>
-      {% endif %} {# Ends Sidebars #}
+      {% endif %}
+      {# End Sidebars #}
 
     </div>
   </main>
@@ -192,6 +200,7 @@
   {{ page.content_bottom }}
 {% endif %}
 
+{# Begin Footer Regions #}
 {% if footer_regions %}
   {# 
     Wrap all of the "footers" in a `footer` element for semantics.
@@ -200,54 +209,79 @@
     automated tools.
   #}
   <footer class="footer">
-    <div class="lgd-container">
-      <div class="lgd-row">
 {% endif %}
+  
+  {# Begin Pre-footer #}
+  {% if has_footer_first or has_footer_second or has_footer_third %}
+    <div class="footer__pre-footer">
+      <div class="lgd-container">
+        <div class="lgd-row">
+          {% if has_footer_first %}
+            <div class="lgd-row__one-third">
+              {{ page.footer_first }}
+            </div>
+          {% endif %}
 
-  {% if has_footer_first %}
-    <div class="lgd-row__one-third">
-      {{ page.footer_first }}
-    </div>
-  {% endif %}
+          {% if has_footer_second %}
+            <div class="lgd-row__one-third">
+              {{ page.footer_second }}
+            </div>
+          {% endif %}
 
-  {% if has_footer_second %}
-    <div class="lgd-row__one-third">
-      {{ page.footer_second }}
-    </div>
-  {% endif %}
-
-  {% if has_footer_third %}
-    <div class="lgd-row__one-third">
-      {{ page.footer_third }}
-    </div>
-  {% endif %}
-
-  {% if has_footer %}
-    <div class="lgd-row__full">
-      {{ page.footer }}
-    </div>
-  {% endif %}
-
-  {% if has_lower_footer_first %}
-    <div class="lgd-row__one-third">
-      {{ page.lower_footer_first }}
-    </div>
-  {% endif %}
-
-  {% if has_lower_footer_second %}
-    <div class="lgd-row__one-third">
-      {{ page.lower_footer_second }}
-    </div>
-  {% endif %}
-
-  {% if has_lower_footer_third %}
-    <div class="lgd-row__one-third">
-      {{ page.lower_footer_third }}
-    </div>
-  {% endif %}
-
-{% if footer_regions %}
+          {% if has_footer_third %}
+            <div class="lgd-row__one-third">
+              {{ page.footer_third }}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
+  {% endif %}
+  {# End Pre-footer #}
+
+  {# Begin Footer #}
+  {% if has_footer %}
+    <div class="footer__footer">
+      <div class="lgd-container">
+        <div class="lgd-row">
+          <div class="lgd-row__full">
+            {{ page.footer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {# End Footer #}
+
+  {# Begin Post-footer #}
+  {% if has_lower_footer_first or has_lower_footer_second or has_lower_footer_third %}
+    <div class="footer__post-footer">
+      <div class="lgd-container">
+        <div class="lgd-row">
+          {% if has_lower_footer_first %}
+            <div class="lgd-row__one-third">
+              {{ page.lower_footer_first }}
+            </div>
+          {% endif %}
+
+          {% if has_lower_footer_second %}
+            <div class="lgd-row__one-third">
+              {{ page.lower_footer_second }}
+            </div>
+          {% endif %}
+
+          {% if has_lower_footer_third %}
+            <div class="lgd-row__one-third">
+              {{ page.lower_footer_third }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {# End Post-footer #}
+
+{% if footer_regions %}
   </footer>
 {% endif %}
+{# End Footer Regions #}

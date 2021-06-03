@@ -1,4 +1,5 @@
 /* IE11 Fallbacks */
+
 .lgd-header {
   background-color: #652c95;
   padding-top: 1rem;
@@ -7,4 +8,35 @@
 
 .lgd-header .lgd-region--header {
   margin-right: 2rem;
+}
+
+.lgd-header__toggle {
+  margin-left: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.lgd-header__toggle:focus,
+.lgd-header__toggle:hover {
+  background-color: white;
+  color: black;
+}
+
+.lgd-header__toggle-icon::after {
+  margin-left: .5rem;
+  font-size: 1.6875rem;
+}
+
+/* Overrides for Specific Toggles */
+.lgd-header a {
+  color: white;
+}
+
+.branding__item--logo {
+  width: 160px;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-header__toggles {
+    margin-right: 1rem;
+  }
 }

@@ -8,7 +8,7 @@
 */
 
 .breadcrumbs {
-  margin-bottom: var(--section-spacing-vertical);
+  margin-bottom: var(--section-spacing-vertical-breadcrumbs);
   padding: .5rem 0;
   border-bottom: var(--border);
 }

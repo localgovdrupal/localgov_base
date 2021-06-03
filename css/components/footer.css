@@ -1,0 +1,25 @@
+.lgd-footer__pre-footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
+  background-color: var(--color-section-pre-footer-bg);
+  color: var(--color-white);
+}
+
+.lgd-footer__pre-footer a {
+  color: var(--color-white);
+}
+.lgd-footer__pre-footer a:focus {
+  color: var(--color-grey-dark);
+}
+
+.lgd-footer__footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  background-color: var(--color-section-footer-bg);
+}
+
+.lgd-footer__post-footer {
+  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
+  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
+  background-color: var(--color-section-post-footer-bg);
+}

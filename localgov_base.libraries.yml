@@ -23,10 +23,18 @@ header:
     theme:
       css/components/header.ie11.css: {}
       css/components/header.css: {}
+
+header-js:
   js:
     js/header.js: {}
   dependencies:
     - core/drupal
+
+footer:
+  css:
+    theme:
+      css/components/footer.ie11.css: {}
+      css/components/footer.css: {}
 
 breadcrumbs:
   css:
