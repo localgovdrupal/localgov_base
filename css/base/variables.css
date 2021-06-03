@@ -53,7 +53,6 @@
   --color-warning: var(--color-orange);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
-  --color-border: var(--color-grey-light);
 
   /* Fonts */
   /* 
@@ -80,9 +79,12 @@
   /* Borders */
   --border-width: 1px;
   --border-width-large: 5px;
+  --border-color: var(--color-grey-light);
+  --border-color-alert: var(--color-black);
   --border-style: solid;
-  --border: var(--border-width) var(--border-style) var(--color-border);
   --border-radius: var(--spacing-smallest);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
 
   /* Animation */
   --transition-time: .3s;

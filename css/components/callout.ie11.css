@@ -1,0 +1,41 @@
+/* 
+  @file Base styles for call out paragraphs / advanced callout div container 
+*/
+.callout {
+  font-size: 1.3125rem;
+  color: white;
+}
+
+.callout a {
+  color: white;
+}
+.callout a:focus {
+  background-color: #505a5f;
+  color: white;
+}
+
+.callout-primary {
+  background: #652c95;
+}
+
+.callout-success {
+  background: #048a04;
+}
+
+.callout-danger {
+  background: #e4251b;
+}
+
+.callout-teal {
+  background: teal;
+}
+
+.callout-carbon {
+  background: #505a5f;
+}
+
+.callout-yellow,
+.callout-yellow a {
+  background: #ffdd00;
+  color: #505a5f;
+}

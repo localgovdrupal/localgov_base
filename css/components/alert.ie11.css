@@ -1,0 +1,27 @@
+/* 
+  @file Theming the alert class - used in WYSIWYG.
+*/
+
+.alert {
+  padding: 2.5rem;
+  font-size: 1.3125rem;
+  border: 5px solid black;
+  font-weight: bold;
+  background-color: white;
+}
+
+.alert-primary {
+  border-color: #652c95;
+}
+
+.alert-info {
+  border-color: #297bbb);
+}
+
+.alert-danger {
+  border-color: #e4251b;
+}
+
+.alert-fail {
+  border-color: #ed7522;
+}

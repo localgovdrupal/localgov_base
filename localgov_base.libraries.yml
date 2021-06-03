@@ -23,6 +23,18 @@ messages:
     theme:
       css/components/messages.css: {}
 
+callout:
+  css:
+    theme:
+      css/components/callout.ie11.css: {}
+      css/components/callout.css: {}
+
+alert:
+  css:
+    theme:
+      css/components/alert.ie11.css: {}
+      css/components/alert.css: {}
+
 header:
   css:
     theme:
