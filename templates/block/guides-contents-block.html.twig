@@ -1,0 +1,42 @@
+{#
+/**
+* @file
+* Default theme implementation for the guides_contents_block block.
+*/
+#}
+
+{% if localgov_base_use_css %}
+  {{ attach_library('localgov_base/guide-nav') }}
+{% endif %}
+
+{% if localgov_base_use_js %}
+  {{ attach_library('localgov_base/guide-nav') }}
+{% endif %}
+
+{% if links %}
+
+  {% if format == 'ordered' %}
+    {% set list_type = 'ol' %}
+    {% else %}
+      {% set list_type = 'ul' %}
+  {% endif %}
+
+  {% if format == 'dashes'  %}
+    {% set list_class = 'dashes'|clean_class %}
+    {% else %}
+      {% set list_class = 'progress'|clean_class %}
+  {% endif %}
+
+  <nav class="lgd-guide-nav">
+    <{{ list_type }} class="lgd-guide-nav__list lgd-guide-nav__list--{{ list_class }}">
+      {% for link in links %}
+        {% if link.url.options.attributes.class == 'active' %}
+          <li class="lgd-guide-nav__list-item lgd-guide-nav__list-item--active" aria-current="page">{{ link.text }}</li>
+          {% else %}
+            <li class="lgd-guide-nav__list-item lgd-guide-nav__list-item--active">{{ link }}</li>
+        {% endif %}
+      {% endfor %}
+    </{{ list_type }}>
+  </nav>
+
+{% endif %}

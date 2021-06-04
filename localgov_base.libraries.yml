@@ -89,9 +89,14 @@ teaser:
       css/components/teaser.ie11.css: {}
       css/components/teaser.css: {}
 
-
 topic-list-builder:
   css:
     theme:
       css/components/topic-list-builder.ie11.css: {}
       css/components/topic-list-builder.css: {}
+
+guide-nav:
+  css:
+    theme:
+      css/components/guide-nav.ie11.css: {}
+      css/components/guide-nav.css: {}

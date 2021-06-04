@@ -1,0 +1,10 @@
+{#
+/**
+* @file
+* Default theme implementation for the guides_prev_next_block block.
+*/
+#}
+<nav class="localgov_guides--navigation">
+  {% if previous_url %}<a href="{{ previous_url }}" class="btn btn-carbon localgov_guides--previous" aria-label="Previous: {{ previous_title }}"><span class="fa fa-chevron-left"></span>Previous</a>{% endif %}
+  {% if next_url %}<a href="{{ next_url }}" class="btn btn-primary localgov_guides--next" aria-label="Next: {{ next_title }}"><span class="fa fa-chevron-right"></span>Next</a>{% endif %}
+</nav>
