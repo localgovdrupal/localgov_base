@@ -6,7 +6,8 @@ body {
 }
 
 a {
-  color: #652c95; /* IE11 */
+  color: #652c95;
+  transition: 0.3s;
 }
 
 a:focus {

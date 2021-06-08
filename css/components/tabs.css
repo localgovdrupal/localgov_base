@@ -29,7 +29,7 @@
 
 .lgd-region--tabs .tabs > ul > li a.is-active {
   color: white;
-  background: green;
+  background-color: green;
 }
 
 .lgd-region--tabs .tabs > ul > li a:focus,

@@ -87,7 +87,7 @@
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
 
   /* Animation */
-  --transition-time: .3s;
+  --transition-time: 0.3s;
 
   /* Content */
   --breadcrumbs-divider: "»";
@@ -114,4 +114,12 @@
   --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
   --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
   --section-spacing-horizontal-guide-nav: var(--spacing-large);
+  --button-padding-vertical: var(--spacing);
+  --button-padding-horizontal: var(--spacing);
+  --button-border-radius: 0;
+  --button-text-color: var(--color-white);
+  --button-text-color-hover: var(--color-accent);
+  --button-border-color: var(--color-accent);
+  --button-bg-color: var(--color-accent);
+  --button-bg-color-hover: var(--color-white);
 }

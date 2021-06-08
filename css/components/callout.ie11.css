@@ -15,27 +15,27 @@
 }
 
 .callout-primary {
-  background: #652c95;
+  background-color: #652c95;
 }
 
 .callout-success {
-  background: #048a04;
+  background-color: #048a04;
 }
 
 .callout-danger {
-  background: #e4251b;
+  background-color: #e4251b;
 }
 
 .callout-teal {
-  background: teal;
+  background-color: teal;
 }
 
 .callout-carbon {
-  background: #505a5f;
+  background-color: #505a5f;
 }
 
 .callout-yellow,
 .callout-yellow a {
-  background: #ffdd00;
+  background-color: #ffdd00;
   color: #505a5f;
 }

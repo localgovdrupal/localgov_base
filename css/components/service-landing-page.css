@@ -1,5 +1,5 @@
 .slp__contact {
-  background: var(--color-grey-light);
+  background-color: var(--color-grey-light);
   border-left: var(--border-width-large) var(--border-style) var(--color-accent);
   padding: var(--spacing);
   margin-bottom: var(--vertical-rhythm-spacing);

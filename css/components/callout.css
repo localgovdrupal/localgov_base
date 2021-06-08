@@ -24,32 +24,32 @@
 */
 /* Callout primary bg and link colour */
 .callout-primary {
-  background: var(--color-accent);
+  background-color: var(--color-accent);
 }
 
 /* Callout success bg and link colour */
 .callout-success {
-  background: var(--color-success);
+  background-color: var(--color-success);
 }
 
 /* Callout danger bg and link colour */
 .callout-danger {
-  background: var(--color-danger);
+  background-color: var(--color-danger);
 }
 
 /* Callout teal bg and link colour */
 .callout-teal {
-  background: teal;
+  background-color: teal;
 }
 
 /* Callout carbon bg and link colour */
 .callout-carbon {
-  background: var(--color-grey-dark);
+  background-color: var(--color-grey-dark);
 }
 
 /* Callout yellow bg and link colour */
 .callout-yellow,
 .callout-yellow a {
-  background: var(--color-yellow);
+  background-color: var(--color-yellow);
   color: var(--color-grey-dark);
 }

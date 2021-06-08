@@ -45,6 +45,7 @@ a:focus {
   -webkit-box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
   box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
   text-decoration: none;
+  transition: var(--transition-time);
 }
 
 h1,

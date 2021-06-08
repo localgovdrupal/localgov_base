@@ -100,3 +100,9 @@ guide-nav:
     theme:
       css/components/guide-nav.ie11.css: {}
       css/components/guide-nav.css: {}
+
+prev-next:
+  css:
+    theme:
+      css/components/prev-next.ie11.css: {}
+      css/components/prev-next.css: {}

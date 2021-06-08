@@ -1,3 +1,7 @@
+.lgd-footer {
+  margin-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+}
+
 .lgd-footer__pre-footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
