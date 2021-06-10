@@ -24,3 +24,71 @@ function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#description'   => t("Uncheck this box if you want to disable the theme's JavaScript"),
   );
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function localgov_base_preprocess_page(&$variables) {
+  // Work around for Drupal core issue.
+  // Blocks employ lazy building.  This makes it difficult to determine from
+  // **Twig templates** if they will eventually produce empty content or not.
+  // @see https://www.drupal.org/node/953034
+  // @see https://www.drupal.org/forum/support/module-development-and-code-questions/2016-04-07/drupal-8-regions-with-and-empty#comment-12149518
+  // I think we could probably tidy this up to create an array of regions, then loop over them.
+  // I hadn't realised there would be so many when I started!
+  $tabs_copy = $variables['page']['tabs'];
+  $mobile_search_copy = $variables['page']['mobile_search'];
+  $primary_menu_copy = $variables['page']['primary_menu'];
+  $secondary_menu_copy = $variables['page']['secondary_menu'];
+  $banner_copy = $variables['page']['banner'];
+  $breadcrumb_copy = $variables['page']['breadcrumb'];
+  $messages_copy = $variables['page']['messages'];
+  $content_top_copy = $variables['page']['content_top'];
+  $sidebar_first_copy = $variables['page']['sidebar_first'];
+  $sidebar_second_copy = $variables['page']['sidebar_second'];
+  $content_bottom_copy = $variables['page']['content_bottom'];
+  $footer_first_copy = $variables['page']['footer_first'];
+  $footer_second_copy = $variables['page']['footer_second'];
+  $footer_third_copy = $variables['page']['footer_third'];
+  $footer_copy = $variables['page']['footer'];
+  $lower_footer_first_copy = $variables['page']['lower_footer_first'];
+  $lower_footer_second_copy = $variables['page']['lower_footer_second'];
+  $lower_footer_third_copy = $variables['page']['lower_footer_third'];
+  $rendered_tabs = Drupal::service('renderer')->renderPlain($tabs_copy);
+  $rendered_mobile_search = Drupal::service('renderer')->renderPlain($mobile_search_copy);
+  $rendered_primary_menu = Drupal::service('renderer')->renderPlain($primary_menu_copy);
+  $rendered_secondary_menu = Drupal::service('renderer')->renderPlain($secondary_menu_copy);
+  $rendered_banner = Drupal::service('renderer')->renderPlain($banner_copy);
+  $rendered_breadcrumb = Drupal::service('renderer')->renderPlain($breadcrumb_copy);
+  $rendered_messages = Drupal::service('renderer')->renderPlain($messages_copy);
+  $rendered_content_top = Drupal::service('renderer')->renderPlain($content_top_copy);
+  $rendered_sidebar_first = Drupal::service('renderer')->renderPlain($sidebar_first_copy);
+  $rendered_sidebar_second = Drupal::service('renderer')->renderPlain($sidebar_second_copy);
+  $rendered_content_bottom = Drupal::service('renderer')->renderPlain($content_bottom_copy);
+  $rendered_footer_first = Drupal::service('renderer')->renderPlain($footer_first_copy);
+  $rendered_footer_second = Drupal::service('renderer')->renderPlain($footer_second_copy);
+  $rendered_footer_third = Drupal::service('renderer')->renderPlain($footer_third_copy);
+  $rendered_footer = Drupal::service('renderer')->renderPlain($footer_copy);
+  $rendered_lower_footer_first = Drupal::service('renderer')->renderPlain($lower_footer_first_copy);
+  $rendered_lower_footer_second = Drupal::service('renderer')->renderPlain($lower_footer_second_copy);
+  $rendered_lower_footer_third = Drupal::service('renderer')->renderPlain($lower_footer_third_copy);
+  $variables['has_tabs'] = trim(strip_tags($rendered_tabs));
+  $variables['has_mobile_search'] = trim(strip_tags($rendered_mobile_search));
+  $variables['has_primary_menu'] = trim(strip_tags($rendered_primary_menu));
+  $variables['has_secondary_menu'] = trim(strip_tags($rendered_secondary_menu));
+  $variables['has_banner'] = trim(strip_tags($rendered_banner));
+  $variables['has_breadcrumb'] = trim(strip_tags($rendered_breadcrumb));
+  $variables['has_messages'] = trim(strip_tags($rendered_messages));
+  $variables['has_content_top'] = trim(strip_tags($rendered_content_top));
+  $variables['has_sidebar_first'] = trim(strip_tags($rendered_sidebar_first));
+  $variables['has_sidebar_second'] = trim(strip_tags($rendered_sidebar_second));
+  $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
+  $variables['has_content_bottom'] = trim(strip_tags($rendered_content_bottom));
+  $variables['has_footer_first'] = trim(strip_tags($rendered_footer_first));
+  $variables['has_footer_second'] = trim(strip_tags($rendered_footer_second));
+  $variables['has_footer_third'] = trim(strip_tags($rendered_footer_third));
+  $variables['has_footer'] = trim(strip_tags($rendered_footer));
+  $variables['has_lower_footer_first'] = trim(strip_tags($rendered_lower_footer_first));
+  $variables['has_lower_footer_second'] = trim(strip_tags($rendered_lower_footer_second));
+  $variables['has_lower_footer_third'] = trim(strip_tags($rendered_lower_footer_third));
+}
