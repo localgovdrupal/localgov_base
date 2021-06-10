@@ -41,6 +41,12 @@ header:
       css/components/header.ie11.css: {}
       css/components/header.css: {}
 
+secondary-menu:
+  css:
+    theme:
+      css/components/secondary-menu.ie11.css: {}
+      css/components/secondary-menu.css: {}
+
 header-js:
   js:
     js/header.js: {}

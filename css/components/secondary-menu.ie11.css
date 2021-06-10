@@ -1,0 +1,20 @@
+/* Theming Secondary Nav (services list region) */
+.region-secondary-menu {
+  margin-top: 1.5rem;
+  padding: 2.5rem 2.5rem 1.5rem;
+  background-color: white;
+}
+
+@media screen and (min-width: 48rem) {
+  .region-secondary-menu .menu {
+    column-count: 3;
+  }
+}
+
+.region-secondary-menu .menu-item {
+  margin-bottom: 1rem;
+}
+
+.region-secondary-menu .menu-item > a {
+  color: black;
+}

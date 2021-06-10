@@ -53,18 +53,6 @@
 */
 #}
 
-{# Attach libraries that render on every page #}
-{% if localgov_base_use_css %}
-  {{ attach_library('localgov_base/header') }}
-  {{ attach_library('localgov_base/footer') }}
-  {{ attach_library('localgov_base/callout') }}
-  {{ attach_library('localgov_base/alert') }}
-{% endif %}
-
-{% if localgov_base_use_js %}
-  {{ attach_library('localgov_base/header-js') }}
-{% endif %}
-
 {# Set up some variables to check that regions have content #}
 {% set has_tabs = page.tabs|render|striptags|trim is not empty %}
 {#

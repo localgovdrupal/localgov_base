@@ -122,4 +122,9 @@
   --button-border-color: var(--color-accent);
   --button-bg-color: var(--color-accent);
   --button-bg-color-hover: var(--color-white);
+  /* Secondary Manu Variables */
+  --section-spacing-vertical-secondary-menu: var(--spacing-largest);
+  --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
+  --secondary-menu-link-color: var(--color-black);
+  --secondary-menu-column-count: 3;
 }
