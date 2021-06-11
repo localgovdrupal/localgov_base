@@ -10,3 +10,12 @@
   color: #652c95;
   background-color: white;
 }
+
+.lgd-prev-next__icon path {
+  fill: white;
+}
+
+.lgd-prev-next__link:focus .lgd-prev-next__icon path,
+.lgd-prev-next__link:hover .lgd-prev-next__icon path {
+  fill: #652c95;
+}

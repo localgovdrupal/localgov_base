@@ -13,14 +13,37 @@
 %}
 
 {% if localgov_base_use_css %}
-  {{ attach_library('localgov_base/prev-next') }}
+	{{ attach_library('localgov_base/prev-next') }}
 {% endif %}
 
-<nav{{ attributes.addClass(classes)}}>
-  {% if previous_url %}
-    <a href="{{ previous_url }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous'|t }}: {{ previous_title }}">{{ 'Previous'|t }}</a>
-  {% endif %}
-  {% if next_url %}
-    <a href="{{ next_url }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next'|t }}: {{ next_title }}">{{ 'Next'|t }}</a>
-  {% endif %}
+{% set previous_icon = 'chevron-left' %}
+{% set next_icon = 'chevron-right' %}
+
+<nav{{attributes.addClass(classes)}}>
+	<ul class="lgd-prev-next__list">
+		{% if previous_url %}
+			<li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">
+				<a href="{{ previous_url }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous'|t }}: {{ previous_title }}">
+          {% include "@localgov_base/includes/icons/icon.html.twig" with {
+              icon_name: previous_icon,
+              icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
+            }
+          %}
+          {{ 'Previous'|t }}
+        </a>
+			</li>
+		{% endif %}
+		{% if next_url %}
+			<li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">
+				<a href="{{ next_url }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next'|t }}: {{ next_title }}">
+          {{ 'Next'|t }}
+          {% include "@localgov_base/includes/icons/icon.html.twig" with {
+              icon_name: next_icon,
+              icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
+            }
+          %}
+        </a>
+			</li>
+		{% endif %}
+	</ul>
 </nav>

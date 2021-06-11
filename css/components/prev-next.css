@@ -1,5 +1,19 @@
+ul.lgd-prev-next__list {
+  display: flex;
+  padding-left: 0;
+  list-style-type: none;
+}
+/* 
+  This needs to be very specific to override the specificity of the 
+  step-by-step module CSS. I'd prefer to use just .lgd-prev-next__list-item
+*/
+ul.lgd-prev-next__list li.lgd-prev-next__list-item {
+  margin-right: .5rem;
+}
+
 .lgd-prev-next__link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   border: var(--border);
   border-color: var(--button-border-color);
@@ -12,4 +26,21 @@
 .lgd-prev-next__link:hover {
   color: var(--button-text-color-hover);
   background-color: var(--button-bg--color-hover);
+}
+
+.lgd-prev-next__icon path {
+  fill: var(--button-icon-color);
+}
+
+.lgd-prev-next__icon--prev {
+  margin-right: .5rem;
+}
+
+.lgd-prev-next__icon--next {
+  margin-left: .5rem;
+}
+
+.lgd-prev-next__link:focus .lgd-prev-next__icon path,
+.lgd-prev-next__link:hover .lgd-prev-next__icon path {
+  fill: var(--button-icon-color-hover);
 }

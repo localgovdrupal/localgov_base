@@ -119,6 +119,8 @@
   --button-border-radius: 0;
   --button-text-color: var(--color-white);
   --button-text-color-hover: var(--color-accent);
+  --button-icon-color: var(--button-text-color);
+  --button-icon-color-hover: var(--color-accent);
   --button-border-color: var(--color-accent);
   --button-bg-color: var(--color-accent);
   --button-bg-color-hover: var(--color-white);

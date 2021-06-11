@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Theme implementation for a view template to display a list of rows.
+ *
+ * Applies to the *Step by step* View's "Prev/Next block" display only.
+ * Changes include:
+ * - Display only *two* list items at most: One for the previous step node and
+ *   another for the next step node.
+ * - Instead of the Step title, display Prev or Next.
+ * - On the very first step, use "Start" instead of "Next".
+ * - Apply the "step--next" and "step--prev" classes on appropriate list items.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - view: The view object.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ * - has_prev_step: Have we got a previous step node?
+ * - has_next_step: Have we got a ntext step node?
+ * - prev_step_nid: Node Id of the previous node, if any.
+ * - next_step_nid: Node Id of the next node, if any.
+ * - prev_step_index: Array index of the previous node, if any.
+ * - next_step_index: Array index of the next node, if any.
+ * - prev_step_link_text: Prev
+ * - next_step_link_text: Start|Next
+ *
+ * @see template_preprocess_views_view_list()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if localgov_base_use_css %}
+	{{ attach_library('localgov_base/prev-next') }}
+{% endif %}
+
+{% set previous_icon = 'chevron-left' %}
+{% set next_icon = 'chevron-right' %}
+
+<nav class="lgd-prev-next lgd-prev-next--step-by-step">
+	{% set has_wrapper_attributes = attributes.toString() %}
+	{% if has_wrapper_attributes -%}
+		<div{{attributes}}>
+		{% endif %}
+		{% if title %}
+			<h3>{{ title }}</h3>
+		{% endif %}
+
+		<{{list.type}}{{list.attributes.addClass('lgd-prev-next__list') }}>
+			{% if has_prev_step %}
+				<li{{rows[prev_step_index].attributes.addClass('lgd-prev-next__list-item', 'lgd-prev-next__list-item--prev') }}>
+					<a href="{{ path('entity.node.canonical', {'node': prev_step_nid }) }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous step'|t }}: {{ prev_step_title }}">
+						{% include "@localgov_base/includes/icons/icon.html.twig" with {
+                icon_name: previous_icon,
+                icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
+              }
+            %}
+						{{ prev_step_link_text }}</a>
+				</li>
+			{% endif %}
+
+			{% if has_next_step %}
+				<li{{rows[next_step_index].attributes.addClass('lgd-prev-next__list-item', 'lgd-prev-next__list-item--next') }}>
+					<a href="{{ path('entity.node.canonical', {'node': next_step_nid }) }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next step'|t }}: {{ next_step_title }}">
+						{{ next_step_link_text }}
+						{% include "@localgov_base/includes/icons/icon.html.twig" with {
+                icon_name: next_icon,
+                icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
+              }
+            %}
+          </a>
+				</li>
+			{% endif %}
+		</{{list.type}}>
+
+		{% if has_wrapper_attributes -%}
+		</div>
+	{% endif %}
+</div>

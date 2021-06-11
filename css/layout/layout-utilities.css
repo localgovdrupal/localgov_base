@@ -17,6 +17,7 @@
 }
 
 .lgd-icon svg {
+  display: block;
   width: var(--spacing);
   height: auto;
 }
