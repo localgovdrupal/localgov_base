@@ -1,0 +1,23 @@
+.sidebar .lgd-region__inner > * {
+  padding: var(--sidebar-exposed-form-padding-vertical) var(--sidebar-exposed-form-padding-horizontal);
+  background-color: var(--sidebar-exposed-form-bg-color);
+}
+
+.sidebar .lgd-region__inner > * + * {
+  margin-top: var(--sidebar-exposed-form-item-spacing);
+}
+
+.sidebar .views-exposed-form label {
+  display: block;
+  font-weight: bold;
+}
+
+.sidebar .views-exposed-form .form-item + .form-item,
+.sidebar .views-exposed-form .form-item + .form-actions {
+  margin-top: var(--sidebar-exposed-form-item-spacing);
+}
+
+.sidebar .views-exposed-form input,
+.sidebar .views-exposed-form select {
+  width: 100%;
+}

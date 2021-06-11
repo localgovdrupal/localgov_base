@@ -31,6 +31,10 @@
   {{ attach_library('localgov_base/tabs') }}
 {% endif %}
 
+{% if region == 'sidebar_first' or region == 'sidebar_second' %}
+  {{ attach_library('localgov_base/sidebar') }}
+{% endif %}
+
 {# 
   Often if we need a custom region template, it's because that region
   needs to be full-width. Let's (at least for now), create an 

@@ -114,9 +114,23 @@
   --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
   --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
   --section-spacing-horizontal-guide-nav: var(--spacing-large);
+  
+  /* Input Elements */
+  --input-padding-vertical: var(--spacing);
+  --input-padding-horizontal: var(--spacing);
+  --input-text-color: var(--color-white);
+  --input-text-color-hover: var(--color-accent);
+  --input-icon-color: var(--input-text-color);
+  --input-icon-color-hover: var(--color-accent);
+  --input-border-color: var(--color-grey-medium);
+  --input-border-color-hover: var(--color-grey-medium);
+  --input-bg-color: var(--color-white);
+  --input-bg-color-hover: var(--color-grey-light);
+  --input-border-radius: 0;
+  
+  /* Button Elements (and button-styled links) */
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
-  --button-border-radius: 0;
   --button-text-color: var(--color-white);
   --button-text-color-hover: var(--color-accent);
   --button-icon-color: var(--button-text-color);
@@ -124,9 +138,16 @@
   --button-border-color: var(--color-accent);
   --button-bg-color: var(--color-accent);
   --button-bg-color-hover: var(--color-white);
+ 
   /* Secondary Manu Variables */
   --section-spacing-vertical-secondary-menu: var(--spacing-largest);
   --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
   --secondary-menu-link-color: var(--color-black);
   --secondary-menu-column-count: 3;
+
+  /* Sidebar Items */
+  --sidebar-exposed-form-bg-color: var(--color-grey-light);
+  --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
+  --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
+  --sidebar-exposed-form-item-spacing: var(--spacing);
 }

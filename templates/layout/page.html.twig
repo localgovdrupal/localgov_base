@@ -109,7 +109,7 @@
       {# Begin Sidebars #}
       {% if has_sidebars %}
         {% if has_sidebar_first and not has_sidebar_second %}
-          <aside class="lgd-row__one-third">
+          <aside class="lgd-row__one-third sidebar sidebar--first">
             {{ page.sidebar_first }}
           </aside>
           <div class="lgd-row__two-thirds">
@@ -121,19 +121,19 @@
           <div class="lgd-row__two-thirds">
             {{ page.content }}
           </div>
-          <aside class="lgd-row__one-third">
+          <aside class="lgd-row__one-third sidebar sidebar--second">
             {{ page.sidebar_second }}
           </aside>
         {% endif %}
 
         {% if has_sidebar_first and has_sidebar_second %}
-          <aside class="lgd-row__one-quarter">
+          <aside class="lgd-row__one-quarter sidebar sidebar--first">
             {{ page.sidebar_first }}
           </aside>
           <div class="lgd-row__one-half">
             {{ page.content }}
           </div>
-          <aside class="lgd-row__one-quarter">
+          <aside class="lgd-row__one-quarter sidebar sidebar--second">
             {{ page.sidebar_second }}
           </aside>
         {% endif %}

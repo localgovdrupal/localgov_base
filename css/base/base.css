@@ -109,6 +109,117 @@ ol ul {
   margin-bottom: 0;
 }
 
+/* Inputs and Select Lists */
+input:not([type="submit"]),
+input:not([type="checkbox"]),
+input:not([type="radio"]),
+select {
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  border: var(--border);
+  background-color: var(--input-bg-color);
+  border-color: var(--input-border-color);
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
+  border: var(--border);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  color: var(--button-text-color);
+  background-color: var(--button-bg-color);
+}
+
+button:focus,
+button:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  color: var(--button-text-color-hover);
+  background-color: var(--button-bg--color-hover);
+  text-decoration: underline;
+}
+
+/* 
+  Checkboxes
+
+  This checkboxes styling is taken directly from the gov.uk design system:
+    - https://design-system.service.gov.uk/components/checkboxes/
+
+  We are adding a .form-checkboxes class around each of these here to make sure
+  this only affects checkboxes created by Drupal. If we don't, the position absolute 
+  can have very unwanted effects.
+
+  If you need to create custom checkboxes, make sure you have the same class
+  wrapping them.
+*/
+
+.form-checkboxes,
+.facet-item {
+  position: relative;
+}
+
+.form-checkboxes input[type="checkbox"],
+.facet-item input[type="checkbox"] {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+}
+
+.form-checkboxes input[type="checkbox"] + label,
+.facet-item input[type="checkbox"] + label {
+  display: inline-block;
+  margin-left: 40px;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.form-checkboxes input[type="checkbox"] + label::before,
+.facet-item input[type="checkbox"] + label::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  background: transparent;
+}
+.form-checkboxes input[type="checkbox"] + label::after,
+.facet-item input[type="checkbox"] + label::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  width: 23px;
+  height: 12px;
+  transform: rotate(-45deg);
+  border: solid;
+  border-width: 0 0 5px 5px;
+  border-top-color: transparent;
+  opacity: 0;
+  background: transparent
+}
+
+.form-checkboxes input[type="checkbox"]:focus + label:before,
+.facet-item input[type="checkbox"]:focus + label:before {
+  border-width: 4px;
+  box-shadow: 0 0 0 3px var( --color-focus)
+}
+.form-checkboxes input[type="checkbox"]:checked + label:after,
+.facet-item input[type="checkbox"]:checked + label:after {
+  opacity: 1
+}
+
 sub,
 sup {
   position: relative;

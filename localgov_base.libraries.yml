@@ -112,3 +112,9 @@ prev-next:
     theme:
       css/components/prev-next.ie11.css: {}
       css/components/prev-next.css: {}
+
+sidebar:
+  css:
+    theme:
+      css/components/sidebar.ie11.css: {}
+      css/components/sidebar.css: {}
