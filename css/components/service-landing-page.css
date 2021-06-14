@@ -5,6 +5,10 @@
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
+.slp__contact-list {
+  padding-left: 0;
+}
+
 .slp__contact-list-item,
 .slp__contact-title {
   display: flex;
