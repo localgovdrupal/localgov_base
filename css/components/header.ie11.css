@@ -26,7 +26,6 @@
   font-size: 1.6875rem;
 }
 
-/* Overrides for Specific Toggles */
 .lgd-header a {
   color: white;
 }
@@ -35,6 +34,11 @@
   width: 160px;
 }
 
+.branding__item--logo a:focus {
+  outline-color: white;
+}
+
+/* Overrides for Specific Toggles */
 @media screen and (min-width: 48rem) {
   .lgd-header__toggles {
     margin-right: 1rem;

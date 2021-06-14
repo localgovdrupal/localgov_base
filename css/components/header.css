@@ -115,3 +115,14 @@
 .branding__item--logo {
   width: var(--width-logo);
 }
+
+.branding__item--logo a {
+  transition: none;
+}
+.branding__item--logo a:focus {
+  outline-width: 1px;
+  outline-style: dashed;
+  outline-color: var(--color-white);
+  box-shadow: none;
+  background-color: transparent;
+}
