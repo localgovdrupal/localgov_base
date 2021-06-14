@@ -55,22 +55,30 @@
     'primary_menu',
     'secondary_menu',
     'search',
+    'sidebar_first',
+    'sidebar_second',
   ] 
 %}
 
 {% if content %}
   <section{{ attributes.addClass(classes) }}>
     
-    {% if region not in full_width_regions %}
-      <div class="lgd-container padding-horizontal">
+    {% if region in full_width_regions %}
+      <div class="lgd-row">
+        <div class="lgd-row__full">
+      {% else %}
+        <div class="lgd-container padding-horizontal">
     {% endif %}
 
     <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">
       {{ content }}
     </div>
     
-    {% if not region in full_width_regions %}
-      </div>
+    {% if region in full_width_regions %}
+       </div>
+        </div>
+      {% else %}
+        </div> 
     {% endif %}
 
   </section>

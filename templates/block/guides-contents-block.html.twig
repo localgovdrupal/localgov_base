@@ -33,7 +33,7 @@
         {% if link.url.options.attributes.class == 'active' %}
           <li class="lgd-guide-nav__list-item lgd-guide-nav__list-item--active" aria-current="page">{{ link.text }}</li>
           {% else %}
-            <li class="lgd-guide-nav__list-item lgd-guide-nav__list-item--active">{{ link }}</li>
+            <li class="lgd-guide-nav__list-item">{{ link }}</li>
         {% endif %}
       {% endfor %}
     </{{ list_type }}>
