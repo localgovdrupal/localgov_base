@@ -118,3 +118,9 @@ sidebar:
     theme:
       css/components/sidebar.ie11.css: {}
       css/components/sidebar.css: {}
+
+ia-block:
+  css:
+    theme:
+      css/components/ia-block.ie11.css: {}
+      css/components/ia-block.css: {}

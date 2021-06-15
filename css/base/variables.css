@@ -150,4 +150,8 @@
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
   --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
   --sidebar-exposed-form-item-spacing: var(--spacing);
+
+  /* IA Block */
+  --ia-block-bg-color: var(--color-white);
+  --ia-block-bg-color-promoted: var(--color-white);
 }

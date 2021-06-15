@@ -1,0 +1,10 @@
+
+.ia-block {
+  margin-bottom: 1rem;
+}
+
+.ia-block--promoted {
+  padding: 1rem;
+  border: 5px solid #f3f2f1;
+  border-color: #652c95;
+}
