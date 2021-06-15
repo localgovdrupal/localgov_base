@@ -124,3 +124,9 @@ ia-block:
     theme:
       css/components/ia-block.ie11.css: {}
       css/components/ia-block.css: {}
+
+featured-subsite:
+  css:
+    theme:
+      css/components/featured-subsite.ie11.css: {}
+      css/components/featured-subsite.css: {}

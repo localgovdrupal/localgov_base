@@ -154,4 +154,7 @@
   /* IA Block */
   --ia-block-bg-color: var(--color-white);
   --ia-block-bg-color-promoted: var(--color-white);
+
+  /* Featured Subsite */
+  --featured-subsite-bg-color: var(--color-grey-light);
 }

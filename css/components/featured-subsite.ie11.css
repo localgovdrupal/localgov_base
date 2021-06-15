@@ -1,0 +1,18 @@
+.featured-subsite {
+  padding-bottom: 1rem;
+  background-color: #f3f2f1;
+
+}
+.featured-subsite > * {
+  margin-bottom: 1.5rem;
+}
+
+.featured-subsite > * {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.featured-subsite__image {
+  margin-right: 0;
+  margin-left: 0;
+}

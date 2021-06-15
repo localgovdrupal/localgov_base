@@ -1,0 +1,17 @@
+.featured-subsite {
+  padding-bottom: var(--spacing);
+  background-color: var(--featured-subsite-bg-color);
+
+}
+.featured-subsite > * {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.featured-subsite > *:not(.featured-subsite__image) {
+  margin-right: var(--spacing-larger);
+  margin-left: var(--spacing-larger);
+}
+
+.featured-subsite__image img {
+  width: 100%;
+}
