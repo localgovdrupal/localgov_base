@@ -63,22 +63,16 @@
 {% if content %}
   <section{{ attributes.addClass(classes) }}>
     
-    {% if region in full_width_regions %}
-      <div class="lgd-row">
-        <div class="lgd-row__full">
-      {% else %}
-        <div class="lgd-container padding-horizontal">
+    {% if not region in full_width_regions %}
+      <div class="lgd-container padding-horizontal">
     {% endif %}
 
     <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">
       {{ content }}
     </div>
     
-    {% if region in full_width_regions %}
-       </div>
-        </div>
-      {% else %}
-        </div> 
+    {% if not region in full_width_regions %}
+      </div> 
     {% endif %}
 
   </section>
