@@ -1,0 +1,9 @@
+.key-contacts .field--name-localgov-paragraphs > .field__item + .field__item {
+  margin-top: var(--vertical-rhythm-spacing);
+  padding-top: var(--vertical-rhythm-spacing);
+  border-top: var(--border);
+}
+
+.key-contact-item__content > * {
+  margin-top: var(--spacing);
+}

@@ -135,3 +135,9 @@ link-and-summary:
     theme:
       css/components/link-and-summary.ie11.css: {}
       css/components/link-and-summary.css: {}
+
+key-contacts:
+  css:
+    theme:
+      css/components/key-contacts.ie11.css: {}
+      css/components/key-contacts.css: {}
