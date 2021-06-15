@@ -129,4 +129,9 @@ featured-subsite:
   css:
     theme:
       css/components/featured-subsite.ie11.css: {}
-      css/components/featured-subsite.css: {}
+
+link-and-summary:
+  css:
+    theme:
+      css/components/link-and-summary.ie11.css: {}
+      css/components/link-and-summary.css: {}
