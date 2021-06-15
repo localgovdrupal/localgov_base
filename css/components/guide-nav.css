@@ -10,7 +10,7 @@
 
 @media screen and (min-width: 48rem) {
   .lgd-guide-nav__list {
-    column-count: 3;
+    column-count: var(--guide-nav-column-count);
   }
 }
 
@@ -21,21 +21,4 @@
 
 .lgd-guide-nav__list-item > a {
   font-weight: bold;
-}
-
-/* Overrides for Dashes List Type */
-.lgd-guide-nav__list--dashes {
-  list-style: none;
-  padding-left: 0;
-}
-
-.lgd-guide-nav__list--dashes .lgd-guide-nav__list-item {
-  position: relative;
-  padding-left: 1rem;
-}
-.lgd-guide-nav__list--dashes .lgd-guide-nav__list-item::before {
-  position: absolute;
-  left:  0;
-  width: 1rem;
-  content: "-";
 }

@@ -1,0 +1,16 @@
+.lgd-guide-nav {
+  margin-bottom: 1.5rem;
+  padding: 2.3125rem 1.3125rem;
+  background-color: #f3f2f1;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-guide-nav__list {
+    column-count: 3;
+  }
+}
+
+.lgd-guide-nav__list-item {
+  margin-bottom: 1rem;
+  font-size: 1.3125rem;
+}

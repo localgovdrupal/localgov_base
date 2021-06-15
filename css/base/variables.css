@@ -112,8 +112,6 @@
   --section-spacing-vertical-footer: var(--spacing);
   --section-spacing-vertical-post-footer: var(--spacing);
   --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
-  --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
-  --section-spacing-horizontal-guide-nav: var(--spacing-large);
   
   /* Input Elements */
   --input-padding-vertical: var(--spacing);
@@ -150,6 +148,11 @@
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);
   --sidebar-exposed-form-padding-horizontal: var(--spacing-larger);
   --sidebar-exposed-form-item-spacing: var(--spacing);
+
+  /* Guide Navigation */
+  --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
+  --section-spacing-horizontal-guide-nav: var(--spacing-large);
+  --guide-nav-column-count: 3;
 
   /* IA Block */
   --ia-block-bg-color: var(--color-white);
