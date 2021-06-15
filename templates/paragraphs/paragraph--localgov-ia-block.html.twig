@@ -60,7 +60,7 @@
     <h2 class="ia-block__title">
 			{# Don't print a anchor tag unless the title is linked #}
     {% if field_link %}
-      <a class="ia-block__title-link" href="{{ field_link }}">{{ content.localgov_ia_block_title }}</a>
+      <a class="ia-block__title-link" href="{{ field_link }}">{{ paragraph.localgov_ia_block_title.value }}</a>
     {% else %}
       {{ content.localgov_ia_block_title }}
     {% endif %}
