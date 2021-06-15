@@ -63,7 +63,7 @@
 {% if content %}
   <section{{ attributes.addClass(classes) }}>
     
-    {% if not region in full_width_regions %}
+    {% if region not in full_width_regions %}
       <div class="lgd-container padding-horizontal">
     {% endif %}
 
@@ -71,7 +71,7 @@
       {{ content }}
     </div>
     
-    {% if not region in full_width_regions %}
+    {% if region not in full_width_regions %}
       </div> 
     {% endif %}
 
