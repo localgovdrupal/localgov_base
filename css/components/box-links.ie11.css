@@ -1,0 +1,17 @@
+.box-links-listing {
+  margin-bottom: 1.5rem;
+}
+
+.box-links-listing--boxes .box-links-listing__list-item + .box-links-listing__list-item {
+  margin-top: 1.5rem;
+}
+.box-link {
+  position: relative;
+  border: 1px solid #f3f2f1;
+}
+
+.box-link > * {
+  margin-bottom: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}

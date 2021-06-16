@@ -141,3 +141,9 @@ key-contacts:
     theme:
       css/components/key-contacts.ie11.css: {}
       css/components/key-contacts.css: {}
+
+box-links:
+  css:
+    theme:
+      css/components/box-links.ie11.css: {}
+      css/components/box-links.css: {}
