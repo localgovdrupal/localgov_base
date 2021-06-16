@@ -160,4 +160,8 @@
 
   /* Featured Subsite */
   --featured-subsite-bg-color: var(--color-grey-light);
+
+  /* Box Links */
+  --box-link-border: var(--border);
+  --box-link-content-spacing: var(--spacing-small);
 }
