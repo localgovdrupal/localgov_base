@@ -3,21 +3,6 @@
   {{ attach_library('localgov_base/header-js') }}
 {% endif %}
 
-<noscript>
-  {#
-    If JavaScript is disabled, we show all header items and hide
-    the toggle buttons.
-  #}
-  <style>
-    .lgd-header__nav {
-      display: block !important;
-    }
-    .lgd-header__toggle {
-      display: none !important;
-    }
-  </style>
-</noscript>
-
 <header class="lgd-header">
 	<div class="lgd-container">
 		<div class="lgd-row">

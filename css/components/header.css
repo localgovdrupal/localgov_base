@@ -126,3 +126,14 @@
   box-shadow: none;
   background-color: transparent;
 }
+
+/* 
+  If JavaScript is disabled, 
+  we show all header items and hide the toggle buttons. 
+*/
+.no-js .lgd-header__nav {
+  display: block !important;
+}
+.no-js .lgd-header__toggle {
+  display: none !important;
+}
