@@ -1,0 +1,13 @@
+.lgd-image--has-caption {
+  border: var(--image-with-caption-border);
+  border-color: var(--image-with-caption-border-color);
+}
+
+.lgd-image__image + * {
+  padding: var(--image-with-caption-padding);
+  background-color: var(--image-with-caption-bg-color);
+}
+
+.lgd-image--has-caption *:last-of-type {
+  margin-bottom: 0;
+}
