@@ -159,3 +159,9 @@ image-with-caption:
     theme:
       css/components/image-with-caption.ie11.css: {}
       css/components/image-with-caption.css: {}
+
+quote:
+  css:
+    theme:
+      css/components/quote.ie11.css: {}
+      css/components/quote.css: {}
