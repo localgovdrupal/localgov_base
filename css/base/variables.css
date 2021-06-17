@@ -164,4 +164,18 @@
   /* Box Links */
   --box-link-border: var(--border);
   --box-link-content-spacing: var(--spacing-small);
+
+  /* Fact Box */
+  --fact-box-bg-light: var(--color-grey-light);
+  --fact-box-bg-dark: var(--color-grey-dark);
+  --fact-box-bg-accent: var(--color-accent);
+  --fact-box-padding-vertical: var(--spacing-largest);
+  --fact-box-padding-horizontal: var(--spacing-large);
+  --fact-box-title: var(--font-size-large);
+  --fact-box-fact: var(--font-size-largest);
+  --fact-box-border: var(--border-large);
+  --fact-box-border-color: var(--color-grey-medium);
+  --fact-box-red: red;
+  --fact-box-blue: blue;
+  --fact-box-text-color-accent: var(--color-white);
 }
