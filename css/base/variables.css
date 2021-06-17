@@ -192,4 +192,8 @@
   --quote-border-color: var(--color-accent);
   --quote-bg-color: var(--color-grey-light);
   --quote-author-color: var(--color-accent);
+
+  /* Featured Teasers */
+  --featured-teaser-border: var(--border);
+  --featured-teaser-content-padding: var(--spacing);
 }
