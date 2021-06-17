@@ -1,0 +1,36 @@
+.fact-box {
+  margin-bottom: 1.5rem;
+  border: 5px solid #b1b4b6;
+}
+
+.fact-box--has-bg {
+  padding: 2.5rem 2.5rem 1rem;
+}
+
+.fact-box--fact-box-light {
+  background-color: #f3f2f1;
+}
+
+.fact-box--fact-box-dark {
+  background-color: #b1b4b6;
+  color: white;
+}
+
+.fact-box--fact-box-accent {
+  background-color: #652c95;
+  color: white;
+}
+
+.fact-box--fade-red-blue {
+  background-image: linear-gradient(red, blue);
+  color: white;
+}
+
+.fact-box__opening,
+.fact-box__closing {
+  font-size: 1.3125rem;
+}
+
+.fact-box__fact {
+  font-size: 2.875rem;
+}

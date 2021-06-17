@@ -147,3 +147,9 @@ box-links:
     theme:
       css/components/box-links.ie11.css: {}
       css/components/box-links.css: {}
+
+fact-box:
+  css:
+    theme:
+      css/components/fact-box.ie11.css: {}
+      css/components/fact-box.css: {}
