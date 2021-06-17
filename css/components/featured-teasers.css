@@ -1,0 +1,12 @@
+.featured-teaser {
+  border: var(--featured-teaser-border);
+}
+
+.featured-teasers__teasers > .field__items > .field__item + .field__item {
+  margin-top: var(--vertical-rhythm-spacing);
+}
+
+.featured-teaser__content {
+  padding: var(--featured-teaser-content-padding);
+}
+

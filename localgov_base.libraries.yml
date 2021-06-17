@@ -165,3 +165,9 @@ quote:
     theme:
       css/components/quote.ie11.css: {}
       css/components/quote.css: {}
+
+featured-teasers:
+  css:
+    theme:
+      css/components/featured-teasers.ie11.css: {}
+      css/components/featured-teasers.css: {}
