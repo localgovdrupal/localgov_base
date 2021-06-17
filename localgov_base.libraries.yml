@@ -153,3 +153,9 @@ fact-box:
     theme:
       css/components/fact-box.ie11.css: {}
       css/components/fact-box.css: {}
+
+image-with-caption:
+  css:
+    theme:
+      css/components/image-with-caption.ie11.css: {}
+      css/components/image-with-caption.css: {}

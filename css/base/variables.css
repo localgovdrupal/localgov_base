@@ -178,4 +178,10 @@
   --fact-box-red: red;
   --fact-box-blue: blue;
   --fact-box-text-color-accent: var(--color-white);
+
+  /* Image with Caption */
+  --image-with-caption-border: var(--border);
+  --image-with-caption-border-color: var(--color-grey-light);
+  --image-with-caption-padding: var(--spacing);
+  --image-with-caption-bg-color: var(--color-grey-light);
 }

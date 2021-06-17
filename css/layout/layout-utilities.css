@@ -39,3 +39,7 @@
 .lgd-icon--smallest svg {
   width: var(--spacing-smallest);
 }
+
+.layout__region > * {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
