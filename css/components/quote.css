@@ -1,0 +1,16 @@
+.pull-out-quote {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: var(--quote-padding);
+  padding-left: var(--quote-padding-left);
+  border-left: var(--quote-border);
+  border-color: var(--quote-border-color);
+  background-color: var(--quote-bg-color);
+}
+
+.pull-out-quote__author {
+  margin-top: var(--vertical-rhythm-spacing);
+  font-weight: bold;
+  color: var(--quote-author-color);
+}

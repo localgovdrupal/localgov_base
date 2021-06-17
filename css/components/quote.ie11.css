@@ -1,0 +1,11 @@
+.pull-out-quote {
+  padding: 2rem;
+  padding-left: 2rem;
+  border-left: 5px solid #652c95;
+  background-color: #f3f2f1;
+}
+
+.pull-out-quote__author {
+  margin-top: 1.5rem;
+  color: #652c95;
+}

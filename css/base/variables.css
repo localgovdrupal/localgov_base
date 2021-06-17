@@ -184,4 +184,12 @@
   --image-with-caption-border-color: var(--color-grey-light);
   --image-with-caption-padding: var(--spacing);
   --image-with-caption-bg-color: var(--color-grey-light);
+
+  /* Quote */
+  --quote-padding: var(--spacing-larger);
+  --quote-padding-left: var(--spacing-larger);
+  --quote-border: var(--border-large);
+  --quote-border-color: var(--color-accent);
+  --quote-bg-color: var(--color-grey-light);
+  --quote-author-color: var(--color-accent);
 }
