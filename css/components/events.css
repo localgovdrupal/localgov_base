@@ -1,0 +1,17 @@
+.localgov-event .date-recur-date {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.field--name-localgov-event-call-to-action a {
+  display: inline-block;
+  margin-bottom: var(--vertical-rhythm-spacing);
+  padding: var(--button-link-padding);
+  background-color: var(--button-link-bg-color);
+  color: var(--button-link-color);
+}
+
+.field--name-localgov-event-call-to-action a:focus,
+.field--name-localgov-event-call-to-action a:hover {
+  background-color: var(--button-link-bg-color-hover);
+  color: var(--button-link-color-hover);
+}

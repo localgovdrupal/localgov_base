@@ -208,4 +208,11 @@
   --tabs-text-color: var(--color-grey-dark);
   --tabs-button-bg-color: var(--color-grey-light);
   --tabs-button-active-color: var(--color-white);
+
+  /* Links styled like buttons */
+  --button-link-padding: var(--spacing);
+  --button-link-bg-color: var(--color-accent);
+  --button-link-color: var(--color-white);
+  --button-link-bg-color-hover: var(--color-accent);
+  --button-link-color-hover: var(--color-white);
 }
