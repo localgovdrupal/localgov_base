@@ -201,4 +201,11 @@
   --table-border: var(--border);
   --table-padding: var(--spacing);
   --table-bg-color: var(--color-grey-light);
+
+  /* Tabs */
+  --tabs-border: var(--border);
+  --tabs-border-color: var(--color-grey-dark);
+  --tabs-text-color: var(--color-grey-dark);
+  --tabs-button-bg-color: var(--color-grey-light);
+  --tabs-button-active-color: var(--color-white);
 }

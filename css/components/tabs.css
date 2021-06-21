@@ -1,44 +1,38 @@
-/* 
-  @file Theming for the tabs region.
-
-  We are theming this in a very generic manner so no site should need to 
-  override it.
-*/
-
-.lgd-region--tabs {
-  background-color: black;
-}
-
-.lgd-region--tabs .tabs > ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.lgd-region--tabs .tabs > ul > li a {
-  display: inline-block;
+.tabs--initialised .tab-panel {
+  display: none;
   padding: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: black;
-  background-color: lightgrey;
+  border: var(--tabs-border);
+  border-color: var(--tabs-border-color);
 }
 
-.lgd-region--tabs .tabs > ul > li a.is-active {
-  color: white;
-  background-color: green;
+.tabs--initialised .tab-panel--active {
+  display: block;
 }
 
-.lgd-region--tabs .tabs > ul > li a:focus,
-.lgd-region--tabs .tabs > ul > li a:hover {
-  text-decoration: underline;
-  color: black;
-  background-color: white;
+.tabs--initialised .tabs__controls {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.lgd-region--tabs .tabs > ul > li a:focus {
-  position: relative; /* So the outline doesn't hide behind the next item */
-  outline: 2px dotted;
+
+.tabs--initialised .tabs__controls li {
+  margin: 0;
+}
+
+.tabs--initialised .tabs__controls button {
+  border: var(--tabs-border);
+  border-color: var(--tabs-border-color);
+  color: var(--tabs-text-color);
+  background: var(--tabs-button-bg-color);
+  cursor: pointer;
+}
+
+.tabs--initialised .tabs__controls [aria-selected="true"] {
+  background-color: var(--tabs-button-active-color);
+  border-bottom-color: var(--tabs-button-active-color);
+}
+
+.tabs--initialised .tabs__controls > li + li button {
+  border-left: none;
 }

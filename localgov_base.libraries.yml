@@ -13,10 +13,10 @@ grid:
       css/layout/grid.ie11.css: {}
       css/layout/grid.css: {}
 
-tabs:
+region-tabs:
   css:
     theme:
-      css/components/tabs.css: {}
+      css/components/region-tabs.css: {}
 
 messages:
   css:
@@ -177,3 +177,9 @@ featured-teasers:
     theme:
       css/components/featured-teasers.ie11.css: {}
       css/components/featured-teasers.css: {}
+
+tabs:
+  css:
+    theme:
+      css/components/tabs.ie11.css: {}
+      css/components/tabs.css: {}
