@@ -1,10 +1,12 @@
-.localgov-directories-venue fieldset {
+.localgov-directories-venue fieldset,
+.localgov-directories-page fieldset {
   padding: 0;
   border: none;
 }
 
 .localgov-directories-venue legend,
-.localgov-directories-venue .field--type-address > .field__label {
+.localgov-directories-venue .field--type-address > .field__label,
+.localgov-directories-page legend {
   margin-bottom: var(--vertical-rhythm-spacing);
   font-size: var(--font-size-large);
   font-weight: bold;

@@ -178,8 +178,8 @@ tabs:
       css/components/tabs.ie11.css: {}
       css/components/tabs.css: {}
 
-directories-venue:
+directories:
   css:
     theme:
-      css/components/directories-venue.ie11.css: {}
-      css/components/directories-venue.css: {}
+      css/components/directories.ie11.css: {}
+      css/components/directories.css: {}

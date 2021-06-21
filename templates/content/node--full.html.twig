@@ -82,10 +82,10 @@
 %}
 
 {% set content_type = node.bundle %}
-
+{{ kint(content_type) }}
 {% if localgov_base_use_css %}
-  {% if content_type == 'localgov_directories_venue' %}
-    {{ attach_library('localgov_base/directories-venue') }}
+  {% if content_type == 'localgov_directories_venue' or content_type == 'localgov_directories_page' %}
+    {{ attach_library('localgov_base/directories') }}
   {% endif %}
 {% endif %}
 
