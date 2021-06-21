@@ -240,3 +240,23 @@ sup {
 sub {
   bottom: -0.25rem;
 }
+
+table {
+  width: 100%;
+  border: var(--table-border);
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead th {
+  padding: var(--table-padding);
+  background-color: var(--table-bg-color);
+}
+
+tbody td {
+  padding: var(--table-padding);
+}
+
+tbody tr {
+  border-bottom: var(--table-border);
+}

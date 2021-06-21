@@ -87,3 +87,20 @@ input[type="submit"]:hover {
   border-width: 4px;
   box-shadow: 0 0 0 3px #ffdd00;
 }
+
+table {
+  border: 1px solid #f3f2f1;
+}
+
+thead th {
+  padding: 1rem;
+  background-color: #f3f2f1;
+}
+
+tbody td {
+  padding: 1rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f3f2f1;
+}
