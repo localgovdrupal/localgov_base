@@ -183,3 +183,9 @@ directories:
     theme:
       css/components/directories.ie11.css: {}
       css/components/directories.css: {}
+
+facets:
+  css:
+    theme:
+      css/components/facets.ie11.css: {}
+      css/components/facets.css: {}

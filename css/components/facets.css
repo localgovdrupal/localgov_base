@@ -1,0 +1,15 @@
+.facets-widget__list {
+  padding-left: 0;
+}
+
+.facets-widget__list + * {
+  margin-top: var(--vertical-rhythm-spacing);
+}
+
+.facets-widget__list .facet-item + .facet-item {
+  margin-top: var(--vertical-rhythm-spacing);
+}
+
+.facets-widget__list li::marker {
+  color: transparent;
+}
