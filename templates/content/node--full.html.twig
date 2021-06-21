@@ -103,15 +103,15 @@
   {% endif %}
   {{ title_suffix }}
 
-  {# {% if display_submitted %} #}
+  {% if display_submitted %}
     <footer class="node__meta">
       {{ author_picture }}
       <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}<span>Submitted<span> by {{ author_name }} on {{ date }}{% endtrans %}
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
         {{ metadata }}
       </div>
     </footer>
-  {# {% endif %} #}
+  {% endif %}
 
   <div class="lgd-row">
     {% if content_type in restricted_width_content_types %}
