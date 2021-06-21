@@ -196,4 +196,9 @@
   /* Featured Teasers */
   --featured-teaser-border: var(--border);
   --featured-teaser-content-padding: var(--spacing);
+
+  /* Documents */
+  --table-border: var(--border);
+  --table-padding: var(--spacing);
+  --table-bg-color: var(--color-grey-light);
 }

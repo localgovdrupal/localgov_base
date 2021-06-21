@@ -1,0 +1,16 @@
+.lgd-documents table {
+  border: 1px solid #f3f2f1;
+}
+
+.lgd-documents thead th {
+  padding: 1rem;
+  background-color: #f3f2f1;
+}
+
+.lgd-documents tbody td {
+  padding: 1rem;
+}
+
+.lgd-documents tbody tr {
+  border-bottom: 1px solid #f3f2f1;
+}
