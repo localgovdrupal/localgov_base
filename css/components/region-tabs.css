@@ -1,0 +1,44 @@
+/* 
+  @file Theming for the tabs region.
+
+  We are theming this in a very generic manner so no site should need to 
+  override it.
+*/
+
+.lgd-region--tabs {
+  background-color: black;
+}
+
+.lgd-region--tabs .tabs > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.lgd-region--tabs .tabs > ul > li a {
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: black;
+  background-color: lightgrey;
+}
+
+.lgd-region--tabs .tabs > ul > li a.is-active {
+  color: white;
+  background-color: green;
+}
+
+.lgd-region--tabs .tabs > ul > li a:focus,
+.lgd-region--tabs .tabs > ul > li a:hover {
+  text-decoration: underline;
+  color: black;
+  background-color: white;
+}
+.lgd-region--tabs .tabs > ul > li a:focus {
+  position: relative; /* So the outline doesn't hide behind the next item */
+  outline: 2px dotted;
+}

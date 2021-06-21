@@ -1,0 +1,14 @@
+.tabs--initialised .tab-panel {
+  border: 1px solid #505a5f;
+}
+
+.tabs--initialised .tabs__controls button {
+  border: 1px solid #505a5f;
+  color: #505a5f;
+  background: #f3f2f1;
+}
+
+.tabs--initialised .tabs__controls [aria-selected="true"] {
+  background-color: white;
+  border-bottom-color: white;
+}
