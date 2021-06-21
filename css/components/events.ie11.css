@@ -1,0 +1,11 @@
+.field--name-localgov-event-call-to-action a {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #652c95;
+  color: white;
+}
+.field--name-localgov-event-call-to-action a:focus,
+.field--name-localgov-event-call-to-action a:hover {
+  background-color: #652c95;
+  color: white;
+}

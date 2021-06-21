@@ -189,3 +189,9 @@ facets:
     theme:
       css/components/facets.ie11.css: {}
       css/components/facets.css: {}
+
+events:
+  css:
+    theme:
+      css/components/events.ie11.css: {}
+      css/components/events.css: {}

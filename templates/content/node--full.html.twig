@@ -78,6 +78,7 @@
 #}
 {% set restricted_width_content_types = [
     'localgov_services_page',
+    'localgov_event',
   ] 
 %}
 
@@ -88,6 +89,10 @@
         or content_type == 'localgov_directories_page' 
         or content_type == 'localgov_directory' %}
     {{ attach_library('localgov_base/directories') }}
+  {% endif %}
+
+  {% if content_type == 'localgov_event' %}
+    {{ attach_library('localgov_base/events') }}
   {% endif %}
 {% endif %}
 
