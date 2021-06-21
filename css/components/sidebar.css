@@ -13,7 +13,8 @@
 }
 
 .sidebar .views-exposed-form .form-item + .form-item,
-.sidebar .views-exposed-form .form-item + .form-actions {
+.sidebar .views-exposed-form .form-item + .form-actions,
+.sidebar .form-item-search-api-fulltext > * + * {
   margin-top: var(--sidebar-exposed-form-item-spacing);
 }
 

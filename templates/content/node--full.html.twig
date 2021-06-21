@@ -82,8 +82,16 @@
 %}
 
 {% set content_type = node.bundle %}
+
+{% if localgov_base_use_css %}
+  {% if content_type == 'localgov_directories_venue' %}
+    {{ attach_library('localgov_base/directories-venue') }}
+  {% endif %}
+{% endif %}
+
 {%
   set classes = [
+    content_type|clean_class,
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
