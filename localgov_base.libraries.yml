@@ -177,3 +177,15 @@ tabs:
     theme:
       css/components/tabs.ie11.css: {}
       css/components/tabs.css: {}
+
+directories:
+  css:
+    theme:
+      css/components/directories.ie11.css: {}
+      css/components/directories.css: {}
+
+facets:
+  css:
+    theme:
+      css/components/facets.ie11.css: {}
+      css/components/facets.css: {}

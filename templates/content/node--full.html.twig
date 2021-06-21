@@ -82,8 +82,18 @@
 %}
 
 {% set content_type = node.bundle %}
+
+{% if localgov_base_use_css %}
+  {% if content_type == 'localgov_directories_venue' 
+        or content_type == 'localgov_directories_page' 
+        or content_type == 'localgov_directory' %}
+    {{ attach_library('localgov_base/directories') }}
+  {% endif %}
+{% endif %}
+
 {%
   set classes = [
+    content_type|clean_class,
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -119,7 +129,7 @@
       {% else %}
         <div class="lgd-row__full">
     {% endif %}
-      <div{{ content_attributes.addClass('node__content') }}>
+      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
         {{ content }}
       </div>
     </div>
