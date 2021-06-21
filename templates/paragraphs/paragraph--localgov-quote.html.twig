@@ -53,14 +53,14 @@
   ]
 %}
 
-<blockquote{{ attributes.addClass(classes) }}>
-  <div class="pull-out-quote__content">
+<figure{{ attributes.addClass(classes) }}>
+  <blockquote class="pull-out-quote__content">
     {{ content|without('localgov_author') }}
-  </div>
+  </blockquote>
   
   {% if paragraph.localgov_author.value %}
-    <footer class="pull-out-quote__author">
+    <figcaption class="pull-out-quote__author">
       - {{ paragraph.localgov_author.value }}
-    </footer>
+    </figcaption>
   {% endif %}
-</blockquote>
+</figure>
