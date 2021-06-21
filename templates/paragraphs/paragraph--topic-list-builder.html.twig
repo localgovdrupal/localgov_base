@@ -63,7 +63,7 @@
     {% block content %}
       {{ content|without('topic_list_header') }}
     {% endblock %}
-    {# {% if show_more %} #}
+    {% if show_more %}
     <div class="lgd-tlb__show-more">
       {% include "@localgov_base/includes/icons/icon.html.twig" with {
         icon_name: more_icon,
@@ -72,7 +72,7 @@
       %}
       <a class="lgd-tlb__show-more-link" href="{{ show_more_path }}">{{ 'More'|t }}</a>
     </div>
-    {# {% endif %} #}
+    {% endif %}
   </div>
 {% endblock paragraph %}
 
