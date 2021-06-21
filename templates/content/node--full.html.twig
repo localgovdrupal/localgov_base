@@ -70,6 +70,18 @@
  *   in different view modes.
  */
 #}
+
+{# 
+  Restrict width of the content area to two-thirds of the screen for 
+  some content types. This is helpful to reduce the line-length for 
+  better readability.
+#}
+{% set restricted_width_content_types = [
+    'localgov_services_page',
+  ] 
+%}
+
+{% set content_type = node.bundle %}
 {%
   set classes = [
     'node',
@@ -91,18 +103,26 @@
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
+  {# {% if display_submitted %} #}
     <footer class="node__meta">
       {{ author_picture }}
       <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {% trans %}<span>Submitted<span> by {{ author_name }} on {{ date }}{% endtrans %}
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {# {% endif %} #}
 
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+  <div class="lgd-row">
+    {% if content_type in restricted_width_content_types %}
+      <div class="lgd-row__two-thirds">
+      {% else %}
+        <div class="lgd-row__full">
+    {% endif %}
+      <div{{ content_attributes.addClass('node__content') }}>
+        {{ content }}
+      </div>
+    </div>
   </div>
 
 </article>
