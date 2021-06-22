@@ -9,7 +9,9 @@
 */
 #}
 
-{{ attach_library('localgov_base/page-title-block') }}
+{% if localgov_base_use_css %}
+  {{ attach_library('localgov_base/page-title-block') }}
+{% endif %}
 
 {% 
   set classes = [
@@ -17,16 +19,22 @@
   ] 
 %}
 
-{% if title or lede %}
-  <div{{ attributes.addClass(classes) }}>
+{% if title and lede['#value'] %}
+  {% set container_element = 'hgroup' %}
+  {% else %}
+    {% set container_element = 'div' %}
+{% endif %}
+
+{% if title or lede['#value'] %}
+  <{{ container_element }}{{ attributes.addClass(classes) }}>
 
     {% if title %}
       <h1 class="lgd-page-title-block__title">{{ title }}</h1>
     {% endif %}
 
-    {% if lede %}
-      <div class="lgd-page-title-block__subheader h3">{{ lede }}</div>
+    {% if lede['#value'] %}
+      <h2 class="lgd-page-title-block__subheader h3">{{ lede['#value'] }}</h2>
     {% endif %}
 
-  </div>
+  </{{ container_element }}>
 {% endif %}
