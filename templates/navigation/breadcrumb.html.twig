@@ -11,7 +11,7 @@
 {{ attach_library('localgov_base/breadcrumbs') }}
 
 {% if breadcrumb %}
-  <nav class="breadcrumbs" role="navigation" aria-labelledby="system-breadcrumbs">
+  <nav class="breadcrumbs" aria-labelledby="system-breadcrumbs">
     <h2 id="system-breadcrumbs" class="visually-hidden">{{ 'Breadcrumbs'|t }}</h2>
     <ol class="breadcrumbs__list">
       {% for item in breadcrumb %}

@@ -16,7 +16,7 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
   {{ title_prefix }}
     <h2{{ title_attributes.addClass('lgd-guides__title') }}>

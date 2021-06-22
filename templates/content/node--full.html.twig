@@ -108,7 +108,7 @@
   ]
 %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
   {{ title_prefix }}
   {% if label and not page %}

@@ -37,7 +37,7 @@
   ]
 %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
   <div class="lgd-row">
   
     {# Begin Main Content #}
