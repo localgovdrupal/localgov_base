@@ -119,32 +119,33 @@
               {# End Contact First #}
               {# Begin Contact Second #}
               <div class="lgd-row__one-half slp__contact-container slp__contact-container--second">
-                {% if node.localgov_address_first_line.value %}
-                  <div class="slp__contact-title">
-                    {% include "@localgov_base/includes/icons/icon.html.twig" with {
-                        icon_name: map_icon,
-                        icon_wrapper_element: 'span',
-                        icon_classes: 'slp__contact-icon'
-                      }
-                    %}
+                {% if node.localgov_address_first_line.value or node.localgov_address.value %}
+                  <h3 class="slp__contact-title">{{ 'Address'|t }}</h3>
+                  {% if node.localgov_address_first_line.value %}
                     {{ content.localgov_address_first_line }}
-                  </div>
-                {% endif %}
-
-                {% if node.localgov_address.value %}
-                  <div class="slp__contact-address">
+                  {% endif %}
+                  {% if node.localgov_address.value %}
                     {{ content.localgov_address }}
-                    {% if node.localgov_link_to_map.value %}
-                      <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">{{ 'View map'|t }}</a>
-                    {% endif %}
-                  </div>
+                  {% endif %}
+                  {% if node.localgov_link_to_map.value %}
+                    <div class="slp__contact-map">
+                      {% include "@localgov_base/includes/icons/icon.html.twig" with {
+                          icon_name: map_icon,
+                          icon_wrapper_element: 'div',
+                          icon_classes: 'slp__contact-icon'
+                        }
+                      %}
+                      <div>
+                        <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">{{ 'View map'|t }}</a>
+                      </div>
+                    </div>
+                  {% endif %}
                 {% endif %}
               </div>
               {# Begin Contact Second #}
             </div>
             {# End Contact Containers #}
 
-              
           {% endif %}
 
           {# Begin Contact Socials and a11y number #}

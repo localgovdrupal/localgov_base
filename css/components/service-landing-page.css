@@ -14,6 +14,11 @@
   display: flex;
 }
 
+.slp__contact-map {
+  display: flex;
+  align-items: center;
+}
+
 .slp__contact-icon {
   margin-right: var(--spacing-smaller);
   line-height: 1;
@@ -24,9 +29,10 @@
 }
 
 .slp__contact-containers {
+  margin-bottom: var(--vertical-rhythm-spacing);
+  padding-bottom: var(--vertical-rhythm-spacing);
   border-bottom: var(--border);
   border-bottom-color: var(--color-grey-medium);
-  margin-bottom: var(--vertical-rhythm-spacing);
 }
 
 .slp__service {
