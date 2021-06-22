@@ -83,6 +83,12 @@ service-landing-page:
       css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
 
+step-by-step:
+  css:
+    theme:
+      css/components/step-by-step.ie11.css: {}
+      css/components/step-by-step.css: {}
+
 service-cta-block:
   css:
     theme:

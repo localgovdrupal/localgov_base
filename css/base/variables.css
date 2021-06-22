@@ -103,16 +103,35 @@
 */
 :root {
   --color-section-bg: var(--color-accent);
+
+  /* Header Items */
+  --section-spacing-vertical-header: var(--spacing);
   --color-section-header-bg: var(--color-section-bg);
+  --header-link-color: var(--color-white);
+  --header-services-button-border: var(--border);
+  --header-services-button-border-color: var(--color-white);
+  --header-services-button-color: var(--color-white);
+  --header-services-button-bg-color: transparent;
+  --header-services-button-bg-color-hover: var(--color-accent);
+  --header-services-button-color-hover: var(--color-white);
+
+  /* Secondary Menu */
+  --secondary-menu-bg-color: var(--color-white);
+  --section-spacing-vertical-secondary-menu: var(--spacing-largest);
+  --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
+  --secondary-menu-link-color: var(--color-black);
+  --secondary-menu-link-color-focus: var(--color-black);
+  --secondary-menu-column-count: 3;
+
+  /* Footer Items */
   --color-section-pre-footer-bg: var(--color-grey-dark);
   --color-section-footer-bg: var(--color-white);
   --color-section-post-footer-bg: var(--color-white);
-  --section-spacing-vertical-header: var(--spacing);
   --section-spacing-vertical-pre-footer: var(--spacing-largest);
   --section-spacing-vertical-footer: var(--spacing);
   --section-spacing-vertical-post-footer: var(--spacing);
   --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
-  
+
   /* Input Elements */
   --input-padding-vertical: var(--spacing);
   --input-padding-horizontal: var(--spacing);
@@ -136,12 +155,6 @@
   --button-border-color: var(--color-accent);
   --button-bg-color: var(--color-accent);
   --button-bg-color-hover: var(--color-white);
- 
-  /* Secondary Manu Variables */
-  --section-spacing-vertical-secondary-menu: var(--spacing-largest);
-  --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
-  --secondary-menu-link-color: var(--color-black);
-  --secondary-menu-column-count: 3;
 
   /* Sidebar Items */
   --sidebar-exposed-form-bg-color: var(--color-grey-light);
@@ -215,4 +228,14 @@
   --button-link-color: var(--color-white);
   --button-link-bg-color-hover: var(--color-accent);
   --button-link-color-hover: var(--color-white);
+
+  /* Step-by-Step */
+  --step-by-step-relationship-border-color: var(--color-accent);
+  --step-by-step-part-of-color: var(--color-accent);
+  --step-by-step-active-item-color: var(--color-accent);
+  --step-by-step-active-bullet-bg-color: var(--color-accent);
+  --step-by-step-active-bullet-border-color: var(--color-accent);
+  --step-by-step-line-joining-items-border: var(--border);
+  --step-by-step-line-joining-items-color: var(--color-accent);
+
 }

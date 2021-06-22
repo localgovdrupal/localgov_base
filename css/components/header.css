@@ -76,15 +76,16 @@
   padding: var(--spacing);
   line-height: 1;
   font-size: var(--font-size-medium);
-  border: 1px solid white;
-  color: white;
+  border: var(--header-services-button-border);
+  border-color: var(--header-services-button-border-color);
+  color: var(--header-services-button-color);
   cursor: pointer;
-  background-color: transparent;
+  background-color: var(--header-services-button-bg-color);
 }
 .lgd-header__toggle:focus,
 .lgd-header__toggle:hover {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--header-services-button-bg-color-hover);
+  color: var(--header-services-button-color-hover);
 }
 
 .lgd-header__toggle-icon::after {
@@ -109,7 +110,7 @@
 }
 
 .lgd-header a {
-  color: var(--color-white);
+  color: var(--header-link-color);
 }
 
 .branding__item--logo {

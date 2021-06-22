@@ -9,7 +9,7 @@
     var(--section-spacing-vertical-secondary-menu) 
     var(--section-spacing-horizontal-secondary-menu) 
     calc(var(--section-spacing-vertical-secondary-menu) - var(--spacing));
-  background-color: var(--color-white);
+  background-color: var(--secondary-menu-bg-color);
 }
 
 @media screen and (min-width: 48rem) {
@@ -24,4 +24,8 @@
 
 .region-secondary-menu .menu-item > a {
   color: var(--secondary-menu-link-color);
+}
+
+.region-secondary-menu .menu-item > a:focus {
+  color: var(--secondary-menu-link-color-focus);
 }

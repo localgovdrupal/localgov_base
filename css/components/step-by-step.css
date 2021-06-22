@@ -1,0 +1,26 @@
+/* Block container for step-by-step */
+.step-by-step-pages__relationship {
+  border-left-color: var(--step-by-step-relationship-border-color);
+}
+
+/* Block title "Part of" text */
+.step-by-step-pages__relationship .step-by-step-pages__part-of {
+  color: var(--step-by-step-part-of-color);
+}
+
+/* Active step title */
+.step-by-step-pages ol.step-list .step.step--active .step__title a {
+  color: var(--step-by-step-active-item-color);
+}
+
+/* The bullet numbers beside each step */
+.step-by-step-pages ol.step-list .step.step--active::before {
+  background-color: var(--step-by-step-active-bullet-bg-color);
+  border-color: var(--step-by-step-active-bullet-border-color);
+}
+
+/* The border from the active step to the next one */
+.step-by-step-pages ol.step-list .step.step--active:not(:last-of-type)::after {
+  border: var(--step-by-step-line-joining-items-border);
+  border-color: var(--step-by-step-line-joining-items-color);
+}
