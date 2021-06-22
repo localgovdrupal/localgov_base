@@ -13,7 +13,8 @@
 }
 
 .sctab__link:hover {
-  background-color: #652c95;
+  background-color: #ffdd00;
+  color: black;
 }
 
 .sctab__link--cta-action {

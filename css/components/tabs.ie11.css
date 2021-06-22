@@ -4,6 +4,8 @@
 
 .tabs--initialised .tabs__controls button {
   border: 1px solid #505a5f;
+  font-size: 1rem;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #505a5f;
   background: #f3f2f1;
 }
