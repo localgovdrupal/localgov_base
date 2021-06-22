@@ -1,0 +1,14 @@
+.pager__items {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.pager__item {
+  margin-left: var(--spacing-smaller);
+  margin-right: var(--spacing-smaller);
+}
+
+.pager__item::marker {
+  color: transparent;
+}

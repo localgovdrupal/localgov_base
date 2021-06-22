@@ -195,3 +195,9 @@ events:
     theme:
       css/components/events.ie11.css: {}
       css/components/events.css: {}
+
+pager:
+  css:
+    theme:
+      css/components/pager.ie11.css: {}
+      css/components/pager.css: {}
