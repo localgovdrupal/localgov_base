@@ -9,6 +9,10 @@
   background-color: var(--quote-bg-color);
 }
 
+.pull-out-quote__content {
+  margin: 0;
+}
+
 .pull-out-quote__author {
   margin-top: var(--vertical-rhythm-spacing);
   font-weight: bold;
