@@ -86,73 +86,73 @@
 
 {% include '@localgov_base/layout/header.html.twig' with {'page': page} %}
 
-{% if has_banner %}
-  {{ page.banner }}
-{% endif %}
+<main id="main-content"> {# The "skip to content" link jumps to here. #}
+  {% if has_banner %}
+    {{ page.banner }}
+  {% endif %}
 
-{% if has_breadcrumb %}
-  {{ page.breadcrumb }}
-{% endif %}
+  {% if has_breadcrumb %}
+    {{ page.breadcrumb }}
+  {% endif %}
 
-{% if has_messages %}
-  {{ page.messages }}
-{% endif %}
+  {% if has_messages %}
+    {{ page.messages }}
+  {% endif %}
 
-{% if has_content_top %}
-  {{ page.content_top }}
-{% endif %}
+  {% if has_content_top %}
+    {{ page.content_top }}
+  {% endif %}
 
-<div class="lgd-container">
-  <main id="main-content"> {# The "skip to content" link jumps to here. #}
-    <div class="lgd-row">
+  <div class="lgd-container">
+      <div class="lgd-row">
 
-      {# Begin Sidebars #}
-      {% if has_sidebars %}
-        {% if has_sidebar_first and not has_sidebar_second %}
-          <aside class="lgd-row__one-third sidebar sidebar--first">
-            {{ page.sidebar_first }}
-          </aside>
-          <div class="lgd-row__two-thirds">
+        {# Begin Sidebars #}
+        {% if has_sidebars %}
+          {% if has_sidebar_first and not has_sidebar_second %}
+            <aside class="lgd-row__one-third sidebar sidebar--first">
+              {{ page.sidebar_first }}
+            </aside>
+            <div class="lgd-row__two-thirds">
+              {{ page.content }}
+            </div>
+          {% endif %}
+        
+          {% if has_sidebar_second and not has_sidebar_first %}
+            <div class="lgd-row__two-thirds">
+              {{ page.content }}
+            </div>
+            <aside class="lgd-row__one-third sidebar sidebar--second">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+
+          {% if has_sidebar_first and has_sidebar_second %}
+            <aside class="lgd-row__one-quarter sidebar sidebar--first">
+              {{ page.sidebar_first }}
+            </aside>
+            <div class="lgd-row__one-half">
+              {{ page.content }}
+            </div>
+            <aside class="lgd-row__one-quarter sidebar sidebar--second">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+
+          {% else %}
+            {# If there are no sidebars, the content region take up 100% of the space #}
+            <div class="lgd-row__full">
             {{ page.content }}
-          </div>
+            </div>
         {% endif %}
-      
-        {% if has_sidebar_second and not has_sidebar_first %}
-          <div class="lgd-row__two-thirds">
-            {{ page.content }}
-          </div>
-          <aside class="lgd-row__one-third sidebar sidebar--second">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
+        {# End Sidebars #}
 
-        {% if has_sidebar_first and has_sidebar_second %}
-          <aside class="lgd-row__one-quarter sidebar sidebar--first">
-            {{ page.sidebar_first }}
-          </aside>
-          <div class="lgd-row__one-half">
-            {{ page.content }}
-          </div>
-          <aside class="lgd-row__one-quarter sidebar sidebar--second">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
+      </div>
+  </div>
 
-        {% else %}
-          {# If there are no sidebars, the content region take up 100% of the space #}
-          <div class="lgd-row__full">
-          {{ page.content }}
-          </div>
-      {% endif %}
-      {# End Sidebars #}
-
-    </div>
-  </main>
-</div>
-
-{% if has_content_bottom %}
-  {{ page.content_bottom }}
-{% endif %}
+  {% if has_content_bottom %}
+    {{ page.content_bottom }}
+  {% endif %}
+</main>
 
 {# Begin Footer Regions #}
 {% if footer_regions %}
