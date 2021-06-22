@@ -221,6 +221,8 @@
   --tabs-text-color: var(--color-grey-dark);
   --tabs-button-bg-color: var(--color-grey-light);
   --tabs-button-active-color: var(--color-white);
+  --tabs-button-font-size: var(--font-size);
+  --tabs-button-font-family: var(--font-primary);
 
   /* Links styled like buttons */
   --button-link-padding: var(--spacing);

@@ -22,6 +22,9 @@
 
 .tabs--initialised .tabs__controls button {
   border: var(--tabs-border);
+  font-size: var(--tabs-button-font-size);
+  font-family: var(--tabs-button-font-family);
+  margin: 0;
   border-color: var(--tabs-border-color);
   color: var(--tabs-text-color);
   background: var(--tabs-button-bg-color);

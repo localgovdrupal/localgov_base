@@ -19,22 +19,16 @@
   ] 
 %}
 
-{% if title and lede['#value'] %}
-  {% set container_element = 'hgroup' %}
-  {% else %}
-    {% set container_element = 'div' %}
-{% endif %}
-
 {% if title or lede['#value'] %}
-  <{{ container_element }}{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }}>
 
     {% if title %}
       <h1 class="lgd-page-title-block__title">{{ title }}</h1>
     {% endif %}
 
     {% if lede['#value'] %}
-      <h2 class="lgd-page-title-block__subheader h3">{{ lede['#value'] }}</h2>
+      <p class="lgd-page-title-block__subheader h3">{{ lede['#value'] }}</p>
     {% endif %}
 
-  </{{ container_element }}>
+  </div>
 {% endif %}
