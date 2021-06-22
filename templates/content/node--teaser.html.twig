@@ -87,7 +87,7 @@
   {{ attach_library('localgov_base/teaser') }}
 {% endif %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
   {# 
     We have a generic variable here for {{ teaser_image }}.
