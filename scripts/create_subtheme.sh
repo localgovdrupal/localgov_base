@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to quickly create sub-theme.
+# Script to easily create a localgov_base sub-theme.
 
 echo '
 +--------------------------------------------------------------------------------------+
@@ -18,7 +18,7 @@ echo '
 +--------------------------------------------------------------------------------------+
 '
 
-# Check we're in the right place
+# Check we're in the right place.
 foldername="$(basename $PWD)"
 parentfoldername="$(basename "$(dirname $PWD)")"
 
@@ -32,7 +32,7 @@ if [ "${parentfoldername}" != "contrib" ]; then
   exit
 fi
 
-# Get theme name
+# Get theme name.
 echo 'Please enter the full name for your theme [e.g. Scarfolk Council Theme]'
 read -p '> ' LGD_SUB_THEME_NAME
 if [ -z "${LGD_SUB_THEME_NAME}" ]; then
@@ -40,7 +40,7 @@ if [ -z "${LGD_SUB_THEME_NAME}" ]; then
   exit
 fi
 
-# Get theme machine name
+# Get theme machine name.
 echo 'Please enter the machine name for your theme [e.g. scarfolk_council]'
 read -p '> ' LGD_SUB_THEME
 if [ -z "${LGD_SUB_THEME}" ]; then
@@ -48,7 +48,7 @@ if [ -z "${LGD_SUB_THEME}" ]; then
   exit
 fi
 
-# Create theme folder
+# Create theme folder.
 if [[ ! -e ../../custom ]]; then
   mkdir ../../custom
   echo '+ themes/custom/ folder created'
@@ -69,7 +69,7 @@ cd $LGD_SUB_THEME
 cp ../../contrib/localgov_base/logo.svg .
 echo "+ themes/custom/$LGD_SUB_THEME/logo.svg copied"
 
-# theme.info.yml
+# theme.info.yml.
 cat > $LGD_SUB_THEME.info.yml << EOF
 name: "$LGD_SUB_THEME_NAME"
 description: "A sub-theme of localgov_base."
@@ -108,7 +108,7 @@ EOF
 
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.info.yml created"
 
-# theme.libraries.yml
+# theme.libraries.yml.
 cat > $LGD_SUB_THEME.libraries.yml << EOF
 variables:
   css:
@@ -122,7 +122,7 @@ mkdir config
 mkdir config/install
 echo "+ themes/custom/$LGD_SUB_THEME/config/install/ created"
 
-# theme.settings.yml
+# theme.settings.yml.
 cat > config/install/$LGD_SUB_THEME.settings.yml << EOF
 localgov_base_use_css: true
 localgov_base_use_js: true
@@ -135,7 +135,7 @@ if [[ ! -e css ]]; then
   echo "+ themes/custom/$LGD_SUB_THEME/css/ created"
 fi
 
-# variables.css
+# variables.css.
 cat > css/variables.css << EOF
 /*
   Import fonts.
