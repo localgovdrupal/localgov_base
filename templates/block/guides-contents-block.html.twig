@@ -16,7 +16,7 @@
     {% else %}
       {% set list_type = 'ul' %}
   {% endif %}
-  <nav class="lgd-guide-nav" aria-label="{{ 'Guide navigation'|t }}">
+  <nav class="lgd-guide-nav" aria-label="{{ 'Guide'|t }}">
     <{{ list_type }} class="lgd-guide-nav__list">
       {% for link in links %}
         {% if link.url.options.attributes.class == 'active' %}
