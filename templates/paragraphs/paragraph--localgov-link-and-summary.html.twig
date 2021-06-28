@@ -66,7 +66,9 @@
         }
       %}
       <h2 class="link-block__title">
-        {{ content.localgov_link }}
+        <a href="{{ content.localgov_link.0['#url'] }}" aria-describedby="{{ paragraph.localgov_summary.value }}">
+          {{ content.localgov_link.0['#title'] }}
+        </a>
       </h2>
     </div>
   {% endif %}
