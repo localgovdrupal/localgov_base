@@ -65,8 +65,23 @@
           </thead>
           <tbody>
             {% for document in documents %}
+
+              {% set document_name = document.name['#media'].name.value %}
+              {% set document_type = document.name['#media'].field_media_document.entity.filemime.value %}
+
               <tr>
-                <td>{{ document.name }}</td>
+                <td>{{ document_name }} <span class="visually-hidden">{{ 'File type'|t }}</span> - {{ document_type|replace(
+                  {
+                    'application/pdf': 'pdf',
+                    'text/plain': 'txt',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx',
+                    'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'pptx',
+                    'application/vnd.oasis.opendocument.text': 'odt',
+                    'application/vnd.oasis.opendocument.spreadsheet': 'ods',
+                    'application/vnd.oasis.opendocument.presentation': 'odp'
+                  }) }}
+                </td>
                 <td>{{ document.size }}</td>
               </tr>
             {% endfor %}
