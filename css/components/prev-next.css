@@ -16,8 +16,8 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
   align-items: center;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   border: var(--border);
-  border-color: var(--button-border-color);
   border-radius: var(--button-border-radius);
+  border-color: var(--button-border-color);
   color: var(--button-text-color);
   background-color: var(--button-bg-color);
 }
