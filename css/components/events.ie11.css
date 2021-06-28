@@ -1,4 +1,7 @@
-.localgov-event .date-recur-date {
+.localgov-event .date-recur-date,
+.field--name-localgov-event-provider,
+.field--name-localgov-event-venue,
+.localgov-event .field--name-location > * {
   margin-bottom: 1.5rem;
 }
 
