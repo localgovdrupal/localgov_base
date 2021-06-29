@@ -207,3 +207,9 @@ pager:
     theme:
       css/components/pager.ie11.css: {}
       css/components/pager.css: {}
+
+callout-box:
+  css:
+    theme:
+      css/components/callout-box.ie11.css: {}
+      css/components/callout-box.css: {}
