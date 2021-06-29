@@ -1,11 +1,6 @@
 .localgov-directories-venue legend,
-.localgov-directories-venue .field--type-address > .field__label,
 .localgov-directories-page legend {
   margin-bottom: 1.5rem;
-  font-size: 1.3125rem;
-}
-
-.localgov-directories-page fieldset .field__label {
   font-size: 1.3125rem;
 }
 

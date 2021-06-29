@@ -221,6 +221,14 @@ input[type="submit"]:hover {
   border-width: 4px;
   box-shadow: 0 0 0 3px var( --color-focus)
 }
+
+.form-checkboxes input[type="checkbox"]:hover + label,
+.facet-item input[type="checkbox"]:hover + label,
+.form-checkboxes input[type="checkbox"]:focus + label,
+.facet-item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
 .form-checkboxes input[type="checkbox"]:checked + label:after,
 .facet-item input[type="checkbox"]:checked + label:after {
   opacity: 1
