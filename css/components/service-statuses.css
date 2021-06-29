@@ -1,0 +1,53 @@
+.service-statuses {
+  padding: var(--service-statuses-padding);
+  margin-bottom: var(--spacing);
+  background-color: var(--service-statuses-container-bg-color);
+}
+
+.service-statuses__header,
+.service-statuses__title {
+  display: flex;
+  align-items: center;
+  color: var(--service-statuses-container-text-color);
+}
+
+.service-statuses__header {
+  justify-content: space-between;
+  padding-bottom: var(--service-statuses-padding);
+}
+
+.service-statuses__label {
+  margin-bottom: 0;
+}
+
+.service-statuses__link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--service-statuses-container-text-color);
+}
+
+.service-statuses .lgd-icon {
+  display: inline-block;
+  margin-right: var(--spacing-smaller);
+}
+
+.service-statuses .lgd-icon path {
+  fill: var(--service-statuses-container-text-color);
+}
+
+.service-statuses-list {
+  margin-bottom: 0;
+  padding: var(--service-statuses-padding);
+  background-color: var(--service-statuses-list-bg-color);
+}
+
+.service-statuses-list__item::marker {
+  color: transparent
+}
+
+.service-statuses-list__item + .service-statuses-list__item {
+  margin-top: var(--service-statuses-list-spacing);
+  padding-top: var(--service-statuses-list-spacing);
+  border-top: var(--service-statuses-list-border);
+  border-color: var(--service-statuses-list-border-color);
+}

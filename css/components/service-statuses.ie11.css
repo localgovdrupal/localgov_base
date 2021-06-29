@@ -1,0 +1,37 @@
+.service-statuses {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #652c95;
+}
+
+.service-statuses__header,
+.service-statuses__title {
+  color: white;
+}
+
+.service-statuses__header {
+  padding-bottom: 1rem;
+}
+
+.service-statuses__link {
+  color: white;
+}
+
+.service-statuses .lgd-icon {
+  margin-right: 0.5rem;
+}
+
+.service-statuses .lgd-icon path {
+  fill: white;
+}
+
+.service-statuses-list {
+  padding: 1rem;
+  background-color: white;
+}
+
+.service-statuses-list__item + .service-statuses-list__item {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #652c95;
+}

@@ -1,0 +1,24 @@
+{% if localgov_base_use_css %}
+  {{ attach_library('localgov_base/service-statuses') }}
+{% endif %}
+
+<div class="service-statuses">
+  {% if items %}
+    <ul class="service-statuses-list">
+      {% for item in items %}
+        <li class="service-statuses-list__item">
+          <article class="service-status">
+            <time class="service-status__date">{{ item.date|date("d.m.Y") }}</time>
+            <h3 class="service-status__title">{{ item.title }}</h3>
+            <p class="service-status__summary">{{ item.description }}</p>
+            <a class="service-status__read-more" href="{{ item.url }}">{{ 'Read more'|t }}</a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="service-statuses-list">
+      <p>{{ 'There are no current issues with this service.'|t }}</p>
+    </div>
+  {% endif %}
+</div>

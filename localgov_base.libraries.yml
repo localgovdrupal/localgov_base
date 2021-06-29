@@ -83,6 +83,12 @@ service-landing-page:
       css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
 
+service-statuses:
+  css:
+    theme:
+      css/components/service-statuses.ie11.css: {}
+      css/components/service-statuses.css: {}
+
 step-by-step:
   css:
     theme:
