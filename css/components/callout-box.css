@@ -1,0 +1,28 @@
+.call-out-box {
+  padding: var(--call-out-box-padding);
+}
+
+.call-out-box__content  {
+  padding: var(--call-out-box-padding);
+  background: var(--call-out-box-bg-color);
+  color: var(--call-out-box-text-color);
+}
+
+.call-out-box__link {
+  padding: var(--call-out-box-link-padding);
+  background-color: var(--call-out-box-text-color);
+  color: var(--call-out-box-bg-color);
+}
+
+@media screen and (min-width: 48rem) {
+  .call-out-box {
+    padding: 0;
+  }
+
+  .call-out-box__content  {
+    padding-right: 20%;
+    background: linear-gradient(to right, var(--call-out-box-bg-color) 75%, transparent);
+    width: 75%;
+  }
+}
+

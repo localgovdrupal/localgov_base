@@ -1,0 +1,22 @@
+.call-out-box {
+  padding: 1.5rem;
+}
+
+.call-out-box__content  {
+  padding: 1.5rem;
+  background: #652c95;
+  color: white;
+}
+
+.call-out-box__link {
+  padding: .5rem;
+  background-color: white;
+  color: #652c95;
+}
+
+@media screen and (min-width: 48rem) {
+  .call-out-box__content  {
+    background: linear-gradient(to right, #652c95 75%, transparent);
+  }
+}
+
