@@ -92,3 +92,29 @@ function localgov_base_preprocess_page(&$variables) {
   $variables['has_lower_footer_second'] = trim(strip_tags($rendered_lower_footer_second));
   $variables['has_lower_footer_third'] = trim(strip_tags($rendered_lower_footer_third));
 }
+
+/**
+ * Implements hook_preprocess_file_link().
+ *
+ * Changes:
+ * - Inserts file *type* and size into the theme variable.
+ * - Reformats file size.  Example: 123.4KB.
+ * - Appends file metadata to the file link text.
+ *
+ * @see template_preprocess_file_link()
+ */
+function localgov_base_preprocess_file_link(&$variables) {
+
+  $file = $variables['file'];
+  $filename = $file->getFilename();
+  $file_extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+  $variables['file_type'] = strtoupper($file_extension);
+
+  // 123.45 KB -> 123.45KB
+  $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
+
+  $variables['link']['#title'] = [
+    '#markup' => "{$variables['link']['#title']} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
+  ];
+}
