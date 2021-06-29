@@ -245,4 +245,13 @@
   --call-out-box-link-padding: var(--spacing-smaller);
   --call-out-box-bg-color: var(--color-accent);
   --call-out-box-text-color: var(--color-white);
+
+  /* Service Statuses */
+  --service-statuses-padding: var(--spacing);
+  --service-statuses-container-bg-color: var(--color-accent);
+  --service-statuses-container-text-color: var(--color-white);
+  --service-statuses-list-bg-color: var(--color-white);
+  --service-statuses-list-spacing: var(--spacing-large);
+  --service-statuses-list-border: var(--border);
+  --service-statuses-list-border-color: var(--color-accent);
 }
