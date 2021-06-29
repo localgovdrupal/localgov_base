@@ -1,3 +1,6 @@
+.localgov-event__content .field__label {
+  font-weight: bold;
+}
 
 .field--name-localgov-event-image + .field--name-localgov-event-date {
   margin-top: var(--vertical-rhythm-spacing);
