@@ -26,6 +26,10 @@
   color: var(--service-statuses-container-text-color);
 }
 
+.service-statuses__link--bottom {
+  margin-top: var(--service-statuses-padding);
+}
+
 .service-statuses .lgd-icon {
   display: inline-block;
   margin-right: var(--spacing-smaller);
