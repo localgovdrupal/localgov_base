@@ -16,7 +16,7 @@
         %}
         <h2 class="service-statuses__label">{{ 'Service updates'|t }}</h2>
       </div>
-      <a href="{{ see_all_link }}" class="service-statuses__link service-statuses__link--top">
+      <a href="{{ see_all_link }}" aria-label="{{ 'See all updates for this service'|t }}" class="service-statuses__link service-statuses__link--top">
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
             icon_name: see_all_icon,
             icon_wrapper_element: 'span',
@@ -29,16 +29,16 @@
       {% for item in items %}
         <li class="service-statuses-list__item">
           <article class="service-status">
-            <time class="service-status__date">{{ item.date|date("d.m.Y") }}</time>
+            <time datetime="{{ item.date|date(U) }}" class="service-status__date">{{ item.date|date("d.m.Y") }}</time>
             <h3 class="service-status__title">{{ item.title }}</h3>
             <p class="service-status__summary">{{ item.description }}</p>
-            <a class="service-status__read-more" href="{{ item.url }}">{{ 'Read more'|t }}</a>
+            <a class="service-status__read-more" aria-label="{{ 'Read more about status:'|t }} {{ item.title }}" href="{{ item.url }}">{{ 'Read more'|t }}</a>
           </article>
         </li>
       {% endfor %}
     </ul>
 
-    <a href="{{ see_all_link|render }}" class="service-statuses__link service-statuses__link--bottom">
+    <a href="{{ see_all_link }}" aria-label="{{ 'See all updates for this service'|t }}" class="service-statuses__link service-statuses__link--bottom">
       {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: see_all_icon,
           icon_wrapper_element: 'span',
