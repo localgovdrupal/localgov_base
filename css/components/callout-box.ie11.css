@@ -1,5 +1,13 @@
 .call-out-box {
+  padding: 0; /* Override the module css */
+}
+
+.call-out-box--has-image {
   padding: 1.5rem;
+}
+
+.call-out-box--no-image {
+  background-color: #652c95;
 }
 
 .call-out-box__content  {
@@ -15,7 +23,7 @@
 }
 
 @media screen and (min-width: 48rem) {
-  .call-out-box__content  {
+  .call-out-box--has-image .call-out-box__content  {
     background: linear-gradient(to right, #652c95 75%, transparent);
   }
 }

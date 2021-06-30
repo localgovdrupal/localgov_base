@@ -44,6 +44,7 @@
 {%
   set classes = [
     'call-out-box',
+    background_url ? 'call-out-box--has-image' : 'call-out-box--no-image',
     colour_theme ? 'call-out-box--' ~ colour_theme|clean_class,
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
