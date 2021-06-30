@@ -1,0 +1,11 @@
+.banner--primary .banner__content {
+  max-width: 48rem;
+  margin: -5rem auto 5rem;
+  padding: 2.5rem;
+  background-color: #652c95;
+  color: white;
+}
+
+.banner--primary .field--name-localgov-title {
+  font-size: 1.6875rem;
+}
