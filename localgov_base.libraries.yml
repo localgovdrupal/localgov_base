@@ -219,3 +219,9 @@ callout-box:
     theme:
       css/components/callout-box.ie11.css: {}
       css/components/callout-box.css: {}
+
+banner:
+  css:
+    theme:
+      css/components/banner.ie11.css: {}
+      css/components/banner.css: {}

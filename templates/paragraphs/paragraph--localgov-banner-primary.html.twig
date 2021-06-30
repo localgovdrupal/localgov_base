@@ -1,4 +1,3 @@
-
 {#
 /**
  * @file
@@ -43,7 +42,7 @@
 {%
   set classes = [
     'banner',
-    'banner--secondary',
+    'banner--primary', 
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -55,14 +54,23 @@
   {{ attach_library('localgov_base/banner') }}
 {% endif %}
 
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="banner__content">
-        {{ content }}
-      </div>
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% if paragraph.localgov_url.value %}
+  {% set banner_url = paragraph.localgov_url.value %}
+{% endif %}
 
-
+<div{{ attributes.addClass(classes) }}>
+  {% if paragraph.localgov_image.value %}
+    <div class="banner__image">
+      {{ content.localgov_image }}
+    </div>
+  {% endif %}
+  {% if banner_url %}
+    <a class="banner__link" href="{{ banner_url }}">
+  {% endif %}
+    <div class="banner__content">
+      {{ content|without('localgov_image', 'localgov_url') }}
+    </div>
+  {% if banner_url %}
+    </a>
+  {% endif %}
+</div>

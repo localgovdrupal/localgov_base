@@ -6,8 +6,11 @@
 */
 /* Widths and Spacing */
 :root {
-  --width-container: 73.75rem; /* 1180px */
-  --width-tablet: 48rem;
+  --width-extra-large: 73.75rem; /* 1180px */
+  --width-large: 60rem;
+  --width-medium: 48rem;
+  --width-small: 30rem;
+  --width-container: var(--width-extra-large); 
   --width-logo: 10rem;
   --spacing-smallest: 0.25rem;
   --spacing-smaller: 0.5rem;
@@ -254,4 +257,12 @@
   --service-statuses-list-spacing: var(--spacing-large);
   --service-statuses-list-border: var(--border);
   --service-statuses-list-border-color: var(--color-accent);
+
+  /* Banner */
+  --banner-content-width: var(--width-medium);
+  --banner-content-margin: calc(var(--spacing-largest) * 2);
+  --banner-content-padding: var(--spacing-largest);
+  --banner-content-bg-color: var(--color-accent);
+  --banner-content-text-color: var(--color-white);
+  --banner-title-size: var(--font-size-larger);
 }
