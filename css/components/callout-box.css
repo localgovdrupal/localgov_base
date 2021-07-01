@@ -2,10 +2,6 @@
   padding: 0; /* Override the module css */
 }
 
-.call-out-box--has-image {
-  padding: var(--call-out-box-padding);
-}
-
 .call-out-box--no-image {
   background-color: var(--call-out-box-bg-color);
 }
