@@ -34,6 +34,7 @@
         
     const secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
     const secondaryMenuRegion = context.querySelector('#lgd-header__nav--secondary');
+    const secondaryMenuLinks = secondaryMenuRegion.querySelectorAll('.menu a');
     const secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
     if (!secondaryMenuToggle.classList.contains('js-processed-lgd-header__toggle--secondary')) {
         secondaryMenuToggle.addEventListener('click', function() {
@@ -42,11 +43,23 @@
         secondaryMenuFirstLink.addEventListener('keydown', function(e) {
           // When on the first link in the secondary menu, if you shift+tab
           // set focus back to the services button
-          if (e.shiftKey && e.keyCode == 9) { 
+          if (e.shiftKey && e.key == 'Tab') { 
             e.preventDefault();
             secondaryMenuToggle.focus();
+            secondaryMenuToggle.click();
           }
         });
+        secondaryMenuLinks.forEach(secondaryMenuLink => {
+          secondaryMenuLink.addEventListener('keydown', function(e) {
+            // When on any link in the secondary menu, if you hit escape
+            // set focus back to the services button
+            if (e.key == 'Escape') { 
+              e.preventDefault();
+              secondaryMenuToggle.focus();
+              secondaryMenuToggle.click();
+            }
+          });
+        })
       }
       secondaryMenuToggle.classList.add('js-processed-lgd-header__toggle--secondary');
     }
