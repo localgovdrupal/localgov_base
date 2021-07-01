@@ -26,10 +26,29 @@
             target.classList.contains('lgd-header__nav--active') ? 
               target.classList.remove('lgd-header__nav--active') :
               target.classList.add('lgd-header__nav--active');
-          })
-          headerToggle.classList.add('js-processed');
-        }
-      });
+            })
+            headerToggle.classList.add('js-processed');
+          }
+        });
+        
+        
+    const secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
+    const secondaryMenuRegion = context.querySelector('#lgd-header__nav--secondary');
+    const secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
+    if (!secondaryMenuToggle.classList.contains('js-processed-lgd-header__toggle--secondary')) {
+        secondaryMenuToggle.addEventListener('click', function() {
+          secondaryMenuFirstLink.focus();
+        });
+        secondaryMenuFirstLink.addEventListener('keydown', function(e) {
+          // When on the first link in the secondary menu, if you shift+tab
+          // set focus back to the services button
+          if (e.shiftKey && e.keyCode == 9) { 
+            e.preventDefault();
+            secondaryMenuToggle.focus();
+          }
+        });
+      }
+      secondaryMenuToggle.classList.add('js-processed-lgd-header__toggle--secondary');
     }
   };
 }(Drupal));
