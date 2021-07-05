@@ -96,6 +96,11 @@
   {% if content_type == 'localgov_event' %}
     {{ attach_library('localgov_base/events') }}
   {% endif %}
+
+  {% if content_type == 'localgov_step_by_step_overview'
+        or content_type == 'localgov_step_by_step_page' %}
+    {{ attach_library('localgov_base/step-by-step') }}
+  {% endif %}
 {% endif %}
 
 {%

@@ -43,7 +43,7 @@
 {% set previous_icon = 'chevron-left' %}
 {% set next_icon = 'chevron-right' %}
 
-<nav class="lgd-prev-next lgd-prev-next--step-by-step">
+<nav class="lgd-prev-next lgd-prev-next--step-by-step" aria-label={{ 'Step-by-step'|t }}>
 	{% set has_wrapper_attributes = attributes.toString() %}
 	{% if has_wrapper_attributes -%}
 		<div{{attributes}}>

@@ -242,6 +242,7 @@
   --step-by-step-active-bullet-border-color: var(--color-accent);
   --step-by-step-line-joining-items-border: var(--border);
   --step-by-step-line-joining-items-color: var(--color-accent);
+  --step-by-step-nav-block-width: var(--width-medium);
 
   /* Call-out Box */
   --call-out-box-padding: var(--spacing-large);

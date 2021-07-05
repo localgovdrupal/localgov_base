@@ -24,3 +24,7 @@
   border: var(--step-by-step-line-joining-items-border);
   border-color: var(--step-by-step-line-joining-items-color);
 }
+
+.block-views-blocklocalgov-step-by-step-navigation-steps-for-overview {
+  max-width: var(--step-by-step-nav-block-width);
+}
