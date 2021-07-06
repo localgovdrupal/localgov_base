@@ -1,5 +1,5 @@
 {# Attach libraries #}
-{% if localgov_base_use_js %}
+{% if not localgov_base_remove_js %}
   {{ attach_library('localgov_base/header-js') }}
 {% endif %}
 

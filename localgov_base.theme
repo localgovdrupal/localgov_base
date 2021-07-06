@@ -10,18 +10,18 @@ function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     return;
   }
 
-  $form['localgov_base_use_css'] = array(
+  $form['localgov_base_remove_css'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Add CSS from theme.'),
-    '#default_value' => theme_get_setting('localgov_base_use_css'),
-    '#description'   => t("Uncheck this box if you want to disable the theme's CSS"),
+    '#title'         => t('Remove CSS libraries from base theme.'),
+    '#default_value' => theme_get_setting('localgov_base_remove_css'),
+    '#description'   => t("Uncheck this box if you want to disable the base theme's CSS"),
   );
 
-  $form['localgov_base_use_js'] = array(
+  $form['localgov_base_remove_js'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Add JS from theme.'),
-    '#default_value' => theme_get_setting('localgov_base_use_js'),
-    '#description'   => t("Uncheck this box if you want to disable the theme's JavaScript"),
+    '#title'         => t('Remove JS libraries from base theme.'),
+    '#default_value' => theme_get_setting('localgov_base_remove_js'),
+    '#description'   => t("Uncheck this box if you want to disable the base theme's JavaScript"),
   );
 }
 
