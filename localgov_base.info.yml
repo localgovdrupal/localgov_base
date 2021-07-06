@@ -1,5 +1,5 @@
 name: "LocalGov Base"
-description: "EXPERIMENTAL: DO NOT USE YET: LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
+description: "BETA - should work pretty well: LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
 type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "stable"
