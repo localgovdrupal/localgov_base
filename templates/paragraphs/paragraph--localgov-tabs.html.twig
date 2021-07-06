@@ -42,7 +42,7 @@
 
 {{ attach_library('localgov_subsites_paragraphs/localgov_tabs') }}
 
-{% if localgov_base_use_css %}
+{% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/tabs') }}
 {% endif %}
 

@@ -1,2 +1,2 @@
-localgov_base_use_css: true
-localgov_base_use_js: true
+localgov_base_remove_css: 0
+localgov_base_remove_js: 0

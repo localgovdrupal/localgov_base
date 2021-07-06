@@ -36,7 +36,7 @@
  */
 #}
 
-{% if localgov_base_use_css %}
+{% if not localgov_base_remove_css %}
 	{{ attach_library('localgov_base/prev-next') }}
 {% endif %}
 
