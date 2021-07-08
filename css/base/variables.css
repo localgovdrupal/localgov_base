@@ -96,16 +96,6 @@
 
   /* Animation */
   --transition-time: 0.3s;
-
-  /* Breadcrumbs */
-  --breadcrumbs-background-color: var(--color-white);
-  --breadcrumbs-border: var(--border);
-  --breadcrumbs-divider: "»";
-  --breadcrumbs-font-size: var(--font-size-medium);
-  --breadcrumbs-padding-vertical: var(--spacing-small);
-  --breadcrumbs-padding-horizontal: 0;
-  --breadcrumbs-link-color: var(--color-accent);
-  --breadcrumbs-spacing-bottom: var(--vertical-rhythm-spacing);
 }
 
 /*
@@ -117,11 +107,20 @@
   override the defined variables above instead).
 */
 :root {
-  --color-section-bg: var(--color-accent);
 
+  /* Breadcrumbs */
+  --breadcrumbs-background-color: var(--color-white);
+  --breadcrumbs-border: var(--border);
+  --breadcrumbs-divider: "»";
+  --breadcrumbs-font-size: var(--font-size-medium);
+  --breadcrumbs-padding-vertical: var(--spacing-small);
+  --breadcrumbs-padding-horizontal: 0;
+  --breadcrumbs-link-color: var(--color-accent);
+  --breadcrumbs-spacing-bottom: var(--vertical-rhythm-spacing);
+  
   /* Header Items */
   --section-spacing-vertical-header: var(--spacing);
-  --color-section-header-bg: var(--color-section-bg);
+  --color-section-header-bg: var(--color-accent);
   --header-link-color: var(--color-white);
   --header-services-button-border: var(--border);
   --header-services-button-border-color: var(--color-white);
@@ -285,4 +284,11 @@
   --banner-content-bg-color: var(--color-accent);
   --banner-content-text-color: var(--color-white);
   --banner-title-size: var(--font-size-larger);
+
+  /* Teaser View Mode */
+  --teaser-image-with: 33%;
+
+  /* News */
+  --newsroom-featured-bottom-space: var(--spacing-largest);
+  --news-category-spacing: var(--spacing);
 }

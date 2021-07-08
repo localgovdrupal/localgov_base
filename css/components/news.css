@@ -1,0 +1,23 @@
+.newsroom__featured-news {
+  margin-bottom: var(--newsroom-featured-bottom-space);
+}
+
+.news-article__metadata-item--categories {
+  padding-left: 0;
+}
+
+.news-article__metadata-item + .news-article__metadata-item {
+  margin-top: var(--vertical-rhythm-spacing);
+}
+
+.news-article__category::marker {
+  color: transparent;
+}
+
+.news-article__category {
+  display: inline;
+}
+
+.news-article__category + .news-article__category {
+  margin-left: var(--news-category-spacing);
+}

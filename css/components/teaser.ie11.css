@@ -1,14 +1,9 @@
-/* 
-  @file Theming the teaser view mode, and lists that render teasers.
-*/
+@media screen and (min-width: 48rem) {
+  .lgd-teaser__image {
+    width: 33%;
+  }
+}
 
-/* 
-  .lgd-teaser-list is a class that we can use as a container when we 
-  render teasers, for example: 
-    - services list on services landing page
-    - news listing page
-    - events listing page
-*/
 .lgd-teaser-list .views-row,
 .lgd-teaser-list .slp__service {
   margin-bottom: 1.5rem;
