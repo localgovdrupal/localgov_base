@@ -12,7 +12,7 @@
 }
 
 .breadcrumbs {
-  margin-bottom: var(--section-spacing-vertical-breadcrumbs);
+  margin-bottom: var(--breadcrumbs-spacing-bottom);
   padding: var(--breadcrumbs-padding-vertical) var(--breadcrumbs-padding-horizontal);
   border-bottom: var(--breadcrumbs-border);
 }
@@ -33,4 +33,9 @@
   display: inline-block;
   margin-right: .25rem;
   content: var(--breadcrumbs-divider);
+  color: var(--breadcrumbs-link-color);
+}
+
+.breadcrumbs__link {
+  color: var(--breadcrumbs-link-color);
 }

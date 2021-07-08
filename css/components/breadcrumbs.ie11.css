@@ -16,3 +16,7 @@
   padding: 0.5rem 0;
   border-bottom: 1px solid #f3f2f1;
 }
+
+.breadcrumbs__link {
+  color: #652c95
+}

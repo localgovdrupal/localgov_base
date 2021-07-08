@@ -104,7 +104,8 @@
   --breadcrumbs-font-size: var(--font-size-medium);
   --breadcrumbs-padding-vertical: var(--spacing-small);
   --breadcrumbs-padding-horizontal: 0;
-  --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
+  --breadcrumbs-link-color: var(--color-accent);
+  --breadcrumbs-spacing-bottom: var(--vertical-rhythm-spacing);
 }
 
 /*
