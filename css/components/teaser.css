@@ -31,7 +31,7 @@
 */
 .lgd-teaser-list .views-row,
 .lgd-teaser-list .service-landing-page__service,
-.lgd-teaser-list .lgd-tlb__service,
+.lgd-teaser-list .lgd-topic-list-builder__service,
 .news-article .field--name-localgov-news-related > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);
   padding-bottom: var(--vertical-rhythm-spacing);

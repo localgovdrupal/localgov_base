@@ -60,14 +60,14 @@
   {% if multiple %}
     <div{{ attributes.addClass('lgd-row', classes, 'field__items') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('lgd-row__one-half', 'lgd-tlb__service', 'field__item') }}>
+        <div{{ item.attributes.addClass('lgd-row__one-half', 'lgd-topic-list-builder__service', 'field__item') }}>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
             icon_name: service_icon,
             icon_wrapper_element: 'div',
-            icon_classes: 'lgd-tlb__service-icon',
+            icon_classes: 'lgd-topic-list-builder__service-icon',
             } 
           %}
-          <div class="lgd-tlb__service-item">
+          <div class="lgd-topic-list-builder__service-item">
             {{ item.content }}
           </div>
         </div>
@@ -75,14 +75,14 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'lgd-tlb__service', 'field__item') }}>
+      <div{{ attributes.addClass(classes, 'lgd-topic-list-builder__service', 'field__item') }}>
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: service_icon,
           icon_wrapper_element: 'div',
-          icon_classes: 'lgd-tlb__service-icon',
+          icon_classes: 'lgd-topic-list-builder__service-icon',
           } 
         %}
-        <div class="lgd-tlb__service-item">
+        <div class="lgd-topic-list-builder__service-item">
           {{ item.content }}
         </div>
       </div>
@@ -95,14 +95,14 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('lgd-tlb__service', 'field__item') }}>
+      <div{{ item.attributes.addClass('lgd-topic-list-builder__service', 'field__item') }}>
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: service_icon,
           icon_wrapper_element: 'div',
-          icon_classes: 'lgd-tlb__service-icon',
+          icon_classes: 'lgd-topic-list-builder__service-icon',
           } 
         %}
-        <div class="lgd-tlb__service-item">
+        <div class="lgd-topic-list-builder__service-item">
           {{ item.content }}
         </div>
       </div>

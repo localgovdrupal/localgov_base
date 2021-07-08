@@ -45,7 +45,7 @@
 
 {%
   set classes = [
-    'lgd-tlb',
+    'lgd-topic-list-builder',
     'lgd-teaser-list',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -64,13 +64,13 @@
       {{ content|without('topic_list_header') }}
     {% endblock %}
     {% if show_more %}
-    <div class="lgd-tlb__show-more">
+    <div class="lgd-topic-list-builder__show-more">
       {% include "@localgov_base/includes/icons/icon.html.twig" with {
         icon_name: more_icon,
         icon_wrapper_element: 'span',
         } 
       %}
-      <a class="lgd-tlb__show-more-link" href="{{ show_more_path }}">{{ 'More'|t }}</a>
+      <a class="lgd-topic-list-builder__show-more-link" href="{{ show_more_path }}">{{ 'More'|t }}</a>
     </div>
     {% endif %}
   </div>
