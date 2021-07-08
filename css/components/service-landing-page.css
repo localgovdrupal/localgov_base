@@ -1,45 +1,45 @@
-.slp__contact {
+.service-landing-page__contact {
   background-color: var(--color-grey-light);
   border-left: var(--border-width-large) var(--border-style) var(--color-accent);
   padding: var(--spacing);
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
-.slp__contact-list {
+.service-landing-page__contact-list {
   padding-left: 0;
 }
 
-.slp__contact-list-item,
-.slp__contact-title {
+.service-landing-page__contact-list-item,
+.service-landing-page__contact-title {
   display: flex;
 }
 
-.slp__contact-map {
+.service-landing-page__contact-map {
   display: flex;
   align-items: center;
 }
 
-.slp__contact-icon {
+.service-landing-page__contact-icon {
   margin-right: var(--spacing-smaller);
   line-height: 1;
 }
 
-.slp__contact h3 {
+.service-landing-page__contact h3 {
   margin-bottom: 0;
 }
 
-.slp__contact-containers {
+.service-landing-page__contact-containers {
   margin-bottom: var(--vertical-rhythm-spacing);
   padding-bottom: var(--vertical-rhythm-spacing);
   border-bottom: var(--border);
   border-bottom-color: var(--color-grey-medium);
 }
 
-.slp__service {
+.service-landing-page__service {
   display: flex;
 }
 
-.slp__service-icon svg {
+.service-landing-page__service-icon svg {
   flex-shrink: 0;
   margin-right: var(--spacing-small);
 }

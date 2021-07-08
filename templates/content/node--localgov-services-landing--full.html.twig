@@ -22,12 +22,12 @@
 
 {# 
   For shorthand, let's abbreviate our classes from .service-landing-page to 
-  .slp
+  .service-landing-page
 #}
 
 {%
   set classes = [
-    'slp',
+    'service-landing-page',
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -44,7 +44,7 @@
     <div class="lgd-row__full">
       {# Begin Services List #}
       {% if node.localgov_destinations.value %}
-        <section class="slp__services lgd-teaser-list">
+        <section class="service-landing-page__services lgd-teaser-list">
           {{ content.localgov_destinations }}
         </section>
       {% endif %}
@@ -52,7 +52,7 @@
       
       {# Begin Service Updates #}
       {% if service_updates %}
-        <section class="slp__updates">
+        <section class="service-landing-page__updates">
           {{ service_updates }}
         </section>
       {% endif %}
@@ -72,7 +72,7 @@
         or node.localgov_hearing_difficulties_phone.value 
       %}
         {# Begin Contact Section #}
-        <div class="slp__contact">
+        <div class="service-landing-page__contact">
           {% if node.localgov_email_address.value 
             or node.localgov_address.value 
             or node.localgov_opening_hours.value 
@@ -80,16 +80,16 @@
           %}
             <h2>{{ 'Contact this service'|t }}</h2>
             {# Begin Contact Containers #}
-            <div class="lgd-row slp__contact-containers">
+            <div class="lgd-row service-landing-page__contact-containers">
               {# Begin Contact First #}
-              <div class="lgd-row__one-half slp__contact-container slp__contact-container--first">
-                <ul class="slp__contact-list">
+              <div class="lgd-row__one-half service-landing-page__contact-container service-landing-page__contact-container--first">
+                <ul class="service-landing-page__contact-list">
                   {% if node.localgov_email_address.value %}
-                    <li class="slp__contact-list-item">
+                    <li class="service-landing-page__contact-list-item">
                       {% include "@localgov_base/includes/icons/icon.html.twig" with {
                           icon_name: email_icon,
                           icon_wrapper_element: 'span',
-                          icon_classes: 'slp__contact-icon'
+                          icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
                       <a href="mailto:{{ content.localgov_email_address|render|striptags }}">{{ 'Send us a message'|t }}</a>
@@ -97,11 +97,11 @@
                   {% endif %}
 
                   {% if node.localgov_phone.value %}
-                    <li class="slp__contact-list-item">
+                    <li class="service-landing-page__contact-list-item">
                       {% include "@localgov_base/includes/icons/icon.html.twig" with {
                           icon_name: phone_icon,
                           icon_wrapper_element: 'span',
-                          icon_classes: 'slp__contact-icon'
+                          icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
                       {{ content.localgov_phone|render|striptags }}
@@ -110,7 +110,7 @@
                 </ul>
 
                 {% if node.localgov_opening_hours.value %}
-                  <div class="slp__opening-times">
+                  <div class="service-landing-page__opening-times">
                     <h3>{{ 'Opening times'|t }}</h3>
                     {{ content.localgov_opening_hours }}
                   </div>
@@ -118,9 +118,9 @@
               </div>
               {# End Contact First #}
               {# Begin Contact Second #}
-              <div class="lgd-row__one-half slp__contact-container slp__contact-container--second">
+              <div class="lgd-row__one-half service-landing-page__contact-container service-landing-page__contact-container--second">
                 {% if node.localgov_address_first_line.value or node.localgov_address.value %}
-                  <h3 class="slp__contact-title">{{ 'Address'|t }}</h3>
+                  <h3 class="service-landing-page__contact-title">{{ 'Address'|t }}</h3>
                   {% if node.localgov_address_first_line.value %}
                     {{ content.localgov_address_first_line }}
                   {% endif %}
@@ -128,11 +128,11 @@
                     {{ content.localgov_address }}
                   {% endif %}
                   {% if node.localgov_link_to_map.value %}
-                    <div class="slp__contact-map">
+                    <div class="service-landing-page__contact-map">
                       {% include "@localgov_base/includes/icons/icon.html.twig" with {
                           icon_name: map_icon,
                           icon_wrapper_element: 'div',
-                          icon_classes: 'slp__contact-icon'
+                          icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
                       <div>
@@ -153,14 +153,14 @@
             
               {% if node.localgov_facebook.value or node.localgov_twitter.value %}
                 <h3>{{ 'Find us on'|t }}</h3>
-                <ul class="slp__contact-list">
+                <ul class="service-landing-page__contact-list">
 
                   {% if node.localgov_facebook.value %}
-                    <li class="slp__contact-list-item">
+                    <li class="service-landing-page__contact-list-item">
                       {% include "@localgov_base/includes/icons/icon.html.twig" with {
                           icon_name: facebook_icon,
                           icon_wrapper_element: 'span',
-                          icon_classes: 'slp__contact-icon'
+                          icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
                       <a href="{{ content.localgov_facebook|render|striptags }}">{{ 'Facebook'|t }}</a>
@@ -168,11 +168,11 @@
                   {% endif %}
 
                   {% if node.localgov_twitter.value %}
-                    <li class="slp__contact-list-item">
+                    <li class="service-landing-page__contact-list-item">
                       {% include "@localgov_base/includes/icons/icon.html.twig" with {
                           icon_name: twitter_icon,
                           icon_wrapper_element: 'span',
-                          icon_classes: 'slp__contact-icon'
+                          icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
                       <a href="{{ content.localgov_twitter|render|striptags }}">{{ 'Twitter'|t }}</a>
@@ -201,7 +201,7 @@
     
     {# Begin Sidebar #}
     {% if node.localgov_popular_topics.value %}
-      <aside class="lgd-row--one-third slp__sidebar">
+      <aside class="lgd-row--one-third service-landing-page__sidebar">
         {{ content.localgov_popular_topics }}
       </aside>
     {% endif %}

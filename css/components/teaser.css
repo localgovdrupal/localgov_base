@@ -30,7 +30,7 @@
     - events listing page
 */
 .lgd-teaser-list .views-row,
-.lgd-teaser-list .slp__service,
+.lgd-teaser-list .service-landing-page__service,
 .lgd-teaser-list .lgd-tlb__service,
 .news-article .field--name-localgov-news-related > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);

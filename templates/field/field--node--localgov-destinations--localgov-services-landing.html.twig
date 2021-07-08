@@ -60,14 +60,14 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('slp__service', 'field__item') }}>
+        <div{{ item.attributes.addClass('service-landing-page__service', 'field__item') }}>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
             icon_name: service_icon,
             icon_wrapper_element: 'div',
-            icon_classes: 'slp__service-icon',
+            icon_classes: 'service-landing-page__service-icon',
             } 
           %}
-          <div class="slp__service-item">
+          <div class="service-landing-page__service-item">
             {{ item.content }}
           </div>
         </div>
@@ -75,14 +75,14 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'slp__service', 'field__item') }}>
+      <div{{ attributes.addClass(classes, 'service-landing-page__service', 'field__item') }}>
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: service_icon,
           icon_wrapper_element: 'div',
-          icon_classes: 'slp__service-icon',
+          icon_classes: 'service-landing-page__service-icon',
           } 
         %}
-        <div class="slp__service-item">
+        <div class="service-landing-page__service-item">
           {{ item.content }}
         </div>
       </div>
@@ -95,14 +95,14 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('slp__service', 'field__item') }}>
+      <div{{ item.attributes.addClass('service-landing-page__service', 'field__item') }}>
         {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: service_icon,
           icon_wrapper_element: 'div',
-          icon_classes: 'slp__service-icon',
+          icon_classes: 'service-landing-page__service-icon',
           } 
         %}
-        <div class="slp__service-item">
+        <div class="service-landing-page__service-item">
           {{ item.content }}
         </div>
       </div>
