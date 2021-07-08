@@ -1,24 +1,40 @@
-.sidebar .lgd-region__inner > * {
+/* 
+  @file Theming for the sidebar region.
+
+  Some items are added here as extras that _should_ have sidebar 
+  theming, but their blocks are not placed in the sidebar region,
+  such as the facets for the newsroom.
+*/
+
+.sidebar .lgd-region__inner > *,
+.newsroom__sidebar > * {
   padding: var(--sidebar-exposed-form-padding-vertical) var(--sidebar-exposed-form-padding-horizontal);
   background-color: var(--sidebar-exposed-form-bg-color);
 }
 
-.sidebar .lgd-region__inner > * + * {
+.sidebar .lgd-region__inner > * + *,
+.newsroom__sidebar > * + * {
   margin-top: var(--sidebar-exposed-form-item-spacing);
 }
 
-.sidebar .views-exposed-form label {
+.sidebar .views-exposed-form label,
+.newsroom__sidebar .views-exposed-form label {
   display: block;
   font-weight: bold;
 }
 
 .sidebar .views-exposed-form .form-item + .form-item,
 .sidebar .views-exposed-form .form-item + .form-actions,
-.sidebar .form-item-search-api-fulltext > * + * {
+.sidebar .form-item-search-api-fulltext > * + *,
+.newsroom__sidebar .views-exposed-form .form-item + .form-item,
+.newsroom__sidebar .views-exposed-form .form-item + .form-actions,
+.newsroom__sidebar .form-item-search-api-fulltext > * + * {
   margin-top: var(--sidebar-exposed-form-item-spacing);
 }
 
 .sidebar .views-exposed-form input,
-.sidebar .views-exposed-form select {
+.sidebar .views-exposed-form select,
+.newsroom__sidebar .views-exposed-form input,
+.newsroom__sidebar .views-exposed-form select {
   width: 100%;
 }

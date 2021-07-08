@@ -203,6 +203,12 @@ facets:
       css/components/facets.ie11.css: {}
       css/components/facets.css: {}
 
+news:
+  css:
+    theme:
+      css/components/news.ie11.css: {}
+      css/components/news.css: {}
+
 events:
   css:
     theme:

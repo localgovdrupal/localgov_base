@@ -2,6 +2,26 @@
   @file Theming the teaser view mode, and lists that render teasers.
 */
 
+.lgd-teaser__image img {
+  width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+
+  .lgd-teaser {
+    display: flex;
+  }
+  
+  .lgd-teaser__image {
+    width: var(--teaser-image-with);
+    flex-shrink: 0;
+  }
+
+  .lgd-teaser__image + .lgd-teaser__content {
+    margin-left: 1rem;
+  }
+}
+
 /* 
   .lgd-teaser-list is a class that we can use as a container when we 
   render teasers, for example: 
@@ -11,7 +31,8 @@
 */
 .lgd-teaser-list .views-row,
 .lgd-teaser-list .slp__service,
-.lgd-teaser-list .lgd-tlb__service {
+.lgd-teaser-list .lgd-tlb__service,
+.news-article .field--name-localgov-news-related > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);
   padding-bottom: var(--vertical-rhythm-spacing);
   border-bottom: var(--border);

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ *   Wrap list of featured news teasers.
+ */
+#}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% set featured_news_items %}
+  <div class="lgd-row">
+    {% for item in items %}
+      <div class="lgd-row__one-third">
+        {{ item.content }}
+      </div>
+    {% endfor %}
+  </div>
+{% endset %}
+
+{% if label_hidden %}
+  <div{{ attributes.addClass('localgov-newsroom__featured-news') }}>
+    {{ featured_news_items }}
+  </div>
+  {% else %}
+    <div{{ attributes }}>
+      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+        <div class="localgov-newsroom__featured-news">
+          {{ featured_news_items }}
+        </div>
+    </div>
+{% endif %}
