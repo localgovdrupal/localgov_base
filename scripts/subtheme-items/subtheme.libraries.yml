@@ -1,0 +1,4 @@
+variables:
+  css:
+    base:
+      css/variables.css: { weight: 200 }
