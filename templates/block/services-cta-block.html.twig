@@ -30,27 +30,24 @@
   {{ attach_library('localgov_base/service-cta-block') }}
 {% endif %}
 
-{#
-  We abbreviate .service-cta-block to sctab
-#}
 {% set classes = [
-    'sctab',
+    'service-cta-block',
   ]
 %}
 
 {% set cta_link_icon = 'chevron-right' %}
 
 <nav{{ attributes.addClass(classes).setAttribute('aria-label', 'Section Navigation'|t) }}>
-  <ul class="lgd-row sctab__list">
+  <ul class="lgd-row service-cta-block__list">
     {% for button in buttons %}
-      <li class="lgd-row__one-third sctab__list-item sctab__list-item--{{ loop.index}}"> 
-        <a href="{{ button.url }}" class="sctab__link sctab__link--{{ button.type }}">
-          <span class="sctab__link-title">{{ button.title }}</span>
-          <span class="sctab__link-title"></span>
+      <li class="lgd-row__one-third service-cta-block__list-item service-cta-block__list-item--{{ loop.index}}">
+        <a href="{{ button.url }}" class="service-cta-block__link service-cta-block__link--{{ button.type }}">
+          <span class="service-cta-block__link-title">{{ button.title }}</span>
+          <span class="service-cta-block__link-title"></span>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
               icon_name: cta_link_icon,
               icon_wrapper_element: 'span',
-              icon_classes: 'sctab__link-icon'
+              icon_classes: 'service-cta-block__link-icon'
             }
           %}
         </a>

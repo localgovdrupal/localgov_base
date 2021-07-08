@@ -66,10 +66,11 @@ button,
 input[type="submit"] {
   padding: 1rem;
   border: 1px solid #f3f2f1;
-  border-color: #f3f2f1;
   border-radius: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;;
   color: white;
   background-color: #652c95;
+  border-color: #f3f2f1;
 }
 
 button:focus,

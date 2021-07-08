@@ -1,7 +1,7 @@
-/* 
+/*
   @file Base/element level theming.
 
-  This file sets up default CSS for elements, such as links as 
+  This file sets up default CSS for elements, such as links as
   well as font sizes, vertical rhythm, etc.
 */
 
@@ -61,34 +61,34 @@ h6,
 
 h1,
 .h1 {
-  font-size: clamp(var(--font-size-larger), 10vw, var(--font-size-largest));
+  font-size: var(--font-size-h1);
 }
 
 h2,
 .h2 {
-  font-size: clamp(var(--font-size-large), 8vw, var(--font-size-larger));
+  font-size: var(--font-size-h2);
 }
 
 h3,
 .h3 {
-  font-size: clamp(var(--font-size-medium), 6vw, var(--font-size-large));
+  font-size: var(--font-size-h3);
 }
 
 h4,
 .h4 {
-  font-size: 1rem;
+  font-size: var(--font-size-h4);
   font-weight: bold;
 }
 
 h5,
 .h5 {
-  font-size: 1rem;
+  font-size: var(--font-size-h5);
   font-variant: small-caps;
 }
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: var(--font-size-h6);
   font-variant: small-caps;
   text-decoration: underline;
 }
@@ -131,10 +131,11 @@ button,
 input[type="submit"] {
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   border: var(--border);
-  border-color: var(--button-border-color);
   border-radius: var(--button-border-radius);
+  font-family: var(--button-font-family);
   color: var(--button-text-color);
   background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
 }
 
 button:focus,
@@ -142,18 +143,18 @@ button:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
   color: var(--button-text-color-hover);
-  background-color: var(--button-bg--color-hover);
+  background-color: var(--button-bg-color-hover);
   text-decoration: underline;
 }
 
-/* 
+/*
   Checkboxes
 
   This checkboxes styling is taken directly from the gov.uk design system:
     - https://design-system.service.gov.uk/components/checkboxes/
 
   We are adding a .form-checkboxes class around each of these here to make sure
-  this only affects checkboxes created by Drupal. If we don't, the position absolute 
+  this only affects checkboxes created by Drupal. If we don't, the position absolute
   can have very unwanted effects.
 
   If you need to create custom checkboxes, make sure you have the same class

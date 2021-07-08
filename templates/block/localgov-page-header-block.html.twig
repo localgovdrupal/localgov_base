@@ -13,10 +13,10 @@
   {{ attach_library('localgov_base/page-title-block') }}
 {% endif %}
 
-{% 
+{%
   set classes = [
     'lgd-page-title-block'
-  ] 
+  ]
 %}
 
 {% if title or lede['#value'] %}
@@ -27,7 +27,7 @@
     {% endif %}
 
     {% if lede['#value'] %}
-      <p class="lgd-page-title-block__subheader h3">{{ lede['#value'] }}</p>
+      <p class="lgd-page-title-block__subheader">{{ lede['#value'] }}</p>
     {% endif %}
 
   </div>

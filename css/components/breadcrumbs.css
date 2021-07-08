@@ -1,4 +1,4 @@
-/* 
+/*
   @file Theming the breadcrumbs region.
 
   This CSS is very generic. Most themes will not need to override it,
@@ -7,10 +7,14 @@
   variable.
 */
 
+.lgd-region--breadcrumb {
+  background-color: var(--breadcrumbs-background-color);
+}
+
 .breadcrumbs {
   margin-bottom: var(--section-spacing-vertical-breadcrumbs);
-  padding: .5rem 0;
-  border-bottom: var(--border);
+  padding: var(--breadcrumbs-padding-vertical) var(--breadcrumbs-padding-horizontal);
+  border-bottom: var(--breadcrumbs-border);
 }
 
 .breadcrumbs__list {
@@ -22,6 +26,7 @@
 .breadcrumbs__item {
   display: inline-block;
   margin-right: .25rem;
+  font-size: var(--breadcrumbs-font-size);
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {

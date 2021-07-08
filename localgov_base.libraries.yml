@@ -6,6 +6,7 @@ global:
       css/base/base.css: {}
       css/layout/layout-utilities.ie11.css: {}
       css/layout/layout-utilities.css: {}
+      css/components/admin-toolbar.css: {}
 
 grid:
   css:

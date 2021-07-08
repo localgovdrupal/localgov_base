@@ -1,14 +1,14 @@
-.sctab__list {
+.service-cta-block__list {
   padding-left: 0;
   list-style: none;
   border-bottom: var(--border);
 }
 
-.sctab__list-item {
+.service-cta-block__list-item {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
-.sctab__link {
+.service-cta-block__link {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,32 +18,32 @@
   background-color: var(--color-info);
 }
 
-.sctab__link:hover {
+.service-cta-block__link:hover {
   background-color: var(--color-focus);
   color: var(--color-black);
   text-decoration: underline;
 }
 
-.sctab__link--cta-action {
+.service-cta-block__link--cta-action {
   background-color: var(--color-success);
 }
 
-.sctab__link-icon {
+.service-cta-block__link-icon {
   position: relative;
   left: 0;
   line-height: 1;
   transition: var(--transition-time);
 }
 
-.sctab__link-icon svg path {
+.service-cta-block__link-icon svg path {
   fill: var(--color-white);
 }
 
-.sctab__link:focus .sctab__link-icon,
-.sctab__link:hover .sctab__link-icon {
+.service-cta-block__link:focus .service-cta-block__link-icon,
+.service-cta-block__link:hover .service-cta-block__link-icon {
   left: var(--spacing-smallest);
 }
 
-.sctab__link:focus .sctab__link-icon svg path {
+.service-cta-block__link:focus .service-cta-block__link-icon svg path {
   fill: var(--color-accent);
 }

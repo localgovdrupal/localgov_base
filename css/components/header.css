@@ -1,13 +1,13 @@
-/* 
+/*
   @file Theming for the header area.
-  Note: The header area is NOT just the header region. It is the 
+  Note: The header area is NOT just the header region. It is the
   header region, but also the containing wrapper, which places
   - primary menu
   - search
   - mobile search, and
   - secondary menu
 
-  We will theme those individual regions in their own files. This 
+  We will theme those individual regions in their own files. This
   file is for the general area layout and the specific header region.
 */
 
@@ -27,7 +27,7 @@
   margin-right: calc(var(--spacing) * 2);
 }
 
-/* 
+/*
   Layout for the Nav Sections.
   Theming for individual sections in within each individual section's
   CSS file.
@@ -105,7 +105,7 @@
 /* Overrides for Specific Toggles */
 @media screen and (min-width: 48rem) {
   .lgd-header__toggle--primary {
-    display: none;    
+    display: none;
   }
 }
 
@@ -114,7 +114,7 @@
 }
 
 .branding__item--logo {
-  width: var(--width-logo);
+  width: var(--header-logo-width);
 }
 
 .branding__item--logo a {
@@ -128,9 +128,9 @@
   background-color: transparent;
 }
 
-/* 
-  If JavaScript is disabled, 
-  we show all header items and hide the toggle buttons. 
+/*
+  If JavaScript is disabled,
+  we show all header items and hide the toggle buttons.
 */
 .no-js .lgd-header__nav {
   display: block !important;

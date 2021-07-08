@@ -1,4 +1,4 @@
-/* 
+/*
   @file This is our file to create the variables that will be used across the theme.
 
   To override these in your sub-theme, just create a new variables.css file and
@@ -10,8 +10,7 @@
   --width-large: 60rem;
   --width-medium: 48rem;
   --width-small: 30rem;
-  --width-container: var(--width-extra-large); 
-  --width-logo: 10rem;
+  --width-container: var(--width-extra-large);
   --spacing-smallest: 0.25rem;
   --spacing-smaller: 0.5rem;
   --spacing-small: 0.75rem;
@@ -25,7 +24,7 @@
   --vertical-rhythm-spacing: calc(var(--line-height) * 1rem);
 
   /* Colours */
-  /* 
+  /*
     Colours Defined
     In this section, we define the colours available in our theme.
     We should not refer to these directly in our CSS however. Instead,
@@ -37,16 +36,16 @@
   --color-orange: #ed7522;
   --color-yellow: #ffdd00;
   --color-blue: #297bbb;
-  /* 
+  /*
     Grey Scale
-    In this section, we define our greys; let's not have 50 shades 
+    In this section, we define our greys; let's not have 50 shades
   */
   --color-white: #ffffff;
   --color-grey-light: #f3f2f1;
   --color-grey-medium: #b1b4b6;
   --color-grey-dark: #505a5f;
   --color-black: #0b0c0c;
-  /* 
+  /*
     Colours Applied
     In this section, we "apply" our colours.
   */
@@ -58,13 +57,13 @@
   --color-focus: var(--color-yellow);
 
   /* Fonts */
-  /* 
+  /*
     We choose basic fonts that most people have in browser cache from visiting other websites.
     This will help with page speed, rather than calling fonts from Google Fonts or somewhere.
   */
   --font-primary: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-secondary: Georgia, 'Times New Roman', Times, serif;
-  /* 
+  /*
     Font sizes based on vertical rhythm of:
     - Font size: 16px;
     - Scale factor: 1.303
@@ -78,6 +77,12 @@
   --font-size-large: calc(var(--font-size) * 1.3125);
   --font-size-larger: calc(var(--font-size) * 1.6875);
   --font-size-largest: calc(var(--font-size) * 2.875);
+  --font-size-h1: clamp(var(--font-size-larger), 10vw, var(--font-size-largest));
+  --font-size-h2: clamp(var(--font-size-large), 8vw, var(--font-size-larger));
+  --font-size-h3: clamp(var(--font-size-medium), 6vw, var(--font-size-large));
+  --font-size-h4: var(--font-size-medium);
+  --font-size-h5: var(--font-size-medium);
+  --font-size-h6: var(--font-size-medium);
 
   /* Borders */
   --border-width: 1px;
@@ -92,11 +97,17 @@
   /* Animation */
   --transition-time: 0.3s;
 
-  /* Content */
+  /* Breadcrumbs */
+  --breadcrumbs-background-color: var(--color-white);
+  --breadcrumbs-border: var(--border);
   --breadcrumbs-divider: "»";
+  --breadcrumbs-font-size: var(--font-size-medium);
+  --breadcrumbs-padding-vertical: var(--spacing-small);
+  --breadcrumbs-padding-horizontal: 0;
+  --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
 }
 
-/* 
+/*
   Applying Variables
 
   By taking this approach of setting variables above, and then applying them here
@@ -117,6 +128,7 @@
   --header-services-button-bg-color: transparent;
   --header-services-button-bg-color-hover: var(--color-accent);
   --header-services-button-color-hover: var(--color-white);
+  --header-logo-width: 10rem;
 
   /* Secondary Menu */
   --secondary-menu-bg-color: var(--color-white);
@@ -133,7 +145,11 @@
   --section-spacing-vertical-pre-footer: var(--spacing-largest);
   --section-spacing-vertical-footer: var(--spacing);
   --section-spacing-vertical-post-footer: var(--spacing);
-  --section-spacing-vertical-breadcrumbs: var(--vertical-rhythm-spacing);
+
+  /* Page Title */
+  --page-title-border: var(--border);
+  --page-title-width: var(--width-medium);
+  --page-title-lede-font-size: var(--font-size-h3);
 
   /* Input Elements */
   --input-padding-vertical: var(--spacing);
@@ -147,7 +163,7 @@
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
-  
+
   /* Button Elements (and button-styled links) */
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);
@@ -158,6 +174,8 @@
   --button-border-color: var(--color-accent);
   --button-bg-color: var(--color-accent);
   --button-bg-color-hover: var(--color-white);
+  --button-font-family: var(--font-primary);
+  --button-border-radius: 0;
 
   /* Sidebar Items */
   --sidebar-exposed-form-bg-color: var(--color-grey-light);

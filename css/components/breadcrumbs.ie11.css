@@ -1,9 +1,18 @@
 /* IE11 Fallbacks */
+.lgd-region--breadcrumb {
+  background-color: white;
+}
+
+.breadcrumbs__item {
+  font-size: 1rem;
+}
+
 .breadcrumbs__item + .breadcrumbs__item::before {
   content: "»";
 }
 
 .breadcrumbs {
   margin-bottom: 1rem;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #f3f2f1;
 }
