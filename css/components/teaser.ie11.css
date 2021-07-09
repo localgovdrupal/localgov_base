@@ -2,6 +2,13 @@
   .lgd-teaser__image {
     width: 33%;
   }
+  .newsroom__featured-news .lgd-teaser {
+    height: 100%;
+    border: 1px solid #b1b4b6;
+  }
+  .newsroom__featured-news .lgd-teaser__content {
+    padding: 2rem;
+  }
 }
 
 .lgd-teaser-list .views-row,

@@ -33,7 +33,6 @@
   }
   .newsroom__featured-news .lgd-teaser__image {
     width: 100%;
-    flex-shrink: 0;
   }
   .newsroom__featured-news .lgd-teaser__content {
     padding: var(--teaser-featured-content-padding);
