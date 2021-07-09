@@ -71,7 +71,10 @@ cp -r ../../contrib/localgov_base/scripts/subtheme-items/css .
 echo "+ default css copied"
 
 cp -r ../../contrib/localgov_base/scripts/subtheme-items/templates .
-echo "+ html.html.twig file copied"
+echo "+ templates directory copied"
+
+mv templates/layout/_html.html.twig templates/layout/html.html.twig
+echo "+ _html.html.twig file correctly renamed html.html.twig"
 
 cp -r ../../contrib/localgov_base/scripts/subtheme-items/assets .
 echo "+ added default favicons - you will probably want to create new ones for yourself."
