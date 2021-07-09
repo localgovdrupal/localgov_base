@@ -21,13 +21,13 @@
 {% endset %}
 
 {% if label_hidden %}
-  <div{{ attributes.addClass('localgov-newsroom__featured-news') }}>
+  <div{{ attributes.addClass('newsroom__featured-news') }}>
     {{ featured_news_items }}
   </div>
   {% else %}
     <div{{ attributes }}>
       <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-        <div class="localgov-newsroom__featured-news">
+        <div class="newsroom__featured-news">
           {{ featured_news_items }}
         </div>
     </div>

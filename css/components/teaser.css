@@ -20,6 +20,27 @@
   .lgd-teaser__image + .lgd-teaser__content {
     margin-left: 1rem;
   }
+
+  /* 
+    This featured news section should really be its own (card) view mode.
+    We shouldn't need overrides like this in our theme.
+  */
+  .newsroom__featured-news .lgd-teaser {
+    display: block;
+    height: var(--teaser-featured-height);
+    border: var(--teaser-featured-border);
+    border-color: var(--teaser-featured-border-color);
+  }
+  .newsroom__featured-news .lgd-teaser__image {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .newsroom__featured-news .lgd-teaser__content {
+    padding: var(--teaser-featured-content-padding);
+  }
+  .newsroom__featured-news .lgd-teaser__image + .lgd-teaser__content {
+    margin-left: 0;
+  }
 }
 
 /* 

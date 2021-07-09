@@ -287,6 +287,11 @@
 
   /* Teaser View Mode */
   --teaser-image-with: 33%;
+  --teaser-featured-content-padding: var(--spacing-larger);
+  --teaser-featured-height: 100%;
+  --teaser-featured-border: var(--border);
+  --teaser-featured-border-color: var(--color-grey-medium);
+
 
   /* News */
   --newsroom-featured-bottom-space: var(--spacing-largest);
