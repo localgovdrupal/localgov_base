@@ -58,7 +58,7 @@ cd $LGD_SUB_THEME
 cp ../../contrib/localgov_base/logo.svg .
 echo "+ themes/custom/$LGD_SUB_THEME/logo.svg copied"
 
-cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.info.yml $LGD_SUB_THEME.info.yml
+cp ../../contrib/localgov_base/scripts/subtheme-items/_subtheme.info.yml_ $LGD_SUB_THEME.info.yml
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.info.yml created"
 cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.libraries.yml $LGD_SUB_THEME.libraries.yml
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.libraries.yml created"
