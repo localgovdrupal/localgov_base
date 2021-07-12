@@ -1,8 +1,9 @@
 <?php
-
 /**
  * @file Theme hooks to support the LocalGov Base Theme.
  */
+
+use Drupal\views\ViewExecutable;
 
 function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
@@ -117,4 +118,13 @@ function localgov_base_preprocess_file_link(&$variables) {
   $variables['link']['#title'] = [
     '#markup' => "{$variables['link']['#title']} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
   ];
+}
+
+/**
+* Implements hook_views_pre_render().
+*/
+function localgov_base_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'localgov_sitewide_search')) {
+    $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
+  }
 }

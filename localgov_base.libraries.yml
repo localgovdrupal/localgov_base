@@ -232,3 +232,9 @@ banner:
     theme:
       css/components/banner.ie11.css: {}
       css/components/banner.css: {}
+
+sitewide-search:
+  css:
+    theme:
+      css/components/sitewide-search.ie11.css: {}
+      css/components/sitewide-search.css: {}
