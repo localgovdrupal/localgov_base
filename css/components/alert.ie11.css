@@ -1,13 +1,13 @@
-/* 
+/*
   @file Theming the alert class - used in WYSIWYG.
 */
 
 .alert {
   padding: 2.5rem;
-  font-size: 1.3125rem;
   border: 5px solid black;
-  font-weight: bold;
   background-color: white;
+  font-size: 1.3125rem;
+  font-weight: bold;
 }
 
 .alert-primary {

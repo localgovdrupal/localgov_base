@@ -1,0 +1,7 @@
+.facets-widget__list + * {
+  margin-top: 1.5rem;
+}
+
+.facet-item + .facet-item {
+  margin-top: 1.5rem;
+}

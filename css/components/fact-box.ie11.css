@@ -12,18 +12,18 @@
 }
 
 .fact-box--fact-box-dark {
-  background-color: #b1b4b6;
   color: white;
+  background-color: #b1b4b6;
 }
 
 .fact-box--fact-box-accent {
-  background-color: #652c95;
   color: white;
+  background-color: #652c95;
 }
 
 .fact-box--fade-red-blue {
-  background-image: linear-gradient(red, blue);
   color: white;
+  background-image: linear-gradient(red, blue);
 }
 
 .fact-box__opening,

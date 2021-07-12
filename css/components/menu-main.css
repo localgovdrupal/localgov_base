@@ -1,4 +1,4 @@
-/* 
+/*
   @file Theming main menu.
 */
 
@@ -28,7 +28,7 @@
   .lgd-region--primary-menu .menu--main {
     display: flex;
   }
-  
+
   .menu--main > .menu-item a {
     border: 1px solid transparent;
   }

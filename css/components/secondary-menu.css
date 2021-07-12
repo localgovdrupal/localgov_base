@@ -1,13 +1,13 @@
 /* Theming Secondary Nav (services list region) */
 .region-secondary-menu {
   margin-top: var(--vertical-rhythm-spacing);
-  /* 
+  /*
     Use calc for padding-bottom, to remove the extra space caused from the margin-bottom
     on the .menu-item classes.
   */
-  padding: 
-    var(--section-spacing-vertical-secondary-menu) 
-    var(--section-spacing-horizontal-secondary-menu) 
+  padding:
+    var(--section-spacing-vertical-secondary-menu)
+    var(--section-spacing-horizontal-secondary-menu)
     calc(var(--section-spacing-vertical-secondary-menu) - var(--spacing));
   background-color: var(--secondary-menu-bg-color);
 }

@@ -15,8 +15,8 @@
 
 /* The bullet numbers beside each step */
 .step-by-step-pages ol.step-list .step.step--active::before {
-  background-color: var(--step-by-step-active-bullet-bg-color);
   border-color: var(--step-by-step-active-bullet-border-color);
+  background-color: var(--step-by-step-active-bullet-bg-color);
 }
 
 /* The border from the active step to the next one */

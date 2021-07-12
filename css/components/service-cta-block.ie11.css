@@ -13,8 +13,8 @@
 }
 
 .service-cta-block__link:hover {
-  background-color: #ffdd00;
   color: black;
+  background-color: #fd0;
 }
 
 .service-cta-block__link--cta-action {
@@ -22,7 +22,7 @@
 }
 
 .service-cta-block__link-icon {
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .service-cta-block__link-icon svg path {
@@ -31,7 +31,7 @@
 
 .service-cta-block__link:focus .service-cta-block__link-icon,
 .service-cta-block__link:hover .service-cta-block__link-icon {
-  left: .25rem;
+  left: 0.25rem;
 }
 
 .service-cta-block__link:focus .service-cta-block__link-icon svg path {
