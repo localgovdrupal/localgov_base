@@ -5,8 +5,8 @@
 }
 
 .pager__item {
-  margin-left: var(--spacing-smaller);
   margin-right: var(--spacing-smaller);
+  margin-left: var(--spacing-smaller);
 }
 
 .pager__item::marker {

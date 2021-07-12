@@ -11,9 +11,9 @@
 
 .tabs--initialised .tabs__controls {
   display: flex;
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .tabs--initialised .tabs__controls li {
@@ -21,19 +21,19 @@
 }
 
 .tabs--initialised .tabs__controls button {
-  border: var(--tabs-border);
-  font-size: var(--tabs-button-font-size);
-  font-family: var(--tabs-button-font-family);
   margin: 0;
-  border-color: var(--tabs-border-color);
-  color: var(--tabs-text-color);
-  background: var(--tabs-button-bg-color);
   cursor: pointer;
+  color: var(--tabs-text-color);
+  border: var(--tabs-border);
+  border-color: var(--tabs-border-color);
+  background: var(--tabs-button-bg-color);
+  font-family: var(--tabs-button-font-family);
+  font-size: var(--tabs-button-font-size);
 }
 
 .tabs--initialised .tabs__controls [aria-selected="true"] {
-  background-color: var(--tabs-button-active-color);
   border-bottom-color: var(--tabs-button-active-color);
+  background-color: var(--tabs-button-active-color);
 }
 
 .tabs--initialised .tabs__controls > li + li button {

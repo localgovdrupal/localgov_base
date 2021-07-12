@@ -1,11 +1,11 @@
 /**
  * @file
  * Styles for system messages.
- * 
+ *
  * These styles are copied directly from the Classy theme.
  */
 
- .messages {
+.messages {
   margin: 1rem auto;
   padding: 15px 20px 15px 35px; /* LTR */
   word-wrap: break-word;

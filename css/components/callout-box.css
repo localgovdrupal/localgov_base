@@ -6,23 +6,22 @@
   background-color: var(--call-out-box-bg-color);
 }
 
-.call-out-box__content  {
+.call-out-box__content {
   padding: var(--call-out-box-padding);
-  background: var(--call-out-box-bg-color);
   color: var(--call-out-box-text-color);
+  background: var(--call-out-box-bg-color);
 }
 
 .call-out-box__link {
   padding: var(--call-out-box-link-padding);
-  background-color: var(--call-out-box-text-color);
   color: var(--call-out-box-bg-color);
+  background-color: var(--call-out-box-text-color);
 }
 
 @media screen and (min-width: 48rem) {
-  .call-out-box--has-image .call-out-box__content  {
-    background: linear-gradient(to right, var(--call-out-box-bg-color) 75%, transparent);
-    padding-right: 20%;
+  .call-out-box--has-image .call-out-box__content {
     width: 75%;
+    padding-right: 20%;
+    background: linear-gradient(to right, var(--call-out-box-bg-color) 75%, transparent);
   }
 }
-

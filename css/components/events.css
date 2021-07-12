@@ -13,13 +13,13 @@
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
-.field--name-localgov-event-call-to-action a  {
+.field--name-localgov-event-call-to-action a {
   display: inline-block;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
-  border: var(--border);
-  border-radius: var(--button-border-radius);
-  border-color: var(--button-border-color);
   color: var(--button-text-color);
+  border: var(--border);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
   background-color: var(--button-bg-color);
 }
 

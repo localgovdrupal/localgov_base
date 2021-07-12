@@ -1,8 +1,8 @@
 .service-landing-page__contact {
-  background-color: #f3f2f1;
-  border-left: 5px solid #652c95;
-  padding: 1rem;
   margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 5px solid #652c95;
+  background-color: #f3f2f1;
 }
 
 .service-landing-page__contact-icon {
@@ -10,6 +10,6 @@
 }
 
 .service-landing-page__contact-containers {
-  border-bottom: 1px solid #b1b4b6;
   margin-bottom: 1.5rem;
+  border-bottom: 1px solid #b1b4b6;
 }

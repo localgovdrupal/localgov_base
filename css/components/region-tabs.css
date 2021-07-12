@@ -1,7 +1,7 @@
-/* 
+/*
   @file Theming for the tabs region.
 
-  We are theming this in a very generic manner so no site should need to 
+  We are theming this in a very generic manner so no site should need to
   override it.
 */
 
@@ -21,10 +21,10 @@
   display: inline-block;
   padding: 1rem;
   text-decoration: none;
-  font-weight: bold;
-  font-family: sans-serif;
   color: black;
   background-color: lightgrey;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .lgd-region--tabs .tabs > ul > li a.is-active {

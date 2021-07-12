@@ -5,8 +5,8 @@
 .lgd-footer__pre-footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
-  background-color: var(--color-section-pre-footer-bg);
   color: var(--color-white);
+  background-color: var(--color-section-pre-footer-bg);
 }
 
 .lgd-footer__pre-footer a {

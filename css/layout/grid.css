@@ -1,4 +1,4 @@
-/* 
+/*
   This is a basic grid system, that should be very easy to use.
   To use, simply add an element with a class of .lgd-row, then add
   another element as a direct descendant(s) of this with the widths
@@ -33,21 +33,21 @@
   .lgd-row--quarters > * {
     width: calc(25% - var(--spacing));
   }
-  
+
   .lgd-row__one-third,
   .lgd-row--thirds > * {
     width: calc(33% - var(--spacing));
   }
-  
+
   .lgd-row__one-half,
   .lgd-row--halves > * {
     width: calc(50% - var(--spacing));
   }
-  
+
   .lgd-row__two-thirds {
     width: calc((100% / 3 * 2) - var(--spacing));
   }
-  
+
   .lgd-row__three-quarters {
     width: calc(75% - var(--spacing));
   }

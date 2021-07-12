@@ -25,13 +25,13 @@
 
 .breadcrumbs__item {
   display: inline-block;
-  margin-right: .25rem;
+  margin-right: 0.25rem;
   font-size: var(--breadcrumbs-font-size);
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
   display: inline-block;
-  margin-right: .25rem;
+  margin-right: 0.25rem;
   content: var(--breadcrumbs-divider);
   color: var(--breadcrumbs-link-color);
 }

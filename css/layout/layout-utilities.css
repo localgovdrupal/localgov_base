@@ -2,8 +2,8 @@
   @file Utility classes to drop into templates.
 */
 
-/* 
-  The main container class that defines how wide our content area is 
+/*
+  The main container class that defines how wide our content area is
 */
 .lgd-container {
   max-width: var(--width-container);

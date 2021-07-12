@@ -1,7 +1,6 @@
 .featured-subsite {
   padding-bottom: var(--spacing);
   background-color: var(--featured-subsite-bg-color);
-
 }
 .featured-subsite > * {
   margin-bottom: var(--vertical-rhythm-spacing);
