@@ -115,13 +115,17 @@
               {{ page.sidebar_first }}
             </aside>
             <div class="lgd-row__two-thirds">
-              {{ page.content }}
+              <div class="padding-horizontal">
+                {{ page.content }}
+              </div>
             </div>
           {% endif %}
 
           {% if has_sidebar_second and not has_sidebar_first %}
             <div class="lgd-row__two-thirds">
-              {{ page.content }}
+              <div class="padding-horizontal">
+                {{ page.content }}
+              </div>
             </div>
             <aside class="lgd-row__one-third sidebar sidebar--second">
               {{ page.sidebar_second }}
@@ -133,7 +137,9 @@
               {{ page.sidebar_first }}
             </aside>
             <div class="lgd-row__one-half">
-              {{ page.content }}
+              <div class="padding-horizontal">
+                {{ page.content }}
+              </div>
             </div>
             <aside class="lgd-row__one-quarter sidebar sidebar--second">
               {{ page.sidebar_second }}
@@ -143,7 +149,9 @@
           {% else %}
             {# If there are no sidebars, the content region take up 100% of the space #}
             <div class="lgd-row__full">
-            {{ page.content }}
+              <div class="padding-horizontal">
+                {{ page.content }}
+              </div>
             </div>
         {% endif %}
         {# End Sidebars #}
