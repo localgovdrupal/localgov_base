@@ -293,12 +293,8 @@
   --teaser-featured-border: var(--border);
   --teaser-featured-border-color: var(--border-color-dark);
 
+
   /* News */
   --newsroom-featured-bottom-space: var(--spacing-largest);
   --news-category-spacing: var(--spacing);
-
-  /* Search Results */
-  --search-results-item-spacing: var(--spacing-largest);
-  --search-results-list-item-border: var(--border);
-  --search-results-list-item-marker-color: var(--color-accent);
 }

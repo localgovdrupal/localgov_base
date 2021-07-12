@@ -136,7 +136,6 @@ input[type="submit"] {
   color: var(--button-text-color);
   background-color: var(--button-bg-color);
   border-color: var(--button-border-color);
-  cursor: pointer;
 }
 
 button:focus,
