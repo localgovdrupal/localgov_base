@@ -25,7 +25,7 @@
 }
 
 @media screen and (min-width: 48rem) {
-  .menu--main {
+  .lgd-region--primary-menu .menu--main {
     display: flex;
   }
   
