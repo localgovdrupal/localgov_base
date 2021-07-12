@@ -1,0 +1,22 @@
+.lgd-search-results-list > * {
+  margin-bottom: var(--search-results-item-spacing);
+}
+
+.lgd-search-results-list .views-exposed-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lgd-search-results-list .search-results > li {
+  margin-bottom: var(--search-results-item-spacing);
+  padding-bottom: var(--search-results-item-spacing);
+  border-bottom: var(--search-results-list-item-border);
+}
+
+.lgd-search-results-list .search-results > li::marker {
+  color: var(--search-results-list-item-marker-color);
+}
+
+.search-result > .search-result__content > .field > *:last-of-type {
+  margin-bottom: 0;
+}

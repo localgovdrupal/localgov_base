@@ -1,0 +1,13 @@
+.lgd-search-results-list > * {
+  margin-bottom: 1.5rem;
+}
+
+.lgd-search-results-list .search-results > li {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #f3f2f1;
+}
+
+.lgd-search-results-list .search-results > li::marker {
+  color: #652c95;
+}
