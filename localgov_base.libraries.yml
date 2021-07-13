@@ -102,6 +102,12 @@ service-cta-block:
       css/components/service-cta-block.ie11.css: {}
       css/components/service-cta-block.css: {}
 
+full:
+  css:
+    theme:
+      css/components/full.ie11.css: {}
+      css/components/full.css: {}
+
 teaser:
   css:
     theme:

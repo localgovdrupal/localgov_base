@@ -11,6 +11,7 @@
   --width-medium: 48rem;
   --width-small: 30rem;
   --width-container: var(--width-extra-large);
+  --width-restricted-width-section: var(--width-medium);
   --spacing-smallest: 0.25rem;
   --spacing-smaller: 0.5rem;
   --spacing-small: 0.75rem;
