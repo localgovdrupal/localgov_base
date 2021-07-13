@@ -9,8 +9,8 @@ libraries:
   - localgov_base/header
   - localgov_base/footer
   - localgov_base/callout
-  - localgov_base/alert
   - localgov_base/secondary-menu
+  - localgov_base/wysiwyg-styles
 
 regions:
   tabs: "Tabs"

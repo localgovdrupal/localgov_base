@@ -30,11 +30,11 @@ callout:
       css/components/callout.ie11.css: {}
       css/components/callout.css: {}
 
-alert:
+wysiwyg-styles:
   css:
     theme:
-      css/components/alert.ie11.css: {}
-      css/components/alert.css: {}
+      css/components/wysiwyg-styles.ie11.css: {}
+      css/components/wysiwyg-styles.css: {}
 
 header:
   css:

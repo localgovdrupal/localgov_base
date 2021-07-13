@@ -1,0 +1,50 @@
+/*
+  @file Theming the alert class - used in WYSIWYG.
+*/
+
+/* Alerts */
+.alert {
+  padding: 2.5rem;
+  border: 5px solid black;
+  background-color: white;
+  font-size: 1.3125rem;
+  font-weight: bold;
+}
+
+.alert-primary {
+  border-color: #652c95;
+}
+
+.alert-info {
+  border-color: #297bbb);
+}
+
+.alert-danger {
+  border-color: #e4251b;
+}
+
+.alert-fail {
+  border-color: #ed7522;
+}
+
+/* Links */
+.btn.btn-start {
+  padding: .5rem 1rem;
+  border: 1px solid #048a04;
+  background-color: #048a04;
+  color: white;
+}
+.btn.btn-start:focus,
+.btn.btn-start:hover {
+  background-color: white;
+  color: #048a04;
+}
+.btn.btn-start::after {
+  top: -2px;
+  margin-left: .5rem;
+  font-size: 2.875rem;
+  content: "\203A"
+}
+.external-link::after {
+  background-color: #652c95; /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */
+}

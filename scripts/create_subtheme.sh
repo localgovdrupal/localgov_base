@@ -62,6 +62,8 @@ cp ../../contrib/localgov_base/scripts/subtheme-items/_subtheme.info.yml_ $LGD_S
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.info.yml created"
 cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.libraries.yml $LGD_SUB_THEME.libraries.yml
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.libraries.yml created"
+cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.theme $LGD_SUB_THEME.theme
+echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.theme created"
 
 sed -i "s/LGD_SUB_THEME_NAME/$LGD_SUB_THEME_NAME/g" *
 sed -i "s/LGD_SUB_THEME/$LGD_SUB_THEME/g" *
