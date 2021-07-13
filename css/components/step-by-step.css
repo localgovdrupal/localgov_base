@@ -3,7 +3,14 @@
   border-left-color: var(--step-by-step-relationship-border-color);
 }
 
-/* Block title "Part of" text */
+/* Sidebar Block Header */
+@media screen and (min-width: 48rem) {
+  .block-views-blocklocalgov-step-by-step-navigation-steps .step-by-step-pages__relationship {
+    display: none;
+  } 
+}
+
+
 .step-by-step-pages__relationship .step-by-step-pages__part-of {
   color: var(--step-by-step-part-of-color);
 }
