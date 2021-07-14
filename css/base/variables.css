@@ -54,6 +54,7 @@
   --color-success: var(--color-green);
   --color-danger: var(--color-red);
   --color-warning: var(--color-orange);
+  --color-minor: var(--color-yellow);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
 
@@ -317,4 +318,25 @@
   --btn-start-icon-size: var(--font-size-largest);
   --btn-start-icon-top: -3px;
   --external-link-icon-color: var(--color-accent);
+
+  /* Alert Banner */
+  --alert-banner-bg-color: var(--color-success);
+  --alert-banner-bg-color-minor: var(--color-minor);
+  --alert-banner-bg-color-major: var(--color-danger);
+  --alert-banner-bg-color-notable-person: var(--color-black);
+  --alert-banner-color: var(--color-white);
+  --alert-banner-minor-color: var(--color-black);
+  --alert-banner-minor-border-color: var(--color-black);
+  --alert-banner-close-button-bg-color: var(--color-black);
+  --alert-banner-close-button-color: var(--color-white);
+  --alert-banner-close-button-border-color: var(--color-white);
+  --alert-banner-close-padding-vertical: var(--spacing-smaller);
+  --alert-banner-close-padding-horizontal: var(--spacing-small);
+  --alert-banner-color-minor: var(--color-black);
+  --alert-banner-close-border: var(--border);
+  --alert-banner-close-border-color: var(--color-white);
+  --alert-banner-inner-margin-vertical: 0;
+  --alert-banner-inner-margin-horizontal: 0;
+  --alert-banner-inner-padding-vertical: var(--spacing);
+  --alert-banner-inner-padding-horizontal: 0;
 }

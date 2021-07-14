@@ -114,6 +114,12 @@ teaser:
       css/components/teaser.ie11.css: {}
       css/components/teaser.css: {}
 
+alert-banner:
+  css:
+    theme:
+      css/components/alert-banner.ie11.css: {}
+      css/components/alert-banner.css: {}
+
 topic-list-builder:
   css:
     theme:

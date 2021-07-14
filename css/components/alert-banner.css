@@ -1,0 +1,63 @@
+/**
+ * @file
+ * Style rules for alert banners
+ */
+
+/* Default */
+.localgov-alert-banner {
+  background-color: var(--alert-banner-bg-color);
+}
+
+.localgov-alert-banner,
+.localgov-alert-banner a {
+  color: var(--alert-banner-color);
+}
+
+.localgov-alert-banner__close {
+  padding: var(--alert-banner-close-padding-vertical) var(--alert-banner-close-padding-horizontal);
+  border: var(--alert-banner-close-border);
+  border-color: var(--alert-banner-close-border-color);
+  color: var(--alert-banner-color);
+}
+
+.localgov-alert-banner--minor .localgov-alert-banner__close {
+  color: var(--alert-banner-minor-color);
+  border-color: var(--alert-banner-minor-border-color);
+}
+
+.localgov-alert-banner__close:focus,
+.localgov-alert-banner__close:hover {
+  text-decoration: underline;
+  background-color: var(--alert-banner-close-button-color);
+  border-color: var(--alert-banner-close-button-border-color);
+  color: var(--alert-banner-close-button-bg-color);
+}
+
+/* Announcement */
+.localgov-alert-banner--announcement {
+  background-color: var(--alert-banner-bg-color);
+}
+
+/* Minor */
+.localgov-alert-banner--minor {
+  background-color: var(--alert-banner-bg-color-minor);
+  color: var(--alert-banner-color-minor);
+}
+.localgov-alert-banner--minor a {
+  color: var(--alert-banner-color-minor);
+}
+
+/* Major */
+.localgov-alert-banner--major {
+  background-color: var(--alert-banner-bg-color-major);
+}
+
+/* Death of a notable person */
+.localgov-alert-banner--notable-person {
+  background-color: var(--alert-banner-bg-color-notable-person);
+}
+
+.localgov-alert-banner__inner {
+  margin: var(--alert-banner-inner-margin-vertical) var(--alert-banner-inner-margin-horizontal);
+  padding: var(--alert-banner-inner-padding-vertical) var(--alert-banner-inner-padding-horizontal);
+}
