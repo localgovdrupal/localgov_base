@@ -88,9 +88,6 @@
 
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/full') }}
-{% endif %}
-
-{% if not localgov_base_remove_css %}
   {% if content_type == 'localgov_directories_venue' 
         or content_type == 'localgov_directories_page' 
         or content_type == 'localgov_directory' %}

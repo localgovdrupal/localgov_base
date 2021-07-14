@@ -29,21 +29,21 @@
 
 /* Links */
 .btn.btn-start {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
   border: 1px solid #048a04;
   background-color: #048a04;
-  color: white;
 }
 .btn.btn-start:focus,
 .btn.btn-start:hover {
-  background-color: white;
   color: #048a04;
+  background-color: white;
 }
 .btn.btn-start::after {
   top: -2px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+  content: "\203A";
   font-size: 2.875rem;
-  content: "\203A"
 }
 .external-link::after {
   background-color: #652c95; /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */

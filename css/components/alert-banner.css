@@ -15,9 +15,9 @@
 
 .localgov-alert-banner__close {
   padding: var(--alert-banner-close-padding-vertical) var(--alert-banner-close-padding-horizontal);
+  color: var(--alert-banner-color);
   border: var(--alert-banner-close-border);
   border-color: var(--alert-banner-close-border-color);
-  color: var(--alert-banner-color);
 }
 
 .localgov-alert-banner--minor .localgov-alert-banner__close {
@@ -28,9 +28,9 @@
 .localgov-alert-banner__close:focus,
 .localgov-alert-banner__close:hover {
   text-decoration: underline;
-  background-color: var(--alert-banner-close-button-color);
-  border-color: var(--alert-banner-close-button-border-color);
   color: var(--alert-banner-close-button-bg-color);
+  border-color: var(--alert-banner-close-button-border-color);
+  background-color: var(--alert-banner-close-button-color);
 }
 
 /* Announcement */
@@ -40,8 +40,8 @@
 
 /* Minor */
 .localgov-alert-banner--minor {
-  background-color: var(--alert-banner-bg-color-minor);
   color: var(--alert-banner-color-minor);
+  background-color: var(--alert-banner-bg-color-minor);
 }
 .localgov-alert-banner--minor a {
   color: var(--alert-banner-color-minor);

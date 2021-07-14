@@ -38,8 +38,9 @@
  * @ingroup themeable
  */
 #}
-
-{{ attach_library('localgov_base/topic-list-builder') }}
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/topic-list-builder') }}
+{% endif %}
 
 {% set more_icon = 'chevron-right' %}
 

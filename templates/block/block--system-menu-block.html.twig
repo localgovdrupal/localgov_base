@@ -43,8 +43,10 @@
 {# 
   We add libraries here for specific menus.
 #}
-{% if derivative_plugin_id == 'main' %}
-  {{ attach_library('localgov_base/menu-main') }}
+{% if not localgov_base_remove_css %}
+  {% if derivative_plugin_id == 'main' %}
+    {{ attach_library('localgov_base/menu-main') }}
+  {% endif %}
 {% endif %}
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}

@@ -8,7 +8,9 @@
  */
 #}
 
-{{ attach_library('localgov_base/breadcrumbs') }}
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/breadcrumbs') }}
+{% endif %}
 
 {% if breadcrumb %}
   <nav class="breadcrumbs" aria-labelledby="system-breadcrumbs">

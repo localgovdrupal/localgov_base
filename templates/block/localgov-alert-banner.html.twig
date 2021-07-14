@@ -20,7 +20,10 @@
 #}
 
 {{ attach_library('localgov_alert_banner/alert_banner') }}
-{{ attach_library('localgov_base/alert-banner') }}
+
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/alert-banner') }}
+{% endif %}
 
 {% set has_link = content.link.0 is not empty %}
 {% set type_of_alert =  type_of_alert|split('--')[1]|clean_class %}

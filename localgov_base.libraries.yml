@@ -1,3 +1,6 @@
+# The global library is added via localgov_base.theme file.
+# This is so we can do a check that the "Remove CSS" theme setting 
+# is not turned on.
 global:
   css:
     base:
@@ -7,6 +10,15 @@ global:
       css/layout/layout-utilities.ie11.css: {}
       css/layout/layout-utilities.css: {}
       css/components/admin-toolbar.css: {}
+  # Declare dependencies for other libraries that we want to load
+  # on every page.
+  dependencies:  
+    - localgov_base/grid
+    - localgov_base/header
+    - localgov_base/footer
+    - localgov_base/callout
+    - localgov_base/secondary-menu
+    - localgov_base/wysiwyg-styles
 
 grid:
   css:

@@ -78,7 +78,9 @@
 ]
 %}
 
-{{ attach_library('localgov_base/news') }}
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/news') }}
+{% endif %}
 
 <article{{ attributes.addClass(classes) }}>
   <div class="lgd-row">

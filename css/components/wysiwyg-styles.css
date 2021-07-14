@@ -33,34 +33,34 @@
   display: inline-flex;
   align-items: center;
   padding: var(--btn-start-padding-horizontal) var(--btn-start-padding-horizontal);
-  line-height: 1;
-  border: var(--btn-start-border);
   text-decoration: none;
+  color: var(--btn-start-color);
+  border: var(--btn-start-border);
   border-color: var(--btn-start-border-color);
   background-color: var(--btn-start-bg-color);
-  color: var(--btn-start-color);
+  line-height: 1;
 }
 .btn.btn-start:focus,
 .btn.btn-start:hover {
-  background-color: var(--btn-start-bg-color-hover);
   color: var(--btn-start-color-hover);
+  background-color: var(--btn-start-bg-color-hover);
 }
 .btn.btn-start::after {
   position: relative;
   top: var(--btn-start-icon-top);
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+  content: var(--btn-start-icon);
   font-size: var(--btn-start-icon-size);
   line-height: 0;
-  content: var(--btn-start-icon);
 }
 .external-link::after {
   position: relative;
   top: -3px;
   display: inline-block;
-  width: .75rem;
-  height: .75rem;
+  width: 0.75rem;
+  height: 0.75rem;
   margin-left: 0.25rem;
   content: "";
   background-color: var(--external-link-icon-color); /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */
-  mask-image: url('../../templates/includes/icons/external-link.svg');
+  mask-image: url("../../templates/includes/icons/external-link.svg");
 }

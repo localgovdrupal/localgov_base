@@ -5,7 +5,9 @@
  */
 #}
 
-{{ attach_library('localgov_base/service-landing-page') }}
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/service-landing-page') }}
+{% endif %}
 
 {# 
   Set icon names here, so we can override them in subthemes by calling
