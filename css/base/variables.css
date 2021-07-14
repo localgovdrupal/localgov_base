@@ -3,9 +3,13 @@
 
   To override these in your sub-theme, just create a new variables.css file and
   library, and add that to your theme.info.yml file.
+
+  We are adding these to body instead of :root so we can more easily override 
+  them in the future. For example if we create a theme setting to add an inline 
+  style for --color-accent: red;, or if we used JS to add it to the body element.
 */
-/* Widths and Spacing */
-:root {
+body {
+  /* Widths and Spacing */
   --width-extra-large: 73.75rem; /* 1180px */
   --width-large: 60rem;
   --width-medium: 48rem;
@@ -109,7 +113,7 @@
   one-by-one without the CSS cascade affecting us (unless we want it to - in that case,
   override the defined variables above instead).
 */
-:root {
+body {
 
   /* Breadcrumbs */
   --breadcrumbs-background-color: var(--color-white);
