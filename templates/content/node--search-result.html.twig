@@ -86,9 +86,9 @@
 
   {{ title_prefix }}
   {% if label and not page %}
-    <h2{{ title_attributes.addClass('search-result__title') }}>
+    <h3{{ title_attributes.addClass('search-result__title') }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+    </h3>
   {% endif %}
   {{ title_suffix }}
 

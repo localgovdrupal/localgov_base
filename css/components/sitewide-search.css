@@ -7,6 +7,10 @@
   flex-wrap: wrap;
 }
 
+.lgd-search-results-list .search-results {
+  padding-left: 0;
+}
+
 .lgd-search-results-list .search-results > li {
   margin-bottom: var(--search-results-item-spacing);
   padding-bottom: var(--search-results-item-spacing);

@@ -302,7 +302,7 @@
   /* Search Results */
   --search-results-item-spacing: var(--spacing-largest);
   --search-results-list-item-border: var(--border);
-  --search-results-list-item-marker-color: var(--color-accent);
+  --search-results-list-item-marker-color: transparent;
 
   /* WYSIWYG Styles */
   --btn-start-bg-color: var(--color-success);
@@ -312,7 +312,6 @@
   --btn-start-padding-horizontal: var(--spacing);
   --btn-start-padding-vertical: var(--spacing-smaller);
   --btn-start-border: var(--border);
-  --btn-start-border-color: var(--btn-start-bg-color);
   --btn-start-border-color-hover: var(--btn-start-bg-color);
   --btn-start-icon: "\203A";
   --btn-start-icon-size: var(--font-size-largest);
