@@ -93,7 +93,7 @@ function localgov_base_preprocess_page(&$variables) {
   $variables['has_lower_footer_second'] = trim(strip_tags($rendered_lower_footer_second));
   $variables['has_lower_footer_third'] = trim(strip_tags($rendered_lower_footer_third));
 
-  if (!$variables['localgov_base_remove_css']) {
+  if (!isset($variables['localgov_base_remove_css'])) {
     $variables['#attached']['library'][] = 'localgov_base/global';
   }
 }
