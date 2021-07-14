@@ -62,5 +62,6 @@
   margin-left: 0.25rem;
   content: "";
   background-color: var(--external-link-icon-color); /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */
+  -webkit-mask-image: url("../../templates/includes/icons/external-link.svg");
   mask-image: url("../../templates/includes/icons/external-link.svg");
 }
