@@ -128,6 +128,26 @@
   box-shadow: none;
 }
 
+/* Search Region */
+.lgd-region--search form {
+  display: flex;
+  align-items: center;
+}
+
+.lgd-region--search .form-text {
+  border: var(--header-search-input-border);
+}
+
+.lgd-region--search .form-submit {
+  color: var(--header-search-button-color);
+  background-color: var(--header-search-button-bg-color);
+}
+.lgd-region--search .form-submit:hover,
+.lgd-region--search .form-submit:focus {
+  color: var(--header-search-button-color-hover);
+  background-color: var(--header-search-button-bg-color-hover);
+}
+
 /*
   If JavaScript is disabled,
   we show all header items and hide the toggle buttons.

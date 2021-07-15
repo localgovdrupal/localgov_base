@@ -39,6 +39,7 @@ function localgov_base_preprocess_page(&$variables) {
   // I hadn't realised there would be so many when I started!
   $tabs_copy = $variables['page']['tabs'];
   $mobile_search_copy = $variables['page']['mobile_search'];
+  $search_copy = $variables['page']['search'];
   $primary_menu_copy = $variables['page']['primary_menu'];
   $secondary_menu_copy = $variables['page']['secondary_menu'];
   $banner_copy = $variables['page']['banner'];
@@ -57,6 +58,7 @@ function localgov_base_preprocess_page(&$variables) {
   $lower_footer_third_copy = $variables['page']['lower_footer_third'];
   $rendered_tabs = Drupal::service('renderer')->renderPlain($tabs_copy);
   $rendered_mobile_search = Drupal::service('renderer')->renderPlain($mobile_search_copy);
+  $rendered_search = Drupal::service('renderer')->renderPlain($search_copy);
   $rendered_primary_menu = Drupal::service('renderer')->renderPlain($primary_menu_copy);
   $rendered_secondary_menu = Drupal::service('renderer')->renderPlain($secondary_menu_copy);
   $rendered_banner = Drupal::service('renderer')->renderPlain($banner_copy);
@@ -75,6 +77,7 @@ function localgov_base_preprocess_page(&$variables) {
   $rendered_lower_footer_third = Drupal::service('renderer')->renderPlain($lower_footer_third_copy);
   $variables['has_tabs'] = trim(strip_tags($rendered_tabs));
   $variables['has_mobile_search'] = trim(strip_tags($rendered_mobile_search));
+  $variables['has_search'] = trim(strip_tags($rendered_search));
   $variables['has_primary_menu'] = trim(strip_tags($rendered_primary_menu));
   $variables['has_secondary_menu'] = trim(strip_tags($rendered_secondary_menu));
   $variables['has_banner'] = trim(strip_tags($rendered_banner));
