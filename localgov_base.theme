@@ -43,8 +43,6 @@ function localgov_base_preprocess_page(&$variables) {
     $copy = $variables['page'][$region];
     $rendered = Drupal::service('renderer')->renderPlain($copy);
     $variables[$has] =  (!empty(trim(strip_tags($rendered)))) ? true : false;
-    echo $key . " \n";
-    echo $variables[$has];
   }
 
   if (!isset($variables['localgov_base_remove_css'])) {
