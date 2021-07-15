@@ -44,6 +44,7 @@ function localgov_base_preprocess_page(&$variables) {
     $rendered = Drupal::service('renderer')->renderPlain($copy);
     $variables[$has] =  (!empty(trim(strip_tags($rendered)))) ? true : false;
   }
+  $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
   if (!isset($variables['localgov_base_remove_css'])) {
     $variables['#attached']['library'][] = 'localgov_base/global';
