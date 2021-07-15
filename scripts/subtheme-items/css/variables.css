@@ -27,7 +27,7 @@
   - The accent colour in our base theme is purple. If you would like it to be
     hotpink, just set `--color-accent: hotpink;`
 */
-:root {
+body {
   --color-accent: green;
   --font-secondary: oswald, var(--font-primary);
   --line-height: 1.3;
