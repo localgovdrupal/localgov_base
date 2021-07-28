@@ -27,6 +27,7 @@
 
 {% set has_link = content.link.0 is not empty %}
 {% set type_of_alert =  type_of_alert|split('--')[1]|clean_class %}
+
 {% set classes = [
     'js-localgov-alert-banner',
     'localgov-alert-banner',
@@ -45,7 +46,7 @@
       <div class="localgov-alert-banner__content">
         {% if display_title %}
           <h2 class="localgov-alert-banner__title">
-            {{ content.title }}
+            {{ content.title['#items'].value }}
           </h2>
         {% endif %}
         
