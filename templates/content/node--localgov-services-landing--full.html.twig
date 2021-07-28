@@ -94,7 +94,7 @@
                           icon_classes: 'service-landing-page__contact-icon'
                         }
                       %}
-                      <a href="mailto:{{ content.localgov_email_address|render|striptags }}">{{ 'Send us a message'|t }}</a>
+                      <a href="mailto:{{ node.localgov_email_address.value }}">{{ 'Send us a message'|t }}</a>
                     </li>
                   {% endif %}
 
