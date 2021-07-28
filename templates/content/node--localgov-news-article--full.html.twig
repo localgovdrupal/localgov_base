@@ -87,7 +87,7 @@
     <div class="lgd-row__two-thirds">
       <div class="news-article__metadata">
         <time datetime="{{ node.localgov_news_date.value }}" class="news-article__metadata-item news-article__metadata-item--date">
-          {{ content.localgov_news_date }}
+          {{ content.localgov_news_date.0['#markup'] }}
         </time>
         {% if node.localgov_news_categories.value %}
           <ul class="news-article__metadata-item news-article__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
