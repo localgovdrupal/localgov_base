@@ -134,6 +134,10 @@
   align-items: center;
 }
 
+.lgd-region--search label {
+  color: var(--color-white);
+}
+
 .lgd-region--search .form-text {
   border: var(--header-search-input-border);
 }
