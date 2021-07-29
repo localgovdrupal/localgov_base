@@ -13,6 +13,10 @@
   color: white;
 }
 
+.localgov-alert-banner a:focus {
+  color: black;
+}
+
 .localgov-alert-banner__close {
   padding: 0.5rem 0.75rem;
   color: white;
