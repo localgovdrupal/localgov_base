@@ -14,7 +14,7 @@
 }
 
 .localgov-alert-banner a:focus {
-  color: var(--color--black);
+  color: var(--alert-banner-focus-color);
 }
 
 .localgov-alert-banner__close {

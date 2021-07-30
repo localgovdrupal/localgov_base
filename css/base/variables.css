@@ -333,6 +333,7 @@ body {
   --alert-banner-bg-color-major: var(--color-danger);
   --alert-banner-bg-color-notable-person: var(--color-black);
   --alert-banner-color: var(--color-white);
+  --alert-banner-focus-color: var(--color-black);
   --alert-banner-minor-color: var(--color-black);
   --alert-banner-minor-border-color: var(--color-black);
   --alert-banner-close-button-bg-color: var(--color-black);
