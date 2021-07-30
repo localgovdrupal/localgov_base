@@ -43,6 +43,10 @@
   align-items: center;
 }
 
+.lgd-region--search label {
+  color: white;
+}
+
 .lgd-region--search .form-text {
   border: 0;
 }
