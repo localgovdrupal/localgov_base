@@ -135,7 +135,8 @@
 }
 
 .lgd-region--search label {
-  color: var(--color-white);
+  display: block;
+  color: var(--header-search-button-color);
 }
 
 .lgd-region--search .form-text {
