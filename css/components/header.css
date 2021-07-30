@@ -143,6 +143,10 @@
   border: var(--header-search-input-border);
 }
 
+.lgd-region--search .form-actions {
+  margin-top: auto;
+}
+
 .lgd-region--search .form-submit {
   color: var(--header-search-button-color);
   background-color: var(--header-search-button-bg-color);

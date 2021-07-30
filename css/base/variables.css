@@ -4,8 +4,8 @@
   To override these in your sub-theme, just create a new variables.css file and
   library, and add that to your theme.info.yml file.
 
-  We are adding these to body instead of :root so we can more easily override 
-  them in the future. For example if we create a theme setting to add an inline 
+  We are adding these to body instead of :root so we can more easily override
+  them in the future. For example if we create a theme setting to add an inline
   style for --color-accent: red;, or if we used JS to add it to the body element.
 */
 body {
