@@ -15,14 +15,14 @@ function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#type'          => 'checkbox',
     '#title'         => t('Remove CSS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_css'),
-    '#description'   => t("Uncheck this box if you want to disable the base theme's CSS"),
+    '#description'   => t("Check this box to disable the base theme's CSS"),
   );
 
   $form['localgov_base_remove_js'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Remove JS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_js'),
-    '#description'   => t("Uncheck this box if you want to disable the base theme's JavaScript"),
+    '#description'   => t("Check this box to disable the base theme's JavaScript"),
   );
 }
 
@@ -36,7 +36,7 @@ function localgov_base_preprocess_page(&$variables) {
   // @see https://www.drupal.org/node/953034
   // @see https://www.drupal.org/forum/support/module-development-and-code-questions/2016-04-07/drupal-8-regions-with-and-empty#comment-12149518
   $system_region = system_region_list('localgov_base', $show = REGIONS_ALL);
-  
+
   foreach ($system_region as $key => $value) {
     $region = $key;
     $has = 'has_' . $region;
