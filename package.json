@@ -1,0 +1,16 @@
+{
+  "name": "localgov_base",
+  "version": "1.0.0",
+  "description": "NPM scripts for the localgov_base theme.",
+  "main": "index.js",
+  "scripts": {
+    "start": "stylelint \"**/*.css\" --fix"
+  },
+  "author": "Mark Conroy",
+  "license": "ISC",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}

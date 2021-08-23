@@ -1,8 +1,8 @@
 .service-landing-page__contact {
-  background-color: var(--color-grey-light);
-  border-left: var(--border-width-large) var(--border-style) var(--color-accent);
-  padding: var(--spacing);
   margin-bottom: var(--vertical-rhythm-spacing);
+  padding: var(--spacing);
+  border-left: var(--border-width-large) var(--border-style) var(--color-accent);
+  background-color: var(--color-grey-light);
 }
 
 .service-landing-page__contact-list {

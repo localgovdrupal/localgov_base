@@ -1,6 +1,6 @@
 .service-statuses {
-  padding: var(--service-statuses-padding);
   margin-bottom: var(--spacing);
+  padding: var(--service-statuses-padding);
   background-color: var(--service-statuses-container-bg-color);
 }
 
@@ -46,12 +46,12 @@
 }
 
 .service-statuses-list__item::marker {
-  color: transparent
+  color: transparent;
 }
 
 .service-statuses-list__item + .service-statuses-list__item {
   margin-top: var(--service-statuses-list-spacing);
   padding-top: var(--service-statuses-list-spacing);
-  border-top: var(--service-statuses-list-border);
   border-color: var(--service-statuses-list-border-color);
+  border-top: var(--service-statuses-list-border);
 }

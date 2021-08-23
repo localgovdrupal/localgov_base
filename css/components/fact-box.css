@@ -1,14 +1,14 @@
 .fact-box {
   margin-bottom: var(--vertical-rhythm-spacing);
+  text-align: center;
   border: var(--fact-box-border);
   border-color: var(--fact-box-border-color);
-  text-align: center;
 }
 
 .fact-box--has-bg {
-  padding: 
-    var(--fact-box-padding-vertical) 
-    var(--fact-box-padding-horizontal) 
+  padding:
+    var(--fact-box-padding-vertical)
+    var(--fact-box-padding-horizontal)
     calc(var(--fact-box-padding-vertical) - var(--vertical-rhythm-spacing));
 }
 
@@ -17,18 +17,18 @@
 }
 
 .fact-box--fact-box-dark {
-  background-color: var(--fact-box-bg-dark);
   color: var(--color-white);
+  background-color: var(--fact-box-bg-dark);
 }
 
 .fact-box--fact-box-accent {
-  background-color: var(--color-accent);
   color: var(--fact-box-text-color-accent);
+  background-color: var(--color-accent);
 }
 
 .fact-box--fade-red-blue {
-  background-image: linear-gradient(var(--fact-box-red), var(--fact-box-blue));
   color: var(--color-white);
+  background-image: linear-gradient(var(--fact-box-red), var(--fact-box-blue));
 }
 
 .fact-box__opening,

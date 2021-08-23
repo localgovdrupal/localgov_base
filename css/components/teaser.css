@@ -1,4 +1,4 @@
-/* 
+/*
   @file Theming the teaser view mode, and lists that render teasers.
 */
 
@@ -11,17 +11,17 @@
   .lgd-teaser {
     display: flex;
   }
-  
+
   .lgd-teaser__image {
-    width: var(--teaser-image-with);
     flex-shrink: 0;
+    width: var(--teaser-image-with);
   }
 
   .lgd-teaser__image + .lgd-teaser__content {
     margin-left: 1rem;
   }
 
-  /* 
+  /*
     This featured news section should really be its own (card) view mode.
     We shouldn't need overrides like this in our theme.
   */
@@ -42,9 +42,9 @@
   }
 }
 
-/* 
-  .lgd-teaser-list is a class that we can use as a container when we 
-  render teasers, for example: 
+/*
+  .lgd-teaser-list is a class that we can use as a container when we
+  render teasers, for example:
     - services list on services landing page
     - news listing page
     - events listing page

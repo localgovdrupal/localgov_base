@@ -3,14 +3,19 @@
 
   To override these in your sub-theme, just create a new variables.css file and
   library, and add that to your theme.info.yml file.
+
+  We are adding these to body instead of :root so we can more easily override
+  them in the future. For example if we create a theme setting to add an inline
+  style for --color-accent: red;, or if we used JS to add it to the body element.
 */
-/* Widths and Spacing */
-:root {
+body {
+  /* Widths and Spacing */
   --width-extra-large: 73.75rem; /* 1180px */
   --width-large: 60rem;
   --width-medium: 48rem;
   --width-small: 30rem;
   --width-container: var(--width-extra-large);
+  --width-restricted-width-section: var(--width-medium);
   --spacing-smallest: 0.25rem;
   --spacing-smaller: 0.5rem;
   --spacing-small: 0.75rem;
@@ -34,13 +39,13 @@
   --color-green: #048a04;
   --color-red: #e4251b;
   --color-orange: #ed7522;
-  --color-yellow: #ffdd00;
+  --color-yellow: #fd0;
   --color-blue: #297bbb;
   /*
     Grey Scale
     In this section, we define our greys; let's not have 50 shades
   */
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-grey-light: #f3f2f1;
   --color-grey-medium: #b1b4b6;
   --color-grey-dark: #505a5f;
@@ -53,6 +58,7 @@
   --color-success: var(--color-green);
   --color-danger: var(--color-red);
   --color-warning: var(--color-orange);
+  --color-minor: var(--color-yellow);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
 
@@ -61,8 +67,8 @@
     We choose basic fonts that most people have in browser cache from visiting other websites.
     This will help with page speed, rather than calling fonts from Google Fonts or somewhere.
   */
-  --font-primary: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-secondary: Georgia, 'Times New Roman', Times, serif;
+  --font-primary: roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-secondary: georgia, "Times New Roman", times, serif;
   /*
     Font sizes based on vertical rhythm of:
     - Font size: 16px;
@@ -70,9 +76,9 @@
     - Details: https://www.gridlover.net/try
   */
   --font-size: 1rem;
-  --font-size-smallest: calc(var(--font-size) * .3);
-  --font-size-smaller: calc(var(--font-size) * .5);
-  --font-size-small: calc(var(--font-size) * .75);
+  --font-size-smallest: calc(var(--font-size) * 0.3);
+  --font-size-smaller: calc(var(--font-size) * 0.5);
+  --font-size-small: calc(var(--font-size) * 0.75);
   --font-size-medium: calc(var(--font-size) * 1);
   --font-size-large: calc(var(--font-size) * 1.3125);
   --font-size-larger: calc(var(--font-size) * 1.6875);
@@ -107,7 +113,7 @@
   one-by-one without the CSS cascade affecting us (unless we want it to - in that case,
   override the defined variables above instead).
 */
-:root {
+body {
 
   /* Breadcrumbs */
   --breadcrumbs-background-color: var(--color-white);
@@ -118,7 +124,7 @@
   --breadcrumbs-padding-horizontal: 0;
   --breadcrumbs-link-color: var(--color-accent);
   --breadcrumbs-spacing-bottom: var(--vertical-rhythm-spacing);
-  
+
   /* Header Items */
   --section-spacing-vertical-header: var(--spacing);
   --color-section-header-bg: var(--color-accent);
@@ -130,6 +136,11 @@
   --header-services-button-bg-color-hover: var(--color-accent);
   --header-services-button-color-hover: var(--color-white);
   --header-logo-width: 10rem;
+  --header-search-button-color: var(--color-white);
+  --header-search-button-bg-color: var(--color-accent);
+  --header-search-button-color-hover: var(--color-accent);
+  --header-search-button-bg-color-hover: var(--color-white);
+  --header-search-input-border: none;
 
   /* Secondary Menu */
   --secondary-menu-bg-color: var(--color-white);
@@ -293,8 +304,48 @@
   --teaser-featured-border: var(--border);
   --teaser-featured-border-color: var(--border-color-dark);
 
-
   /* News */
   --newsroom-featured-bottom-space: var(--spacing-largest);
   --news-category-spacing: var(--spacing);
+
+  /* Search Results */
+  --search-results-item-spacing: var(--spacing-largest);
+  --search-results-list-item-border: var(--border);
+  --search-results-list-item-marker-color: transparent;
+
+  /* WYSIWYG Styles */
+  --btn-start-bg-color: var(--color-success);
+  --btn-start-bg-color-hover: var(--color-white);
+  --btn-start-color: var(--color-white);
+  --btn-start-color-hover: var(--color-success);
+  --btn-start-padding-horizontal: var(--spacing);
+  --btn-start-padding-vertical: var(--spacing-smaller);
+  --btn-start-border: var(--border);
+  --btn-start-border-color-hover: var(--btn-start-bg-color);
+  --btn-start-icon: "\203A";
+  --btn-start-icon-size: var(--font-size-largest);
+  --btn-start-icon-top: -3px;
+  --external-link-icon-color: var(--color-accent);
+
+  /* Alert Banner */
+  --alert-banner-bg-color: var(--color-success);
+  --alert-banner-bg-color-minor: var(--color-minor);
+  --alert-banner-bg-color-major: var(--color-danger);
+  --alert-banner-bg-color-notable-person: var(--color-black);
+  --alert-banner-color: var(--color-white);
+  --alert-banner-focus-color: var(--color-black);
+  --alert-banner-minor-color: var(--color-black);
+  --alert-banner-minor-border-color: var(--color-black);
+  --alert-banner-close-button-bg-color: var(--color-black);
+  --alert-banner-close-button-color: var(--color-white);
+  --alert-banner-close-button-border-color: var(--color-white);
+  --alert-banner-close-padding-vertical: var(--spacing-smaller);
+  --alert-banner-close-padding-horizontal: var(--spacing-small);
+  --alert-banner-color-minor: var(--color-black);
+  --alert-banner-close-border: var(--border);
+  --alert-banner-close-border-color: var(--color-white);
+  --alert-banner-inner-margin-vertical: 0;
+  --alert-banner-inner-margin-horizontal: 0;
+  --alert-banner-inner-padding-vertical: var(--spacing);
+  --alert-banner-inner-padding-horizontal: 0;
 }

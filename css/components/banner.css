@@ -13,8 +13,8 @@
   max-width: var(--banner-content-width);
   margin: calc(var(--banner-content-margin) * -1) auto var(--banner-content-margin);
   padding: var(--banner-content-padding);
-  background-color: var(--banner-content-bg-color);
   color: var(--banner-content-text-color);
+  background-color: var(--banner-content-bg-color);
 }
 
 .banner--primary .field--name-localgov-title {

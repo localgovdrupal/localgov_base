@@ -3,7 +3,13 @@
   border-left-color: var(--step-by-step-relationship-border-color);
 }
 
-/* Block title "Part of" text */
+/* Sidebar Block Header */
+@media screen and (min-width: 48rem) {
+  .block-views-blocklocalgov-step-by-step-navigation-steps .step-by-step-pages__relationship {
+    display: none;
+  }
+}
+
 .step-by-step-pages__relationship .step-by-step-pages__part-of {
   color: var(--step-by-step-part-of-color);
 }
@@ -15,8 +21,8 @@
 
 /* The bullet numbers beside each step */
 .step-by-step-pages ol.step-list .step.step--active::before {
-  background-color: var(--step-by-step-active-bullet-bg-color);
   border-color: var(--step-by-step-active-bullet-border-color);
+  background-color: var(--step-by-step-active-bullet-bg-color);
 }
 
 /* The border from the active step to the next one */

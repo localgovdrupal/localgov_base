@@ -1,0 +1,7 @@
+/*
+  @file Theming nodes in full view mode.
+*/
+
+.node__restricted-width-section {
+  max-width: var(--width-restricted-width-section);
+}

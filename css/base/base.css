@@ -13,8 +13,8 @@ html {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
-    margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
+  box-sizing: inherit;
+  margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -25,9 +25,9 @@ html {
 
 body {
   margin: 0;
-  line-height: var(--line-height);
-  font-size: var(--font-size);
   font-family: var(--font-primary);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 a {
@@ -35,17 +35,17 @@ a {
 }
 
 a:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
 }
 
 a:focus {
-  outline: 3px solid transparent;
-  color: var(--color-black);
-  background-color: var(--color-focus);
-  -webkit-box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
-  box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
-  text-decoration: none;
   transition: var(--transition-time);
+  text-decoration: none;
+  color: var(--color-black);
+  outline: 3px solid transparent;
+  background-color: var(--color-focus);
+  -webkit-box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
+  box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
 }
 
 h1,
@@ -88,9 +88,9 @@ h5,
 
 h6,
 .h6 {
+  text-decoration: underline;
   font-size: var(--font-size-h6);
   font-variant: small-caps;
-  text-decoration: underline;
 }
 
 img {
@@ -122,29 +122,30 @@ input:not([type="radio"]),
 select {
   padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   border: var(--border);
-  background-color: var(--input-bg-color);
   border-color: var(--input-border-color);
+  background-color: var(--input-bg-color);
 }
 
 /* Buttons */
 button,
 input[type="submit"] {
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
-  border: var(--border);
-  border-radius: var(--button-border-radius);
-  font-family: var(--button-font-family);
+  cursor: pointer;
   color: var(--button-text-color);
-  background-color: var(--button-bg-color);
+  border: var(--border);
   border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg-color);
+  font-family: var(--button-font-family);
 }
 
 button:focus,
 button:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
+  text-decoration: underline;
   color: var(--button-text-color-hover);
   background-color: var(--button-bg-color-hover);
-  text-decoration: underline;
 }
 
 /*
@@ -168,7 +169,6 @@ input[type="submit"]:hover {
 
 .form-checkboxes input[type="checkbox"],
 .facet-item input[type="checkbox"] {
-  cursor: pointer;
   position: absolute;
   z-index: 1;
   top: -2px;
@@ -176,6 +176,7 @@ input[type="submit"]:hover {
   width: 44px;
   height: 44px;
   margin: 0;
+  cursor: pointer;
   opacity: 0;
 }
 
@@ -190,37 +191,37 @@ input[type="submit"]:hover {
 
 .form-checkboxes input[type="checkbox"] + label::before,
 .facet-item input[type="checkbox"] + label::before {
-  content: "";
-  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
+  box-sizing: border-box;
   width: 40px;
   height: 40px;
+  content: "";
   border: 2px solid currentColor;
   background: transparent;
 }
 .form-checkboxes input[type="checkbox"] + label::after,
 .facet-item input[type="checkbox"] + label::after {
-  content: "";
-  box-sizing: border-box;
   position: absolute;
   top: 11px;
   left: 9px;
+  box-sizing: border-box;
   width: 23px;
   height: 12px;
+  content: "";
   transform: rotate(-45deg);
+  opacity: 0;
   border: solid;
   border-width: 0 0 5px 5px;
   border-top-color: transparent;
-  opacity: 0;
-  background: transparent
+  background: transparent;
 }
 
 .form-checkboxes input[type="checkbox"]:focus + label:before,
 .facet-item input[type="checkbox"]:focus + label:before {
   border-width: 4px;
-  box-shadow: 0 0 0 3px var( --color-focus)
+  box-shadow: 0 0 0 3px var(--color-focus);
 }
 
 .form-checkboxes input[type="checkbox"]:hover + label,
@@ -232,7 +233,7 @@ input[type="submit"]:hover {
 
 .form-checkboxes input[type="checkbox"]:checked + label:after,
 .facet-item input[type="checkbox"]:checked + label:after {
-  opacity: 1
+  opacity: 1;
 }
 
 sub,
@@ -252,9 +253,9 @@ sub {
 
 table {
   width: 100%;
+  text-align: left;
   border: var(--table-border);
   border-collapse: collapse;
-  text-align: left;
 }
 
 thead th {

@@ -1,17 +1,17 @@
-/* 
-  @file Base styles for call out paragraphs / advanced callout div container 
+/*
+  @file Base styles for call out paragraphs / advanced callout div container
 */
 .callout {
-  font-size: 1.3125rem;
   color: white;
+  font-size: 1.3125rem;
 }
 
 .callout a {
   color: white;
 }
 .callout a:focus {
-  background-color: #505a5f;
   color: white;
+  background-color: #505a5f;
 }
 
 .callout-primary {
@@ -36,6 +36,6 @@
 
 .callout-yellow,
 .callout-yellow a {
-  background-color: #ffdd00;
   color: #505a5f;
+  background-color: #fd0;
 }

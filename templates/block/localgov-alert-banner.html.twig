@@ -1,0 +1,73 @@
+{#
+/**
+ * @file localgov_alert_banner.html.twig
+ * Default theme implementation to present Alert banner data.
+ *
+ * This template is used when viewing Alert banner pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ * - display_title: Boolean indicating if alert banner title should be displayed
+ * - remove_hide_link: Boolean indicating if the link to close the banner should be hidden
+ * - type_of_alert: Type of alert banner
+ *
+ * @see template_preprocess_localgov_alert_banner()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('localgov_alert_banner/alert_banner') }}
+
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/alert-banner') }}
+{% endif %}
+
+{% set has_link = content.link.0 is not empty %}
+{% set type_of_alert =  type_of_alert|split('--')[1]|clean_class %}
+
+{% set classes = [
+    'js-localgov-alert-banner',
+    'localgov-alert-banner',
+    type_of_alert ? 'localgov-alert-banner--' ~ type_of_alert,
+    is_front ? 'localgov-alert-banner--homepage',
+    has_link ? 'localgov-alert-banner--has-link' : 'localgov-alert-banner--no-link'
+  ]
+%}
+
+<article {{ attributes.addClass(classes) }} role="alert">
+  {# Begin Wrapper #}
+  <div class="lgd-container padding-horizontal">
+    {# Begin Inner #}
+    <div class="localgov-alert-banner__inner">
+      {# Begin Content #}
+      <div class="localgov-alert-banner__content">
+        {% if display_title %}
+          <h2 class="localgov-alert-banner__title">
+            {{ content.title['#items'].value }}
+          </h2>
+        {% endif %}
+        
+        {% if content.short_description.0['#text'] %}
+          <div class="localgov-alert-banner__body">
+            {{ content.short_description }}
+          </div>
+        {% endif %}
+
+        {% if has_link %}
+          <div class="localgov-alert-banner--content-link">{{ content.link }}</div>
+        {% endif %}
+      </div> {# End Content #}
+
+      {% if not remove_hide_link %}
+        <div class="localgov-alert-banner__actions">
+          <div class="localgov-alert-banner__dismiss">
+            <button class="localgov-alert-banner__close js-localgov-alert-banner__close" aria-label="{{ 'Hide alert'|t }}">{{ 'Hide'|t }}</button>
+          </div>
+        </div>
+      {% endif %}
+    </div> {# End Inner #}
+  </div> {# End Wrapper #}
+</article>

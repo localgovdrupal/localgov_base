@@ -27,12 +27,14 @@
   but I prefer to keep as much as I can in these templates so we don't 
   have to go hunting so much.
 #}
-{% if region == 'tabs' %}
-  {{ attach_library('localgov_base/region-tabs') }}
-{% endif %}
+{% if not localgov_base_remove_css %}
+  {% if region == 'tabs' %}
+    {{ attach_library('localgov_base/region-tabs') }}
+  {% endif %} 
 
-{% if region == 'sidebar_first' or region == 'sidebar_second' %}
-  {{ attach_library('localgov_base/sidebar') }}
+  {% if region == 'sidebar_first' or region == 'sidebar_second' %}
+    {{ attach_library('localgov_base/sidebar') }}
+  {% endif %}
 {% endif %}
 
 {# 

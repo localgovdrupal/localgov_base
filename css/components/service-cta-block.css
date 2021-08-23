@@ -10,8 +10,8 @@
 
 .service-cta-block__link {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: var(--spacing);
   text-decoration: none;
   color: var(--color-white);
@@ -19,9 +19,9 @@
 }
 
 .service-cta-block__link:hover {
-  background-color: var(--color-focus);
-  color: var(--color-black);
   text-decoration: underline;
+  color: var(--color-black);
+  background-color: var(--color-focus);
 }
 
 .service-cta-block__link--cta-action {
@@ -31,8 +31,8 @@
 .service-cta-block__link-icon {
   position: relative;
   left: 0;
-  line-height: 1;
   transition: var(--transition-time);
+  line-height: 1;
 }
 
 .service-cta-block__link-icon svg path {

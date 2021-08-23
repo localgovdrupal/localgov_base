@@ -3,14 +3,6 @@ description: "BETA - should work pretty well: LocalGov Base - LocalGovDrupal - t
 type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "stable"
-libraries:
-  - localgov_base/global
-  - localgov_base/grid
-  - localgov_base/header
-  - localgov_base/footer
-  - localgov_base/callout
-  - localgov_base/alert
-  - localgov_base/secondary-menu
 
 regions:
   tabs: "Tabs"

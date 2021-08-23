@@ -1,3 +1,6 @@
+# The global library is added via localgov_base.theme file.
+# This is so we can do a check that the "Remove CSS" theme setting 
+# is not turned on.
 global:
   css:
     base:
@@ -7,6 +10,15 @@ global:
       css/layout/layout-utilities.ie11.css: {}
       css/layout/layout-utilities.css: {}
       css/components/admin-toolbar.css: {}
+  # Declare dependencies for other libraries that we want to load
+  # on every page.
+  dependencies:  
+    - localgov_base/grid
+    - localgov_base/header
+    - localgov_base/footer
+    - localgov_base/callout
+    - localgov_base/secondary-menu
+    - localgov_base/wysiwyg-styles
 
 grid:
   css:
@@ -30,11 +42,11 @@ callout:
       css/components/callout.ie11.css: {}
       css/components/callout.css: {}
 
-alert:
+wysiwyg-styles:
   css:
     theme:
-      css/components/alert.ie11.css: {}
-      css/components/alert.css: {}
+      css/components/wysiwyg-styles.ie11.css: {}
+      css/components/wysiwyg-styles.css: {}
 
 header:
   css:
@@ -102,11 +114,23 @@ service-cta-block:
       css/components/service-cta-block.ie11.css: {}
       css/components/service-cta-block.css: {}
 
+full:
+  css:
+    theme:
+      css/components/full.ie11.css: {}
+      css/components/full.css: {}
+
 teaser:
   css:
     theme:
       css/components/teaser.ie11.css: {}
       css/components/teaser.css: {}
+
+alert-banner:
+  css:
+    theme:
+      css/components/alert-banner.ie11.css: {}
+      css/components/alert-banner.css: {}
 
 topic-list-builder:
   css:
@@ -232,3 +256,9 @@ banner:
     theme:
       css/components/banner.ie11.css: {}
       css/components/banner.css: {}
+
+sitewide-search:
+  css:
+    theme:
+      css/components/sitewide-search.ie11.css: {}
+      css/components/sitewide-search.css: {}

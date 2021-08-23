@@ -87,6 +87,7 @@
 {% set content_type = node.bundle %}
 
 {% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/full') }}
   {% if content_type == 'localgov_directories_venue' 
         or content_type == 'localgov_directories_page' 
         or content_type == 'localgov_directory' %}
@@ -108,6 +109,7 @@
     content_type|clean_class,
     'node',
     'node--type-' ~ node.bundle|clean_class,
+    content_type in restricted_width_content_types ? 'node--with-restricted-width',
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
@@ -135,16 +137,16 @@
     </footer>
   {% endif %}
 
-  <div class="lgd-row">
-    {% if content_type in restricted_width_content_types %}
-      <div class="lgd-row__two-thirds">
-      {% else %}
-        <div class="lgd-row__full">
-    {% endif %}
-      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ content }}
-      </div>
-    </div>
+  {% if content_type in restricted_width_content_types %}
+    <div class="node__restricted-width-section">
+  {% endif %}
+
+  <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
+    {{ content }}
   </div>
+
+  {% if content_type in restricted_width_content_types %}
+    </div>
+  {% endif %}
 
 </article>

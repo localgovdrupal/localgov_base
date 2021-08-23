@@ -1,9 +1,9 @@
 /* IE11 Fallbacks */
 
 .lgd-header {
-  background-color: #652c95;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: #652c95;
 }
 
 .lgd-header .lgd-region--header {
@@ -17,12 +17,12 @@
 }
 .lgd-header__toggle:focus,
 .lgd-header__toggle:hover {
-  background-color: white;
   color: black;
+  background-color: white;
 }
 
 .lgd-header__toggle-icon::after {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   font-size: 1.6875rem;
 }
 
@@ -36,6 +36,29 @@
 
 .branding__item--logo a:focus {
   outline-color: white;
+}
+
+.lgd-region--search form {
+  display: flex;
+  align-items: center;
+}
+
+.lgd-region--search label {
+  color: white;
+}
+
+.lgd-region--search .form-text {
+  border: 0;
+}
+
+.lgd-region--search .form-submit {
+  color: white;
+  background-color: #652c95;
+}
+.lgd-region--search .form-submit:hover,
+.lgd-region--search .form-submit:focus {
+  color: #652c95;
+  background-color: white;
 }
 
 /* Overrides for Specific Toggles */
