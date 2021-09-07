@@ -100,7 +100,9 @@
   {{ page.messages }}
 {% endif %}
 
-<main id="main-content" tabindex="-1"> {# The "skip to content" link jumps to here. #}
+<a id="main-content" tabindex="-1"></a> {# The "skip to content" link jumps to here. #}
+
+<main class="main" id="main"> 
   {% if has_content_top %}
     {{ page.content_top }}
   {% endif %}
