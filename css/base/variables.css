@@ -115,6 +115,9 @@ body {
 */
 body {
 
+  /* Grid */
+  --grid-spacing: var(--spacing);
+
   /* Breadcrumbs */
   --breadcrumbs-background-color: var(--color-white);
   --breadcrumbs-border: var(--border);
