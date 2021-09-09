@@ -38,6 +38,10 @@
   outline-color: white;
 }
 
+.lgd-region--search {
+  margin: 1rem 0.5rem;
+}
+
 .lgd-region--search form {
   display: flex;
   align-items: center;
