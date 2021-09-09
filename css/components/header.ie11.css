@@ -38,8 +38,14 @@
   outline-color: white;
 }
 
+.lgd-header__nav--primary {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
 .lgd-region--search {
-  margin: 1rem 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .lgd-region--search form {
