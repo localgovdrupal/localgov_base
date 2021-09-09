@@ -8,8 +8,9 @@
   list-style: none;
 }
 
-.menu--main > .menu-item + .menu-item {
-  margin-left: var(--spacing);
+.menu--main > .menu-item {
+  margin-left: var(--spacing-smaller);
+  margin-right: var(--spacing-smaller);
 }
 
 .menu--main > .menu-item a {

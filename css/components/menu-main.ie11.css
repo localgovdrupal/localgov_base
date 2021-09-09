@@ -1,6 +1,7 @@
 /* IE11 Fallbacks */
-.menu--main > .menu-item + .menu-item {
-  margin-left: 1rem;
+.menu--main > .menu-item {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .menu--main > .menu-item a {
