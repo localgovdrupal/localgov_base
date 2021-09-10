@@ -24,7 +24,7 @@
   }
 
   .lgd-region__inner--secondary-menu {
-    background-color: var(--secondary-menu-bg-color-first);
+    background-color: var(--secondary-menu-bg-color-second);
   }
 
   .menu--services-list {

@@ -53,7 +53,8 @@
 
 @media screen and (min-width: 48rem) {
   .lgd-header__nav--primary {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: auto;
   }
 }
@@ -76,6 +77,7 @@
 @media screen and (min-width: 48rem) {
   .lgd-header__toggles {
     margin-right: var(--spacing);
+    margin-bottom: auto;
   }
 }
 
@@ -144,6 +146,11 @@
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
 }
+@media screen and (min-width: 48rem) {
+  .lgd-region--search {
+    margin-left: auto;
+  }
+}
 
 .lgd-region--search form {
   display: flex;
@@ -157,6 +164,13 @@
 
 .lgd-region--search .form-item-s {
   flex-grow: 1;
+}
+
+
+@media screen and (min-width: 48rem) {
+  .lgd-region--search .form-item-s {
+    flex-grow: initial;
+  }
 }
 
 .lgd-region--search .form-text {
