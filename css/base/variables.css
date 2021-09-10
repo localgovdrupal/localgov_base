@@ -143,9 +143,8 @@ body {
   --header-search-input-border: none;
 
   /* Secondary Menu */
-  --secondary-menu-bg-color: var(--color-white);
-  --section-spacing-vertical-secondary-menu: var(--spacing-largest);
-  --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
+  --secondary-menu-bg-color-first: var(--color-accent);
+  --secondary-menu-bg-color-second: var(--color-white);
   --secondary-menu-link-color: var(--color-black);
   --secondary-menu-link-color-focus: var(--color-black);
   --secondary-menu-column-count: 3;

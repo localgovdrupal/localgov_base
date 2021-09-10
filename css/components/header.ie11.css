@@ -38,7 +38,8 @@
   outline-color: white;
 }
 
-.lgd-header__nav--primary {
+.lgd-header__nav--primary,
+.lgd-header__nav--secondary {
   margin-right: 1rem;
   margin-left: 1rem;
 }

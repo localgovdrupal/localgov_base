@@ -1,11 +1,27 @@
 /* Theming Secondary Nav (services list region) */
 .region-secondary-menu {
-  margin-top: 1.5rem;
-  padding: 2.5rem 2.5rem 1.5rem;
+  margin-top: 1rem;
+  background-color: #652c95;
+}
+
+.lgd-region__inner--secondary-menu {
+  padding: 1.5rem 1.5rem 1.5rem 0;
   background-color: white;
 }
 
-@media screen and (min-width: 48rem) {
+.lgd-region__inner--secondary-menu  .block-menu > h2 {
+  padding-left: 1.5rem;
+}
+
+@media screen and (min-width: 48rem) { 
+  .region-secondary-menu {
+    background-color: white;
+  }
+ 
+  .lgd-region__inner--secondary-menu {
+    background-color: white;
+  }
+ 
   .region-secondary-menu .menu {
     column-count: 3;
   }
