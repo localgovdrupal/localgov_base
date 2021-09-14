@@ -71,12 +71,12 @@
 /* Theming the Header Toggles */
 .lgd-header__toggles {
   display: flex;
+  margin-right: var(--spacing);
   margin-left: auto;
 }
 
 @media screen and (min-width: 48rem) {
   .lgd-header__toggles {
-    margin-right: var(--spacing);
     margin-bottom: auto;
   }
 }
