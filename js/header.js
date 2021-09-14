@@ -7,12 +7,13 @@
     attach(context) {
       context = context || document;
 
-      // Set variables for toggles
+      // Set variables for menu toggles
       const headerToggles = context.querySelectorAll('.lgd-header__toggle');
       const primaryMenuToggle = context.querySelector('.lgd-header__toggle--primary');
       const secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
 
-      // Get out of here as soon as possible
+      // If there are no menu toggle buttons present,
+      // get out of here as soon as possible
       if (!headerToggles.length) {
         return;
       }
@@ -31,20 +32,23 @@
       const regions = new Array(primaryMenuRegion, secondaryMenuRegion);
 
       // Set variables to use later for keyboard navigation
-      const secondaryMenuLinks = secondaryMenuRegion.querySelectorAll('.menu a');
       const secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
 
-      function handleToggleClick(clickedToggle) {
+      // When a menu toggle button is clicked, show/hide the menu regions.
+      // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
+      function handleToggleClick(toggleThatWasClicked) {
         const currentState = clickedToggle.getAttribute('aria-expanded');
         currentState === 'false' ? 
-          clickedToggle.setAttribute('aria-expanded', 'true') : 
-          clickedToggle.setAttribute('aria-expanded', 'false');
+          toggleThatWasClicked.setAttribute('aria-expanded', 'true') : 
+          toggleThatWasClicked.setAttribute('aria-expanded', 'false');
           
-        clickedToggle.classList.contains('lgd-header__toggle--active') ? 
-          clickedToggle.classList.remove('lgd-header__toggle--active') :
-          clickedToggle.classList.add('lgd-header__toggle--active');
+        toggleThatWasClicked.classList.contains('lgd-header__toggle--active') ? 
+          toggleThatWasClicked.classList.remove('lgd-header__toggle--active') :
+          toggleThatWasClicked.classList.add('lgd-header__toggle--active');
       }
 
+      // General reset function to hide the menu regions and reset the toggle 
+      // button attributes.
       function handleReset() {
         headerToggles.forEach(headerToggle => {
           headerToggle.setAttribute('aria-expanded', 'false');
@@ -55,8 +59,10 @@
         });
       }
 
+      // When the primary menu toggle is clicked
       function handlePrimaryMenuToggleClick() {
         handleToggleClick(primaryMenuToggle);
+        handleEscKeyClick(primaryMenuToggle);
         regions.forEach(region => {
           region.classList.contains('lgd-header__nav--active') ? 
           region.classList.remove('lgd-header__nav--active') :
@@ -64,51 +70,61 @@
         });
       }
 
+      // When the secondary menu toggle is clicked
       function handleSecondaryMenuToggleClick() {
         handleToggleClick(secondaryMenuToggle);
+        handleEscKeyClick(secondaryMenuToggle);
         secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? 
-          secondaryMenuRegion.classList.remove('lgd-header__nav--active') :
-          secondaryMenuRegion.classList.add('lgd-header__nav--active');
+        secondaryMenuRegion.classList.remove('lgd-header__nav--active') :
+        secondaryMenuRegion.classList.add('lgd-header__nav--active');
+        secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? secondaryMenuFirstLink.focus() : null;
       }
 
+      // When on the first link in the secondary menu, if you shift+tab
+      // set focus back to the services button
+      function handleSecondaryMenuShiftTabClick() {
+        secondaryMenuFirstLink.addEventListener('keydown', function(e) {
+          if (e.shiftKey && e.key == 'Tab') { 
+            e.preventDefault();
+            handleReset();
+            secondaryMenuToggle.focus();
+          }
+        });
+      }
+
+      // General function for when the ESC is clicked.
+      function handleEscKeyClick(buttonToFocus) {
+        context.addEventListener('keydown', function(e) {
+          // When on any link in the secondary menu, if you hit escape
+          // set focus back to: 
+          // 1. menu button on small screens, and
+          // 2. services button on large screens
+          if (e.key == 'Escape') {
+            e.preventDefault();
+            handleReset()
+            buttonToFocus.focus();
+          }
+        });
+      }
+
+      // When the window is resized (or a device orientation changes),
+      // set out what happens.
+      // On a small screen, the primary button is shown which will show both 
+      // menu regions when clicked.
+      // On a large screen, the secondary button is shown which will show only
+      // the secondary menu region when clicked (the primary menu will always be visible).
       function handleWindowResized() {
         handleReset();
         if  (window.innerWidth < 768) {
           secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
+          secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
           primaryMenuToggle.addEventListener('click', handlePrimaryMenuToggleClick);
         } else {
           primaryMenuToggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
           secondaryMenuToggle.addEventListener('click', handleSecondaryMenuToggleClick);
+          secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
         }
       }
-    
-    // Processes for keyboard navigation to exit services section.
-    if (!secondaryMenuToggle.classList.contains('js-processed-lgd-header__toggle--secondary')) {
-        secondaryMenuToggle.addEventListener('click', function() {
-          secondaryMenuFirstLink.focus();
-        });
-        secondaryMenuFirstLink.addEventListener('keydown', function(e) {
-          // When on the first link in the secondary menu, if you shift+tab
-          // set focus back to the services button
-          if (e.shiftKey && e.key == 'Tab') { 
-            e.preventDefault();
-            secondaryMenuToggle.focus();
-            secondaryMenuToggle.click();
-          }
-        });
-        secondaryMenuLinks.forEach(secondaryMenuLink => {
-          secondaryMenuLink.addEventListener('keydown', function(e) {
-            // When on any link in the secondary menu, if you hit escape
-            // set focus back to the services button
-            if (e.key == 'Escape') { 
-              e.preventDefault();
-              secondaryMenuToggle.focus();
-              secondaryMenuToggle.click();
-            }
-          });
-        })
-      }
-      secondaryMenuToggle.classList.add('js-processed-lgd-header__toggle--secondary');
       
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
