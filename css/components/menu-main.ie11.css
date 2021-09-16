@@ -1,10 +1,12 @@
 /* IE11 Fallbacks */
-.menu--main > .menu-item + .menu-item {
-  margin-left: 1rem;
+
+.lgd-region--primary-menu {
+  background-color: white;
 }
 
 .menu--main > .menu-item a {
   padding: 1rem 0.5rem;
+  color: black;
 }
 
 .menu--main > .menu-item a:focus,
@@ -14,6 +16,15 @@
 }
 
 @media screen and (min-width: 48rem) {
+  .menu--main > .menu-item {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .menu--main > .menu-item a {
+    color: white;
+  }
+
   .menu--main > .menu-item a:hover {
     border-color: white;
   }
