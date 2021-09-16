@@ -36,7 +36,7 @@
 
   .lgd-row__one-third,
   .lgd-row--thirds > * {
-    width: calc(33% - var(--spacing));
+    width: calc((100% / 3) - var(--spacing));
   }
 
   .lgd-row__one-half,

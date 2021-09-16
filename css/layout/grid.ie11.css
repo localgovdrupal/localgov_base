@@ -13,7 +13,7 @@
 
   .lgd-row__one-third,
   .lgd-row--thirds > * {
-    width: calc(33% - 1rem);
+    width: calc((100% / 3) - 1rem);
   }
 
   .lgd-row__one-half,
