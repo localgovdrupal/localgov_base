@@ -37,7 +37,7 @@
       // When a menu toggle button is clicked, show/hide the menu regions.
       // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
       function handleToggleClick(toggleThatWasClicked) {
-        const currentState = clickedToggle.getAttribute('aria-expanded');
+        const currentState = toggleThatWasClicked.getAttribute('aria-expanded');
         currentState === 'false' ? 
           toggleThatWasClicked.setAttribute('aria-expanded', 'true') : 
           toggleThatWasClicked.setAttribute('aria-expanded', 'false');
