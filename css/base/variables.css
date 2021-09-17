@@ -100,6 +100,7 @@ body {
   --border-radius: var(--spacing-smallest);
   --border: var(--border-width) var(--border-style) var(--border-color);
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
 
   /* Animation */
   --transition-time: 0.3s;
@@ -210,7 +211,7 @@ body {
   --featured-subsite-bg-color: var(--color-grey-light);
 
   /* Box Links */
-  --box-link-border: var(--border);
+  --box-link-border: var(--border-dark);
   --box-link-content-spacing: var(--spacing-small);
 
   /* Fact Box */
