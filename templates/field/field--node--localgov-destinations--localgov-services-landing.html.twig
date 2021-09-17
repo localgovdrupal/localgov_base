@@ -58,14 +58,14 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes, 'field__items') }}>
+    <div{{ attributes.addClass(classes, 'field__items', 'lgd-row') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('service-landing-page__service', 'field__item') }}>
+        <div{{item.attributes.addClass('service-landing-page__service','field__item','lgd-row__one-third')}}>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
             icon_name: service_icon,
             icon_wrapper_element: 'div',
             icon_classes: 'service-landing-page__service-icon',
-            } 
+            }
           %}
           <div class="service-landing-page__service-item">
             {{ item.content }}
@@ -80,7 +80,7 @@
           icon_name: service_icon,
           icon_wrapper_element: 'div',
           icon_classes: 'service-landing-page__service-icon',
-          } 
+          }
         %}
         <div class="service-landing-page__service-item">
           {{ item.content }}
@@ -100,7 +100,7 @@
           icon_name: service_icon,
           icon_wrapper_element: 'div',
           icon_classes: 'service-landing-page__service-icon',
-          } 
+          }
         %}
         <div class="service-landing-page__service-item">
           {{ item.content }}

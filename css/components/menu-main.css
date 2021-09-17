@@ -1,6 +1,9 @@
 /*
   @file Theming main menu.
 */
+.lgd-region--primary-menu {
+  background-color: var(--color-white);
+}
 
 .menu--main {
   margin-bottom: 0;
@@ -8,13 +11,10 @@
   list-style: none;
 }
 
-.menu--main > .menu-item + .menu-item {
-  margin-left: var(--spacing);
-}
-
 .menu--main > .menu-item a {
   display: block;
   padding: var(--spacing);
+  color: var(--color-black);
 }
 
 .menu--main > .menu-item--active-trail a,
@@ -25,12 +25,30 @@
 }
 
 @media screen and (min-width: 48rem) {
+  .lgd-region--primary-menu {
+    background-color: transparent;
+  }
+
   .lgd-region--primary-menu .menu--main {
     display: flex;
   }
 
+  .menu--main > .menu-item {
+    margin-left: var(--spacing-smaller);
+    margin-right: var(--spacing-smaller);
+  }
+
   .menu--main > .menu-item a {
     border: 1px solid transparent;
+    color: var(--color-white);
+    background-color: transparent;
+  }
+
+  .menu--main > .menu-item--active-trail a,
+  .menu--main > .menu-item a:focus,
+  .menu--main > .menu-item a:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
   }
 
   .menu--main > .menu-item a:hover {

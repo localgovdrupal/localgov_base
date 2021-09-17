@@ -38,6 +38,17 @@
   outline-color: white;
 }
 
+.lgd-header__nav--primary,
+.lgd-header__nav--secondary {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.lgd-region--search {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .lgd-region--search form {
   display: flex;
   align-items: center;
@@ -62,8 +73,6 @@
 }
 
 /* Overrides for Specific Toggles */
-@media screen and (min-width: 48rem) {
-  .lgd-header__toggles {
-    margin-right: 1rem;
-  }
+.lgd-header__toggles {
+  margin-right: 1rem;
 }

@@ -100,6 +100,7 @@ body {
   --border-radius: var(--spacing-smallest);
   --border: var(--border-width) var(--border-style) var(--border-color);
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
 
   /* Animation */
   --transition-time: 0.3s;
@@ -114,6 +115,9 @@ body {
   override the defined variables above instead).
 */
 body {
+
+  /* Grid */
+  --grid-column-spacing: var(--spacing);
 
   /* Breadcrumbs */
   --breadcrumbs-background-color: var(--color-white);
@@ -143,9 +147,8 @@ body {
   --header-search-input-border: none;
 
   /* Secondary Menu */
-  --secondary-menu-bg-color: var(--color-white);
-  --section-spacing-vertical-secondary-menu: var(--spacing-largest);
-  --section-spacing-horizontal-secondary-menu: var(--spacing-largest);
+  --secondary-menu-bg-color-first: var(--color-accent);
+  --secondary-menu-bg-color-second: var(--color-white);
   --secondary-menu-link-color: var(--color-black);
   --secondary-menu-link-color-focus: var(--color-black);
   --secondary-menu-column-count: 3;
@@ -208,7 +211,7 @@ body {
   --featured-subsite-bg-color: var(--color-grey-light);
 
   /* Box Links */
-  --box-link-border: var(--border);
+  --box-link-border: var(--border-dark);
   --box-link-content-spacing: var(--spacing-small);
 
   /* Fact Box */

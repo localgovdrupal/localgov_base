@@ -6,8 +6,9 @@
   padding-left: 0;
 }
 
-.box-links-listing--boxes .box-links-listing__list-item + .box-links-listing__list-item {
-  margin-top: var(--vertical-rhythm-spacing);
+.box-links-listing--boxes .box-links-listing__list-item + .box-links-listing__list-item,
+.box-links-listing__list .box-links-listing__list-item + .box-links-listing__list-item {
+  margin-bottom: var(--vertical-rhythm-spacing);
 }
 
 .box-links-listing__list-item::marker {
@@ -28,6 +29,14 @@
 .box-link__image {
   padding-right: 0;
   padding-left: 0;
+}
+
+.box-link__title {
+  margin-top: var(--box-link-content-spacing);
+}
+
+.box-link__image + .box-link__title {
+  margin-top: 0;
 }
 
 .box-link__link::after {

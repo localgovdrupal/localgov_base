@@ -65,6 +65,7 @@ header-js:
     js/header.js: {}
   dependencies:
     - core/drupal
+    - core/drupal.debounce
 
 footer:
   css:

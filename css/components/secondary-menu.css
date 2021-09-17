@@ -1,19 +1,35 @@
 /* Theming Secondary Nav (services list region) */
 .region-secondary-menu {
-  margin-top: var(--vertical-rhythm-spacing);
-  /*
-    Use calc for padding-bottom, to remove the extra space caused from the margin-bottom
-    on the .menu-item classes.
-  */
-  padding:
-    var(--section-spacing-vertical-secondary-menu)
-    var(--section-spacing-horizontal-secondary-menu)
-    calc(var(--section-spacing-vertical-secondary-menu) - var(--spacing));
-  background-color: var(--secondary-menu-bg-color);
+  margin-top: var(--spacing);
+  background-color: var(--secondary-menu-bg-color-first);
+}
+
+.lgd-region__inner--secondary-menu {
+  padding: var(--spacing-large) var(--spacing-large) var(--spacing) 0;
+  background-color: var(--secondary-menu-bg-color-second);
+}
+
+.lgd-region__inner--secondary-menu  .block-menu > h2 {
+  padding-left: var(--spacing-large);
+}
+
+.menu--services-list {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 @media screen and (min-width: 48rem) {
-  .region-secondary-menu .menu {
+  .region-secondary-menu {
+    background-color: var(--secondary-menu-bg-color-second);
+  }
+
+  .lgd-region__inner--secondary-menu {
+    background-color: var(--secondary-menu-bg-color-second);
+  }
+
+  .menu--services-list {
+    max-height: auto;
+    overflow-y: initial;
     column-count: var(--secondary-menu-column-count);
   }
 }
