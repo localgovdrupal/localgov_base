@@ -7,6 +7,8 @@
     attach(context) {
       context = context || document;
 
+      let windowWidth = window.innerWidth;
+
       // Set variables for menu toggles
       const headerToggles = context.querySelectorAll('.lgd-header__toggle');
       const primaryMenuToggle = context.querySelector('.lgd-header__toggle--primary');
@@ -125,10 +127,23 @@
           secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
         }
       }
+
+      // We need this small function here to check if the window size has changed.
+      // On phones, if the menu is expanded and then the user scrolls to see things
+      // near the bottom of the menu, a scrollbar comes into play which technically
+      // means the window size has changed.
+      function handleCheckIfWindowActuallyResized() {
+        if (window.innerWidth === windowWidth) {
+          return
+        } else {
+          windowWidth = window.innerWidth;
+          handleWindowResized();
+        }
+      }
       
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
-      window.addEventListener('resize', Drupal.debounce(handleWindowResized, 50, false));
+      window.addEventListener('resize', Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false));
     }
   };
 }(Drupal));
