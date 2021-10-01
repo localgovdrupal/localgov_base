@@ -7,7 +7,7 @@
     attach(context) {
       context = context || document;
 
-      const windowWidth = window.innerWidth;
+      let windowWidth = window.innerWidth;
 
       // Set variables for menu toggles
       const headerToggles = context.querySelectorAll('.lgd-header__toggle');
@@ -136,6 +136,7 @@
         if (window.innerWidth === windowWidth) {
           return
         } else {
+          windowWidth = window.innerWidth;
           handleWindowResized();
         }
       }
