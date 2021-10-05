@@ -2,9 +2,15 @@
  * @file JS file for the header component.
  */
 
- (function headerScript(Drupal) {
+// Small polyfill needed for IE11
+// We can remove this when we stop supporting IE11.
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+(function headerScript(Drupal) {
   Drupal.behaviors.header = {
-    attach(context) {
+    attach: function (context) {
       context = context || document;
 
       let windowWidth = window.innerWidth;
@@ -20,7 +26,7 @@
         return;
       }
 
-      headerToggles.forEach(headerToggle => {
+      headerToggles.forEach(function(headerToggle) {
         if (headerToggle.classList.contains('js-processed')) {
           return;
         } else {
@@ -52,11 +58,11 @@
       // General reset function to hide the menu regions and reset the toggle 
       // button attributes.
       function handleReset() {
-        headerToggles.forEach(headerToggle => {
+        headerToggles.forEach(function(headerToggle) {
           headerToggle.setAttribute('aria-expanded', 'false');
           headerToggle.classList.remove('lgd-header__toggle--active');
         });
-        regions.forEach(region => { 
+        regions.forEach(function(region) { 
           region.classList.remove('lgd-header__nav--active');
         });
       }
@@ -65,7 +71,7 @@
       function handlePrimaryMenuToggleClick() {
         handleToggleClick(primaryMenuToggle);
         handleEscKeyClick(primaryMenuToggle);
-        regions.forEach(region => {
+        regions.forEach(function(region) {
           region.classList.contains('lgd-header__nav--active') ? 
           region.classList.remove('lgd-header__nav--active') :
           region.classList.add('lgd-header__nav--active');
