@@ -2,10 +2,18 @@
  * @file JS file for the header component.
  */
 
- (function headerScript(Drupal) {
+// Small polyfill needed for IE11
+// We can remove this when we stop supporting IE11.
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+(function headerScript(Drupal) {
   Drupal.behaviors.header = {
-    attach(context) {
+    attach: function (context) {
       context = context || document;
+
+      let windowWidth = window.innerWidth;
 
       // Set variables for menu toggles
       const headerToggles = context.querySelectorAll('.lgd-header__toggle');
@@ -18,7 +26,7 @@
         return;
       }
 
-      headerToggles.forEach(headerToggle => {
+      headerToggles.forEach(function(headerToggle) {
         if (headerToggle.classList.contains('js-processed')) {
           return;
         } else {
@@ -50,11 +58,11 @@
       // General reset function to hide the menu regions and reset the toggle 
       // button attributes.
       function handleReset() {
-        headerToggles.forEach(headerToggle => {
+        headerToggles.forEach(function(headerToggle) {
           headerToggle.setAttribute('aria-expanded', 'false');
           headerToggle.classList.remove('lgd-header__toggle--active');
         });
-        regions.forEach(region => { 
+        regions.forEach(function(region) { 
           region.classList.remove('lgd-header__nav--active');
         });
       }
@@ -63,7 +71,7 @@
       function handlePrimaryMenuToggleClick() {
         handleToggleClick(primaryMenuToggle);
         handleEscKeyClick(primaryMenuToggle);
-        regions.forEach(region => {
+        regions.forEach(function(region) {
           region.classList.contains('lgd-header__nav--active') ? 
           region.classList.remove('lgd-header__nav--active') :
           region.classList.add('lgd-header__nav--active');
@@ -125,10 +133,23 @@
           secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
         }
       }
+
+      // We need this small function here to check if the window size has changed.
+      // On phones, if the menu is expanded and then the user scrolls to see things
+      // near the bottom of the menu, a scrollbar comes into play which technically
+      // means the window size has changed.
+      function handleCheckIfWindowActuallyResized() {
+        if (window.innerWidth === windowWidth) {
+          return
+        } else {
+          windowWidth = window.innerWidth;
+          handleWindowResized();
+        }
+      }
       
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
-      window.addEventListener('resize', Drupal.debounce(handleWindowResized, 50, false));
+      window.addEventListener('resize', Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false));
     }
   };
 }(Drupal));
