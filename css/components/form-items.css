@@ -1,0 +1,152 @@
+.form-item,
+.facet-item,
+.form-item-webform-terms-of-service {
+  position: relative;
+  margin-bottom: var(--spacing);
+}
+
+fieldset,
+.fieldgroup {
+  padding: var(--spacing);
+  border: var(--border);
+  border-color: var(--fieldset-border-color);
+}
+
+legend {
+  padding: 0 var(--spacing);
+  font-weight: bold;
+}
+
+label {
+  display: block;
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  border: var(--border);
+  border-color: var(--input-border-color);
+  background-color: var(--input-bg-color);
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
+  cursor: pointer;
+  color: var(--button-text-color);
+  border: var(--border);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg-color);
+  font-family: var(--button-font-family);
+}
+
+button:focus,
+button:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  text-decoration: underline;
+  color: var(--button-text-color-hover);
+  background-color: var(--button-bg-color-hover);
+}
+
+/*
+  Checkboxes
+
+  This checkboxes styling is taken directly from the gov.uk design system:
+    - https://design-system.service.gov.uk/components/checkboxes/
+
+  We are adding a .form-checkboxes class around each of these here to make sure
+  this only affects checkboxes created by Drupal. If we don't, the position absolute
+  can have very unwanted effects.
+
+  If you need to create custom checkboxes, make sure you have the same class
+  wrapping them.
+*/
+
+.form-checkboxes input[type="checkbox"],
+.facet-item input[type="checkbox"],
+.form-item-webform-terms-of-service input[type="checkbox"] {
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.form-checkboxes input[type="checkbox"] + label,
+.facet-item input[type="checkbox"] + label,
+.form-item-webform-terms-of-service input[type="checkbox"] + label {
+  display: inline-block;
+  margin-left: 40px;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.form-checkboxes input[type="checkbox"] + label::before,
+.facet-item input[type="checkbox"] + label::before,
+.form-item-webform-terms-of-service input[type="checkbox"] + label::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  content: "";
+  border: 2px solid currentColor;
+  background: transparent;
+}
+.form-checkboxes input[type="checkbox"] + label::after,
+.facet-item input[type="checkbox"] + label::after,
+.form-item-webform-terms-of-service input[type="checkbox"] + label::after {
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  box-sizing: border-box;
+  width: 23px;
+  height: 12px;
+  content: "";
+  transform: rotate(-45deg);
+  opacity: 0;
+  border: solid;
+  border-width: 0 0 5px 5px;
+  border-top-color: transparent;
+  background: transparent;
+}
+
+.form-checkboxes input[type="checkbox"]:focus + label:before,
+.facet-item input[type="checkbox"]:focus + label:before,
+.form-item-webform-terms-of-service input[type="checkbox"]:focus + label:before {
+  border-width: 4px;
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.form-checkboxes input[type="checkbox"]:hover + label,
+.facet-item input[type="checkbox"]:hover + label,
+.form-item-webform-terms-of-service input[type="checkbox"]:hover + label,
+.form-checkboxes input[type="checkbox"]:focus + label,
+.facet-item input[type="checkbox"]:focus + label,
+.form-item-webform-terms-of-service input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.form-checkboxes input[type="checkbox"]:checked + label:after,
+.facet-item input[type="checkbox"]:checked + label:after,
+.form-item-webform-terms-of-service input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}

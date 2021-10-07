@@ -192,6 +192,9 @@ body {
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
 
+  /* Fieldset Elements */
+  --fieldset-border-color: var(--color-grey-medium);
+
   /* Sidebar Items */
   --sidebar-exposed-form-bg-color: var(--color-grey-light);
   --sidebar-exposed-form-padding-vertical: var(--spacing-larger);

@@ -1,0 +1,59 @@
+.form-item,
+.facet-item {
+  margin-bottom: 1rem;
+}
+
+fieldset,
+.fieldgroup {
+  padding: 1rem;
+  border: 1px solid #b1b4b6;
+}
+
+legend {
+  padding: 0 1rem;
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  padding: 1rem;
+  border: 1px solid #f3f2f1;
+  border-color: #f3f2f1;
+  background-color: white;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  padding: 1rem;
+  color: white;
+  border: 1px solid #f3f2f1;
+  border-color: #f3f2f1;
+  border-radius: 0;
+  background-color: #652c95;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+button:focus,
+button:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  text-decoration: underline;
+  color: #652c95;
+  background-color: white;
+}
+
+/* Checkboxes */
+.form-checkboxes input[type="checkbox"]:focus + label:before,
+.facet-item input[type="checkbox"]:focus + label:before,
+.form-item-webform-terms-of-service input[type="checkbox"]:focus + label:before {
+  border-width: 4px;
+  box-shadow: 0 0 0 3px #fd0;
+}
