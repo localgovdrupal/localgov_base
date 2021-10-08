@@ -200,6 +200,13 @@ body {
   --button-font-family: var(--font-primary);
   --button-border-radius: 0;
 
+  /* File Upload Items */
+  --file-upload-border: var(--border);
+  --file-upload-border-left-size: var(--border-width-large);
+  --file-upload-border-color: var(--color-accent);
+  --file-upload-bg-hover-color: var(--color-accent);
+  --file-upload-text-hover-color: var(--color-white);
+
   /* Fieldset Elements */
   --fieldset-border-color: var(--color-grey-medium);
 

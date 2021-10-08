@@ -69,3 +69,31 @@ input[type="submit"]:hover {
 .form-item-radios [type="radio"]:focus + label::before {
   box-shadow: 0 0 0 4px #ffbf47;
 }
+
+/* Form Upload */
+/* File Upload */
+input[type="file"],
+.form-item-managed-file-button .webform-file-button {
+  border: 1px solid #96918b;
+  border-left-width: 5px;
+}
+input[type="file"]:focus,
+input[type="file"]:hover,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-managed-file:focus-within .webform-file-button,
+.form-managed-file .webform-file-button:hover {
+  background-color: #652c95;
+  color: white;
+}
+.form-item-managed-file .description,
+.form-item-managed-file-multiple .description,
+.form-item-managed-file-button .description {
+  border: 1px solid #96918b;
+  border-left-width: 5px;
+}
+.form-item-managed-file .description br,
+.form-item-managed-file-multiple .description br,
+.form-item-managed-file-button .description br {
+  margin-bottom: 1rem;
+}

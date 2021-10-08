@@ -17,8 +17,14 @@ legend {
   font-weight: bold;
 }
 
-label {
+label,
+.webform-element--title-inline > label {
   display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[disabled] {
+  opacity: 0.5;
 }
 
 input[type="date"],
@@ -207,8 +213,8 @@ input[type="submit"]:hover {
   width: 0;
   height: 0;
   position: absolute;
-  top: 7px;
-  left: 7px;
+  top: 9px;
+  left: 9px;
   border-radius: 50%;
   filter: alpha(opacity=0);
   opacity: 0;
@@ -220,15 +226,47 @@ input[type="submit"]:hover {
   filter: alpha(opacity=100);
   opacity: 1;
 }
-.form-item-radios input:disabled {
-  cursor: default;
-}
-.form-item-radios input:disabled + label {
-  filter: alpha(opacity=50);
-  opacity: 0.5;
-  cursor: default;
-}
 .form-item-radios:last-child,
 .form-item-radios:last-of-type {
   margin-bottom: 0;
+}
+
+/* File Upload */
+input[type="file"],
+.form-item-managed-file-button .webform-file-button {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  border: var(--file-upload-border);
+  border-left-width: var(--file-upload-border-left-size);
+  border-color: var(--file-upload-border-color);
+  cursor: pointer;
+}
+input[type="file"]:focus,
+input[type="file"]:hover,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-managed-file:focus-within .webform-file-button,
+.form-managed-file .webform-file-button:hover {
+  font-weight: bold; /* Because text-decoration doesn't work on input[type]"file"] */
+  text-decoration: underline;
+  background-color: var(--file-upload-bg-hover-color);
+  color: var(--file-upload-text-hover-color);
+}
+.form-item-managed-file .description,
+.form-item-managed-file-multiple .description,
+.form-item-managed-file-button .description {
+  position: relative;
+  top: -1px;
+  width: auto;
+  max-width: 768px;
+  padding: 1rem;
+  border: var(--file-upload-border);
+  border-left-width: var(--file-upload-border-left-size);
+  border-color: var(--file-upload-border-color);
+}
+.form-item-managed-file .description br,
+.form-item-managed-file-multiple .description br,
+.form-item-managed-file-button .description br {
+  margin-bottom: var(--spacing);
 }
