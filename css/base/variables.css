@@ -179,6 +179,14 @@ body {
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
 
+  /* Checkbox Items */
+  --checkbox-select-focus-color: var(--color-focus);
+  --checkbox-select-outline-color: var(--color-black);
+
+  /* Radio Items */
+  --radio-select-focus-color: var(--color-focus);
+  --radio-select-outline-color: var(--color-black);
+
   /* Button Elements (and button-styled links) */
   --button-padding-vertical: var(--spacing);
   --button-padding-horizontal: var(--spacing);

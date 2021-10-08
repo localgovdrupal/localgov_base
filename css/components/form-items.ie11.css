@@ -51,9 +51,21 @@ input[type="submit"]:hover {
 }
 
 /* Checkboxes */
+.form-checkboxes input[type="checkbox"] + label::before,
+.facet-item input[type="checkbox"] + label::before,
+.form-item-webform-terms-of-service input[type="checkbox"] + label::before {
+  border-color: black;
+}
 .form-checkboxes input[type="checkbox"]:focus + label:before,
 .facet-item input[type="checkbox"]:focus + label:before,
 .form-item-webform-terms-of-service input[type="checkbox"]:focus + label:before {
-  border-width: 4px;
   box-shadow: 0 0 0 3px #fd0;
+}
+
+/* Radios */
+.form-item-radios [type="radio"] + label::before {
+  border-color: black;
+}
+.form-item-radios [type="radio"]:focus + label::before {
+  box-shadow: 0 0 0 4px #ffbf47;
 }
