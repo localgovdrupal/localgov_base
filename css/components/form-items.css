@@ -20,11 +20,15 @@ legend {
 label,
 .webform-element--title-inline > label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 input[disabled] {
   opacity: 0.5;
+}
+
+.js input.form-autocomplete {
+  background-position: calc(100% - 1rem) center;
 }
 
 input[type="date"],
@@ -35,13 +39,33 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"],
+textarea,
 select,
-textarea {
+.select2-container--default .select2-search--dropdown .select2-search__field {
   width: 100%;
   padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  font-size: var(--font-size-medium);
   border: var(--border);
   border-color: var(--input-border-color);
   background-color: var(--input-bg-color);
+}
+
+.select2-container--default .select2-selection--single {
+  border-radius: 0;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  margin: 0.5rem;
+}
+
+.select2-results__option {
+  padding: 0.5rem 1rem;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
 }
 
 /* Buttons */
@@ -231,6 +255,33 @@ input[type="submit"]:hover {
   margin-bottom: 0;
 }
 
+/* Description Field - needs to come before the file upload description items */
+.form-item .description {
+  padding: 1rem;
+  border: var(--form-item-description-border);
+  background-color: var(--form-item-description-bg-color);
+}
+.form-item input + .description {
+  border-top: 0;
+}
+.form-item .description + input {
+  border-top: 0;
+}
+
+.form-item .description .webform-element-more--content {
+  padding: 1rem;
+}
+
+/* 
+  This is just in case we have a description field in a fieldset that contains 
+  checkboxes or radios. It stops the first item from hitting the bottom of the
+  description.
+*/
+.fieldset-wrapper > .field-prefix + .form-checkboxes,
+.fieldset-wrapper > .field-prefix + .form-item-radios {
+  margin-top: var(--spacing);
+}
+
 /* File Upload */
 input[type="file"],
 .form-item-managed-file-button .webform-file-button {
@@ -260,7 +311,6 @@ input[type="file"]:hover,
   top: -1px;
   width: auto;
   max-width: 768px;
-  padding: 1rem;
   border: var(--file-upload-border);
   border-left-width: var(--file-upload-border-left-size);
   border-color: var(--file-upload-border-color);

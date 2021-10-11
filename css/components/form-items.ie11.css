@@ -22,8 +22,10 @@ input[type="search"],
 input[type="tel"],
 input[type="text"],
 select,
-textarea {
+textarea,
+.select2-container--default .select2-search--dropdown .select2-search__field {
   padding: 1rem;
+  font-size: 1rem;
   border: 1px solid #f3f2f1;
   border-color: #f3f2f1;
   background-color: white;
@@ -70,7 +72,16 @@ input[type="submit"]:hover {
   box-shadow: 0 0 0 4px #ffbf47;
 }
 
-/* Form Upload */
+/* Form Item Description */
+.form-item .description {
+  border: 1px solid #96918b;
+}
+
+.fieldset-wrapper > .field-prefix + .form-checkboxes,
+.fieldset-wrapper > .field-prefix + .form-item-radios {
+  margin-top: 1rem;
+}
+
 /* File Upload */
 input[type="file"],
 .form-item-managed-file-button .webform-file-button {
