@@ -203,55 +203,56 @@ input[type="submit"]:hover {
 .form-item-radios {
   display: block;
   position: relative;
-  padding: 0 0 0 38px;
+  min-height: 40px;
   margin-bottom: 10px;
+  padding-left: 40px;
+  clear: left;
 }
 .form-item-radios input {
   position: absolute;
-  cursor: pointer;
-  left: 0;
-  top: 0;
-  width: 38px;
-  height: 38px;
   z-index: 1;
+  top: -2px;
+  left: -2px;
+  width: 44px;
+  height: 44px;
   margin: 0;
-  filter: alpha(opacity=0);
   opacity: 0;
+  cursor: pointer;
 }
 .form-item-radios label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
   cursor: pointer;
-  padding: 8px 10px 9px 12px;
-  display: block;
   touch-action: manipulation;
 }
 .form-item-radios [type="radio"] + label::before {
-  content: "";
-  border: 2px solid var(--radio-select-outline-color);
-  background: transparent;
-  width: 34px;
-  height: 34px;
   position: absolute;
   top: 0;
   left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--radio-select-outline-color);
   border-radius: 50%;
+  content: "";
+  background: transparent;
 }
 .form-item-radios [type="radio"] + label::after {
-  content: "";
-  border: 10px solid;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   width: 0;
   height: 0;
-  position: absolute;
-  top: 9px;
-  left: 9px;
+  border: 10px solid currentColor;
   border-radius: 50%;
-  filter: alpha(opacity=0);
+  content: "";
   opacity: 0;
+  background: currentColor;
 }
 .form-item-radios [type="radio"]:focus + label::before {
   box-shadow: 0 0 0 4px var(--radio-select-focus-color);
 }
 .form-item-radios input:checked + label::after {
-  filter: alpha(opacity=100);
   opacity: 1;
 }
 .form-item-radios:last-child,
