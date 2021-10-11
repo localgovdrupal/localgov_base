@@ -13,7 +13,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
