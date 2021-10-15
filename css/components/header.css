@@ -169,6 +169,7 @@
 }
 
 .lgd-region--search .form-item-s {
+  margin-bottom: 0; /* Override default form-item class */
   flex-grow: 1;
 }
 

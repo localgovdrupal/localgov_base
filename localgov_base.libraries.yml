@@ -9,6 +9,8 @@ global:
       css/base/base.css: {}
       css/layout/layout-utilities.ie11.css: {}
       css/layout/layout-utilities.css: {}
+      css/components/form-items.ie11.css: {}
+      css/components/form-items.css: {}
       css/components/admin-toolbar.css: {}
   # Declare dependencies for other libraries that we want to load
   # on every page.
