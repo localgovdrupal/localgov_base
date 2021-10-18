@@ -1,0 +1,110 @@
+.form-item,
+.facet-item {
+  margin-bottom: 1rem;
+}
+
+fieldset,
+.fieldgroup {
+  padding: 1rem;
+  border: 1px solid #b1b4b6;
+}
+
+legend {
+  padding: 0 1rem;
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #f3f2f1;
+  border-color: #f3f2f1;
+  background-color: white;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  padding: 1rem;
+  color: white;
+  border: 1px solid #f3f2f1;
+  border-color: #f3f2f1;
+  border-radius: 0;
+  background-color: #652c95;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+button:focus,
+button:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  text-decoration: underline;
+  color: #652c95;
+  background-color: white;
+}
+
+/* Checkboxes */
+.form-checkboxes input[type="checkbox"] + label::before,
+.facet-item input[type="checkbox"] + label::before,
+.form-item-webform-terms-of-service input[type="checkbox"] + label::before {
+  border-color: black;
+}
+.form-checkboxes input[type="checkbox"]:focus + label:before,
+.facet-item input[type="checkbox"]:focus + label:before,
+.form-item-webform-terms-of-service input[type="checkbox"]:focus + label:before {
+  box-shadow: 0 0 0 3px #fd0;
+}
+
+/* Radios */
+.form-item-radios [type="radio"] + label::before {
+  border-color: black;
+}
+.form-item-radios [type="radio"]:focus + label::before {
+  box-shadow: 0 0 0 4px #ffbf47;
+}
+
+/* Form Item Description */
+.form-item .description {
+  border: 1px solid #96918b;
+}
+
+.fieldset-wrapper > .field-prefix + .form-checkboxes,
+.fieldset-wrapper > .field-prefix + .form-item-radios {
+  margin-top: 1rem;
+}
+
+/* File Upload */
+input[type="file"],
+.form-item-managed-file-button .webform-file-button {
+  border: 1px solid #96918b;
+  border-left-width: 5px;
+}
+input[type="file"]:focus,
+input[type="file"]:hover,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-item-managed-file-button .webform-file-button:focus,
+.form-managed-file:focus-within .webform-file-button,
+.form-managed-file .webform-file-button:hover {
+  background-color: #652c95;
+  color: white;
+}
+.form-item-managed-file .description,
+.form-item-managed-file-multiple .description,
+.form-item-managed-file-button .description {
+  border: 1px solid #96918b;
+  border-left-width: 5px;
+}
+.form-item-managed-file .description br,
+.form-item-managed-file-multiple .description br,
+.form-item-managed-file-button .description br {
+  margin-bottom: 1rem;
+}
