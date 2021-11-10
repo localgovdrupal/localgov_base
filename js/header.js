@@ -15,10 +15,29 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
       let windowWidth = window.innerWidth;
 
+      // Set variables for the regions we need to show/hide
+      const regions = [];
+      let primaryMenuRegion;
+      let secondaryMenuRegion;
+      if (context.querySelector('.lgd-header__nav--primary')) {
+        primaryMenuRegion = context.querySelector('.lgd-header__nav--primary');
+        regions.push(primaryMenuRegion);
+      }
+      if (context.querySelector('.lgd-header__nav--secondary')) {
+        secondaryMenuRegion = context.querySelector('.lgd-header__nav--secondary');
+        regions.push(secondaryMenuRegion);
+      }
+
       // Set variables for menu toggles
       const headerToggles = context.querySelectorAll('.lgd-header__toggle');
-      const primaryMenuToggle = context.querySelector('.lgd-header__toggle--primary');
-      const secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
+      let primaryMenuToggle;
+      let secondaryMenuToggle;
+      if (context.querySelector('.lgd-header__toggle--primary')) {
+        primaryMenuToggle = context.querySelector('.lgd-header__toggle--primary');
+      }
+      if (context.querySelector('.lgd-header__toggle--secondary')) {
+        secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
+      }
 
       // If there are no menu toggle buttons present,
       // get out of here as soon as possible
@@ -33,14 +52,12 @@ if (window.NodeList && !NodeList.prototype.forEach) {
           headerToggle.classList.add('js-processed');
         }
       });
-      
-      // Set variables for the regions we need to show/hide
-      const primaryMenuRegion = context.querySelector('.lgd-header__nav--primary');
-      const secondaryMenuRegion = context.querySelector('.lgd-header__nav--secondary');
-      const regions = new Array(primaryMenuRegion, secondaryMenuRegion);
 
       // Set variables to use later for keyboard navigation
-      const secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
+      let secondaryMenuFirstLink;
+      if (secondaryMenuRegion) {
+        secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
+      }
 
       // When a menu toggle button is clicked, show/hide the menu regions.
       // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
@@ -124,13 +141,21 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       function handleWindowResized() {
         handleReset();
         if  (window.innerWidth < 768) {
-          secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
-          secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
-          primaryMenuToggle.addEventListener('click', handlePrimaryMenuToggleClick);
+          if (secondaryMenuToggle) {
+            secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
+            secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
+          }
+          if (primaryMenuToggle) {
+            primaryMenuToggle.addEventListener('click', handlePrimaryMenuToggleClick);
+          }
         } else {
-          primaryMenuToggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
-          secondaryMenuToggle.addEventListener('click', handleSecondaryMenuToggleClick);
-          secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
+          if (primaryMenuToggle) {
+            primaryMenuToggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
+          }
+          if (secondaryMenuToggle) { 
+            secondaryMenuToggle.addEventListener('click', handleSecondaryMenuToggleClick);
+            secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
+          }
         }
       }
 
