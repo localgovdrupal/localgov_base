@@ -383,5 +383,5 @@ body {
   --alert-banner-inner-padding-horizontal: 0;
 
   /* Leaflet Mapping */
-  --leaflet-map-outline-stroke: #3388ff;
+  --leaflet-map-outline-stroke-colour: #3388ff;
 }
