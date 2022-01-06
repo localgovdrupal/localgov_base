@@ -12,6 +12,7 @@ global:
       css/components/form-items.ie11.css: {}
       css/components/form-items.css: {}
       css/components/admin-toolbar.css: {}
+      css/components/messages.css: {}
   # Declare dependencies for other libraries that we want to load
   # on every page.
   dependencies:  
@@ -32,11 +33,6 @@ region-tabs:
   css:
     theme:
       css/components/region-tabs.css: {}
-
-messages:
-  css:
-    theme:
-      css/components/messages.css: {}
 
 callout:
   css:
