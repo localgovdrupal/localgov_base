@@ -265,3 +265,9 @@ sitewide-search:
     theme:
       css/components/sitewide-search.ie11.css: {}
       css/components/sitewide-search.css: {}
+
+leaflet:
+  css:
+    theme:
+      css/components/leaflet.ie11.css: {}
+      css/components/leaflet.css: {}

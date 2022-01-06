@@ -381,4 +381,7 @@ body {
   --alert-banner-inner-margin-horizontal: 0;
   --alert-banner-inner-padding-vertical: var(--spacing);
   --alert-banner-inner-padding-horizontal: 0;
+
+  /* Leaflet Mapping */
+  --leaflet-map-outline-stroke: #3388ff;
 }
