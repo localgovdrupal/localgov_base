@@ -20,10 +20,6 @@
  */
 #}
 
-{% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/messages') }}
-{% endif %}
-
 <div data-drupal-messages>
 {% block messages %}
 {% for type, messages in message_list %}

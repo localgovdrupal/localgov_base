@@ -40,8 +40,17 @@ function localgov_base_preprocess_page(&$variables) {
   foreach ($system_region as $key => $value) {
     $region = $key;
     $has = 'has_' . $region;
-    $copy = $variables['page'][$region];
-    $rendered = Drupal::service('renderer')->renderPlain($copy);
+
+    $excluded_regions = [
+      'messages',
+    ];
+
+    if (!in_array($region, $excluded_regions)) {
+      $copy = $variables['page'][$region];
+      $rendered = Drupal::service('renderer')->renderPlain($copy);
+    } else {
+      $rendered = Drupal::service('renderer')->renderPlain($variables['page'][$region]);
+    }
     $variables[$has] =  (!empty(trim(strip_tags($rendered)))) ? true : false;
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
