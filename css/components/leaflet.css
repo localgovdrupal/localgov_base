@@ -1,0 +1,3 @@
+.leaflet-interactive {
+  stroke: var(--leaflet-map-outline-stroke-colour);
+}
