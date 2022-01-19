@@ -101,10 +101,13 @@
   background-color: var(--header-services-button-bg-color-hover);
 }
 
+.lgd-header__toggle-icon {
+  margin-left: var(--spacing-smaller);
+}
+
 .lgd-header__toggle-icon::after {
   display: inline-block;
-  margin-top: calc(var(--font-size-larger) * -0.1);
-  margin-left: calc(var(--spacing) / 2);
+  margin-left: var(--spacing-smaller);
   content: "\203A";
   transition: var(--transition-time);
   transform: rotate(90deg);
@@ -124,7 +127,7 @@
     display: none;
   }
   .lgd-header__toggle--secondary {
-    display: block;
+    display: flex;
   }
 }
 
