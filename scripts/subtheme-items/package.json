@@ -1,7 +1,7 @@
 {
-  "name": "localgov_base",
+  "name": "localgov_subtheme",
   "version": "1.0.0",
-  "description": "NPM scripts for the localgov_base theme.",
+  "description": "NPM scripts for the localgov_base subtheme.",
   "main": "index.js",
   "scripts": {
     "start": "npm run get-stylelint-file && npm run lint:css",
