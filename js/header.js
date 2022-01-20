@@ -13,6 +13,9 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     attach: function (context) {
       context = context || document;
 
+      const headerSearchForm = context.querySelector('.lgd-region--search form');
+      headerSearchForm.querySelector('label').classList.add('visually-hidden');
+
       let windowWidth = window.innerWidth;
 
       // Set variables for the regions we need to show/hide
