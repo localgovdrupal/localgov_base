@@ -21,6 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: end;
 }
 
 .lgd-header .lgd-region--header {
@@ -54,7 +55,8 @@
 @media screen and (min-width: 48rem) {
   .lgd-header__nav--primary {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     width: auto;
   }
 }
@@ -73,12 +75,6 @@
   display: flex;
   margin-right: var(--spacing);
   margin-left: auto;
-}
-
-@media screen and (min-width: 48rem) {
-  .lgd-header__toggles {
-    margin-bottom: auto;
-  }
 }
 
 .lgd-header__toggle {
