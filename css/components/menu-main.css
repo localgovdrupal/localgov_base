@@ -34,13 +34,13 @@
   }
 
   .menu--main > .menu-item {
-    margin-left: var(--spacing-smaller);
     margin-right: var(--spacing-smaller);
+    margin-left: var(--spacing-smaller);
   }
 
   .menu--main > .menu-item a {
-    border: 1px solid transparent;
     color: var(--color-white);
+    border: 1px solid transparent;
     background-color: transparent;
   }
 

@@ -29,6 +29,7 @@
     width: calc(50% - 1rem);
   }
 }
+
 @media screen and (min-width: 60rem) {
 
   .lgd-row__one-quarter,

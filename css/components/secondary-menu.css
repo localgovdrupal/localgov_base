@@ -9,13 +9,13 @@
   background-color: var(--secondary-menu-bg-color-second);
 }
 
-.lgd-region__inner--secondary-menu  .block-menu > h2 {
+.lgd-region__inner--secondary-menu .block-menu > h2 {
   padding-left: var(--spacing-large);
 }
 
 .menu--services-list {
-  max-height: 400px;
   overflow-y: auto;
+  max-height: 400px;
 }
 
 @media screen and (min-width: 48rem) {
@@ -28,8 +28,8 @@
   }
 
   .menu--services-list {
-    max-height: auto;
     overflow-y: initial;
+    max-height: auto;
     column-count: var(--secondary-menu-column-count);
   }
 }

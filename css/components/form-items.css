@@ -20,7 +20,7 @@ legend {
 label,
 .webform-element--title-inline > label {
   display: block;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 input[disabled] {
@@ -44,17 +44,17 @@ select,
 .select2-container--default .select2-search--dropdown .select2-search__field {
   width: 100%;
   padding: var(--input-padding-vertical) var(--input-padding-horizontal);
-  font-size: var(--font-size-medium);
   border: var(--border);
   border-color: var(--input-border-color);
   background-color: var(--input-bg-color);
+  font-size: var(--font-size-medium);
 }
 
 .select2-container--default .select2-selection--single {
-  border-radius: 0;
-  padding: 1.5rem;
   display: flex;
   align-items: center;
+  padding: 1.5rem;
+  border-radius: 0;
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
@@ -75,7 +75,8 @@ select,
 /* Buttons */
 button,
 input[type="submit"] {
-  padding: var(--button-padding-vertical) var(--button-padding-horizontal)
+  padding:
+    var(--button-padding-vertical) var(--button-padding-horizontal)
     var(--button-padding-vertical) var(--button-padding-horizontal);
   cursor: pointer;
   color: var(--button-text-color);
@@ -182,13 +183,11 @@ input[type="submit"]:hover {
 
 .form-checkboxes input[type="checkbox"]:checked + label:after,
 .facet-item input[type="checkbox"]:checked + label:after,
-.form-item-webform-terms-of-service
-  input[type="checkbox"]:checked
-  + label:after {
+.form-item-webform-terms-of-service input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
 
-/* Radio Buttons 
+/* Radio Buttons
   This radio styling is amended CSS from the gov.uk design system:
   - https://design-system.service.gov.uk/components/radios/
 
@@ -201,12 +200,12 @@ input[type="submit"]:hover {
 */
 
 .form-item-radios {
-  display: block;
   position: relative;
+  display: block;
+  clear: left;
   min-height: 40px;
   margin-bottom: 10px;
   padding-left: 40px;
-  clear: left;
 }
 .form-item-radios input {
   position: absolute;
@@ -216,8 +215,8 @@ input[type="submit"]:hover {
   width: 44px;
   height: 44px;
   margin: 0;
-  opacity: 0;
   cursor: pointer;
+  opacity: 0;
 }
 .form-item-radios label {
   display: inline-block;
@@ -232,9 +231,9 @@ input[type="submit"]:hover {
   left: 0;
   width: 40px;
   height: 40px;
+  content: "";
   border: 2px solid var(--radio-select-outline-color);
   border-radius: 50%;
-  content: "";
   background: transparent;
 }
 .form-item-radios [type="radio"] + label::after {
@@ -243,10 +242,10 @@ input[type="submit"]:hover {
   left: 10px;
   width: 0;
   height: 0;
-  border: 10px solid currentColor;
-  border-radius: 50%;
   content: "";
   opacity: 0;
+  border: 10px solid currentColor;
+  border-radius: 50%;
   background: currentColor;
 }
 .form-item-radios [type="radio"]:focus + label::before {
@@ -277,8 +276,8 @@ input[type="submit"]:hover {
   padding: 1rem;
 }
 
-/* 
-  This is just in case we have a description field in a fieldset that contains 
+/*
+  This is just in case we have a description field in a fieldset that contains
   checkboxes or radios. It stops the first item from hitting the bottom of the
   description.
 */
@@ -293,10 +292,10 @@ input[type="file"],
   display: inline-block;
   margin: 0;
   padding: 1rem;
-  border: var(--file-upload-border);
-  border-left-width: var(--file-upload-border-left-size);
-  border-color: var(--file-upload-border-color);
   cursor: pointer;
+  border: var(--file-upload-border);
+  border-color: var(--file-upload-border-color);
+  border-left-width: var(--file-upload-border-left-size);
 }
 input[type="file"]:focus,
 input[type="file"]:hover,
@@ -304,10 +303,10 @@ input[type="file"]:hover,
 .form-item-managed-file-button .webform-file-button:focus,
 .form-managed-file:focus-within .webform-file-button,
 .form-managed-file .webform-file-button:hover {
-  font-weight: bold; /* Because text-decoration doesn't work on input[type]"file"] */
   text-decoration: underline;
-  background-color: var(--file-upload-bg-hover-color);
   color: var(--file-upload-text-hover-color);
+  background-color: var(--file-upload-bg-hover-color);
+  font-weight: bold; /* Because text-decoration doesn't work on input[type]"file"] */
 }
 .form-item-managed-file .description,
 .form-item-managed-file-multiple .description,
@@ -317,8 +316,8 @@ input[type="file"]:hover,
   width: auto;
   max-width: 768px;
   border: var(--file-upload-border);
-  border-left-width: var(--file-upload-border-left-size);
   border-color: var(--file-upload-border-color);
+  border-left-width: var(--file-upload-border-left-size);
 }
 .form-item-managed-file .description br,
 .form-item-managed-file-multiple .description br,

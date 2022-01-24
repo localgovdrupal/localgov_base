@@ -17,10 +17,10 @@
 
 @media screen and (min-width: 48rem) {
   .menu--main > .menu-item {
-    margin-left: 0.5rem;
     margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
-  
+
   .menu--main > .menu-item a {
     color: white;
   }

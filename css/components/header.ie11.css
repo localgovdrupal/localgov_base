@@ -21,6 +21,10 @@
   background-color: white;
 }
 
+.lgd-header__toggle-icon {
+  margin-left: 0.5rem;
+}
+
 .lgd-header__toggle-icon::after {
   margin-left: 0.5rem;
   font-size: 1.6875rem;
