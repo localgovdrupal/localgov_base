@@ -25,10 +25,10 @@ select,
 textarea,
 .select2-container--default .select2-search--dropdown .select2-search__field {
   padding: 1rem;
-  font-size: 1rem;
   border: 1px solid #f3f2f1;
   border-color: #f3f2f1;
   background-color: white;
+  font-size: 1rem;
 }
 
 /* Buttons */
@@ -94,8 +94,8 @@ input[type="file"]:hover,
 .form-item-managed-file-button .webform-file-button:focus,
 .form-managed-file:focus-within .webform-file-button,
 .form-managed-file .webform-file-button:hover {
-  background-color: #652c95;
   color: white;
+  background-color: #652c95;
 }
 .form-item-managed-file .description,
 .form-item-managed-file-multiple .description,

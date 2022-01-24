@@ -122,6 +122,7 @@
 .lgd-header__toggle--secondary {
   display: none;
 }
+
 @media screen and (min-width: 48rem) {
   .lgd-header__toggle--primary {
     display: none;
@@ -155,6 +156,7 @@
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
 }
+
 @media screen and (min-width: 48rem) {
   .lgd-region--search {
     margin-left: auto;
@@ -172,10 +174,9 @@
 }
 
 .lgd-region--search .form-item-s {
-  margin-bottom: 0; /* Override default form-item class */
   flex-grow: 1;
+  margin-bottom: 0; /* Override default form-item class */
 }
-
 
 @media screen and (min-width: 48rem) {
   .lgd-region--search .form-item-s {

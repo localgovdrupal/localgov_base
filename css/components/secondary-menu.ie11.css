@@ -9,19 +9,19 @@
   background-color: white;
 }
 
-.lgd-region__inner--secondary-menu  .block-menu > h2 {
+.lgd-region__inner--secondary-menu .block-menu > h2 {
   padding-left: 1.5rem;
 }
 
-@media screen and (min-width: 48rem) { 
+@media screen and (min-width: 48rem) {
   .region-secondary-menu {
     background-color: white;
   }
- 
+
   .lgd-region__inner--secondary-menu {
     background-color: white;
   }
- 
+
   .region-secondary-menu .menu {
     column-count: 3;
   }
