@@ -51,7 +51,7 @@
   color: #734c00;
   border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
   background-color: #fdf8ed;
-  background-image: url(../../../../misc/icons/e29700/warning.svg);
+  background-image: url(../../../../../core/misc/icons/e29700/warning.svg);
   box-shadow: -8px 0 0 #e09600; /* LTR */
 }
 [dir="rtl"] .messages--warning {
@@ -63,7 +63,7 @@
   color: #a51b00;
   border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
   background-color: #fcf4f2;
-  background-image: url(../../../../misc/icons/e32700/error.svg);
+  background-image: url(../../../../../core/misc/icons/e32700/error.svg);
   box-shadow: -8px 0 0 #e62600; /* LTR */
 }
 [dir="rtl"] .messages--error {
