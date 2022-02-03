@@ -199,7 +199,7 @@ input[type="submit"]:hover {
   wrapping them.
 */
 
-.form-item-radios {
+.webform-type-radios .form-item {
   position: relative;
   display: block;
   clear: left;
@@ -207,7 +207,7 @@ input[type="submit"]:hover {
   margin-bottom: 10px;
   padding-left: 40px;
 }
-.form-item-radios input {
+.webform-type-radios .form-item input {
   position: absolute;
   z-index: 1;
   top: -2px;
@@ -218,14 +218,14 @@ input[type="submit"]:hover {
   cursor: pointer;
   opacity: 0;
 }
-.form-item-radios label {
+.webform-type-radios .form-item label {
   display: inline-block;
   margin-bottom: 0;
   padding: 8px 15px 5px;
   cursor: pointer;
   touch-action: manipulation;
 }
-.form-item-radios [type="radio"] + label::before {
+.webform-type-radios .form-item [type="radio"] + label::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -236,7 +236,7 @@ input[type="submit"]:hover {
   border-radius: 50%;
   background: transparent;
 }
-.form-item-radios [type="radio"] + label::after {
+.webform-type-radios .form-item [type="radio"] + label::after {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -248,14 +248,14 @@ input[type="submit"]:hover {
   border-radius: 50%;
   background: currentColor;
 }
-.form-item-radios [type="radio"]:focus + label::before {
+.webform-type-radios .form-item [type="radio"]:focus + label::before {
   box-shadow: 0 0 0 4px var(--radio-select-focus-color);
 }
-.form-item-radios input:checked + label::after {
+.webform-type-radios .form-item input:checked + label::after {
   opacity: 1;
 }
-.form-item-radios:last-child,
-.form-item-radios:last-of-type {
+.webform-type-radios .form-item:last-child,
+.webform-type-radios .form-item:last-of-type {
   margin-bottom: 0;
 }
 
