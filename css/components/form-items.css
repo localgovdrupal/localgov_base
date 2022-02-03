@@ -200,12 +200,12 @@ input[type="submit"]:hover {
 */
 
 .webform-type-radios .form-item {
-  display: block;
   position: relative;
+  display: block;
+  clear: left;
   min-height: 40px;
   margin-bottom: 10px;
   padding-left: 40px;
-  clear: left;
 }
 .webform-type-radios .form-item input {
   position: absolute;
@@ -215,8 +215,8 @@ input[type="submit"]:hover {
   width: 44px;
   height: 44px;
   margin: 0;
-  opacity: 0;
   cursor: pointer;
+  opacity: 0;
 }
 .webform-type-radios .form-item label {
   display: inline-block;
@@ -231,9 +231,9 @@ input[type="submit"]:hover {
   left: 0;
   width: 40px;
   height: 40px;
+  content: "";
   border: 2px solid var(--radio-select-outline-color);
   border-radius: 50%;
-  content: "";
   background: transparent;
 }
 .webform-type-radios .form-item [type="radio"] + label::after {
@@ -242,10 +242,10 @@ input[type="submit"]:hover {
   left: 10px;
   width: 0;
   height: 0;
-  border: 10px solid currentColor;
-  border-radius: 50%;
   content: "";
   opacity: 0;
+  border: 10px solid currentColor;
+  border-radius: 50%;
   background: currentColor;
 }
 .webform-type-radios .form-item [type="radio"]:focus + label::before {
