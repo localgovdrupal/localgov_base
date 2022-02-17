@@ -6,10 +6,10 @@ title: LocalGov Base Theme
 
 Welcome to the LocalGov Drupal base theme.
 
-This theme was developed with scalability and easy of use in mind. That means, the theme should be a very good starting point for any website using the LocalGov Drupal distribution, and it provide an easy way to be customised out of the box.
+We developed this theme with scalability, ease of use, and ease of customisation in mind. Making this base theme a great start point for any website using the LocalGov Drupal distribution.
 
 ## Inline Documentation
-Instead of creating documentation for the theme and storing it in a wiki or something else that is likely to not be updated, we have written details comments inline with the code. This should make it easier to know exactly what code block any specific documentation item refers to.
+Instead of creating documentation for the theme and storing it in a wiki or something else that is likely to not be updated, we have written detailed comments inline with the code. This should make it easier to know exactly what code block any specific documentation item refers to.
 
 ## Sub-theme
 To create a sub-theme, you simply need to run the sub-theme creation script that is in the `/scripts` directory, like so:
