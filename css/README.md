@@ -10,7 +10,7 @@ It is organised following Drupal standards:
  - `components` (CSS specific to design components) - most of our CSS is here
  - `state` and `theme` directories are not included, to simplify things.
 
-At the top of each file is a section called `IE11 Fallbacks`. This is simply a section to set CSS for items for which we are using custom variables (such as fonts, spacing, etc). Placing those items at the top has two benefits:
+Each CSS file has a corresponding `*.ie11.css` file. This is used to set CSS for IE11 for items which we are using custom variables (such as fonts, spacing, etc). Creating individual CSS files for those items has two benefits:
  
- - When support for IE11 is dropped, we can remove these sections very easily.
- - It also means if you wish to support IE11 in a sub-theme, you can simply copy these sections and add your own overrides.
+ - When support for IE11 is dropped, we can remove these very easily.
+ - It also means if you wish to support IE11 in a sub-theme, you can simply copy these files and add your own overrides.

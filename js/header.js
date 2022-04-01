@@ -14,7 +14,9 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       context = context || document;
 
       const headerSearchForm = context.querySelector('.lgd-region--search form');
-      headerSearchForm.querySelector('label').classList.add('visually-hidden');
+      if (headerSearchForm) {
+        headerSearchForm.querySelector('label').classList.add('visually-hidden');
+      }
 
       let windowWidth = window.innerWidth;
 
