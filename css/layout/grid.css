@@ -22,6 +22,10 @@
   flex-wrap: wrap;
 }
 
+.lgd-row--centered {
+  justify-content: center;
+}
+
 .lgd-row > * {
   margin-right: calc(var(--grid-column-spacing) / 2);
   margin-left: calc(var(--grid-column-spacing) / 2);
