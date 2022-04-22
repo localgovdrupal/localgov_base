@@ -73,6 +73,9 @@ perl -i -pe "s/LGD_SUB_THEME_NAME/$LGD_SUB_THEME_NAME/g" *
 perl -i -pe "s/LGD_SUB_THEME/$LGD_SUB_THEME/g" *
 echo "+ variables replaced"
 
+cp -r ../../contrib/localgov_base/scripts/subtheme-items/.gitignore .
+echo "+ .gitignore file copied"
+
 cp -r ../../contrib/localgov_base/scripts/subtheme-items/css .
 echo "+ default css copied"
 
