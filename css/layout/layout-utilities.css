@@ -2,6 +2,14 @@
   @file Utility classes to drop into templates.
 */
 
+/* 
+  Position the main canvas relative so anything further down the page that
+  might use absolute will not cover the admin toolbar.
+*/
+.dialog-off-canvas-main-canvas {
+  position: relative;
+}
+
 /*
   The main container class that defines how wide our content area is
 */
