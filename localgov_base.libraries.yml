@@ -90,7 +90,7 @@ page-title-block:
       css/components/page-title-block.css: {}
 
 service-landing-page:
-  css:) ? TRUE : FALSE;
+  css:
     theme:
       css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
