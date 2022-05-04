@@ -1,29 +1,35 @@
 <?php
+
 /**
- * @file Theme hooks to support the LocalGov Base Theme.
+ * @file
+ * Theme hooks to support the LocalGov Base Theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
-function localgov_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
   }
 
-  $form['localgov_base_remove_css'] = array(
+  $form['localgov_base_remove_css'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Remove CSS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_css'),
     '#description'   => t("Check this box to disable the base theme's CSS"),
-  );
+  ];
 
-  $form['localgov_base_remove_js'] = array(
+  $form['localgov_base_remove_js'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Remove JS libraries from base theme.'),
     '#default_value' => theme_get_setting('localgov_base_remove_js'),
     '#description'   => t("Check this box to disable the base theme's JavaScript"),
-  );
+  ];
 }
 
 /**
@@ -48,10 +54,11 @@ function localgov_base_preprocess_page(&$variables) {
     if (!in_array($region, $excluded_regions)) {
       $copy = $variables['page'][$region];
       $rendered = Drupal::service('renderer')->renderPlain($copy);
-    } else {
+    }
+    else {
       $rendered = Drupal::service('renderer')->renderPlain($variables['page'][$region]);
     }
-    $variables[$has] =  (!empty(trim(strip_tags($rendered)))) ? true : false;
+    $variables[$has] = !empty(trim(strip_tags($rendered)));
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
@@ -87,8 +94,8 @@ function localgov_base_preprocess_file_link(&$variables) {
 }
 
 /**
-* Implements hook_views_pre_render().
-*/
+ * Implements hook_views_pre_render().
+ */
 function localgov_base_views_pre_render(ViewExecutable $view) {
   if (isset($view) && ($view->storage->id() == 'localgov_sitewide_search')) {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
