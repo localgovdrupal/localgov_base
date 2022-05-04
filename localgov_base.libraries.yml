@@ -1,5 +1,5 @@
 # The global library is added via localgov_base.theme file.
-# This is so we can do a check that the "Remove CSS" theme setting 
+# This is so we can do a check that the "Remove CSS" theme setting
 # is not turned on.
 global:
   css:
@@ -15,7 +15,7 @@ global:
       css/components/messages.css: {}
   # Declare dependencies for other libraries that we want to load
   # on every page.
-  dependencies:  
+  dependencies:
     - localgov_base/grid
     - localgov_base/header
     - localgov_base/footer
@@ -90,7 +90,7 @@ page-title-block:
       css/components/page-title-block.css: {}
 
 service-landing-page:
-  css:
+  css:) ? TRUE : FALSE;
     theme:
       css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
