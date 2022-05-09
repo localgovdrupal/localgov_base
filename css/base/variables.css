@@ -71,6 +71,12 @@ body {
   */
   --font-primary: roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-secondary: georgia, "Times New Roman", times, serif;
+  --font-heading-1: var(--font-secondary);
+  --font-heading-2: var(--font-secondary);
+  --font-heading-3: var(--font-secondary);
+  --font-heading-4: var(--font-secondary);
+  --font-heading-5: var(--font-secondary);
+  --font-heading-6: var(--font-secondary);
   /*
     Font sizes based on vertical rhythm of:
     - Font size: 16px;

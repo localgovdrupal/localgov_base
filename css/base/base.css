@@ -49,11 +49,17 @@ a:focus {
 }
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
+.h5,
 h6,
+.h6,
 .heading {
   margin-bottom: var(--vertical-rhythm-spacing);
   font-family: var(--font-secondary);
@@ -61,27 +67,32 @@ h6,
 
 h1,
 .h1 {
+  font-family: var(--font-heading-1);
   font-size: var(--font-size-h1);
 }
 
 h2,
 .h2 {
+  font-family: var(--font-heading-2);
   font-size: var(--font-size-h2);
 }
 
 h3,
 .h3 {
+  font-family: var(--font-heading-3);
   font-size: var(--font-size-h3);
 }
 
 h4,
 .h4 {
+  font-family: var(--font-heading-4);
   font-size: var(--font-size-h4);
   font-weight: bold;
 }
 
 h5,
 .h5 {
+  font-family: var(--font-heading-5);
   font-size: var(--font-size-h5);
   font-variant: small-caps;
 }
@@ -89,6 +100,7 @@ h5,
 h6,
 .h6 {
   text-decoration: underline;
+  font-family: var(--font-heading-6);
   font-size: var(--font-size-h6);
   font-variant: small-caps;
 }
