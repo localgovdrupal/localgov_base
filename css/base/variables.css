@@ -98,7 +98,7 @@ body {
   --font-size-h5: var(--font-size-medium);
   --font-size-h6: var(--font-size-medium);
 
-  /* Borders */
+  /* Border elements */
   --border-width: 1px;
   --border-width-large: 5px;
   --border-color: var(--color-grey-light);
@@ -106,6 +106,8 @@ body {
   --border-color-alert: var(--color-black);
   --border-style: solid;
   --border-radius: var(--spacing-smallest);
+  
+  /* Borders */
   --border: var(--border-width) var(--border-style) var(--border-color);
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
   --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
