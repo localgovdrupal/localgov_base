@@ -390,4 +390,7 @@ body {
 
   /* Leaflet Mapping */
   --leaflet-map-outline-stroke-colour: #38f;
+  
+  /* Service Landing Page */
+  --service-cta-border: var(--border-width);
 }
