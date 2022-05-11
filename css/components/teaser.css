@@ -55,7 +55,7 @@
 .news-article .field--name-localgov-news-related > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);
   padding-bottom: var(--vertical-rhythm-spacing);
-  border-bottom: var(--border);
+  border-bottom: var(--service-cta-border);
 }
 
 .lgd-teaser-list--grid .view-content,

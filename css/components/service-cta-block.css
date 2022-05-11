@@ -1,7 +1,7 @@
 .service-cta-block__list {
   padding-left: 0;
   list-style: none;
-  border-bottom: var(--border);
+  border-bottom: var(--service-cta-border);
 }
 
 .service-cta-block__list-item {
