@@ -98,6 +98,32 @@ body {
   --font-size-h5: var(--font-size-medium);
   --font-size-h6: var(--font-size-medium);
 
+  /* Heading colours */
+  --text-colour-dark: #000000;
+  --heading-1-colour: var(--text-colour-dark);
+  --heading-2-colour: var(--text-colour-dark);
+  --heading-3-colour: var(--text-colour-dark);
+  --heading-4-colour: var(--text-colour-dark);
+  --heading-5-colour: var(--text-colour-dark);
+  --heading-6-colour: var(--text-colour-dark);
+
+  /* Heading line-height */
+  --heading-1-line-height: var(--line-height);
+  --heading-2-line-height: var(--line-height);
+  --heading-3-line-height: var(--line-height);
+  --heading-4-line-height: var(--line-height);
+  --heading-5-line-height: var(--line-height);
+  --heading-6-line-height: var(--line-height);
+
+  /* Heading font-weight */
+  --heading-font-weight: bold;
+  --heading-1-font-weight: var(--heading-font-weight);
+  --heading-2-font-weight: var(--heading-font-weight);
+  --heading-3-font-weight: var(--heading-font-weight);
+  --heading-4-font-weight: var(--heading-font-weight);
+  --heading-5-font-weight: var(--heading-font-weight);
+  --heading-6-font-weight: var(--heading-font-weight);
+
   /* Borders */
   --border-width: 1px;
   --border-width-large: 5px;
