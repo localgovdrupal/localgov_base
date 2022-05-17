@@ -99,7 +99,7 @@ body {
   --font-size-h6: var(--font-size-medium);
 
   /* Heading colours */
-  --text-colour-dark: #000000;
+  --text-colour-dark: var(--color-black);
   --heading-1-colour: var(--text-colour-dark);
   --heading-2-colour: var(--text-colour-dark);
   --heading-3-colour: var(--text-colour-dark);
