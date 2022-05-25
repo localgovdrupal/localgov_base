@@ -33,6 +33,7 @@ body {
 
 a {
   color: var(--color-link);
+  transition: var(--transition-time);
 }
 
 a:hover {
@@ -40,7 +41,6 @@ a:hover {
 }
 
 a:focus {
-  transition: var(--transition-time);
   text-decoration: none;
   color: var(--color-black);
   outline: 3px solid transparent;
