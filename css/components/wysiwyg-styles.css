@@ -32,7 +32,7 @@
 .btn.btn-start {
   display: inline-flex;
   align-items: center;
-  padding: var(--btn-start-padding-horizontal) var(--btn-start-padding-horizontal);
+  padding: var(--btn-start-padding-vertical) var(--btn-start-padding-horizontal);
   text-decoration: none;
   color: var(--btn-start-color);
   border: var(--btn-start-border);

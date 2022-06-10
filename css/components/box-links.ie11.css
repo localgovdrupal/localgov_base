@@ -2,8 +2,8 @@
   margin-bottom: 1.5rem;
 }
 
-.box-links-listing--boxes .box-links-listing__list-item + .box-links-listing__list-item,
-.box-links-listing__list .box-links-listing__list-item + .box-links-listing__list-item {
+.box-links-listing--boxes .box-links-listing__list-item,
+.box-links-listing__list .box-links-listing__list-item {
   margin-bottom: 1.5rem;
 }
 

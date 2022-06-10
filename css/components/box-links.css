@@ -6,8 +6,8 @@
   padding-left: 0;
 }
 
-.box-links-listing--boxes .box-links-listing__list-item + .box-links-listing__list-item,
-.box-links-listing__list .box-links-listing__list-item + .box-links-listing__list-item {
+.box-links-listing--boxes .box-links-listing__list-item,
+.box-links-listing__list .box-links-listing__list-item {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
