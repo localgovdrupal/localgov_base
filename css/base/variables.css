@@ -194,6 +194,13 @@ body {
   --section-spacing-vertical-pre-footer: var(--spacing-largest);
   --section-spacing-vertical-footer: var(--spacing);
   --section-spacing-vertical-post-footer: var(--spacing);
+  --color-pre-footer-link: var(--color-white);
+  --color-pre-footer-text: var(--color-white);
+  --color-footer-link: var(--color-link);
+  --color-footer-text: var(--color-text);
+  --color-post-footer-link: var(--color-link);
+  --color-post-footer-text: var(--color-text);
+
 
   /* Page Title */
   --page-title-border: var(--border);
