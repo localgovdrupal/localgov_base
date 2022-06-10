@@ -5,12 +5,12 @@
 .lgd-footer__pre-footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
-  color: var(--color-white);
+  color: var(--color-pre-footer-text);
   background-color: var(--color-section-pre-footer-bg);
 }
 
 .lgd-footer__pre-footer a {
-  color: var(--color-white);
+  color: var(--color-pre-footer-link);
 }
 .lgd-footer__pre-footer a:focus {
   color: var(--color-grey-dark);
@@ -20,10 +20,20 @@
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   background-color: var(--color-section-footer-bg);
+  color: var(--color-text-footer)
+}
+
+.lgd-footer__footer a {
+  color: var(--color-link-footer);
 }
 
 .lgd-footer__post-footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
   background-color: var(--color-section-post-footer-bg);
+  color: var(--color-post-footer-text);
+}
+
+.lgd-footer__post-footer a {
+  color: var(--color-post-footer-link);
 }
