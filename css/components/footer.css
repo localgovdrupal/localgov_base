@@ -20,11 +20,11 @@
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   background-color: var(--color-section-footer-bg);
-  color: var(--color-text-footer)
+  color: var(--color-footer-text)
 }
 
 .lgd-footer__footer a {
-  color: var(--color-link-footer);
+  color: var(--color-footer-link);
 }
 
 .lgd-footer__post-footer {
