@@ -172,6 +172,12 @@ link-and-summary:
       css/components/link-and-summary.ie11.css: {}
       css/components/link-and-summary.css: {}
 
+link:
+  css:
+    theme:
+      css/components/link.ie11.css: {}
+      css/components/link.css: {}
+
 key-contacts:
   css:
     theme:
