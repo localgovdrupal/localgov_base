@@ -1,14 +1,10 @@
-.link-block__title-wrapper {
+.link__title-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: var(--vertical-rhythm-spacing);
 }
 
-.link-block__title-icon {
+.link__title-icon {
   flex-shrink: 0;
   margin-right: var(--spacing-smaller);
 }
 
-.link-block__title {
-  margin-bottom: 0;
-}
