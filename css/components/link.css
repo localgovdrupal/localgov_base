@@ -5,6 +5,6 @@
 
 .link-icon {
   flex-shrink: 0;
-  margin-right: var(--spacing-smaller);
+  margin-right: var(--link-icon-margin);
 }
 
