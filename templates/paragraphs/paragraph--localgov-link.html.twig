@@ -41,7 +41,7 @@
 
 {%
   set classes = [
-    'link-block',
+    'link',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -50,30 +50,32 @@
 %}
 
 {% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/link-and-summary') }}
+  {{ attach_library('localgov_base/link') }}
 {% endif %}
 
 {% set title_icon = 'chevron-right' %}
 
 <div{{ attributes.addClass(classes) }}>
 
-  {% if paragraph.localgov_link.value %}
-    <div class="link-block__title-wrapper">
+  {% if paragraph.localgov_url.value %}
+    <div class="link-wrapper">
       {% include "@localgov_base/includes/icons/icon.html.twig" with {
           icon_name: title_icon,
-          icon_classes: 'link-block__title-icon',
+          icon_classes: 'link-icon',
         }
       %}
-      <h2 class="link-block__title">
-        <a href="{{ content.localgov_link.0['#url'] }}">
-          {{ content.localgov_link.0['#title'] }}
+      <div class="link-content">
+        <a href="{{ content.localgov_url.content }}">
+          {{ content.localgov_title.0 }}
         </a>
-      </h2>
+      </div>
     </div>
   {% endif %}
 
-  <div class="link-block__content">
-    {{ content|without('localgov_link') }}
-  </div>
+  {% if content|without('localgov_url','localgov_title') %}
+    <div class="link-block__content">
+      {{ content|without('localgov_url','localgov_title') }}
+    </div>
+  {% endif %}
 
 </div>

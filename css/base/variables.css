@@ -276,6 +276,12 @@ body {
   --ia-block-bg-color: var(--color-white);
   --ia-block-bg-color-promoted: var(--color-white);
 
+  /* Link component */
+  --link-icon-margin: var(--spacing-smaller);
+
+  /* Link and summary component */
+  --link-and-summary-title-icon-margin: var(--spacing-smaller);
+
   /* Featured Subsite */
   --featured-subsite-bg-color: var(--color-grey-light);
 
