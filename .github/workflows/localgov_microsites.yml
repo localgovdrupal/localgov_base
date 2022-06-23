@@ -18,7 +18,7 @@ env:
 jobs:
 
   build:
-    name: Install LocalGov Drupal Microsites
+    name: Install LocalGov Microsites
     runs-on: ubuntu-latest
 
     strategy:
@@ -80,7 +80,7 @@ jobs:
           repository: localgovdrupal/drupal-container
           ref: php${{ matrix.php-version }}
 
-      - name: Create LocalGov Drupal project
+      - name: Create LocalGov Microsites project
         run: |
           composer create-project --stability dev --no-install localgovdrupal/localgov_microsites_project ./html "${{ matrix.localgov-version }}"
           composer --working-dir=./html require --no-install localgovdrupal/localgov_microsites:${{ matrix.localgov-version }}-dev
