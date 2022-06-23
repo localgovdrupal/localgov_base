@@ -18,7 +18,7 @@ env:
 jobs:
 
   build:
-    name: Install LocalGov Drupal
+    name: Install LocalGov Drupal Microsites
     runs-on: ubuntu-latest
 
     strategy:
@@ -60,7 +60,7 @@ jobs:
       - name: Get the latest tagged release for branch version
         run: |
           LATEST_RELEASE=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_REPOSITORY}/git/matching-refs/tags/${GIT_BASE%'.x'} | grep -Po '(?<=refs/tags/)[^"]+' | tail -1)
-          if [ -z $LATEST_RELEASE ]; then LATEST_RELEASE=1; fi
+          if [ -z $LATEST_RELEASE ]; then LATEST_RELEASE=1.x-dev; fi
           echo "LATEST_RELEASE=${LATEST_RELEASE}" >> $GITHUB_ENV
 
       - name: Cached workspace
