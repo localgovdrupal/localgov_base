@@ -1,0 +1,10 @@
+.link-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.link-icon {
+  flex-shrink: 0;
+  margin-right: var(--link-icon-margin);
+}
+

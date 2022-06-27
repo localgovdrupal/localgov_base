@@ -6,7 +6,7 @@
 
 .link-block__title-icon {
   flex-shrink: 0;
-  margin-right: var(--spacing-smaller);
+  margin-right: var(--link-and-summary-title-icon-margin);
 }
 
 .link-block__title {
