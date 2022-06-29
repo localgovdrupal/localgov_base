@@ -277,5 +277,4 @@ leaflet:
 video:
   css:
     theme:
-      css/components/video.ie11.css: {}
       css/components/video.css: {}
