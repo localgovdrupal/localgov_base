@@ -273,3 +273,8 @@ leaflet:
     theme:
       css/components/leaflet.ie11.css: {}
       css/components/leaflet.css: {}
+
+video:
+  css:
+    theme:
+      css/components/video.css: {}
