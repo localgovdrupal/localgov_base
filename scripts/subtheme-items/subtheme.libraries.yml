@@ -3,11 +3,15 @@ variables:
     base:
       # We set a weight here to make sure that our variables for this subtheme
       # are called _after_ the variables for the base theme, so they can override
-      # the base theme's variables. We should not need to set this weight option
-      # on other libraries we create.
-      css/variables.css: { weight: 200 }
+      # the base theme's variables. 
+      css/variables.css: { weight: 50 }
+
+# If your CSS is going to override any property in the base theme, and that property
+# is set via a CSS file added via {{ attach_library }}, then you will need to set a
+# weight for this library's CSS file of between 1 and 50 (1 should be enough for all),
+# to make sure this CSS file is added _after_ that CSS file!
 
 # sample-library
 #   css:
 #     theme:
-#       css/overrides.css: {}
+#       css/overrides.css: { weight: 1 }
