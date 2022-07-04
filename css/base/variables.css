@@ -10,6 +10,7 @@
 */
 body {
   /* Widths and Spacing */
+  --width-mega: 90rem; /* 1440px */
   --width-extra-large: 73.75rem; /* 1180px */
   --width-large: 60rem;
   --width-medium: 48rem;
