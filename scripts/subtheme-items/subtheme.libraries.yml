@@ -1,17 +1,25 @@
 variables:
   css:
     base:
-      # We set a weight here to make sure that our variables for this subtheme
-      # are called _after_ the variables for the base theme, so they can override
-      # the base theme's variables. 
-      css/variables.css: { weight: 50 }
+      # This is called in your LGD_SUB_THEME.info.yml file via `libraries-extend`.
+      # This ensures that in the cascade, your variables come after the base theme's
+      # variables.
+      css/variables.css: {}
 
-# If your CSS is going to override any property in the base theme, and that property
-# is set via a CSS file added via {{ attach_library }}, then you will need to set a
-# weight for this library's CSS file of between 1 and 50 (1 should be enough for all),
-# to make sure this CSS file is added _after_ that CSS file!
+# To override CSS from the base theme, add your library here, and then use 
+# `libraries-extend` to add that code to the library from the base theme. See the
+# LGD_SUB_THEME.info.yml file for an example, using this `sample-library`.
 
 # sample-library
 #   css:
 #     theme:
-#       css/overrides.css: { weight: 1 }
+#       css/overrides.css: {}
+
+# If your CSS is for a new component, and is not going to override existing CSS, you
+# can add that to your component in the usual ways - via `{{ attach_library }}` or a
+# preprocess hook, or similar approach.
+
+# sample-library-2
+#   css:
+#     theme:
+#       css/sample.css: {}
