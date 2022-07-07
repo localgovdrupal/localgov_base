@@ -39,6 +39,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"],
+input[type="url"],
 textarea,
 select,
 .select2-container--default .select2-search--dropdown .select2-search__field {
