@@ -59,7 +59,7 @@ function localgov_base_preprocess_page(&$variables) {
     else {
       $rendered = Drupal::service('renderer')->renderPlain($variables['page'][$region]);
     }
-    $variables[$has] = !empty(trim(strip_tags($rendered, '<form><input>')));
+    $variables[$has] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
