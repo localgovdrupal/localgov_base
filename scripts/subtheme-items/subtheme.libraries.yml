@@ -6,7 +6,7 @@ variables:
       # variables.
       css/variables.css: {}
 
-# To override CSS from the base theme, add your library here, and then use 
+# To override CSS from the base theme, add your library here, and then use
 # `libraries-extend` to add that code to the library from the base theme. See the
 # LGD_SUB_THEME.info.yml file for an example, using this `sample-library`.
 
