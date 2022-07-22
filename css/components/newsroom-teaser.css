@@ -1,0 +1,3 @@
+.newsroom-teaser > * + * {
+  margin-top: var(--vertical-rhythm-spacing);
+}
