@@ -1,7 +1,7 @@
 .lgd-guide-nav {
   margin-bottom: var(--vertical-rhythm-spacing);
   padding: var(--section-spacing-vertical-guide-nav) var(--section-spacing-horizontal-guide-nav);
-  background-color: var(--color-grey-light);
+  background-color: var(--color-grey-lighter);
 }
 
 .lgd-guide-nav__list {
