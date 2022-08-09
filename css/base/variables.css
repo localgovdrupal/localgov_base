@@ -388,6 +388,8 @@ body {
   --news-category-spacing: var(--spacing);
 
   /* Search Results */
+  --sitewide-search-header-container-padding-horizontal: var(--spacing);
+  --sitewide-search-header-container-padding-vertical: var(--spacing);
   --search-results-item-spacing: var(--spacing-largest);
   --search-results-list-item-border: var(--border);
   --search-results-list-item-marker-color: transparent;
