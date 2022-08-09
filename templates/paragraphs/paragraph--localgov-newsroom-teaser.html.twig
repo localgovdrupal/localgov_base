@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Default theme implementation to display a Newsroom teaser paragraph.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -39,36 +39,35 @@
  */
 #}
 
-{% if paragraph.localgov_width_of_section.value %}
-  {% set width = paragraph.localgov_width_of_section.value %}
-{% endif %}
-{%
-  set classes = [
-    'lgd-page-section',
-    width ? 'lgd-page-section--' ~ width : 'lgd-container padding-horizontal',
-    width == 'full-width' ? 'padding-horizontal',
-    width == 'contained-content' ? 'padding-horizontal',
-    width == 'contained-content' ? 'lgd-container',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
+{% set classes = [
+    'newsroom-teaser',
+    paragraph.localgov_newsroom_teaser_image.value ? 'newsroom-teaser--has-image' : 'newsroom-teaser--no-image',
+  ] 
 %}
 
-<div{{ attributes.addClass(classes) }}>
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/newsroom-teaser') }}
+{% endif %}
 
-  {% if width == 'full-width-contained-content' %}
-    <div class="lgd-container padding-horizontal">
-    {% elseif width == 'contained-breakout' %}
-      <div class="lgd-container lgd-container--mega padding-horizontal">
-  {% endif %}
-
-    {{ content }}
-
-  {% if width == 'full-width-contained-content' or width == 'contained-breakout' %}
+<article{{ attributes.addClass(classes)}}>
+  {% if paragraph.localgov_newsroom_teaser_image.value %}
+    <div class="newsroom-teaser__image">
+      {{ content.localgov_newsroom_teaser_image }}
     </div>
   {% endif %}
 
-</div>
+  {% if paragraph.localgov_newsroom_teaser_title.value %}
+    <h3 class="newsroom-teaser__title">
+      <a href="{{ link }}">
+        {{ content.localgov_newsroom_teaser_title }}
+      </a>
+    </h3>
+  {% endif %}
 
+  {% if paragraph.localgov_newsroom_teaser_summary.value %}
+    <div class="newsroom-teaser__summary">
+	    {{ content.localgov_newsroom_teaser_summary }}
+    </div>
+  {% endif %}
+
+</article>

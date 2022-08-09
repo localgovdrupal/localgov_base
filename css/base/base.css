@@ -180,3 +180,11 @@ tbody td {
 tbody tr {
   border-bottom: var(--table-border);
 }
+
+input,
+select,
+option,
+textarea,
+button {
+  font-family: var(--font-primary);
+}

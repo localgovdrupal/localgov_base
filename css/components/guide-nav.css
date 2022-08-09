@@ -17,6 +17,7 @@
 .lgd-guide-nav__list-item {
   margin-bottom: var(--spacing);
   font-size: var(--font-size-large);
+  break-inside: avoid-column;
 }
 
 .lgd-guide-nav__list-item > a {
