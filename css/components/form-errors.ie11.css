@@ -1,0 +1,9 @@
+.form-item--error {
+  padding: 1rem;
+  border: 2px dashed #e4251b;
+}
+
+.form-item--error-message {
+  padding: 1rem;
+  border: 1px solid #e4251b;
+}
