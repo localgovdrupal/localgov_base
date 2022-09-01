@@ -284,3 +284,9 @@ video:
   css:
     theme:
       css/components/video.css: {}
+
+form-errors:
+  css:
+    theme:
+      css/components/form-errors.ie11.css: {}
+      css/components/form-errors.css: {}
