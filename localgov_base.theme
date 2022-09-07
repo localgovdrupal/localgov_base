@@ -89,7 +89,7 @@ function localgov_base_preprocess_file_link(&$variables) {
   // 123.45 KB -> 123.45KB
   $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
 
-  if(isset($variables['link']['#title'])){
+  if (isset($variables['link']['#title'])) {
     $file_title = $variables['link']['#title'];
   }
   else {
