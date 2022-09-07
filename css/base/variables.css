@@ -224,6 +224,7 @@ body {
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
+  --text-input-font-family: var(--font-primary);
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
