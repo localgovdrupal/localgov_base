@@ -48,6 +48,7 @@ select,
   border: var(--border);
   border-color: var(--input-border-color);
   background-color: var(--input-bg-color);
+  font-family: var(--text-input-font-family);
   font-size: var(--font-size-medium);
 }
 
@@ -86,6 +87,7 @@ input[type="submit"] {
   border-radius: var(--button-border-radius);
   background-color: var(--button-bg-color);
   font-family: var(--button-font-family);
+  font-size: var(--font-size-medium);
 }
 
 button:focus,
