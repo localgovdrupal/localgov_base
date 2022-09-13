@@ -39,12 +39,26 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="/{{ base_path ~ directory }}/assets/images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/{{ base_path ~ directory }}/assets/images/favicons/site.webmanifest">
-    <link rel="shortcut icon" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon.ico">
-    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    
+    {# 
+      Adding favicons as a block, so theme's can easily remove this section
+      (by simply placing an emply block in their subtheme). You might want 
+      to do this if you want to use the favicon uploader from the theme
+      settings page, for example.
+
+      You may also like to use this section in your subtheme so you can set
+      different paths for your favicons and/or add even more favicons to
+      your theme.
+    #}
+    {% block favicons %}
+      <link rel="apple-touch-icon" sizes="180x180" href="/{{ base_path ~ directory }}/assets/images/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon-16x16.png">
+      <link rel="manifest" href="/{{ base_path ~ directory }}/assets/images/favicons/site.webmanifest">
+      <link rel="shortcut icon" href="/{{ base_path ~ directory }}/assets/images/favicons/favicon.ico">
+      <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    {% endblock %}
+    
     {% block extra_head_items %}
       {# 
         We are creating a Twig block here so we can override it in our sub-themes.
