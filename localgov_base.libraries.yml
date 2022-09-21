@@ -214,6 +214,12 @@ featured-teasers:
       css/components/featured-teasers.ie11.css: {}
       css/components/featured-teasers.css: {}
 
+newsroom-teaser:
+  css:
+    theme:
+      css/components/newsroom-teaser.ie11.css: {}
+      css/components/newsroom-teaser.css: {}
+
 tabs:
   css:
     theme:
@@ -237,6 +243,11 @@ news:
     theme:
       css/components/news.ie11.css: {}
       css/components/news.css: {}
+
+blog:
+  css:
+    theme:
+      css/components/blog.css: {}
 
 events:
   css:
@@ -273,3 +284,8 @@ leaflet:
     theme:
       css/components/leaflet.ie11.css: {}
       css/components/leaflet.css: {}
+
+video:
+  css:
+    theme:
+      css/components/video.css: {}
