@@ -10,6 +10,7 @@
 */
 body {
   /* Widths and Spacing */
+  --width-mega: 90rem; /* 1440px */
   --width-extra-large: 73.75rem; /* 1180px */
   --width-large: 60rem;
   --width-medium: 48rem;
@@ -48,7 +49,7 @@ body {
   --color-white: #fff;
   --color-grey-lightest: #f9f9f9;
   --color-grey-lighter: #eaeaea;
-  --color-grey-light: #96918b;
+  --color-grey-light: #cecfd0;
   --color-grey-medium: #b1b4b6;
   --color-grey-dark: #505a5f;
   --color-black: #0b0c0c;
@@ -223,6 +224,7 @@ body {
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
+  --text-input-font-family: var(--font-primary);
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
@@ -387,6 +389,8 @@ body {
   --news-category-spacing: var(--spacing);
 
   /* Search Results */
+  --sitewide-search-header-container-padding-horizontal: var(--spacing);
+  --sitewide-search-header-container-padding-vertical: var(--spacing);
   --search-results-item-spacing: var(--spacing-largest);
   --search-results-list-item-border: var(--border);
   --search-results-list-item-marker-color: transparent;

@@ -4,8 +4,16 @@ type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "localgov_base"
 
-libraries:
-  - LGD_SUB_THEME/variables
+libraries-extend:
+  # Add libraries that you want to load on every page of your site to the list
+  # of those extending localgov_base/global
+  localgov_base/global:
+    - LGD_SUB_THEME/variables
+    # - LGD_SUB_THEME/other-library-to-load-on-every-page
+    # - LGD_SUB_THEME/other-library-to-load-on-every-page
+  # Add libraries here that extend specific libraries.
+  # localgov_base/sample-library:
+    # - LGD_SUB_THEME/sample-library
 
 regions:
   tabs: "Tabs"

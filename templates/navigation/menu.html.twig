@@ -48,7 +48,7 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass(menu_classes) }}>
     {% else %}
-      <ul{{ attributes.removeClass(menu_classes).addClass(sub_menu_classes) }}">
+      <ul{{ attributes.removeClass(menu_classes).addClass(sub_menu_classes) }}>
     {% endif %}
     {% for item in items %}
       {%

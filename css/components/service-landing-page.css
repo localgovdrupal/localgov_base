@@ -2,7 +2,7 @@
   margin-bottom: var(--vertical-rhythm-spacing);
   padding: var(--spacing);
   border-left: var(--border-width-large) var(--border-style) var(--color-accent);
-  background-color: var(--color-grey-light);
+  background-color: var(--color-grey-lighter);
 }
 
 .service-landing-page__contact-list {

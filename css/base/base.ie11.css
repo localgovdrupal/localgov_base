@@ -67,3 +67,11 @@ tbody td {
 tbody tr {
   border-bottom: 1px solid #f3f2f1;
 }
+
+input,
+select,
+option,
+textarea,
+button {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
