@@ -97,11 +97,10 @@
     are adding that here specifically. Hopefully all other content types
     will use the same `field_media_image` field.
   #}
-  {% if node.field_media_image.value or node.localgov_event_image.value or node.localgov_blog_image.value %}
+  {% if node.field_media_image.value or node.localgov_event_image.value %}
     <div class="lgd-teaser__image">
       {{ content.field_media_image }}
       {{ content.localgov_event_image }}
-      {{ content.localgov_blog_image }}
     </div>
   {% endif %}
 
@@ -119,7 +118,7 @@
       We render the full content variable here, so any new fields added
       are visible.
     #}
-    {{ content|without('field_media_image', 'localgov_event_image', 'localgov_blog_image') }}
+    {{ content|without('field_media_image', 'localgov_event_image') }}
   </div>
 
 </article>
