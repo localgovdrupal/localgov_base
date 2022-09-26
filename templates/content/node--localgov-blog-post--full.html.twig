@@ -86,6 +86,15 @@
   <div class="lgd-row">
     <div class="lgd-row__two-thirds">
       <div class="blog-post__metadata">
+        {% if node.localgov_blog_author.value %}
+          <ul class="blog-post__metadata-item blog-post__metadata-item--author" aria-label="{{ 'Article author'|t }}">
+            {% for key,value in node.localgov_blog_author.value %}
+              <li class="blog-post__author">
+                {{ content.localgov_blog_author[key] }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
         <time datetime="{{ node.localgov_blog_date.value }}" class="blog-post__metadata-item blog-post__metadata-item--date">
           {{ content.localgov_blog_date.0['#markup'] }}
         </time>
@@ -106,7 +115,7 @@
 
       <div{{ content_attributes.addClass('blog-post__content node__content') }}>
 
-        {{ content|without('localgov_blog_date', 'localgov_blog_categories', 'localgov_blog_related_posts') }}
+        {{ content|without('localgov_blog_date', 'localgov_blog_categories', 'localgov_blog_related_posts', 'localgov_blog_author') }}
 
         {% if node.localgov_blog_related_posts.value %}
           <h2 class="blog-post__related-title">{{ 'Related blog posts'|t }}</h2>
