@@ -79,51 +79,47 @@
 %}
 
 {% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/sidebar') }}
   {{ attach_library('localgov_base/blog') }}
 {% endif %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="lgd-row">
-    <div class="lgd-row__two-thirds">
-      <div class="blog-post__metadata">
-        {% if node.localgov_blog_author.value %}
-          <ul class="blog-post__metadata-item blog-post__metadata-item--author" aria-label="{{ 'Article author'|t }}">
-            {% for key,value in node.localgov_blog_author.value %}
-              <li class="blog-post__author">
-                {{ content.localgov_blog_author[key] }}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        <time datetime="{{ node.localgov_blog_date.value }}" class="blog-post__metadata-item blog-post__metadata-item--date">
-          {{ content.localgov_blog_date.0['#markup'] }}
-        </time>
-        {% if node.localgov_blog_categories.value %}
-          <ul class="blog-post__metadata-item blog-post__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
-            {% for key,value in node.localgov_blog_categories.value %}
-              <li class="blog-post__category">
-                {{ content.localgov_blog_categories[key] }}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-
-      <h1{{ title_attributes.addClass('blog-post__title') }}>
-        {{ label }}
-      </h1>
-
-      <div{{ content_attributes.addClass('blog-post__content node__content') }}>
-
-        {{ content|without('localgov_blog_date', 'localgov_blog_categories', 'localgov_blog_related_posts', 'localgov_blog_author') }}
-
-        {% if node.localgov_blog_related_posts.value %}
-          <h2 class="blog-post__related-title">{{ 'Related blog posts'|t }}</h2>
-          {{ content.localgov_blog_related_posts }}
-        {% endif %}
-
-      </div>
+    <div class="blog-post__metadata">
+      {% if node.localgov_blog_author.value %}
+        <ul class="blog-post__metadata-item blog-post__metadata-item--author" aria-label="{{ 'Article author'|t }}">
+          {% for key,value in node.localgov_blog_author.value %}
+            <li class="blog-post__author">
+              {{ content.localgov_blog_author[key] }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <time datetime="{{ node.localgov_blog_date.value }}" class="blog-post__metadata-item blog-post__metadata-item--date">
+        {{ content.localgov_blog_date.0['#markup'] }}
+      </time>
+      {% if node.localgov_blog_categories.value %}
+        <ul class="blog-post__metadata-item blog-post__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
+          {% for key,value in node.localgov_blog_categories.value %}
+            <li class="blog-post__category">
+              {{ content.localgov_blog_categories[key] }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
-  </div>
 
+    <h1{{ title_attributes.addClass('blog-post__title') }}>
+      {{ label }}
+    </h1>
+
+    <div{{ content_attributes.addClass('blog-post__content node__content') }}>
+
+      {{ content|without('localgov_blog_date', 'localgov_blog_categories', 'localgov_blog_related_posts', 'localgov_blog_author', 'localgov_blog_channel') }}
+
+      {% if node.localgov_blog_related_posts.value %}
+        <h2 class="blog-post__related-title">{{ 'Related blog posts'|t }}</h2>
+        {{ content.localgov_blog_related_posts }}
+      {% endif %}
+
+    </div>
 </article>

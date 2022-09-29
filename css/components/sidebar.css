@@ -7,6 +7,7 @@
 */
 
 .sidebar .lgd-region__inner > *,
+.blog-channel__sidebar > *,
 .newsroom__sidebar > * {
   padding: var(--sidebar-exposed-form-padding-vertical) var(--sidebar-exposed-form-padding-horizontal);
   background-color: var(--sidebar-exposed-form-bg-color);
