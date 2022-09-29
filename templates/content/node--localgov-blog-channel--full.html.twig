@@ -106,10 +106,14 @@
   <div{{ content_attributes.addClass('blog-channel__content', 'node__content') }}>
 
     {#{{ content|without('localgov_news_search', 'localgov_news_facets', 'localgov_blog-channel_all_view') }}#}
-
+    <div class="lgd-row">
+      <div class="lgd-blog--featured">
+       {{ content.localgov_blog_channel_featured }}
+      </div>
+    </div>
     <div class="lgd-row">
       <div class="lgd-row__two-thirds">
-        {{ content|without('body') }}
+        {{ content|without('body', 'localgov_blog_channel_featured') }}
       </div>
       <aside class="lgd-row__one-third">
         <div class="blog-channel__sidebar">
