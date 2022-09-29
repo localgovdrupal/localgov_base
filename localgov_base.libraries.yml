@@ -295,3 +295,9 @@ form-errors:
     theme:
       css/components/form-errors.ie11.css: {}
       css/components/form-errors.css: {}
+
+term:
+  css:
+    theme:
+      css/components/term.ie11.css: {}
+      css/components/term.css: {}

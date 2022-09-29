@@ -21,3 +21,7 @@
 .blog-post__category + .blog-post__category {
   margin-left: var(--news-category-spacing);
 }
+
+.blog-post--teaser__meta *{
+  display: inline-block;
+}

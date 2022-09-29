@@ -433,4 +433,8 @@ body {
 
   /* Leaflet Mapping */
   --leaflet-map-outline-stroke-colour: #38f;
+
+  /* Blogs */
+  --blog-author-image-width: calc(var(--teaser-image-with)/2);
+  --blog-author-content-margin: var(--spacing-largest);
 }
