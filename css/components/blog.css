@@ -26,6 +26,16 @@
   display: inline-block;
 }
 
+.field--name-localgov-blog-related-posts > .field__item {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.lgd-teaser__content ~ .lgd-teaser__image {
+  margin-left: var(--vertical-rhythm-spacing);
+}
+
+
+/* Featured posts */
 .lgd-blog--featured {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
@@ -46,9 +56,4 @@
 .view-localgov-blog-list .view-content {
   padding-top: var(--vertical-rhythm-spacing);
   border-top: var(--border);
-}
-
-
-.field--name-localgov-blog-related-posts > .field__item {
-  margin-bottom: var(--vertical-rhythm-spacing);
 }

@@ -16,6 +16,6 @@
   }
 
   .lgd-term--content__image ~ .field--name-description {
-    margin-left: 1rem;
+    margin-left: var(--vertical-rhythm-spacing);
   }
 }

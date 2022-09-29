@@ -115,8 +115,8 @@
           {{ content.localgov_blog_author[key] }}{{',' | t}}
         {% endfor %}
       {% endif %}
-      {{content.localgov_blog_date}}{{'-' | t}}
-      {% if node.localgov_blog_categories.value %}
+      {{content.localgov_blog_date}}
+      {% if node.localgov_blog_categories.value %}{{'-' | t}}
         {% for key,value in node.localgov_blog_categories.value %}
           {{ content.localgov_blog_categories[key] }}
           {# Add a comma between values, but not the last item #}
