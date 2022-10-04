@@ -25,13 +25,12 @@
 #}
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/term') }}
-  {#{{ attach_library('localgov_base/blog') }}#}
 {% endif %}
 
 <div{{ attributes }}>
-  <div class="lgd-term--content">
+  <div class="lgd-term">
     {% if term.localgov_blog_author_image.value %}
-      <div class="lgd-term--content__image">
+      <div class="lgd-term--image">
         {{ content.localgov_blog_author_image }}
       </div>
     {% endif %}

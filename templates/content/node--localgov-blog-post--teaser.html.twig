@@ -96,11 +96,9 @@
   <div{{ content_attributes.addClass('lgd-teaser__content', 'lgd-teaser__content--' ~ content_type|clean_class) }}>
 
     {{ title_prefix }}
-    {% if label and not page %}
       <h3{{ title_attributes }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h3>
-    {% endif %}
     {{ title_suffix }}
 
     {#
@@ -119,7 +117,7 @@
           {{'-' | t}}
         </div>
       {% endif %}
-      
+
       {% if node.localgov_blog_date.value %}
         <div class="blog-post__meta-item blog-post__meta-item--date">
           {{ content.localgov_blog_date }}

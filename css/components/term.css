@@ -1,21 +1,21 @@
-.lgd-term--content__image img {
+.lgd-term--image img {
   width: 100%;
 }
 
 @media screen and (min-width: 48rem) {
 
-  .lgd-term--content {
+  .lgd-term {
     display: flex;
     margin-bottom: var(--blog-author-content-margin);
   }
 
 
-  .lgd-term--content__image {
+  .lgd-term--image {
     flex-shrink: 0;
     width: var(--blog-author-image-width);
   }
 
-  .lgd-term--content__image ~ .field--name-description {
+  .lgd-term--image ~ .field--name-description {
     margin-left: var(--vertical-rhythm-spacing);
   }
 }
