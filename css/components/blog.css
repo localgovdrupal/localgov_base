@@ -1,37 +1,11 @@
-.blog-post__metadata-item--author,
-.blog-post__metadata-item--categories {
-  padding-left: 0;
-}
-
-.blog-post__metadata-item + .blog-post__metadata-item {
-  margin-top: var(--vertical-rhythm-spacing);
-}
-
-.blog-post__author::marker,
-.blog-post__category::marker {
-  color: transparent;
-}
-
-.blog-post__author,
-.blog-post__category {
-  display: inline;
-}
-
-.blog-post__author + .blog-post__author,
-.blog-post__category + .blog-post__category {
-  margin-left: var(--news-category-spacing);
-}
-
-.blog-post--teaser__meta *{
-  display: inline-block;
+.blog-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-smallest);
 }
 
 .field--name-localgov-blog-related-posts > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);
-}
-
-.lgd-teaser__content ~ .lgd-teaser__image {
-  margin-left: var(--vertical-rhythm-spacing);
 }
 
 

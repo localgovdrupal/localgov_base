@@ -84,29 +84,32 @@
 {% endif %}
 
 <article{{ attributes.addClass(classes) }}>
-    <div class="blog-post__metadata">
-      {% if node.localgov_blog_author.value %}
-        <ul class="blog-post__metadata-item blog-post__metadata-item--author" aria-label="{{ 'Article author'|t }}">
-          {% for key,value in node.localgov_blog_author.value %}
-            <li class="blog-post__author">
-              {{ content.localgov_blog_author[key] }}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      <time datetime="{{ node.localgov_blog_date.value }}" class="blog-post__metadata-item blog-post__metadata-item--date">
-        {{ content.localgov_blog_date.0['#markup'] }}
-      </time>
-      {% if node.localgov_blog_categories.value %}
-        <ul class="blog-post__metadata-item blog-post__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
-          {% for key,value in node.localgov_blog_categories.value %}
-            <li class="blog-post__category">
-              {{ content.localgov_blog_categories[key] }}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
+  <div class="blog-post__meta">
+    {% if node.localgov_blog_author.value %}
+      <div class="blog-post__meta-item blog-post__meta-item--author">
+        {% for key,value in node.localgov_blog_author.value %}
+          {{ content.localgov_blog_author[key] }}
+          {% if not loop.last %}{{',' | t}}{% endif %}
+        {% endfor %}
+        {{'-' | t}}
+      </div>
+    {% endif %}
+    
+    {% if node.localgov_blog_date.value %}
+      <div class="blog-post__meta-item blog-post__meta-item--date">
+        {{ content.localgov_blog_date }}
+      </div>
+    {% endif %}
+
+    {% if node.localgov_blog_categories.value %}{{'-' | t}}
+      <div class="blog-post__meta-item blog-post__meta-item--topics">
+        {% for key,value in node.localgov_blog_categories.value %}
+          {{ content.localgov_blog_categories[key] }}
+          {% if not loop.last %}{{',' | t}}{% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 
     <h1{{ title_attributes.addClass('blog-post__title') }}>
       {{ label }}

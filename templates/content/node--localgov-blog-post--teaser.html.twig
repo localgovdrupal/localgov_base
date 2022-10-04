@@ -109,19 +109,30 @@
     #}
     {{ content|without('field_media_image', 'localgov_blog_author', 'localgov_blog_channel', 'localgov_blog_date', 'localgov_blog_categories') }}
 
-    <div class="blog-post--teaser__meta">
+    <div class="blog-post__meta">
       {% if node.localgov_blog_author.value %}
-        {% for key,value in node.localgov_blog_author.value %}
-          {{ content.localgov_blog_author[key] }}{{',' | t}}
-        {% endfor %}
+        <div class="blog-post__meta-item blog-post__meta-item--author">
+          {% for key,value in node.localgov_blog_author.value %}
+            {{ content.localgov_blog_author[key] }}
+            {% if not loop.last %}{{',' | t}}{% endif %}
+          {% endfor %}
+          {{'-' | t}}
+        </div>
       {% endif %}
-      {{content.localgov_blog_date}}
+      
+      {% if node.localgov_blog_date.value %}
+        <div class="blog-post__meta-item blog-post__meta-item--date">
+          {{ content.localgov_blog_date }}
+        </div>
+      {% endif %}
+
       {% if node.localgov_blog_categories.value %}{{'-' | t}}
-        {% for key,value in node.localgov_blog_categories.value %}
-          {{ content.localgov_blog_categories[key] }}
-          {# Add a comma between values, but not the last item #}
-          {% if not loop.last %}{{',' | t}}{% endif %}
-        {% endfor %}
+        <div class="blog-post__meta-item blog-post__meta-item--topics">
+          {% for key,value in node.localgov_blog_categories.value %}
+            {{ content.localgov_blog_categories[key] }}
+            {% if not loop.last %}{{',' | t}}{% endif %}
+          {% endfor %}
+        </div>
       {% endif %}
 
       {# To do - hide this when we are on the blog channel #}
