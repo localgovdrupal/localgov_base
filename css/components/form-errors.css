@@ -1,4 +1,5 @@
-.form-item--error {
+.form-item--error,
+.form-item.error {
   padding: var(--spacing);
   border: 2px dashed var(--color-danger);
 }
