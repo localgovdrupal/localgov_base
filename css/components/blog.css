@@ -4,13 +4,14 @@
   gap: var(--spacing-smallest);
 }
 
+.field--name-localgov-blog-related-posts > .field__items > .field__item,
 .field--name-localgov-blog-related-posts > .field__item {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
 
 /* Featured posts */
-.lgd-blog--featured {
+.lgd-blog__featured {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
