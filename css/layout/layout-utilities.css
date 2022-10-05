@@ -19,19 +19,19 @@
   margin-left: auto;
 }
 .lgd-container--mega {
-  width: var(--width-mega);
+  max-width: var(--width-mega);
 }
 .lgd-container--extra-large {
-  width: var(--width-extra-large);
+  max-width: var(--width-extra-large);
 }
 .lgd-container--large {
-  width: var(--width-large);
+  max-width: var(--width-large);
 }
 .lgd-container--medium {
-  width: var(--width-medium);
+  max-width: var(--width-medium);
 }
 .lgd-container--small {
-  width: var(--width-small);
+  max-width: var(--width-small);
 }
 
 .padding-horizontal {
