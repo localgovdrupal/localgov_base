@@ -48,3 +48,7 @@
 .external-link::after {
   background-color: #652c95; /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */
 }
+.list-checked li::marker {
+  content:"\2714\0020";
+  color: #048a04;
+}

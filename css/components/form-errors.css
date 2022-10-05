@@ -1,0 +1,12 @@
+.form-item--error,
+.form-item.error {
+  padding: var(--spacing);
+  border: 2px dashed var(--color-danger);
+}
+
+.form-item--error-message {
+  padding: var(--spacing);
+  border: 1px solid var(--color-danger);
+  border-bottom: 0;
+  background-color: #fcf4f2;
+}

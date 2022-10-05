@@ -224,6 +224,7 @@ body {
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
+  --text-input-font-family: var(--font-primary);
 
   /* Checkbox Items */
   --checkbox-select-focus-color: var(--color-focus);
@@ -432,4 +433,8 @@ body {
 
   /* Leaflet Mapping */
   --leaflet-map-outline-stroke-colour: #38f;
+
+  /* Blogs */
+  --blog-author-image-width: calc(var(--teaser-image-with)/2);
+  --blog-author-content-margin: var(--spacing-largest);
 }

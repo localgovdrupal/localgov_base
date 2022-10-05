@@ -9,6 +9,10 @@
   background-color: black;
 }
 
+.lgd-region--tabs h2 {
+  background-color: white;
+}
+
 .lgd-region--tabs .tabs > ul {
   display: flex;
   flex-wrap: wrap;
