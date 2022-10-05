@@ -1,7 +1,6 @@
 {#
 /**
  * @file
- * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -15,7 +14,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: (optional) The title of the node.
+ * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +22,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -64,61 +63,66 @@
  *   is an administrator.
  *
  * @see template_preprocess_node()
- *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
  */
 #}
 
-{% set content_type = node.bundle %}
-
 {%
   set classes = [
-    'lgd-teaser',
-    'lgd-teaser--' ~ content_type|clean_class,
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+  'blog-post',
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
 %}
 
 {% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/teaser') }}
+  {{ attach_library('localgov_base/sidebar') }}
+  {{ attach_library('localgov_base/blog') }}
 {% endif %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
-
-  {#
-    The event content type has a specific field set for its teaser so we
-    are adding that here specifically. Hopefully all other content types
-    will use the same `field_media_image` field.
-  #}
-  {% if node.field_media_image.value or node.localgov_event_image.value %}
-    <div class="lgd-teaser__image">
-      {{ content.field_media_image }}
-      {{ content.localgov_event_image }}
-    </div>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('lgd-teaser__content', 'lgd-teaser__content--' ~ content_type|clean_class) }}>
-
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h3{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h3>
+<article{{ attributes.addClass(classes) }}>
+  <div class="blog-post__meta">
+    {% if node.localgov_blog_author.value %}
+      <div class="blog-post__meta-item blog-post__meta-item--author">
+        {% for key,value in node.localgov_blog_author.value %}
+          {{ content.localgov_blog_author[key] }}
+          {% if not loop.last %}{{',' | t}}{% endif %}
+        {% endfor %}
+        {{'-' | t}}
+      </div>
     {% endif %}
-    {{ title_suffix }}
+    
+    {% if node.localgov_blog_date.value %}
+      <div class="blog-post__meta-item blog-post__meta-item--date">
+        {{ content.localgov_blog_date }}
+      </div>
+    {% endif %}
 
-    {#
-      We render the full content variable here, so any new fields added
-      are visible.
-    #}
-    {{ content|without('field_media_image', 'localgov_event_image') }}
+    {% if node.localgov_blog_categories.value %}{{'-' | t}}
+      <div class="blog-post__meta-item blog-post__meta-item--topics">
+        {% for key,value in node.localgov_blog_categories.value %}
+          {{ content.localgov_blog_categories[key] }}
+          {% if not loop.last %}{{',' | t}}{% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 
+    <h1{{ title_attributes.addClass('blog-post__title') }}>
+      {{ label }}
+    </h1>
+
+    <div{{ content_attributes.addClass('blog-post__content node__content') }}>
+
+      {{ content|without('localgov_blog_date', 'localgov_blog_categories', 'localgov_blog_related_posts', 'localgov_blog_author', 'localgov_blog_channel') }}
+
+      {% if node.localgov_blog_related_posts.value %}
+        <h2 class="blog-post__related-title">{{ 'Related blog posts'|t }}</h2>
+        {{ content.localgov_blog_related_posts }}
+      {% endif %}
+
+    </div>
 </article>

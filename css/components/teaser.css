@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.lgd-teaser__content + .lgd-teaser__image {
+  margin-top: var(--spacing);
+}
+
 @media screen and (min-width: 48rem) {
 
   .lgd-teaser {
@@ -19,6 +23,12 @@
 
   .lgd-teaser__image + .lgd-teaser__content {
     margin-left: 1rem;
+  }
+
+  .lgd-teaser__content + .lgd-teaser__image {
+    margin-top: 0;
+    margin-left: auto;
+    padding-left: 1rem;
   }
 
   /*

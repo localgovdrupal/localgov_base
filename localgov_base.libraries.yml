@@ -244,6 +244,11 @@ news:
       css/components/news.ie11.css: {}
       css/components/news.css: {}
 
+blog:
+  css:
+    theme:
+      css/components/blog.css: {}
+
 events:
   css:
     theme:
@@ -290,3 +295,9 @@ form-errors:
     theme:
       css/components/form-errors.ie11.css: {}
       css/components/form-errors.css: {}
+
+term:
+  css:
+    theme:
+      css/components/term.ie11.css: {}
+      css/components/term.css: {}

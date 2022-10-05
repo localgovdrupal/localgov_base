@@ -1,0 +1,34 @@
+.blog-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-smallest);
+}
+
+.field--name-localgov-blog-related-posts > .field__items > .field__item,
+.field--name-localgov-blog-related-posts > .field__item {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+
+/* Featured posts */
+.lgd-blog__featured {
+  margin-bottom: var(--vertical-rhythm-spacing);
+}
+
+.field--name-localgov-blog-channel-featured > .field__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--vertical-rhythm-spacing);
+}
+
+.field--name-localgov-blog-channel-featured > .field__items > .field__item:first-of-type {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: var(--color-grey-lightest);
+  padding: var(--vertical-rhythm-spacing);
+}
+
+.view-localgov-blog-list .view-content {
+  padding-top: var(--vertical-rhythm-spacing);
+  border-top: var(--border);
+}
