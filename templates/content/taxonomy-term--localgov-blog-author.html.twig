@@ -27,20 +27,17 @@
   {{ attach_library('localgov_base/term') }}
 {% endif %}
 
-<div{{ attributes }}>
-  <div class="lgd-term">
+<div{{ attributes.addClass('lgd-term') }}>
     {% if term.localgov_blog_author_image.value %}
-      <div class="lgd-term--image">
+      <div class="lgd-term__image">
         {{ content.localgov_blog_author_image }}
       </div>
     {% endif %}
-
     {{ title_prefix }}
     {% if name and not page %}
       <h2><a href="{{ url }}">{{ name }}</a></h2>
     {% endif %}
     {{ title_suffix }}
     {{ content.description }}
-  </div>
   {{ content|without('description', 'localgov_blog_author_image') }}
 </div>

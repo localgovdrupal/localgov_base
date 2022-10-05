@@ -1,5 +1,5 @@
-.lgd-term--image img {
-  width: 100%;
+.lgd-term__image {
+  margin-bottom: var(--vertical-rhythm-spacing);
 }
 
 @media screen and (min-width: 48rem) {
@@ -10,12 +10,28 @@
   }
 
 
-  .lgd-term--image {
+  .lgd-term__image {
     flex-shrink: 0;
     width: var(--blog-author-image-width);
+    margin-bottom: 0;
   }
 
-  .lgd-term--image ~ .field--name-description {
+  .lgd-term__image ~ .field--name-description {
     margin-left: var(--vertical-rhythm-spacing);
   }
+}
+
+.view-taxonomy-term .view-content {
+  padding-top: var(--vertical-rhythm-spacing);
+  border-top: var(--border);
+}
+
+.view-taxonomy-term .views-row {
+  margin-bottom: var(--vertical-rhythm-spacing);
+  padding-bottom: var(--vertical-rhythm-spacing);
+  border-bottom: var(--border);
+}
+
+.feed-icons {
+  margin-bottom: var(--vertical-rhythm-spacing);
 }
