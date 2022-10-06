@@ -1,31 +1,31 @@
 .lgd-page-section--bg-colour-1 {
-  background-color: var(--color-accent);
+  background-color: #652c95;
 }
 .lgd-page-section--bg-colour-2 {
-  background-color: var(--color-accent-alt);
+  background-color: #fd0;
 }
 .lgd-page-section--bg-colour-3 {
-  background-color: var(--color-grey-lightest);
+  background-color: #f9f9f9;
 }
 
 .lgd-page-section--padding-top-small {
-  padding-top: var(--spacing-small);
+  padding-top: 0.75rem;
 }
 .lgd-page-section--padding-top-medium {
-  padding-top: var(--spacing);
+  padding-top: 1rem;
 }
 .lgd-page-section--padding-top-large {
-  padding-top: var(--spacing-large);
+  padding-top: 1.5rem;
 }
 
 .lgd-page-section--padding-bottom-small {
-  padding-bottom: var(--spacing-small);
+  padding-bottom: 0.75rem;
 }
 .lgd-page-section--padding-bottom-medium {
-  padding-bottom: var(--spacing);
+  padding-bottom: 1rem;
 }
 .lgd-page-section--padding-bottom-large {
-  padding-bottom: var(--spacing-large);
+  padding-bottom: 1.5rem;
 }
 
 .lgd-page-section--bg-colour-1,
@@ -34,19 +34,19 @@
 .lgd-page-section--bg-colour-1 h4,
 .lgd-page-section--bg-colour-1 h5,
 .lgd-page-section--bg-colour-1 h6 {
-  color: var(--color-white);
+  color: white;
 }
 
 .lgd-page-section--bg-colour-1 .newsroom-teaser {
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: black;
+  background-color: white;
 }
 
 .lgd-page-section--bg-colour-1 .box-link {
-  border-color: var(--color-white);
-  background-color: var(--color-white);
+  border-color: white;
+  background-color: white;
 }
 
 .lgd-page-section--bg-colour-1 .featured-subsite__summary {
-  color: var(--color-black);
+  color: black;
 }
