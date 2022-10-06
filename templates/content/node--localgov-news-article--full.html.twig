@@ -83,36 +83,38 @@
 {% endif %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="lgd-row">
-    <div class="lgd-row__two-thirds">
-      <div class="news-article__metadata">
-        <time datetime="{{ node.localgov_news_date.value }}" class="news-article__metadata-item news-article__metadata-item--date">
-          {{ content.localgov_news_date.0['#markup'] }}
-        </time>
-        {% if node.localgov_news_categories.value %}
-          <ul class="news-article__metadata-item news-article__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
-            {% for key,value in node.localgov_news_categories.value %}
-              <li class="news-article__category">
-                {{ content.localgov_news_categories[key] }}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
+  <div class="lgd-container">
+    <div class="lgd-row">
+      <div class="lgd-row__two-thirds">
+        <div class="news-article__metadata">
+          <time datetime="{{ node.localgov_news_date.value }}" class="news-article__metadata-item news-article__metadata-item--date">
+            {{ content.localgov_news_date.0['#markup'] }}
+          </time>
+          {% if node.localgov_news_categories.value %}
+            <ul class="news-article__metadata-item news-article__metadata-item--categories" aria-label="{{ 'Article categories'|t }}">
+              {% for key,value in node.localgov_news_categories.value %}
+                <li class="news-article__category">
+                  {{ content.localgov_news_categories[key] }}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
 
-      <h1{{ title_attributes.addClass('news-article__title') }}>
-        {{ label }}
-      </h1>
+        <h1{{ title_attributes.addClass('news-article__title') }}>
+          {{ label }}
+        </h1>
 
-      <div{{ content_attributes.addClass('news-article__content node__content') }}>
-        
-        {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related') }}
-        
-        {% if node.localgov_news_related.value %}
-          <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
-          {{ content.localgov_news_related }}
-        {% endif %}
+        <div{{ content_attributes.addClass('news-article__content node__content') }}>
 
+          {{ content|without('localgov_news_date', 'localgov_news_categories', 'localgov_news_related') }}
+
+          {% if node.localgov_news_related.value %}
+            <h2 class="news-article__related-title">{{ 'Related news'|t }}</h2>
+            {{ content.localgov_news_related }}
+          {% endif %}
+
+        </div>
       </div>
     </div>
   </div>

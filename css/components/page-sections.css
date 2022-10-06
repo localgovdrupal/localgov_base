@@ -1,0 +1,56 @@
+.paragraph--type--page-section:not(.lgd-page-section) {
+  max-width: 60rem;
+}
+
+.lgd-page-section--bg-colour-1 {
+  background-color: var(--color-accent);
+}
+.lgd-page-section--bg-colour-2 {
+  background-color: var(--color-accent-alt);
+}
+.lgd-page-section--bg-colour-3 {
+  background-color: var(--color-grey-lightest);
+}
+
+.lgd-page-section--padding-top-small {
+  padding-top: var(--spacing-small);
+}
+.lgd-page-section--padding-top-medium {
+  padding-top: var(--spacing);
+}
+.lgd-page-section--padding-top-large {
+  padding-top: var(--spacing-large);
+}
+
+.lgd-page-section--padding-bottom-small {
+  padding-bottom: var(--spacing-small);
+}
+.lgd-page-section--padding-bottom-medium {
+  padding-bottom: var(--spacing);
+}
+.lgd-page-section--padding-bottom-large {
+  padding-bottom: var(--spacing-large);
+}
+
+.lgd-page-section--bg-colour-1,
+.lgd-page-section--bg-colour-1 h2,
+.lgd-page-section--bg-colour-1 h3,
+.lgd-page-section--bg-colour-1 h4,
+.lgd-page-section--bg-colour-1 h5,
+.lgd-page-section--bg-colour-1 h6 {
+  color: var(--color-white);
+}
+
+.lgd-page-section--bg-colour-1 .newsroom-teaser {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.lgd-page-section--bg-colour-1 .box-link {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+}
+
+.lgd-page-section--bg-colour-1 .featured-subsite__summary {
+  color: var(--color-black);
+}

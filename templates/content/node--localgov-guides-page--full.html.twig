@@ -17,16 +17,17 @@
   ]
 %}
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
+  <div class="lgd-container padding-horizontal">
+    {{ title_prefix }}
+      <h2{{ title_attributes.addClass('lgd-guides__title') }}>
+        {{ node.label }}
+      </h2>
+    {{ title_suffix }}
 
-  {{ title_prefix }}
-    <h2{{ title_attributes.addClass('lgd-guides__title') }}>
-      {{ node.label }}
-    </h2>
-  {{ title_suffix }}
-
-  {% if content %}
-    <div{{ content_attributes.addClass('lgd-guides__content', 'node__content') }}>
-      {{ content }}
-    </div>
-  {% endif %}
+    {% if content %}
+      <div{{ content_attributes.addClass('lgd-guides__content', 'node__content') }}>
+        {{ content }}
+      </div>
+    {% endif %}
+  </div>
 </article>
