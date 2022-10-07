@@ -125,6 +125,12 @@ teaser:
       css/components/teaser.ie11.css: {}
       css/components/teaser.css: {}
 
+page-sections:
+  css:
+    theme:
+      css/components/page-sections.ie11.css: {}
+      css/components/page-sections.css: {}
+
 alert-banner:
   css:
     theme:

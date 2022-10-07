@@ -106,59 +106,67 @@
     {{ page.content_top }}
   {% endif %}
 
-  <div class="lgd-container">
+  {# Begin Sidebars #}
+  {% if has_sidebars %}
+    <div class="lgd-container">
       <div class="lgd-row">
-
-        {# Begin Sidebars #}
-        {% if has_sidebars %}
-          {% if has_sidebar_first and not has_sidebar_second %}
-            <aside class="lgd-row__one-third sidebar sidebar--first">
-              {{ page.sidebar_first }}
-            </aside>
-            <div class="lgd-row__two-thirds">
-              <div class="padding-horizontal">
-                {{ page.content }}
-              </div>
+        {% if has_sidebar_first and not has_sidebar_second %}
+          <aside class="lgd-row__one-third sidebar sidebar--first">
+            {{ page.sidebar_first }}
+          </aside>
+          <div class="lgd-row__two-thirds">
+            <div class="padding-horizontal">
+              {{ page.content }}
             </div>
-          {% endif %}
-
-          {% if has_sidebar_second and not has_sidebar_first %}
-            <div class="lgd-row__two-thirds">
-              <div class="padding-horizontal">
-                {{ page.content }}
-              </div>
-            </div>
-            <aside class="lgd-row__one-third sidebar sidebar--second">
-              {{ page.sidebar_second }}
-            </aside>
-          {% endif %}
-
-          {% if has_sidebar_first and has_sidebar_second %}
-            <aside class="lgd-row__one-quarter sidebar sidebar--first">
-              {{ page.sidebar_first }}
-            </aside>
-            <div class="lgd-row__one-half">
-              <div class="padding-horizontal">
-                {{ page.content }}
-              </div>
-            </div>
-            <aside class="lgd-row__one-quarter sidebar sidebar--second">
-              {{ page.sidebar_second }}
-            </aside>
-          {% endif %}
-
-          {% else %}
-            {# If there are no sidebars, the content region take up 100% of the space #}
-            <div class="lgd-row__full">
-              <div class="padding-horizontal">
-                {{ page.content }}
-              </div>
-            </div>
+          </div>
         {% endif %}
-        {# End Sidebars #}
 
+        {% if has_sidebar_second and not has_sidebar_first %}
+          <div class="lgd-row__two-thirds">
+            <div class="padding-horizontal">
+              {{ page.content }}
+            </div>
+          </div>
+          <aside class="lgd-row__one-third sidebar sidebar--second">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
+
+        {% if has_sidebar_first and has_sidebar_second %}
+          <aside class="lgd-row__one-quarter sidebar sidebar--first">
+            {{ page.sidebar_first }}
+          </aside>
+          <div class="lgd-row__one-half">
+            <div class="padding-horizontal">
+              {{ page.content }}
+            </div>
+          </div>
+          <aside class="lgd-row__one-quarter sidebar sidebar--second">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
       </div>
-  </div>
+    </div>
+
+    {% else %}
+    {# When we have no sidebars #}
+    {# 
+      If there are no sidebars, the content region take up 100% of the space, but:
+      1.  If we are on a node page, we do not constrain the content (this will be handled 
+          by the node templates, so some parts of the template (hero, etc) can be the full
+          width of the screen).
+      2.  If we are not on a node page, we'll contain the content, so views pages, taxonomy
+          pages, login page, etc are not bleeding to the edge of the screen.
+    #}
+    {% if not node %}
+      <div class="lgd-container padding-horizontal">
+        {{ page.content }}
+      </div>
+      {% else %}
+        {{ page.content }}
+    {% endif %}
+  {% endif %}
+  {# End Sidebars #}
 
   {% if has_content_bottom %}
     {{ page.content_bottom }}

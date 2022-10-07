@@ -89,36 +89,38 @@
 {% endif %}
 
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
+  <div class="lgd-container padding-horizontal">
 
-  {{ title_prefix }}
-  {{ title_suffix }}
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('newsroom__content', 'node__content') }}>
-    
-    {{ content|without('localgov_news_search', 'localgov_news_facets', 'localgov_newsroom_all_view') }} 
-    
-    {# 
-      Render the search, facets, etc here, followed by the news items
-    #}
-    <div class="lgd-row">
-      <aside class="lgd-row__one-third">
-        <div class="newsroom__sidebar">
-          {{ content.localgov_news_search }}
-          {{ content.localgov_news_facets }}
+    {% if display_submitted %}
+      <footer class="node__meta">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
         </div>
-      </aside>
-      <div class="lgd-row__two-thirds">
-        {{ content.localgov_newsroom_all_view }}
+      </footer>
+    {% endif %}
+
+    <div{{ content_attributes.addClass('newsroom__content', 'node__content') }}>
+
+      {{ content|without('localgov_news_search', 'localgov_news_facets', 'localgov_newsroom_all_view') }} 
+
+      {# 
+        Render the search, facets, etc here, followed by the news items
+      #}
+      <div class="lgd-row">
+        <aside class="lgd-row__one-third">
+          <div class="newsroom__sidebar">
+            {{ content.localgov_news_search }}
+            {{ content.localgov_news_facets }}
+          </div>
+        </aside>
+        <div class="lgd-row__two-thirds">
+          {{ content.localgov_newsroom_all_view }}
+        </div>
       </div>
     </div>
   </div>
