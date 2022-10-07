@@ -37,6 +37,7 @@ body {
     we use the names at our "Colours Applied" section.
   */
   --color-accent: #652c95;
+  --color-accent-2: #ffe146;
   --color-green: #048a04;
   --color-red: #e4251b;
   --color-orange: #ed7522;
@@ -442,7 +443,7 @@ body {
   --color-page-section-background-color-1: var(--color-accent);
   --color-page-section-background-color-1-text-color: var(--color-white);
   --color-page-section-background-color-1-link-color: var(--color-white);
-  --color-page-section-background-color-2: var(--color-accent-alt);
+  --color-page-section-background-color-2: var(--color-accent-2);
   --color-page-section-background-color-2-text-color: var(--color-black);
   --color-page-section-background-color-2-link-color: var(--color-black);
   --color-page-section-background-color-3: var(--color-grey-lightest);
