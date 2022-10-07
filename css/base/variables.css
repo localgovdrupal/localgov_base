@@ -437,4 +437,48 @@ body {
   /* Blogs */
   --blog-author-image-width: calc(var(--teaser-image-with)/2);
   --blog-author-content-margin: var(--spacing-largest);
+
+  /* Page Sections */
+  --color-page-section-background-color-1: var(--color-accent);
+  --color-page-section-background-color-1-text-color: var(--color-white);
+  --color-page-section-background-color-1-link-color: var(--color-white);
+  --color-page-section-background-color-2: var(--color-accent-alt);
+  --color-page-section-background-color-2-text-color: var(--color-black);
+  --color-page-section-background-color-2-link-color: var(--color-black);
+  --color-page-section-background-color-3: var(--color-grey-lightest);
+  --color-page-section-background-color-3-text-color: var(--color-black);
+  --color-page-section-background-color-3-link-color: var(--color-black);
+  /* Page Sections - Newsroom Teasers */
+  --color-page-section-background-color-1-newsroom-teaser-background-color: var(--color-white);
+  --color-page-section-background-color-1-newsroom-teaser-text-color: var(--color-black);
+  --color-page-section-background-color-1-newsroom-teaser-link-color: var(--color-black);
+  --color-page-section-background-color-2-newsroom-teaser-background-color: var(--color-white);
+  --color-page-section-background-color-2-newsroom-teaser-text-color: var(--color-black);
+  --color-page-section-background-color-2-newsroom-teaser-link-color: var(--color-black);
+  --color-page-section-background-color-3-newsroom-teaser-background-color: var(--color-black);
+  --color-page-section-background-color-3-newsroom-teaser-text-color: var(--color-white);
+  --color-page-section-background-color-3-newsroom-teaser-link-color: var(--color-white);
+  /* Page Sections - Box Links */
+  --color-page-section-background-color-1-box-link-border-color: var(--color-white);
+  --color-page-section-background-color-1-box-link-background-color: var(--color-white);
+  --color-page-section-background-color-1-box-link-text-color: var(--color-black);
+  --color-page-section-background-color-1-box-link-link-color: var(--color-black);
+  --color-page-section-background-color-2-box-link-border-color: var(--color-white);
+  --color-page-section-background-color-2-box-link-background-color: var(--color-white);
+  --color-page-section-background-color-2-box-link-text-color: var(--color-black);
+  --color-page-section-background-color-2-box-link-link-color: var(--color-black);
+  --color-page-section-background-color-3-box-link-border-color: var(--color-black);
+  --color-page-section-background-color-3-box-link-background-color: var(--color-black);
+  --color-page-section-background-color-3-box-link-text-color: var(--color-white);
+  --color-page-section-background-color-3-box-link-link-color: var(--color-white);
+  /* Page Sections - Featured Subsites */
+  --color-page-section-background-color-1-featured-subsite-background-color: var(--color-grey-lightest);
+  --color-page-section-background-color-1-featured-subsite-text-color: var(--color-black);
+  --color-page-section-background-color-1-featured-subsite-link-color: var(--color-black);
+  --color-page-section-background-color-2-featured-subsite-background-color: var(--color-grey-lightest);
+  --color-page-section-background-color-2-featured-subsite-text-color: var(--color-black);
+  --color-page-section-background-color-2-featured-subsite-link-color: var(--color-black);
+  --color-page-section-background-color-3-featured-subsite-background-color: var(--color-black);
+  --color-page-section-background-color-3-featured-subsite-text-color: var(--color-grey-lightest);
+  --color-page-section-background-color-3-featured-subsite-link-color: var(--color-grey-lightest);
 }
