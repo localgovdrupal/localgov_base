@@ -1,0 +1,184 @@
+.lgd-page-section--bg-colour-1 {
+  background-color: var(--color-page-section-background-color-1);
+  color: var(--color-page-section-background-color-1-text-color);
+}
+.lgd-page-section--bg-colour-2 {
+  background-color: var(--color-page-section-background-color-2);
+  color: var(--color-page-section-background-color-2-text-color);
+}
+.lgd-page-section--bg-colour-3 {
+  background-color: var(--color-page-section-background-color-3);
+  color: var(--color-page-section-background-color-3-text-color);
+}
+/* 
+  Adding 3 extra colour options here, so they are available if
+  other subthemes/sites need them.
+*/
+.lgd-page-section--bg-colour-4 {
+  background-color: var(--color-page-section-background-color-4);
+  color: var(--color-page-section-background-color-4-text-color);
+}
+.lgd-page-section--bg-colour-5 {
+  background-color: var(--color-page-section-background-color-5);
+  color: var(--color-page-section-background-color-5-text-color);
+}
+.lgd-page-section--bg-colour-6 {
+  background-color: var(--color-page-section-background-color-6);
+  color: var(--color-page-section-background-color-6-text-color);
+}
+
+.lgd-page-section--padding-top-small {
+  padding-top: var(--spacing-small);
+}
+.lgd-page-section--padding-top-medium {
+  padding-top: var(--spacing);
+}
+.lgd-page-section--padding-top-large {
+  padding-top: var(--spacing-large);
+}
+.lgd-page-section--padding-top-larger {
+  padding-top: var(--spacing-larger);
+}
+.lgd-page-section--padding-top-largest {
+  padding-top: var(--spacing-largest);
+}
+
+.lgd-page-section--padding-bottom-small {
+  padding-bottom: var(--spacing-small);
+}
+.lgd-page-section--padding-bottom-medium {
+  padding-bottom: var(--spacing);
+}
+.lgd-page-section--padding-bottom-large {
+  padding-bottom: var(--spacing-large);
+}
+.lgd-page-section--padding-bottom-larger {
+  padding-bottom: var(--spacing-larger);
+}
+.lgd-page-section--padding-bottom-largest {
+  padding-bottom: var(--spacing-largest);
+}
+
+.lgd-page-section--bg-colour-1,
+.lgd-page-section--bg-colour-1 h2,
+.lgd-page-section--bg-colour-1 h3,
+.lgd-page-section--bg-colour-1 h4,
+.lgd-page-section--bg-colour-1 h5,
+.lgd-page-section--bg-colour-1 h6 {
+  color: var(--color-page-section-background-color-1-text-color);
+}
+
+.lgd-page-section--bg-colour-1 a,
+.lgd-page-section--bg-colour-1 h2 a,
+.lgd-page-section--bg-colour-1 h3 a,
+.lgd-page-section--bg-colour-1 h4 a,
+.lgd-page-section--bg-colour-1 h5 a,
+.lgd-page-section--bg-colour-1 h6 a {
+  color: var(--color-page-section-background-color-1-link-color);
+}
+
+.lgd-page-section--bg-colour-2,
+.lgd-page-section--bg-colour-2 h2,
+.lgd-page-section--bg-colour-2 h3,
+.lgd-page-section--bg-colour-2 h4,
+.lgd-page-section--bg-colour-2 h5,
+.lgd-page-section--bg-colour-2 h6 {
+  color: var(--color-page-section-background-color-2-text-color);
+}
+.lgd-page-section--bg-colour-2 a,
+.lgd-page-section--bg-colour-2 h2 a,
+.lgd-page-section--bg-colour-2 h3 a,
+.lgd-page-section--bg-colour-2 h4 a,
+.lgd-page-section--bg-colour-2 h5 a,
+.lgd-page-section--bg-colour-2 h6 a {
+  color: var(--color-page-section-background-color-2-link-color);
+}
+
+.lgd-page-section--bg-colour-3,
+.lgd-page-section--bg-colour-3 h2,
+.lgd-page-section--bg-colour-3 h3,
+.lgd-page-section--bg-colour-3 h4,
+.lgd-page-section--bg-colour-3 h5,
+.lgd-page-section--bg-colour-3 h6 {
+  color: var(--color-page-section-background-color-3-text-color);
+}
+.lgd-page-section--bg-colour-3 a,
+.lgd-page-section--bg-colour-3 h2 a,
+.lgd-page-section--bg-colour-3 h3 a,
+.lgd-page-section--bg-colour-3 h4 a,
+.lgd-page-section--bg-colour-3 h5 a,
+.lgd-page-section--bg-colour-3 h6 a {
+  color: var(--color-page-section-background-color-3-link-color);
+}
+
+/* Newsroom Teasers */
+.lgd-page-section--bg-colour-1 .newsroom-teaser {
+  color: var(--color-page-section-background-color-1-newsroom-teaser-text-color);
+  background-color: var(--color-page-section-background-color-1-newsroom-teaser-background-color);
+}
+.lgd-page-section--bg-colour-1 .newsroom-teaser a {
+  color: var(--color-page-section-background-color-1-newsroom-teaser-link-color);
+}
+.lgd-page-section--bg-colour-2 .newsroom-teaser {
+  color: var(--color-page-section-background-color-2-newsroom-teaser-text-color);
+  background-color: var(--color-page-section-background-color-2-newsroom-teaser-background-color);
+}
+.lgd-page-section--bg-colour-2 .newsroom-teaser a {
+  color: var(--color-page-section-background-color-2-newsroom-teaser-link-color);
+}
+.lgd-page-section--bg-colour-3 .newsroom-teaser {
+  color: var(--color-page-section-background-color-3-newsroom-teaser-text-color);
+  background-color: var(--color-page-section-background-color-3-newsroom-teaser-background-color);
+}
+.lgd-page-section--bg-colour-3 .newsroom-teaser a {
+  color: var(--color-page-section-background-color-3-newsroom-teaser-link-color);
+}
+
+/* Box Links */
+.lgd-page-section--bg-colour-1 .box-link {
+  border-color: var(--color-page-section-background-color-1-box-link-border-color);
+  background-color: var(--color-page-section-background-color-1-box-link-background-color);
+  color: var(--color-page-section-background-color-1-box-link-text-color);
+}
+.lgd-page-section--bg-colour-1 .box-link a {
+  color: var(--color-page-section-background-color-1-box-link-link-color);
+}
+.lgd-page-section--bg-colour-2 .box-link {
+  border-color: var(--color-page-section-background-color-2-box-link-border-color);
+  background-color: var(--color-page-section-background-color-2-box-link-background-color);
+  color: var(--color-page-section-background-color-2-box-link-text-color);
+}
+.lgd-page-section--bg-colour-2 .box-link a {
+  color: var(--color-page-section-background-color-2-box-link-link-color);
+}
+.lgd-page-section--bg-colour-3 .box-link {
+  border-color: var(--color-page-section-background-color-3-box-link-border-color);
+  background-color: var(--color-page-section-background-color-3-box-link-background-color);
+  color: var(--color-page-section-background-color-3-box-link-text-color);
+}
+.lgd-page-section--bg-colour-3 .box-link a {
+  color: var(--color-page-section-background-color-3-box-link-link-color);
+}
+
+/* Featured Subsites */
+.lgd-page-section--bg-colour-1 .featured-subsite {
+  background-color: var(--color-page-section-background-color-1-featured-subsite-background-color);
+  color: var(--color-page-section-background-color-1-featured-subsite-text-color);
+}
+.lgd-page-section--bg-colour-1 .featured-subsite a {
+  color: var(--color-page-section-background-color-1-featured-subsite-link-color);
+}
+.lgd-page-section--bg-colour-2 .featured-subsite {
+  background-color: var(--color-page-section-background-color-2-featured-subsite-background-color);
+  color: var(--color-page-section-background-color-2-featured-subsite-text-color);
+}
+.lgd-page-section--bg-colour-2 .featured-subsite a {
+  color: var(--color-page-section-background-color-2-featured-subsite-link-color);
+}
+.lgd-page-section--bg-colour-3 .featured-subsite {
+  background-color: var(--color-page-section-background-color-3-featured-subsite-background-color);
+  color: var(--color-page-section-background-color-3-featured-subsite-text-color);
+}
+.lgd-page-section--bg-colour-3 .featured-subsite a {
+  color: var(--color-page-section-background-color-3-featured-subsite-link-color);
+}

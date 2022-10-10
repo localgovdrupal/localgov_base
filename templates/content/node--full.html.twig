@@ -119,31 +119,38 @@
 
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
 
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+  <div class="lgd-container padding-horizontal">
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}  
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
+    {% if display_submitted %}
+      <footer class="node__meta">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
+        </div>
+      </footer>
+    {% endif %} 
+
+    {% if content_type in restricted_width_content_types %}
+      <div class="node__restricted-width-section">
+    {% endif %} 
+
+      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
+        {{ content|without('localgov_subsites_content') }}
       </div>
-    </footer>
-  {% endif %}
-
-  {% if content_type in restricted_width_content_types %}
-    <div class="node__restricted-width-section">
-  {% endif %}
-
-  <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-    {{ content }}
   </div>
+
+  {% if node.localgov_subsites_content.value %}
+    {{ content.localgov_subsites_content }}
+  {% endif %}
+  
 
   {% if content_type in restricted_width_content_types %}
     </div>

@@ -1,0 +1,179 @@
+.lgd-page-section--bg-colour-1 {
+  background-color: #652c95;
+  color: white;
+}
+.lgd-page-section--bg-colour-2 {
+  background-color: #fd0;
+  color: black;
+}
+.lgd-page-section--bg-colour-3 {
+  background-color: #f9f9f9;
+  color: black;
+}
+.lgd-page-section--bg-colour-4 {
+  background-color: #652c95;
+  color: white;
+}
+.lgd-page-section--bg-colour-5 {
+  background-color: #652c95;
+  color: white;
+}
+.lgd-page-section--bg-colour-6 {
+  background-color: #652c95;
+  color: white;
+}
+
+.lgd-page-section--padding-top-small {
+  padding-top: 0.75rem;
+}
+.lgd-page-section--padding-top-medium {
+  padding-top: 1rem;
+}
+.lgd-page-section--padding-top-large {
+  padding-top: 1.5rem;
+}
+.lgd-page-section--padding-top-larger {
+  padding-top: 2rem;
+}
+.lgd-page-section--padding-top-largest {
+  padding-top: 2.5rem;
+}
+
+.lgd-page-section--padding-bottom-small {
+  padding-bottom: 0.75rem;
+}
+.lgd-page-section--padding-bottom-medium {
+  padding-bottom: 1rem;
+}
+.lgd-page-section--padding-bottom-large {
+  padding-bottom: 1.5rem;
+}
+.lgd-page-section--padding-bottom-larger {
+  padding-bottom: 2rem;
+}
+.lgd-page-section--padding-bottom-largest {
+  padding-bottom: 2.5rem;
+}
+
+.lgd-page-section--bg-colour-1,
+.lgd-page-section--bg-colour-1 h2,
+.lgd-page-section--bg-colour-1 h3,
+.lgd-page-section--bg-colour-1 h4,
+.lgd-page-section--bg-colour-1 h5,
+.lgd-page-section--bg-colour-1 h6 {
+  color: white;
+}
+.lgd-page-section--bg-colour-1 a,
+.lgd-page-section--bg-colour-1 h2 a,
+.lgd-page-section--bg-colour-1 h3 a,
+.lgd-page-section--bg-colour-1 h4 a,
+.lgd-page-section--bg-colour-1 h5 a,
+.lgd-page-section--bg-colour-1 h6 a {
+  color: white;
+}
+
+.lgd-page-section--bg-colour-2,
+.lgd-page-section--bg-colour-2 h2,
+.lgd-page-section--bg-colour-2 h3,
+.lgd-page-section--bg-colour-2 h4,
+.lgd-page-section--bg-colour-2 h5,
+.lgd-page-section--bg-colour-2 h6 {
+  color: black;
+}
+.lgd-page-section--bg-colour-2 a,
+.lgd-page-section--bg-colour-2 h2 a,
+.lgd-page-section--bg-colour-2 h3 a,
+.lgd-page-section--bg-colour-2 h4 a,
+.lgd-page-section--bg-colour-2 h5 a,
+.lgd-page-section--bg-colour-2 h6 a {
+  color: black;
+}
+
+.lgd-page-section--bg-colour-3,
+.lgd-page-section--bg-colour-3 h2,
+.lgd-page-section--bg-colour-3 h3,
+.lgd-page-section--bg-colour-3 h4,
+.lgd-page-section--bg-colour-3 h5,
+.lgd-page-section--bg-colour-3 h6 {
+  color: black;
+}
+.lgd-page-section--bg-colour-3 a,
+.lgd-page-section--bg-colour-3 h2 a,
+.lgd-page-section--bg-colour-3 h3 a,
+.lgd-page-section--bg-colour-3 h4 a,
+.lgd-page-section--bg-colour-3 h5 a,
+.lgd-page-section--bg-colour-3 h6 a {
+  color: black;
+}
+
+/* Newsroom Teasers */
+.lgd-page-section--bg-colour-1 .newsroom-teaser {
+  color: black;
+  background-color: white;
+}
+.lgd-page-section--bg-colour-1 .newsroom-teaser a {
+  color: black;
+}
+.lgd-page-section--bg-colour-2 .newsroom-teaser {
+  color: black;
+  background-color: white;
+}
+.lgd-page-section--bg-colour-2 .newsroom-teaser a {
+  color: white;
+}
+.lgd-page-section--bg-colour-3 .newsroom-teaser {
+  color: white;
+  background-color: black;
+}
+.lgd-page-section--bg-colour-3 .newsroom-teaser a {
+  color: white;
+}
+
+/* Box Links */
+.lgd-page-section--bg-colour-1 .box-link {
+  border-color: white;
+  background-color: white;
+  color: black;
+}
+.lgd-page-section--bg-colour-1 .box-link a {
+  color: black;
+}
+.lgd-page-section--bg-colour-2 .box-link {
+  border-color: white;
+  background-color: white;
+  color: black;
+}
+.lgd-page-section--bg-colour-2 .box-link a {
+  color: black;
+}
+.lgd-page-section--bg-colour-3 .box-link {
+  border-color: black;
+  background-color: black;
+  color: white;
+}
+.lgd-page-section--bg-colour-3 .box-link a {
+  color: white;
+}
+
+/* Featured Subsites */
+.lgd-page-section--bg-colour-1 .featured-subsite {
+  background-color: white;
+  color: black;
+}
+.lgd-page-section--bg-colour-1 .featured-subsite a {
+  color: black;
+}
+.lgd-page-section--bg-colour-2 .featured-subsite {
+  background-color: white;
+  color: black;
+}
+.lgd-page-section--bg-colour-2 .featured-subsite a {
+  color: black;
+}
+.lgd-page-section--bg-colour-3 .featured-subsite {
+  background-color: black;
+  color: white;
+}
+.lgd-page-section--bg-colour-3 .featured-subsite a {
+  color: white;
+}
