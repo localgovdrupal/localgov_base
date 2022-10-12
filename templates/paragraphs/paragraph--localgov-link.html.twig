@@ -45,7 +45,8 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    paragraph.localgov_link_style.value ? 'link--button-style'
   ]
 %}
 
@@ -59,11 +60,13 @@
 
   {% if paragraph.localgov_url.value %}
     <div class="link-wrapper">
-      {% include "@localgov_base/includes/icons/icon.html.twig" with {
-          icon_name: title_icon,
-          icon_classes: 'link-icon',
-        }
-      %}
+      {% if paragraph.localgov_link_style.value != 'button' %}
+        {% include "@localgov_base/includes/icons/icon.html.twig" with {
+            icon_name: title_icon,
+            icon_classes: 'link-icon',
+          }
+        %}
+      {% endif %}
       <div class="link-content">
         <a href="{{ content.localgov_url.content }}">
           {{ content.localgov_title.0 }}
@@ -72,9 +75,9 @@
     </div>
   {% endif %}
 
-  {% if content|without('localgov_url','localgov_title') %}
+  {% if content|without('localgov_url','localgov_title','localgov_link_style') %}
     <div class="link-block__content">
-      {{ content|without('localgov_url','localgov_title') }}
+      {{ content|without('localgov_url','localgov_title','localgov_link_style') }}
     </div>
   {% endif %}
 
