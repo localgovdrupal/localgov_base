@@ -42,11 +42,11 @@
 {%
   set classes = [
     'link',
+    paragraph.localgov_link_style.value ? 'link--' ~ paragraph.localgov_link_style.value ~ 'style',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    paragraph.localgov_link_style.value ? 'link--button-style'
   ]
 %}
 
