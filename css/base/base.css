@@ -31,6 +31,17 @@ body {
   color: var(--color-text);
 }
 
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  /* To give us a sticky footer. */
+  margin-bottom: auto;
+}
+
 a {
   color: var(--color-link);
   transition: var(--transition-time);
