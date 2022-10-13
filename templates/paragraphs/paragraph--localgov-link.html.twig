@@ -60,11 +60,11 @@
 
   {% if paragraph.localgov_url.value %}
     <div class="link-wrapper">
-        {% include "@localgov_base/includes/icons/icon.html.twig" with {
-            icon_name: title_icon,
-            icon_classes: 'link-icon',
-          }
-        %}
+      {% include "@localgov_base/includes/icons/icon.html.twig" with {
+          icon_name: title_icon,
+          icon_classes: 'link-icon',
+        }
+      %}
       <div class="link-content">
         <a href="{{ content.localgov_url.content }}">
           {{ content.localgov_title.0 }}
