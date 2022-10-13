@@ -12,7 +12,6 @@
   padding:
   var(--button-padding-vertical) var(--button-padding-horizontal)
   var(--button-padding-vertical) var(--button-padding-horizontal);
-  cursor: pointer;
   border: var(--border);
   border-color: var(--button-border-color);
   border-radius: var(--button-border-radius);
