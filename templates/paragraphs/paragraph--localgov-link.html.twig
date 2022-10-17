@@ -42,10 +42,11 @@
 {%
   set classes = [
     'link',
+    paragraph.localgov_link_style.value ? 'link--' ~ paragraph.localgov_link_style.value ~ '-style',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
 
@@ -72,9 +73,9 @@
     </div>
   {% endif %}
 
-  {% if content|without('localgov_url','localgov_title') %}
+  {% if content|without('localgov_url','localgov_title','localgov_link_style') %}
     <div class="link-block__content">
-      {{ content|without('localgov_url','localgov_title') }}
+      {{ content|without('localgov_url','localgov_title','localgov_link_style') }}
     </div>
   {% endif %}
 
