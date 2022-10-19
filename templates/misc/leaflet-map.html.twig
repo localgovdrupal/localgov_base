@@ -18,6 +18,7 @@
  */
 #}
 
-{{ attach_library('localgov_base/leaflet') }}
-
-<div id="{{ map_id }}" style="min-width: 150px; {% if height is not empty %}height: {{ height }}{% endif %}"></div>
+{% if not map.is_empty %}
+  {{ attach_library('localgov_base/leaflet') }}
+  <div id="{{ map_id }}" style="min-width: 150px; {% if height is not empty %}height: {{ height }}{% endif %}"></div>
+{% endif %}

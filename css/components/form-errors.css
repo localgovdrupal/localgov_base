@@ -10,3 +10,8 @@
   border-bottom: 0;
   background-color: #fcf4f2;
 }
+
+.fieldset-wrapper .form-item--error-message {
+  margin-bottom: var(--spacing);
+  border-bottom: 1px solid var(--color-danger);
+}

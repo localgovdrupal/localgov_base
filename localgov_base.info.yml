@@ -3,6 +3,8 @@ description: "BETA - should work pretty well: LocalGov Base - LocalGovDrupal - t
 type: theme
 core_version_requirement: ^8.8 || ^9
 base theme: "stable"
+ckeditor_stylesheets:
+  - css/base/ckeditor.css
 
 regions:
   tabs: "Tabs"

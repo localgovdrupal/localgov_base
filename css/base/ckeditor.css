@@ -1,0 +1,101 @@
+/*
+  @file Styles for the ckeditor.
+*/
+
+/* Alerts */
+.cke_editable .alert {
+  padding: 2.5rem;
+  font-size: 1.3125rem;
+  font-weight: bold;
+}
+
+.alert {
+  border: 5px solid black;
+  background-color: white;
+}
+
+.alert-primary {
+  border-color: #652c95;
+}
+
+.alert-info {
+  border-color: #297bbb;
+}
+
+.alert-danger {
+  border-color: #e4251b;
+}
+
+.alert-fail {
+  border-color: #ed7522;
+}
+
+/* Links */
+.btn.btn-start {
+  padding: 0.5rem 1rem;
+  color: white;
+  border: 1px solid #048a04;
+  background-color: #048a04;
+}
+
+.btn.btn-start:focus,
+.btn.btn-start:hover {
+  color: #048a04;
+  background-color: white;
+}
+
+.btn.btn-start::after {
+  top: -2px;
+  margin-left: 0.5rem;
+  content: "\203A";
+  font-size: 2.875rem;
+}
+
+.external-link::after {
+  background-color: #652c95;
+}
+
+.list-checked li::marker {
+  content:"\2714\0020";
+  color: #048a04;
+}
+
+/* Call out */
+.callout {
+  color: white;
+  font-size: 1.3125rem;
+}
+
+.callout a {
+  color: white;
+}
+.callout a:focus {
+  color: white;
+  background-color: #505a5f;
+}
+
+.callout-primary {
+  background-color: #652c95;
+}
+
+.callout-success {
+  background-color: #048a04;
+}
+
+.callout-danger {
+  background-color: #e4251b;
+}
+
+.callout-teal {
+  background-color: teal;
+}
+
+.callout-carbon {
+  background-color: #505a5f;
+}
+
+.callout-yellow,
+.callout-yellow a {
+  color: #505a5f;
+  background-color: #fd0;
+}

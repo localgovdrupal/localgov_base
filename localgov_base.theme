@@ -90,14 +90,16 @@ function localgov_base_preprocess_file_link(&$variables) {
   $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
 
   if (isset($variables['link']['#title'])) {
-    $file_title = $variables['link']['#title'];
+    $variables['link']['#title'] = [
+      '#markup' => "{$variables['link']['#title']} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
+    ];
   }
   else {
     $file_title = $variables['link'];
+    $variables['link'] = [
+      '#markup' => "{$file_title} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
+    ];
   }
-  $variables['link'] = [
-    '#markup' => "{$file_title} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
-  ];
 }
 
 /**

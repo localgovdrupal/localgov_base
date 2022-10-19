@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Default theme implementation to display a Featured teasers paragraph.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -32,6 +32,7 @@
  *   current user is a logged-in member.
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
+ * - heading: Title (heading element).
  *
  * @see template_preprocess_paragraph()
  *
@@ -39,10 +40,13 @@
  */
 #}
 
+{% if not localgov_base_remove_css %}
+
+{% endif %}
+
 {%
   set classes = [
-    'link',
-    paragraph.localgov_link_style.value ? 'link--' ~ paragraph.localgov_link_style.value ~ '-style',
+    'embedded-views',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -50,33 +54,15 @@
   ]
 %}
 
-{% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/link') }}
-{% endif %}
-
-{% set title_icon = 'chevron-right' %}
-
 <div{{ attributes.addClass(classes) }}>
-
-  {% if paragraph.localgov_url.value %}
-    <div class="link-wrapper">
-      {% include "@localgov_base/includes/icons/icon.html.twig" with {
-          icon_name: title_icon,
-          icon_classes: 'link-icon',
-        }
-      %}
-      <div class="link-content">
-        <a href="{{ content.localgov_url.content }}">
-          {{ content.localgov_title.0 }}
-        </a>
-      </div>
+  {% if heading %}
+    <div class="embedded-views__heading">
+      {{ heading }}
     </div>
   {% endif %}
 
-  {% if content|without('localgov_url','localgov_title','localgov_link_style') %}
-    <div class="link-block__content">
-      {{ content|without('localgov_url','localgov_title','localgov_link_style') }}
-    </div>
-  {% endif %}
+  <div class="embedded-views__items">
+    {{ content|without('localgov_title', 'localgov_heading_level') }}
+  </div>
 
 </div>
