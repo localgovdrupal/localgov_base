@@ -65,6 +65,6 @@
   padding: 1rem 0;
 }
 
-.localgov-alert-banner--notable-person .localgov-alert-banner__title {
-  color: #fff;
+.localgov-alert-banner__title {
+  color: inherit;
 }
