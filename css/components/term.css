@@ -16,7 +16,7 @@
     margin-bottom: 0;
   }
 
-  .lgd-term__image ~ .field--name-description {
+  .lgd-term__image ~ .lgd-term__content {
     margin-left: var(--vertical-rhythm-spacing);
   }
 }

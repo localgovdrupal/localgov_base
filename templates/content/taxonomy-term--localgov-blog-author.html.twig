@@ -33,11 +33,13 @@
         {{ content.localgov_blog_author_image }}
       </div>
     {% endif %}
-    {{ title_prefix }}
-    {% if name and not page %}
-      <h2><a href="{{ url }}">{{ name }}</a></h2>
-    {% endif %}
-    {{ title_suffix }}
-    {{ content.description }}
-  {{ content|without('description', 'localgov_blog_author_image') }}
+    <div class="lgd-term__content">
+      {{ title_prefix }}
+      {% if name and not page %}
+        <h2><a href="{{ url }}">{{ name }}</a></h2>
+      {% endif %}
+      {{ title_suffix }}
+      {{ content.description }}
+    {{ content|without('description', 'localgov_blog_author_image') }}
+    </div>
 </div>
