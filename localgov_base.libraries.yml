@@ -313,4 +313,3 @@ embedded-views:
     theme:
       css/components/embedded-views.ie11.css: {}
       css/components/embedded-views.css: {}
-
