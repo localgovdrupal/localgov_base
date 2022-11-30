@@ -9,10 +9,10 @@
 
 .lgd-region--breadcrumb {
   background-color: var(--breadcrumbs-background-color);
+  margin-bottom: var(--breadcrumbs-spacing-bottom);
 }
 
 .breadcrumbs {
-  margin-bottom: var(--breadcrumbs-spacing-bottom);
   padding: var(--breadcrumbs-padding-vertical) var(--breadcrumbs-padding-horizontal);
   border-bottom: var(--breadcrumbs-border);
 }
