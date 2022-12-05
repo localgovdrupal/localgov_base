@@ -162,7 +162,7 @@ body {
   --breadcrumbs-font-size: var(--font-size-medium);
   --breadcrumbs-padding-vertical: var(--spacing-small);
   --breadcrumbs-padding-horizontal: 0;
-  --breadcrumbs-link-color: var(--color-accent);
+  --breadcrumbs-link-color: var(--color-link);
   --breadcrumbs-spacing-bottom: var(--vertical-rhythm-spacing);
 
   /* Header Items */
