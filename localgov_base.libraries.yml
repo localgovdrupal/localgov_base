@@ -307,3 +307,9 @@ term:
     theme:
       css/components/term.ie11.css: {}
       css/components/term.css: {}
+
+embedded-views:
+  css:
+    theme:
+      css/components/embedded-views.ie11.css: {}
+      css/components/embedded-views.css: {}

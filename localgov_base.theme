@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
+use Drupal\Component\Utility\Crypt;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
@@ -108,5 +109,24 @@ function localgov_base_preprocess_file_link(&$variables) {
 function localgov_base_views_pre_render(ViewExecutable $view) {
   if (isset($view) && ($view->storage->id() == 'localgov_sitewide_search')) {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
+  }
+}
+
+/**
+ * Implements hook_preprocess_container().
+ */
+function localgov_base_preprocess_container(&$variables) {
+
+  // Randomize form container IDs for accessibility.
+  // See https://www.drupal.org/project/drupal/issues/1852090
+  if (isset($variables['element']['#id'])) {
+    $id = $variables['element']['#id'];
+    if ($id == 'edit-actions') {
+      $id .= '--' . Crypt::randomBytesBase64(8);
+    }
+    $variables['attributes']['id'] = $id;
+    $variables['attributes']['data-drupal-selector'] = $id;
+    $variables['element']['#attributes']['data-drupal-selector'] = $id;
+    $variables['element']['#id'] = $id;
   }
 }

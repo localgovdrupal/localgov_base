@@ -65,3 +65,17 @@
   margin: var(--alert-banner-inner-margin-vertical) var(--alert-banner-inner-margin-horizontal);
   padding: var(--alert-banner-inner-padding-vertical) var(--alert-banner-inner-padding-horizontal);
 }
+
+
+.localgov-alert-banner--announcement .localgov-alert-banner__title {
+  color: var(--alert-banner-title-color-announcement);
+}
+.localgov-alert-banner--minor .localgov-alert-banner__title {
+  color: var(--alert-banner-title-color-minor);
+}
+.localgov-alert-banner--major .localgov-alert-banner__title {
+  color: var(--alert-banner-title-color-major);
+}
+.localgov-alert-banner--notable-person .localgov-alert-banner__title {
+  color: var(--alert-banner-title-color-notable-person);
+}
