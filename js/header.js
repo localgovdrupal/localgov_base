@@ -21,7 +21,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         headerSearchFormLabel[0].classList.add('visually-hidden');
       }
 
-      // Set up initial variables, including those we can't define yet.
+      // Set up initial variables.
       //
       // We need a bunch of classes and selectors.
       const headerToggleSelector = '.lgd-header__toggle';
@@ -59,6 +59,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       // When a menu toggle button is clicked, show/hide the menu regions.
       // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
       function handleToggleClick(toggleThatWasClicked) {
+        // Get the current state as a boolean.
         const currentState = toggleThatWasClicked.getAttribute('aria-expanded') === 'true';
 
         toggleThatWasClicked.setAttribute('aria-expanded', !currentState);
@@ -80,10 +81,8 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
       // When the primary menu toggle is clicked
       function handlePrimaryMenuToggleClick() {
-        const primaryMenuToggle = navInfo.primary.toggle;
-
-        handleToggleClick(primaryMenuToggle);
-        handleEscKeyClick(primaryMenuToggle);
+        handleToggleClick(navInfo.primary.toggle);
+        handleEscKeyClick(navInfo.primary.toggle);
 
         Object.keys(navInfo).forEach(function(nav) {
           navInfo[nav].region.classList.toggle(regionActiveClass);
