@@ -68,23 +68,23 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
       function handleToggleClick(toggleThatWasClicked) {
         const currentState = toggleThatWasClicked.getAttribute('aria-expanded');
-        currentState === 'false' ? 
-          toggleThatWasClicked.setAttribute('aria-expanded', 'true') : 
+        currentState === 'false' ?
+          toggleThatWasClicked.setAttribute('aria-expanded', 'true') :
           toggleThatWasClicked.setAttribute('aria-expanded', 'false');
-          
-        toggleThatWasClicked.classList.contains('lgd-header__toggle--active') ? 
+
+        toggleThatWasClicked.classList.contains('lgd-header__toggle--active') ?
           toggleThatWasClicked.classList.remove('lgd-header__toggle--active') :
           toggleThatWasClicked.classList.add('lgd-header__toggle--active');
       }
 
-      // General reset function to hide the menu regions and reset the toggle 
+      // General reset function to hide the menu regions and reset the toggle
       // button attributes.
       function handleReset() {
         headerToggles.forEach(function(headerToggle) {
           headerToggle.setAttribute('aria-expanded', 'false');
           headerToggle.classList.remove('lgd-header__toggle--active');
         });
-        regions.forEach(function(region) { 
+        regions.forEach(function(region) {
           region.classList.remove('lgd-header__nav--active');
         });
       }
@@ -94,7 +94,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         handleToggleClick(primaryMenuToggle);
         handleEscKeyClick(primaryMenuToggle);
         regions.forEach(function(region) {
-          region.classList.contains('lgd-header__nav--active') ? 
+          region.classList.contains('lgd-header__nav--active') ?
           region.classList.remove('lgd-header__nav--active') :
           region.classList.add('lgd-header__nav--active');
         });
@@ -104,7 +104,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       function handleSecondaryMenuToggleClick() {
         handleToggleClick(secondaryMenuToggle);
         handleEscKeyClick(secondaryMenuToggle);
-        secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? 
+        secondaryMenuRegion.classList.contains('lgd-header__nav--active') ?
         secondaryMenuRegion.classList.remove('lgd-header__nav--active') :
         secondaryMenuRegion.classList.add('lgd-header__nav--active');
         secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? secondaryMenuFirstLink.focus() : null;
@@ -114,7 +114,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       // set focus back to the services button
       function handleSecondaryMenuShiftTabClick() {
         secondaryMenuFirstLink.addEventListener('keydown', function(e) {
-          if (e.shiftKey && e.key == 'Tab') { 
+          if (e.shiftKey && e.key == 'Tab') {
             e.preventDefault();
             handleReset();
             secondaryMenuToggle.focus();
@@ -126,7 +126,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       function handleEscKeyClick(buttonToFocus) {
         context.addEventListener('keydown', function(e) {
           // When on any link in the secondary menu, if you hit escape
-          // set focus back to: 
+          // set focus back to:
           // 1. menu button on small screens, and
           // 2. services button on large screens
           if (e.key == 'Escape') {
@@ -139,7 +139,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
       // When the window is resized (or a device orientation changes),
       // set out what happens.
-      // On a small screen, the primary button is shown which will show both 
+      // On a small screen, the primary button is shown which will show both
       // menu regions when clicked.
       // On a large screen, the secondary button is shown which will show only
       // the secondary menu region when clicked (the primary menu will always be visible).
@@ -157,7 +157,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
           if (primaryMenuToggle) {
             primaryMenuToggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
           }
-          if (secondaryMenuToggle) { 
+          if (secondaryMenuToggle) {
             secondaryMenuToggle.addEventListener('click', handleSecondaryMenuToggleClick);
             secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
           }
@@ -176,7 +176,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
           handleWindowResized();
         }
       }
-      
+
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
       window.addEventListener('resize', Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false));
