@@ -1,7 +1,7 @@
 name: "LocalGov Base"
 description: "BETA - should work pretty well: LocalGov Base - LocalGovDrupal - theme for LocalGov Drupal sites."
 type: theme
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^9 || ^10
 base theme: "stable"
 ckeditor_stylesheets:
   - css/base/ckeditor.css
