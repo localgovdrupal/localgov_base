@@ -55,10 +55,10 @@
 {% endif %}
 
 <div{{ attributes.addClass(classes)}}>
-	{# Check if we have a title so we don't print an empty H2 #}
+  {# Check if we have a title so we don't print an empty H2 #}
   {% if paragraph.localgov_ia_block_title.value %}
     <h2 class="ia-block__title">
-			{# Don't print a anchor tag unless the title is linked #}
+      {# Don't print a anchor tag unless the title is linked #}
     {% if field_link %}
       <a class="ia-block__title-link" href="{{ field_link }}">{{ paragraph.localgov_ia_block_title.value }}</a>
     {% else %}
@@ -67,10 +67,10 @@
     </h2>
   {% endif %}
 
-	{# 
-		Render the list of links 
-		- this variable is created in localgov_homepage_paragraphs.module 
-	#}
+  {# 
+    Render the list of links 
+    - this variable is created in localgov_homepage_paragraphs.module 
+  #}
   {{ list }}
-	
+  
 </div>

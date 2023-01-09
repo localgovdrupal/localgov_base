@@ -47,3 +47,10 @@ If you need to add any CSS overides, you can create custom CSS files for these a
 To make sure we follow Drupal's CSS coding standards (without having to think about it), there is a handy `npm` script to automatically scan and fix any CSS coding standards violations.
 
 Simple run `npm install` to get the necessary packages, then run `npm start` to scan the files and fix any issues.
+
+## Maintainers
+
+This project is currently maintained by: 
+
+ - Mark Conroy https://github.com/markconroy
+ - Maria Young https://github.com/msayoung
