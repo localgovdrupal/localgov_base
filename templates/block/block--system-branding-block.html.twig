@@ -13,6 +13,7 @@
  * - site_slogan: Slogan for site as defined in Site information settings.
  */
 #}
+
 {% block content %}
   {% if site_logo %}
     <div class="branding">
@@ -21,6 +22,11 @@
           <img src="{{ site_logo }}" alt="{{ site_name ? site_name : 'Home'|t }}" />
         </a>
       </div>
+    </div>
+  {% endif %}
+  {% if site_slogan %}
+    <div class="branding__item branding__item--slogan">
+      {{ site_slogan }}
     </div>
   {% endif %}
 {% endblock %}
