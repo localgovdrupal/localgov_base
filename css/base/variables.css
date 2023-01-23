@@ -176,6 +176,7 @@ body {
   --header-services-button-bg-color-hover: var(--color-accent);
   --header-services-button-color-hover: var(--color-white);
   --header-logo-width: 10rem;
+  --color-slogan: var(--color-white);
   --header-search-button-color: var(--color-white);
   --header-search-button-bg-color: var(--color-accent);
   --header-search-button-color-hover: var(--color-accent);
