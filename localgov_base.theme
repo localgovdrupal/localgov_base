@@ -130,3 +130,10 @@ function localgov_base_preprocess_container(&$variables) {
     $variables['element']['#id'] = $id;
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function localgov_base_form_preview_link_entity_form_alter(&$form, $form_state, $form_id) {
+  $form['#attached']['library'][''] = 'localgov_base/preview-link';
+}

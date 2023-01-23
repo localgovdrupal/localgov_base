@@ -132,6 +132,7 @@
   color: var(--header-link-color);
 }
 
+/* Branding Block Section */
 .branding__item--logo {
   width: var(--header-logo-width);
 }
@@ -145,6 +146,10 @@
   outline-color: var(--color-white);
   background-color: transparent;
   box-shadow: none;
+}
+
+.branding__item--slogan {
+  color: var(--color-slogan);
 }
 
 /* Search Region */
