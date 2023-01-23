@@ -11,113 +11,101 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 (function headerScript(Drupal) {
   Drupal.behaviors.header = {
     attach: function (context) {
-      context = context || document;
+      // Hide the search form label. We use .once() to avoid re-running.
+      //
+      // @todo: make it possible to override this without having to maintain a
+      //   *copy* of this file.
+      const headerSearchFormLabel = once('header-search-label', '.lgd-region--search form label', context);
 
-      const headerSearchForm = context.querySelector('.lgd-region--search form');
-      if (headerSearchForm) {
-        headerSearchForm.querySelector('label').classList.add('visually-hidden');
+      if (headerSearchFormLabel.length) {
+        headerSearchFormLabel[0].classList.add('visually-hidden');
       }
 
+      // Set up initial variables.
+      //
+      // We need a bunch of classes and selectors.
+      const headerToggleSelector = '.lgd-header__toggle';
+      const primaryToggleClass = 'lgd-header__toggle--primary';
+      const toggleActiveClass = 'lgd-header__toggle--active';
+      const regionActiveClass = 'lgd-header__nav--active';
+      // This contains all toggles and their corresponding regions.
+      const navInfo = {};
+      // This is used as a check on resize to see if the window size *actually*
+      // changed.
       let windowWidth = window.innerWidth;
+      // All the interactivity here revolves around the toggles, so query them
+      // and we can build an object full of references to them and to their
+      // regions. We use .once() to avoid re-running this.
+      const headerToggles = once('header-toggle', headerToggleSelector, context);
 
-      // Set variables for the regions we need to show/hide
-      const regions = [];
-      let primaryMenuRegion;
-      let secondaryMenuRegion;
-      if (context.querySelector('.lgd-header__nav--primary')) {
-        primaryMenuRegion = context.querySelector('.lgd-header__nav--primary');
-        regions.push(primaryMenuRegion);
-      }
-      if (context.querySelector('.lgd-header__nav--secondary')) {
-        secondaryMenuRegion = context.querySelector('.lgd-header__nav--secondary');
-        regions.push(secondaryMenuRegion);
-      }
-
-      // Set variables for menu toggles
-      const headerToggles = context.querySelectorAll('.lgd-header__toggle');
-      let primaryMenuToggle;
-      let secondaryMenuToggle;
-      if (context.querySelector('.lgd-header__toggle--primary')) {
-        primaryMenuToggle = context.querySelector('.lgd-header__toggle--primary');
-      }
-      if (context.querySelector('.lgd-header__toggle--secondary')) {
-        secondaryMenuToggle = context.querySelector('.lgd-header__toggle--secondary');
-      }
-
-      // If there are no menu toggle buttons present,
-      // get out of here as soon as possible
       if (!headerToggles.length) {
         return;
       }
 
-      headerToggles.forEach(function(headerToggle) {
-        if (headerToggle.classList.contains('js-processed')) {
-          return;
-        } else {
-          headerToggle.classList.add('js-processed');
-        }
-      });
+      // Looping over the discovered menu toggles, create an object containing
+      // references to the various DOM elements we need to work with.
+      headerToggles.forEach(function(toggle) {
+        const region = context.getElementById(toggle.getAttribute('aria-controls'));
+        const nav = toggle.classList.contains(primaryToggleClass)
+          ? 'primary'
+          : 'secondary';
+        // The resulting region.primary.firstLink isn't used, but it's less
+        // difficult to add it than to add only region.secondary.firstLink.
+        const firstLink = region.querySelector('.menu a');
 
-      // Set variables to use later for keyboard navigation
-      let secondaryMenuFirstLink;
-      if (secondaryMenuRegion) {
-        secondaryMenuFirstLink = secondaryMenuRegion.querySelector('.menu a');
-      }
+        navInfo[nav] = { toggle, region, firstLink };
+      });
 
       // When a menu toggle button is clicked, show/hide the menu regions.
       // Which menu region to show is decided by the "toggleThatWasClicked" parameter.
       function handleToggleClick(toggleThatWasClicked) {
-        const currentState = toggleThatWasClicked.getAttribute('aria-expanded');
-        currentState === 'false' ? 
-          toggleThatWasClicked.setAttribute('aria-expanded', 'true') : 
-          toggleThatWasClicked.setAttribute('aria-expanded', 'false');
-          
-        toggleThatWasClicked.classList.contains('lgd-header__toggle--active') ? 
-          toggleThatWasClicked.classList.remove('lgd-header__toggle--active') :
-          toggleThatWasClicked.classList.add('lgd-header__toggle--active');
+        // Get the current state as a boolean.
+        const currentState = toggleThatWasClicked.getAttribute('aria-expanded') === 'true';
+
+        toggleThatWasClicked.setAttribute('aria-expanded', !currentState);
+        toggleThatWasClicked.classList.toggle(toggleActiveClass);
       }
 
-      // General reset function to hide the menu regions and reset the toggle 
+      // General reset function to hide the menu regions and reset the toggle
       // button attributes.
       function handleReset() {
         headerToggles.forEach(function(headerToggle) {
           headerToggle.setAttribute('aria-expanded', 'false');
-          headerToggle.classList.remove('lgd-header__toggle--active');
+          headerToggle.classList.remove(toggleActiveClass);
         });
-        regions.forEach(function(region) { 
-          region.classList.remove('lgd-header__nav--active');
+
+        Object.keys(navInfo).forEach(function(nav) {
+          navInfo[nav].region.classList.remove(regionActiveClass);
         });
       }
 
       // When the primary menu toggle is clicked
       function handlePrimaryMenuToggleClick() {
-        handleToggleClick(primaryMenuToggle);
-        handleEscKeyClick(primaryMenuToggle);
-        regions.forEach(function(region) {
-          region.classList.contains('lgd-header__nav--active') ? 
-          region.classList.remove('lgd-header__nav--active') :
-          region.classList.add('lgd-header__nav--active');
-        });
+        handleToggleClick(navInfo.primary.toggle);
+        handleEscKeyClick(navInfo.primary.toggle);
+
+        navInfo.primary.region.classList.toggle(regionActiveClass);
       }
 
       // When the secondary menu toggle is clicked
       function handleSecondaryMenuToggleClick() {
-        handleToggleClick(secondaryMenuToggle);
-        handleEscKeyClick(secondaryMenuToggle);
-        secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? 
-        secondaryMenuRegion.classList.remove('lgd-header__nav--active') :
-        secondaryMenuRegion.classList.add('lgd-header__nav--active');
-        secondaryMenuRegion.classList.contains('lgd-header__nav--active') ? secondaryMenuFirstLink.focus() : null;
+        handleToggleClick(navInfo.secondary.toggle);
+        handleEscKeyClick(navInfo.secondary.toggle);
+
+        navInfo.secondary.region.classList.toggle(regionActiveClass);
+        navInfo.secondary.region.classList.contains(regionActiveClass)
+          ? navInfo.secondary.firstLink.focus()
+          : null;
       }
 
       // When on the first link in the secondary menu, if you shift+tab
       // set focus back to the services button
       function handleSecondaryMenuShiftTabClick() {
-        secondaryMenuFirstLink.addEventListener('keydown', function(e) {
-          if (e.shiftKey && e.key == 'Tab') { 
+        navInfo.secondary.firstLink.addEventListener('keydown', function(e) {
+          if (e.shiftKey && e.key == 'Tab') {
             e.preventDefault();
             handleReset();
-            secondaryMenuToggle.focus();
+            navInfo.secondary.toggle.focus();
           }
         });
       }
@@ -126,7 +114,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       function handleEscKeyClick(buttonToFocus) {
         context.addEventListener('keydown', function(e) {
           // When on any link in the secondary menu, if you hit escape
-          // set focus back to: 
+          // set focus back to:
           // 1. menu button on small screens, and
           // 2. services button on large screens
           if (e.key == 'Escape') {
@@ -139,27 +127,28 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
       // When the window is resized (or a device orientation changes),
       // set out what happens.
-      // On a small screen, the primary button is shown which will show both 
+      // On a small screen, the primary button is shown which will show both
       // menu regions when clicked.
       // On a large screen, the secondary button is shown which will show only
       // the secondary menu region when clicked (the primary menu will always be visible).
       function handleWindowResized() {
         handleReset();
+
         if  (window.innerWidth < 768) {
-          if (secondaryMenuToggle) {
-            secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
-            secondaryMenuToggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
+          if (navInfo.secondary.toggle) {
+            navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
+            navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
           }
-          if (primaryMenuToggle) {
-            primaryMenuToggle.addEventListener('click', handlePrimaryMenuToggleClick);
+          if (navInfo.primary.toggle) {
+            navInfo.primary.toggle.addEventListener('click', handlePrimaryMenuToggleClick);
           }
         } else {
-          if (primaryMenuToggle) {
-            primaryMenuToggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
+          if (navInfo.primary.toggle) {
+            navInfo.primary.toggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
           }
-          if (secondaryMenuToggle) { 
-            secondaryMenuToggle.addEventListener('click', handleSecondaryMenuToggleClick);
-            secondaryMenuToggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
+          if (navInfo.secondary.toggle) {
+            navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuToggleClick);
+            navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
           }
         }
       }
@@ -176,7 +165,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
           handleWindowResized();
         }
       }
-      
+
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
       window.addEventListener('resize', Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false));
