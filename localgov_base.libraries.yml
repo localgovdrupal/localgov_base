@@ -303,6 +303,12 @@ form-errors:
       css/components/form-errors.ie11.css: {}
       css/components/form-errors.css: {}
 
+preview-link:
+  css:
+    theme:
+      css/components/preview-link.ie11.css: {}
+      css/components/preview-link.css: {}
+
 term:
   css:
     theme:
