@@ -85,6 +85,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         handleEscKeyClick(navInfo.primary.toggle);
 
         navInfo.primary.region.classList.toggle(regionActiveClass);
+        navInfo.secondary.region.classList.toggle(regionActiveClass);
       }
 
       // When the secondary menu toggle is clicked
