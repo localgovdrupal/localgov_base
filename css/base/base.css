@@ -17,18 +17,19 @@ html {
   margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 body {
   margin: 0;
   font-family: var(--font-primary);
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto;
+  }
 }
 
 .dialog-off-canvas-main-canvas {
