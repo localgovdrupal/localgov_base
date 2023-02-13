@@ -146,6 +146,7 @@ ia-block:
 featured-subsite:
   css:
     theme:
+      css/components/featured-subsite.css: {}
 
 link-and-summary:
   css:
