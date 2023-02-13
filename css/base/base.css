@@ -9,21 +9,11 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  scroll-behavior: smooth;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 body {
@@ -32,6 +22,13 @@ body {
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto;
+  }
 }
 
 .dialog-off-canvas-main-canvas {
