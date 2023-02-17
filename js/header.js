@@ -80,16 +80,6 @@
 
         navInfo.primary.region.classList.toggle(regionActiveClass);
         navInfo.secondary.region.classList.toggle(regionActiveClass);
-        const state = navInfo.primary.toggle.getAttribute("aria-expanded");
-        state === "true"
-          ? navInfo.primary.toggle.setAttribute(
-              "aria-label",
-              `${Drupal.t("Close primary navigation")}`
-            )
-          : navInfo.primary.toggle.setAttribute(
-              "aria-label",
-              `${Drupal.t("Open primary navigation")}`
-            );
       }
 
       // When the secondary menu toggle is clicked
