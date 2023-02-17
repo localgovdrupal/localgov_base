@@ -1,8 +1,0 @@
-.lgd-image--has-caption {
-  border: 1px solid #f3f2f1;
-}
-
-.lgd-image__image + * {
-  padding: 1rem;
-  background-color: #f3f2f1;
-}

@@ -5,11 +5,8 @@ global:
   css:
     base:
       css/base/variables.css: {}
-      css/base/base.ie11.css: {}
       css/base/base.css: {}
-      css/layout/layout-utilities.ie11.css: {}
       css/layout/layout-utilities.css: {}
-      css/components/form-items.ie11.css: {}
       css/components/form-items.css: {}
       css/components/admin-toolbar.css: {}
       css/components/messages.css: {}
@@ -26,7 +23,6 @@ global:
 grid:
   css:
     layout:
-      css/layout/grid.ie11.css: {}
       css/layout/grid.css: {}
 
 region-tabs:
@@ -37,25 +33,21 @@ region-tabs:
 callout:
   css:
     theme:
-      css/components/callout.ie11.css: {}
       css/components/callout.css: {}
 
 wysiwyg-styles:
   css:
     theme:
-      css/components/wysiwyg-styles.ie11.css: {}
       css/components/wysiwyg-styles.css: {}
 
 header:
   css:
     theme:
-      css/components/header.ie11.css: {}
       css/components/header.css: {}
 
 secondary-menu:
   css:
     theme:
-      css/components/secondary-menu.ie11.css: {}
       css/components/secondary-menu.css: {}
 
 header-js:
@@ -69,186 +61,156 @@ header-js:
 footer:
   css:
     theme:
-      css/components/footer.ie11.css: {}
       css/components/footer.css: {}
 
 breadcrumbs:
   css:
     theme:
-      css/components/breadcrumbs.ie11.css: {}
       css/components/breadcrumbs.css: {}
 
 menu-main:
   css:
     theme:
-      css/components/menu-main.ie11.css: {}
       css/components/menu-main.css: {}
 
 page-title-block:
   css:
     theme:
-      css/components/page-title-block.ie11.css: {}
       css/components/page-title-block.css: {}
 
 service-landing-page:
   css:
     theme:
-      css/components/service-landing-page.ie11.css: {}
       css/components/service-landing-page.css: {}
 
 service-statuses:
   css:
     theme:
-      css/components/service-statuses.ie11.css: {}
       css/components/service-statuses.css: {}
 
 step-by-step:
   css:
     theme:
-      css/components/step-by-step.ie11.css: {}
       css/components/step-by-step.css: {}
 
 service-cta-block:
   css:
     theme:
-      css/components/service-cta-block.ie11.css: {}
       css/components/service-cta-block.css: {}
 
 full:
   css:
     theme:
-      css/components/full.ie11.css: {}
       css/components/full.css: {}
 
 teaser:
   css:
     theme:
-      css/components/teaser.ie11.css: {}
       css/components/teaser.css: {}
 
 page-sections:
   css:
     theme:
-      css/components/page-sections.ie11.css: {}
       css/components/page-sections.css: {}
 
 alert-banner:
   css:
     theme:
-      css/components/alert-banner.ie11.css: {}
       css/components/alert-banner.css: {}
 
 topic-list-builder:
   css:
     theme:
-      css/components/topic-list-builder.ie11.css: {}
       css/components/topic-list-builder.css: {}
 
 guide-nav:
   css:
     theme:
-      css/components/guide-nav.ie11.css: {}
       css/components/guide-nav.css: {}
 
 prev-next:
   css:
     theme:
-      css/components/prev-next.ie11.css: {}
       css/components/prev-next.css: {}
 
 sidebar:
   css:
     theme:
-      css/components/sidebar.ie11.css: {}
       css/components/sidebar.css: {}
 
 ia-block:
   css:
     theme:
-      css/components/ia-block.ie11.css: {}
       css/components/ia-block.css: {}
 
 featured-subsite:
   css:
     theme:
-      css/components/featured-subsite.ie11.css: {}
+      css/components/featured-subsite.css: {}
 
 link-and-summary:
   css:
     theme:
-      css/components/link-and-summary.ie11.css: {}
       css/components/link-and-summary.css: {}
 
 link:
   css:
     theme:
-      css/components/link.ie11.css: {}
       css/components/link.css: {}
 
 key-contacts:
   css:
     theme:
-      css/components/key-contacts.ie11.css: {}
       css/components/key-contacts.css: {}
 
 box-links:
   css:
     theme:
-      css/components/box-links.ie11.css: {}
       css/components/box-links.css: {}
 
 fact-box:
   css:
     theme:
-      css/components/fact-box.ie11.css: {}
       css/components/fact-box.css: {}
 
 image-with-caption:
   css:
     theme:
-      css/components/image-with-caption.ie11.css: {}
       css/components/image-with-caption.css: {}
 
 quote:
   css:
     theme:
-      css/components/quote.ie11.css: {}
       css/components/quote.css: {}
 
 featured-teasers:
   css:
     theme:
-      css/components/featured-teasers.ie11.css: {}
       css/components/featured-teasers.css: {}
 
 newsroom-teaser:
   css:
     theme:
-      css/components/newsroom-teaser.ie11.css: {}
       css/components/newsroom-teaser.css: {}
 
 tabs:
   css:
     theme:
-      css/components/tabs.ie11.css: {}
       css/components/tabs.css: {}
 
 directories:
   css:
     theme:
-      css/components/directories.ie11.css: {}
       css/components/directories.css: {}
 
 facets:
   css:
     theme:
-      css/components/facets.ie11.css: {}
       css/components/facets.css: {}
 
 news:
   css:
     theme:
-      css/components/news.ie11.css: {}
       css/components/news.css: {}
 
 blog:
@@ -259,37 +221,31 @@ blog:
 events:
   css:
     theme:
-      css/components/events.ie11.css: {}
       css/components/events.css: {}
 
 pager:
   css:
     theme:
-      css/components/pager.ie11.css: {}
       css/components/pager.css: {}
 
 callout-box:
   css:
     theme:
-      css/components/callout-box.ie11.css: {}
       css/components/callout-box.css: {}
 
 banner:
   css:
     theme:
-      css/components/banner.ie11.css: {}
       css/components/banner.css: {}
 
 sitewide-search:
   css:
     theme:
-      css/components/sitewide-search.ie11.css: {}
       css/components/sitewide-search.css: {}
 
 leaflet:
   css:
     theme:
-      css/components/leaflet.ie11.css: {}
       css/components/leaflet.css: {}
 
 video:
@@ -300,23 +256,19 @@ video:
 form-errors:
   css:
     theme:
-      css/components/form-errors.ie11.css: {}
       css/components/form-errors.css: {}
 
 preview-link:
   css:
     theme:
-      css/components/preview-link.ie11.css: {}
       css/components/preview-link.css: {}
 
 term:
   css:
     theme:
-      css/components/term.ie11.css: {}
       css/components/term.css: {}
 
 embedded-views:
   css:
     theme:
-      css/components/embedded-views.ie11.css: {}
       css/components/embedded-views.css: {}
