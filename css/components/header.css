@@ -138,6 +138,7 @@
 }
 
 .branding__item--logo a {
+  display: inline-block;
   transition: none;
 }
 .branding__item--logo a:focus {
