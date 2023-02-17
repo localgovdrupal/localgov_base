@@ -90,11 +90,11 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         state === "true"
           ? navInfo.primary.toggle.setAttribute(
               "aria-label",
-              "Close primary navigation"
+              `${Drupal.t("Close primary navigation")}`
             )
           : navInfo.primary.toggle.setAttribute(
               "aria-label",
-              "Open primary navigation"
+              `${Drupal.t("Open primary navigation")}`
             );
       }
 
