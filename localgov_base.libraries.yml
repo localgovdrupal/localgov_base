@@ -272,3 +272,4 @@ embedded-views:
   css:
     theme:
       css/components/embedded-views.css: {}
+
