@@ -1,7 +1,7 @@
 name: "LGD_SUB_THEME_NAME"
 description: "Your sub-theme, which uses localgov_base as its base theme."
 type: theme
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8.8 || ^9 || ^10
 base theme: "localgov_base"
 
 libraries-extend:

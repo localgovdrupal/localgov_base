@@ -37,6 +37,10 @@
   background-color: var(--alert-banner-close-button-color);
 }
 
+.localgov-alert-banner--minor .localgov-alert-banner__close:hover {
+  border-color: var(--alert-banner-minor-border-color);
+}
+
 /* Announcement */
 .localgov-alert-banner--announcement {
   background-color: var(--alert-banner-bg-color);
