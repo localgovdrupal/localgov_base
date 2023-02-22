@@ -130,7 +130,7 @@
         handleReset();
 
         if  (window.innerWidth < 768) {
-          if (navInfo.secondary.toggle) {
+          if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
           }
@@ -141,7 +141,7 @@
           if (navInfo.primary.toggle) {
             navInfo.primary.toggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
           }
-          if (navInfo.secondary.toggle) {
+          if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
             navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuToggleClick);
             navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
           }
