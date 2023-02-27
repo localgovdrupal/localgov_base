@@ -27,7 +27,7 @@
     background-color: var(--secondary-menu-bg-color-second);
   }
 
-  .menu--services-list {
+  .region-secondary-menu .menu {
     overflow-y: initial;
     max-height: auto;
     column-count: var(--secondary-menu-column-count);
