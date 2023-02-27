@@ -13,7 +13,7 @@
   padding-left: var(--spacing-large);
 }
 
-.menu--services-list {
+.region-secondary-menu .menu {
   overflow-y: auto;
   max-height: 400px;
 }
