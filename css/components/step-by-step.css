@@ -36,7 +36,12 @@
 }
 
 /* Focus states on step by step navigation buttons */
-.step-by-step-pages .step-master:focus, .step-by-step-pages .step-master:hover, .step-by-step-pages .step-master:active, .step-by-step-pages ol.step-list .step .step__title .step-show:focus, .step-by-step-pages ol.step-list .step .step__title .step-show:hover, .step-by-step-pages ol.step-list .step .step__title .step-show:active {
+.step-by-step-pages .step-master:focus,
+.step-by-step-pages .step-master:hover,
+.step-by-step-pages .step-master:active,
+.step-by-step-pages ol.step-list .step .step__title .step-show:focus,
+.step-by-step-pages ol.step-list .step .step__title .step-show:hover,
+.step-by-step-pages ol.step-list .step .step__title .step-show:active {
     text-decoration: none;
     color: var(--color-black);
     outline: 3px solid transparent;
