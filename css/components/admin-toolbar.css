@@ -1,3 +1,8 @@
 .toolbar-menu {
   font-size: 0.8125rem;
 }
+
+.toolbar .toolbar-bar .toolbar-item:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
