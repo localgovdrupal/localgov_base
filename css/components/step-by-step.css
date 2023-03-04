@@ -34,3 +34,15 @@
 .block-views-blocklocalgov-step-by-step-navigation-steps-for-overview {
   max-width: var(--step-by-step-nav-block-width);
 }
+
+/* Focus states on step by step navigation buttons */
+.step-by-step-pages .step-master:focus, .step-by-step-pages .step-master:hover, .step-by-step-pages .step-master:active, .step-by-step-pages ol.step-list .step .step__title .step-show:focus, .step-by-step-pages ol.step-list .step .step__title .step-show:hover, .step-by-step-pages ol.step-list .step .step__title .step-show:active {
+    text-decoration: none;
+    color: var(--color-black);
+    outline: 3px solid transparent;
+    background-color: var(--color-focus);
+    -webkit-box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
+    box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
+    -webkit-box-decoration-break: clone;
+}
+
