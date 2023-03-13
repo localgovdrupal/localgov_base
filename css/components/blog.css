@@ -9,7 +9,6 @@
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
-
 /* Featured posts */
 .lgd-blog__featured {
   margin-bottom: var(--vertical-rhythm-spacing);
@@ -24,8 +23,8 @@
 .field--name-localgov-blog-channel-featured > .field__items > .field__item:first-of-type {
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: var(--color-grey-lightest);
   padding: var(--vertical-rhythm-spacing);
+  background-color: var(--color-grey-lightest);
 }
 
 .view-localgov-blog-list .view-content {

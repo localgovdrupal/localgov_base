@@ -70,7 +70,6 @@
   padding: var(--alert-banner-inner-padding-vertical) var(--alert-banner-inner-padding-horizontal);
 }
 
-
 .localgov-alert-banner--announcement .localgov-alert-banner__title {
   color: var(--alert-banner-title-color-announcement);
 }

@@ -19,8 +19,8 @@
 .lgd-footer__footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  color: var(--color-footer-text);
   background-color: var(--color-section-footer-bg);
-  color: var(--color-footer-text)
 }
 
 .lgd-footer__footer a {
@@ -30,8 +30,8 @@
 .lgd-footer__post-footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
   padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
-  background-color: var(--color-section-post-footer-bg);
   color: var(--color-post-footer-text);
+  background-color: var(--color-section-post-footer-bg);
 }
 
 .lgd-footer__post-footer a {

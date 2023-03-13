@@ -56,7 +56,7 @@
 }
 
 .list-checked li::marker {
-  content:"\2714\0020";
+  content: "\2714\0020";
   color: #048a04;
 }
 

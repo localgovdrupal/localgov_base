@@ -10,29 +10,29 @@
 
 .link--button-style .link-wrapper {
   padding:
-  var(--button-padding-vertical) var(--button-padding-horizontal)
-  var(--button-padding-vertical) var(--button-padding-horizontal);
+    var(--button-padding-vertical) var(--button-padding-horizontal)
+    var(--button-padding-vertical) var(--button-padding-horizontal);
+  color: var(--button-text-color);
   border: var(--border);
   border-color: var(--button-border-color);
   border-radius: var(--button-border-radius);
   background-color: var(--button-bg-color);
   font-family: var(--button-font-family);
   font-size: var(--font-size-medium);
-  color: var(--button-text-color);
 }
 
 .link--button-style .lgd-icon {
   fill: var(--button-text-color);
 }
 
-.link--button-style:hover .lgd-icon, 
+.link--button-style:hover .lgd-icon,
 .link--button-style:focus .lgd-icon {
   fill: var(--button-text-color-hover);
 }
 
 .link--button-style a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 .link--button-style:focus .link-wrapper,
