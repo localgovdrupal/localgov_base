@@ -1,30 +1,30 @@
 .lgd-page-section--bg-colour-1 {
-  background-color: var(--color-page-section-background-color-1);
   color: var(--color-page-section-background-color-1-text-color);
+  background-color: var(--color-page-section-background-color-1);
 }
 .lgd-page-section--bg-colour-2 {
-  background-color: var(--color-page-section-background-color-2);
   color: var(--color-page-section-background-color-2-text-color);
+  background-color: var(--color-page-section-background-color-2);
 }
 .lgd-page-section--bg-colour-3 {
-  background-color: var(--color-page-section-background-color-3);
   color: var(--color-page-section-background-color-3-text-color);
+  background-color: var(--color-page-section-background-color-3);
 }
-/* 
+/*
   Adding 3 extra colour options here, so they are available if
   other subthemes/sites need them.
 */
 .lgd-page-section--bg-colour-4 {
-  background-color: var(--color-page-section-background-color-4);
   color: var(--color-page-section-background-color-4-text-color);
+  background-color: var(--color-page-section-background-color-4);
 }
 .lgd-page-section--bg-colour-5 {
-  background-color: var(--color-page-section-background-color-5);
   color: var(--color-page-section-background-color-5-text-color);
+  background-color: var(--color-page-section-background-color-5);
 }
 .lgd-page-section--bg-colour-6 {
-  background-color: var(--color-page-section-background-color-6);
   color: var(--color-page-section-background-color-6-text-color);
+  background-color: var(--color-page-section-background-color-6);
 }
 
 .lgd-page-section--padding-top-small {
@@ -136,25 +136,25 @@
 
 /* Box Links */
 .lgd-page-section--bg-colour-1 .box-link {
+  color: var(--color-page-section-background-color-1-box-link-text-color);
   border-color: var(--color-page-section-background-color-1-box-link-border-color);
   background-color: var(--color-page-section-background-color-1-box-link-background-color);
-  color: var(--color-page-section-background-color-1-box-link-text-color);
 }
 .lgd-page-section--bg-colour-1 .box-link a {
   color: var(--color-page-section-background-color-1-box-link-link-color);
 }
 .lgd-page-section--bg-colour-2 .box-link {
+  color: var(--color-page-section-background-color-2-box-link-text-color);
   border-color: var(--color-page-section-background-color-2-box-link-border-color);
   background-color: var(--color-page-section-background-color-2-box-link-background-color);
-  color: var(--color-page-section-background-color-2-box-link-text-color);
 }
 .lgd-page-section--bg-colour-2 .box-link a {
   color: var(--color-page-section-background-color-2-box-link-link-color);
 }
 .lgd-page-section--bg-colour-3 .box-link {
+  color: var(--color-page-section-background-color-3-box-link-text-color);
   border-color: var(--color-page-section-background-color-3-box-link-border-color);
   background-color: var(--color-page-section-background-color-3-box-link-background-color);
-  color: var(--color-page-section-background-color-3-box-link-text-color);
 }
 .lgd-page-section--bg-colour-3 .box-link a {
   color: var(--color-page-section-background-color-3-box-link-link-color);
@@ -162,22 +162,22 @@
 
 /* Featured Subsites */
 .lgd-page-section--bg-colour-1 .featured-subsite {
-  background-color: var(--color-page-section-background-color-1-featured-subsite-background-color);
   color: var(--color-page-section-background-color-1-featured-subsite-text-color);
+  background-color: var(--color-page-section-background-color-1-featured-subsite-background-color);
 }
 .lgd-page-section--bg-colour-1 .featured-subsite a {
   color: var(--color-page-section-background-color-1-featured-subsite-link-color);
 }
 .lgd-page-section--bg-colour-2 .featured-subsite {
-  background-color: var(--color-page-section-background-color-2-featured-subsite-background-color);
   color: var(--color-page-section-background-color-2-featured-subsite-text-color);
+  background-color: var(--color-page-section-background-color-2-featured-subsite-background-color);
 }
 .lgd-page-section--bg-colour-2 .featured-subsite a {
   color: var(--color-page-section-background-color-2-featured-subsite-link-color);
 }
 .lgd-page-section--bg-colour-3 .featured-subsite {
-  background-color: var(--color-page-section-background-color-3-featured-subsite-background-color);
   color: var(--color-page-section-background-color-3-featured-subsite-text-color);
+  background-color: var(--color-page-section-background-color-3-featured-subsite-background-color);
 }
 .lgd-page-section--bg-colour-3 .featured-subsite a {
   color: var(--color-page-section-background-color-3-featured-subsite-link-color);

@@ -3,6 +3,6 @@
 }
 
 .toolbar .toolbar-bar .toolbar-item:focus {
-    background-color: transparent;
-    box-shadow: none;
+  background-color: transparent;
+  box-shadow: none;
 }
