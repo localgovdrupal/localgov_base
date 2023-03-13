@@ -57,7 +57,7 @@ a:not(.toolbar a):focus {
   outline: 3px solid transparent;
   background-color: var(--color-focus);
   box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
-  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 h1,
