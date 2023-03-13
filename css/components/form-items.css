@@ -257,7 +257,7 @@ input[type="submit"]:hover {
   background: currentColor;
 }
 .webform-type-radios .form-item [type="radio"]:focus + label::before,
-.webform-type-webform-radios-other  .form-item [type="radio"]:focus + label::before {
+.webform-type-webform-radios-other .form-item [type="radio"]:focus + label::before {
   box-shadow: 0 0 0 4px var(--radio-select-focus-color);
 }
 .webform-type-radios .form-item input:checked + label::after,

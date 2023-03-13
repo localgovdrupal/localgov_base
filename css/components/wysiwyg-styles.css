@@ -66,8 +66,8 @@
   mask-image: url("../../templates/includes/icons/external-link.svg");
 }
 
-/* Styled lists*/
+/* Styled lists */
 .list-checked li::marker {
-  content:"\2714\0020";
+  content: "\2714\0020";
   color: var(--color-green);
 }

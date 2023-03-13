@@ -2,7 +2,7 @@
   @file Utility classes to drop into templates.
 */
 
-/* 
+/*
   Position the main canvas relative so anything further down the page that
   might use absolute will not cover the admin toolbar.
 */

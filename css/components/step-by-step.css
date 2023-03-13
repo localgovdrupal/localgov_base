@@ -42,11 +42,10 @@
 .step-by-step-pages ol.step-list .step .step__title .step-show:focus,
 .step-by-step-pages ol.step-list .step .step__title .step-show:hover,
 .step-by-step-pages ol.step-list .step .step__title .step-show:active {
-    text-decoration: none;
-    color: var(--color-black);
-    outline: 3px solid transparent;
-    background-color: var(--color-focus);
-    box-shadow: 0 -2px var(--color-focus),0 4px var(--color-black);
-    box-decoration-break: clone;
+  text-decoration: none;
+  color: var(--color-black);
+  outline: 3px solid transparent;
+  background-color: var(--color-focus);
+  box-decoration-break: clone;
+  box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
 }
-
