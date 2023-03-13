@@ -68,6 +68,8 @@ cp ../../contrib/localgov_base/scripts/subtheme-items/package.json package.json
 echo "+ themes/custom/$LGD_SUB_THEME/package.json created"
 cp ../../contrib/localgov_base/scripts/subtheme-items/.nvmrc .nvmrc
 echo "+ themes/custom/$LGD_SUB_THEME/.nvmrc created"
+cp ../../contrib/localgov_base/scripts/subtheme-items/.stylelintrc.json .stylelintrc.json
+echo "+ themes/custom/$LGD_SUB_THEME/.stylelintrc.json created"
 
 perl -i -pe "s/LGD_SUB_THEME_NAME/$LGD_SUB_THEME_NAME/g" *
 perl -i -pe "s/LGD_SUB_THEME/$LGD_SUB_THEME/g" *

@@ -4,15 +4,15 @@
   "description": "NPM scripts for the localgov_base theme.",
   "main": "index.js",
   "scripts": {
-    "start": "npm run get-stylelint-file && npm run lint:css",
-    "get-stylelint-file": "cp ../../../core/.stylelintrc.json .",
-    "lint:css": "npm run get-stylelint-file && stylelint \"**/*.css\" --fix"
+    "start": "npm run lint:css",
+    "lint:css": "stylelint \"**/*.css\" --fix"
   },
   "author": "Mark Conroy",
   "license": "ISC",
   "devDependencies": {
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint": "^14.0.1",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^5.0.0"
   }
 }
