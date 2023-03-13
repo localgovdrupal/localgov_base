@@ -9,7 +9,6 @@
     margin-bottom: var(--blog-author-content-margin);
   }
 
-
   .lgd-term__image {
     flex-shrink: 0;
     width: var(--blog-author-image-width);

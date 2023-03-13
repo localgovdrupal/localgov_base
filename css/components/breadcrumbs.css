@@ -8,8 +8,8 @@
 */
 
 .lgd-region--breadcrumb {
-  background-color: var(--breadcrumbs-background-color);
   margin-bottom: var(--breadcrumbs-spacing-bottom);
+  background-color: var(--breadcrumbs-background-color);
 }
 
 .breadcrumbs {
