@@ -20,6 +20,7 @@
 {% set twitter_icon = 'twitter-square' %}
 {% set email_icon = 'envelope-square' %}
 {% set phone_icon = 'phone-square' %}
+{% set website_icon = 'globe' %}
 {% set map_icon = 'map-marker-alt' %}
 
 {# 
@@ -107,7 +108,34 @@
                             icon_classes: 'service-landing-page__contact-icon'
                           }
                         %}
+                        <span class="visually-hidden">{{ 'Our phone number'|t }}</span>
                         {{ content.localgov_phone|render|striptags }}
+                      </li>
+                    {% endif %}
+                    
+                    {% if node.localgov_contact_us_online.value %}
+                      <li class="service-landing-page__contact-list-item">
+                        {% include "@localgov_base/includes/icons/icon.html.twig" with {
+                            icon_name: website_icon,
+                            icon_wrapper_element: 'span',
+                            icon_classes: 'service-landing-page__contact-icon'
+                          }
+                        %}
+                        <span class="visually-hidden">{{ 'Our website'|t }}</span>
+                        <a href="{{ node.localgov_contact_us_online.value }}">{{ node.localgov_contact_us_online.value }}</a>
+                      </li>
+                    {% endif %}
+                    
+                    {% if node.localgov_other_team_contacts.value %}
+                      <li class="service-landing-page__contact-list-item">
+                        {% include "@localgov_base/includes/icons/icon.html.twig" with {
+                            icon_name: website_icon,
+                            icon_wrapper_element: 'span',
+                            icon_classes: 'service-landing-page__contact-icon'
+                          }
+                        %}
+                        <span class="visually-hidden">{{ 'Other team contacts website'|t }}</span>
+                        <a href="{{ node.localgov_other_team_contacts.value }}">{{ node.localgov_other_team_contacts.value }}</a>
                       </li>
                     {% endif %}
                   </ul>

@@ -12,6 +12,11 @@
 .service-landing-page__contact-list-item,
 .service-landing-page__contact-title {
   display: flex;
+  align-items: center;
+}
+
+.service-landing-page__contact-list-item + .service-landing-page__contact-list-item {
+  margin-top: var(--spacing-smaller);
 }
 
 .service-landing-page__contact-map {
