@@ -58,7 +58,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="banner__image">
+      <div class="banner__image" aria-hidden="true">
         {{ content }}
       </div>
     {% endblock %}
