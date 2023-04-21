@@ -10,6 +10,7 @@ global:
       css/components/form-items.css: {}
       css/components/admin-toolbar.css: {}
       css/components/messages.css: {}
+      css/components/skip-link.css: {}
   # Declare dependencies for other libraries that we want to load
   # on every page.
   dependencies:
