@@ -2,6 +2,12 @@
   padding: 0; /* Override the module css */
 }
 
+.call-out-box__content > h2,
+.call-out-box__content > h3,
+.call-out-box__content > h4 {
+  color: var(--call-out-box-title-color);
+}
+
 .call-out-box--no-image {
   background-color: var(--call-out-box-bg-color);
 }

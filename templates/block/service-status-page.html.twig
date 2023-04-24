@@ -1,24 +1,26 @@
 {% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/service-statuses') }}
+	{{ attach_library('localgov_base/service-statuses') }}
 {% endif %}
 
-<div class="service-statuses">
-  {% if items %}
-    <ul class="service-statuses-list">
-      {% for item in items %}
-        <li class="service-statuses-list__item">
-          <article class="service-status">
-            <time datetime="{{ item.date|date("Y-m-d") }}" class="service-status__date">{{ item.date|date("d.m.Y") }}</time>
-            <h2 class="service-status__title">{{ item.title }}</h2>
-            <p class="service-status__summary">{{ item.description }}</p>
-            <a class="service-status__read-more" aria-label="{{ 'Read more about status:'|t }} {{ item.title }}" href="{{ item.url }}">{{ 'Read more'|t }}</a>
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <div class="service-statuses-list">
-      <p>{{ 'There are no current issues with this service.'|t }}</p>
-    </div>
-  {% endif %}
+<div class="lgd-container padding-horizontal">
+	<div class="service-statuses">
+		{% if items %}
+			<ul class="service-statuses-list">
+				{% for item in items %}
+					<li class="service-statuses-list__item">
+						<article class="service-status">
+							<time datetime="{{ item.date|date("Y-m-d") }}" class="service-status__date">{{ item.date|date("d.m.Y") }}</time>
+							<h2 class="service-status__title">{{ item.title }}</h2>
+							<p class="service-status__summary">{{ item.description }}</p>
+							<a class="service-status__read-more" aria-label="{{ 'Read more about status:'|t }} {{ item.title }}" href="{{ item.url }}">{{ 'Read more'|t }}</a>
+						</article>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<div class="service-statuses-list">
+				<p>{{ 'There are no current issues with this service.'|t }}</p>
+			</div>
+		{% endif %}
+	</div>
 </div>
