@@ -273,3 +273,8 @@ embedded-views:
   css:
     theme:
       css/components/embedded-views.css: {}
+
+localgov_eu_cookie_compliance:
+  css:
+    theme:
+      css/components/localgov_eu_cookie_compliance.css: {}
