@@ -62,10 +62,6 @@ a:not(.toolbar a):focus {
   box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
 }
 
-ul li a {
-  display: block;
-}
-
 h1,
 .h1,
 h2,
