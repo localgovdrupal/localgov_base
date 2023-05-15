@@ -5,7 +5,7 @@
   having a dependency on the base theme's variables for styling. By
   including this here, there will be sensible behaviour out-of-the-box.
   
-  End-users can override these styles in their decendent themes, if needed.
+  End-users can override these styles in their descendant themes, if needed.
 
   This uses the .lgd-region path to increase specificity over that
   included in the compliance module, as when using LGD this is
