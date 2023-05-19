@@ -21,5 +21,6 @@
 }
 
 .lgd-guide-nav__list-item > a {
+  display: inline;
   font-weight: bold;
 }
