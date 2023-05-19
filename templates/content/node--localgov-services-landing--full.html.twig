@@ -48,6 +48,7 @@
       <div class="lgd-row__full">
         {# Begin Services List #}
         {% if node.localgov_destinations.value %}
+          <h2 class="visually-hidden">{{ 'Services List'|t }}</h2>
           <section class="service-landing-page__services lgd-teaser-list">
             {{ content.localgov_destinations }}
           </section>

@@ -1,0 +1,18 @@
+/*
+  @file Theming for localgovdrupal/localgov_eu_cookie_compliance
+  
+  This has been included to avoid the cookie compliance integration
+  having a dependency on the base theme's variables for styling. By
+  including this here, there will be sensible behaviour out-of-the-box.
+  
+  End-users can override these styles in their descendant themes, if needed.
+
+  This uses the .lgd-region path to increase specificity over that
+  included in the compliance module, as when using LGD this is
+  rendered within .lgd-region.lgd-region--content-top
+*/ 
+
+.lgd-region .eu-cookie-compliance-save-preferences-button.spinning::before {
+    box-shadow: 0 0 2px 0 var(--button-text-color-hover);
+    border-right: 3px solid var(--button-text-color-hover);
+}
