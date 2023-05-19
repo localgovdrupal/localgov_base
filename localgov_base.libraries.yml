@@ -278,4 +278,3 @@ localgov_eu_cookie_compliance:
   css:
     theme:
       css/components/localgov_eu_cookie_compliance.css: {}
-
