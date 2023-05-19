@@ -11,6 +11,8 @@ We developed this theme with scalability, ease of use, and ease of customisation
 ## Inline Documentation
 Instead of creating documentation for the theme and storing it in a wiki or something else that is likely to not be updated, we have written detailed comments inline with the code. This should make it easier to know exactly what code block any specific documentation item refers to.
 
+The theme includes an automatically-generated list of all the CSS variables in [variables.md](./variables.md).
+
 ## Sub-theme
 To create a sub-theme, you simply need to run the sub-theme creation script that is in the `/scripts` directory, like so:
 
