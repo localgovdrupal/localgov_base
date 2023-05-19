@@ -113,6 +113,7 @@ input[type="submit"]:hover {
   wrapping them.
 */
 
+.form-item input[type="checkbox"],
 .form-checkboxes input[type="checkbox"],
 .facet-item input[type="checkbox"],
 .form-item-webform-terms-of-service input[type="checkbox"] {
@@ -127,6 +128,7 @@ input[type="submit"]:hover {
   opacity: 0;
 }
 
+.form-item input[type="checkbox"] + label,
 .form-checkboxes input[type="checkbox"] + label,
 .facet-item input[type="checkbox"] + label,
 .form-item-webform-terms-of-service input[type="checkbox"] + label {
@@ -137,6 +139,7 @@ input[type="submit"]:hover {
   touch-action: manipulation;
 }
 
+.form-item input[type="checkbox"] + label::before,
 .form-checkboxes input[type="checkbox"] + label::before,
 .facet-item input[type="checkbox"] + label::before,
 .form-item-webform-terms-of-service input[type="checkbox"] + label::before {
@@ -150,6 +153,7 @@ input[type="submit"]:hover {
   border: 2px solid var(--checkbox-select-outline-color);
   background: transparent;
 }
+.form-item input[type="checkbox"] + label::after,
 .form-checkboxes input[type="checkbox"] + label::after,
 .facet-item input[type="checkbox"] + label::after,
 .form-item-webform-terms-of-service input[type="checkbox"] + label::after {
@@ -168,6 +172,7 @@ input[type="submit"]:hover {
   background: transparent;
 }
 
+.form-item input[type="checkbox"]:focus + label:before,
 .form-checkboxes input[type="checkbox"]:focus + label:before,
 .facet-item input[type="checkbox"]:focus + label:before,
 .form-item-webform-terms-of-service input[type="checkbox"]:focus + label:before {
@@ -175,15 +180,18 @@ input[type="submit"]:hover {
   box-shadow: 0 0 0 3px var(--checkbox-select-focus-color);
 }
 
+.form-item input[type="checkbox"]:hover + label,
 .form-checkboxes input[type="checkbox"]:hover + label,
 .facet-item input[type="checkbox"]:hover + label,
 .form-item-webform-terms-of-service input[type="checkbox"]:hover + label,
+.form-item input[type="checkbox"]:focus + label,
 .form-checkboxes input[type="checkbox"]:focus + label,
 .facet-item input[type="checkbox"]:focus + label,
 .form-item-webform-terms-of-service input[type="checkbox"]:focus + label {
   text-decoration: underline;
 }
 
+.form-item input[type="checkbox"]:checked + label:after,
 .form-checkboxes input[type="checkbox"]:checked + label:after,
 .facet-item input[type="checkbox"]:checked + label:after,
 .form-item-webform-terms-of-service input[type="checkbox"]:checked + label:after {
