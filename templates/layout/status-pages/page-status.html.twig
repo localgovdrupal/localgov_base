@@ -96,9 +96,7 @@
   {{ page.breadcrumb }}
 {% endif %}
 
-{% if has_messages %}
-  {{ page.messages }}
-{% endif %}
+{{ page.messages }}
 
 <main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
 
@@ -107,7 +105,7 @@
   {% endif %}
 
   {% block page_content %}
-    {# 
+    {#
       Placing this in a block, so we can override it with custom HTML if we
       want on any templates that extend this one.
     #}
