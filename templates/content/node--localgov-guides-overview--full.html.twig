@@ -19,10 +19,10 @@
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
   <div class="lgd-container padding-horizontal">
     {{ title_prefix }}
-      <h2{{ title_attributes.addClass('lgd-guides__title') }}>
+      <h2{{ title_attributes.addClass('lgd-guides__title').setAttribute('id', 'lgd-guides__title') }}>
         {{ 'Overview'|t }}
       </h2>
-    {{ title_suffix }}  
+    {{ title_suffix }}
 
     {% if content %}
       <div{{ content_attributes.addClass('lgd-guides__content', 'node__content') }}>

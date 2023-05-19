@@ -5,7 +5,7 @@
 */
 #}
 
-{% 
+{%
   set classes = [
     'lgd-prev-next',
     'lgd-prev-next--guides',
@@ -23,7 +23,7 @@
   <ul class="lgd-prev-next__list">
     {% if previous_url %}
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">
-        <a href="{{ previous_url }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous'|t }}: {{ previous_title }}">
+        <a href="{{ previous_url }}#lgd-guides__title" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous'|t }}: {{ previous_title }}">
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
               icon_name: previous_icon,
               icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
@@ -35,7 +35,7 @@
     {% endif %}
     {% if next_url %}
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--next">
-        <a href="{{ next_url }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next'|t }}: {{ next_title }}">
+        <a href="{{ next_url }}#lgd-guides__title" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next'|t }}: {{ next_title }}">
           {{ 'Next'|t }}
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
               icon_name: next_icon,
