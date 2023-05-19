@@ -52,14 +52,12 @@ function localgov_base_preprocess_page(&$variables) {
     $excluded_regions = [
       'messages',
     ];
+    if (in_array($region, $excluded_regions)) {
+      continue;
+    }
 
-    if (!in_array($region, $excluded_regions)) {
-      $copy = $variables['page'][$region];
-      $rendered = Drupal::service('renderer')->renderPlain($copy);
-    }
-    else {
-      $rendered = Drupal::service('renderer')->renderPlain($variables['page'][$region]);
-    }
+    $copy = $variables['page'][$region];
+    $rendered = Drupal::service('renderer')->renderPlain($copy);
     $variables[$has] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];

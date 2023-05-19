@@ -34,6 +34,6 @@
 */
 body {
   --color-accent: green;
-  --font-secondary: oswald, var(--font-primary);
+  --font-secondary: georgia, var(--font-primary);
   --line-height: 1.3;
 }

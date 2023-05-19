@@ -29,3 +29,7 @@ regions:
   lower_footer_second: "Lower footer second"
   lower_footer_third: "Lower footer third"
   disabled: "Disabled"
+
+libraries-extend:
+  localgov_eu_cookie_compliance/localgov_eu_cookie_compliance:
+    - localgov_base/localgov_eu_cookie_compliance
