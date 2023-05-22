@@ -43,7 +43,6 @@ main {
 }
 
 a {
-  display: inline-block;
   transition: var(--transition-time);
   color: var(--color-link);
 }

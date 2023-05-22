@@ -22,6 +22,7 @@
 }
 
 .lgd-region--tabs .tabs > ul > li a {
+  display: inline-block;
   padding: 1rem;
   text-decoration: none;
   color: black;
