@@ -17,7 +17,7 @@
       {% set list_type = 'ul' %}
   {% endif %}
   <h2 class="visually-hidden">{{ 'Guide Navigation'|t }}</h2>
-  <a class="visually-hidden" href="#lgd-guides__title">{{ 'Skip Guide Navigation'|t }}</a>
+  <a class="visually-hidden focusable" href="#lgd-guides__title">{{ 'Skip Guide Navigation'|t }}</a>
   <nav class="lgd-guide-nav" aria-label="{{ 'Guide'|t }}">
     <{{ list_type }} class="lgd-guide-nav__list">
       {% for link in links %}
