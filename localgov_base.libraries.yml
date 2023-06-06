@@ -124,7 +124,7 @@ topic-list-builder:
     theme:
       css/components/topic-list-builder.css: {}
 
-guide:
+guides:
   js:
     /js/guides.js: {}
 
