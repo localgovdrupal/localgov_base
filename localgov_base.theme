@@ -5,9 +5,9 @@
  * Theme hooks to support the LocalGov Base Theme.
  */
 
+use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
-use Drupal\Component\Utility\Crypt;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
