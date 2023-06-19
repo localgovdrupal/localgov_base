@@ -16,6 +16,9 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
+
+{{ attach_library('localgov_base/guides') }}
+
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
   <div class="lgd-container padding-horizontal">
     {{ title_prefix }}
