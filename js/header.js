@@ -45,9 +45,10 @@
           : 'secondary';
         // The resulting region.primary.firstLink isn't used, but it's less
         // difficult to add it than to add only region.secondary.firstLink.
-        const firstLink = region.querySelector('.menu a');
-
-        navInfo[nav] = { toggle, region, firstLink };
+        if (region) {
+          const firstLink = region.querySelector('.menu a');
+          navInfo[nav] = { toggle, region, firstLink };
+        }
       });
 
       // When a menu toggle button is clicked, show/hide the menu regions.
@@ -138,7 +139,7 @@
             navInfo.primary.toggle.addEventListener('click', handlePrimaryMenuToggleClick);
           }
         } else {
-          if (navInfo.primary.toggle) {
+          if (Object.keys(navInfo).includes('primary') && navInfo.primary.toggle) {
             navInfo.primary.toggle.removeEventListener('click', handlePrimaryMenuToggleClick, true);
           }
           if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
