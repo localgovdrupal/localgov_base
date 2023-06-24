@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default node template for localgov_guides_overview pages.
+ * Theme override for the localgov_guides_overview pages template.
  */
 #}
 {%
@@ -23,7 +23,7 @@
   <div class="lgd-container padding-horizontal">
     {{ title_prefix }}
       <h2{{ title_attributes.addClass('lgd-guides__title').setAttribute('id', 'lgd-guides__title') }}>
-        {{ 'Overview'|t }}
+        {{ guide_overview_title|default('Overview'|t) }}
       </h2>
     {{ title_suffix }}
 
