@@ -1,0 +1,29 @@
+.paragraph--type--localgov-contact {
+  margin: 1em 0;
+  padding: 0.2em 0 0.2em 2em;
+  border-left: 8px solid var(--color-grey-light);
+}
+
+.paragraph--type--localgov-contact .field {
+  margin: 0.35em 0;
+}
+
+.paragraph--type--localgov-contact .field--name-localgov-contact-heading {
+  font-size: var(--font-size-h3);
+  font-weight: var(--heading-3-font-weight);
+  line-height: var(--heading-3-line-height);
+  margin-bottom: 1em;
+}
+
+.paragraph--type--localgov-contact
+  .field:not(.field--type-address):not(.field--type-office-hours)
+  .field__label,
+.paragraph--type--localgov-contact
+  .field:not(.field--type-address):not(.field--type-office-hours)
+  .field__item {
+  display: inline-block;
+}
+
+.lgd-region--content .paragraph--type--localgov-contact a {
+  word-break: break-word;
+}
