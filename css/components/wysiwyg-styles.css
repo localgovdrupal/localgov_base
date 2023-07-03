@@ -28,6 +28,10 @@
   border-color: var(--color-warning);
 }
 
+.alert-success {
+  border-color: var(--color-success);
+}
+
 /* Links */
 .btn.btn-start {
   display: inline-flex;

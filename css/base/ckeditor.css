@@ -30,6 +30,10 @@
   border-color: #ed7522;
 }
 
+.alert-success {
+  border-color: #048a04;
+}
+
 /* Links */
 .btn.btn-start {
   padding: 0.5rem 1rem;
