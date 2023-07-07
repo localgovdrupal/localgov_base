@@ -52,6 +52,23 @@ select,
   font-size: var(--font-size-medium);
 }
 
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 0;
+  box-shadow: inset 0 0 0 3px;
+  border-color: var(--color-black);
+}
+
 .select2-container--default .select2-selection--single {
   display: flex;
   align-items: center;
