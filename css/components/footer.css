@@ -12,9 +12,6 @@
 .lgd-footer__pre-footer a {
   color: var(--color-pre-footer-link);
 }
-.lgd-footer__pre-footer a:focus {
-  color: var(--color-grey-dark);
-}
 
 .lgd-footer__footer {
   padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
