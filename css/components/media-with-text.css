@@ -1,0 +1,67 @@
+/**
+ * @file
+ * Basic styling for Media with text paragraph.
+ */
+
+.media-with-text--featured {
+  background-color: var(--color-grey-lightest);
+  border: var(--border);
+}
+
+.media-with-text {
+  container-type: inline-size;
+}
+
+.media-with-text--featured .media-with-text__body {
+  padding: 1rem;
+}
+
+@container (min-width: 500px) {
+  .media-with-text--media-left .media-with-text__inner,
+  .media-with-text--media-right .media-with-text__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.media-with-text--media-one-quarter .media-with-text__body,
+.media-with-text--media-three-quarters .media-with-text__media {
+  flex-basis: 75%;
+}
+
+.media-with-text--media-one-quarter .media-with-text__media,
+.media-with-text--media-three-quarters .media-with-text__body {
+  flex-basis: 25%;
+}
+
+.media-with-text--media-one-third .media-with-text__media,
+.media-with-text--media-two-thirds .media-with-text__body {
+  flex-basis: 33%;
+}
+
+.media-with-text--media-one-half .media-with-text__body,
+.media-with-text--media-one-half .media-with-text__media {
+  flex-basis: 50%;
+}
+
+.media-with-text--media-one-third .media-with-text__body,
+.media-with-text--media-two-thirds .media-with-text__media {
+  flex-basis: 66%;
+}
+
+.media-with-text--media-left .media-with-text__body,
+.media-with-text--media-right .media-with-text__body {
+  width: 100%
+}
+
+.media-with-text--media-left .media-with-text__body {
+  padding-left: var(--spacing);
+}
+
+.media-with-text--media-right .media-with-text__body {
+  padding-right: var(--spacing);
+}
+
+.media-with-text--media-top .media-with-text__media {
+  margin-bottom: var(--spacing);
+}
