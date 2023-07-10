@@ -183,6 +183,11 @@ image-with-caption:
     theme:
       css/components/image-with-caption.css: {}
 
+media-with-text:
+  css:
+    theme:
+      css/components/media-with-text.css: {}
+
 quote:
   css:
     theme:
