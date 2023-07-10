@@ -84,44 +84,48 @@
 %}
 
 {% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/sidebar') }}
-  {{ attach_library('localgov_base/blog') }}
+	{{ attach_library('localgov_base/sidebar') }}
+	{{ attach_library('localgov_base/blog') }}
 {% endif %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+<article{{attributes.addClass(classes).removeAttribute('role')}}>
+	<div class="lgd-container padding-horizontal">
 
-  {{ title_prefix }}
-  {{ title_suffix }}
+		{{ title_prefix }}
+		{{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+		{% if display_submitted %}
+			<footer class="node__meta">
+				{{ author_picture }}
+				<div{{author_attributes.addClass('node__submitted')}}>
+					{% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+					{{ metadata }}
+				</div>
+			</footer>
+		{% endif %}
 
-  <div{{ content_attributes.addClass('blog-channel__content', 'node__content') }}>
+		<div{{content_attributes.addClass('blog-channel__content','node__content')}}>
 
-    <div class="lgd-row">
-      <div class="lgd-row__full">
-        <div class="lgd-blog__featured">
-         {{ content.localgov_blog_channel_featured }}
-        </div>
-      </div>
-    </div>
-    <div class="lgd-row">
-      <div class="lgd-row__two-thirds">
-        {{ content|without('body', 'localgov_blog_channel_featured') }}
-      </div>
-      <aside class="lgd-row__one-third">
-        <div class="blog-channel__sidebar">
-          {{ content.body }}
-        </div>
-      </aside>
-    </div>
-  </div>
+			<div class="lgd-row">
+				<div class="lgd-row__full">
+					<div class="lgd-blog__featured">
+						{{ content.localgov_blog_channel_featured }}
+					</div>
+				</div>
+			</div>
 
+			<div class="lgd-row">
+				<div class="lgd-row__two-thirds">
+					{{ content|without('body', 'localgov_blog_channel_featured') }}
+				</div>
+				<aside class="lgd-row__one-third">
+					<div class="blog-channel__sidebar">
+						{{ content.body }}
+					</div>
+				</aside>
+			</div>
+
+		</div>
+
+	</div>
 </article>

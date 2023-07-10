@@ -51,7 +51,7 @@ a:hover {
   text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
 }
 
-a:not(.toolbar a):focus {
+a:not([class*="toolbar"]):focus {
   text-decoration: none;
   color: var(--color-black);
   outline: 3px solid transparent;
