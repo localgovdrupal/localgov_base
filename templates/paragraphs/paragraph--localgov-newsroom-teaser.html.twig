@@ -42,7 +42,8 @@
 {% set classes = [
     'newsroom-teaser',
     paragraph.localgov_newsroom_teaser_image.value ? 'newsroom-teaser--has-image' : 'newsroom-teaser--no-image',
-  ] 
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
 %}
 
 {% if not localgov_base_remove_css %}
