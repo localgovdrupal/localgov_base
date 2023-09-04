@@ -18,7 +18,6 @@
 
 {% set previous_icon = 'chevron-left' %}
 {% set next_icon = 'chevron-right' %}
-{{ kint(show_title) }}
 <nav{{attributes.addClass(classes)}}>
   <ul class="lgd-prev-next__list">
     {% if previous_url %}
@@ -61,4 +60,3 @@
     {% endif %}
   </ul>
 </nav>
-{{ kint(show_title) }}
