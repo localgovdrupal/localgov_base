@@ -1,0 +1,16 @@
+.dialog-off-canvas-main-canvas > *:not(.lgd-header, .main),
+.lgd-header__inner > *:not(.lgd-region--header),
+.lgd-region__inner--header > *:not(.block-system-branding-block),
+.sidebar,
+.lgd-prev-next,
+.newsroom__sidebar {
+  display: none;
+}
+
+.lgd-header__inner {
+  justify-content: start;
+}
+
+img {
+  max-width: 10cm; /* half the width of A4 */
+}
