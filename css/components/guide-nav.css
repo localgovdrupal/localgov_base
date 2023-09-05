@@ -44,16 +44,12 @@
   text-decoration: none;
 }
 
-.lgd-prev-next__link  > .lgd-prev-next__label {
-  font-weight: bold;
-}
-
-a.lgd-prev-next__link .lgd-prev-next__label {
+.lgd-prev-next__label {
   font-weight: bold;
 }
 
 .lgd-prev-next__icon {
-  margin-top: 3px;
+  margin-top: var(--spacing-smallest);
 }
 
 .lgd-prev-next__title {
