@@ -454,6 +454,15 @@ body {
   --color-page-section-background-color-3: var(--color-grey-lightest);
   --color-page-section-background-color-3-text-color: var(--color-black);
   --color-page-section-background-color-3-link-color: var(--color-black);
+  --color-page-section-background-color-4: var(--color-accent);
+  --color-page-section-background-color-4-text-color: var(--color-white);
+  --color-page-section-background-color-4-link-color: var(--color-white);
+  --color-page-section-background-color-5: var(--color-accent);
+  --color-page-section-background-color-5-text-color: var(--color-white);
+  --color-page-section-background-color-5-link-color: var(--color-white);
+  --color-page-section-background-color-6: var(--color-accent);
+  --color-page-section-background-color-6-text-color: var(--color-white);
+  --color-page-section-background-color-6-link-color: var(--color-white);
   /* Page Sections - Newsroom Teasers */
   --color-page-section-background-color-1-newsroom-teaser-background-color: var(--color-white);
   --color-page-section-background-color-1-newsroom-teaser-text-color: var(--color-black);
@@ -464,6 +473,15 @@ body {
   --color-page-section-background-color-3-newsroom-teaser-background-color: var(--color-black);
   --color-page-section-background-color-3-newsroom-teaser-text-color: var(--color-white);
   --color-page-section-background-color-3-newsroom-teaser-link-color: var(--color-white);
+  --color-page-section-background-color-4-newsroom-teaser-background-color: var(--color-white);
+  --color-page-section-background-color-4-newsroom-teaser-text-color: var(--color-black);
+  --color-page-section-background-color-4-newsroom-teaser-link-color: var(--color-black);
+  --color-page-section-background-color-5-newsroom-teaser-background-color: var(--color-white);
+  --color-page-section-background-color-5-newsroom-teaser-text-color: var(--color-black);
+  --color-page-section-background-color-5-newsroom-teaser-link-color: var(--color-black);
+  --color-page-section-background-color-6-newsroom-teaser-background-color: var(--color-white);
+  --color-page-section-background-color-6-newsroom-teaser-text-color: var(--color-black);
+  --color-page-section-background-color-6-newsroom-teaser-link-color: var(--color-black);
   /* Page Sections - Box Links */
   --color-page-section-background-color-1-box-link-border-color: var(--color-white);
   --color-page-section-background-color-1-box-link-background-color: var(--color-white);
@@ -477,6 +495,18 @@ body {
   --color-page-section-background-color-3-box-link-background-color: var(--color-black);
   --color-page-section-background-color-3-box-link-text-color: var(--color-white);
   --color-page-section-background-color-3-box-link-link-color: var(--color-white);
+  --color-page-section-background-color-4-box-link-border-color: var(--color-white);
+  --color-page-section-background-color-4-box-link-background-color: var(--color-white);
+  --color-page-section-background-color-4-box-link-text-color: var(--color-black);
+  --color-page-section-background-color-4-box-link-link-color: var(--color-black);
+  --color-page-section-background-color-5-box-link-border-color: var(--color-white);
+  --color-page-section-background-color-5-box-link-background-color: var(--color-white);
+  --color-page-section-background-color-5-box-link-text-color: var(--color-black);
+  --color-page-section-background-color-5-box-link-link-color: var(--color-black);
+  --color-page-section-background-color-6-box-link-border-color: var(--color-white);
+  --color-page-section-background-color-6-box-link-background-color: var(--color-white);
+  --color-page-section-background-color-6-box-link-text-color: var(--color-black);
+  --color-page-section-background-color-6-box-link-link-color: var(--color-black);
   /* Page Sections - Featured Subsites */
   --color-page-section-background-color-1-featured-subsite-background-color: var(--color-grey-lightest);
   --color-page-section-background-color-1-featured-subsite-text-color: var(--color-black);
@@ -487,4 +517,13 @@ body {
   --color-page-section-background-color-3-featured-subsite-background-color: var(--color-black);
   --color-page-section-background-color-3-featured-subsite-text-color: var(--color-grey-lightest);
   --color-page-section-background-color-3-featured-subsite-link-color: var(--color-grey-lightest);
+  --color-page-section-background-color-4-featured-subsite-background-color: var(--color-grey-lightest);
+  --color-page-section-background-color-4-featured-subsite-text-color: var(--color-black);
+  --color-page-section-background-color-4-featured-subsite-link-color: var(--color-black);
+  --color-page-section-background-color-5-featured-subsite-background-color: var(--color-grey-lightest);
+  --color-page-section-background-color-5-featured-subsite-text-color: var(--color-black);
+  --color-page-section-background-color-5-featured-subsite-link-color: var(--color-black);
+  --color-page-section-background-color-6-featured-subsite-background-color: var(--color-grey-lightest);
+  --color-page-section-background-color-6-featured-subsite-text-color: var(--color-black);
+  --color-page-section-background-color-6-featured-subsite-link-color: var(--color-black);
 }
