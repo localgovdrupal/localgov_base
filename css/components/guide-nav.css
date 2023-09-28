@@ -37,25 +37,3 @@
   margin-top: var(--spacing-largest);
   margin-bottom: var(--spacing-largest);
 }
-
-.lgd-prev-next__link {
-  flex-wrap: wrap;
-  padding: var(--spacing-smaller);
-  text-decoration: none;
-}
-
-.lgd-prev-next__label {
-  font-weight: bold;
-}
-
-.lgd-prev-next__icon {
-  margin-top: var(--spacing-smallest);
-}
-
-.lgd-prev-next__title {
-  width: 100%;
-}
-
-.lgd-prev-next__list-item--prev .lgd-prev-next__title {
-  padding-left: var(--spacing-large);
-}
