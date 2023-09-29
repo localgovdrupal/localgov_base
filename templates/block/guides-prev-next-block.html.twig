@@ -7,9 +7,9 @@
 
 {%
   set classes = [
-    'lgd-prev-next',
-    'lgd-prev-next--guides',
-  ]
+  'lgd-prev-next',
+  'lgd-prev-next--guides',
+]
 %}
 
 {% if not localgov_base_remove_css %}
@@ -18,30 +18,43 @@
 
 {% set previous_icon = 'chevron-left' %}
 {% set next_icon = 'chevron-right' %}
-
 <nav{{attributes.addClass(classes)}}>
   <ul class="lgd-prev-next__list">
     {% if previous_url %}
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">
         <a href="{{ previous_url }}#lgd-guides__title" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous'|t }}: {{ previous_title }}">
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
-              icon_name: previous_icon,
-              icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
-            }
+            icon_name: previous_icon,
+            icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
+          }
           %}
-          {{ 'Previous'|t }}
+          <div class="lgd-prev-next__label">
+            {{ 'Previous'|t }}
+          </div>
+          {% if show_title == 1 %}
+            <div class="lgd-prev-next__title">
+              {{ previous_title }}
+            </div>
+          {% endif %}
         </a>
       </li>
     {% endif %}
     {% if next_url %}
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--next">
         <a href="{{ next_url }}#lgd-guides__title" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next'|t }}: {{ next_title }}">
-          {{ 'Next'|t }}
+          <div class="lgd-prev-next__label">
+            {{ 'Next'|t }}
+          </div>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {
-              icon_name: next_icon,
-              icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
-            }
+            icon_name: next_icon,
+            icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
+          }
           %}
+          {% if show_title == 1 %}
+            <div class="lgd-prev-next__title">
+              {{ next_title }}
+            </div>
+          {% endif %}
         </a>
       </li>
     {% endif %}

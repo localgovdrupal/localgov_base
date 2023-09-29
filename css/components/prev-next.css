@@ -13,6 +13,8 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
 
 .lgd-prev-next__link {
   display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
   align-items: center;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   color: var(--button-text-color);
@@ -26,6 +28,18 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
 .lgd-prev-next__link:hover {
   color: var(--button-text-color-hover);
   background-color: var(--button-bg--color-hover);
+}
+
+.lgd-prev-next__label {
+  font-weight: bold;
+}
+
+.lgd-prev-next__title {
+  width: 100%;
+}
+
+.lgd-prev-next__list-item--prev .lgd-prev-next__title {
+  padding-left: var(--spacing-large);
 }
 
 .lgd-prev-next__icon path {
