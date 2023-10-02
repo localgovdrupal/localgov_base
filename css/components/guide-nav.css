@@ -24,3 +24,16 @@
   display: inline;
   font-weight: bold;
 }
+
+.lgd-guide-nav__list-item--active {
+  font-weight: bold;
+}
+
+.lgd-guide-nav__list-item > a {
+  font-weight: normal;
+}
+
+.block-localgov-guides-contents {
+  margin-top: var(--spacing-largest);
+  margin-bottom: var(--spacing-largest);
+}
