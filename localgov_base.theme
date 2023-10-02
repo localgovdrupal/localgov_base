@@ -105,7 +105,7 @@ function localgov_base_preprocess_file_link(&$variables) {
  * Implements hook_views_pre_render().
  */
 function localgov_base_views_pre_render(ViewExecutable $view) {
-  if (isset($view) && ($view->storage->id() == 'localgov_sitewide_search')) {
+  if ($view->storage->id() == 'localgov_sitewide_search') {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
   }
 }
