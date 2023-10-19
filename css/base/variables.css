@@ -317,7 +317,7 @@ body {
   --quote-padding-left: var(--spacing-larger);
   --quote-border: var(--border-large);
   --quote-border-color: var(--color-accent);
-  --quote-bg-color: var(--color-grey-light);
+  --quote-bg-color: var(--color-grey-lighter);
   --quote-author-color: var(--color-accent);
 
   /* Featured Teasers */
