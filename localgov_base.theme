@@ -31,6 +31,20 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_remove_js'),
     '#description'   => t("Check this box to disable the base theme's JavaScript"),
   ];
+
+  $form['localgov_base_remove_unpublished_background_colour'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Remove pink background from unpublished content.'),
+    '#default_value' => theme_get_setting('localgov_base_remove_unpublished_background_colour'),
+    '#description'   => t("If you remove the pink background, you should probably also check the box below to add 'Draft' to the title of unpublished content."),
+  ];
+
+  $form['localgov_base_add_draft_note_to_unpublished_content'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add "Draft" to title of unpublished content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
+    '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
+  ];
 }
 
 /**
@@ -64,6 +78,25 @@ function localgov_base_preprocess_page(&$variables) {
 
   if (!isset($variables['localgov_base_remove_css'])) {
     $variables['#attached']['library'][] = 'localgov_base/global';
+  }
+
+  // We have a theme setting boolean for removing the pink background from
+  // unpublished content. If that setting is false, we will add the 'unpublished'
+  // library to our page.
+  if (theme_get_setting('localgov_base_remove_unpublished_background_colour') === 0) {
+    $variables['#attached']['library'][] = 'localgov_base/unpublished';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function localgov_base_preprocess_node(&$variables) {
+  $node_status = $variables['node']->isPublished();
+  if ($node_status === FALSE) {
+    if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === 1) {
+      $variables['label'] = t('Draft') . " " . $variables['node']->label();
+    }
   }
 }
 

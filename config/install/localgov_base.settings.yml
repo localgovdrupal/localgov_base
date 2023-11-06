@@ -1,2 +1,4 @@
 localgov_base_remove_css: false
 localgov_base_remove_js: false
+localgov_base_remove_unpublished_background_colour: false
+localgov_base_add_draft_note_to_unpublished_content: false
