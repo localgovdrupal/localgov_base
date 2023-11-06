@@ -81,8 +81,8 @@ function localgov_base_preprocess_page(&$variables) {
   }
 
   // We have a theme setting boolean for removing the pink background from
-  // unpublished content. If that setting is false, we will add the 'unpublished'
-  // library to our page.
+  // unpublished content. If that setting is false,
+  // we will add the 'unpublished' library to our page.
   if (theme_get_setting('localgov_base_remove_unpublished_background_colour') === 0) {
     $variables['#attached']['library'][] = 'localgov_base/unpublished';
   }
@@ -96,6 +96,19 @@ function localgov_base_preprocess_node(&$variables) {
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === 1) {
       $variables['label'] = t('Draft') . " " . $variables['node']->label();
+    }
+  }
+}
+
+function localgov_base_preprocess_block(&$variables) {
+  $route_match = Drupal::routeMatch();
+  // Check if we are on a node page.
+  if ($route_match->getRouteName() == 'entity.node.canonical') {
+    if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === 1) {
+      if ($variables['plugin_id'] === 'localgov_page_header_block') {
+        $current_title = $variables['content'][0]['#title'];
+        $variables['content'][0]['#title'] = t('Draft') . " " . $current_title;
+      }
     }
   }
 }
