@@ -36,7 +36,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#type'          => 'checkbox',
     '#title'         => t('Remove pink background from unpublished content.'),
     '#default_value' => theme_get_setting('localgov_base_remove_unpublished_background_colour'),
-    '#description'   => t("If you remove the pink background, you should probably also check the box below to add 'Draft' to the title of unpublished content."),
+    '#description'   => t("If you remove the pink background, you should probably also check the box below to add '[Draft]' to the title of unpublished content."),
   ];
 
   $form['localgov_base_add_draft_note_to_unpublished_content'] = [
@@ -95,7 +95,7 @@ function localgov_base_preprocess_node(&$variables) {
   $node_status = $variables['node']->isPublished();
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') == TRUE) {
-      $variables['label'] = t('Draft') . " " . $variables['node']->label();
+      $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
     }
   }
 }
@@ -113,7 +113,7 @@ function localgov_base_preprocess_block(&$variables) {
       if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') == TRUE) {
         if ($variables['plugin_id'] === 'localgov_page_header_block') {
           $current_title = $variables['content'][0]['#title'];
-          $variables['content'][0]['#title'] = t('Draft') . " " . $current_title;
+          $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
         }
       }
     }

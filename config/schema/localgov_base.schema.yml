@@ -13,4 +13,4 @@ localgov_base.settings:
       label: 'Remove pink background from unpublished content.'
     localgov_base_add_draft_note_to_unpublished_content:
       type: boolean
-      label: 'Add "Draft" to title of unpublished content.'
+      label: 'Add "[Draft]" to title of unpublished content.'
