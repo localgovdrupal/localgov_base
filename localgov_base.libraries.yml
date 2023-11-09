@@ -33,10 +33,10 @@ region-tabs:
     theme:
       css/components/region-tabs.css: {}
 
-unpublished:
+unpublished-bg:
   css:
     theme:
-      css/components/unpublished.css: {}
+      css/components/unpublished-bg.css: {}
 
 callout:
   css:

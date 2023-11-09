@@ -32,11 +32,11 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t("Check this box to disable the base theme's JavaScript"),
   ];
 
-  $form['localgov_base_remove_unpublished_background_colour'] = [
+  $form['localgov_base_add_unpublished_background_colour'] = [
     '#type'          => 'checkbox',
-    '#title'         => t('Remove pink background from unpublished content.'),
-    '#default_value' => theme_get_setting('localgov_base_remove_unpublished_background_colour'),
-    '#description'   => t("If you remove the pink background, you should probably also check the box below to add '[Draft]' to the title of unpublished content."),
+    '#title'         => t('Add background colour to unpublished content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_unpublished_background_colour'),
+    '#description'   => t("If you remove the background colour, you should probably also check the box below to add '[Draft]' to the title of unpublished content."),
   ];
 
   $form['localgov_base_add_draft_note_to_unpublished_content'] = [
@@ -83,8 +83,9 @@ function localgov_base_preprocess_page(&$variables) {
   // We have a theme setting boolean for removing the pink background from
   // unpublished content. If that setting is false,
   // we will add the 'unpublished' library to our page.
-  if (theme_get_setting('localgov_base_remove_unpublished_background_colour') == FALSE) {
-    $variables['#attached']['library'][] = 'localgov_base/unpublished';
+  dpm(theme_get_setting('localgov_base_add_unpublished_background_colour'));
+  if (theme_get_setting('localgov_base_add_unpublished_background_colour') == TRUE) {
+    $variables['#attached']['library'][] = 'localgov_base/unpublished-bg';
   }
 }
 
