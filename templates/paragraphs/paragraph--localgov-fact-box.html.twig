@@ -68,9 +68,9 @@
     {% endif %}
     
     <div class="fact-box__fact">
-      </p>
-        {{ content.localgov_fact }}
       <p>
+        {{ content.localgov_fact }}
+      </p>
       {{ content|without('localgov_above_text', 'localgov_fact', 'localgov_below_text', 'localgov_background') }}
     </div>
     
