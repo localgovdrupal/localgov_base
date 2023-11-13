@@ -26,8 +26,12 @@
       <h1 class="lgd-page-title-block__title">{{ title }}</h1>
     {% endif %}
 
-    {% if lede['#value'] %}
-      <p class="lgd-page-title-block__subheader">{{ lede['#value'] }}</p>
+    {% if lede %}
+      {% if lede['#value'] %}
+        <p class="lgd-page-title-block__subheader">{{ lede['#value'] }}</p>
+      {% else %}
+        {{ lede }}
+      {% endif %}
     {% endif %}
 
   </div>
