@@ -200,8 +200,3 @@ textarea,
 button {
   font-family: var(--font-primary);
 }
-
-.node--unpublished,
-.paragraph--unpublished {
-  background-color: pink;
-}

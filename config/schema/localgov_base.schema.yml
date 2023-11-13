@@ -8,3 +8,9 @@ localgov_base.settings:
     localgov_base_remove_js:
       type: boolean
       label: 'Remove JS libraries from base theme.'
+    localgov_base_add_unpublished_background_colour:
+      type: boolean
+      label: 'Add background colour to unpublished content.'
+    localgov_base_add_draft_note_to_unpublished_content:
+      type: boolean
+      label: 'Add "[Draft]" to title of unpublished content.'
