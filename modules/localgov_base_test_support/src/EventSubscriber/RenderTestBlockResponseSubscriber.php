@@ -15,7 +15,7 @@ class RenderTestBlockResponseSubscriber implements EventSubscriberInterface {
   /**
    * {@inheritdoc}
    */
-  static function getSubscribedEvents() {
+  public static function getSubscribedEvents() {
     return [
       KernelEvents::RESPONSE => 'addRenderTestBlockHeader',
     ];

@@ -28,20 +28,19 @@ class RegionRenderTest extends BrowserTestBase {
    */
   protected $defaultTheme = 'localgov_base';
 
-
   /**
    * Data provider for ::testRegionRender().
    */
   public function blockRegionProvider() {
     return [
       [
-       'region' => 'disabled',
-       'rendered' => 'FALSE',
+        'region' => 'disabled',
+        'rendered' => 'FALSE',
       ],
       [
         'region' => 'sidebar_first',
         'rendered' => 'TRUE',
-      ]
+      ],
     ];
   }
 

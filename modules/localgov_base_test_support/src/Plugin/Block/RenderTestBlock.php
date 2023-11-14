@@ -33,4 +33,5 @@ class RenderTestBlock extends BlockBase {
       '#markup' => 'This is the output from the render test block.',
     ];
   }
+
 }
