@@ -103,8 +103,9 @@ function localgov_base_preprocess_node(&$variables) {
  */
 function localgov_base_preprocess_block(&$variables) {
   $route_match = Drupal::routeMatch();
-  // Check if we are on a node page.
-  if ($route_match->getRouteName() == 'entity.node.canonical') {
+  // Check if we are on a node page, latest version or a preview link.
+  $route = $route_match->getRouteName();
+  if ($route == 'entity.node.canonical' || $route == 'entity.node.latest_version' || $route == 'entity.node.preview_link') {
     $node = $route_match->getParameter('node');
     $node_status = $node->isPublished();
     if ($variables['plugin_id'] === 'localgov_page_header_block') {
