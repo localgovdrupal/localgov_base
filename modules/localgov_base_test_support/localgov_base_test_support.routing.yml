@@ -1,0 +1,8 @@
+localgov_base_test_support.test_page:
+  path: '/test-page'
+  defaults:
+    _controller: '\Drupal\localgov_base_test_support\Controller\TestController::testPage'
+    _title: 'Test page'
+  requirements:
+    # No access check, as this module is just for testing.
+    _access: 'TRUE'

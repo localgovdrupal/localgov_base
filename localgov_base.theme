@@ -57,22 +57,20 @@ function localgov_base_preprocess_page(&$variables) {
   // @see https://www.drupal.org/node/953034
   // @see https://www.drupal.org/forum/support/module-development-and-code-questions/2016-04-07/drupal-8-regions-with-and-empty#comment-12149518
   $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
-  $system_region = system_region_list($active_theme, $show = REGIONS_ALL);
+  $regions = array_keys(system_region_list($active_theme, REGIONS_VISIBLE));
 
-  foreach ($system_region as $key => $value) {
-    $region = $key;
-    $has = 'has_' . $region;
+  $excluded_regions = [
+    'messages',
+    'disabled',
+  ];
 
-    $excluded_regions = [
-      'messages',
-    ];
+  foreach ($regions as $region) {
     if (in_array($region, $excluded_regions)) {
       continue;
     }
-
     $copy = $variables['page'][$region];
-    $rendered = Drupal::service('renderer')->renderPlain($copy);
-    $variables[$has] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
+    $rendered = \Drupal::service('renderer')->renderPlain($copy);
+    $variables['has_' . $region] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
@@ -104,12 +102,13 @@ function localgov_base_preprocess_node(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_block(&$variables) {
-  $route_match = Drupal::routeMatch();
-  // Check if we are on a node page.
-  if ($route_match->getRouteName() == 'entity.node.canonical') {
-    $node = $route_match->getParameter('node');
-    $node_status = $node->isPublished();
-    if ($variables['plugin_id'] === 'localgov_page_header_block') {
+  if ($variables['plugin_id'] === 'localgov_page_header_block') {
+    $route_match = Drupal::routeMatch();
+    // Check if we are on a node page, latest version or a preview link.
+    $route = $route_match->getRouteName();
+    if ($route == 'entity.node.canonical' || $route == 'entity.node.latest_version' || $route == 'entity.node.preview_link') {
+      $node = $route_match->getParameter('node');
+      $node_status = $node->isPublished();
       if ($node_status === FALSE) {
         if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') == TRUE) {
           $current_title = $variables['content'][0]['#title'];
