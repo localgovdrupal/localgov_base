@@ -1,30 +1,34 @@
+.lgd-page-section {
+  background-color: var(--color-page-section-background-color);
+  color: var(--color-page-section-text-color);
+}
 .lgd-page-section--bg-colour-1 {
-  color: var(--color-page-section-background-color-1-text-color);
-  background-color: var(--color-page-section-background-color-1);
+  --color-page-section-background-color: var(--color-page-section-background-color-1);
+  --color-page-section-text-color: var(--color-page-section-background-color-1-text-color);
 }
 .lgd-page-section--bg-colour-2 {
-  color: var(--color-page-section-background-color-2-text-color);
-  background-color: var(--color-page-section-background-color-2);
+  --color-page-section-background-color: var(--color-page-section-background-color-2);
+  --color-page-section-text-color: var(--color-page-section-background-color-2-text-color);
 }
 .lgd-page-section--bg-colour-3 {
-  color: var(--color-page-section-background-color-3-text-color);
-  background-color: var(--color-page-section-background-color-3);
+  --color-page-section-background-color: var(--color-page-section-background-color-3);
+  --color-page-section-text-color: var(--color-page-section-background-color-3-text-color);
 }
 /*
   Adding 3 extra colour options here, so they are available if
   other subthemes/sites need them.
 */
 .lgd-page-section--bg-colour-4 {
-  color: var(--color-page-section-background-color-4-text-color);
-  background-color: var(--color-page-section-background-color-4);
+  --color-page-section-background-color: var(--color-page-section-background-color-4);
+  --color-page-section-text-color: var(--color-page-section-background-color-4-text-color);
 }
 .lgd-page-section--bg-colour-5 {
-  color: var(--color-page-section-background-color-5-text-color);
-  background-color: var(--color-page-section-background-color-5);
+  --color-page-section-background-color: var(--color-page-section-background-color-5);
+  --color-page-section-text-color: var(--color-page-section-background-color-5-text-color);
 }
 .lgd-page-section--bg-colour-6 {
-  color: var(--color-page-section-background-color-6-text-color);
-  background-color: var(--color-page-section-background-color-6);
+  --color-page-section-background-color: var(--color-page-section-background-color-6);
+  --color-page-section-text-color: var(--color-page-section-background-color-6-text-color);
 }
 
 .lgd-page-section--padding-top-small {
