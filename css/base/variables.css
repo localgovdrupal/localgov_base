@@ -445,6 +445,8 @@ body {
   --blog-author-content-margin: var(--spacing-largest);
 
   /* Page Sections */
+  --color-page-section-background-color: transparent;
+  --color-page-section-text-color: var(--color-black);
   --color-page-section-background-color-1: var(--color-accent);
   --color-page-section-background-color-1-text-color: var(--color-white);
   --color-page-section-background-color-1-link-color: var(--color-white);
