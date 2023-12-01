@@ -137,6 +137,7 @@ body {
   --border: var(--border-width) var(--border-style) var(--border-color);
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
   --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
+  --border-transparent: var(--border-width) var(--border-style) transparent;
 
   /* Animation */
   --transition-time: 0.3s;
@@ -181,7 +182,7 @@ body {
   --header-search-button-bg-color: var(--color-accent);
   --header-search-button-color-hover: var(--color-accent);
   --header-search-button-bg-color-hover: var(--color-white);
-  --header-search-input-border: none;
+  --header-search-input-border: var(--border-transparent);
 
   /* Secondary Menu */
   --secondary-menu-bg-color-first: var(--color-accent);
