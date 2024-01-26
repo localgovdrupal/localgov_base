@@ -18,6 +18,7 @@
       // Set up initial variables.
       //
       // We need a bunch of classes and selectors.
+      let secondaryMenuRegionIsOpen = false;
       const headerToggleSelector = '.lgd-header__toggle';
       const primaryToggleClass = 'lgd-header__toggle--primary';
       const toggleActiveClass = 'lgd-header__toggle--active';
@@ -92,8 +93,8 @@
         navInfo.secondary.region.classList.contains(regionActiveClass)
           ? navInfo.secondary.firstLink.focus()
           : null;
+        secondaryMenuRegionIsOpen = !secondaryMenuRegionIsOpen;
       }
-
       // When on the first link in the secondary menu, if you shift+tab
       // set focus back to the services button
       function handleSecondaryMenuShiftTabClick() {
@@ -120,6 +121,14 @@
           }
         });
       }
+
+      // If you click on the page, anywhere outside the secondary menu region
+      // or the secondary menu toggle button, close the secondary menu region
+      document.addEventListener('click', function(e) {
+          if (!e.target.closest('#lgd-header__nav--secondary') && !e.target.closest('.lgd-header__toggle--secondary') && secondaryMenuRegionIsOpen){
+            handleSecondaryMenuToggleClick();
+          }
+        });
 
       // When the window is resized (or a device orientation changes),
       // set out what happens.
