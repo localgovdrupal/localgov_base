@@ -46,3 +46,13 @@
   position: relative; /* So the outline doesn't hide behind the next item */
   outline: 2px dotted;
 }
+
+/*
+  Make the tabs region sticky for editors, so they do not have to
+  scroll to the top of the page to find the edit link.
+*/
+.user-logged-in .lgd-region--tabs {
+  position: sticky;
+  top: var(--drupal-displace-offset-top);
+  z-index: 100;
+}
