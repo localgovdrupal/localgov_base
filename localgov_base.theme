@@ -70,7 +70,7 @@ function localgov_base_preprocess_page(&$variables) {
     }
     $copy = $variables['page'][$region];
     $rendered = \Drupal::service('renderer')->renderPlain($copy);
-    $variables['has_' . $region] = !empty(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>')));
+    $variables['has_' . $region] = strlen(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>'))) > 0;
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
 
