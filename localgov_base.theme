@@ -65,7 +65,7 @@ function localgov_base_preprocess_page(&$variables) {
   ];
 
   foreach ($regions as $region) {
-    if (in_array($region, $excluded_regions)) {
+    if (in_array($region, $excluded_regions, true)) {
       continue;
     }
     $copy = $variables['page'][$region];
@@ -81,7 +81,7 @@ function localgov_base_preprocess_page(&$variables) {
   // We have a theme setting boolean for removing the pink background from
   // unpublished content. If that setting is false,
   // we will add the 'unpublished' library to our page.
-  if (theme_get_setting('localgov_base_add_unpublished_background_colour') == TRUE) {
+  if (theme_get_setting('localgov_base_add_unpublished_background_colour') === TRUE) {
     $variables['#attached']['library'][] = 'localgov_base/unpublished-bg';
   }
 }
@@ -92,7 +92,7 @@ function localgov_base_preprocess_page(&$variables) {
 function localgov_base_preprocess_node(&$variables) {
   $node_status = $variables['node']->isPublished();
   if ($node_status === FALSE) {
-    if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') == TRUE) {
+    if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
       $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
     }
   }
@@ -106,11 +106,11 @@ function localgov_base_preprocess_block(&$variables) {
     $route_match = Drupal::routeMatch();
     // Check if we are on a node page, latest version or a preview link.
     $route = $route_match->getRouteName();
-    if ($route == 'entity.node.canonical' || $route == 'entity.node.latest_version' || $route == 'entity.node.preview_link') {
+    if ($route === 'entity.node.canonical' || $route === 'entity.node.latest_version' || $route === 'entity.node.preview_link') {
       $node = $route_match->getParameter('node');
       $node_status = $node->isPublished();
       if ($node_status === FALSE) {
-        if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') == TRUE) {
+        if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
           $current_title = $variables['content'][0]['#title'];
           $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
         }
@@ -157,7 +157,7 @@ function localgov_base_preprocess_file_link(&$variables) {
  * Implements hook_views_pre_render().
  */
 function localgov_base_views_pre_render(ViewExecutable $view) {
-  if ($view->storage->id() == 'localgov_sitewide_search') {
+  if ($view->storage->id() === 'localgov_sitewide_search') {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
   }
 }
@@ -171,7 +171,7 @@ function localgov_base_preprocess_container(&$variables) {
   // See https://www.drupal.org/project/drupal/issues/1852090
   if (isset($variables['element']['#id'])) {
     $id = $variables['element']['#id'];
-    if ($id == 'edit-actions') {
+    if ($id === 'edit-actions') {
       $id .= '--' . Crypt::randomBytesBase64(8);
     }
     $variables['attributes']['id'] = $id;
