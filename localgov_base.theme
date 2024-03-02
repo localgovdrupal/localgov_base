@@ -65,7 +65,7 @@ function localgov_base_preprocess_page(&$variables) {
   ];
 
   foreach ($regions as $region) {
-    if (in_array($region, $excluded_regions, true)) {
+    if (in_array($region, $excluded_regions, TRUE)) {
       continue;
     }
     $copy = $variables['page'][$region];
