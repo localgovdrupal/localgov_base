@@ -43,7 +43,7 @@ This is where you set your colours, fonts, spacing, etc. Then you "apply" these 
   }
 ```
 
-If you need to add any CSS overides, you can create custom CSS files for these and then a library/libraries to attach them to your components.
+If you need to add any CSS overrides, you can create custom CSS files for these and then a library/libraries to attach them to your components.
 
 ## Automated CSS Coding Standards
 To make sure we follow Drupal's CSS coding standards (without having to think about it), there is a handy `npm` script to automatically scan and fix any CSS coding standards violations.
