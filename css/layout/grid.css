@@ -79,3 +79,80 @@
     width: calc(75% - var(--grid-column-spacing));
   }
 }
+
+/*
+  Any view using the `view--grid` class will have:
+  - 1 column on mobile
+  - 2 columns on tablet and desktop
+  - 3, 4, 5 columns on desktop depending on what extra class you add to the view.
+  - a gap of var(--spacing) between each item, unless you add a gap class.
+
+  Available classes:
+  - view--grid-thirds
+  - view--grid-quarters
+  - view--grid-fifths
+
+  As well as that, can can specify the gap with with the following classes:
+  - view--grid-gap-none
+  - view--grid-gap-small
+  - view--grid-gap-smaller
+  - view--grid-gap-smallest
+  - view--grid-gap-medium - default, so no need to manually add to the view.
+  - view--grid-gap-large
+  - view--grid-gap-larger
+  - view--grid-gap-largest
+*/
+.view--grid {
+  --lgd-view-grid-columns: 1;
+  --lgd-view-grid-gap: var(--spacing);
+}
+
+.view--grid-gap-none {
+  --lgd-view-grid-gap: 0;
+}
+.view--grid-gap-small {
+  --lgd-view-grid-gap: var(--spacing-small);
+}
+.view--grid-gap-smaller {
+  --lgd-view-grid-gap: var(--spacing-smaller);
+}
+.view--grid-gap-smallest {
+  --lgd-view-grid-gap: var(--spacing-smallest);
+}
+.view--grid-gap-medium {
+  --lgd-view-grid-gap: var(--spacing);
+}
+.view--grid-gap-large {
+  --lgd-view-grid-gap: var(--spacing-large);
+}
+.view--grid-gap-larger {
+  --lgd-view-grid-gap: var(--spacing-larger);
+}
+.view--grid-gap-largest {
+  --lgd-view-grid-gap: var(--spacing-largest);
+}
+
+.view--grid .view-content {
+  display: grid;
+  grid-template-columns: repeat(var(--lgd-view-grid-columns), 1fr);
+  grid-gap: var(--lgd-view-grid-gap);
+}
+
+@media screen and (min-width: 48rem) {
+  .view--grid .view-content {
+    --lgd-view-grid-columns: 2;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .view--grid-thirds .view-content {
+    --lgd-view-grid-columns: 3;
+  }
+  .view--grid-quarters .view-content {
+    --lgd-view-grid-columns: 4;
+  }
+  .view--grid-fifths .view-content {
+    --lgd-view-grid-columns: 5;
+  }
+}
+
