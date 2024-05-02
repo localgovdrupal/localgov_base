@@ -15,6 +15,7 @@ regions:
   mobile_search: "Mobile search"
   primary_menu: "Primary menu"
   secondary_menu: "Secondary menu"
+  subsites_menu: "Subsites menu"
   banner: "Banner"
   breadcrumb: "Breadcrumb"
   messages: "Messages"
