@@ -47,7 +47,12 @@
   {% if derivative_plugin_id == 'main' %}
     {{ attach_library('localgov_base/menu-main') }}
   {% endif %}
+  
+  {% if derivative_plugin_id == 'subsites' %}
+    {{ attach_library('localgov_base/menu-subsites') }}
+  {% endif %}
 {% endif %}
+
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <nav aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
