@@ -1,0 +1,61 @@
+/* If you want to be more custom, you need to be mindful of the default mode
+  The best approach would be to add a variable to variables.css for the thing you want to change,
+  change it in the correct component file and add the new variable below. 
+  This gives the default subsite theme something to fallback on.
+*/
+
+/* For demonstration purposes we've put have examples which don't have custom variables. 
+   This means we've repeated code from elsewhere 
+*/
+/* These variables should be added to the variables.css file */
+body {
+  --subsite-extra-bg-color: transparent;
+  --subsite-extra-link-color: white;
+}
+
+/* This would be changed in the menu-subsites.css */
+.lgd-region--subsites-menu {
+  background-color: var(--subsite-extra-bg-color);
+}
+
+.subsite-extra .menu--subsites > .menu-item a {
+  color: var(--subsite-extra-link-color);
+}
+
+.subsite-extra .menu--subsites > .menu-item--active-trail a, 
+.subsite-extra .menu--subsites > .menu-item a:focus, 
+.subsite-extra .menu--subsites > .menu-item a:hover {
+  color: black
+}
+
+/* This should be the beginning of this file */
+
+/* set your custom colours - the class comes from values in the field localgov_subsites_theme
+   be sure to set an accessible contrast color */
+.subsite-extra--color-hot_pink {
+  --subsite-color: hotpink;
+  --subsite-color-contrast: black;
+}
+
+.subsite-extra--color-cool_cucumber {
+  --subsite-color: #01642B;
+  --subsite-color-contrast: #8AF670;
+}
+
+/* add all the variables that you want to change colour
+  subsite-extra--color-theme_a is the default colours 
+  You might want to use that to get the menu but not have a theme.
+*/
+.subsite-extra:not(.subsite-extra--color-theme_a) {
+  --header-link-color: var(--subsite-color-contrast);
+  --heading-2-color: var(--subsite-color);
+  --call-out-box-bg-color:  var(--subsite-color);
+  --call-out-box-text-color: var(--subsite-color-contrast);
+  --fact-box-bg-light: var(--subsite-color);
+  --fact-box-border-color: var(--subsite-color-contrast);
+  --color-section-pre-footer-bg: var(--subsite-color);
+  --color-pre-footer-link: var(--subsite-color-contrast);
+  --button-bg-color: var(--subsite-color);
+  --subsite-extra-bg-color: var(--subsite-color);
+  --subsite-extra-link-color: var(--subsite-color-contrast);
+}
