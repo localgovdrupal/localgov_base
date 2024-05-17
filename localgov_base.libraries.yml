@@ -82,11 +82,6 @@ menu-main:
     theme:
       css/components/menu-main.css: {}
 
-menu-subsites:
-  css:
-    theme:
-      css/components/menu-subsites.css: {}
-
 page-title-block:
   css:
     theme:
@@ -296,10 +291,10 @@ embedded-views:
     theme:
       css/components/embedded-views.css: {}
 
-subsite-extra:
+subsites-menu:
   css:
     theme:
-      css/components/subsite-extra.css: {}
+      css/components/subsites-menu.css: {}
 
 localgov_eu_cookie_compliance:
   css:

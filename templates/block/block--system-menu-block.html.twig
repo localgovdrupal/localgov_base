@@ -40,16 +40,12 @@
   ]
 %}
 
-{# 
+{#
   We add libraries here for specific menus.
 #}
 {% if not localgov_base_remove_css %}
   {% if derivative_plugin_id == 'main' %}
     {{ attach_library('localgov_base/menu-main') }}
-  {% endif %}
-  
-  {% if derivative_plugin_id == 'subsites' %}
-    {{ attach_library('localgov_base/menu-subsites') }}
   {% endif %}
 {% endif %}
 

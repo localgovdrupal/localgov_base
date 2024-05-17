@@ -529,4 +529,11 @@ body {
   --color-page-section-background-color-6-featured-subsite-background-color: var(--color-grey-lightest);
   --color-page-section-background-color-6-featured-subsite-text-color: var(--color-black);
   --color-page-section-background-color-6-featured-subsite-link-color: var(--color-black);
+
+  /* Subsites Extras */
+  --subsite-extra-accent-color: transparent;
+  --subsite-extra-bg-color: transparent;
+  --subsite-extra-link-color: var(--color-white);
+  --subsite-extra-link-color-hover: var(--color-white);
+  --subsite-extra-link-color-active-trail: var(--color-white);
 }
