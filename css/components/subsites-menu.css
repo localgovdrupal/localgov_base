@@ -57,12 +57,12 @@
 
 .lgd-region--subsites-menu .subsite-extra__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: var(--spacing);
 }
 
-@media screen and (min-width: 48rem){
+@media screen and (min-width: 48rem) {
   .lgd-region--subsites-menu .subsite-extra__header-toggle {
     display: none;
   }
@@ -73,8 +73,8 @@
 }
 
 .lgd-region--subsites-menu .subsite-extra__title > a {
-  font-family: var(--subsite-extra-menu-title-font-family);
   color: var(--subsite-extra-menu-title-color);
+  font-family: var(--subsite-extra-menu-title-font-family);
 }
 
 .lgd-region--subsites-menu .menu {
@@ -118,8 +118,8 @@
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
 .lgd-region--subsites-menu .menu > .menu-item a:focus,
 .lgd-region--subsites-menu .menu > .menu-item a:hover {
-  background-color: var(--subsite-extra-link-bg-color-hover);
   color: var(--subsite-extra-link-color-hover);
+  background-color: var(--subsite-extra-link-bg-color-hover);
 }
 
 /*
@@ -145,8 +145,8 @@
 }
 
 .subsite-extra--color-cool_cucumber {
-  --subsite-extra-color: #01642B;
-  --subsite-extra-color-contrast: #8AF670;
+  --subsite-extra-color: #01642b;
+  --subsite-extra-color-contrast: #8af670;
 }
 
 .subsite-extra--color-theme_b {
