@@ -295,6 +295,11 @@ subsites-menu:
   css:
     theme:
       css/components/subsites-menu.css: {}
+  js:
+    js/subsites-menu.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
 
 localgov_eu_cookie_compliance:
   css:
