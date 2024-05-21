@@ -1,0 +1,155 @@
+/**
+ * @file CSS for the subsites extras functionality.
+ */
+
+/*
+  The variables set here are defaults we can use for the subsites extras
+  features. We should have a good amount here, and their names should be
+  self-explanatory.
+
+  To use them, you can add more classes in your theme's CSS file, and set
+  your variables accordingly. You can see examples at the bottom of this file.
+
+  .subsite-extra--color-yellow {
+    --subsite-extra-color: yellow;
+    --subsite-extra-color-contrast: black;
+    --subsite-extra-region-bg-color: black;
+    --image-with-caption-bg-color: yellow;
+    --button-text-color: black;
+    --button-bg-color: yellow;
+    --button-border-color: black;
+  }
+
+  Remember, the .subsite-extra class is on the body element, so you can override
+  any variables that are set in variables.css (e.g. --color-accent).
+
+  Also, you can use this class to override any CSS for components on the page.
+  For example:
+  .subsite-extra--color-yellow .lgd-image--has-caption {
+    padding: var(--spacing-large);
+    background-color: yellow;
+    border: 0;
+  }
+*/
+
+.subsite-extra {
+  --subsite-extra-color: var(--color-accent);
+  --subsite-extra-color-contrast: var(--color-white);
+  --subsite-extra-link-color: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-color-hover: var(--subsite-extra-color);
+  --subsite-extra-link-color-active-trail: var(--subsite-extra-color);
+  --subsite-extra-link-bg-color: var(--subsite-extra-color);
+  --subsite-extra-link-bg-color-hover: var(--subsite-extra-color-contrast);
+  --subsite-extra-menu-title-color: var(--subsite-extra-color);
+  --subsite-extra-region-bg-color: var(--color-white);
+  --subsite-extra-region-padding-horizontal: var(--spacing);
+  --subsite-extra-region-padding-vertical: var(--spacing);
+  --subsite-extra-menu-items-gap: var(--spacing);
+  --subsite-extra-menu-title-font-family: var(--font-primary);
+}
+
+/* This would be changed in the menu-subsites.css */
+.lgd-region--subsites-menu {
+  padding-block: var(--subsite-extra-region-padding-vertical);
+  padding-inline: var(--subsite-extra-region-padding-horizontal);
+  background-color: var(--subsite-extra-region-bg-color);
+}
+
+.lgd-region--subsites-menu .subsite-extra__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-region--subsites-menu .subsite-extra__header-toggle {
+    display: none;
+  }
+}
+
+.lgd-region--subsites-menu .subsite-extra__title {
+  margin-bottom: 0;
+}
+
+.lgd-region--subsites-menu .subsite-extra__title > a {
+  color: var(--subsite-extra-menu-title-color);
+  font-family: var(--subsite-extra-menu-title-font-family);
+}
+
+.lgd-region--subsites-menu .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--subsite-extra-menu-items-gap);
+  margin-top: var(--spacing);
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.lgd-region--subsites-menu .menu.subsite-extra-menu {
+  display: none;
+}
+.lgd-region--subsites-menu .menu.subsite-extra-menu--active {
+  display: flex;
+}
+
+.lgd-region--subsites-menu .menu > .menu-item {
+  width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+  .lgd-region--subsites-menu .menu.subsite-extra-menu {
+    display: flex;
+  }
+  .lgd-region--subsites-menu .menu > .menu-item {
+    width: auto;
+  }
+}
+
+.lgd-region--subsites-menu .menu > .menu-item a {
+  display: block;
+  padding-inline: var(--spacing);
+  padding-block: var(--spacing);
+  color: var(--subsite-extra-link-color);
+  background-color: var(--subsite-extra-link-bg-color);
+}
+
+.lgd-region--subsites-menu .menu > .menu-item--active-trail a,
+.lgd-region--subsites-menu .menu > .menu-item a:focus,
+.lgd-region--subsites-menu .menu > .menu-item a:hover {
+  color: var(--subsite-extra-link-color-hover);
+  background-color: var(--subsite-extra-link-bg-color-hover);
+}
+
+/*
+  Set your custom colours.
+  The class comes from values in the field localgov_subsites_theme
+   - be sure to set an accessible contrast color.
+
+  Here are some samples (they won't work unless you have the field set up).
+*/
+.subsite-extra--color-yellow {
+  --subsite-extra-color: yellow;
+  --subsite-extra-color-contrast: black;
+  --subsite-extra-region-bg-color: black;
+  --image-with-caption-bg-color: yellow;
+  --button-text-color: black;
+  --button-bg-color: yellow;
+  --button-border-color: black;
+}
+
+.subsite-extra--color-hot_pink {
+  --subsite-extra-color: hotpink;
+  --subsite-extra-color-contrast: black;
+}
+
+.subsite-extra--color-cool_cucumber {
+  --subsite-extra-color: #01642b;
+  --subsite-extra-color-contrast: #8af670;
+}
+
+.subsite-extra--color-theme_b {
+  --subsite-extra-color: #000cb6;
+  --subsite-extra-color-contrast: var(--color-white);
+}

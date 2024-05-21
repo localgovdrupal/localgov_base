@@ -69,4 +69,9 @@
       </div>
     </div>
   </div>
+  {% if has_subsites_menu %}
+    <div id="lgd-header__nav--subsites-menu" class="lgd-header__nav lgd-header__nav--subsites-menu">
+      {{ page.subsites_menu }}
+    </div>
+  {% endif %}
 </header>
