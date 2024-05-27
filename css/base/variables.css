@@ -529,4 +529,14 @@ body {
   --color-page-section-background-color-6-featured-subsite-background-color: var(--color-grey-lightest);
   --color-page-section-background-color-6-featured-subsite-text-color: var(--color-black);
   --color-page-section-background-color-6-featured-subsite-link-color: var(--color-black);
+
+  /* Add to Calendar */
+  --add-to-calendar-dialog-max-width: 80%;
+  --add-to-calendar-dialog-max-height: 80%;
+  --add-to-calendar-dialog-width: 500px;
+  --add-to-calendar-dialog-height: 500px;
+  --add-to-calendar-dialog-backdrop-color: var(--color-black);
+  --add-to-calendar-dialog-backdrop-opacity: 0.75;
+  --add-to-calendar--icon-color: var(--color-white);
+  --add-to-calendar--icon-color-hover: var(--color-accent);
 }
