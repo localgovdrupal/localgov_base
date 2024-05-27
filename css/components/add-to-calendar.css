@@ -1,4 +1,4 @@
-.localgov-add-to-calendar:has(+ * ) {
+.localgov-add-to-calendar:has(+ *) {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
 
@@ -16,18 +16,17 @@
 }
 
 .localgov-add-to-calendar__dialog {
-  margin: auto;
-  max-width: var(--add-to-calendar-dialog-max-width);
-  max-height: var(--add-to-calendar-dialog-max-height);
   overflow: auto;
   width: var(--add-to-calendar-dialog-width);
+  max-width: var(--add-to-calendar-dialog-max-width);
   height: var(--add-to-calendar-dialog-height);
+  max-height: var(--add-to-calendar-dialog-max-height);
+  margin: auto;
 }
 
 .localgov-add-to-calendar__dialog[open] {
   display: flex;
   flex-direction: column;
-
 }
 
 .localgov-add-to-calendar__dialog-close {
@@ -36,16 +35,16 @@
 }
 
 .localgov-add-to-calendar__dialog::backdrop {
-  background-color: var(--add-to-calendar-dialog-backdrop-color);
   opacity: var(--add-to-calendar-dialog-backdrop-opacity);
+  background-color: var(--add-to-calendar-dialog-backdrop-color);
 }
 
 .localgov-add-to-calendar__items {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
-  justify-content: center;
+  flex-grow: 1;
   align-items: center;
+  justify-content: center;
 }
 
 .localgov-add-to-calendar__item + .localgov-add-to-calendar__item {
