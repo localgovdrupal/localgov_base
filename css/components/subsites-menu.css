@@ -35,17 +35,19 @@
 .subsite-extra {
   --subsite-extra-color: var(--color-accent);
   --subsite-extra-color-contrast: var(--color-white);
-  --subsite-extra-link-color: var(--subsite-extra-color-contrast);
-  --subsite-extra-link-color-hover: var(--subsite-extra-color);
-  --subsite-extra-link-color-active-trail: var(--subsite-extra-color);
-  --subsite-extra-link-bg-color: var(--subsite-extra-color);
-  --subsite-extra-link-bg-color-hover: var(--subsite-extra-color-contrast);
-  --subsite-extra-menu-title-color: var(--subsite-extra-color);
-  --subsite-extra-region-bg-color: var(--color-white);
+  --subsite-extra-link-color: var(--subsite-extra-color);
+  --subsite-extra-link-color-hover: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-color-active-trail: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-bg-color: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-bg-color-hover: var(--subsite-extra-color);
+  --subsite-extra-menu-title-color: var(--subsite-extra-color-contrast);
+  --subsite-extra-region-bg-color: var(--subsite-extra-color);
   --subsite-extra-region-padding-horizontal: var(--spacing);
   --subsite-extra-region-padding-vertical: var(--spacing);
   --subsite-extra-menu-items-gap: var(--spacing);
   --subsite-extra-menu-title-font-family: var(--font-primary);
+  --subsite-extra-border-color: var(--subsite-extra-color-contrast);
+  --subsite-extra-border-color-hovered: var(--subsite-extra-border-color);
 }
 
 /* This would be changed in the menu-subsites.css */
@@ -113,6 +115,8 @@
   padding-block: var(--spacing);
   color: var(--subsite-extra-link-color);
   background-color: var(--subsite-extra-link-bg-color);
+  border: var(--border);
+  border-color: var(--subsite-extra-border-color);
 }
 
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
@@ -120,6 +124,10 @@
 .lgd-region--subsites-menu .menu > .menu-item a:hover {
   color: var(--subsite-extra-link-color-hover);
   background-color: var(--subsite-extra-link-bg-color-hover);
+}
+.lgd-region--subsites-menu .menu > .menu-item--active-trail a,
+.lgd-region--subsites-menu .menu > .menu-item a:hover {
+  border-color: var(--subsite-extra-border-color-hovered);
 }
 
 /*
@@ -132,7 +140,7 @@
 .subsite-extra--color-yellow {
   --subsite-extra-color: yellow;
   --subsite-extra-color-contrast: black;
-  --subsite-extra-region-bg-color: black;
+  --subsite-extra-region-bg-color: yellow;
   --image-with-caption-bg-color: yellow;
   --button-text-color: black;
   --button-bg-color: yellow;
