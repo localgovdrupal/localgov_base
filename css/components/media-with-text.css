@@ -4,8 +4,8 @@
  */
 
 .media-with-text--featured {
-  background-color: var(--color-grey-lightest);
   border: var(--border);
+  background-color: var(--color-grey-lightest);
 }
 
 .media-with-text {
@@ -51,7 +51,7 @@
 
 .media-with-text--media-left .media-with-text__body,
 .media-with-text--media-right .media-with-text__body {
-  width: 100%
+  width: 100%;
 }
 
 .media-with-text--media-left .media-with-text__body {
