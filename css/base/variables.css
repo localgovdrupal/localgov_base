@@ -329,6 +329,7 @@ body {
   --table-border: var(--border);
   --table-padding: var(--spacing);
   --table-bg-color: var(--color-grey-light);
+  --table-header-border-color: var(--color-grey-medium);
 
   /* Tabs */
   --tabs-border: var(--border);
