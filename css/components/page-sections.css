@@ -1,6 +1,6 @@
 .lgd-page-section {
-  background-color: var(--color-page-section-background-color);
   color: var(--color-page-section-text-color);
+  background-color: var(--color-page-section-background-color);
 }
 .lgd-page-section--bg-colour-1 {
   --color-page-section-background-color: var(--color-page-section-background-color-1);
@@ -165,8 +165,6 @@
 .lgd-page-section--bg-colour-6 h6 a {
   color: var(--color-page-section-background-color-6-link-color);
 }
-
-
 
 /* Newsroom Teasers */
 .lgd-page-section--bg-colour-1 .newsroom-teaser {

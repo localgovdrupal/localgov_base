@@ -53,6 +53,6 @@
 */
 .user-logged-in .lgd-region--tabs {
   position: sticky;
-  top: var(--drupal-displace-offset-top);
   z-index: 100;
+  top: var(--drupal-displace-offset-top);
 }
