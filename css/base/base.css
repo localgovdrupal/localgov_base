@@ -180,17 +180,15 @@ table {
   border-collapse: collapse;
 }
 
-thead th {
+td,
+th {
   padding: var(--table-padding);
+  border: var(--table-border);
+}
+
+th {
+  border-color: var(--table-header-border-color);
   background-color: var(--table-bg-color);
-}
-
-tbody td {
-  padding: var(--table-padding);
-}
-
-tbody tr {
-  border-bottom: var(--table-border);
 }
 
 input,
