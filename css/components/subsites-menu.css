@@ -111,12 +111,12 @@
 
 .lgd-region--subsites-menu .menu > .menu-item a {
   display: block;
-  padding-inline: var(--spacing);
-  padding-block: var(--spacing);
   color: var(--subsite-extra-link-color);
-  background-color: var(--subsite-extra-link-bg-color);
   border: var(--border);
   border-color: var(--subsite-extra-border-color);
+  background-color: var(--subsite-extra-link-bg-color);
+  padding-inline: var(--spacing);
+  padding-block: var(--spacing);
 }
 
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
