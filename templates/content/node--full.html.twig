@@ -148,7 +148,7 @@
       </div>
   </div>
 
-  {% if node.localgov_subsites_content.value %}
+  {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
     {{ content.localgov_subsites_content }}
   {% endif %}
   
