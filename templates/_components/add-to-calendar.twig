@@ -34,7 +34,7 @@ set classes = [
 
 <div{{ lgdAddToCalendarAttributes.addClass(classes) }}>
 
-<button class="localgov-add-to-calendar__trigger" type="button" name="addToCalendarTrigger" aria-label="{{ 'Toggle List of Calendars to Add Event To'|t }}">
+<button class="localgov-add-to-calendar__trigger" type="button" name="addToCalendarTrigger">
   {% include "@localgov_base/includes/icons/icon.html.twig" with {
       icon_name: 'calendar',
       icon_wrapper_element: 'span',
@@ -48,7 +48,7 @@ set classes = [
 
   <dialog class="localgov-add-to-calendar__dialog">
     <div class="localgov-add-to-calendar__dialog-close">
-      <button class="localgov-add-to-calendar__dialog-close-button" type="button" name="closeAddToCalendarDialog" aria-label="{{ 'Close Add to Calendar Dialog'|t }}">
+      <button class="localgov-add-to-calendar__dialog-close-button" type="button" name="closeAddToCalendarDialog">
         {{ 'Close'|t }}
       </button>
     </div>
