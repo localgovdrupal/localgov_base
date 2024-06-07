@@ -17,7 +17,6 @@ global:
   # Declare dependencies for other libraries that we want to load
   # on every page.
   dependencies:
-    - core/drupal
     - localgov_base/grid
     - localgov_base/header
     - localgov_base/footer
@@ -64,6 +63,7 @@ header-js:
   js:
     js/header.js: {}
   dependencies:
+    - core/drupal
     - core/drupal.debounce
     - core/once
 
@@ -135,6 +135,8 @@ topic-list-builder:
 guides:
   js:
     js/guides.js: {}
+  dependencies:
+    - core/drupal
 
 guide-nav:
   css:
@@ -298,6 +300,7 @@ subsites-menu:
   js:
     js/subsites-menu.js: {}
   dependencies:
+    - core/drupal
     - core/drupal.debounce
 
 localgov_eu_cookie_compliance:
