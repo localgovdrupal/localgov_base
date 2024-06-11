@@ -135,6 +135,8 @@ topic-list-builder:
 guides:
   js:
     js/guides.js: {}
+  dependencies:
+    - core/drupal
 
 guide-nav:
   css:
