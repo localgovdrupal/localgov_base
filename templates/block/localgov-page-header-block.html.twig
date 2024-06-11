@@ -23,7 +23,12 @@
   <div{{ attributes.addClass(classes) }}>
 
     {% if title %}
-      <h1 class="lgd-page-title-block__title">{{ title }}</h1>
+      <h1 class="lgd-page-title-block__title">
+        {{ title }}
+        {% if subtitle %}
+          <div class="lgd-page-title-block__subtitle">{{ subtitle }}</div>
+        {% endif %}
+      </h1>
     {% endif %}
 
     {% if lede %}
