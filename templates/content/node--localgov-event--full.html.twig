@@ -112,8 +112,8 @@
         {% set atc_rrule = node.localgov_event_date.0.rrule %}
       {% endif %}
 
-      {% if node.body.value %}
-        {% set atc_details = node.body.value %}
+      {% if node.body.summary %}
+        {% set atc_details = node.body.summary %}
       {% endif %}
 
       {% set atc_location_variable = node.localgov_event_location.entity.postal_address.value.0 %}
