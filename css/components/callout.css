@@ -5,7 +5,6 @@
   display: flex;
   gap: var(--spacing);
   padding: 1.5rem;
-  /* text-align: center; */
   color: var(--color-white);
   font-size: var(--font-size-large);
   font-weight: bold;
