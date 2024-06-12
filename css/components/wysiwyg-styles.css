@@ -4,6 +4,8 @@
 
 /* Alerts */
 .alert {
+  display: flex;
+  gap: var(--spacing);
   padding: var(--spacing-largest);
   border: var(--border-large);
   border-color: var(--border-color-alert);
@@ -12,24 +14,53 @@
   font-weight: bold;
 }
 
+.alert::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 2.5rem;
+  padding: var(--spacing-small);
+  content: "!";
+  color: var(--color-white);
+  border-radius: 999rem;
+  background-color: var(--color-black);
+  font-size: 1.5rem;
+}
+
 .alert-primary {
   border-color: var(--color-accent);
+}
+.alert-primary::before {
+  background-color: var(--color-accent);
 }
 
 .alert-info {
   border-color: var(--color-info);
 }
+.alert-info::before {
+  background-color: var(--color-info);
+}
 
 .alert-danger {
   border-color: var(--color-danger);
+}
+.alert-danger::before {
+  background-color: var(--color-danger);
 }
 
 .alert-fail {
   border-color: var(--color-warning);
 }
+.alert-fail::before {
+  background-color: var(--color-warning);
+}
 
 .alert-success {
   border-color: var(--color-success);
+}
+.alert-success::before {
+  background-color: var(--color-success);
 }
 
 /* Links */
