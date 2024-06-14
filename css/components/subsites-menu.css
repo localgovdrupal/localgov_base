@@ -35,25 +35,43 @@
 .subsite-extra {
   --subsite-extra-color: var(--color-accent);
   --subsite-extra-color-contrast: var(--color-white);
-  --subsite-extra-link-color: var(--subsite-extra-color);
-  --subsite-extra-link-color-hover: var(--subsite-extra-color-contrast);
-  --subsite-extra-link-color-active-trail: var(--subsite-extra-color-contrast);
-  --subsite-extra-link-bg-color: var(--subsite-extra-color-contrast);
-  --subsite-extra-link-bg-color-hover: var(--subsite-extra-color);
+  --subsite-extra-link-color: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-color-hover: var(--subsite-extra-color);
+  --subsite-extra-link-color-active-trail: var(--subsite-extra-color);
+  --subsite-extra-link-bg-color: var(--subsite-extra-color);
+  --subsite-extra-link-bg-color-hover: var(--subsite-extra-color-contrast);
   --subsite-extra-menu-title-color: var(--subsite-extra-color-contrast);
   --subsite-extra-region-bg-color: var(--subsite-extra-color);
-  --subsite-extra-region-padding-horizontal: var(--spacing);
-  --subsite-extra-region-padding-vertical: var(--spacing);
+  --subsite-extra-region-padding-left: var(--spacing);
+  --subsite-extra-region-padding-right: var(--spacing);
+  --subsite-extra-region-padding-top: var(--spacing);
+  --subsite-extra-region-padding-bottom: 0;
   --subsite-extra-menu-items-gap: var(--spacing);
   --subsite-extra-menu-title-font-family: var(--font-primary);
-  --subsite-extra-border-color: var(--subsite-extra-color-contrast);
-  --subsite-extra-border-color-hovered: var(--subsite-extra-border-color);
+  --subsite-extra-border-color: var(--subsite-extra-color);
+  --subsite-extra-border-color-hovered: var(--subsite-extra-color-contrast);
+  --subsite-extra-link-spacing-inline: var(--spacing);
+  --subsite-extra-link-spacing-block: var(--spacing);
+  --subsite-extra-link-underline-thickness: max(3px, 0.1875rem, 0.12em);
+  --subsite-extra-header-padding-bottom: 0;
+}
+
+/*
+  Setting the lgd-header padding to 0 when the subsites menu is present.
+  This means that the menu item looks like a tab, by not having any gap between
+  it and the bottom of the header. It only applies on pages where there is a
+  subsites menu. To reverse it, simply set the variable value to var(--spacing).
+*/
+.subsite-extra:has(.lgd-region--subsites-menu) .lgd-header {
+  padding-bottom: var(--subsite-extra-header-padding-bottom);
 }
 
 /* This would be changed in the menu-subsites.css */
 .lgd-region--subsites-menu {
-  padding-block: var(--subsite-extra-region-padding-vertical);
-  padding-inline: var(--subsite-extra-region-padding-horizontal);
+  padding-top: var(--subsite-extra-region-padding-top);
+  padding-bottom: var(--subsite-extra-region-padding-bottom);
+  padding-left: var(--subsite-extra-region-padding-left);
+  padding-right: var(--subsite-extra-region-padding-right);
   background-color: var(--subsite-extra-region-bg-color);
 }
 
@@ -77,6 +95,11 @@
 .lgd-region--subsites-menu .subsite-extra__title > a {
   color: var(--subsite-extra-menu-title-color);
   font-family: var(--subsite-extra-menu-title-font-family);
+  text-decoration: none;
+  }
+.lgd-region--subsites-menu .subsite-extra__title > a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: var(--subsite-extra-link-underline-thickness);
 }
 
 .lgd-region--subsites-menu .menu {
@@ -115,8 +138,9 @@
   border: var(--border);
   border-color: var(--subsite-extra-border-color);
   background-color: var(--subsite-extra-link-bg-color);
-  padding-inline: var(--spacing);
-  padding-block: var(--spacing);
+  padding-inline: var(--subsite-extra-link-spacing-inline);
+  padding-block: var(--subsite-extra-link-spacing-block);
+  text-decoration: none;
 }
 
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
@@ -125,9 +149,15 @@
   color: var(--subsite-extra-link-color-hover);
   background-color: var(--subsite-extra-link-bg-color-hover);
 }
+
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
 .lgd-region--subsites-menu .menu > .menu-item a:hover {
   border-color: var(--subsite-extra-border-color-hovered);
+}
+
+.lgd-region--subsites-menu .menu > .menu-item a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: var(--subsite-extra-link-underline-thickness);
 }
 
 /*
