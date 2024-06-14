@@ -48,6 +48,11 @@ wysiwyg-styles:
   css:
     theme:
       css/components/wysiwyg-styles.css: {}
+  js:
+    js/wysiwyg-styles.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 header:
   css:
