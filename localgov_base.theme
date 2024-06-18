@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Crypt;
+use Drupal\Component\Utility\DeprecationHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
@@ -69,7 +70,16 @@ function localgov_base_preprocess_page(&$variables) {
       continue;
     }
     $copy = $variables['page'][$region];
-    $rendered = \Drupal::service('renderer')->renderPlain($copy);
+
+    /** @var \Drupal\Core\Render\RendererInterface $renderer */
+    $renderer = \Drupal::service('renderer');
+    $rendered = DeprecationHelper::backwardsCompatibleCall(
+      currentVersion: \Drupal::VERSION,
+      deprecatedVersion: '10.3',
+      currentCallable: fn() => $renderer->renderInIsolation($copy),
+      deprecatedCallable: fn() => $renderer->renderPlain($copy),
+    );
+
     $variables['has_' . $region] = strlen(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>'))) > 0;
   }
   $variables['has_sidebars'] = $variables['has_sidebar_first'] || $variables['has_sidebar_second'];
