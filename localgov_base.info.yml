@@ -8,6 +8,9 @@ ckeditor_stylesheets:
 ckeditor5-stylesheets:
   - css/base/ckeditor5.css
 
+dependencies:
+  - localgov_base:localgov_base_supports
+
 regions:
   tabs: "Tabs"
   header: "Header"

@@ -14,3 +14,8 @@ localgov_base.settings:
     localgov_base_add_draft_note_to_unpublished_content:
       type: boolean
       label: 'Add "[Draft]" to title of unpublished content.'
+    localgov_base_header_behaviour:
+      type: string
+      label: 'Header behaviour'
+      description: 'Choose whether the header should be sticky or not.'
+      default: 'default'

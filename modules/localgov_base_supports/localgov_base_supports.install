@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for LocalGov Base Supports.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function localgov_base_supports_install() {
+  // Create the LocalGov Base settings.
+  $config = \Drupal::configFactory()->getEditable('localgov_base.settings');
+  $config->set('localgov_base_header_behaviour', 'default');
+  $config->save();
+}
