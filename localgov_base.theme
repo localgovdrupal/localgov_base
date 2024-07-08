@@ -56,7 +56,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
       'sticky' => t('Sticky - remains at the top of the page'),
       'appears_on_scroll' => t('Scroll - appears when scrolling up the page'),
     ],
-    '#description' => t('Select how you want the header to behave.'),
+    '#description' => t('Select how you want the header to behave. This setting only apply to anonymous users.'),
   ];
 
 }
