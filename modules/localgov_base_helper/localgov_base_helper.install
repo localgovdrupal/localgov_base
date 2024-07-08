@@ -10,10 +10,11 @@
  */
 function localgov_base_helper_install() {
   $theme_handler = \Drupal::service('theme_handler');
-
-  // Check if the 'localgov_base' theme is installed.
+  // Check if the 'localgov_base' theme is available.
   if ($theme_handler->themeExists('localgov_base')) {
     // Now, check if it is enabled.
+    // If not yet enabled, these settings will be taken from the theme's
+    // /config/install directory, instead of here.
     $theme = $theme_handler->getTheme('localgov_base');
     if ($theme->status) {
       // The theme is installed and enabled, proceed to set the config.

@@ -1,0 +1,17 @@
+.sticky-header .lgd-header {
+  top: var(--lgd-sticky-header-position);
+  width: 100%;
+  z-index: 1000;
+}
+
+.sticky-header .lgd-header + * {
+  margin-top: calc(var(--lgd-sticky-header-position) + var(--lgd-sticky-header-height));
+}
+
+.user-logged-in.sticky-header .lgd-header + * {
+  margin-top: calc(var(--lgd-sticky-header-position));
+}
+
+.sticky-header--scroll {
+
+}
