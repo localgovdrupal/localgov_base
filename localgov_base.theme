@@ -75,14 +75,14 @@ function localgov_base_preprocess_html(&$variables) {
 
       // If 'sticky' is chosen add a class to the body element.
       if (theme_get_setting('localgov_base_header_behaviour') === 'sticky') {
-       $variables['attributes']['class'][] = 'sticky-header';
-       $variables['attributes']['class'][] = 'sticky-header--sticky';
+        $variables['attributes']['class'][] = 'sticky-header';
+        $variables['attributes']['class'][] = 'sticky-header--sticky';
       }
 
       // If 'scroll' is chosen add a class to the body element.
       if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
-       $variables['attributes']['class'][] = 'sticky-header';
-       $variables['attributes']['class'][] = 'sticky-header--scroll';
+        $variables['attributes']['class'][] = 'sticky-header';
+        $variables['attributes']['class'][] = 'sticky-header--scroll';
       }
     }
   }
