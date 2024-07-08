@@ -50,7 +50,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
   $form['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
-    '#default_value' => theme_get_setting('localgov_base_header_behaviour', 'default'),
+    '#default_value' => theme_get_setting('localgov_base_header_behaviour'),
     '#options' => [
       'default' => t('Default - scrolls away with the page'),
       'sticky' => t('Sticky - remains at the top of the page'),
