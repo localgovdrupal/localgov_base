@@ -8,8 +8,6 @@
       }
 
       headers.forEach(header => {
-
-
         function calculatePositions() {
           let tabsHeight = 0;
           const tabs = header.closest('body').querySelector('.lgd-region--tabs');
@@ -29,10 +27,30 @@
           if (header.closest('body').classList.contains('sticky-header')) {
             document.documentElement.style.setProperty('--lgd-sticky-header-position', `${headerPosition}px`);
             document.documentElement.style.setProperty('--lgd-sticky-header-height', `${headerHeight}px`);
-            header.style.position = 'fixed';
           }
 
+          if (header.closest('body').classList.contains('sticky-header--sticky')) {
+            header.style.position = 'fixed';
+          }
         }
+
+        // Initialize oldScroll, so we can use it in the scroll event.
+        let oldScroll = window.scrollY;
+
+        function handleScroll() {
+          if (oldScroll > window.scrollY) {
+            header.closest('body').classList.add('sticky-header--sticky');
+          } else {
+            header.closest('body').classList.remove('sticky-header--sticky');
+            header.style.position = 'relative';
+          }
+          // Update oldScroll to the new scroll position after the comparison
+          oldScroll = window.scrollY;
+
+          calculatePositions();
+        }
+
+        window.addEventListener('scroll', handleScroll);
 
         setTimeout(() => {
           calculatePositions();

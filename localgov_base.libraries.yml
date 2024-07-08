@@ -72,6 +72,10 @@ sticky-header:
       css/components/sticky-header.css: {}
   js:
     js/sticky-header.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
+    - core/once
 
 footer:
   css:
