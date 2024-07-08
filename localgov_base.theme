@@ -54,7 +54,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#options' => [
       'default' => t('Default - scrolls away with the page'),
       'sticky' => t('Sticky - remains at the top of the page'),
-      'appears_on_scroll' => t('Scroll - appears when scrolling up'),
+      'appears_on_scroll' => t('Scroll - appears when scrolling up the page'),
     ],
     '#description' => t('Select how you want the header to behave.'),
   ];

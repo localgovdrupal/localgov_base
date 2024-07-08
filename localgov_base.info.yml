@@ -9,7 +9,7 @@ ckeditor5-stylesheets:
   - css/base/ckeditor5.css
 
 dependencies:
-  - localgov_base:localgov_base_supports
+  - localgov_base:localgov_base_helper
 
 regions:
   tabs: "Tabs"

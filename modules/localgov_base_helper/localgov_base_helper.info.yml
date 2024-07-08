@@ -1,4 +1,4 @@
-name: 'LocalGov Base Supports'
+name: 'LocalGov Base Helper'
 type: module
 description: 'Adds update hooks to LocalGov Base.'
 package: LocalGov Drupal
