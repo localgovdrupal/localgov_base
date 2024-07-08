@@ -47,13 +47,6 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
   ];
 
-  $form['localgov_base_test'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('TEST'),
-    '#default_value' => TRUE,
-    '#description'   => t('This is a test.'),
-  ];
-
   $form['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
@@ -66,6 +59,24 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description' => t('Select how you want the header to behave.'),
   ];
 
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function localgov_base_preprocess_html(&$variables) {
+  // Add the 'sticky-header' library if the sticky header setting is enabled.
+  if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
+    $variables['#attached']['library'][] = 'localgov_base/sticky-header';
+    // If 'sticky' is chosen add a class to the body tag.
+    if (theme_get_setting('localgov_base_header_behaviour') === 'sticky') {
+      $variables['attributes']['class'][] = 'sticky-header';
+    }
+
+    if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
+      $variables['attributes']['class'][] = 'sticky-header--scroll';
+    }
+  }
 }
 
 /**
@@ -113,19 +124,6 @@ function localgov_base_preprocess_page(&$variables) {
   // we will add the 'unpublished' library to our page.
   if (theme_get_setting('localgov_base_add_unpublished_background_colour') === TRUE) {
     $variables['#attached']['library'][] = 'localgov_base/unpublished-bg';
-  }
-
-  // Add the 'sticky-header' library if the sticky header setting is enabled.
-  if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
-    $variables['#attached']['library'][] = 'localgov_base/sticky-header';
-    // If 'sticky' is chosen add a class to the body tag.
-    if (theme_get_setting('localgov_base_header_behaviour') === 'sticky') {
-      $variables['attributes']['class'][] = 'sticky-header';
-    }
-    // If 'appears_on_scroll' is chosen add a class to the body
-    if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
-      $variables['attributes']['class'][] = 'sticky-header--scroll';
-    }
   }
 }
 
