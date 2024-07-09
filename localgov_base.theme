@@ -71,17 +71,15 @@ function localgov_base_preprocess_html(&$variables) {
     // We have much fewer calculations if we keep this to anonymous users only.
     if (\Drupal::currentUser()->isAnonymous()) {
       $variables['#attached']['library'][] = 'localgov_base/sticky-header';
-      $variables['#attached']['library'][] = 'localgov_base/sticky-header';
+      $variables['attributes']['class'][] = 'sticky-header';
 
       // If 'sticky' is chosen add a class to the body element.
       if (theme_get_setting('localgov_base_header_behaviour') === 'sticky') {
-        $variables['attributes']['class'][] = 'sticky-header';
         $variables['attributes']['class'][] = 'sticky-header--sticky';
       }
 
       // If 'scroll' is chosen add a class to the body element.
       if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
-        $variables['attributes']['class'][] = 'sticky-header';
         $variables['attributes']['class'][] = 'sticky-header--scroll';
       }
     }
