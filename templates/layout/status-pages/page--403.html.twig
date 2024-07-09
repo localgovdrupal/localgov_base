@@ -1,17 +1,1 @@
-{% extends "@localgov_base/layout/page.html.twig" %}
-
-{% block page_content %}
-  <div class="lgd-container">
-      <div class="lgd-row">
-        <div class="lgd-row__full">
-          <div class="padding-horizontal">
-            <h1>{{ 'Access denied'|t }}</h1>
-            <p>{{ 'You are not authorised to access this page.'|t }}</p>
-            <p>
-              <a href="/user/login">{{ 'Login'|t }}?</a>
-            </p>
-          </div>
-        </div>
-      </div>
-  </div>
-{% endblock %}
+{% extends "@localgov_base/layout/status-pages/page-status.html.twig" %}

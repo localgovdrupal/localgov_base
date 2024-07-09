@@ -71,39 +71,13 @@
  */
 #}
 
-{# 
-  Restrict width of the content area to two-thirds of the screen for 
-  some content types. This is helpful to reduce the line-length for 
-  better readability.
-#}
-{% set restricted_width_content_types = [
-    'localgov_services_page',
-    'localgov_event',
-    'localgov_step_by_step_overview',
-    'localgov_services_status',
-    'localgov_publication_cover_page'
-  ] 
-%}
-
 {% set content_type = node.bundle %}
 
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/full') }}
-  {% if content_type == 'localgov_directories_venue' 
-        or content_type == 'localgov_directories_page' 
-        or content_type == 'localgov_directory' %}
-    {{ attach_library('localgov_base/directories') }}
-  {% endif %}
-
-  {% if content_type == 'localgov_event' %}
-    {{ attach_library('localgov_base/events') }}
-  {% endif %}
-
-  {% if content_type == 'localgov_step_by_step_overview'
-        or content_type == 'localgov_step_by_step_page' %}
-    {{ attach_library('localgov_base/step-by-step') }}
-  {% endif %}
 {% endif %}
+
+{{ attach_library('localgov_base/events') }}
 
 {%
   set classes = [
@@ -119,42 +93,40 @@
 %}
 
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
 
   <div class="lgd-container padding-horizontal">
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}  
+    <div class="node__restricted-width-section">
+      {% set atc_title = node.title.value %}
 
-    {% if display_submitted %}
-      <footer class="node__meta">
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </footer>
-    {% endif %} 
+      {% if node.localgov_event_date.value %}
+        {% set atc_start_date = node.localgov_event_date.value %}
+      {% endif %}
 
-    {% if content_type in restricted_width_content_types %}
-      <div class="node__restricted-width-section">
-    {% endif %} 
+      {% if node.localgov_event_date.end_value %}
+        {% set atc_end_date = node.localgov_event_date.end_value %}
+      {% endif %}
+
+      {% if node.localgov_event_date.0.rrule %}
+        {% set atc_rrule = node.localgov_event_date.0.rrule %}
+      {% endif %}
+
+      {% if node.body.summary %}
+        {% set atc_details = node.body.summary %}
+      {% endif %}
+
+      {% set atc_location_variable = node.localgov_event_location.entity.postal_address.value.0 %}
+      {% if atc_location_variable %}
+        {% set atc_location = atc_location_variable.address_line1 ~ ', ' ~ atc_location_variable.locality ~ ', ' ~ atc_location_variable.postal_code %}
+      {% endif %}
 
       <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ content|without('localgov_subsites_content') }}
+        {{ content.localgov_event_date }}
+        {% include "@localgov_base/_components/add-to-calendar.twig" %}
+        {{ content|without('localgov_event_date') }}
       </div>
-  </div>
 
-  {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
-    {{ content.localgov_subsites_content }}
-  {% endif %}
-  
-
-  {% if content_type in restricted_width_content_types %}
     </div>
-  {% endif %}
-
+  </div>
 </article>
