@@ -69,9 +69,9 @@
 /* This would be changed in the menu-subsites.css */
 .lgd-region--subsites-menu {
   padding-top: var(--subsite-extra-region-padding-top);
+  padding-right: var(--subsite-extra-region-padding-right);
   padding-bottom: var(--subsite-extra-region-padding-bottom);
   padding-left: var(--subsite-extra-region-padding-left);
-  padding-right: var(--subsite-extra-region-padding-right);
   background-color: var(--subsite-extra-region-bg-color);
 }
 
@@ -93,10 +93,10 @@
 }
 
 .lgd-region--subsites-menu .subsite-extra__title > a {
+  text-decoration: none;
   color: var(--subsite-extra-menu-title-color);
   font-family: var(--subsite-extra-menu-title-font-family);
-  text-decoration: none;
-  }
+}
 .lgd-region--subsites-menu .subsite-extra__title > a:hover {
   text-decoration: underline;
   text-decoration-thickness: var(--subsite-extra-link-underline-thickness);
@@ -134,13 +134,13 @@
 
 .lgd-region--subsites-menu .menu > .menu-item a {
   display: block;
+  text-decoration: none;
   color: var(--subsite-extra-link-color);
   border: var(--border);
   border-color: var(--subsite-extra-border-color);
   background-color: var(--subsite-extra-link-bg-color);
   padding-inline: var(--subsite-extra-link-spacing-inline);
   padding-block: var(--subsite-extra-link-spacing-block);
-  text-decoration: none;
 }
 
 .lgd-region--subsites-menu .menu > .menu-item--active-trail a,
