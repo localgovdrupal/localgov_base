@@ -50,7 +50,9 @@
           calculatePositions();
         }
 
-        window.addEventListener('scroll', handleScroll);
+        if (header.closest('body').classList.contains('sticky-header--scroll')) {
+          window.addEventListener('scroll', handleScroll);
+        }
 
         setTimeout(() => {
           calculatePositions();
