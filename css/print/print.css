@@ -14,3 +14,7 @@
 img {
   max-width: 10cm; /* half the width of A4 */
 }
+
+.accordion--initialised .accordion-pane__content {
+  display: block;
+}
