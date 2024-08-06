@@ -141,6 +141,9 @@ body {
 
   /* Animation */
   --transition-time: 0.3s;
+
+  /* Dialog */
+  --dialog-backdrop-color: rgba(0, 0, 0, 0.8);
 }
 
 /*
