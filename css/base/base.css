@@ -16,6 +16,10 @@ html {
   margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
+dialog {
+  margin: auto;
+}
+
 body {
   margin: 0;
   color: var(--color-text);

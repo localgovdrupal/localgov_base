@@ -8,6 +8,14 @@
   background-color: var(--alert-banner-bg-color);
 }
 
+dialog.localgov-alert-banner {
+  margin: auto;
+}
+
+dialog.localgov-alert-banner::backdrop {
+  background-color: var(--dialog-backdrop-color);
+}
+
 .localgov-alert-banner,
 .localgov-alert-banner a {
   color: var(--alert-banner-color);
