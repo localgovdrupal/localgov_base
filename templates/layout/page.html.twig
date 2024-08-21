@@ -98,7 +98,9 @@
 
 {{ page.messages }}
 
-<main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
+<main class="main">
+  {# The "skip to content" link jumps to here. #}
+  <a id="main-content" />
 
   {% if has_content_top %}
     {{ page.content_top }}
