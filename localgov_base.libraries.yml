@@ -317,3 +317,10 @@ add-to-calendar:
   dependencies:
     - core/drupal
     - core/once
+
+skip-link:
+  js:
+    js/skip-link.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
