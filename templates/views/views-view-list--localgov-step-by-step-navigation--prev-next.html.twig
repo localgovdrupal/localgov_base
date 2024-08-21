@@ -42,44 +42,8 @@
 
 {% set previous_icon = 'chevron-left' %}
 {% set next_icon = 'chevron-right' %}
+{% set prev_next_type = 'step_by_step' %}
+{% set previous_url = has_prev_step ? path('entity.node.canonical', {'node': prev_step_nid }) : '' %}
+{% set next_url = has_next_step ? path('entity.node.canonical', {'node': next_step_nid }) : ''  %}
 
-<nav class="lgd-prev-next lgd-prev-next--step-by-step" aria-label={{ 'Step-by-step'|t }}>
-  {% set has_wrapper_attributes = attributes.toString() %}
-  {% if has_wrapper_attributes -%}
-    <div{{attributes}}>
-    {% endif %}
-    {% if title %}
-      <h3>{{ title }}</h3>
-    {% endif %}
-
-    <{{list.type}}{{list.attributes.addClass('lgd-prev-next__list') }}>
-      {% if has_prev_step %}
-        <li{{rows[prev_step_index].attributes.addClass('lgd-prev-next__list-item', 'lgd-prev-next__list-item--prev') }}>
-          <a href="{{ path('entity.node.canonical', {'node': prev_step_nid }) }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ 'Previous step'|t }}: {{ prev_step_title }}">
-            {% include "@localgov_base/includes/icons/icon.html.twig" with {
-                icon_name: previous_icon,
-                icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
-              }
-            %}
-            {{ prev_step_link_text }}</a>
-        </li>
-      {% endif %}
-
-      {% if has_next_step %}
-        <li{{rows[next_step_index].attributes.addClass('lgd-prev-next__list-item', 'lgd-prev-next__list-item--next') }}>
-          <a href="{{ path('entity.node.canonical', {'node': next_step_nid }) }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ 'Next step'|t }}: {{ next_step_title }}">
-            {{ next_step_link_text }}
-            {% include "@localgov_base/includes/icons/icon.html.twig" with {
-                icon_name: next_icon,
-                icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
-              }
-            %}
-          </a>
-        </li>
-      {% endif %}
-    </{{list.type}}>
-
-    {% if has_wrapper_attributes -%}
-    </div>
-  {% endif %}
-</nav>
+{% include "@localgov_base/_components/prev-next.twig" %}
