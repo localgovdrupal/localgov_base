@@ -46,4 +46,4 @@
 {% set previous_url = has_prev_step ? path('entity.node.canonical', {'node': prev_step_nid }) : '' %}
 {% set next_url = has_next_step ? path('entity.node.canonical', {'node': next_step_nid }) : ''  %}
 
-{% include "@localgov_base/_components/prev-next.twig" %}
+{% include '@localgov_base/_components/prev-next.twig' %}
