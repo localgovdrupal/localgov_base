@@ -21,10 +21,10 @@
        */
       function observerCallback(entries) {
         entries.forEach((entry) => {
-          backToTop.hidden = !(
+          backToTop.hidden = (
             entry.isIntersecting ||
             (!entry.isIntersecting && entry.boundingClientRect.top <= 0)
-          );
+          ) ? false : "until-hidden";
         });
       }
 
@@ -53,7 +53,7 @@
       // Create an element absolutely positioned at our threshold.
       backToTopTarget.style.position = "absolute";
       backToTopTarget.style.top = `${viewportHeight * minContentViewportRatio}px`;
-      backToTop.addEventListener("click", (event) => event.target.hidden = true);
+      backToTop.addEventListener("click", (event) => event.target.hidden = "until-found");
 
       // Create an IntersectionObserver.
       intersectionObserver = new IntersectionObserver(observerCallback, {
