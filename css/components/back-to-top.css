@@ -1,6 +1,35 @@
-.button.back-to-top:not([hidden]) {
-  bottom: 1em;
-  display: inline-block;
+.back-to-top {
+  background: var(--button-link-bg-color);
+  border: 3px solid var(--color-white);
+  bottom: 2em;
+  color: var(--button-link-color);
+  display: flex;
+  font-weight: bold;
+  gap: var(--spacing-small);
+  padding: var(--button-link-padding);
   position: fixed;
-  right: 1em;
+  right: 2em;
+  text-decoration: none;
+  transition: var(--transition-time);
+  opacity: 1;
+}
+
+.back-to-top[hidden] {
+  opacity: 0;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  text-decoration: underline;
+}
+
+.back-to-top__icon svg path {
+  fill: currentcolor;
+}
+
+@media screen and (min-width: 48rem) {
+  .back-to-top {
+    bottom: 5em;
+    right: 5em;
+  }
 }
