@@ -66,7 +66,6 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
  */
 function localgov_base_preprocess_html(&$variables) {
   // Add the 'sticky-header' library if the sticky header setting is enabled.
-
   if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
 
     // Check if the user is logged out.
@@ -74,7 +73,7 @@ function localgov_base_preprocess_html(&$variables) {
     if (\Drupal::currentUser()->isAnonymous()) {
       $variables['#attached']['library'][] = 'localgov_base/sticky-header';
       $variables['attributes']['class'][] = 'sticky-header';
-      $variables['html_attributes']['class'] = array();
+      $variables['html_attributes']['class'] = [];
       $variables['html_attributes']['class'][] = 'sticky-header-html';
 
       // If 'sticky' is chosen add a class to the body element.
