@@ -1,0 +1,6 @@
+.button.back-to-top:not([hidden]) {
+  bottom: 1em;
+  display: inline-block;
+  position: fixed;
+  right: 1em;
+}

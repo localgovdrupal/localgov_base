@@ -317,3 +317,13 @@ add-to-calendar:
   dependencies:
     - core/drupal
     - core/once
+
+back-to-top:
+  css:
+    theme:
+      css/components/back-to-top.css: {}
+  js:
+    js/back-to-top.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
