@@ -8,7 +8,7 @@
       /**
        * Callback for intersection observer.
        *
-       * Sets back to top link's hidden attribute to "false" if the intersection
+       * Sets back to top link's hidden attribute to 'false' if the intersection
        * target is either:
        *
        * - intersecting the viewport, OR
@@ -24,14 +24,14 @@
           backToTop.hidden = (
             entry.isIntersecting ||
             (!entry.isIntersecting && entry.boundingClientRect.top <= 0)
-          ) ? false : "until-hidden";
+          ) ? false : 'until-hidden';
         });
       }
 
-      const [backToTop] = once("back-to-top", ".back-to-top", context);
+      const [backToTop] = once('back-to-top', '.back-to-top', context);
       const [backToTopTarget] = once(
-        "back-to-top-target",
-        ".back-to-top-target",
+        'back-to-top-target',
+        '.back-to-top-target',
         context,
       );
       const minContentViewportRatio = parseFloat(
@@ -51,13 +51,13 @@
       }
 
       // Create an element absolutely positioned at our threshold.
-      backToTopTarget.style.position = "absolute";
+      backToTopTarget.style.position = 'absolute';
       backToTopTarget.style.top = `${viewportHeight * minContentViewportRatio}px`;
-      backToTop.addEventListener("click", (event) => event.target.hidden = "until-found");
+      backToTop.addEventListener('click', (event) => event.target.hidden = 'until-found');
 
       // Create an IntersectionObserver.
       intersectionObserver = new IntersectionObserver(observerCallback, {
-        rootMargin: "16px",
+        rootMargin: '16px',
       });
       intersectionObserver.observe(backToTopTarget);
     },
