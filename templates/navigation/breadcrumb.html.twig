@@ -5,6 +5,7 @@
  *
  * Available variables:
  * - breadcrumb: Breadcrumb trail items.
+ * - breadcrumb_token: Used to insert a token to be replaced by a reverse CMS (EG Civica Modern.Gov)
  */
 #}
 
@@ -25,6 +26,9 @@
           {% endif %}
         </li>
       {% endfor %}
+      {% if breadcrumb_token is defined %}
+        {{ breadcrumb_token }}
+      {% endif %}
     </ol>
   </nav>
 {% endif %}
