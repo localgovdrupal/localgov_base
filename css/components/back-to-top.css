@@ -27,6 +27,12 @@
   fill: currentcolor;
 }
 
+.back-to-top-target {
+  max-height: 1px;
+  max-width: 1px;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 48rem) {
   .back-to-top {
     bottom: 5em;
