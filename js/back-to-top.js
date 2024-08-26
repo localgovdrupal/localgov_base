@@ -53,6 +53,7 @@
       // Create an element absolutely positioned at our threshold.
       backToTopTarget.style.position = "absolute";
       backToTopTarget.style.top = `${viewportHeight * minContentViewportRatio}px`;
+      backToTop.addEventListener("click", (event) => event.target.hidden = true);
 
       // Create an IntersectionObserver.
       intersectionObserver = new IntersectionObserver(observerCallback, {
