@@ -47,8 +47,11 @@
         // The resulting region.primary.firstLink isn't used, but it's less
         // difficult to add it than to add only region.secondary.firstLink.
         if (region) {
-          const firstLink = region.querySelector('.menu a');
-          navInfo[nav] = { toggle, region, firstLink };
+          const links = region.querySelectorAll('.menu a');
+          const firstLink = links[0];
+          const lastLink = links[links.length - 1];
+
+          navInfo[nav] = { toggle, region, firstLink, lastLink };
         }
       });
 
@@ -101,11 +104,22 @@
         navInfo.secondary.firstLink.addEventListener('keydown', function(e) {
           if (e.shiftKey && e.key == 'Tab') {
             e.preventDefault();
-            handleReset();
             navInfo.secondary.toggle.focus();
           }
         });
       }
+
+      // When on the last link in the secondary menu, if you hit tab
+      // set focus back to the services button
+      function handleSecondaryMenuTabClick() {
+        navInfo.secondary.lastLink.addEventListener('keydown', function(e) {
+          if (e.key == 'Tab') {
+            e.preventDefault();
+            navInfo.secondary.toggle.focus();
+          }
+        });
+      }
+
 
       // General function for when the ESC is clicked.
       function handleEscKeyClick(buttonToFocus) {
@@ -143,6 +157,7 @@
           if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuToggleClick, true);
             navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuShiftTabClick, true);
+            navInfo.secondary.toggle.removeEventListener('click', handleSecondaryMenuTabClick, true);
           }
           if (navInfo.primary.toggle) {
             navInfo.primary.toggle.addEventListener('click', handlePrimaryMenuToggleClick);
@@ -154,6 +169,7 @@
           if (Object.keys(navInfo).includes('secondary') && navInfo.secondary.toggle) {
             navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuToggleClick);
             navInfo.secondary.toggle.addEventListener('click', handleSecondaryMenuShiftTabClick);
+            navInfo.secondary.toggle.addEventListener('keyup', handleSecondaryMenuTabClick);
           }
         }
       }
