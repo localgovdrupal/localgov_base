@@ -33,9 +33,8 @@
 
 {% if has_links %}
   {# This uses previous_* vars, prev-next uses prev_*, so we translate. #}
-  {% set previous_url = prev_url %}
-  {% set previous_title = prev_title %}
   {% set show_title = 1 %}
   {% set prev_next_type = 'publications' %}
-  {% include '@localgov_base/_components/prev-next.twig' %}
+
+  {% include 'localgov_base:prev-next' %}
 {% endif %}
