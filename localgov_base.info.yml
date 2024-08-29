@@ -36,3 +36,6 @@ regions:
 libraries-extend:
   localgov_eu_cookie_compliance/localgov_eu_cookie_compliance:
     - localgov_base/localgov_eu_cookie_compliance
+
+dependencies:
+  - drupal:sdc
