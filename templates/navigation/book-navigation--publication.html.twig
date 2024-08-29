@@ -33,7 +33,7 @@
 
 {% if has_links %}
   {# This uses previous_* vars, prev-next uses prev_*, so we translate. #}
-  {% set show_title = 1 %}
+  {% set show_title = true %}
   {% set prev_next_type = 'publications' %}
 
   {% include 'localgov_base:prev-next' %}
