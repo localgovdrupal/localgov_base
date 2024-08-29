@@ -17,7 +17,7 @@
        * @param {IntersectionObserverEntry[]} entries
        *   The qualifying entries to be checked for intersection with, or
        *   past the top of the viewport. In practices, there's only one of
-       *   these since we've only targeted on element.
+       *   these since we've only targeted one element.
        */
       function observerCallback(entries) {
         entries.forEach((entry) => {
