@@ -1,0 +1,26 @@
+---
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Previous-next
+description: Provides common Previous-Next navigation element for LGD themes and modules.
+status: stable
+props:
+  type: object
+  properties:
+    icon_path:
+      type: string
+      title: Icon path
+      description: >
+        The path to the icon directory used for the component. Ideally, this
+        should be a twig-namespaced path like @foo/bar/icons. Defaults to
+        @localgov_base/includes/icons/.
+    icon_wrapper_element:
+      type: string
+      title: Icon wrapper element
+      description: >
+        The type of element to use to wrap the icon. Defaults to 'div'.
+    icon_classes:
+      type: string
+      title: Icon classes
+      description: >
+        A space-separated string of one or more icon classes to be added to the
+        defaults.

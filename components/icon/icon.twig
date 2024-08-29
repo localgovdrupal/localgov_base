@@ -1,0 +1,46 @@
+{#
+  @file Adding icons to our website, without loading an icon library.
+
+  To use this, you need to add this html to your template:
+
+  {% include 'localgov_base:icon' with {
+    theme: 'localgov_base',
+    icon_name: 'facebook-square',
+    icon_wrapper_element: 'div',
+    icon_classes: 'service-landing-page__service-icon',
+  } %}
+
+  The only option above that is necessary is the 'icon_name' one. The others
+  have sensible defaults. The 'theme' one is handy if you want to add custom
+  icons to your own theme that will not be needed to share with LGD core.
+
+  Icons default to a width of 1rem. To make them larger or smaller, just
+  add the classes to the icon_classes variable. Note: this is a string, not
+  an array. If you want to add more than one class, just include it in your
+  string like so: icon_classes: 'class-1 class-2 class-3'.
+
+  The widths we have available out of the box are:
+
+    - lgd-icon--small
+    - lgd-icon--smaller
+    - lgd-icon--smallest
+    - lgd-icon--large
+    - lgd-icon--larger
+    - lgd-icon--largest
+
+  Each of these sizes corresponds to one of localgov_base's var(--spacing-*)
+  sizes.
+#}
+
+{% set theme = theme|default('localgov_base') %}
+{% set icon_wrapper_element = icon_wrapper_element|default('div') %}
+
+{% set attributes = create_attribute()
+  .setAttribute('aria-hidden', decoration|default('true'))
+  .addClass('lgd-icon')
+  .addClass(icon_classes)
+%}
+
+<{{ icon_wrapper_element }}{{ attributes }}>
+  {% include icon_path ~ '/' ~ icon_name ~ '.svg' %}
+</{{ icon_wrapper_element }}>
