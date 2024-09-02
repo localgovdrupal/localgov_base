@@ -11,7 +11,7 @@ on:
 
 jobs:
   tests:
-    uses: localgovdrupal/localgov_shared_workflows/.github/workflows/test-module.yml@1.x
+    uses: localgovdrupal/localgov_shared_workflows/.github/workflows/test-module.yml@feature/1.x/add-eslint-csslint-checks
     with:
       project: 'localgovdrupal/localgov_base'
       project_path: 'web/themes/contrib/localgov_base'
