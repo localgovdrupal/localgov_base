@@ -104,7 +104,7 @@
 .lgd-header__toggle-icon::after {
   display: inline-block;
   margin-left: var(--spacing-smaller);
-  content: "\203A";
+  content: "\203A" / "";
   transition: var(--transition-time);
   transform: rotate(90deg);
   font-size: var(--font-size-larger);
