@@ -1,7 +1,11 @@
 ---
 $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Previous-next
-description: Provides common Previous-Next navigation element for LGD themes and modules.
+description: >
+  Provides common Previous-Next navigation element for LGD themes and modules.
+  NOTE: it is the responsibility of the caller and providing module to provide
+  translated strings as needed for prev_label, next_label, prev_title, and
+  next_title.
 status: stable
 props:
   type: object
@@ -33,9 +37,9 @@ props:
         will be concatenated to the icon_path variable. Defaults to
         'chevron-left'.
     prev_label:
-      type: string
+      type: object
       title: Previous label
-      description: Label for Previous link. Defaults to "Previous".
+      description: Translated label for Previous link. Defaults to "Previous".
     prev_title:
       type: string
       title: Previous title
@@ -55,9 +59,9 @@ props:
         The extensionless filename of the icon to show in next link. This will
         be concatenated to the icon_path variable. Defaults to 'chevron-right'.
     next_label:
-      type: string
+      type: object
       title: Next label
-      description: Label for Next link. Defaults to "Next".
+      description: Translated label for Next link. Defaults to "Next".
     next_title:
       type: string
       title: Next title

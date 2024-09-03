@@ -10,10 +10,10 @@
 {% set icon_path = icon_path|default('@localgov_base/includes/icons') %}
 {% set prev_icon = prev_icon|default('chevron-left') %}
 {% set next_icon = next_icon|default('chevron-right') %}
-{% set prev_label = prev_label|default('Previous') %}
-{% set next_label = next_label|default('Next') %}
-{% set prev_aria_label = prev_title ? (prev_label|t ~ ': ' ~ prev_title) : prev_label %}
-{% set next_aria_label = next_title ? (next_label|t ~ ': ' ~ next_title) : next_label %}
+{% set prev_label = prev_label|default('Previous'|t) %}
+{% set next_label = next_label|default('Next'|t) %}
+{% set prev_aria_label = prev_title ? (prev_label ~ ': ' ~ prev_title) : prev_label %}
+{% set next_aria_label = next_title ? (next_label ~ ': ' ~ next_title) : next_label %}
 
 {% set classes = [
   'lgd-prev-next',
@@ -37,7 +37,7 @@
             icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
           } %}
           <div class="lgd-prev-next__label">
-            {{ prev_label|t }}
+            {{ prev_label }}
           </div>
           {% if show_title %}
             <div class="lgd-prev-next__title">
@@ -51,7 +51,7 @@
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--next">
         <a href="{{ next_url }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ next_aria_label }}">
           <div class="lgd-prev-next__label">
-            {{ next_label|t }}
+            {{ next_label }}
           </div>
           {% include 'localgov_base:icon' with {
             icon_path: icon_path,
