@@ -53,7 +53,7 @@
   position: relative;
   top: var(--btn-start-icon-top);
   margin-left: 0.5rem;
-  content: var(--btn-start-icon);
+  content: var(--btn-start-icon) / "";
   font-size: var(--btn-start-icon-size);
   line-height: 0;
 }

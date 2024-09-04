@@ -46,6 +46,13 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
     '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
   ];
+
+  $form['localgov_base_show_back_to_top_link'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Display a "Back to Top" link on long pages.'),
+    '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
+    '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
+  ];
 }
 
 /**
@@ -93,6 +100,11 @@ function localgov_base_preprocess_page(&$variables) {
   // we will add the 'unpublished' library to our page.
   if (theme_get_setting('localgov_base_add_unpublished_background_colour') === TRUE) {
     $variables['#attached']['library'][] = 'localgov_base/unpublished-bg';
+  }
+
+  // Render the Back to Top link or not according to the theme setting.
+  if (theme_get_setting('localgov_base_show_back_to_top_link')) {
+    $variables['back_to_top'] = TRUE;
   }
 }
 
