@@ -1,5 +1,12 @@
 /**
- * @file JS file for Add to Calendar.
+ * @file
+ * DEPRECATED
+ *
+ * This file is no longer used by any component in localgov_base.
+ *
+ * @see components/add-to-calendar/ for the in-use component and libraries.
+ *
+ * JS file for Add to Calendar.
  */
 
 (function localgovAddToCalendarScript(Drupal) {

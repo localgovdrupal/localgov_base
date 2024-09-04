@@ -308,6 +308,11 @@ localgov_eu_cookie_compliance:
     theme:
       css/components/localgov_eu_cookie_compliance.css: {}
 
+# DEPRECATED
+#
+# This library is no longer used by any component in localgov_base.
+#
+# @see components/add-to-calendar/ for the in-use component and libraries.
 add-to-calendar:
   css:
     theme:

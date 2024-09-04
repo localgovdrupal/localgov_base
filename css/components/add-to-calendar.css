@@ -1,3 +1,11 @@
+/**
+ * @file
+ * DEPRECATED
+ *
+ * This file is no longer used by any component in localgov_base.
+ *
+ * @see components/add-to-calendar/ for the in-use component and libraries.
+ */
 .localgov-add-to-calendar:has(+ *) {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
