@@ -21,3 +21,6 @@ props:
       title: Outlook link text
       description: >
         Translated text for the Add to Outlook link.
+libraryDependencies:
+  - core/drupal
+  - core/once
