@@ -37,7 +37,7 @@ props:
         will be concatenated to the icon_path variable. Defaults to
         'chevron-left'.
     prev_label:
-      type: object
+      type: string
       title: Previous label
       description: Translated label for Previous link. Defaults to "Previous".
     prev_title:
@@ -59,7 +59,7 @@ props:
         The extensionless filename of the icon to show in next link. This will
         be concatenated to the icon_path variable. Defaults to 'chevron-right'.
     next_label:
-      type: object
+      type: string
       title: Next label
       description: Translated label for Next link. Defaults to "Next".
     next_title:
