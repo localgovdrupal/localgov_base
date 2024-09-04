@@ -123,7 +123,7 @@
 
       <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
         {{ content.localgov_event_date }}
-        {% include "@localgov_base/_components/add-to-calendar.twig" %}
+        {% include "localgov_base:add-to-calendar" %}
         {{ content|without('localgov_event_date') }}
       </div>
 
