@@ -1,23 +1,8 @@
-{#
-/**
- * @file
- * DEPRECATED
- *
- * This file is no longer used by any component in localgov_base.
- *
- * @see components/add-to-calendar/ for the in-use component and libraries.
- *
- * Template for "add-to-calendar" button.
- */
-#}
-
 {%
 set classes = [
   "localgov-add-to-calendar"
 ]
 %}
-
-{{ attach_library('localgov_base/add-to-calendar') }}
 
 {% set lgdAddToCalendarAttributes = create_attribute() %}
 
@@ -55,31 +40,32 @@ set classes = [
     }
   %}
   <span class="localgov-add-to-calendar__trigger-text">
-    {{ 'Add to Calendar'|t }}
+    {{ button_text|default('Add to Calendar'|t) }}
   </span>
 </button>
 
   <dialog class="localgov-add-to-calendar__dialog">
     <div class="localgov-add-to-calendar__dialog-close">
       <button class="localgov-add-to-calendar__dialog-close-button" type="button" name="closeAddToCalendarDialog">
-        {{ 'Close'|t }}
+        {{ dialog_close_button_text|default('Close'|t) }}
       </button>
     </div>
     <div class="localgov-add-to-calendar__items">
 
       <div class="localgov-add-to-calendar__item">
-        <a href="{{ google_link }}" target="_blank" rel="nofollow">{{ 'Add to Google Calendar'|t }}</a>
+        <a href="{{ google_link }}" target="_blank" rel="nofollow">{{ google_calendar_link_text|default('Add to Google Calendar')|t }}</a>
       </div>
 
       <div class="localgov-add-to-calendar__item">
-        <a href="{{ ical_link }}">{{ 'Add to iCal'|t }}</a>
+        <a href="{{ ical_link }}">{{ ical_link_text|default('Add to iCal'|t) }}</a>
       </div>
 
       <div class="localgov-add-to-calendar__item">
-        <a href="{{ ical_link }}">{{ 'Add to Outlook'|t }}</a>
+        <a href="{{ ical_link }}">{{ outlook_link_text|default('Add to Outlook'|t) }}</a>
       </div>
 
     </div>
   </dialog>
 
 </div>
+
