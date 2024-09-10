@@ -151,7 +151,7 @@ guide-nav:
 prev-next:
   css:
     theme:
-      css/components/prev-next.css: {}
+      components/prev-next/prev-next.css: {}
 
 sidebar:
   css:
@@ -315,15 +315,16 @@ localgov_eu_cookie_compliance:
 
 # DEPRECATED
 #
-# This library is no longer used by any component in localgov_base.
+# This library is no longer used by any component in localgov_base, and the
+# javascript could change.
 #
 # @see components/add-to-calendar/ for the in-use component and libraries.
 add-to-calendar:
   css:
     theme:
-      css/components/add-to-calendar.css: {}
+      components/add-to-calendar/add-to-calendar.css: {}
   js:
-    js/add-to-calendar.js: {}
+    components/add-to-calendar/add-to-calendar.js: {}
   dependencies:
     - core/drupal
     - core/once
