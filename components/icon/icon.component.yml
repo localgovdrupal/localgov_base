@@ -6,6 +6,11 @@ status: stable
 props:
   type: object
   properties:
+    icon_name:
+      type: string
+      title: Icon name
+      description: >
+        The filename of the icon to use, not including the extensin.
     icon_path:
       type: string
       title: Icon path
