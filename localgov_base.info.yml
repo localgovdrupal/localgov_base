@@ -36,3 +36,5 @@ regions:
 libraries-extend:
   localgov_eu_cookie_compliance/localgov_eu_cookie_compliance:
     - localgov_base/localgov_eu_cookie_compliance
+  localgov_subsites_paragraphs/localgov_accordion:
+    - localgov_base/accordion
