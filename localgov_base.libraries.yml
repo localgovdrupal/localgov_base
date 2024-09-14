@@ -8,6 +8,7 @@ global:
       css/base/base.css: {}
       css/layout/layout-utilities.css: {}
       css/base/fields.css: {}
+      css/base/responsive-tables.css: {}
       css/components/form-items.css: {}
       css/components/admin-toolbar.css: {}
       css/components/messages.css: {}

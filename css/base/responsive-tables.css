@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Visual styles for responsive tables.
+ */
+
+table td {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+  
+@media not print {
+  table,
+  tbody {
+    display: flex;
+    flex-direction: column;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  table td {
+    border-bottom: none;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  table {
+    display: table;
+  }
+
+  table th, table td {
+    border: var(--border);
+  }
+
+  table th {
+    border-color: var(--table-header-border-color);
+  }
+
+  table thead {
+    display: table-header-group;
+  }
+
+  table td {
+    padding-left: var(--table-padding);
+    padding-right: var(--table-padding);
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  table tbody tr {
+    display: table-row;
+    border-bottom: none;
+  }
+}
