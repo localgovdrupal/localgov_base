@@ -3,7 +3,10 @@
 .lgd-region__inner--header > *:not(.block-system-branding-block),
 .sidebar,
 .lgd-prev-next,
-.newsroom__sidebar {
+.newsroom__sidebar,
+.block-localgov-guides-contents,
+.block-views-blocklocalgov-step-by-step-navigation-steps-for-overview,
+.block-views-blocklocalgov-step-by-step-navigation-steps {
   display: none;
 }
 
