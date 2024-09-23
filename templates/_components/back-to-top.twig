@@ -1,0 +1,51 @@
+{#
+/**
+ * Template for "back-to-top" link.
+ *
+ * The template includes two HTML elements:
+ *
+ * 1. the "back-to-top" link itself
+ * 2. a "back-to-top-target" span
+ *
+ * The javascript from localgov_base/back-to-top interacts with this template
+ * as follows:
+ *
+ * - absolutely positions the target span
+ * - creates an intersection observer to observe it
+ * - un-hides the link when the target enters the viewport
+ * - re-hides the link when the target exits the *bottom* of the viewport
+ * - re-hides the link when it's clicked [1]
+ *
+ * The template includes no wrapping <div> element, and the css explicitly sets
+ * the maximum size of the target to 1px x 1px to minimize the chances of an
+ * element from the template blocking content.
+ *
+ * [1] on small enough screens--especially with several visible banners--the
+ * link will *already* be visible when #main-content is reached, so re-hiding
+ * the link fails in that circumstance.
+ */
+#}
+
+{% set default_ratio = 1.5 %}
+{% set btt_icon_name = 'arrow-up' %}
+{% set btt_icon_class = 'back-to-top__icon' %}
+{% set btt_link_text = 'Back to top' %}
+{% set btt_link_class = 'back-to-top' %}
+{% set btt_target_class = 'back-to-top-target' %}
+
+{{ attach_library('localgov_base/back-to-top') }}
+
+<a
+  class="{{ btt_link_class }}"
+  data-min-content-viewport-ratio="{{ default_ratio }}"
+  href="#main-content"
+  hidden="until-found"
+>
+  {% include "@localgov_base/includes/icons/icon.html.twig" with {
+    icon_name: btt_icon_name,
+    icon_wrapper_element: 'span',
+    icon_classes: btt_icon_class,
+  } %}
+  {{ btt_link_text|t }}
+</a>
+<span class="{{ btt_target_class }}" aria-hidden></span>
