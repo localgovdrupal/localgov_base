@@ -10,19 +10,24 @@
   justify-content: space-between;
 }
 
+.accordion-pane__title button:hover,
+.accordion-pane__title button:focus {
+  text-decoration: none;
+}
+
 .accordion-icon {
   display: block;
 }
 
 span.accordion-icon::after {
   display: block;
-  font-size: var(--font-size-medium);
+  font-size: 150%;
 }
 
 .accordion-pane__title button[aria-expanded="false"] > .accordion-icon::after {
-  content: '+';
+  content: var(--accordion-icon-closed);
 }
 
 .accordion-pane__title button[aria-expanded="true"] > .accordion-icon::after {
-  content: '-';
+  content: var(--accordion-icon-opened);
 }
