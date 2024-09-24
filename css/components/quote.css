@@ -5,7 +5,7 @@
   padding: var(--quote-padding);
   padding-left: var(--quote-padding-left);
   border-color: var(--quote-border-color);
-  border-left: var(--quote-border);
+  border-inline-start: var(--quote-border);
   background-color: var(--quote-bg-color);
 }
 
