@@ -163,7 +163,10 @@
                           }
                         %}
                         <div>
-                          <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">{{ 'View map'|t }}</a>
+                          <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">
+                            {{ 'View map'|t }}
+                            <span class="visually-hidden">{{ 'External site, opens in a new tab'|t }}</span>
+                          </a>
                         </div>
                       </div>
                     {% endif %}
