@@ -543,4 +543,8 @@ body {
   --add-to-calendar-dialog-backdrop-opacity: 0.75;
   --add-to-calendar--icon-color: var(--color-white);
   --add-to-calendar--icon-color-hover: var(--color-accent);
+
+  /* Accordion */
+  --accordion-icon-closed: "+";
+  --accordion-icon-opened: "-";
 }

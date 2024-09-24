@@ -1,0 +1,33 @@
+/**
+ * @file
+ * Style rules for accordions.
+ */
+
+/* Default */
+.accordion-pane__title button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-pane__title button:hover,
+.accordion-pane__title button:focus {
+  text-decoration: none;
+}
+
+.accordion-icon {
+  display: block;
+}
+
+span.accordion-icon::after {
+  display: block;
+  font-size: 150%;
+}
+
+.accordion-pane__title button[aria-expanded="false"] > .accordion-icon::after {
+  content: var(--accordion-icon-closed);
+}
+
+.accordion-pane__title button[aria-expanded="true"] > .accordion-icon::after {
+  content: var(--accordion-icon-opened);
+}

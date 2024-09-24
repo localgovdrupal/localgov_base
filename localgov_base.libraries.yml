@@ -327,3 +327,8 @@ back-to-top:
   dependencies:
     - core/drupal
     - core/once
+
+accordion:
+  css:
+    theme:
+      css/components/accordion.css: {}
