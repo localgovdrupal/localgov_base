@@ -18,6 +18,7 @@
 
 .service-statuses__label {
   margin-bottom: 0;
+  color: var(--service-statuses-container-text-color);
 }
 
 .service-statuses__link {
