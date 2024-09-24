@@ -1,0 +1,5 @@
+name: 'LocalGov Base Helper'
+type: module
+description: 'Adds update hooks to LocalGov Base.'
+package: LocalGov Drupal
+core_version_requirement: ^10 || ^11

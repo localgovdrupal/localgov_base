@@ -46,13 +46,52 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
     '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
   ];
-
   $form['localgov_base_show_back_to_top_link'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Display a "Back to Top" link on long pages.'),
     '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
     '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
   ];
+  $form['localgov_base_header_behaviour'] = [
+    '#type' => 'radios',
+    '#title' => t('Header behaviour'),
+    '#default_value' => theme_get_setting('localgov_base_header_behaviour'),
+    '#options' => [
+      'default' => t('Default - scrolls away with the page'),
+      'sticky' => t('Sticky - remains at the top of the page'),
+      'appears_on_scroll' => t('Scroll - appears when scrolling up the page'),
+    ],
+    '#description' => t('Select how you want the header to behave. This setting only apply to anonymous users.'),
+  ];
+
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function localgov_base_preprocess_html(&$variables) {
+  // Add the 'sticky-header' library if the sticky header setting is enabled.
+  if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
+
+    // Check if the user is logged out.
+    // We have much fewer calculations if we keep this to anonymous users only.
+    if (\Drupal::currentUser()->isAnonymous()) {
+      $variables['#attached']['library'][] = 'localgov_base/sticky-header';
+      $variables['attributes']['class'][] = 'sticky-header';
+      $variables['html_attributes']['class'] = [];
+      $variables['html_attributes']['class'][] = 'sticky-header-html';
+
+      // If 'sticky' is chosen add a class to the body element.
+      if (theme_get_setting('localgov_base_header_behaviour') === 'sticky') {
+        $variables['attributes']['class'][] = 'sticky-header--sticky';
+      }
+
+      // If 'scroll' is chosen add a class to the body element.
+      if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
+        $variables['attributes']['class'][] = 'sticky-header--scroll';
+      }
+    }
+  }
 }
 
 /**

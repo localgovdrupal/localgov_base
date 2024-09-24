@@ -2,3 +2,4 @@ localgov_base_remove_css: FALSE
 localgov_base_remove_js: FALSE
 localgov_base_add_unpublished_background_colour: TRUE
 localgov_base_add_draft_note_to_unpublished_content: FALSE
+localgov_base_header_behaviour: 'default'

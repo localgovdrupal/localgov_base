@@ -49,19 +49,29 @@ wysiwyg-styles:
     theme:
       css/components/wysiwyg-styles.css: {}
 
+secondary-menu:
+  css:
+    theme:
+      css/components/secondary-menu.css: {}
 header:
   css:
     theme:
       css/components/header.css: {}
 
-secondary-menu:
-  css:
-    theme:
-      css/components/secondary-menu.css: {}
-
 header-js:
   js:
     js/header.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
+    - core/once
+
+sticky-header:
+  css:
+    theme:
+      css/components/sticky-header.css: {}
+  js:
+    js/sticky-header.js: {}
   dependencies:
     - core/drupal
     - core/drupal.debounce
