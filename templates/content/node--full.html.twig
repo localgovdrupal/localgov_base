@@ -146,6 +146,10 @@
       <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
         {{ content|without('localgov_subsites_content') }}
       </div>
+
+      {% if content_type == 'localgov_services_page' %}
+        <span>{% trans %}Last updated:{% endtrans %}</span> {{ node.changed.value|format_date('custom', 'j F Y') }}
+      {% endif %}
   </div>
 
   {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
