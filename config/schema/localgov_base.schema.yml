@@ -15,11 +15,8 @@ localgov_base.settings:
       type: boolean
       label: 'Add "[Draft]" to title of unpublished content.'
     localgov_base_header_behaviour:
-      type: enum
+      type: string
       label: 'Header behaviour'
       description: 'Choose whether the header should be sticky or not.'
-      default: 'default'
-      options:
-        'default': 'Default - scrolls away with the page'
-        'sticky': 'Sticky - remains at the top of the page'
-        'appears_on_scroll': 'Scroll - appears when scrolling up'
+      constraints:
+        Regex: '^(default|sticky|appears_on_scroll)$'
