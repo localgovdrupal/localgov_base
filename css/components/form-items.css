@@ -360,3 +360,21 @@ input[type="file"]:hover,
 .form-item-managed-file-button .description br {
   margin-bottom: var(--spacing);
 }
+
+.facets-form fieldset {
+  padding: 0;
+  border: none;
+}
+
+.facets-form .facets-widget > ul,
+.facets-form .facets-widget > ul ul {
+  list-style: none;
+  padding: 0;
+}
+
+.facets-form .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+  align-items: center;
+}
