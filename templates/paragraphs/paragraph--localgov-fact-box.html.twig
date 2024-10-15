@@ -66,14 +66,14 @@
         {{ paragraph.localgov_above_text.value }}
       </p>
     {% endif %}
-    
+
     <div class="fact-box__fact">
       <p>
-        {{ content.localgov_fact }}
+        {{ paragraph.localgov_fact.value }}
       </p>
       {{ content|without('localgov_above_text', 'localgov_fact', 'localgov_below_text', 'localgov_background') }}
     </div>
-    
+
     {% if paragraph.localgov_below_text.value %}
       <p class="fact-box__closing">
         {{ paragraph.localgov_below_text.value }}

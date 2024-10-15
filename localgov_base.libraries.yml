@@ -49,19 +49,29 @@ wysiwyg-styles:
     theme:
       css/components/wysiwyg-styles.css: {}
 
+secondary-menu:
+  css:
+    theme:
+      css/components/secondary-menu.css: {}
 header:
   css:
     theme:
       css/components/header.css: {}
 
-secondary-menu:
-  css:
-    theme:
-      css/components/secondary-menu.css: {}
-
 header-js:
   js:
     js/header.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
+    - core/once
+
+sticky-header:
+  css:
+    theme:
+      css/components/sticky-header.css: {}
+  js:
+    js/sticky-header.js: {}
   dependencies:
     - core/drupal
     - core/drupal.debounce
@@ -317,3 +327,18 @@ add-to-calendar:
   dependencies:
     - core/drupal
     - core/once
+
+back-to-top:
+  css:
+    theme:
+      css/components/back-to-top.css: {}
+  js:
+    js/back-to-top.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+accordion:
+  css:
+    theme:
+      css/components/accordion.css: {}

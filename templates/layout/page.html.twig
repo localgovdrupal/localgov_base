@@ -98,7 +98,7 @@
 
 {{ page.messages }}
 
-<main class="main" id="main-content"> {# The "skip to content" link jumps to here. #}
+<main class="main" id="main-content" tabindex="-1"> {# The "skip to content" link jumps to here. #}
 
   {% if has_content_top %}
     {{ page.content_top }}
@@ -170,6 +170,15 @@
     {{ page.content_bottom }}
   {% endif %}
 </main>
+
+{% if back_to_top %}
+  {#
+    Position the link just after <main> at the end so that it's in about the
+    right place, *and* to try to minimize the chances of being rendered inside
+    a positioned element.
+  #}
+  {% include "@localgov_base/_components/back-to-top.twig" %}
+{% endif %}
 
 {# Begin Footer Regions #}
 {% block footer_sections %}

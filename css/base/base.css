@@ -16,6 +16,10 @@ html {
   margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
+dialog {
+  margin: auto;
+}
+
 body {
   margin: 0;
   color: var(--color-text);
@@ -156,6 +160,13 @@ ol ol,
 ul ol,
 ol ul {
   margin-bottom: 0;
+}
+
+blockquote:not(.pull-out-quote__content) {
+  padding-inline-start: var(--quote-padding);
+  padding-left: var(--quote-padding-left);
+  border-inline-start: var(--quote-border);
+  border-color: var(--color-accent);
 }
 
 sub,

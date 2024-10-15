@@ -14,3 +14,7 @@
 .pager__item::marker {
   color: transparent;
 }
+
+.pager__item > a {
+  padding-inline: var(--spacing-smaller);
+}
