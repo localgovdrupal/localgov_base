@@ -15,5 +15,5 @@
 .field--label-inline .field__label,
 .field--label-inline > .field__item,
 .field--label-inline .field__items {
-  padding-block-end: var(--spacing-smaller);
+  padding-inline-end: var(--spacing-smaller);
 }
