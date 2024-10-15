@@ -392,6 +392,10 @@ input[type="file"]:hover,
   padding: 0;
 }
 
+.facets-form .facets-widget > ul > li + li {
+  margin-block-start: var(--spacing-largest);
+}
+
 .facets-form .form-actions {
   display: flex;
   flex-wrap: wrap;
