@@ -376,7 +376,7 @@ input[type="file"]:hover,
   margin-block-start: var(--spacing-largest);
 }
 
-.facets-form .form-actions {
+.facets-form .form-actions:not(.hidden) {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing);
