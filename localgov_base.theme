@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\DeprecationHelper;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -247,4 +248,16 @@ function localgov_base_preprocess_container(&$variables) {
  */
 function localgov_base_form_preview_link_entity_form_alter(&$form, $form_state, $form_id) {
   $form['#attached']['library'][''] = 'localgov_base/preview-link';
+}
+
+/**
+ * Implements hook_preprocess_guides_prev_next_block().
+ */
+function localgov_base_preprocess_guides_prev_next_block(&$variables) {
+  if ($variables['previous_url'] instanceof Url) {
+    $variables['previous_url']->setOption('fragment', 'lgd-guides__title');
+  }
+  if ($variables['next_url'] instanceof Url) {
+    $variables['next_url']->setOption('fragment', 'lgd-guides__title');
+  }
 }
