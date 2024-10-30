@@ -34,3 +34,26 @@
 .lgd-footer__post-footer a {
   color: var(--color-post-footer-link);
 }
+
+/* Headings in footer regions */
+.lgd-footer__pre-footer h2,
+.lgd-footer__pre-footer h3,
+.lgd-footer__pre-footer h4,
+.lgd-footer__pre-footer h5,
+.lgd-footer__pre-footer h6 {
+  color: var(--color-pre-footer-heading);
+}
+.lgd-footer__footer h2,
+.lgd-footer__footer h3,
+.lgd-footer__footer h4,
+.lgd-footer__footer h5,
+.lgd-footer__footer h6 {
+  color: var(--color-footer-heading);
+}
+.lgd-footer__post-footer h2,
+.lgd-footer__post-footer h3,
+.lgd-footer__post-footer h4,
+.lgd-footer__post-footer h5,
+.lgd-footer__post-footer h6 {
+  color: var(--color-post-footer-heading);
+}
