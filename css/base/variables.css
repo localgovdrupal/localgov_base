@@ -211,6 +211,13 @@ body {
   --color-post-footer-link: var(--color-link);
   --color-post-footer-text: var(--color-text);
 
+  /* Housekeeping Items */
+  --color-section-housekeeping-bg: var(--color-accent);
+  --color-housekeeping-heading: var(--color-white);
+  --color-housekeeping-link: var(--color-white);
+  --color-housekeeping-text: var(--color-white);
+  --section-spacing-vertical-housekeeping: var(--spacing);
+
   /* Page Title */
   --page-title-border: var(--border);
   --page-title-width: var(--width-medium);

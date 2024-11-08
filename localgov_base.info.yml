@@ -31,6 +31,7 @@ regions:
   lower_footer_first: "Lower footer first"
   lower_footer_second: "Lower footer second"
   lower_footer_third: "Lower footer third"
+  housekeeping: "Housekeeping"
   disabled: "Disabled"
 
 libraries-extend:

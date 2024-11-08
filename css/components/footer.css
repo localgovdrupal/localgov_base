@@ -35,6 +35,16 @@
   color: var(--color-post-footer-link);
 }
 
+.lgd-footer__housekeeping {
+  padding-block: var(--section-spacing-vertical-housekeeping);
+  color: var(--color-housekeeping-text);
+  background-color: var(--color-section-housekeeping-bg);
+}
+
+.lgd-footer__housekeeping a {
+  color: var(--color-housekeeping-link);
+}
+
 /* Headings in footer regions */
 .lgd-footer__pre-footer h2,
 .lgd-footer__pre-footer h3,
@@ -56,4 +66,11 @@
 .lgd-footer__post-footer h5,
 .lgd-footer__post-footer h6 {
   color: var(--color-post-footer-heading);
+}
+.lgd-footer__housekeeping h2,
+.lgd-footer__housekeeping h3,
+.lgd-footer__housekeeping h4,
+.lgd-footer__housekeeping h5,
+.lgd-footer__housekeeping h6 {
+  color: var(--color-housekeeping-heading);
 }
