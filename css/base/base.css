@@ -208,7 +208,7 @@ th {
   overflow-x: hidden;
 }
 .tablefield-wrapper {
-  overflow-inline: auto;
+  overflow-x: auto;
 }
 
 input,
