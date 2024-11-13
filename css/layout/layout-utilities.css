@@ -63,6 +63,10 @@
   width: var(--spacing-smallest);
 }
 
+.layout__region {
+  max-width: 100%;
+}
+
 .layout__region > * {
   margin-bottom: var(--vertical-rhythm-spacing);
 }
