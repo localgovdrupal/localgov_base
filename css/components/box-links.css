@@ -1,14 +1,14 @@
 .box-links-listing {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .box-links-listing__list {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .box-links-listing--boxes .box-links-listing__list-item,
 .box-links-listing__list .box-links-listing__list-item {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .box-links-listing__list-item::marker {
@@ -21,22 +21,22 @@
 }
 
 .box-link > * {
-  margin-bottom: var(--box-link-content-spacing);
-  padding-right: var(--box-link-content-spacing);
-  padding-left: var(--box-link-content-spacing);
+  margin-block-end: var(--box-link-content-spacing);
+  padding-inline-end: var(--box-link-content-spacing);
+  padding-inline-start: var(--box-link-content-spacing);
 }
 
 .box-link__image {
-  padding-right: 0;
-  padding-left: 0;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
 }
 
 .box-link__title {
-  margin-top: var(--box-link-content-spacing);
+  margin-block-start: var(--box-link-content-spacing);
 }
 
 .box-link__image + .box-link__title {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .box-link__link::after {

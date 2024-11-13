@@ -3,14 +3,14 @@
 }
 
 .field--name-localgov-event-image + .field--name-localgov-event-date {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
 }
 
 .localgov-event .date-recur-date,
 .field--name-localgov-event-provider,
 .field--name-localgov-event-venue,
 .localgov-event .field--name-location > * {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .field--name-localgov-event-call-to-action a {

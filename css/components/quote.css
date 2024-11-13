@@ -1,11 +1,11 @@
 .pull-out-quote {
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 0;
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
   padding: var(--quote-padding);
-  padding-left: var(--quote-padding-left);
+  padding-inline-start: var(--quote-padding-inline-start);
   border-color: var(--quote-border-color);
-  border-left: var(--quote-border);
+  border-inline-start: var(--quote-border);
   background-color: var(--quote-bg-color);
 }
 
@@ -14,7 +14,7 @@
 }
 
 .pull-out-quote__author {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
   color: var(--quote-author-color);
   font-weight: bold;
 }

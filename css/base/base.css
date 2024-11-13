@@ -13,7 +13,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
+  margin-block-start: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
 dialog {
@@ -43,7 +43,7 @@ body {
 
 main {
   /* To give us a sticky footer. */
-  margin-bottom: auto;
+  margin-block-end: auto;
 }
 
 a {
@@ -78,7 +78,7 @@ h5,
 h6,
 .h6,
 .heading {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
   font-family: var(--font-secondary);
 }
 
@@ -152,14 +152,21 @@ ol,
 pre,
 table,
 blockquote {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 ul ul,
 ol ol,
 ul ol,
 ol ul {
-  margin-bottom: 0;
+  margin-block-end: 0;
+}
+
+blockquote:not(.pull-out-quote__content) {
+  padding-inline-start: var(--quote-padding);
+  padding-inline-start: var(--quote-padding-inline-start);
+  border-inline-start: var(--quote-border);
+  border-color: var(--color-accent);
 }
 
 sub,

@@ -5,7 +5,7 @@
 }
 
 .lgd-search-results-list .view-header {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .lgd-search-results-list .views-exposed-form {
@@ -14,11 +14,11 @@
 }
 
 .lgd-search-results-list .form-item {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .lgd-search-results-list > * {
-  margin-bottom: var(--search-results-item-spacing);
+  margin-block-end: var(--search-results-item-spacing);
 }
 
 .lgd-search-results-list .views-exposed-form {
@@ -27,13 +27,13 @@
 }
 
 .lgd-search-results-list .item-list > * {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .lgd-search-results-list .item-list > * li {
-  margin-bottom: var(--search-results-item-spacing);
-  padding-bottom: var(--search-results-item-spacing);
-  border-bottom: var(--search-results-list-item-border);
+  margin-block-end: var(--search-results-item-spacing);
+  padding-block-end: var(--search-results-item-spacing);
+  border-block-end: var(--search-results-list-item-border);
 }
 
 .lgd-search-results-list .item-list > * li::marker {
@@ -41,5 +41,5 @@
 }
 
 .search-result > .search-result__content > .field > *:last-of-type {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

@@ -8,30 +8,30 @@
 */
 
 .lgd-region--breadcrumb {
-  margin-bottom: var(--breadcrumbs-spacing-bottom);
+  margin-block-end: var(--breadcrumbs-spacing-bottom);
   background-color: var(--breadcrumbs-background-color);
 }
 
 .breadcrumbs {
   padding: var(--breadcrumbs-padding-vertical) var(--breadcrumbs-padding-horizontal);
-  border-bottom: var(--breadcrumbs-border);
+  border-block-end: var(--breadcrumbs-border);
 }
 
 .breadcrumbs__list {
-  margin-bottom: 0;
-  padding-left: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
 .breadcrumbs__item {
   display: inline-block;
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
   font-size: var(--breadcrumbs-font-size);
 }
 
 .breadcrumbs__item + .breadcrumbs__item::before {
   display: inline-block;
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
   content: var(--breadcrumbs-divider);
   color: var(--breadcrumbs-link-color);
 }

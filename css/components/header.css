@@ -12,8 +12,8 @@
 */
 
 .lgd-header {
-  padding-top: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
-  padding-bottom: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
+  padding-block-start: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
+  padding-block-end: clamp(1rem, 10vw, var(--section-spacing-vertical-header));
   background-color: var(--color-section-header-bg);
 }
 
@@ -25,7 +25,7 @@
 }
 
 .lgd-header .lgd-region--header {
-  margin-right: calc(var(--spacing) * 2);
+  margin-inline-end: calc(var(--spacing) * 2);
 }
 
 /*
@@ -39,8 +39,8 @@
 
 .lgd-header__nav--primary,
 .lgd-header__nav--secondary {
-  margin-right: var(--spacing);
-  margin-left: var(--spacing);
+  margin-inline-end: var(--spacing);
+  margin-inline-start: var(--spacing);
 }
 
 .lgd-header__nav--primary {
@@ -73,15 +73,15 @@
 /* Theming the Header Toggles */
 .lgd-header__toggles {
   display: flex;
-  margin-right: var(--spacing);
-  margin-left: auto;
+  margin-inline-end: var(--spacing);
+  margin-inline-start: auto;
 }
 
 .lgd-header__toggle {
   display: flex;
   align-items: center;
   height: 100%;
-  margin-left: var(--spacing);
+  margin-inline-start: var(--spacing);
   padding: var(--spacing);
   cursor: pointer;
   color: var(--header-services-button-color);
@@ -98,12 +98,12 @@
 }
 
 .lgd-header__toggle-icon {
-  margin-left: var(--spacing-smaller);
+  margin-inline-start: var(--spacing-smaller);
 }
 
 .lgd-header__toggle-icon::after {
   display: inline-block;
-  margin-left: var(--spacing-smaller);
+  margin-inline-start: var(--spacing-smaller);
   content: "\203A" / "";
   transition: var(--transition-time);
   transform: rotate(90deg);
@@ -155,13 +155,13 @@
 
 /* Search Region */
 .lgd-region--search {
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
+  margin-block-start: var(--spacing);
+  margin-block-end: var(--spacing);
 }
 
 @media screen and (min-width: 48rem) {
   .lgd-region--search {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 }
 
@@ -177,7 +177,7 @@
 
 .lgd-region--search .form-item-s {
   flex-grow: 1;
-  margin-bottom: 0; /* Override default form-item class */
+  margin-block-end: 0; /* Override default form-item class */
 }
 
 @media screen and (min-width: 48rem) {
@@ -192,7 +192,7 @@
 }
 
 .lgd-region--search .form-actions {
-  margin-top: auto;
+  margin-block-start: auto;
 }
 
 .lgd-region--search .form-submit {

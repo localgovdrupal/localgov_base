@@ -6,8 +6,8 @@
 }
 
 .menu--main {
-  margin-bottom: 0;
-  padding-left: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -34,8 +34,8 @@
   }
 
   .menu--main > .menu-item {
-    margin-right: var(--spacing-smaller);
-    margin-left: var(--spacing-smaller);
+    margin-inline-end: var(--spacing-smaller);
+    margin-inline-start: var(--spacing-smaller);
   }
 
   .menu--main > .menu-item a {

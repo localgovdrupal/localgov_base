@@ -1,11 +1,11 @@
 .service-cta-block__list {
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style: none;
-  border-bottom: var(--border);
+  border-block-end: var(--border);
 }
 
 .service-cta-block__list-item {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .service-cta-block__link {

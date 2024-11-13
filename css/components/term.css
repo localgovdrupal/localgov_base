@@ -1,36 +1,36 @@
 .lgd-term__image {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 @media screen and (min-width: 48rem) {
 
   .lgd-term {
     display: flex;
-    margin-bottom: var(--blog-author-content-margin);
+    margin-block-end: var(--blog-author-content-margin);
   }
 
   .lgd-term__image {
     flex-shrink: 0;
     width: var(--blog-author-image-width);
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   .lgd-term__image ~ .lgd-term__content {
-    margin-left: var(--vertical-rhythm-spacing);
+    margin-inline-start: var(--vertical-rhythm-spacing);
   }
 }
 
 .view-taxonomy-term .view-content {
-  padding-top: var(--vertical-rhythm-spacing);
-  border-top: var(--border);
+  padding-block-start: var(--vertical-rhythm-spacing);
+  border-block-start: var(--border);
 }
 
 .view-taxonomy-term .views-row {
-  margin-bottom: var(--vertical-rhythm-spacing);
-  padding-bottom: var(--vertical-rhythm-spacing);
-  border-bottom: var(--border);
+  margin-block-end: var(--vertical-rhythm-spacing);
+  padding-block-end: var(--vertical-rhythm-spacing);
+  border-block-end: var(--border);
 }
 
 .feed-icons {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }

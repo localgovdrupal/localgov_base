@@ -9,7 +9,7 @@
   {{ attach_library('localgov_base/service-landing-page') }}
 {% endif %}
 
-{# 
+{#
   Set icon names here, so we can override them in subthemes by calling
   'include @localgov_base/content/-node--localgov-services-landing--full.twig with {
     facebook_icon = 'facebook-f',
@@ -22,11 +22,6 @@
 {% set phone_icon = 'phone-square' %}
 {% set website_icon = 'globe' %}
 {% set map_icon = 'map-marker-alt' %}
-
-{# 
-  For shorthand, let's abbreviate our classes from .service-landing-page to 
-  .service-landing-page
-#}
 
 {%
   set classes = [
@@ -67,21 +62,21 @@
       {# Begin Grid Main Column #}
       <div class="lgd-row__two-thirds">
 
-        {% if 
-          node.localgov_email_address.value 
-          or node.localgov_address.value 
-          or node.localgov_opening_hours.value 
-          or node.localgov_phone.value 
-          or node.localgov_facebook.value 
-          or node.localgov_twitter.value 
-          or node.localgov_hearing_difficulties_phone.value 
+        {% if
+          node.localgov_email_address.value
+          or node.localgov_address.value
+          or node.localgov_opening_hours.value
+          or node.localgov_phone.value
+          or node.localgov_facebook.value
+          or node.localgov_twitter.value
+          or node.localgov_hearing_difficulties_phone.value
         %}
           {# Begin Contact Section #}
           <div class="service-landing-page__contact">
-            {% if node.localgov_email_address.value 
-              or node.localgov_address.value 
-              or node.localgov_opening_hours.value 
-              or node.localgov_phone.value 
+            {% if node.localgov_email_address.value
+              or node.localgov_address.value
+              or node.localgov_opening_hours.value
+              or node.localgov_phone.value
             %}
               <h2>{{ 'Contact this service'|t }}</h2>
               {# Begin Contact Containers #}
@@ -113,7 +108,7 @@
                         {{ content.localgov_phone|render|striptags }}
                       </li>
                     {% endif %}
-                    
+
                     {% if node.localgov_contact_us_online.value %}
                       <li class="service-landing-page__contact-list-item">
                         {% include "@localgov_base/includes/icons/icon.html.twig" with {
@@ -126,7 +121,7 @@
                         <a href="{{ node.localgov_contact_us_online.value }}">{{ node.localgov_contact_us_online.value }}</a>
                       </li>
                     {% endif %}
-                    
+
                     {% if node.localgov_other_team_contacts.value %}
                       <li class="service-landing-page__contact-list-item">
                         {% include "@localgov_base/includes/icons/icon.html.twig" with {
@@ -168,7 +163,10 @@
                           }
                         %}
                         <div>
-                          <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">{{ 'View map'|t }}</a>
+                          <a href="{{ content.localgov_link_to_map|render|striptags }}" class="external-link" target="_blank">
+                            {{ 'View map'|t }}
+                            <span class="visually-hidden">{{ 'External site, opens in a new tab'|t }}</span>
+                          </a>
                         </div>
                       </div>
                     {% endif %}
@@ -224,7 +222,7 @@
             {% endif %}
             {# End Contact Socials and a11y number #}
 
-          </div> 
+          </div>
         {% endif %}
         {# End Contact Section #}
 

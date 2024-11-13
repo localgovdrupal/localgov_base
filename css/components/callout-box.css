@@ -27,7 +27,7 @@
 @media screen and (min-width: 48rem) {
   .call-out-box--has-image .call-out-box__content {
     width: 75%;
-    padding-right: 20%;
+    padding-inline-end: 20%;
     background: linear-gradient(to right, var(--call-out-box-bg-color) 75%, transparent);
   }
 }

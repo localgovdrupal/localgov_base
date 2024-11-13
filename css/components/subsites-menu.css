@@ -42,10 +42,14 @@
   --subsite-extra-link-bg-color-hover: var(--subsite-extra-color-contrast);
   --subsite-extra-menu-title-color: var(--subsite-extra-color-contrast);
   --subsite-extra-region-bg-color: var(--subsite-extra-color);
-  --subsite-extra-region-padding-left: var(--spacing);
-  --subsite-extra-region-padding-right: var(--spacing);
-  --subsite-extra-region-padding-top: var(--spacing);
-  --subsite-extra-region-padding-bottom: 0;
+  --subsite-extra-region-padding-left: var(--spacing); /* Deprecated */
+  --subsite-extra-region-padding-inline-start: var(--spacing);
+  --subsite-extra-region-padding-right: var(--spacing); /* Deprecated */
+  --subsite-extra-region-padding-inline-end: var(--spacing);
+  --subsite-extra-region-padding-top: var(--spacing); /* Deprecated */
+  --subsite-extra-region-padding-block-start: var(--spacing);
+  --subsite-extra-region-padding-bottom: 0; /* Deprecated */
+  --subsite-extra-region-padding-block-end: 0;
   --subsite-extra-menu-items-gap: var(--spacing);
   --subsite-extra-menu-title-font-family: var(--font-primary);
   --subsite-extra-border-color: var(--subsite-extra-color);
@@ -53,7 +57,8 @@
   --subsite-extra-link-spacing-inline: var(--spacing);
   --subsite-extra-link-spacing-block: var(--spacing);
   --subsite-extra-link-underline-thickness: max(3px, 0.1875rem, 0.12em);
-  --subsite-extra-header-padding-bottom: 0;
+  --subsite-extra-header-padding-bottom: 0; /* Deprecated */
+  --subsite-extra-header-padding-block-end: 0;
 }
 
 /*
@@ -63,15 +68,15 @@
   subsites menu. To reverse it, simply set the variable value to var(--spacing).
 */
 .subsite-extra:has(.lgd-region--subsites-menu) .lgd-header {
-  padding-bottom: var(--subsite-extra-header-padding-bottom);
+  padding-block-end: var(--subsite-extra-header-padding-block-end);
 }
 
 /* This would be changed in the menu-subsites.css */
 .lgd-region--subsites-menu {
-  padding-top: var(--subsite-extra-region-padding-top);
-  padding-right: var(--subsite-extra-region-padding-right);
-  padding-bottom: var(--subsite-extra-region-padding-bottom);
-  padding-left: var(--subsite-extra-region-padding-left);
+  padding-block-start: var(--subsite-extra-region-padding-block-start);
+  padding-inline-end: var(--subsite-extra-region-padding-inline-end);
+  padding-block-end: var(--subsite-extra-region-padding-block-end);
+  padding-inline-start: var(--subsite-extra-region-padding-inline-start);
   background-color: var(--subsite-extra-region-bg-color);
 }
 
@@ -89,7 +94,7 @@
 }
 
 .lgd-region--subsites-menu .subsite-extra__title {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .lgd-region--subsites-menu .subsite-extra__title > a {
@@ -106,9 +111,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--subsite-extra-menu-items-gap);
-  margin-top: var(--spacing);
-  margin-bottom: 0;
-  padding-left: 0;
+  margin-block-start: var(--spacing);
+  margin-block-end: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 

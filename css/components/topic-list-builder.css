@@ -8,19 +8,19 @@
 
 .lgd-topic-list-builder__service-icon svg {
   flex-shrink: 0;
-  margin-right: var(--spacing-small);
+  margin-inline-end: var(--spacing-small);
 }
 
 .lgd-topic-list-builder .field--name-topic-list-term {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .lgd-topic-list-builder__show-more {
   display: flex;
   align-items: center;
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .lgd-topic-list-builder__show-more .lgd-icon {
-  margin-right: var(--spacing-smaller);
+  margin-inline-end: var(--spacing-smaller);
 }

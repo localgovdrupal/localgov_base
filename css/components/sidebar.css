@@ -15,7 +15,7 @@
 
 .sidebar .lgd-region__inner > * + *,
 .newsroom__sidebar > * + * {
-  margin-top: var(--sidebar-exposed-form-item-spacing);
+  margin-block-start: var(--sidebar-exposed-form-item-spacing);
 }
 
 .sidebar .views-exposed-form label,
@@ -29,7 +29,7 @@
 .newsroom__sidebar .views-exposed-form .form-item + .form-item,
 .newsroom__sidebar .views-exposed-form .form-item + .form-actions,
 .newsroom__sidebar .form-item-search-api-fulltext > * + * {
-  margin-top: var(--sidebar-exposed-form-item-spacing);
+  margin-block-start: var(--sidebar-exposed-form-item-spacing);
 }
 
 .sidebar .views-exposed-form input,

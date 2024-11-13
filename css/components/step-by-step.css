@@ -1,6 +1,6 @@
 /* Block container for step-by-step */
 .step-by-step-pages__relationship {
-  border-left-color: var(--step-by-step-relationship-border-color);
+  border-inline-start-color: var(--step-by-step-relationship-border-color);
 }
 
 /* Sidebar Block Header */

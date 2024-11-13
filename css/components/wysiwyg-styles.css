@@ -52,7 +52,7 @@
 .btn.btn-start::after {
   position: relative;
   top: var(--btn-start-icon-top);
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
   content: var(--btn-start-icon) / "";
   font-size: var(--btn-start-icon-size);
   line-height: 0;
@@ -63,7 +63,7 @@
   display: inline-block;
   width: 0.75rem;
   height: 0.75rem;
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
   content: "";
   background-color: var(--external-link-icon-color); /* https://stackoverflow.com/questions/51395179/svg-fill-with-css-variables#58536915 */
   -webkit-mask-image: url("../../templates/includes/icons/external-link.svg");
