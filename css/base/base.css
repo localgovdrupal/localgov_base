@@ -203,6 +203,10 @@ th {
 }
 
 /* Responsive tables for table field tables */
+.field--name-localgov-table {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .tablefield-wrapper {
   overflow-inline: auto;
 }
