@@ -234,8 +234,8 @@ body {
   --input-text-color-hover: var(--color-accent);
   --input-icon-color: var(--input-text-color);
   --input-icon-color-hover: var(--color-accent);
-  --input-border-color: var(--color-grey-medium);
-  --input-border-color-hover: var(--color-grey-medium);
+  --input-border-color: var(--color-grey-dark);
+  --input-border-color-hover: var(--color-grey-dark);
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
