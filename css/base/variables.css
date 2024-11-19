@@ -234,8 +234,8 @@ body {
   --input-text-color-hover: var(--color-accent);
   --input-icon-color: var(--input-text-color);
   --input-icon-color-hover: var(--color-accent);
-  --input-border-color: var(--color-grey-medium);
-  --input-border-color-hover: var(--color-grey-medium);
+  --input-border-color: var(--color-grey-dark);
+  --input-border-color-hover: var(--color-grey-dark);
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
@@ -264,7 +264,8 @@ body {
 
   /* File Upload Items */
   --file-upload-border: var(--border);
-  --file-upload-border-left-size: var(--border-width-large);
+  --file-upload-border-left-size: var(--border-width-large); /* Deprecated */
+  --file-upload-border-inline-start-size: var(--border-width-large);
   --file-upload-border-color: var(--color-accent);
   --file-upload-bg-hover-color: var(--color-accent);
   --file-upload-text-hover-color: var(--color-white);
@@ -328,7 +329,8 @@ body {
 
   /* Quote */
   --quote-padding: var(--spacing-larger);
-  --quote-padding-left: var(--spacing-larger);
+  --quote-padding-left: var(--spacing-larger); /* Deprecated */
+  --quote-padding-inline-start: var(--spacing-larger);
   --quote-border: var(--border-large);
   --quote-border-color: var(--color-accent);
   --quote-bg-color: var(--color-grey-lighter);

@@ -1,5 +1,5 @@
 .service-statuses {
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
   padding: var(--service-statuses-padding);
   background-color: var(--service-statuses-container-bg-color);
 }
@@ -13,11 +13,11 @@
 
 .service-statuses__header {
   justify-content: space-between;
-  padding-bottom: var(--service-statuses-padding);
+  padding-block-end: var(--service-statuses-padding);
 }
 
 .service-statuses__label {
-  margin-bottom: 0;
+  margin-block-end: 0;
   color: var(--service-statuses-container-text-color);
 }
 
@@ -28,12 +28,12 @@
 }
 
 .service-statuses__link--bottom {
-  margin-top: var(--service-statuses-padding);
+  margin-block-start: var(--service-statuses-padding);
 }
 
 .service-statuses .lgd-icon {
   display: inline-block;
-  margin-right: var(--spacing-smaller);
+  margin-inline-end: var(--spacing-smaller);
 }
 
 .service-statuses .lgd-icon path {
@@ -41,7 +41,7 @@
 }
 
 .service-statuses-list {
-  margin-bottom: 0;
+  margin-block-end: 0;
   padding: var(--service-statuses-padding);
   background-color: var(--service-statuses-list-bg-color);
 }
@@ -51,8 +51,8 @@
 }
 
 .service-statuses-list__item + .service-statuses-list__item {
-  margin-top: var(--service-statuses-list-spacing);
-  padding-top: var(--service-statuses-list-spacing);
+  margin-block-start: var(--service-statuses-list-spacing);
+  padding-block-start: var(--service-statuses-list-spacing);
   border-color: var(--service-statuses-list-border-color);
-  border-top: var(--service-statuses-list-border);
+  border-block-start: var(--service-statuses-list-border);
 }

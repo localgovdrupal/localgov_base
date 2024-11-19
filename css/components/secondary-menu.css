@@ -1,6 +1,6 @@
 /* Theming Secondary Nav (services list region) */
 .region-secondary-menu {
-  margin-top: var(--spacing);
+  margin-block-start: var(--spacing);
   background-color: var(--secondary-menu-bg-color-first);
 }
 
@@ -10,7 +10,7 @@
 }
 
 .lgd-region__inner--secondary-menu .block-menu > h2 {
-  padding-left: var(--spacing-large);
+  padding-inline-start: var(--spacing-large);
 }
 
 .region-secondary-menu .menu {
@@ -35,7 +35,7 @@
 }
 
 .region-secondary-menu .menu-item {
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
 }
 
 .region-secondary-menu .menu-item > a {

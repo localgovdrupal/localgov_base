@@ -1,5 +1,5 @@
 .fact-box {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
   text-align: center;
   border: var(--fact-box-border);
   border-color: var(--fact-box-border-color);

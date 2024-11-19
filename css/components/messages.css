@@ -16,14 +16,14 @@
   overflow-wrap: break-word;
 }
 [dir="rtl"] .messages {
-  padding-right: 35px;
-  padding-left: 20px;
+  padding-inline-end: 35px;
+  padding-inline-start: 20px;
   text-align: right;
   border-width: 1px 0 1px 1px;
   background-position: right 10px top 21px;
 }
 .messages + .messages {
-  margin-top: 1.538em;
+  margin-block-start: 1.538em;
 }
 .messages__list {
   margin: 0;
@@ -31,7 +31,7 @@
   list-style: none;
 }
 .messages__item + .messages__item {
-  margin-top: 0.769em;
+  margin-block-start: 0.769em;
 }
 /* See .color-success in Seven's colors.css */
 .messages--status {
@@ -42,7 +42,7 @@
   box-shadow: -8px 0 0 #77b259; /* LTR */
 }
 [dir="rtl"] .messages--status {
-  margin-left: 0;
+  margin-inline-start: 0;
   border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
   box-shadow: 8px 0 0 #77b259;
 }

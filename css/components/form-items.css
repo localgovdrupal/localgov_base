@@ -2,7 +2,7 @@
 .facet-item,
 .form-item-webform-terms-of-service {
   position: relative;
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
 }
 
 fieldset,
@@ -20,7 +20,7 @@ legend {
 label,
 .webform-element--title-inline > label {
   display: block;
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 input[disabled] {
@@ -84,7 +84,7 @@ select:focus {
   padding: 0.5rem 1rem;
 }
 .select2-container .select2-selection--single .select2-selection__rendered {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -150,7 +150,7 @@ input[type="submit"]:hover {
 .facet-item input[type="checkbox"] + label,
 .form-item-webform-terms-of-service input[type="checkbox"] + label {
   display: inline-block;
-  margin-left: 40px;
+  margin-inline-start: 40px;
   padding: 8px 15px 5px;
   cursor: pointer;
   touch-action: manipulation;
@@ -185,7 +185,7 @@ input[type="submit"]:hover {
   opacity: 0;
   border: solid;
   border-width: 0 0 5px 5px;
-  border-top-color: transparent;
+  border-block-start-color: transparent;
   background: transparent;
 }
 
@@ -233,8 +233,8 @@ input[type="submit"]:hover {
   display: block;
   clear: left;
   min-height: 40px;
-  margin-bottom: 10px;
-  padding-left: 40px;
+  margin-block-end: 10px;
+  padding-inline-start: 40px;
 }
 .webform-type-radios .form-item input,
 .webform-type-webform-radios-other .form-item-radios-other--radios input {
@@ -251,7 +251,7 @@ input[type="submit"]:hover {
 .webform-type-radios .form-item label,
 .webform-type-webform-radios-other .form-item-radios-other--radios label {
   display: inline-block;
-  margin-bottom: 0;
+  margin-block-end: 0;
   padding: 8px 15px 5px;
   cursor: pointer;
   touch-action: manipulation;
@@ -292,7 +292,7 @@ input[type="submit"]:hover {
 }
 .webform-type-radios .form-item:last-child,
 .webform-type-radios .form-item:last-of-type {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 /* Description Field - needs to come before the file upload description items */
@@ -302,10 +302,10 @@ input[type="submit"]:hover {
   background-color: var(--form-item-description-bg-color);
 }
 .form-item input + .description {
-  border-top: 0;
+  border-block-start: 0;
 }
 .form-item .description + input {
-  border-top: 0;
+  border-block-start: 0;
 }
 
 .form-item .description .webform-element-more--content {
@@ -319,7 +319,7 @@ input[type="submit"]:hover {
 */
 .fieldset-wrapper > .field-prefix + .form-checkboxes,
 .fieldset-wrapper > .field-prefix + .form-item-radios {
-  margin-top: var(--spacing);
+  margin-block-start: var(--spacing);
 }
 
 /* File Upload */
@@ -331,7 +331,7 @@ input[type="file"],
   cursor: pointer;
   border: var(--file-upload-border);
   border-color: var(--file-upload-border-color);
-  border-left-width: var(--file-upload-border-left-size);
+  border-inline-start-width: var(--file-upload-border-inline-start-size);
 }
 input[type="file"]:focus,
 input[type="file"]:hover,
@@ -353,12 +353,12 @@ input[type="file"]:hover,
   max-width: 768px;
   border: var(--file-upload-border);
   border-color: var(--file-upload-border-color);
-  border-left-width: var(--file-upload-border-left-size);
+  border-inline-start-width: var(--file-upload-border-inline-start-size);
 }
 .form-item-managed-file .description br,
 .form-item-managed-file-multiple .description br,
 .form-item-managed-file-button .description br {
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
 }
 
 .facets-form fieldset {

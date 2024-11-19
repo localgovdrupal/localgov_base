@@ -1,12 +1,12 @@
 .service-landing-page__contact {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
   padding: var(--spacing);
-  border-left: var(--border-width-large) var(--border-style) var(--color-accent);
+  border-inline-start: var(--border-width-large) var(--border-style) var(--color-accent);
   background-color: var(--color-grey-lighter);
 }
 
 .service-landing-page__contact-list {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .service-landing-page__contact-list-item,
@@ -16,7 +16,7 @@
 }
 
 .service-landing-page__contact-list-item + .service-landing-page__contact-list-item {
-  margin-top: var(--spacing-smaller);
+  margin-block-start: var(--spacing-smaller);
 }
 
 .service-landing-page__contact-map {
@@ -25,19 +25,19 @@
 }
 
 .service-landing-page__contact-icon {
-  margin-right: var(--spacing-smaller);
+  margin-inline-end: var(--spacing-smaller);
   line-height: 1;
 }
 
 .service-landing-page__contact h3 {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .service-landing-page__contact-containers {
-  margin-bottom: var(--vertical-rhythm-spacing);
-  padding-bottom: var(--vertical-rhythm-spacing);
-  border-bottom: var(--border);
-  border-bottom-color: var(--color-grey-medium);
+  margin-block-end: var(--vertical-rhythm-spacing);
+  padding-block-end: var(--vertical-rhythm-spacing);
+  border-block-end: var(--border);
+  border-block-end-color: var(--color-grey-medium);
 }
 
 .service-landing-page__service {
@@ -46,5 +46,5 @@
 
 .service-landing-page__service-icon svg {
   flex-shrink: 0;
-  margin-right: var(--spacing-small);
+  margin-inline-end: var(--spacing-small);
 }

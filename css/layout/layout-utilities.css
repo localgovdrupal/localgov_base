@@ -15,8 +15,7 @@
 */
 .lgd-container {
   max-width: var(--width-container);
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }
 .lgd-container--mega {
   max-width: var(--width-mega);
@@ -35,8 +34,7 @@
 }
 
 .padding-horizontal {
-  padding-right: var(--spacing-padding-horizontal);
-  padding-left: var(--spacing-padding-horizontal);
+  padding-inline: var(--spacing-padding-horizontal);
 }
 
 .lgd-icon svg {
@@ -63,6 +61,10 @@
   width: var(--spacing-smallest);
 }
 
+.layout__region {
+  max-width: 100%;
+}
+
 .layout__region > * {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }

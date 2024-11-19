@@ -31,8 +31,7 @@
 }
 
 .lgd-row > * {
-  margin-right: calc(var(--grid-column-spacing) / 2);
-  margin-left: calc(var(--grid-column-spacing) / 2);
+  margin-inline: calc(var(--grid-column-spacing) / 2);
 }
 
 .lgd-row__one-quarter,

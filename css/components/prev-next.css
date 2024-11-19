@@ -1,6 +1,6 @@
 ul.lgd-prev-next__list {
   display: flex;
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 /*
@@ -8,7 +8,7 @@ ul.lgd-prev-next__list {
   step-by-step module CSS. I'd prefer to use just .lgd-prev-next__list-item
 */
 ul.lgd-prev-next__list li.lgd-prev-next__list-item {
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .lgd-prev-next__link {
@@ -39,7 +39,7 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
 }
 
 .lgd-prev-next__list-item--prev .lgd-prev-next__title {
-  padding-left: var(--spacing-large);
+  padding-inline-start: var(--spacing-large);
 }
 
 .lgd-prev-next__icon path {
@@ -47,11 +47,11 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
 }
 
 .lgd-prev-next__icon--prev {
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .lgd-prev-next__icon--next {
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .lgd-prev-next__link:focus .lgd-prev-next__icon path,

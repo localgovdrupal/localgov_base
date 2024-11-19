@@ -1,5 +1,5 @@
 .ia-block {
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
   background-color: var(--ia-block-bg-color);
 }
 
@@ -11,12 +11,12 @@
 }
 
 .ia-block__title {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 .ia-block li {
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 .ia-block li:last-of-type {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

@@ -1,14 +1,14 @@
 .link-block__title-wrapper {
   display: flex;
   align-items: center;
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .link-block__title-icon {
   flex-shrink: 0;
-  margin-right: var(--link-and-summary-title-icon-margin);
+  margin-inline-end: var(--link-and-summary-title-icon-margin);
 }
 
 .link-block__title {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

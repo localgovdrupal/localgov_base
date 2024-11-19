@@ -9,5 +9,5 @@
 }
 
 .lgd-image--has-caption *:last-of-type {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

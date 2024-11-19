@@ -3,7 +3,7 @@
 }
 
 .featured-teasers__teasers > .field__items > .field__item + .field__item {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
 }
 
 .featured-teaser__content {

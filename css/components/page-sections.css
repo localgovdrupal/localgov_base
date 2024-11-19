@@ -32,35 +32,35 @@
 }
 
 .lgd-page-section--padding-top-small {
-  padding-top: var(--spacing-small);
+  padding-block-start: var(--spacing-small);
 }
 .lgd-page-section--padding-top-medium {
-  padding-top: var(--spacing);
+  padding-block-start: var(--spacing);
 }
 .lgd-page-section--padding-top-large {
-  padding-top: var(--spacing-large);
+  padding-block-start: var(--spacing-large);
 }
 .lgd-page-section--padding-top-larger {
-  padding-top: var(--spacing-larger);
+  padding-block-start: var(--spacing-larger);
 }
 .lgd-page-section--padding-top-largest {
-  padding-top: var(--spacing-largest);
+  padding-block-start: var(--spacing-largest);
 }
 
 .lgd-page-section--padding-bottom-small {
-  padding-bottom: var(--spacing-small);
+  padding-block-end: var(--spacing-small);
 }
 .lgd-page-section--padding-bottom-medium {
-  padding-bottom: var(--spacing);
+  padding-block-end: var(--spacing);
 }
 .lgd-page-section--padding-bottom-large {
-  padding-bottom: var(--spacing-large);
+  padding-block-end: var(--spacing-large);
 }
 .lgd-page-section--padding-bottom-larger {
-  padding-bottom: var(--spacing-larger);
+  padding-block-end: var(--spacing-larger);
 }
 .lgd-page-section--padding-bottom-largest {
-  padding-bottom: var(--spacing-largest);
+  padding-block-end: var(--spacing-largest);
 }
 
 .lgd-page-section--bg-colour-1,
