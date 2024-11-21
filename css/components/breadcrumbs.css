@@ -13,7 +13,8 @@
 }
 
 .breadcrumbs {
-  padding: var(--breadcrumbs-padding-vertical) var(--breadcrumbs-padding-horizontal);
+  padding: var(--breadcrumbs-padding-vertical)
+    var(--breadcrumbs-padding-horizontal);
   border-block-end: var(--breadcrumbs-border);
 }
 

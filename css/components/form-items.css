@@ -87,15 +87,16 @@ select:focus {
   padding-inline-start: 0;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
   top: 13px;
 }
 
 /* Buttons */
 button,
 input[type="submit"] {
-  padding:
-    var(--button-padding-vertical) var(--button-padding-horizontal)
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal)
     var(--button-padding-vertical) var(--button-padding-horizontal);
   cursor: pointer;
   color: var(--button-text-color);
@@ -192,7 +193,9 @@ input[type="submit"]:hover {
 .form-item input[type="checkbox"]:focus + label::before,
 .form-checkboxes input[type="checkbox"]:focus + label::before,
 .facet-item input[type="checkbox"]:focus + label::before,
-.form-item-webform-terms-of-service input[type="checkbox"]:focus + label::before {
+.form-item-webform-terms-of-service
+  input[type="checkbox"]:focus
+  + label::before {
   border-width: 4px;
   box-shadow: 0 0 0 3px var(--checkbox-select-focus-color);
 }
@@ -211,7 +214,9 @@ input[type="submit"]:hover {
 .form-item input[type="checkbox"]:checked + label::after,
 .form-checkboxes input[type="checkbox"]:checked + label::after,
 .facet-item input[type="checkbox"]:checked + label::after,
-.form-item-webform-terms-of-service input[type="checkbox"]:checked + label::after {
+.form-item-webform-terms-of-service
+  input[type="checkbox"]:checked
+  + label::after {
   opacity: 1;
 }
 
@@ -282,7 +287,10 @@ input[type="submit"]:hover {
   background: currentColor;
 }
 .webform-type-radios .form-item [type="radio"]:focus + label::before,
-.webform-type-webform-radios-other .form-item [type="radio"]:focus + label::before {
+.webform-type-webform-radios-other
+  .form-item
+  [type="radio"]:focus
+  + label::before {
   border-width: 4px;
   box-shadow: 0 0 0 4px var(--radio-select-focus-color);
 }
@@ -368,8 +376,8 @@ input[type="file"]:hover,
 
 .facets-form .facets-widget > ul,
 .facets-form .facets-widget > ul ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .facets-form .facets-widget > ul > li + li {

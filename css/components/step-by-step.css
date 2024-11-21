@@ -5,7 +5,8 @@
 
 /* Sidebar Block Header */
 @media screen and (min-width: 48rem) {
-  .block-views-blocklocalgov-step-by-step-navigation-steps .step-by-step-pages__relationship {
+  .block-views-blocklocalgov-step-by-step-navigation-steps
+    .step-by-step-pages__relationship {
     display: none;
   }
 }
@@ -48,5 +49,7 @@
   background-color: var(--color-focus);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
+  box-shadow:
+    0 -2px var(--color-focus),
+    0 4px var(--color-black);
 }

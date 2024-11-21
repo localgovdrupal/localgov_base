@@ -22,13 +22,11 @@
 
 .box-link > * {
   margin-block-end: var(--box-link-content-spacing);
-  padding-inline-end: var(--box-link-content-spacing);
-  padding-inline-start: var(--box-link-content-spacing);
+  padding-inline: var(--box-link-content-spacing);
 }
 
 .box-link__image {
-  padding-inline-end: 0;
-  padding-inline-start: 0;
+  padding-inline: 0;
 }
 
 .box-link__title {

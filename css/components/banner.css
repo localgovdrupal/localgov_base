@@ -11,7 +11,8 @@
 .banner--primary .banner__content {
   position: relative;
   max-width: var(--banner-content-width);
-  margin: calc(var(--banner-content-margin) * -1) auto var(--banner-content-margin);
+  margin: calc(var(--banner-content-margin) * -1) auto
+    var(--banner-content-margin);
   padding: var(--banner-content-padding);
   color: var(--banner-content-text-color);
   background-color: var(--banner-content-bg-color);

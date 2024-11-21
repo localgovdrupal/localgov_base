@@ -7,8 +7,7 @@
 }
 
 .featured-subsite > *:not(.featured-subsite__image) {
-  margin-inline-end: var(--spacing-larger);
-  margin-inline-start: var(--spacing-larger);
+  margin-inline: var(--spacing-larger);
 }
 
 .featured-subsite__image img {

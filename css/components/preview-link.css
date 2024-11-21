@@ -1,8 +1,6 @@
 .preview-link-form {
   max-width: var(--width-container);
-  margin-inline-end: auto;
   margin-block-end: var(--spacing);
-  margin-inline-start: auto;
-  padding-inline-end: var(--spacing);
-  padding-inline-start: var(--spacing);
+  margin-inline: auto;
+  padding-inline: var(--spacing);
 }

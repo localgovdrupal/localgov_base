@@ -34,8 +34,7 @@
   }
 
   .menu--main > .menu-item {
-    margin-inline-end: var(--spacing-smaller);
-    margin-inline-start: var(--spacing-smaller);
+    margin-inline: var(--spacing-smaller);
   }
 
   .menu--main > .menu-item a {

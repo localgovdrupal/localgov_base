@@ -6,9 +6,7 @@
 }
 
 .fact-box--has-bg {
-  padding:
-    var(--fact-box-padding-vertical)
-    var(--fact-box-padding-horizontal)
+  padding: var(--fact-box-padding-vertical) var(--fact-box-padding-horizontal)
     calc(var(--fact-box-padding-vertical) - var(--vertical-rhythm-spacing));
 }
 

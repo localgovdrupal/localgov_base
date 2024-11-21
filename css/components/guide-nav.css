@@ -1,6 +1,7 @@
 .lgd-guide-nav {
   margin-block-end: var(--vertical-rhythm-spacing);
-  padding: var(--section-spacing-vertical-guide-nav) var(--section-spacing-horizontal-guide-nav);
+  padding: var(--section-spacing-vertical-guide-nav)
+    var(--section-spacing-horizontal-guide-nav);
   background-color: var(--color-grey-lighter);
 }
 
@@ -35,6 +36,5 @@
 }
 
 .block-localgov-guides-contents {
-  margin-block-start: var(--spacing-largest);
-  margin-block-end: var(--spacing-largest);
+  margin-block: var(--spacing-largest);
 }

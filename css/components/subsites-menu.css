@@ -73,10 +73,8 @@
 
 /* This would be changed in the menu-subsites.css */
 .lgd-region--subsites-menu {
-  padding-block-start: var(--subsite-extra-region-padding-block-start);
-  padding-inline-end: var(--subsite-extra-region-padding-inline-end);
-  padding-block-end: var(--subsite-extra-region-padding-block-end);
-  padding-inline-start: var(--subsite-extra-region-padding-inline-start);
+  padding-block: var(--subsite-extra-region-padding-block-end);
+  padding-inline: var(--subsite-extra-region-padding-inline-end);
   background-color: var(--subsite-extra-region-bg-color);
 }
 

@@ -1,7 +1,6 @@
 .pull-out-quote {
   margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
+  margin-inline: 0;
   padding: var(--quote-padding);
   padding-inline-start: var(--quote-padding-inline-start);
   border-color: var(--quote-border-color);

@@ -3,8 +3,7 @@
 }
 
 .lgd-footer__pre-footer {
-  padding-block-start: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
-  padding-block-end: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
+  padding-block: clamp(1rem, 10vw, var(--section-spacing-vertical-pre-footer));
   color: var(--color-pre-footer-text);
   background-color: var(--color-section-pre-footer-bg);
 }
@@ -14,8 +13,7 @@
 }
 
 .lgd-footer__footer {
-  padding-block-start: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
-  padding-block-end: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
+  padding-block: clamp(1rem, 10vw, var(--section-spacing-vertical-footer));
   color: var(--color-footer-text);
   background-color: var(--color-section-footer-bg);
 }
@@ -25,8 +23,7 @@
 }
 
 .lgd-footer__post-footer {
-  padding-block-start: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
-  padding-block-end: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
+  padding-block: clamp(1rem, 10vw, var(--section-spacing-vertical-post-footer));
   color: var(--color-post-footer-text);
   background-color: var(--color-section-post-footer-bg);
 }
