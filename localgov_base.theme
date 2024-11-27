@@ -222,6 +222,9 @@ function localgov_base_views_pre_render(ViewExecutable $view) {
   if ($view->storage->id() === 'localgov_sitewide_search') {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
   }
+  if ($view->id() === 'service_status' && $view->current_display === 'service_status_page') {
+    $view->element['#attached']['library'][] = 'localgov_base/service-statuses';
+  }
 }
 
 /**
