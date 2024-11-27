@@ -11,7 +11,7 @@
         const element = document.createElement("span");
         element.classList.add("visually-hidden");
         element.innerHTML = Drupal.t(
-          `This is an "alert" component. Variant: "${type}"`
+          `Alert: "${type}"`
         );
         // Insert the message at the beginning of the alert.
         alert.insertBefore(element, alert.firstChild);
@@ -22,6 +22,8 @@
           alertMessage(alert, "information");
         } else if (alert.classList.contains("alert-danger")) {
           alertMessage(alert, "danger");
+        } else if (alert.classList.contains("alert-failure")) {
+          alertMessage(alert, "failure");
         } else if (alert.classList.contains("alert-success")) {
           alertMessage(alert, "success");
         } else {
