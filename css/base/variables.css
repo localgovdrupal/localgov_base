@@ -404,6 +404,8 @@ body {
   --banner-content-bg-color: var(--color-accent);
   --banner-content-text-color: var(--color-white);
   --banner-title-size: var(--font-size-larger);
+  --color-banner-title-link: var(--color-white);
+  --color-banner-title-link-hover: var(--color-white);
 
   /* Teaser View Mode */
   --teaser-image-with: 33%;

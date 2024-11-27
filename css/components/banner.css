@@ -22,11 +22,18 @@
   font-size: var(--banner-title-size);
 }
 
-.banner__link .field--name-localgov-title {
-  text-decoration: underline;
+.banner__link {
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  color: var(--color-banner-title-link);
 }
 
-.banner__link:focus .field--name-localgov-title,
-.banner__link:hover .field--name-localgov-title {
+.banner__link.banner__link:focus,
+.banner__link:hover {
   text-decoration: none;
+  color: var(--color-banner-title-link-hover);
+}
+.banner__link.banner__link:focus-visible {
+  outline-offset: 2px;
+  outline: 2px dashed var(--color-banner-title-link-hover);
 }

@@ -42,7 +42,7 @@
 {%
   set classes = [
     'banner',
-    'banner--primary', 
+    'banner--primary',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -64,13 +64,16 @@
       {{ content.localgov_image }}
     </div>
   {% endif %}
-  {% if banner_url %}
-    <a class="banner__link" href="{{ banner_url }}">
-  {% endif %}
-    <div class="banner__content">
-      {{ content|without('localgov_image', 'localgov_url') }}
-    </div>
-  {% if banner_url %}
-    </a>
-  {% endif %}
+  <div class="banner__content">
+    {% if banner_url %}
+      <a class="banner__link" href="{{ banner_url }}">
+    {% endif %}
+      {{ content.localgov_title }}
+    {% if banner_url %}
+      </a>
+    {% endif %}
+
+    {{ content|without('localgov_title', 'localgov_image', 'localgov_url') }}
+
+  </div>
 </div>
