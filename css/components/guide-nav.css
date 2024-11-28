@@ -11,6 +11,11 @@
 }
 
 @media screen and (min-width: 48rem) {
+  .block-localgov-guides-contents--vertical .lgd-guide-nav__list {
+    column-count: 1;
+  }
+
+  .block-localgov-guides-contents--horizontal .lgd-guide-nav__list,
   .lgd-guide-nav__list {
     column-count: var(--guide-nav-column-count);
   }
