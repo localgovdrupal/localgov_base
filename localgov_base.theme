@@ -14,7 +14,7 @@ use Drupal\views\ViewExecutable;
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL): void {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -70,7 +70,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
 /**
  * Implements hook_preprocess_html().
  */
-function localgov_base_preprocess_html(&$variables) {
+function localgov_base_preprocess_html(&$variables): void {
   // Add the 'sticky-header' library if the sticky header setting is enabled.
   if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
 
@@ -98,7 +98,7 @@ function localgov_base_preprocess_html(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function localgov_base_preprocess_page(&$variables) {
+function localgov_base_preprocess_page(&$variables): void {
   // Work around for Drupal core issue.
   // Blocks employ lazy building.  This makes it difficult to determine from
   // **Twig templates** if they will eventually produce empty content or not.
@@ -151,7 +151,7 @@ function localgov_base_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function localgov_base_preprocess_node(&$variables) {
+function localgov_base_preprocess_node(&$variables): void {
   $node_status = $variables['node']->isPublished();
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
@@ -163,7 +163,7 @@ function localgov_base_preprocess_node(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function localgov_base_preprocess_block(&$variables) {
+function localgov_base_preprocess_block(&$variables): void {
   if ($variables['plugin_id'] === 'localgov_page_header_block') {
     $route_match = Drupal::routeMatch();
     // Check if we are on a node page, latest version or a preview link.
@@ -191,7 +191,7 @@ function localgov_base_preprocess_block(&$variables) {
  *
  * @see template_preprocess_file_link()
  */
-function localgov_base_preprocess_file_link(&$variables) {
+function localgov_base_preprocess_file_link(&$variables): void {
 
   $file = $variables['file'];
   $filename = $file->getFilename();
@@ -218,7 +218,7 @@ function localgov_base_preprocess_file_link(&$variables) {
 /**
  * Implements hook_views_pre_render().
  */
-function localgov_base_views_pre_render(ViewExecutable $view) {
+function localgov_base_views_pre_render(ViewExecutable $view): void {
   if ($view->storage->id() === 'localgov_sitewide_search') {
     $view->element['#attached']['library'][] = 'localgov_base/sitewide-search';
   }
@@ -227,7 +227,7 @@ function localgov_base_views_pre_render(ViewExecutable $view) {
 /**
  * Implements hook_preprocess_container().
  */
-function localgov_base_preprocess_container(&$variables) {
+function localgov_base_preprocess_container(&$variables): void {
 
   // Randomize form container IDs for accessibility.
   // See https://www.drupal.org/project/drupal/issues/1852090
@@ -246,14 +246,14 @@ function localgov_base_preprocess_container(&$variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function localgov_base_form_preview_link_entity_form_alter(&$form, $form_state, $form_id) {
+function localgov_base_form_preview_link_entity_form_alter(&$form, $form_state, $form_id): void {
   $form['#attached']['library'][''] = 'localgov_base/preview-link';
 }
 
 /**
  * Implements hook_preprocess_guides_prev_next_block().
  */
-function localgov_base_preprocess_guides_prev_next_block(&$variables) {
+function localgov_base_preprocess_guides_prev_next_block(&$variables): void {
   if ($variables['previous_url'] instanceof Url) {
     $variables['previous_url']->setOption('fragment', 'lgd-guides__title');
   }

@@ -31,7 +31,7 @@ class RegionRenderTest extends BrowserTestBase {
   /**
    * Data provider for ::testRegionRender().
    */
-  public static function blockRegionProvider() {
+  public static function blockRegionProvider(): array {
     return [
       [
         'region' => 'disabled',
@@ -59,7 +59,7 @@ class RegionRenderTest extends BrowserTestBase {
    *
    * @dataProvider blockRegionProvider
    */
-  public function testRegionRender($region, $rendered) {
+  public function testRegionRender($region, $rendered): void {
     $this->drupalPlaceBlock('render_test_block', [
       'region' => $region,
     ]);

@@ -24,7 +24,7 @@ class RenderTestBlockResponseSubscriber implements EventSubscriberInterface {
   /**
    * Adds a response header to indicate if the RenderTestBlock got built.
    */
-  public function addRenderTestBlockHeader(ResponseEvent $event) {
+  public function addRenderTestBlockHeader(ResponseEvent $event): void {
     $headerName = 'X-Render-Test-Block';
     $headerValue = RenderTestBlock::$built ? 'TRUE' : 'FALSE';
     $event->getResponse()->headers->set($headerName, $headerValue);

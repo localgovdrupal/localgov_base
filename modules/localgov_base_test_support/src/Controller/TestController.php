@@ -12,7 +12,7 @@ class TestController extends ControllerBase {
   /**
    * Returns a render array for a test page.
    */
-  public function testPage() {
+  public function testPage(): array {
     return [
       '#markup' => $this->t('Hello World!'),
     ];
