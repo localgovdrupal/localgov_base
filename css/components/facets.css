@@ -1,13 +1,13 @@
 .facets-widget__list {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .facets-widget__list + * {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
 }
 
 .facet-item + .facet-item {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
 }
 
 .facet-item::marker {

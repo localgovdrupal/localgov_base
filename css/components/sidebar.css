@@ -9,13 +9,14 @@
 .sidebar .lgd-region__inner > *,
 .blog-channel__sidebar > *,
 .newsroom__sidebar > * {
-  padding: var(--sidebar-exposed-form-padding-vertical) var(--sidebar-exposed-form-padding-horizontal);
+  padding: var(--sidebar-exposed-form-padding-vertical)
+    var(--sidebar-exposed-form-padding-horizontal);
   background-color: var(--sidebar-exposed-form-bg-color);
 }
 
 .sidebar .lgd-region__inner > * + *,
 .newsroom__sidebar > * + * {
-  margin-top: var(--sidebar-exposed-form-item-spacing);
+  margin-block-start: var(--sidebar-exposed-form-item-spacing);
 }
 
 .sidebar .views-exposed-form label,
@@ -29,7 +30,7 @@
 .newsroom__sidebar .views-exposed-form .form-item + .form-item,
 .newsroom__sidebar .views-exposed-form .form-item + .form-actions,
 .newsroom__sidebar .form-item-search-api-fulltext > * + * {
-  margin-top: var(--sidebar-exposed-form-item-spacing);
+  margin-block-start: var(--sidebar-exposed-form-item-spacing);
 }
 
 .sidebar .views-exposed-form input,

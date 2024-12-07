@@ -3,8 +3,8 @@
 */
 
 .lgd-page-title-block {
-  margin-bottom: var(--vertical-rhythm-spacing);
-  border-bottom: var(--page-title-border);
+  margin-block-end: var(--vertical-rhythm-spacing);
+  border-block-end: var(--page-title-border);
 }
 
 .lgd-page-title-block__title,

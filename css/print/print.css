@@ -3,7 +3,10 @@
 .lgd-region__inner--header > *:not(.block-system-branding-block),
 .sidebar,
 .lgd-prev-next,
-.newsroom__sidebar {
+.newsroom__sidebar,
+.block-localgov-guides-contents,
+.block-views-blocklocalgov-step-by-step-navigation-steps-for-overview,
+.block-views-blocklocalgov-step-by-step-navigation-steps {
   display: none;
 }
 
@@ -12,7 +15,13 @@
 }
 
 img {
+  /* stylelint-disable */
+  /*
+    Disabling because cm is not an allowed value in Drupal's stylelint, but
+    we need it here for the print.css.
+   */
   max-width: 10cm; /* half the width of A4 */
+  /* stylelint-enable */
 }
 
 .accordion--initialised .accordion-pane__content {

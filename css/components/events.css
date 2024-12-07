@@ -3,19 +3,20 @@
 }
 
 .field--name-localgov-event-image + .field--name-localgov-event-date {
-  margin-top: var(--vertical-rhythm-spacing);
+  margin-block-start: var(--vertical-rhythm-spacing);
 }
 
 .localgov-event .date-recur-date,
 .field--name-localgov-event-provider,
 .field--name-localgov-event-venue,
 .localgov-event .field--name-location > * {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .field--name-localgov-event-call-to-action a {
   display: inline-block;
-  padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal)
+    var(--button-padding-vertical) var(--button-padding-horizontal);
   color: var(--button-text-color);
   border: var(--border);
   border-color: var(--button-border-color);

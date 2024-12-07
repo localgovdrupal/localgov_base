@@ -1,5 +1,5 @@
 .localgov-add-to-calendar:has(+ *) {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 .localgov-add-to-calendar__trigger {
@@ -48,5 +48,5 @@
 }
 
 .localgov-add-to-calendar__item + .localgov-add-to-calendar__item {
-  margin-top: var(--spacing);
+  margin-block-start: var(--spacing);
 }

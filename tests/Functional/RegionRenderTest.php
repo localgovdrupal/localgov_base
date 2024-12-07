@@ -31,7 +31,7 @@ class RegionRenderTest extends BrowserTestBase {
   /**
    * Data provider for ::testRegionRender().
    */
-  public function blockRegionProvider() {
+  public static function blockRegionProvider() {
     return [
       [
         'region' => 'disabled',

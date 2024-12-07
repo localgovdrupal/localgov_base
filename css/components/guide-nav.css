@@ -1,11 +1,13 @@
 .lgd-guide-nav {
-  margin-bottom: var(--vertical-rhythm-spacing);
-  padding: var(--section-spacing-vertical-guide-nav) var(--section-spacing-horizontal-guide-nav);
+  margin-block-end: var(--vertical-rhythm-spacing);
+  padding: var(--section-spacing-vertical-guide-nav)
+    var(--section-spacing-horizontal-guide-nav);
   background-color: var(--color-grey-lighter);
 }
 
 .lgd-guide-nav__list {
-  margin-bottom: 0;
+  margin-block-end: 0;
+  word-wrap: break-word;
 }
 
 @media screen and (min-width: 48rem) {
@@ -15,7 +17,7 @@
 }
 
 .lgd-guide-nav__list-item {
-  margin-bottom: var(--spacing);
+  margin-block-end: var(--spacing);
   font-size: var(--font-size-large);
   break-inside: avoid-column;
 }
@@ -34,6 +36,5 @@
 }
 
 .block-localgov-guides-contents {
-  margin-top: var(--spacing-largest);
-  margin-bottom: var(--spacing-largest);
+  margin-block: var(--spacing-largest);
 }

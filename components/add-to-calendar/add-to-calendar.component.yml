@@ -1,0 +1,26 @@
+---
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Add to Calendar
+description: Provides common add-to-calendar button with accompanying modal.
+status: stable
+props:
+  type: object
+  properties:
+    button_text:
+      type: string
+      title: Button text
+      description: >
+        Translated text for the Add to Calendar button.
+    ical_link_text:
+      type: string
+      title: iCal link text
+      description: >
+        Translated text for the Add to iCal link.
+    outlook_link_text:
+      type: string
+      title: Outlook link text
+      description: >
+        Translated text for the Add to Outlook link.
+libraryDependencies:
+  - core/drupal
+  - core/once

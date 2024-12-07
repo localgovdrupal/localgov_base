@@ -1,0 +1,76 @@
+---
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Previous-next
+description: >
+  Provides common Previous-Next navigation element for LGD themes and modules.
+  NOTE: it is the responsibility of the caller and providing module to provide
+  translated strings as needed for prev_label, next_label, prev_title, and
+  next_title.
+status: stable
+props:
+  type: object
+  properties:
+    prev_next_type:
+      type: string
+      title: Prev-Next type
+      description: >
+        String used to create a class specific to this usage of the component.
+    show_title:
+      type: boolean
+      title: Show title
+      description: >
+        Whether or not to show prev_title/next_title below prev_label/next_label
+        in links. Works regardless of whether or not prev_title and next_title
+        are empty.
+    icon_path:
+      type: string
+      title: Icon path
+      description: >
+        The path to the icon directory used for the component. Ideally, this
+        should be a twig-namespaced path like @foo/bar/icons. Defaults to
+        @localgov_base/includes/icons/.
+    prev_icon:
+      type: string
+      title: Previous icon
+      description: >
+        The extensionless filename of the icon to show in Previous link. This
+        will be concatenated to the icon_path variable. Defaults to
+        'chevron-left'.
+    prev_label:
+      type: string
+      title: Previous label
+      description: Translated label for Previous link. Defaults to "Previous".
+    prev_title:
+      type: string
+      title: Previous title
+      description: >
+        Longer title for Previous link. Shown below prev_label, and also used
+        to construct the link's aria-label attribute.
+    prev_url:
+      type: string
+      title: Previous link
+      description: >
+        The actual URL for the Previous link. If empty, the entire link will
+        not be rendered.
+    next_icon:
+      type: string
+      title: Next icon
+      description: >
+        The extensionless filename of the icon to show in next link. This will
+        be concatenated to the icon_path variable. Defaults to 'chevron-right'.
+    next_label:
+      type: string
+      title: Next label
+      description: Translated label for Next link. Defaults to "Next".
+    next_title:
+      type: string
+      title: Next title
+      description: >
+        Longer title for Next link. Shown below next_label, and also used to
+        construct the link's aria-label attribute.
+    next_url:
+      type: string
+      title: Next link
+      description: >
+        The actual URL for the Next link. If empty, the entire link will
+        not be rendered.

@@ -71,7 +71,8 @@ body {
     We choose basic fonts that most people have in browser cache from visiting other websites.
     This will help with page speed, rather than calling fonts from Google Fonts or somewhere.
   */
-  --font-primary: roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-primary: roboto, oxygen, ubuntu, cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
   --font-secondary: georgia, "Times New Roman", times, serif;
   --font-heading-1: var(--font-secondary);
   --font-heading-2: var(--font-secondary);
@@ -93,7 +94,11 @@ body {
   --font-size-large: calc(var(--font-size) * 1.3125);
   --font-size-larger: calc(var(--font-size) * 1.6875);
   --font-size-largest: calc(var(--font-size) * 2.875);
-  --font-size-h1: clamp(var(--font-size-larger), 10vw, var(--font-size-largest));
+  --font-size-h1: clamp(
+    var(--font-size-larger),
+    10vw,
+    var(--font-size-largest)
+  );
   --font-size-h2: clamp(var(--font-size-large), 8vw, var(--font-size-larger));
   --font-size-h3: clamp(var(--font-size-medium), 6vw, var(--font-size-large));
   --font-size-h4: var(--font-size-medium);
@@ -135,8 +140,10 @@ body {
   --border-style: solid;
   --border-radius: var(--spacing-smallest);
   --border: var(--border-width) var(--border-style) var(--border-color);
-  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
-  --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
+  --border-large: var(--border-width-large) var(--border-style)
+    var(--border-color);
+  --border-dark: var(--border-width) var(--border-style)
+    var(--border-color-dark);
   --border-transparent: var(--border-width) var(--border-style) transparent;
 
   /* Animation */
@@ -155,7 +162,6 @@ body {
   override the defined variables above instead).
 */
 body {
-
   /* Grid */
   --grid-column-spacing: var(--spacing);
 
@@ -201,12 +207,22 @@ body {
   --section-spacing-vertical-pre-footer: var(--spacing-largest);
   --section-spacing-vertical-footer: var(--spacing);
   --section-spacing-vertical-post-footer: var(--spacing);
+  --color-pre-footer-heading: var(--color-white);
   --color-pre-footer-link: var(--color-white);
   --color-pre-footer-text: var(--color-white);
+  --color-footer-heading: var(--color-text);
   --color-footer-link: var(--color-link);
   --color-footer-text: var(--color-text);
+  --color-post-footer-heading: var(--color-text);
   --color-post-footer-link: var(--color-link);
   --color-post-footer-text: var(--color-text);
+
+  /* Housekeeping Items */
+  --color-section-housekeeping-bg: var(--color-accent);
+  --color-housekeeping-heading: var(--color-white);
+  --color-housekeeping-link: var(--color-white);
+  --color-housekeeping-text: var(--color-white);
+  --section-spacing-vertical-housekeeping: var(--spacing);
 
   /* Page Title */
   --page-title-border: var(--border);
@@ -224,8 +240,8 @@ body {
   --input-text-color-hover: var(--color-accent);
   --input-icon-color: var(--input-text-color);
   --input-icon-color-hover: var(--color-accent);
-  --input-border-color: var(--color-grey-medium);
-  --input-border-color-hover: var(--color-grey-medium);
+  --input-border-color: var(--color-grey-dark);
+  --input-border-color-hover: var(--color-grey-dark);
   --input-bg-color: var(--color-white);
   --input-bg-color-hover: var(--color-grey-light);
   --input-border-radius: 0;
@@ -254,7 +270,8 @@ body {
 
   /* File Upload Items */
   --file-upload-border: var(--border);
-  --file-upload-border-left-size: var(--border-width-large);
+  --file-upload-border-left-size: var(--border-width-large); /* Deprecated */
+  --file-upload-border-inline-start-size: var(--border-width-large);
   --file-upload-border-color: var(--color-accent);
   --file-upload-bg-hover-color: var(--color-accent);
   --file-upload-text-hover-color: var(--color-white);
@@ -275,7 +292,10 @@ body {
   --sidebar-exposed-form-item-spacing: var(--spacing);
 
   /* Guide Navigation */
-  --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
+  --section-spacing-vertical-guide-nav: calc(
+    var(--spacing-large) + 1rem
+  ); /* 1rem to account for padding on left of bullets */
+
   --section-spacing-horizontal-guide-nav: var(--spacing-large);
   --guide-nav-column-count: 3;
 
@@ -318,7 +338,8 @@ body {
 
   /* Quote */
   --quote-padding: var(--spacing-larger);
-  --quote-padding-left: var(--spacing-larger);
+  --quote-padding-left: var(--spacing-larger); /* Deprecated */
+  --quote-padding-inline-start: var(--spacing-larger);
   --quote-border: var(--border-large);
   --quote-border-color: var(--color-accent);
   --quote-bg-color: var(--color-grey-lighter);
@@ -394,6 +415,7 @@ body {
   /* News */
   --newsroom-featured-bottom-space: var(--spacing-largest);
   --news-category-spacing: var(--spacing);
+  --newsroom-featured-space-after-items: var(--spacing);
 
   /* Search Results */
   --sitewide-search-header-container-padding-horizontal: var(--spacing);
@@ -446,7 +468,7 @@ body {
   --leaflet-map-outline-stroke-colour: #38f;
 
   /* Blogs */
-  --blog-author-image-width: calc(var(--teaser-image-with)/2);
+  --blog-author-image-width: calc(var(--teaser-image-with) / 2);
   --blog-author-content-margin: var(--spacing-largest);
 
   /* Page Sections */
@@ -471,68 +493,188 @@ body {
   --color-page-section-background-color-6-text-color: var(--color-white);
   --color-page-section-background-color-6-link-color: var(--color-white);
   /* Page Sections - Newsroom Teasers */
-  --color-page-section-background-color-1-newsroom-teaser-background-color: var(--color-white);
-  --color-page-section-background-color-1-newsroom-teaser-text-color: var(--color-black);
-  --color-page-section-background-color-1-newsroom-teaser-link-color: var(--color-black);
-  --color-page-section-background-color-2-newsroom-teaser-background-color: var(--color-white);
-  --color-page-section-background-color-2-newsroom-teaser-text-color: var(--color-black);
-  --color-page-section-background-color-2-newsroom-teaser-link-color: var(--color-black);
-  --color-page-section-background-color-3-newsroom-teaser-background-color: var(--color-black);
-  --color-page-section-background-color-3-newsroom-teaser-text-color: var(--color-white);
-  --color-page-section-background-color-3-newsroom-teaser-link-color: var(--color-white);
-  --color-page-section-background-color-4-newsroom-teaser-background-color: var(--color-white);
-  --color-page-section-background-color-4-newsroom-teaser-text-color: var(--color-black);
-  --color-page-section-background-color-4-newsroom-teaser-link-color: var(--color-black);
-  --color-page-section-background-color-5-newsroom-teaser-background-color: var(--color-white);
-  --color-page-section-background-color-5-newsroom-teaser-text-color: var(--color-black);
-  --color-page-section-background-color-5-newsroom-teaser-link-color: var(--color-black);
-  --color-page-section-background-color-6-newsroom-teaser-background-color: var(--color-white);
-  --color-page-section-background-color-6-newsroom-teaser-text-color: var(--color-black);
-  --color-page-section-background-color-6-newsroom-teaser-link-color: var(--color-black);
+  --color-page-section-background-color-1-newsroom-teaser-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-1-newsroom-teaser-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-1-newsroom-teaser-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-newsroom-teaser-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-2-newsroom-teaser-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-newsroom-teaser-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-newsroom-teaser-background-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-newsroom-teaser-text-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-3-newsroom-teaser-link-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-4-newsroom-teaser-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-4-newsroom-teaser-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-4-newsroom-teaser-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-newsroom-teaser-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-5-newsroom-teaser-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-newsroom-teaser-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-newsroom-teaser-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-6-newsroom-teaser-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-newsroom-teaser-link-color: var(
+    --color-black
+  );
   /* Page Sections - Box Links */
-  --color-page-section-background-color-1-box-link-border-color: var(--color-white);
-  --color-page-section-background-color-1-box-link-background-color: var(--color-white);
-  --color-page-section-background-color-1-box-link-text-color: var(--color-black);
-  --color-page-section-background-color-1-box-link-link-color: var(--color-black);
-  --color-page-section-background-color-2-box-link-border-color: var(--color-white);
-  --color-page-section-background-color-2-box-link-background-color: var(--color-white);
-  --color-page-section-background-color-2-box-link-text-color: var(--color-black);
-  --color-page-section-background-color-2-box-link-link-color: var(--color-black);
-  --color-page-section-background-color-3-box-link-border-color: var(--color-black);
-  --color-page-section-background-color-3-box-link-background-color: var(--color-black);
-  --color-page-section-background-color-3-box-link-text-color: var(--color-white);
-  --color-page-section-background-color-3-box-link-link-color: var(--color-white);
-  --color-page-section-background-color-4-box-link-border-color: var(--color-white);
-  --color-page-section-background-color-4-box-link-background-color: var(--color-white);
-  --color-page-section-background-color-4-box-link-text-color: var(--color-black);
-  --color-page-section-background-color-4-box-link-link-color: var(--color-black);
-  --color-page-section-background-color-5-box-link-border-color: var(--color-white);
-  --color-page-section-background-color-5-box-link-background-color: var(--color-white);
-  --color-page-section-background-color-5-box-link-text-color: var(--color-black);
-  --color-page-section-background-color-5-box-link-link-color: var(--color-black);
-  --color-page-section-background-color-6-box-link-border-color: var(--color-white);
-  --color-page-section-background-color-6-box-link-background-color: var(--color-white);
-  --color-page-section-background-color-6-box-link-text-color: var(--color-black);
-  --color-page-section-background-color-6-box-link-link-color: var(--color-black);
+  --color-page-section-background-color-1-box-link-border-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-1-box-link-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-1-box-link-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-1-box-link-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-box-link-border-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-2-box-link-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-2-box-link-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-box-link-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-box-link-border-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-box-link-background-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-box-link-text-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-3-box-link-link-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-4-box-link-border-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-4-box-link-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-4-box-link-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-4-box-link-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-box-link-border-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-5-box-link-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-5-box-link-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-box-link-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-box-link-border-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-6-box-link-background-color: var(
+    --color-white
+  );
+  --color-page-section-background-color-6-box-link-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-box-link-link-color: var(
+    --color-black
+  );
   /* Page Sections - Featured Subsites */
-  --color-page-section-background-color-1-featured-subsite-background-color: var(--color-grey-lightest);
-  --color-page-section-background-color-1-featured-subsite-text-color: var(--color-black);
-  --color-page-section-background-color-1-featured-subsite-link-color: var(--color-black);
-  --color-page-section-background-color-2-featured-subsite-background-color: var(--color-grey-lightest);
-  --color-page-section-background-color-2-featured-subsite-text-color: var(--color-black);
-  --color-page-section-background-color-2-featured-subsite-link-color: var(--color-black);
-  --color-page-section-background-color-3-featured-subsite-background-color: var(--color-black);
-  --color-page-section-background-color-3-featured-subsite-text-color: var(--color-grey-lightest);
-  --color-page-section-background-color-3-featured-subsite-link-color: var(--color-grey-lightest);
-  --color-page-section-background-color-4-featured-subsite-background-color: var(--color-grey-lightest);
-  --color-page-section-background-color-4-featured-subsite-text-color: var(--color-black);
-  --color-page-section-background-color-4-featured-subsite-link-color: var(--color-black);
-  --color-page-section-background-color-5-featured-subsite-background-color: var(--color-grey-lightest);
-  --color-page-section-background-color-5-featured-subsite-text-color: var(--color-black);
-  --color-page-section-background-color-5-featured-subsite-link-color: var(--color-black);
-  --color-page-section-background-color-6-featured-subsite-background-color: var(--color-grey-lightest);
-  --color-page-section-background-color-6-featured-subsite-text-color: var(--color-black);
-  --color-page-section-background-color-6-featured-subsite-link-color: var(--color-black);
+  --color-page-section-background-color-1-featured-subsite-background-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-1-featured-subsite-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-1-featured-subsite-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-featured-subsite-background-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-2-featured-subsite-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-2-featured-subsite-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-featured-subsite-background-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-3-featured-subsite-text-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-3-featured-subsite-link-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-4-featured-subsite-background-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-4-featured-subsite-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-4-featured-subsite-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-featured-subsite-background-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-5-featured-subsite-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-5-featured-subsite-link-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-featured-subsite-background-color: var(
+    --color-grey-lightest
+  );
+  --color-page-section-background-color-6-featured-subsite-text-color: var(
+    --color-black
+  );
+  --color-page-section-background-color-6-featured-subsite-link-color: var(
+    --color-black
+  );
 
   /* Add to Calendar */
   --add-to-calendar-dialog-max-width: 80%;
@@ -543,4 +685,8 @@ body {
   --add-to-calendar-dialog-backdrop-opacity: 0.75;
   --add-to-calendar--icon-color: var(--color-white);
   --add-to-calendar--icon-color-hover: var(--color-accent);
+
+  /* Accordion */
+  --accordion-icon-closed: "+";
+  --accordion-icon-opened: "-";
 }

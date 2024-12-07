@@ -32,10 +32,10 @@
 }
 
 .tabs--initialised .tabs__controls [aria-selected="true"] {
-  border-bottom-color: var(--tabs-button-active-color);
+  border-block-end-color: var(--tabs-button-active-color);
   background-color: var(--tabs-button-active-color);
 }
 
 .tabs--initialised .tabs__controls > li + li button {
-  border-left: none;
+  border-inline-start: none;
 }

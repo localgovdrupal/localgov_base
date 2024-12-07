@@ -13,7 +13,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  margin-top: 0; /* Removing top margin, for better vertical rhythm layout */
+  margin-block-start: 0; /* Removing top margin, for better vertical rhythm layout */
 }
 
 dialog {
@@ -43,7 +43,7 @@ body {
 
 main {
   /* To give us a sticky footer. */
-  margin-bottom: auto;
+  margin-block-end: auto;
 }
 
 a {
@@ -62,7 +62,9 @@ a:not([class*="toolbar"]):focus {
   background-color: var(--color-focus);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
+  box-shadow:
+    0 -2px var(--color-focus),
+    0 4px var(--color-black);
 }
 
 h1,
@@ -78,7 +80,7 @@ h5,
 h6,
 .h6,
 .heading {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
   font-family: var(--font-secondary);
 }
 
@@ -152,14 +154,20 @@ ol,
 pre,
 table,
 blockquote {
-  margin-bottom: var(--vertical-rhythm-spacing);
+  margin-block-end: var(--vertical-rhythm-spacing);
 }
 
 ul ul,
 ol ol,
 ul ol,
 ol ul {
-  margin-bottom: 0;
+  margin-block-end: 0;
+}
+
+blockquote:not(.pull-out-quote__content) {
+  padding-inline-start: var(--quote-padding-inline-start);
+  border-color: var(--color-accent);
+  border-inline-start: var(--quote-border);
 }
 
 sub,
@@ -193,6 +201,15 @@ th {
 th {
   border-color: var(--table-header-border-color);
   background-color: var(--table-bg-color);
+}
+
+/* Responsive tables for table field tables */
+.field--name-localgov-table {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+.tablefield-wrapper {
+  overflow-x: auto;
 }
 
 input,

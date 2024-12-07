@@ -2,15 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 
 .pager__item {
-  margin-right: var(--spacing-smaller);
-  margin-left: var(--spacing-smaller);
+  margin-inline: var(--spacing-smaller);
 }
 
 .pager__item::marker {
   color: transparent;
+}
+
+.pager__item > a {
+  padding-inline: var(--spacing-smaller);
 }

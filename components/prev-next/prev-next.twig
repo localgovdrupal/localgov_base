@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the prev_next type blocks.
+ *
+ * @see prev-next.component.yml for available variables.
+ */
+#}
+
+{% set icon_path = icon_path|default('@localgov_base/includes/icons') %}
+{% set prev_icon = prev_icon|default('chevron-left') %}
+{% set next_icon = next_icon|default('chevron-right') %}
+{% set prev_label = prev_label|default('Previous'|t) %}
+{% set next_label = next_label|default('Next'|t) %}
+{% set prev_aria_label = prev_title ? (prev_label ~ ': ' ~ prev_title) : prev_label %}
+{% set next_aria_label = next_title ? (next_label ~ ': ' ~ next_title) : next_label %}
+
+{% set classes = [
+  'lgd-prev-next',
+  prev_next_type ? 'lgd-prev-next--' ~ prev_next_type,
+] %}
+
+{#
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/prev-next') }}
+{% endif %}
+#}
+
+<nav{{attributes.addClass(classes)}}>
+  <ul class="lgd-prev-next__list">
+    {% if prev_url %}
+      <li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">
+        <a href="{{ prev_url }}" class="lgd-prev-next__link lgd-prev-next__link--prev" aria-label="{{ prev_aria_label }}">
+          {% include 'localgov_base:icon' with {
+            icon_path: icon_path,
+            icon_name: prev_icon,
+            icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--prev',
+          } %}
+          <div class="lgd-prev-next__label">
+            {{ prev_label }}
+          </div>
+          {% if show_title %}
+            <div class="lgd-prev-next__title">
+              {{ prev_title }}
+            </div>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if next_url %}
+      <li class="lgd-prev-next__list-item lgd-prev-next__list-item--next">
+        <a href="{{ next_url }}" class="lgd-prev-next__link lgd-prev-next__link--next" aria-label="{{ next_aria_label }}">
+          <div class="lgd-prev-next__label">
+            {{ next_label }}
+          </div>
+          {% include 'localgov_base:icon' with {
+            icon_path: icon_path,
+            icon_name: next_icon,
+            icon_classes: 'lgd-prev-next__icon lgd-prev-next__icon--next',
+          } %}
+          {% if show_title %}
+            <div class="lgd-prev-next__title">
+              {{ next_title }}
+            </div>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

@@ -97,6 +97,13 @@
   {{ title_suffix }}
 
   <div class="lgd-container padding-horizontal">
+    {% block breadcrumbs %}
+      {#
+        This block is a placeholder for the breadcrumbs block, which is used
+        by the localgov_microsites_base theme.
+      #}
+    {% endblock %}
+
     <div class="node__restricted-width-section">
       {% set atc_title = node.title.value %}
 
@@ -123,7 +130,7 @@
 
       <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
         {{ content.localgov_event_date }}
-        {% include "@localgov_base/_components/add-to-calendar.twig" %}
+        {% include "localgov_base:add-to-calendar" %}
         {{ content|without('localgov_event_date') }}
       </div>
 
