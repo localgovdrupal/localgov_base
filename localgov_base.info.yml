@@ -3,8 +3,6 @@ description: "Base theme for LocalGov Drupal sites."
 type: theme
 core_version_requirement: ^10.1.3 || ^11
 base theme: "stable9"
-ckeditor_stylesheets:
-  - css/base/ckeditor.css
 ckeditor5-stylesheets:
   - css/base/ckeditor5.css
 
