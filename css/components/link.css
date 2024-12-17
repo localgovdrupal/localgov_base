@@ -9,8 +9,7 @@
 }
 
 .link--button-style .link-wrapper {
-  padding:
-    var(--button-padding-vertical) var(--button-padding-horizontal)
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal)
     var(--button-padding-vertical) var(--button-padding-horizontal);
   color: var(--button-text-color);
   border: var(--border);

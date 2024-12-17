@@ -1,5 +1,6 @@
 .lgd-search-results-list__header-container {
-  padding: var(--sitewide-search-header-container-padding-vertical) var(--sitewide-search-header-container-padding-horizontal);
+  padding: var(--sitewide-search-header-container-padding-vertical)
+    var(--sitewide-search-header-container-padding-horizontal);
   border: var(--border);
   border-radius: var(--border-radius);
 }

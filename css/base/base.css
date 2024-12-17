@@ -62,7 +62,9 @@ a:not([class*="toolbar"]):focus {
   background-color: var(--color-focus);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  box-shadow: 0 -2px var(--color-focus), 0 4px var(--color-black);
+  box-shadow:
+    0 -2px var(--color-focus),
+    0 4px var(--color-black);
 }
 
 h1,
@@ -163,10 +165,9 @@ ol ul {
 }
 
 blockquote:not(.pull-out-quote__content) {
-  padding-inline-start: var(--quote-padding);
   padding-inline-start: var(--quote-padding-inline-start);
-  border-inline-start: var(--quote-border);
   border-color: var(--color-accent);
+  border-inline-start: var(--quote-border);
 }
 
 sub,
@@ -204,8 +205,8 @@ th {
 
 /* Responsive tables for table field tables */
 .field--name-localgov-table {
-  max-width: 100%;
   overflow-x: hidden;
+  max-width: 100%;
 }
 .tablefield-wrapper {
   overflow-x: auto;

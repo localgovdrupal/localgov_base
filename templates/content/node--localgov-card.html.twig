@@ -73,18 +73,12 @@
 
 {% set content_type = node.bundle %}
 
-{% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/full') }}
-{% endif %}
-
-{{ attach_library('localgov_base/events') }}
-
 {%
   set classes = [
-    content_type|clean_class,
+    'lgd-card',
+    'lgd-card--' ~ content_type|clean_class,
     'node',
     'node--type-' ~ node.bundle|clean_class,
-    content_type in restricted_width_content_types ? 'node--with-restricted-width',
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
@@ -92,48 +86,39 @@
   ]
 %}
 
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/card') }}
+{% endif %}
+
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
 
-  <div class="lgd-container padding-horizontal">
-    {% block breadcrumbs %}
-      {#
-        This block is a placeholder for the breadcrumbs block, which is used
-        by the localgov_microsites_base theme.
-      #}
-    {% endblock %}
-
-    <div class="node__restricted-width-section">
-      {% set atc_title = node.title.value %}
-
-      {% if node.localgov_event_date.value %}
-        {% set atc_start_date = node.localgov_event_date.value %}
-      {% endif %}
-
-      {% if node.localgov_event_date.end_value %}
-        {% set atc_end_date = node.localgov_event_date.end_value %}
-      {% endif %}
-
-      {% if node.localgov_event_date.0.rrule %}
-        {% set atc_rrule = node.localgov_event_date.0.rrule %}
-      {% endif %}
-
-      {% if node.body.summary %}
-        {% set atc_details = node.body.summary %}
-      {% endif %}
-
-      {% set atc_location_variable = node.localgov_event_location.entity.postal_address.value.0 %}
-      {% if atc_location_variable %}
-        {% set atc_location = atc_location_variable.address_line1 ~ ', ' ~ atc_location_variable.locality ~ ', ' ~ atc_location_variable.postal_code %}
-      {% endif %}
-
-      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ content.localgov_event_date }}
-        {% include "localgov_base:add-to-calendar" %}
-        {{ content|without('localgov_event_date') }}
-      </div>
-
+  {#
+    The event content type has a specific field set for its teaser so we
+    are adding that here specifically. Hopefully all other content types
+    will use the same `field_media_image` field.
+  #}
+  {% if node.field_media_image.value or node.localgov_event_image.value %}
+    <div class="lgd-card__image">
+      {{ content.field_media_image }}
+      {{ content.localgov_event_image }}
     </div>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('lgd-card__content', 'lgd-card__content--' ~ content_type|clean_class) }}>
+
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h3{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+    {% endif %}
+    {{ title_suffix }}
+
+    {#
+      We render the full content variable here, so any new fields added
+      are visible.
+    #}
+    {{ content|without('field_media_image', 'localgov_event_image') }}
   </div>
+
 </article>

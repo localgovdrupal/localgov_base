@@ -3,7 +3,6 @@
 }
 
 @media screen and (min-width: 48rem) {
-
   .lgd-term {
     display: flex;
     margin-block-end: var(--blog-author-content-margin);

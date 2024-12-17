@@ -20,7 +20,9 @@
   gap: var(--vertical-rhythm-spacing);
 }
 
-.field--name-localgov-blog-channel-featured > .field__items > .field__item:first-of-type {
+.field--name-localgov-blog-channel-featured
+  > .field__items
+  > .field__item:first-of-type {
   grid-column-start: 1;
   grid-column-end: 3;
   padding: var(--vertical-rhythm-spacing);

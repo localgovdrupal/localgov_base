@@ -2,6 +2,10 @@
   margin-block-end: var(--newsroom-featured-bottom-space);
 }
 
+.newsroom__featured-news > .lgd-row > * {
+  margin-block-end: var(--newsroom-featured-space-after-items);
+}
+
 .news-article__metadata-item--categories {
   padding-inline-start: 0;
 }

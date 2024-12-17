@@ -71,8 +71,8 @@
 /* Theming the Header Toggles */
 .lgd-header__toggles {
   display: flex;
-  margin-inline-end: var(--spacing);
   margin-inline-start: auto;
+  margin-inline-end: var(--spacing);
 }
 
 .lgd-header__toggle {
