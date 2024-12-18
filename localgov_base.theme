@@ -53,6 +53,12 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
     '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
   ];
+  $form['localgov_base_guides_stacked_header'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use the stacked header pattern for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_guides_stacked_header'),
+    '#description'   => t('This will mean that your guide title and subtitle will be grouped together in the header, following the approach used by the NHS design system.'),
+  ];
   $form['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
