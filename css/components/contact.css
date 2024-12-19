@@ -33,7 +33,10 @@
 }
 
 .lgd-contact__group > * + *,
-.lgd-contact__group .field--name-localgov-contact-other-social > .field__item + .field__item,
+.lgd-contact__group
+  .field--name-localgov-contact-other-social
+  > .field__item
+  + .field__item,
 .lgd-contact__group .office-hours__item + .office-hours__item {
   margin-block-start: var(--contact-spacing);
 }
