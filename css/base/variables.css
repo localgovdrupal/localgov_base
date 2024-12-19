@@ -472,6 +472,12 @@ body {
   --alert-banner-inner-padding-vertical: var(--spacing);
   --alert-banner-inner-padding-horizontal: 0;
 
+  /* Contact */
+  --contact-border: var(--border);
+  --contact-accent-color: var(--color-accent);
+  --contact-spacing: var(--spacing);
+  --contact-accent-color-contrast: var(--color-white);
+
   /* Leaflet Mapping */
   --leaflet-map-outline-stroke-colour: #38f;
 
