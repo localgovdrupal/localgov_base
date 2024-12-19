@@ -193,6 +193,11 @@ link:
     theme:
       css/components/link.css: {}
 
+contact:
+  css:
+    theme:
+      css/components/contact.css: {}
+
 key-contacts:
   css:
     theme:
