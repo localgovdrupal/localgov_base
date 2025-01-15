@@ -157,7 +157,7 @@ function localgov_base_preprocess_page(&$variables): void {
   // This is used to determine if we should show the default 403/404 content,
   // or if we should show the content of the node that is set as the 403/404
   // page.
-  $variables['default_status_content'] = true;
+  $variables['default_status_content'] = TRUE;
   $route_match = Drupal::routeMatch();
   $route = $route_match->getRouteName();
   if ($route === 'entity.node.canonical') {
@@ -166,14 +166,16 @@ function localgov_base_preprocess_page(&$variables): void {
     $is_404_page_node = $site_404 === 'node/' . $node_id;
     $is_403_page_node = $site_403 === 'node/' . $node_id;
     if ($is_404_page_node && empty($site_404)) {
-      $variables['default_status_content'] = true;
-    } else {
-      $variables['default_status_content'] = false;
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
     }
     if ($is_403_page_node && empty($site_403)) {
-      $variables['default_status_content'] = true;
-    } else {
-      $variables['default_status_content'] = false;
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
     }
   }
 
