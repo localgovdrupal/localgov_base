@@ -163,8 +163,8 @@ function localgov_base_preprocess_page(&$variables): void {
   if ($route === 'entity.node.canonical') {
     $node = $route_match->getParameter('node');
     $node_id = $node->id();
-    $is_404_page_node = 'node/' . $node_id === $site_404;
-    $is_403_page_node = 'node/' . $node_id === $site_403;
+    $is_404_page_node = $site_404 === 'node/' . $node_id;
+    $is_403_page_node = $site_403 === 'node/' . $node_id;
     if ($is_404_page_node && empty($site_404)) {
       $variables['default_status_content'] = true;
     } else {
