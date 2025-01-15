@@ -26,7 +26,7 @@ You need to enter two items when creating a sub-theme:
 2. The machine name for the theme, this must start with a letter and use only lowercase letters and underscores, e.g. super_council
 
 ## Custom Styles
-Hopefully most of the custom styles you will need are set via CSS custom properties in the `/css/variables.css` file in your sub-theme.
+Hopefully most of the custom styles you will need are set via CSS custom properties in the `/css/base/variables.css` file in your sub-theme.
 
 This is where you set your colours, fonts, spacing, etc. Then you "apply" these variables where needed, like so:
 
