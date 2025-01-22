@@ -48,11 +48,43 @@ If you need to add any CSS overrides, you can create custom CSS files for these 
 ## Automated CSS Coding Standards
 To make sure we follow Drupal's CSS coding standards (without having to think about it), there is a handy `npm` script to automatically scan and fix any CSS coding standards violations.
 
-Simple run `npm install` to get the necessary packages, then run `npm start` to scan the files and fix any issues.
+Simply run `npm install` to get the necessary packages, then run one of the following commands to scan the files and fix any issues.
+
+- "start": "npm run lint:css && npm run lint:js",
+- "start:fix": "npm run lint:css:fix && npm run lint:js:fix",
+- "lint:css": "stylelint \"**/*.css\"",
+- "lint:css:fix": "stylelint \"**/*.css\" --fix",
+- "lint:js": "eslint \"**/*.js\"",
+- "lint:js:fix": "eslint \"**/*.js\" --fix",
+
+### start
+This command will run the linter on your CSS and JS files and give you are report in your terminal of any issues. found.
+
+### start:fix
+This command will do the same as `start` but will also attempt to fix any issues it finds, such as using correct quote marks, fixing indentation, etc.
+
+It's advisable to run `start` after you run this command to see if there was anything the automated linter couldn't fix.
+
+### lint:css
+This is the same as `start` except it only checks the CSS files.
+
+### lint:css:fix
+This is the same as `start:fix` except it only affects the CSS files.
+
+### lint:js
+This is the same as `start` except it only checks the JS files.
+
+### lint:js:fix
+This is the same as `start:fix` except it only affects the JS files.
+
+### Troubleshooting
+If you get an error, such as node not being able to find prettier, you might need to install the packages from Drupal core's `package.json`. All of our linting extends Drupal core's linting to make sure we are always following Drupal's exact coding standards. To do so, simply `cd web/core` and then `npm install`.
+
+If you still cannot run the linter, make sure you are using the correct version of Node. We have a `.nvmrc` file to help you. Run `nvm use` from your theme directory to install the correct version.
 
 ## Maintainers
 
-This project is currently maintained by: 
+This project is currently maintained by:
 
  - Mark Conroy https://github.com/markconroy
  - Maria Young https://github.com/msayoung
