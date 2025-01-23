@@ -15,8 +15,7 @@ ul.lgd-prev-next__list li.lgd-prev-next__list-item {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: var(--button-padding-vertical) var(--button-padding-horizontal)
-    var(--button-padding-vertical) var(--button-padding-horizontal);
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   text-decoration: none;
   color: var(--button-text-color);
   border: var(--border);
