@@ -19,10 +19,10 @@
        *   past the top of the viewport. In practices, there's only one of
        *   these since we've only targeted one element.
        */
-      const [backToTop] = once("back-to-top", ".back-to-top", context);
+      const [backToTop] = once('back-to-top', '.back-to-top', context);
       const [backToTopTarget] = once(
-        "back-to-top-target",
-        ".back-to-top-target",
+        'back-to-top-target',
+        '.back-to-top-target',
         context,
       );
 
@@ -32,7 +32,7 @@
             entry.isIntersecting ||
             (!entry.isIntersecting && entry.boundingClientRect.top <= 0)
               ? false
-              : "until-hidden";
+              : 'until-hidden';
         });
       }
 
@@ -52,15 +52,15 @@
       }
 
       // Create an element absolutely positioned at our threshold.
-      backToTopTarget.style.position = "absolute";
+      backToTopTarget.style.position = 'absolute';
       backToTopTarget.style.top = `${viewportHeight * minContentViewportRatio}px`;
-      backToTop.addEventListener("click", (event) => {
-        event.target.hidden = "until-found";
+      backToTop.addEventListener('click', (event) => {
+        event.target.hidden = 'until-found';
       });
 
       // Create an IntersectionObserver.
       const intersectionObserver = new IntersectionObserver(observerCallback, {
-        rootMargin: "16px",
+        rootMargin: '16px',
       });
       intersectionObserver.observe(backToTopTarget);
     },
