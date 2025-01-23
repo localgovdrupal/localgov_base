@@ -286,7 +286,6 @@ body {
 
   /* Guide Navigation */
   --section-spacing-vertical-guide-nav: calc(var(--spacing-large) + 1rem); /* 1rem to account for padding on left of bullets */
-
   --section-spacing-horizontal-guide-nav: var(--spacing-large);
   --guide-nav-column-count: 3;
 
