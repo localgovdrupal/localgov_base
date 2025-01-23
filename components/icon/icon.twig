@@ -35,6 +35,10 @@
 {% set theme = theme|default('localgov_base') %}
 {% set icon_wrapper_element = icon_wrapper_element|default('div') %}
 
+{%- set icon_fullpath -%}
+  {% if icon_path|first != '@' %}@{{ theme }}/{% endif %}{{ icon_path }}/{{ icon_name }}.svg
+{%- endset -%}
+
 {% set attributes = create_attribute()
   .setAttribute('aria-hidden', decoration|default('true'))
   .addClass('lgd-icon')
@@ -42,5 +46,5 @@
 %}
 
 <{{ icon_wrapper_element }}{{ attributes }}>
-  {% include icon_path ~ '/' ~ icon_name ~ '.svg' %}
+  {% include icon_fullpath %}
 </{{ icon_wrapper_element }}>
