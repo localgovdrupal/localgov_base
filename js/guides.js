@@ -4,7 +4,7 @@
 
 (function guidesScript(Drupal) {
   Drupal.behaviors.guides = {
-    attach: function (context) {
+    attach() {
       // When we click on a guide navigation link, we link to the top of the
       // Guide content. This is fine for visual users, but for screen reader
       // users, the focus stays at the top of the page.
@@ -19,6 +19,6 @@
           element.focus();
         }
       }
-    }
+    },
   };
-}(Drupal));
+})(Drupal);

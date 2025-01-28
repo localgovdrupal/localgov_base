@@ -5,8 +5,7 @@
 
 /* Sidebar Block Header */
 @media screen and (min-width: 48rem) {
-  .block-views-blocklocalgov-step-by-step-navigation-steps
-    .step-by-step-pages__relationship {
+  .block-views-blocklocalgov-step-by-step-navigation-steps .step-by-step-pages__relationship {
     display: none;
   }
 }

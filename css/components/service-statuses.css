@@ -70,16 +70,8 @@
   background-color: var(--color-focus);
 }
 
-.service-status
-  .nav-tabs
-  .nav-item
-  .nav-link.active:hover
-  .service-status-title,
-.service-status
-  .nav-tabs
-  .nav-item
-  .nav-link.active:focus
-  .service-status-title {
+.service-status .nav-tabs .nav-item .nav-link.active:hover .service-status-title,
+.service-status .nav-tabs .nav-item .nav-link.active:focus .service-status-title {
   text-decoration: underline;
 }
 

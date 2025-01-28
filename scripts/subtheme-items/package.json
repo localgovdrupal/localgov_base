@@ -4,12 +4,26 @@
   "description": "NPM scripts for the localgov_base theme.",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lint:css",
-    "lint:css": "stylelint \"**/*.css\" --fix"
+    "start": "npm run lint:css && npm run lint:js",
+    "start:fix": "npm run lint:css:fix && npm run lint:js:fix",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint:js:fix": "eslint \"**/*.js\" --fix",
+    "build:docs": "./scripts/document-variables.sh --to-markdown"
   },
   "author": "Mark Conroy",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-formatter-gitlab": "^5.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-yml": "^1.8.0",
+    "prettier": "^3.0.3",
     "stylelint": "^15.10.1",
     "stylelint-checkstyle-formatter": "^0.1.2",
     "stylelint-config-standard": "^34.0.0",
