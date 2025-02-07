@@ -4,30 +4,63 @@
  */
 
 /* Default */
-.accordion-pane__title button {
-  display: inline-flex;
-  align-items: center;
+
+.accordion-pane summary {
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
+  cursor: pointer;
+  color: var(--button-text-color);
+  border: var(--border);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg-color);
+  font-family: var(--button-font-family);
+  font-size: var(--font-size-medium);
+  margin-block-end: var(--vertical-rhythm-spacing);
+}
+
+.accordion-pane summary:hover, .accordion-pane summary:focus {
+  background-color: var(--button-bg-color-hover);
+}
+.accordion-pane summary:hover, .accordion-pane summary:focus,
+.accordion-pane summary:hover .accordion-pane__heading, .accordion-pane summary:focus .accordion-pane__heading {
+  color: var(--button-text-color-hover);
+}
+
+.accordion-pane details > summary {
+  list-style: none;
+  display: flex;
   justify-content: space-between;
 }
 
-.accordion-pane__title button:hover,
-.accordion-pane__title button:focus {
-  text-decoration: none;
+.accordion-pane summary::-webkit-details-marker {
+  display: none
 }
 
-.accordion-icon {
-  display: block;
-}
-
-span.accordion-icon::after {
-  display: block;
-  font-size: 150%;
-}
-
-.accordion-pane__title button[aria-expanded="false"] > .accordion-icon::after {
+.accordion-pane summary::after {
   content: var(--accordion-icon-closed);
+  font-size: 150%;
+  line-height: 1.2rem;
 }
 
-.accordion-pane__title button[aria-expanded="true"] > .accordion-icon::after {
+.accordion-pane details[open] summary:after {
   content: var(--accordion-icon-opened);
+}
+
+.accordion-pane__heading {
+  color: var(--button-text-color);
+  font-family: var(--button-font-family);
+  font-size: var(--font-size-medium);
+  font-weight: normal;
+}
+
+.accordion-pane__title h2,
+.accordion-pane__title h3,
+.accordion-pane__title h4,
+.accordion-pane__title h5,
+.accordion-pane__title h6 {
+  display: inline;
+  margin-block-end: 0;
+  font-variant: normal;
+  line-height: normal;
+  font-size: var(--font-size-h3);
 }
