@@ -18,22 +18,25 @@
   margin-block-end: var(--vertical-rhythm-spacing);
 }
 
-.accordion-pane summary:hover, .accordion-pane summary:focus {
+.accordion-pane summary:hover,
+.accordion-pane summary:focus {
   background-color: var(--button-bg-color-hover);
 }
-.accordion-pane summary:hover, .accordion-pane summary:focus,
-.accordion-pane summary:hover .accordion-pane__heading, .accordion-pane summary:focus .accordion-pane__heading {
+.accordion-pane summary:hover, 
+.accordion-pane summary:focus,
+.accordion-pane summary:hover .accordion-pane__heading,
+.accordion-pane summary:focus .accordion-pane__heading {
   color: var(--button-text-color-hover);
 }
 
 .accordion-pane details > summary {
-  list-style: none;
   display: flex;
+  list-style: none;
   justify-content: space-between;
 }
 
 .accordion-pane summary::-webkit-details-marker {
-  display: none
+  display: none;
 }
 
 .accordion-pane summary::after {
