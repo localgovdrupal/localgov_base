@@ -45,7 +45,7 @@
   line-height: 1.2rem;
 }
 
-.accordion-pane details[open] summary:after {
+.accordion-pane details[open] summary::after {
   content: var(--accordion-icon-opened);
 }
 
@@ -64,6 +64,6 @@
   display: inline;
   margin-block-end: 0;
   font-variant: normal;
-  line-height: normal;
   font-size: var(--font-size-h3);
+  line-height: normal;
 }
