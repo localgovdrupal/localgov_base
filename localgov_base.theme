@@ -146,6 +146,39 @@ function localgov_base_preprocess_page(&$variables): void {
   if (theme_get_setting('localgov_base_show_back_to_top_link')) {
     $variables['back_to_top'] = TRUE;
   }
+
+  // Load the site configuration.
+  $site_config = \Drupal::config('system.site');
+  $site_403 = $site_config->get('page.403');
+  $site_404 = $site_config->get('page.404');
+
+  // Custom 403 and 404 pages.
+  // We have a variable in page.html.twig called default_status_content.
+  // This is used to determine if we should show the default 403/404 content,
+  // or if we should show the content of the node that is set as the 403/404
+  // page.
+  $variables['default_status_content'] = TRUE;
+  $route_match = Drupal::routeMatch();
+  $route = $route_match->getRouteName();
+  if ($route === 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    $node_id = $node->id();
+    $is_404_page_node = $site_404 === 'node/' . $node_id;
+    $is_403_page_node = $site_403 === 'node/' . $node_id;
+    if ($is_404_page_node && is_null($site_404)) {
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
+    }
+    if ($is_403_page_node && is_null($site_403)) {
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
+    }
+  }
+
 }
 
 /**

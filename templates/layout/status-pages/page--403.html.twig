@@ -1,1 +1,10 @@
+{% if default_status_content %}
+	{% set default_status_content %}
+	  <p>{{ "Sorry, you do not have access to this page"|t }}</p>
+    {% trans %}
+      <p>Perhaps you need to <a href="/user/login">log in</a> to the site.</p>
+    {% endtrans %}
+	{% endset %}
+{% endif %}
+
 {% extends "@localgov_base/layout/status-pages/page-status.html.twig" %}
