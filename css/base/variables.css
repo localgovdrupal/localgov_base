@@ -435,6 +435,7 @@ body {
   --btn-start-icon-size: var(--font-size-largest);
   --btn-start-icon-top: -3px;
   --external-link-icon-color: var(--color-accent);
+  --wysiwyg-align-spacing: var(--spacing);
 
   /* Alert Banner */
   --alert-banner-bg-color: var(--color-success);
