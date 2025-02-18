@@ -75,3 +75,11 @@
   content: "\2714\0020";
   color: var(--color-green);
 }
+
+.align-left {
+  margin-right: var(--wysiwyg-align-spacing);
+}
+
+.align-right {
+  margin-left: var(--wysiwyg-align-spacing);
+}
