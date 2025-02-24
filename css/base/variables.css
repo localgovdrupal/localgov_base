@@ -220,6 +220,7 @@ body {
   /* Page Title */
   --page-title-border: var(--border);
   --page-title-width: var(--width-medium);
+  --page-title-subtitle-font-size: var(--font-size-h2);
   --page-title-lede-font-size: var(--font-size-h3);
 
   /* Form Item Description Items */
