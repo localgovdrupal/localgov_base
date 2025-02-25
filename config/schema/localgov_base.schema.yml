@@ -20,3 +20,11 @@ localgov_base.settings:
       description: 'Choose whether the header should be sticky or not.'
       constraints:
         Regex: '^(default|sticky|appears_on_scroll)$'
+    localgov_base_localgov_guides_stacked_heading:
+      type: boolean
+      label: 'Stacked heading'
+      description: 'Choose whether the heading should be stacked or not.'
+    localgov_base_localgov_guides_vertical_navigation:
+      type: boolean
+      label: 'Vertical navigation'
+      description: 'Choose whether the navigation should be vertical or not.'

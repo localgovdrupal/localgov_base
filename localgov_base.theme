@@ -47,12 +47,14 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
     '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
   ];
+
   $form['localgov_base_show_back_to_top_link'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Display a "Back to Top" link on long pages.'),
     '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
     '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
   ];
+
   $form['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
@@ -65,6 +67,19 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description' => t('Select how you want the header to behave. This setting only apply to anonymous users.'),
   ];
 
+  $form['localgov_base_localgov_guides_stacked_heading'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use stacked heading pattern for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_stacked_heading'),
+    '#description'   => t('This will stack the Guide title and page heading on top of each other.'),
+  ];
+
+  $form['localgov_base_localgov_guides_vertical_navigation'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use vertical navigation for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_vertical_navigation'),
+    '#description'   => t('This will display the guide navigation vertically above the guide.'),
+  ];
 }
 
 /**
@@ -197,21 +212,44 @@ function localgov_base_preprocess_node(&$variables): void {
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_block(&$variables): void {
+  $route_match = Drupal::routeMatch();
+  $route = $route_match->getRouteName();
   if ($variables['plugin_id'] === 'localgov_page_header_block') {
-    $route_match = Drupal::routeMatch();
+
     // Check if we are on a node page, latest version or a preview link.
-    $route = $route_match->getRouteName();
     if ($route === 'entity.node.canonical' || $route === 'entity.node.latest_version' || $route === 'entity.node.preview_link') {
       $node = $route_match->getParameter('node');
       $node_status = $node->isPublished();
+      $node_type = $node->getType();
       if ($node_status === FALSE) {
         if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
           $current_title = $variables['content'][0]['#title'];
           $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
         }
       }
+
+      // Check if we should use the stacked heading pattern for guides.
+      // This places the guide title on top of the node title, all within the
+      // same h1 element, like the NHS design system.
+      if ($node_type === 'localgov_guides_page' && theme_get_setting('localgov_base_localgov_guides_stacked_heading') === TRUE) {
+        $node_title = $node->getTitle();
+        $variables['content'][0]['#subtitle'] = $node_title;
+      }
     }
   }
+
+  // Add vertical or horizontal class to the guides navigation block.
+  // In config, this will default to vertical for new installations, but remain
+  // horizontal for existing installations.
+  if ($variables['plugin_id'] === 'localgov_guides_contents') {
+    if (theme_get_setting('localgov_base_localgov_guides_vertical_navigation') === TRUE) {
+      $variables['attributes']['class'][] = 'block-localgov-guides-contents--navigation-vertical';
+    }
+    else {
+      $variables['attributes']['class'][] = 'block-localgov-guides-contents--navigation-horizontal';
+    }
+  }
+
 }
 
 /**
