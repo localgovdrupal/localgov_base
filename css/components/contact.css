@@ -32,7 +32,6 @@
   margin-block-end: 0;
 }
 
-.lgd-contact__group > * + *,
 .lgd-contact__group
   .field--name-localgov-contact-other-social
   > .field__item
