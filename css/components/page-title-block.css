@@ -12,6 +12,11 @@
   max-width: var(--page-title-width);
 }
 
+.lgd-page-title-block__subtitle {
+  font-size: var(--page-title-subtitle-font-size);
+}
+
+.lgd-page-title-block__subtitle,
 .lgd-page-title-block__subheader {
   font-size: var(--page-title-lede-font-size);
 }
