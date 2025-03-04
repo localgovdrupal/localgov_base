@@ -29,3 +29,10 @@ props:
       description: >
         A space-separated string of one or more icon classes to be added to the
         defaults.
+    theme:
+      type: string
+      title: Theme
+      description: >
+        The machine name of the theme containing the icon path. Defaults to
+        'localgov_base', but will be ignored if icon_path already begins
+        with '@'.
