@@ -135,12 +135,7 @@ function localgov_base_preprocess_page(&$variables): void {
 
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = \Drupal::service('renderer');
-    $rendered = DeprecationHelper::backwardsCompatibleCall(
-      currentVersion: \Drupal::VERSION,
-      deprecatedVersion: '10.3',
-      currentCallable: fn() => $renderer->renderInIsolation($copy),
-      deprecatedCallable: fn() => $renderer->renderPlain($copy),
-    );
+    $rendered = $renderer->renderInIsolation($copy);
 
     $variables['has_' . $region] = strlen(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>'))) > 0;
   }
