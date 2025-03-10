@@ -12,8 +12,8 @@
       // the element with the corresponding ID.
       const path = window.location.hash;
       // check if path links to id
-      if (path.includes('#')) {
-        const id = path.split('#')[1];
+      if (path.includes("#")) {
+        const id = path.split("#")[1];
         const element = document.querySelector(`#${id}`);
         if (element) {
           element.focus();

@@ -10,23 +10,23 @@
       // @todo: make it possible to override this without having to maintain a
       //   *copy* of this file.
       const headerSearchFormLabel = once(
-        'header-search-label',
-        '.lgd-region--search form label',
+        "header-search-label",
+        ".lgd-region--search form label",
         context,
       );
 
       if (headerSearchFormLabel.length) {
-        headerSearchFormLabel[0].classList.add('visually-hidden');
+        headerSearchFormLabel[0].classList.add("visually-hidden");
       }
 
       // Set up initial variables.
       //
       // We need a bunch of classes and selectors.
       let secondaryMenuRegionIsOpen = false;
-      const headerToggleSelector = '.lgd-header__toggle';
-      const primaryToggleClass = 'lgd-header__toggle--primary';
-      const toggleActiveClass = 'lgd-header__toggle--active';
-      const regionActiveClass = 'lgd-header__nav--active';
+      const headerToggleSelector = ".lgd-header__toggle";
+      const primaryToggleClass = "lgd-header__toggle--primary";
+      const toggleActiveClass = "lgd-header__toggle--active";
+      const regionActiveClass = "lgd-header__nav--active";
       // This contains all toggles and their corresponding regions.
       const navInfo = {};
       // This is used as a check on resize to see if the window size *actually*
@@ -36,7 +36,7 @@
       // and we can build an object full of references to them and to their
       // regions. We use .once() to avoid re-running this.
       const headerToggles = once(
-        'header-toggle',
+        "header-toggle",
         headerToggleSelector,
         context,
       );
@@ -49,7 +49,7 @@
       // button attributes.
       function handleReset() {
         headerToggles.forEach((headerToggle) => {
-          headerToggle.setAttribute('aria-expanded', 'false');
+          headerToggle.setAttribute("aria-expanded", "false");
           headerToggle.classList.remove(toggleActiveClass);
         });
 
@@ -60,12 +60,12 @@
 
       // General function for when the ESC is clicked.
       function handleEscKeyClick(buttonToFocus) {
-        context.addEventListener('keydown', (e) => {
+        context.addEventListener("keydown", (e) => {
           // When on any link in the secondary menu, if you hit escape
           // set focus back to:
           // 1. menu button on small screens, and
           // 2. services button on large screens
-          if (e.key === 'Escape') {
+          if (e.key === "Escape") {
             e.preventDefault();
             handleReset();
             buttonToFocus.focus();
@@ -77,15 +77,15 @@
       // references to the various DOM elements we need to work with.
       headerToggles.forEach((toggle) => {
         const region = context.getElementById(
-          toggle.getAttribute('aria-controls'),
+          toggle.getAttribute("aria-controls"),
         );
         const nav = toggle.classList.contains(primaryToggleClass)
-          ? 'primary'
-          : 'secondary';
+          ? "primary"
+          : "secondary";
         // The resulting region.primary.firstLink isn't used, but it's less
         // difficult to add it than to add only region.secondary.firstLink.
         if (region) {
-          const links = region.querySelectorAll('.menu a');
+          const links = region.querySelectorAll(".menu a");
           const firstLink = links[0];
           const lastLink = links[links.length - 1];
 
@@ -98,9 +98,9 @@
       function handleToggleClick(toggleThatWasClicked) {
         // Get the current state as a boolean.
         const currentState =
-          toggleThatWasClicked.getAttribute('aria-expanded') === 'true';
+          toggleThatWasClicked.getAttribute("aria-expanded") === "true";
 
-        toggleThatWasClicked.setAttribute('aria-expanded', !currentState);
+        toggleThatWasClicked.setAttribute("aria-expanded", !currentState);
         toggleThatWasClicked.classList.toggle(toggleActiveClass);
       }
 
@@ -127,8 +127,8 @@
       // When on the first link in the secondary menu, if you shift+tab
       // set focus back to the services button
       function handleSecondaryMenuShiftTabClick() {
-        navInfo.secondary.firstLink.addEventListener('keydown', (e) => {
-          if (e.shiftKey && e.key === 'Tab') {
+        navInfo.secondary.firstLink.addEventListener("keydown", (e) => {
+          if (e.shiftKey && e.key === "Tab") {
             e.preventDefault();
             navInfo.secondary.toggle.focus();
           }
@@ -138,8 +138,8 @@
       // When on the last link in the secondary menu, if you hit tab
       // set focus back to the services button
       function handleSecondaryMenuTabClick() {
-        navInfo.secondary.lastLink.addEventListener('keydown', (e) => {
-          if (e.key === 'Tab') {
+        navInfo.secondary.lastLink.addEventListener("keydown", (e) => {
+          if (e.key === "Tab") {
             e.preventDefault();
             navInfo.secondary.toggle.focus();
           }
@@ -148,10 +148,10 @@
 
       // If you click on the page, anywhere outside the secondary menu region
       // or the secondary menu toggle button, close the secondary menu region
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (
-          !e.target.closest('#lgd-header__nav--secondary') &&
-          !e.target.closest('.lgd-header__toggle--secondary') &&
+          !e.target.closest("#lgd-header__nav--secondary") &&
+          !e.target.closest(".lgd-header__toggle--secondary") &&
           secondaryMenuRegionIsOpen
         ) {
           handleSecondaryMenuToggleClick();
@@ -169,56 +169,56 @@
 
         if (window.innerWidth < 768) {
           if (
-            Object.keys(navInfo).includes('secondary') &&
+            Object.keys(navInfo).includes("secondary") &&
             navInfo.secondary.toggle
           ) {
             navInfo.secondary.toggle.removeEventListener(
-              'click',
+              "click",
               handleSecondaryMenuToggleClick,
               true,
             );
             navInfo.secondary.toggle.removeEventListener(
-              'click',
+              "click",
               handleSecondaryMenuShiftTabClick,
               true,
             );
             navInfo.secondary.toggle.removeEventListener(
-              'click',
+              "click",
               handleSecondaryMenuTabClick,
               true,
             );
           }
           if (navInfo.primary.toggle) {
             navInfo.primary.toggle.addEventListener(
-              'click',
+              "click",
               handlePrimaryMenuToggleClick,
             );
           }
         } else {
           if (
-            Object.keys(navInfo).includes('primary') &&
+            Object.keys(navInfo).includes("primary") &&
             navInfo.primary.toggle
           ) {
             navInfo.primary.toggle.removeEventListener(
-              'click',
+              "click",
               handlePrimaryMenuToggleClick,
               true,
             );
           }
           if (
-            Object.keys(navInfo).includes('secondary') &&
+            Object.keys(navInfo).includes("secondary") &&
             navInfo.secondary.toggle
           ) {
             navInfo.secondary.toggle.addEventListener(
-              'click',
+              "click",
               handleSecondaryMenuToggleClick,
             );
             navInfo.secondary.toggle.addEventListener(
-              'click',
+              "click",
               handleSecondaryMenuShiftTabClick,
             );
             navInfo.secondary.toggle.addEventListener(
-              'keyup',
+              "keyup",
               handleSecondaryMenuTabClick,
             );
           }
@@ -239,7 +239,7 @@
       // Call our functions, initially and also when the window is resized.
       handleWindowResized();
       window.addEventListener(
-        'resize',
+        "resize",
         Drupal.debounce(handleCheckIfWindowActuallyResized, 50, false),
       );
     },
