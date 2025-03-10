@@ -206,6 +206,12 @@ function localgov_base_preprocess_node(&$variables): void {
       $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
     }
   }
+
+  if ($variables['node']->getType() === 'localgov_guides_page') {
+    if (theme_get_setting('localgov_base_localgov_guides_stacked_heading') === TRUE) {
+      $variables['stacked_heading'] = TRUE;
+    }
+  }
 }
 
 /**
