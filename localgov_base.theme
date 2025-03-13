@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Crypt;
-use Drupal\Component\Utility\DeprecationHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\views\ViewExecutable;
@@ -135,12 +134,7 @@ function localgov_base_preprocess_page(&$variables): void {
 
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = \Drupal::service('renderer');
-    $rendered = DeprecationHelper::backwardsCompatibleCall(
-      currentVersion: \Drupal::VERSION,
-      deprecatedVersion: '10.3',
-      currentCallable: fn() => $renderer->renderInIsolation($copy),
-      deprecatedCallable: fn() => $renderer->renderPlain($copy),
-    );
+    $rendered = $renderer->renderInIsolation($copy);
 
     $variables['has_' . $region] = strlen(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>'))) > 0;
   }
@@ -204,6 +198,12 @@ function localgov_base_preprocess_node(&$variables): void {
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
       $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
+    }
+  }
+
+  if ($variables['node']->getType() === 'localgov_guides_page') {
+    if (theme_get_setting('localgov_base_localgov_guides_stacked_heading') === TRUE) {
+      $variables['stacked_heading'] = TRUE;
     }
   }
 }
