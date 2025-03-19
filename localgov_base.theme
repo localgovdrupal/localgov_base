@@ -301,7 +301,7 @@ function localgov_base_views_pre_render(ViewExecutable $view): void {
 /**
  * Implements hook_preprocess_container().
  */
- function localgov_base_preprocess_container(&$variables): void {
+function localgov_base_preprocess_container(&$variables): void {
   // See https://www.drupal.org/project/drupal/issues/1852090
   // Ensure the container has an ID.
   if (isset($variables['element']['#id'])) {
