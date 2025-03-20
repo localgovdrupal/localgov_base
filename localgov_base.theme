@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\Node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -213,7 +214,7 @@ function localgov_base_preprocess_node(&$variables): void {
   $node = $variables['node'];
   $node_status = $variables['node']->isPublished();
 
-  if ($node instanceof \Drupal\node\NodeInterface && $variables['view_mode'] === 'full') {
+  if ($node instanceof NodeInterface && $variables['view_mode'] === 'full') {
     // Restrict width of the content area to two-thirds of the screen for
     // some content types. This is helpful to reduce the line-length for
     // better readability.
