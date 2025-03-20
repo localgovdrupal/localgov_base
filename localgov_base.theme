@@ -197,7 +197,7 @@ function localgov_base_preprocess_page(&$variables): void {
  * @return array
  *   An array of restricted width content types.
  */
-function _get_restricted_width_content_types() {
+function _localgov_get_restricted_width_content_types() {
   return [
     'localgov_services_page',
     'localgov_event',
@@ -219,7 +219,7 @@ function localgov_base_preprocess_node(&$variables): void {
     // some content types. This is helpful to reduce the line-length for
     // better readability.
     $variables['restricted_width_content_types'] = [];
-    if (in_array($node->bundle(), _get_restricted_width_content_types())) {
+    if (in_array($node->bundle(), _localgov_get_restricted_width_content_types())) {
       $variables['restricted_width_content_types'][] = $node->bundle();
     }
 
