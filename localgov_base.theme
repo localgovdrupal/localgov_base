@@ -191,10 +191,39 @@ function localgov_base_preprocess_page(&$variables): void {
 }
 
 /**
+ * Get the restricted width content types.
+ *
+ * @return array
+ *   An array of restricted width content types.
+ */
+function _get_restricted_width_content_types() {
+  return [
+    'localgov_services_page',
+    'localgov_event',
+    'localgov_services_status',
+    'localgov_step_by_step_overview',
+    'localgov_publication_cover_page',
+  ];
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_node(&$variables): void {
+  $node = $variables['node'];
   $node_status = $variables['node']->isPublished();
+
+  if ($node instanceof \Drupal\node\NodeInterface && $variables['view_mode'] === 'full') {
+    // Restrict width of the content area to two-thirds of the screen for
+    // some content types. This is helpful to reduce the line-length for
+    // better readability.
+    $variables['restricted_width_content_types'] = [];
+    if (in_array($node->bundle(), _get_restricted_width_content_types())) {
+      $variables['restricted_width_content_types'][] = $node->bundle();
+    }
+
+  }
+
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
       $variables['label'] = t('[Draft]') . " " . $variables['node']->label();

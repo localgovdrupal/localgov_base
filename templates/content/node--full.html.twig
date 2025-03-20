@@ -71,26 +71,12 @@
  */
 #}
 
-{# 
-  Restrict width of the content area to two-thirds of the screen for 
-  some content types. This is helpful to reduce the line-length for 
-  better readability.
-#}
-{% set restricted_width_content_types = [
-    'localgov_services_page',
-    'localgov_event',
-    'localgov_step_by_step_overview',
-    'localgov_services_status',
-    'localgov_publication_cover_page'
-  ] 
-%}
-
 {% set content_type = node.bundle %}
 
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/full') }}
-  {% if content_type == 'localgov_directories_venue' 
-        or content_type == 'localgov_directories_page' 
+  {% if content_type == 'localgov_directories_venue'
+        or content_type == 'localgov_directories_page'
         or content_type == 'localgov_directory' %}
     {{ attach_library('localgov_base/directories') }}
   {% endif %}
@@ -127,7 +113,7 @@
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% endif %}
-    {{ title_suffix }}  
+    {{ title_suffix }}
 
     {% if display_submitted %}
       <footer class="node__meta">
@@ -137,11 +123,11 @@
           {{ metadata }}
         </div>
       </footer>
-    {% endif %} 
+    {% endif %}
 
     {% if content_type in restricted_width_content_types %}
       <div class="node__restricted-width-section">
-    {% endif %} 
+    {% endif %}
 
       <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
         {{ content|without('localgov_subsites_content') }}
@@ -151,7 +137,7 @@
   {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
     {{ content.localgov_subsites_content }}
   {% endif %}
-  
+
 
   {% if content_type in restricted_width_content_types %}
     </div>
