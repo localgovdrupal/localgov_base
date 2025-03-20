@@ -203,7 +203,7 @@ function _localgov_get_restricted_width_content_types() {
     'localgov_event',
     'localgov_services_status',
     'localgov_step_by_step_overview',
-    'localgov_publication_cover_page',
+    'localgov_publication_cover_page'
   ];
 }
 
@@ -219,7 +219,7 @@ function localgov_base_preprocess_node(&$variables): void {
     // some content types. This is helpful to reduce the line-length for
     // better readability.
     $variables['restricted_width_content_types'] = [];
-    if (in_array($node->bundle(), _localgov_get_restricted_width_content_types())) {
+    if (in_array($node->bundle(), _localgov_get_restricted_width_content_types(), TRUE)) {
       $variables['restricted_width_content_types'][] = $node->bundle();
     }
 
