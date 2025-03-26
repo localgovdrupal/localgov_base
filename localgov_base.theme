@@ -307,8 +307,8 @@ function localgov_base_preprocess_container(&$variables): void {
   if (isset($variables['element']['#id'])) {
     $original_id = $variables['element']['#id'];
 
-    // Only modify 'edit-actions' to prevent affecting other elements.
-    if ($original_id === 'edit-actions') {
+    // Check if the ID starts with 'edit-actions'.
+    if (strpos($original_id, 'edit-actions') === 0) {
       $random_suffix = Crypt::randomBytesBase64(8);
       $random_id = $original_id . '--' . $random_suffix;
 
