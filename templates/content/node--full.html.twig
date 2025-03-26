@@ -78,16 +78,6 @@
 
 {% set content_type = node.bundle %}
 
-<<<<<<< Updated upstream
-{% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
-  {% set has_localgov_subsites_content = TRUE %}
-  {% set localgov_subsites_content = content.localgov_subsites_content %}
-{% endif %}
-
-{% set full_content = content|without('localgov_subsites_content') %}
-
-{% include "localgov_base:full" %}
-=======
 {% if node.isPromoted() %}
   {% set display_full_promoted = TRUE %}
 {% endif %}
@@ -102,11 +92,10 @@
 
 {% set display_full_view_type = view_mode %}
 
+{% set display_full_content = content|without('localgov_subsites_content') %}
+
 {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
   {% set localgov_subsites_content = content.localgov_subsites_content %}
 {% endif %}
 
-{% set display_full_content = content|without('localgov_subsites_content') %}
-
 {% include "localgov_base:display-full" %}
->>>>>>> Stashed changes
