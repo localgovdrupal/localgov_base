@@ -1,0 +1,66 @@
+{#
+  @file Fallback content template to be used for full view mode when no other
+  more specific template is available.
+#}
+
+{% if not localgov_base_remove_css %}
+  {{ attach_library('localgov_base/full') }}
+  {% if content_type == 'localgov_directories_venue'
+        or content_type == 'localgov_directories_page'
+        or content_type == 'localgov_directory' %}
+    {{ attach_library('localgov_base/directories') }}
+  {% endif %}
+
+  {% if content_type == 'localgov_step_by_step_overview'
+        or content_type == 'localgov_step_by_step_page' %}
+    {{ attach_library('localgov_base/step-by-step') }}
+  {% endif %}
+{% endif %}
+
+{%
+  set classes = [
+    content_type|clean_class,
+    'node',
+    restricted_width_content_type ? 'node--with-restricted-width',
+    display_full_promoted ? 'node--promoted',
+    display_full_sticky ? 'node--sticky',
+    display_full_unpublished ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+
+  <div class="lgd-container padding-horizontal">
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {% if display_submitted %}
+      <footer class="node__meta">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
+        </div>
+      </footer>
+    {% endif %}
+
+    {% if content_type in restricted_width_content_types %}
+      <div class="node__restricted-width-section">
+    {% endif %}
+
+      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
+        {{ display_full_content }}
+      </div>
+  </div>
+
+  {% if localgov_subsites_content %}
+    {{ localgov_subsites_content }}
+  {% endif %}
+
+
+  {% if content_type in restricted_width_content_types %}
+    </div>
+  {% endif %}
+
+</article>
