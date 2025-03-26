@@ -85,8 +85,6 @@
   {% set display_full_unpublished = TRUE %}
 {% endif %}
 
-{% set display_full_view_type = view_mode %}
-
 {% set display_full_content = content|without('localgov_subsites_content') %}
 
 {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
