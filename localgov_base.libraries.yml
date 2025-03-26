@@ -120,7 +120,7 @@ service-cta-block:
 full:
   css:
     theme:
-      components/content/displays/full.css: {}
+      css/components/full.css: {}
 
 teaser:
   css:
