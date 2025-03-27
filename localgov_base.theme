@@ -302,18 +302,22 @@ function localgov_base_views_pre_render(ViewExecutable $view): void {
  * Implements hook_preprocess_container().
  */
 function localgov_base_preprocess_container(&$variables): void {
-
-  // Randomize form container IDs for accessibility.
   // See https://www.drupal.org/project/drupal/issues/1852090
+  // Ensure the container has an ID.
   if (isset($variables['element']['#id'])) {
-    $id = $variables['element']['#id'];
-    if ($id === 'edit-actions') {
-      $id .= '--' . Crypt::randomBytesBase64(8);
+    $original_id = $variables['element']['#id'];
+
+    // Check if the ID starts with 'edit-actions'.
+    if (strpos($original_id, 'edit-actions') === 0) {
+      $random_suffix = Crypt::randomBytesBase64(8);
+      $random_id = $original_id . '--' . $random_suffix;
+
+      // Keep a stable selector but allow ID randomization.
+      $variables['attributes']['id'] = $random_id;
+      $variables['attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#id'] = $random_id;
     }
-    $variables['attributes']['id'] = $id;
-    $variables['attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#id'] = $id;
   }
 }
 
