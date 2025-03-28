@@ -42,5 +42,5 @@
 %}
 
 <{{ icon_wrapper_element }}{{ attributes }}>
-  {% if icon_path|first != '@' %}@{{ theme }}/{% endif %}{{ icon_path|default('includes/icons') }}/{{ icon_name }}.svg
+  {%- set icon_path -%} {% if icon_path|first != '@' %}@{{ theme }}/{% endif %}{{ icon_path|default('includes/icons') }}/{{ icon_name }}.svg {%- endset -%} {% include icon_path %}
 </{{ icon_wrapper_element }}>

@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\Node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -191,10 +192,39 @@ function localgov_base_preprocess_page(&$variables): void {
 }
 
 /**
+ * Get the restricted width content types.
+ *
+ * @return array
+ *   An array of restricted width content types.
+ */
+function _localgov_get_restricted_width_content_types() {
+  return [
+    'localgov_services_page',
+    'localgov_event',
+    'localgov_services_status',
+    'localgov_step_by_step_overview',
+    'localgov_publication_cover_page'
+  ];
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_node(&$variables): void {
+  $node = $variables['node'];
   $node_status = $variables['node']->isPublished();
+
+  if ($node instanceof NodeInterface && $variables['view_mode'] === 'full') {
+    // Restrict width of the content area to two-thirds of the screen for
+    // some content types. This is helpful to reduce the line-length for
+    // better readability.
+    $variables['restricted_width_content_types'] = [];
+    if (in_array($node->bundle(), _localgov_get_restricted_width_content_types(), TRUE)) {
+      $variables['restricted_width_content_types'][] = $node->bundle();
+    }
+
+  }
+
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
       $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
@@ -302,18 +332,22 @@ function localgov_base_views_pre_render(ViewExecutable $view): void {
  * Implements hook_preprocess_container().
  */
 function localgov_base_preprocess_container(&$variables): void {
-
-  // Randomize form container IDs for accessibility.
   // See https://www.drupal.org/project/drupal/issues/1852090
+  // Ensure the container has an ID.
   if (isset($variables['element']['#id'])) {
-    $id = $variables['element']['#id'];
-    if ($id === 'edit-actions') {
-      $id .= '--' . Crypt::randomBytesBase64(8);
+    $original_id = $variables['element']['#id'];
+
+    // Check if the ID starts with 'edit-actions'.
+    if (strpos($original_id, 'edit-actions') === 0) {
+      $random_suffix = Crypt::randomBytesBase64(8);
+      $random_id = $original_id . '--' . $random_suffix;
+
+      // Keep a stable selector but allow ID randomization.
+      $variables['attributes']['id'] = $random_id;
+      $variables['attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#id'] = $random_id;
     }
-    $variables['attributes']['id'] = $id;
-    $variables['attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#id'] = $id;
   }
 }
 
