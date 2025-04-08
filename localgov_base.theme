@@ -8,7 +8,7 @@
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Drupal\Node\NodeInterface;
+use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
 /**
