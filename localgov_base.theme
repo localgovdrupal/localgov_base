@@ -43,9 +43,16 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
 
   $form['localgov_base_add_draft_note_to_unpublished_content'] = [
     '#type'          => 'checkbox',
-    '#title'         => t('Add "Draft" to title of unpublished content.'),
+    '#title'         => t('Add "Draft" to title of draft unpublished content.'),
     '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
-    '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
+    '#description'   => t('This adds the word "Draft" to the title of any draft unpublished content. This is useful if you have removed the pink background from unpublished content.'),
+  ];
+
+  $form['localgov_base_add_archived_note_to_archived_content'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add "Archived" to title of archived content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_archived_note_to_archived_content'),
+    '#description'   => t('This adds the word "Archived" to the title of any content with the "archived" moderation state.'),
   ];
 
   $form['localgov_base_show_back_to_top_link'] = [
@@ -227,7 +234,19 @@ function localgov_base_preprocess_node(&$variables): void {
 
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
-      $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
+      $state = $variables['node']->get('moderation_state')->getString();
+      if ($state == 'draft') {
+        $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
+      }
+    }
+  }
+  // We have a theme setting to prepend 'archived' to the title of
+  // archived content, but we don't mind whether it is published or not.
+  // An archived state does not have to always be unpubilshed.
+  if (theme_get_setting('localgov_base_add_archived_note_to_archived_content') === TRUE) {
+    $state = $variables['node']->get('moderation_state')->getString();
+    if ($state == 'archived') {
+      $variables['label'] = t('[Archived]') . " " . $variables['node']->label();
     }
   }
 
@@ -254,7 +273,21 @@ function localgov_base_preprocess_block(&$variables): void {
       if ($node_status === FALSE) {
         if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
           $current_title = $variables['content'][0]['#title'];
-          $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
+          $state = $node->get('moderation_state')->getString();
+          if ($state == 'draft') {
+            $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
+          }
+        }
+      }
+
+      // We have a theme setting to prepend 'archived' to the title of
+      // archived content, but we don't mind whether it is published or not.
+      // An archived state does not have to always be unpubilshed.
+      if (theme_get_setting('localgov_base_add_archived_note_to_archived_content') === TRUE) {
+        $current_title = $variables['content'][0]['#title'];
+        $state = $node->get('moderation_state')->getString();
+        if ($state == 'archived') {
+          $variables['content'][0]['#title'] = t('[Archived]') . " " . $current_title;
         }
       }
 
