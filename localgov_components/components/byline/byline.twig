@@ -1,0 +1,12 @@
+<footer class="byline">
+  {{ author_picture }}
+
+  <span{{ text_attributes }}>
+    {% block byline_text %}
+      {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+    {% endblock %}
+  </span>
+
+  {% block metadata %}
+  {% endblock %}
+</footer>

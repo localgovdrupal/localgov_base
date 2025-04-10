@@ -1,0 +1,8 @@
+name: LocalGov Components
+description: LocalGov Component Library
+package: LocalGov Drupal
+type: module
+core_version_requirement: ^10.1 || ^11
+
+#dependencies:
+#  - drupal:block

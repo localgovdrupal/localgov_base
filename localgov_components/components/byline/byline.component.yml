@@ -1,0 +1,38 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Byline
+description: Displays the byline of a piece of writing.
+status: stable
+props:
+  type: object
+  properties:
+    author_picture:
+      type: string
+      title: Author picture
+      description: >
+        An image associated with the author.
+    author_name:
+      type: string
+      title: Author name
+      description: >
+        Author of the piece of writing.
+    date:
+      type: string
+      title: Date
+      description: >
+        The date of the writing.
+    text_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Text attributes
+      description: >
+        HTML attributes to wrap around the author name and date.
+slots:
+  byline_text:
+    title: Byline text
+    required: false
+    description: >
+      Translatable sentence wrapping the author name and date.
+  metadata:
+    title: Metadata
+    required: false
+    description: >
+      Additional metadata to display.

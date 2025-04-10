@@ -1,0 +1,13 @@
+layout_container:
+  label: 'LocalGov: 1 column'
+  path: layouts
+  template: layout--container
+  library: localgov_base/layouts
+  class: '\Drupal\localgov_components\Plugin\Layout\ContainerLayout'
+  category: 'LocalGov Layouts'
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Content

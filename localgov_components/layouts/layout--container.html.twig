@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ */
+#}
+
+{# Allow this file to be used as a layout or as a component. #}
+{% set content = content.content ? content.content : content|default('') %}
+{% set content_attributes = content_attributes|default(region_attributes.content|default(create_attribute())) %}
+
+{# The default element in layouts is "section", but when used as a component,
+   we default to "div". We also allow a no-wrapper option of "". #}
+{% if element != '' %}
+  {% set element = element|default('div') %}
+{% endif %}
+
+{{ dump() }}
+{% if content or in_preview %}
+  {% if element or in_preview %}
+    <{{ element|default('div') }}{{ attributes.addClass('lgd-container', 'padding-horizontal') }}>
+  {% endif %}
+
+    {# Use the content_wrapper block to remove/replace the inner content div. #}
+    {% block content_wrapper %}
+      <div{{ content_attributes.addClass('lgd-container__content') }}>
+
+        {# If you don't use the content_wrapper block, you add more content by
+           using the content block. #}
+        {% block content %}
+          {{ content }}
+        {% endblock %}
+
+      </div>
+    {% endblock %}
+
+  {% if element or in_preview %}
+    </{{ element|default('div') }}>
+  {% endif %}
+{% endif %}

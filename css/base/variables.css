@@ -12,9 +12,9 @@ body {
   /* Widths and Spacing */
   --width-mega: 90rem; /* 1440px */
   --width-extra-large: 73.75rem; /* 1180px */
-  --width-large: 60rem;
-  --width-medium: 48rem;
-  --width-small: 30rem;
+  --width-large: 60rem; /* 960px */
+  --width-medium: 48rem; /* 768px */
+  --width-small: 30rem; /* 480px */
   --width-container: var(--width-extra-large);
   --width-restricted-width-section: var(--width-medium);
   --spacing-smallest: calc(var(--spacing) * 0.25);

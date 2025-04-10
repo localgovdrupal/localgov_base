@@ -73,11 +73,23 @@
 
 {% set content_type = node.bundle %}
 
+{% set context = {
+  'content_type': content_type,
+  'view_mode': view_mode,
+  'is_promoted': node.isPromoted(),
+  'is_sticky': node.isSticky(),
+  'is_unpublished': not node.isPublished(),
+} %}
+
+{% set use_restricted_width = content_type in restricted_width_content_types %}
+
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/full') }}
+
   {% if content_type == 'localgov_directories_venue'
         or content_type == 'localgov_directories_page'
-        or content_type == 'localgov_directory' %}
+        or content_type == 'localgov_directory'
+  %}
     {{ attach_library('localgov_base/directories') }}
   {% endif %}
 
@@ -86,61 +98,49 @@
   {% endif %}
 
   {% if content_type == 'localgov_step_by_step_overview'
-        or content_type == 'localgov_step_by_step_page' %}
+        or content_type == 'localgov_step_by_step_page'
+  %}
     {{ attach_library('localgov_base/step-by-step') }}
   {% endif %}
 {% endif %}
 
-{%
-  set classes = [
-    content_type|clean_class,
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    content_type in restricted_width_content_types ? 'node--with-restricted-width',
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
-%}
+{% embed '@localgov_base/layouts/layout--container.html.twig' with {
+  'element': 'article',
+} %}
+  {% block content %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
-
-  <div class="lgd-container padding-horizontal">
     {{ title_prefix }}
-    {% if label and not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
     {{ title_suffix }}
 
     {% if display_submitted %}
-      <footer class="node__meta">
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+      {% embed 'localgov_base:byline' with {
+        author_picture,
+        author_name,
+        date,
+        text_attributes,
+        metadata,
+      } only %}
+        {% block metadata %}
           {{ metadata }}
-        </div>
-      </footer>
+        {% endblock %}
+      {% endembed %}
     {% endif %}
 
-    {% if content_type in restricted_width_content_types %}
-      <div class="node__restricted-width-section">
+    {% if use_restricted_width %}
+      {% embed '@localgov_base/layouts/layout--container.html.twig' with {
+        'element': 'div',
+        content,
+      } only %}
+        {% block content %}
+          {{ content|without('localgov_subsites_content') }}
+        {% endblock %}
+    {% else %}
+      {{ content|without('localgov_subsites_content') }}
     {% endif %}
 
-      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ content|without('localgov_subsites_content') }}
-      </div>
-  </div>
+    {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
+      {{ content.localgov_subsites_content }}
+    {% endif %}
 
-  {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
-    {{ content.localgov_subsites_content }}
-  {% endif %}
-
-
-  {% if content_type in restricted_width_content_types %}
-    </div>
-  {% endif %}
-
-</article>
+  {% endblock %}
+{% endembed %}
