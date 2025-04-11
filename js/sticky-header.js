@@ -1,22 +1,30 @@
 (function stickyHeaderScript(Drupal) {
   Drupal.behaviors.stickyHeader = {
-    attach: function (context) {
-      const headers = once('allSticyHeaders', '.lgd-header', context);
+    attach(context) {
+      const headers = once('allStickyHeaders', '.lgd-header', context);
 
       if (!headers) {
         return;
       }
 
-      headers.forEach(header => {
+      headers.forEach((header) => {
         function calculatePositions() {
           let tabsHeight = 0;
-          const tabs = header.closest('body').querySelector('.lgd-region--tabs');
+          const tabs = header
+            .closest('body')
+            .querySelector('.lgd-region--tabs');
           if (tabs) {
             tabsHeight = tabs.offsetHeight;
           }
 
           let displaceOffsetTop = 0;
-          const displaceOffsetTopValue = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--drupal-displace-offset-top').replace('px', ''));
+          const displaceOffsetTopValue = parseInt(
+            getComputedStyle(document.documentElement)
+              .getPropertyValue('--drupal-displace-offset-top')
+              .replace('px', ''),
+            10,
+          );
+          console.log('working');
           if (displaceOffsetTopValue) {
             displaceOffsetTop = displaceOffsetTopValue;
           }
@@ -25,11 +33,19 @@
           const headerPosition = displaceOffsetTop + tabsHeight;
 
           if (header.closest('body').classList.contains('sticky-header')) {
-            document.documentElement.style.setProperty('--lgd-sticky-header-position', `${headerPosition}px`);
-            document.documentElement.style.setProperty('--lgd-sticky-header-height', `${headerHeight}px`);
+            document.documentElement.style.setProperty(
+              '--lgd-sticky-header-position',
+              `${headerPosition}px`,
+            );
+            document.documentElement.style.setProperty(
+              '--lgd-sticky-header-height',
+              `${headerHeight}px`,
+            );
           }
 
-          if (header.closest('body').classList.contains('sticky-header--sticky')) {
+          if (
+            header.closest('body').classList.contains('sticky-header--sticky')
+          ) {
             header.style.position = 'fixed';
           }
         }
@@ -50,16 +66,16 @@
           calculatePositions();
         }
 
-        if (header.closest('body').classList.contains('sticky-header--scroll')) {
+        if (
+          header.closest('body').classList.contains('sticky-header--scroll')
+        ) {
           window.addEventListener('scroll', handleScroll);
         }
 
         setTimeout(() => {
           calculatePositions();
         }, 50);
-
       });
-
-    }
+    },
   };
 })(Drupal);

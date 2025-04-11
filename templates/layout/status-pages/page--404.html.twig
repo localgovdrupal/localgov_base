@@ -1,1 +1,10 @@
+{% if default_status_content %}
+	{% set default_status_content %}
+	  <p>{{ "We couldn't find the page you're looking for. It's possible you entered the address incorrectly or you're looking for a page we've moved or deleted."|t }}</p>
+	  <p>{{ "If you typed the web address, check it is correct."|t }}</p>
+	  <p>{{ "If you pasted the web address, check you copied the entire address."|t }}</p>
+	  <p>{{ "You can browse from the homepage or use the search box above to find the information you need."|t }}</p>
+	{% endset %}
+{% endif %}
+
 {% extends "@localgov_base/layout/status-pages/page-status.html.twig" %}

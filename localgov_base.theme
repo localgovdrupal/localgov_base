@@ -6,9 +6,9 @@
  */
 
 use Drupal\Component\Utility\Crypt;
-use Drupal\Component\Utility\DeprecationHelper;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -43,16 +43,25 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
 
   $form['localgov_base_add_draft_note_to_unpublished_content'] = [
     '#type'          => 'checkbox',
-    '#title'         => t('Add "Draft" to title of unpublished content.'),
+    '#title'         => t('Add "Draft" to title of draft unpublished content.'),
     '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
-    '#description'   => t('This adds the word "Draft" to the title of any unpublished content. This is useful if you have removed the pink background from unpublished content.'),
+    '#description'   => t('This adds the word "Draft" to the title of any draft unpublished content. This is useful if you have removed the pink background from unpublished content.'),
   ];
+
+  $form['localgov_base_add_archived_note_to_archived_content'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add "Archived" to title of archived content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_archived_note_to_archived_content'),
+    '#description'   => t('This adds the word "Archived" to the title of any content with the "archived" moderation state.'),
+  ];
+
   $form['localgov_base_show_back_to_top_link'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Display a "Back to Top" link on long pages.'),
     '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
     '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
   ];
+
   $form['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
@@ -65,6 +74,19 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description' => t('Select how you want the header to behave. This setting only apply to anonymous users.'),
   ];
 
+  $form['localgov_base_localgov_guides_stacked_heading'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use stacked heading pattern for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_stacked_heading'),
+    '#description'   => t('This will stack the Guide title and page heading on top of each other.'),
+  ];
+
+  $form['localgov_base_localgov_guides_vertical_navigation'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use vertical navigation for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_vertical_navigation'),
+    '#description'   => t('This will display the guide navigation vertically above the guide.'),
+  ];
 }
 
 /**
@@ -120,12 +142,7 @@ function localgov_base_preprocess_page(&$variables): void {
 
     /** @var \Drupal\Core\Render\RendererInterface $renderer */
     $renderer = \Drupal::service('renderer');
-    $rendered = DeprecationHelper::backwardsCompatibleCall(
-      currentVersion: \Drupal::VERSION,
-      deprecatedVersion: '10.3',
-      currentCallable: fn() => $renderer->renderInIsolation($copy),
-      deprecatedCallable: fn() => $renderer->renderPlain($copy),
-    );
+    $rendered = $renderer->renderInIsolation($copy);
 
     $variables['has_' . $region] = strlen(trim(strip_tags($rendered, '<drupal-render-placeholder><embed><hr><iframe><img><input><link><object><script><source><style><video>'))) > 0;
   }
@@ -146,16 +163,96 @@ function localgov_base_preprocess_page(&$variables): void {
   if (theme_get_setting('localgov_base_show_back_to_top_link')) {
     $variables['back_to_top'] = TRUE;
   }
+
+  // Load the site configuration.
+  $site_config = \Drupal::config('system.site');
+  $site_403 = $site_config->get('page.403');
+  $site_404 = $site_config->get('page.404');
+
+  // Custom 403 and 404 pages.
+  // We have a variable in page.html.twig called default_status_content.
+  // This is used to determine if we should show the default 403/404 content,
+  // or if we should show the content of the node that is set as the 403/404
+  // page.
+  $variables['default_status_content'] = TRUE;
+  $route_match = Drupal::routeMatch();
+  $route = $route_match->getRouteName();
+  if ($route === 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    $node_id = $node->id();
+    $is_404_page_node = $site_404 === 'node/' . $node_id;
+    $is_403_page_node = $site_403 === 'node/' . $node_id;
+    if ($is_404_page_node && is_null($site_404)) {
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
+    }
+    if ($is_403_page_node && is_null($site_403)) {
+      $variables['default_status_content'] = TRUE;
+    }
+    else {
+      $variables['default_status_content'] = FALSE;
+    }
+  }
+
+}
+
+/**
+ * Get the restricted width content types.
+ *
+ * @return array
+ *   An array of restricted width content types.
+ */
+function _localgov_get_restricted_width_content_types() {
+  return [
+    'localgov_services_page',
+    'localgov_event',
+    'localgov_services_status',
+    'localgov_step_by_step_overview',
+    'localgov_publication_cover_page'
+  ];
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_node(&$variables): void {
+  $node = $variables['node'];
   $node_status = $variables['node']->isPublished();
+
+  if ($node instanceof NodeInterface && $variables['view_mode'] === 'full') {
+    // Restrict width of the content area to two-thirds of the screen for
+    // some content types. This is helpful to reduce the line-length for
+    // better readability.
+    $variables['restricted_width_content_types'] = [];
+    if (in_array($node->bundle(), _localgov_get_restricted_width_content_types(), TRUE)) {
+      $variables['restricted_width_content_types'][] = $node->bundle();
+    }
+
+  }
+
   if ($node_status === FALSE) {
     if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
-      $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
+      $state = $variables['node']->get('moderation_state')->getString();
+      if ($state == 'draft') {
+        $variables['label'] = t('[Draft]') . " " . $variables['node']->label();
+      }
+    }
+  }
+  // We have a theme setting to prepend 'archived' to the title of
+  // archived content, but we don't mind whether it is published or not.
+  // An archived state does not have to always be unpubilshed.
+  if (theme_get_setting('localgov_base_add_archived_note_to_archived_content') === TRUE) {
+    $state = $variables['node']->get('moderation_state')->getString();
+    if ($state == 'archived') {
+      $variables['label'] = t('[Archived]') . " " . $variables['node']->label();
+    }
+  }
+
+  if ($variables['node']->getType() === 'localgov_guides_page') {
+    if (theme_get_setting('localgov_base_localgov_guides_stacked_heading') === TRUE) {
+      $variables['stacked_heading'] = TRUE;
     }
   }
 }
@@ -164,21 +261,58 @@ function localgov_base_preprocess_node(&$variables): void {
  * Implements hook_preprocess_HOOK().
  */
 function localgov_base_preprocess_block(&$variables): void {
+  $route_match = Drupal::routeMatch();
+  $route = $route_match->getRouteName();
   if ($variables['plugin_id'] === 'localgov_page_header_block') {
-    $route_match = Drupal::routeMatch();
+
     // Check if we are on a node page, latest version or a preview link.
-    $route = $route_match->getRouteName();
     if ($route === 'entity.node.canonical' || $route === 'entity.node.latest_version' || $route === 'entity.node.preview_link') {
       $node = $route_match->getParameter('node');
       $node_status = $node->isPublished();
+      $node_type = $node->getType();
       if ($node_status === FALSE) {
         if (theme_get_setting('localgov_base_add_draft_note_to_unpublished_content') === TRUE) {
           $current_title = $variables['content'][0]['#title'];
-          $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
+          $state = $node->get('moderation_state')->getString();
+          if ($state == 'draft') {
+            $variables['content'][0]['#title'] = t('[Draft]') . " " . $current_title;
+          }
         }
+      }
+
+      // We have a theme setting to prepend 'archived' to the title of
+      // archived content, but we don't mind whether it is published or not.
+      // An archived state does not have to always be unpubilshed.
+      if (theme_get_setting('localgov_base_add_archived_note_to_archived_content') === TRUE) {
+        $current_title = $variables['content'][0]['#title'];
+        $state = $node->get('moderation_state')->getString();
+        if ($state == 'archived') {
+          $variables['content'][0]['#title'] = t('[Archived]') . " " . $current_title;
+        }
+      }
+
+      // Check if we should use the stacked heading pattern for guides.
+      // This places the guide title on top of the node title, all within the
+      // same h1 element, like the NHS design system.
+      if ($node_type === 'localgov_guides_page' && theme_get_setting('localgov_base_localgov_guides_stacked_heading') === TRUE) {
+        $node_title = $node->getTitle();
+        $variables['content'][0]['#subtitle'] = $node_title;
       }
     }
   }
+
+  // Add vertical or horizontal class to the guides navigation block.
+  // In config, this will default to vertical for new installations, but remain
+  // horizontal for existing installations.
+  if ($variables['plugin_id'] === 'localgov_guides_contents') {
+    if (theme_get_setting('localgov_base_localgov_guides_vertical_navigation') === TRUE) {
+      $variables['attributes']['class'][] = 'block-localgov-guides-contents--navigation-vertical';
+    }
+    else {
+      $variables['attributes']['class'][] = 'block-localgov-guides-contents--navigation-horizontal';
+    }
+  }
+
 }
 
 /**
@@ -231,18 +365,22 @@ function localgov_base_views_pre_render(ViewExecutable $view): void {
  * Implements hook_preprocess_container().
  */
 function localgov_base_preprocess_container(&$variables): void {
-
-  // Randomize form container IDs for accessibility.
   // See https://www.drupal.org/project/drupal/issues/1852090
+  // Ensure the container has an ID.
   if (isset($variables['element']['#id'])) {
-    $id = $variables['element']['#id'];
-    if ($id === 'edit-actions') {
-      $id .= '--' . Crypt::randomBytesBase64(8);
+    $original_id = $variables['element']['#id'];
+
+    // Check if the ID starts with 'edit-actions'.
+    if (strpos($original_id, 'edit-actions') === 0) {
+      $random_suffix = Crypt::randomBytesBase64(8);
+      $random_id = $original_id . '--' . $random_suffix;
+
+      // Keep a stable selector but allow ID randomization.
+      $variables['attributes']['id'] = $random_id;
+      $variables['attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#attributes']['data-drupal-selector'] = $original_id;
+      $variables['element']['#id'] = $random_id;
     }
-    $variables['attributes']['id'] = $id;
-    $variables['attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#attributes']['data-drupal-selector'] = $id;
-    $variables['element']['#id'] = $id;
   }
 }
 

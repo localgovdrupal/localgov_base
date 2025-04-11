@@ -5,9 +5,7 @@
 }
 
 .sticky-header--sticky .lgd-header + * {
-  margin-block-start: calc(
-    var(--lgd-sticky-header-position) + var(--lgd-sticky-header-height)
-  );
+  margin-block-start: calc(var(--lgd-sticky-header-position) + var(--lgd-sticky-header-height));
   scroll-padding: var(--lgd-sticky-header-height);
 }
 

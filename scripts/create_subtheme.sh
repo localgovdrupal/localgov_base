@@ -55,26 +55,38 @@ echo "+ themes/custom/$LGD_SUB_THEME folder created"
 
 cd $LGD_SUB_THEME
 
+mkdir -p config/schema
+echo "+ themes/custom/$LGD_SUB_THEME/config/install folder created"
+
 cp ../../contrib/localgov_base/logo.svg .
 echo "+ themes/custom/$LGD_SUB_THEME/logo.svg copied"
 
 cp ../../contrib/localgov_base/scripts/subtheme-items/_subtheme.info.yml_ $LGD_SUB_THEME.info.yml
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.info.yml created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.libraries.yml $LGD_SUB_THEME.libraries.yml
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.libraries.yml created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/subtheme.theme $LGD_SUB_THEME.theme
 echo "+ themes/custom/$LGD_SUB_THEME/$LGD_SUB_THEME.theme created"
+
+cp ../../contrib/localgov_base/scripts/subtheme-items/config/schema/_subtheme.schema.yml_ config/schema/$LGD_SUB_THEME.schema.yml
+echo "+ themes/custom/$LGD_SUB_THEME/config/schema/$LGD_SUB_THEME.schema.yml created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/package.json package.json
 echo "+ themes/custom/$LGD_SUB_THEME/package.json created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/.nvmrc .nvmrc
 echo "+ themes/custom/$LGD_SUB_THEME/.nvmrc created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/.stylelintrc.json .stylelintrc.json
 echo "+ themes/custom/$LGD_SUB_THEME/.stylelintrc.json created"
+
 cp ../../contrib/localgov_base/scripts/subtheme-items/_.eslintrc.json_ .eslintrc.json
 echo "+ themes/custom/$LGD_SUB_THEME/.eslintrc.json created"
 
-perl -i -pe "s/LGD_SUB_THEME_NAME/$LGD_SUB_THEME_NAME/g" *
-perl -i -pe "s/LGD_SUB_THEME/$LGD_SUB_THEME/g" *
+find . -type f -exec perl -i -pe "s/LGD_SUB_THEME_NAME/$LGD_SUB_THEME_NAME/g" {} +
+find . -type f -exec perl -i -pe "s/LGD_SUB_THEME/$LGD_SUB_THEME/g" {} +
 echo "+ variables replaced"
 
 cp -r ../../contrib/localgov_base/scripts/subtheme-items/.gitignore .
@@ -95,4 +107,4 @@ echo "+ added default favicons - you will probably want to create new ones for y
 echo ""
 echo "# Your new localgov_base sub-theme has been created."
 echo "# Check the themes/custom folder to access the theme files."
-echo "# Install your sub-theme using drush or from the Drupal Appearance menu"
+echo "# Install your sub-theme using drush - drush then $LGD_SUB_THEME - or from the Drupal Appearance menu"

@@ -1,8 +1,7 @@
 .service-landing-page__contact {
   margin-block-end: var(--vertical-rhythm-spacing);
   padding: var(--spacing);
-  border-inline-start: var(--border-width-large) var(--border-style)
-    var(--color-accent);
+  border-inline-start: var(--border-width-large) var(--border-style) var(--color-accent);
   background-color: var(--color-grey-lighter);
 }
 
@@ -16,8 +15,7 @@
   align-items: center;
 }
 
-.service-landing-page__contact-list-item
-  + .service-landing-page__contact-list-item {
+.service-landing-page__contact-list-item + .service-landing-page__contact-list-item {
   margin-block-start: var(--spacing-smaller);
 }
 

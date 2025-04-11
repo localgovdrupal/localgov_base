@@ -11,8 +11,7 @@
 .banner--primary .banner__content {
   position: relative;
   max-width: var(--banner-content-width);
-  margin: calc(var(--banner-content-margin) * -1) auto
-    var(--banner-content-margin);
+  margin: calc(var(--banner-content-margin) * -1) auto var(--banner-content-margin);
   padding: var(--banner-content-padding);
   color: var(--banner-content-text-color);
   background-color: var(--banner-content-bg-color);
@@ -34,6 +33,6 @@
   color: var(--color-banner-title-link-hover);
 }
 .banner__link.banner__link:focus-visible {
-  outline-offset: 2px;
   outline: 2px dashed var(--color-banner-title-link-hover);
+  outline-offset: 2px;
 }
