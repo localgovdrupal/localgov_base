@@ -110,15 +110,16 @@
 	{% endif %}
 
 	<div class="lgd-contact__content">
-		<div class="lgd-contact__group">
-			<h3>{{ 'Email & Website'|t }}</h3>
-			{% for item in email_website_fields %}
-				{% if content[item].0 is not empty %}
-					{{ content[item] }}
-				{% endif %}
-			{% endfor %}
-		</div>
-		{% if has_email_website_fields %}{% endif %}
+		{% if has_email_website_fields %}
+			<div class="lgd-contact__group">
+				<h3>{{ 'Email & Website'|t }}</h3>
+				{% for item in email_website_fields %}
+					{% if content[item].0 is not empty %}
+						{{ content[item] }}
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
 
 		{% if has_phone_fields %}
 			<div class="lgd-contact__group">
