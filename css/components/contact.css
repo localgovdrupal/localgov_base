@@ -1,0 +1,53 @@
+.lgd-contact__headings,
+.lgd-contact__content {
+  border: var(--contact-border);
+  border-color: var(--contact-accent-color);
+  padding: var(--contact-spacing);
+}
+
+.lgd-contact__headings {
+  border-block-end: 0;
+  background-color: var(--contact-accent-color);
+  color: var(--contact-accent-color-contrast);
+}
+
+.lgd-contact__headings h2 {
+  margin-block-end: 0;
+  color: var(--contact-accent-color-contrast);
+}
+
+.lgd-contact__content {
+  display: grid;
+  gap: var(--contact-spacing);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.lgd-contact__group {
+  padding-block-end: var(--contact-spacing);
+  border-block-end: var(--contact-border);
+  border-color: var(--contact-accent-color);
+}
+
+.lgd-contact__group
+  .field--name-localgov-contact-other-social
+  > .field__item
+  + .field__item,
+.lgd-contact__group .office-hours__item + .office-hours__item {
+  margin-block-start: var(--contact-spacing);
+}
+
+.lgd-contact__group .field--name-localgov-contact-address p:last-child {
+  margin-block-end: 0;
+}
+
+.lgd-contact__group .field__label {
+  float: none;
+}
+
+.lgd-contact__group .office-hours__item-label {
+  display: block;
+}
+
+.lgd-contact__location {
+  margin-block-start: var(--contact-spacing);
+}
