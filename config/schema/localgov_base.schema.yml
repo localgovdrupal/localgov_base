@@ -31,3 +31,8 @@ localgov_base.settings:
       type: boolean
       label: 'Vertical navigation'
       description: 'Choose whether the navigation should be vertical or not.'
+    localgov_base_mobile_breakpoint_js:
+      type: string
+      label: 'Mobile breakpoint for JS'
+      description: 'The mobile breakpoint for JS. This is used to determine when to apply mobile styles.'
+      default_value: '768'

@@ -87,12 +87,29 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_localgov_guides_vertical_navigation'),
     '#description'   => t('This will display the guide navigation vertically above the guide.'),
   ];
+
+  $form['localgov_base_mobile_breakpoint_js'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Mobile breakpoint for JavaScript'),
+    '#default_value' => theme_get_setting('localgov_base_mobile_breakpoint_js'),
+    '#description'   => t('This is the mobile breakpoint in pixels. This is used by the JS to determine when to show the mobile menu. If left blank, this will default to 768px.'),
+    '#attributes' => [
+      'placeholder' => '768',
+    ],
+
+  ];
 }
 
 /**
  * Implements hook_preprocess_html().
  */
 function localgov_base_preprocess_html(&$variables): void {
+  // Add the mobile breakpoint value to drupalSettings for use in JavaScript.
+  if (!empty(theme_get_setting('localgov_base_mobile_breakpoint_js'))) {
+    $mobile_breakpoint = theme_get_setting('localgov_base_mobile_breakpoint_js');
+    $variables['#attached']['drupalSettings']['localgov_base']['mobileBreakpointJS'] = $mobile_breakpoint;
+  }
+
   // Add the 'sticky-header' library if the sticky header setting is enabled.
   if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
 
