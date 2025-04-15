@@ -15,7 +15,18 @@
         drupalSettings.localgov_base &&
         drupalSettings.localgov_base.mobileBreakpointJS
       ) {
-        mobileBreakpointJS = drupalSettings.localgov_base.mobileBreakpointJS;
+        let mobileBreakpoint = drupalSettings.localgov_base.mobileBreakpointJS;
+
+        // 1. If it has 'px' at the end, remove it.
+        mobileBreakpoint = mobileBreakpoint.replace('px', '');
+
+        // 2. Convert it to a number.
+        mobileBreakpoint = parseInt(mobileBreakpoint, 10);
+
+        // 3. Check that the value is greater than 0.
+        if (mobileBreakpoint > 0) {
+          mobileBreakpointJS = mobileBreakpoint;
+        }
       }
 
       const subsitesMenuToggle = document.querySelector(
