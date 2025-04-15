@@ -210,7 +210,7 @@ function _localgov_get_restricted_width_content_types() {
     'localgov_event',
     'localgov_services_status',
     'localgov_step_by_step_overview',
-    'localgov_publication_cover_page'
+    'localgov_publication_cover_page',
   ];
 }
 
