@@ -271,7 +271,7 @@ body {
   --file-upload-text-hover-color: var(--color-white);
 
   /* Fieldset Elements */
-  --fieldset-border-color: var(--color-grey-medium);
+  --fieldset-border-color: var(--color-grey-dark);
 
   /* Option Elements */
   --option-bg-color: var(--color-accent);
