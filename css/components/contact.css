@@ -6,8 +6,8 @@
 }
 
 .lgd-contact__headings {
-  border-block-end: 0;
   color: var(--contact-accent-color-contrast);
+  border-block-end: 0;
   background-color: var(--contact-accent-color);
 }
 
