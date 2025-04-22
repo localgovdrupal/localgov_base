@@ -109,6 +109,9 @@ function localgov_base_preprocess_html(&$variables): void {
     $mobile_breakpoint = theme_get_setting('localgov_base_mobile_breakpoint_js');
     $variables['#attached']['drupalSettings']['localgov_base']['mobileBreakpointJS'] = $mobile_breakpoint;
   }
+  else {
+    $variables['#attached']['drupalSettings']['localgov_base']['mobileBreakpointJS'] = 768;
+  }
 
   // Add the 'sticky-header' library if the sticky header setting is enabled.
   if (theme_get_setting('localgov_base_header_behaviour') !== 'default') {
