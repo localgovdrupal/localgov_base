@@ -65,6 +65,7 @@ body {
   --color-minor: var(--color-yellow);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
+  --color-unpublished-bg: pink;
 
   /* Fonts */
   /*
