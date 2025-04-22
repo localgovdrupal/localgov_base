@@ -89,7 +89,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
   ];
 
   $form['localgov_base_mobile_breakpoint_js'] = [
-    '#type'          => 'textfield',
+    '#type'          => 'number',
     '#title'         => t('Mobile breakpoint for JavaScript'),
     '#default_value' => theme_get_setting('localgov_base_mobile_breakpoint_js'),
     '#description'   => t('This is the mobile breakpoint in pixels. This is used by the JS to determine when to show the mobile menu. If left blank, this will default to 768px.'),
