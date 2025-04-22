@@ -1,4 +1,4 @@
 .node--unpublished,
 .paragraph--unpublished {
-  background-color: pink;
+  background-color: var(--color-unpublished-bg);
 }
