@@ -6,3 +6,4 @@ localgov_base_add_archived_note_to_archived_content: FALSE
 localgov_base_header_behaviour: 'default'
 localgov_base_localgov_guides_stacked_heading: FALSE
 localgov_base_localgov_guides_vertical_navigation: TRUE
+localgov_base_mobile_breakpoint_js: '768'

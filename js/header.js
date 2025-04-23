@@ -2,9 +2,11 @@
  * @file JS file for the header component.
  */
 
-(function headerScript(Drupal) {
+(function headerScript(Drupal, drupalSettings, once) {
   Drupal.behaviors.header = {
     attach(context) {
+      const mobileBreakpointJS = drupalSettings.localgov_base.mobileBreakpointJS;
+
       // Hide the search form label. We use .once() to avoid re-running.
       //
       // @todo: make it possible to override this without having to maintain a
@@ -167,7 +169,7 @@
       function handleWindowResized() {
         handleReset();
 
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < mobileBreakpointJS) {
           if (
             Object.keys(navInfo).includes('secondary') &&
             navInfo.secondary.toggle
@@ -244,4 +246,4 @@
       );
     },
   };
-})(Drupal);
+})(Drupal, drupalSettings, once);
