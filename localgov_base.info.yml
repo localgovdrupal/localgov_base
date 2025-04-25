@@ -37,3 +37,8 @@ libraries-extend:
     - localgov_base/localgov_eu_cookie_compliance
   localgov_subsites_paragraphs/localgov_accordion:
     - localgov_base/accordion
+
+libraries-override:
+  gin/dialog: false
+  gin/gin_dialog: false
+  claro/claro.drupal.dialog: false
