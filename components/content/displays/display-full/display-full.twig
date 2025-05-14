@@ -26,6 +26,7 @@
     display_full_sticky ? 'node--sticky',
     display_full_unpublished ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'node--type-' ~ content_type|clean_class,
   ]
 %}
 
