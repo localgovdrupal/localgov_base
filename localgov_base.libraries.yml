@@ -23,6 +23,7 @@ global:
     - localgov_base/callout
     - localgov_base/secondary-menu
     - localgov_base/wysiwyg-styles
+    - localgov_base/responsive-tables
 
 grid:
   css:
@@ -363,3 +364,10 @@ accordion:
   css:
     theme:
       css/components/accordion.css: {}
+
+responsive-tables:
+  js:
+    js/responsive-tables.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
