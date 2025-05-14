@@ -71,90 +71,24 @@
  */
 #}
 
-{# 
-  Restrict width of the content area to two-thirds of the screen for 
-  some content types. This is helpful to reduce the line-length for 
-  better readability.
-#}
-{% set restricted_width_content_types = [
-    'localgov_services_page',
-    'localgov_event',
-    'localgov_step_by_step_overview',
-    'localgov_services_status',
-    'localgov_publication_cover_page'
-  ] 
-%}
-
 {% set content_type = node.bundle %}
 
-{% if not localgov_base_remove_css %}
-  {{ attach_library('localgov_base/full') }}
-  {% if content_type == 'localgov_directories_venue' 
-        or content_type == 'localgov_directories_page' 
-        or content_type == 'localgov_directory' %}
-    {{ attach_library('localgov_base/directories') }}
-  {% endif %}
-
-  {% if content_type == 'localgov_event' %}
-    {{ attach_library('localgov_base/events') }}
-  {% endif %}
-
-  {% if content_type == 'localgov_step_by_step_overview'
-        or content_type == 'localgov_step_by_step_page' %}
-    {{ attach_library('localgov_base/step-by-step') }}
-  {% endif %}
+{% if node.isPromoted() %}
+  {% set display_full_promoted = TRUE %}
 {% endif %}
 
-{%
-  set classes = [
-    content_type|clean_class,
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    content_type in restricted_width_content_types ? 'node--with-restricted-width',
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
-%}
+{% if node.isSticky() %}
+  {% set display_full_sticky = TRUE %}
+{% endif %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
+{% if not node.isPublished() %}
+  {% set display_full_unpublished = TRUE %}
+{% endif %}
 
-  <div class="lgd-container padding-horizontal">
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}  
+{% set display_full_content = content|without('localgov_subsites_content') %}
 
-    {% if display_submitted %}
-      <footer class="node__meta">
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </footer>
-    {% endif %} 
+{% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
+  {% set localgov_subsites_content = content.localgov_subsites_content %}
+{% endif %}
 
-    {% if content_type in restricted_width_content_types %}
-      <div class="node__restricted-width-section">
-    {% endif %} 
-
-      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ content|without('localgov_subsites_content') }}
-      </div>
-  </div>
-
-  {% if node.localgov_subsites_content.value or content.localgov_subsites_content['#type'] == 'layout_paragraphs_builder' %}
-    {{ content.localgov_subsites_content }}
-  {% endif %}
-  
-
-  {% if content_type in restricted_width_content_types %}
-    </div>
-  {% endif %}
-
-</article>
+{% include "localgov_base:display-full" %}

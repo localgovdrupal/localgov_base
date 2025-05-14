@@ -14,6 +14,9 @@ localgov_base.settings:
     localgov_base_add_draft_note_to_unpublished_content:
       type: boolean
       label: 'Add "[Draft]" to title of unpublished content.'
+    localgov_base_add_archived_note_to_archived_content:
+      type: boolean
+      label: 'Add "[Archived]" to title of archived content.'
     localgov_base_header_behaviour:
       type: string
       label: 'Header behaviour'
@@ -28,3 +31,8 @@ localgov_base.settings:
       type: boolean
       label: 'Vertical navigation'
       description: 'Choose whether the navigation should be vertical or not.'
+    localgov_base_mobile_breakpoint_js:
+      type: string
+      label: 'Mobile breakpoint for JS'
+      description: 'The mobile breakpoint for JS. This is used to determine when to apply mobile styles.'
+      default_value: '768'

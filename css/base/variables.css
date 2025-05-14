@@ -65,6 +65,7 @@ body {
   --color-minor: var(--color-yellow);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
+  --color-unpublished-bg: pink;
 
   /* Fonts */
   /*
@@ -129,15 +130,27 @@ body {
   /* Borders */
   --border-width: 1px;
   --border-width-large: 5px;
+
   --border-color: var(--color-grey-light);
   --border-color-dark: var(--color-grey-dark);
+  --border-color-light: var(--color-grey-lightest);
+  --border-color-accent: var(--color-accent);
   --border-color-alert: var(--color-black);
+
   --border-style: solid;
   --border-radius: var(--spacing-smallest);
+
   --border: var(--border-width) var(--border-style) var(--border-color);
-  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-light: var(--border-width) var(--border-style) var(--border-color-light);
   --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
+  --border-accent: var(--border-width) var(--border-style) var(--border-color-accent);
   --border-transparent: var(--border-width) var(--border-style) transparent;
+
+  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-large-dark: var(--border-width-large) var(--border-style) var(--border-color-dark);
+  --border-large-light: var(--border-width-large) var(--border-style) var(--border-color-light);
+  --border-large-accent: var(--border-width-large) var(--border-style) var(--color-accent);
+  --border-large-transparent: var(--border-width-large) var(--border-style) transparent;
 
   /* Animation */
   --transition-time: 0.3s;
@@ -271,7 +284,7 @@ body {
   --file-upload-text-hover-color: var(--color-white);
 
   /* Fieldset Elements */
-  --fieldset-border-color: var(--color-grey-medium);
+  --fieldset-border-color: var(--color-grey-dark);
 
   /* Option Elements */
   --option-bg-color: var(--color-accent);
@@ -463,6 +476,12 @@ body {
   --alert-banner-inner-margin-horizontal: 0;
   --alert-banner-inner-padding-vertical: var(--spacing);
   --alert-banner-inner-padding-horizontal: 0;
+
+  /* Contact */
+  --contact-border: var(--border);
+  --contact-accent-color: var(--color-accent);
+  --contact-spacing: var(--spacing);
+  --contact-accent-color-contrast: var(--color-white);
 
   /* Leaflet Mapping */
   --leaflet-map-outline-stroke-colour: #38f;
