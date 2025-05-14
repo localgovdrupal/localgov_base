@@ -366,6 +366,9 @@ accordion:
       css/components/accordion.css: {}
 
 responsive-tables:
+  css:
+    theme:
+      css/components/responsive-tables.css: {}
   js:
     js/responsive-tables.js: {}
   dependencies:
