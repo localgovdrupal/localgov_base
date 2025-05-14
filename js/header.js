@@ -5,7 +5,7 @@
 (function headerScript(Drupal, drupalSettings, once) {
   Drupal.behaviors.header = {
     attach(context) {
-      const mobileBreakpointJS = drupalSettings.localgov_base.mobileBreakpointJS;
+      const { mobileBreakpointJS } = drupalSettings.localgov_base;
 
       // Hide the search form label. We use .once() to avoid re-running.
       //

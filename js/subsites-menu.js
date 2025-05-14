@@ -9,7 +9,7 @@
       // was actually resized.
       let windowWidth = window.innerWidth;
 
-      const mobileBreakpointJS = drupalSettings.localgov_base.mobileBreakpointJS;
+      const { mobileBreakpointJS } = drupalSettings.localgov_base;
 
       const subsitesMenuToggle = document.querySelector(
         '.subsite-extra__header-toggle-button',
