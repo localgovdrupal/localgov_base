@@ -23,7 +23,6 @@ global:
     - localgov_base/callout
     - localgov_base/secondary-menu
     - localgov_base/wysiwyg-styles
-    - localgov_base/responsive-tables
 
 grid:
   css:

@@ -99,6 +99,14 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     ],
   ];
 
+  $form['localgov_base_responsive_wysiwyg_tables'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Make WYSIWYG tables responsive.'),
+    '#default_value' => theme_get_setting('localgov_base_responsive_wysiwyg_tables'),
+    '#description'   => t('Places tables inserted via WYSIWYG into a responsive container, so they can scroll horizontally on small screens.'),
+    '#default_value' => theme_get_setting('localgov_base_responsive_wysiwyg_tables') ? theme_get_setting('localgov_base_responsive_wysiwyg_tables') : FALSE,
+  ];
+
   $form['#validate'][] = 'localgov_base_theme_settings_validate';
 }
 
@@ -145,6 +153,13 @@ function localgov_base_preprocess_html(&$variables): void {
       if (theme_get_setting('localgov_base_header_behaviour') === 'appears_on_scroll') {
         $variables['attributes']['class'][] = 'sticky-header--scroll';
       }
+    }
+  }
+
+  // Add the 'localgov_base_responsive_wysiwyg_tables' value to drupalSettings.
+  if (!empty(theme_get_setting('localgov_base_responsive_wysiwyg_tables'))) {
+    if (theme_get_setting('localgov_base_responsive_wysiwyg_tables') === TRUE || 1) {
+      $variables['#attached']['library'][] = 'localgov_base/responsive-tables';
     }
   }
 }
