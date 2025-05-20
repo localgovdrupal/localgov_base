@@ -4,6 +4,8 @@
 
 .skip-link:focus,
 .skip-link:hover {
+  display: block;
+  text-underline-offset: 3px;
   text-decoration: underline !important;
   text-decoration-thickness: max(3px, 0.1875rem, 0.12em) !important;
 }
