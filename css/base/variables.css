@@ -127,25 +127,26 @@ body {
   --heading-5-font-weight: var(--heading-font-weight);
   --heading-6-font-weight: var(--heading-font-weight);
 
-  /* Borders */
+  /* Border Properties */
   --border-width: 1px;
   --border-width-large: 5px;
-
   --border-color: var(--color-grey-light);
   --border-color-dark: var(--color-grey-dark);
   --border-color-light: var(--color-grey-lightest);
   --border-color-accent: var(--color-accent);
   --border-color-alert: var(--color-black);
-
   --border-style: solid;
   --border-radius: var(--spacing-smallest);
 
+  /* Borders */
+  /* Borders: Standard */
   --border: var(--border-width) var(--border-style) var(--border-color);
   --border-light: var(--border-width) var(--border-style) var(--border-color-light);
   --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
   --border-accent: var(--border-width) var(--border-style) var(--border-color-accent);
   --border-transparent: var(--border-width) var(--border-style) transparent;
 
+  /* Borders: Large */
   --border-large: var(--border-width-large) var(--border-style) var(--border-color);
   --border-large-dark: var(--border-width-large) var(--border-style) var(--border-color-dark);
   --border-large-light: var(--border-width-large) var(--border-style) var(--border-color-light);
