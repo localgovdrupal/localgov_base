@@ -1,7 +1,12 @@
 {% set prev_next_type = 'guides' %}
-{# Probably the parent module should take responsibility for this. #}
-{% set next_url = next_url is not empty ? next_url|render ~ '#lgd-guides__title' : '' %}
-{% set prev_url = previous_url is not empty ? previous_url|render ~ '#lgd-guides__title' : '' %}
+{#
+  Probably the parent module should take responsibility for this.
+
+  Note that the url fragment is added to the render array in localgov.theme.
+  Adding it there eliminates the need to render the array here.
+#}
+{% set next_url = next_url|default('') %}
+{% set prev_url = previous_url|default('') %}
 {% set prev_title = previous_title %}
 
 {% include 'localgov_base:prev-next' %}
