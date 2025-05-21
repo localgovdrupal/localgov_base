@@ -1,5 +1,7 @@
 /**
  * @file JS file for the Guides components.
+ *
+ * NOTE: this runs on every page load no matter if it's a Guide page or no.
  */
 
 (function guidesScript(Drupal) {
