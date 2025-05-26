@@ -148,6 +148,18 @@ img {
   height: auto;
 }
 
+img[alt] {
+  font-style: var(--image-alt-font-style);
+  font-size: var(--image-alt-font-size-large);
+  text-wrap: balance;
+  color: var(--image-alt-color);
+}
+img[data-img-loading-error] {
+  padding: var(--image-alt-spacing);
+  border: var(--image-alt-border);
+  background-color: var(--image-alt-bg-color);
+}
+
 p,
 ul,
 ol,

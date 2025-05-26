@@ -589,4 +589,12 @@ body {
   /* Accordion */
   --accordion-icon-closed: "+";
   --accordion-icon-opened: "-";
+
+  /* Image */
+  --image-alt-font-style: italic;
+  --image-alt-font-size-large: var(--font-size-large);
+  --image-alt-color: var(--color-black);
+  --image-alt-spacing: var(--spacing);
+  --image-alt-border: var(--border);
+  --image-alt-bg-color: var(--color-grey-lightest);
 }

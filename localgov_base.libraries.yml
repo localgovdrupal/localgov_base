@@ -20,6 +20,7 @@ global:
     - localgov_base/grid
     - localgov_base/header
     - localgov_base/footer
+    - localgov_base/images
     - localgov_base/callout
     - localgov_base/secondary-menu
     - localgov_base/wysiwyg-styles
@@ -363,3 +364,10 @@ accordion:
   css:
     theme:
       css/components/accordion.css: {}
+
+images:
+  js:
+    js/images.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
