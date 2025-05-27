@@ -1,14 +1,15 @@
 .lgd-contact__headings,
 .lgd-contact__content {
+  padding: var(--contact-spacing);
   border: var(--contact-border);
   border-color: var(--contact-accent-color);
-  padding: var(--contact-spacing);
 }
 
 .lgd-contact__headings {
+  border: var(--contact-border);
+  color: var(--contact-accent-color-contrast);
   border-block-end: 0;
   background-color: var(--contact-accent-color);
-  color: var(--contact-accent-color-contrast);
 }
 
 .lgd-contact__headings h2 {
@@ -28,10 +29,7 @@
   border-color: var(--contact-accent-color);
 }
 
-.lgd-contact__group
-  .field--name-localgov-contact-other-social
-  > .field__item
-  + .field__item,
+.lgd-contact__group .field--name-localgov-contact-other-social > .field__item + .field__item,
 .lgd-contact__group .office-hours__item + .office-hours__item {
   margin-block-start: var(--contact-spacing);
 }

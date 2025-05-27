@@ -7,6 +7,8 @@
  */
 #}
 
+{% set prevNextAttributes = prevNextAttributes|default(create_attribute) %}
+
 {% set icon_path = icon_path|default('@localgov_base/includes/icons') %}
 {% set prev_icon = prev_icon|default('chevron-left') %}
 {% set next_icon = next_icon|default('chevron-right') %}
@@ -26,7 +28,7 @@
 {% endif %}
 #}
 
-<nav{{attributes.addClass(classes)}}>
+<nav{{prevNextAttributes.addClass(classes)}}>
   <ul class="lgd-prev-next__list">
     {% if prev_url %}
       <li class="lgd-prev-next__list-item lgd-prev-next__list-item--prev">

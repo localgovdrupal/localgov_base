@@ -9,6 +9,8 @@
       // was actually resized.
       let windowWidth = window.innerWidth;
 
+      const { mobileBreakpointJS } = drupalSettings.localgov_base;
+
       const subsitesMenuToggle = document.querySelector(
         '.subsite-extra__header-toggle-button',
       );
@@ -29,14 +31,15 @@
         subsitesMenu.classList.remove('subsite-extra-menu--active');
       }
 
-      // If the window is resized to more than 768px, reset the menu.
+      // If the window is resized to more than mobileBreakpointJS/768px,
+      // reset the menu.
       function handleWindowResized() {
         if (window.innerWidth === windowWidth) {
           return;
         }
         windowWidth = window.innerWidth;
 
-        if (windowWidth > 768) {
+        if (windowWidth > mobileBreakpointJS) {
           handleReset();
         }
       }

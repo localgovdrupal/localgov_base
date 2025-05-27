@@ -65,6 +65,7 @@ body {
   --color-minor: var(--color-yellow);
   --color-link: var(--color-accent);
   --color-focus: var(--color-yellow);
+  --color-unpublished-bg: pink;
 
   /* Fonts */
   /*
@@ -126,18 +127,31 @@ body {
   --heading-5-font-weight: var(--heading-font-weight);
   --heading-6-font-weight: var(--heading-font-weight);
 
-  /* Borders */
+  /* Border Properties */
   --border-width: 1px;
   --border-width-large: 5px;
   --border-color: var(--color-grey-light);
   --border-color-dark: var(--color-grey-dark);
+  --border-color-light: var(--color-grey-lightest);
+  --border-color-accent: var(--color-accent);
   --border-color-alert: var(--color-black);
   --border-style: solid;
   --border-radius: var(--spacing-smallest);
+
+  /* Borders */
+  /* Borders: Standard */
   --border: var(--border-width) var(--border-style) var(--border-color);
-  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-light: var(--border-width) var(--border-style) var(--border-color-light);
   --border-dark: var(--border-width) var(--border-style) var(--border-color-dark);
+  --border-accent: var(--border-width) var(--border-style) var(--border-color-accent);
   --border-transparent: var(--border-width) var(--border-style) transparent;
+
+  /* Borders: Large */
+  --border-large: var(--border-width-large) var(--border-style) var(--border-color);
+  --border-large-dark: var(--border-width-large) var(--border-style) var(--border-color-dark);
+  --border-large-light: var(--border-width-large) var(--border-style) var(--border-color-light);
+  --border-large-accent: var(--border-width-large) var(--border-style) var(--color-accent);
+  --border-large-transparent: var(--border-width-large) var(--border-style) transparent;
 
   /* Animation */
   --transition-time: 0.3s;
@@ -271,7 +285,7 @@ body {
   --file-upload-text-hover-color: var(--color-white);
 
   /* Fieldset Elements */
-  --fieldset-border-color: var(--color-grey-medium);
+  --fieldset-border-color: var(--color-grey-dark);
 
   /* Option Elements */
   --option-bg-color: var(--color-accent);
@@ -575,4 +589,12 @@ body {
   /* Accordion */
   --accordion-icon-closed: "+";
   --accordion-icon-opened: "-";
+
+  /* Image */
+  --image-alt-font-style: italic;
+  --image-alt-font-size-large: var(--font-size-large);
+  --image-alt-color: var(--color-black);
+  --image-alt-spacing: var(--spacing);
+  --image-alt-border: var(--border);
+  --image-alt-bg-color: var(--color-grey-lightest);
 }
