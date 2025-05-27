@@ -10,7 +10,7 @@
       // users, the focus stays at the top of the page.
       // This function checks if the URL contains a hash, and if so, focuses on
       // the element with the corresponding ID.
-      if (window.location.hash) {
+      if (window.location.hash && window.location.hash.length > 1) {
         const [element] = once('guidecontent', window.location.hash, context);
         if (element) {
           element.focus();
