@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.link-content > a {
+  display: flex;
+}
+
 .link-icon {
   flex-shrink: 0;
   margin-inline-end: var(--link-icon-margin);
