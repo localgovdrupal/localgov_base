@@ -21,7 +21,7 @@
 .lgd-row {
   display: grid;
   gap: var(--grid-column-spacing);
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr;
 }
 
 .lgd-row--centered {
@@ -41,11 +41,19 @@
 .lgd-row__two-thirds,
 .lgd-row__three-quarters,
 .lgd-row__full {
-  grid-column: span 12;
   width: 100%;
+  grid-column: span 1;
 }
 
 @media screen and (min-width: 48rem) {
+  .lgd-row {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .lgd-row__full {
+    grid-column: span 12;
+  }
+
   .lgd-row__one-quarter,
   .lgd-row--quarters > *,
   .lgd-row__one-third,
