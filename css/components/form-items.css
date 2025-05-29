@@ -380,25 +380,3 @@ input[type="file"]:hover,
   gap: var(--spacing);
   align-items: center;
 }
-
-.facets-form fieldset {
-  padding: 0;
-  border: none;
-}
-
-.facets-form .facets-widget > ul,
-.facets-form .facets-widget > ul ul {
-  list-style: none;
-  padding: 0;
-}
-
-.facets-form .facets-widget > ul > li + li {
-  margin-block-start: var(--spacing-largest);
-}
-
-.facets-form .form-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing);
-  align-items: center;
-}
