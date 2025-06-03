@@ -24,7 +24,6 @@
               .replace('px', ''),
             10,
           );
-          console.log('working');
           if (displaceOffsetTopValue) {
             displaceOffsetTop = displaceOffsetTopValue;
           }

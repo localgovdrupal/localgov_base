@@ -6,6 +6,7 @@
 }
 
 .lgd-contact__headings {
+  border: var(--contact-border);
   color: var(--contact-accent-color-contrast);
   border-block-end: 0;
   background-color: var(--contact-accent-color);

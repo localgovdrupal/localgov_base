@@ -20,6 +20,7 @@ global:
     - localgov_base/grid
     - localgov_base/header
     - localgov_base/footer
+    - localgov_base/images
     - localgov_base/callout
     - localgov_base/secondary-menu
     - localgov_base/wysiwyg-styles
@@ -370,6 +371,11 @@ responsive-tables:
       css/components/responsive-tables.css: {}
   js:
     js/responsive-tables.js: {}
+
+images:
+  js:
+    js/images.js: {}
+
   dependencies:
     - core/drupal
     - core/once
