@@ -1,0 +1,12 @@
+{% embed 'localgov_base:section' with {
+  section: region,
+  section_outer_classes: [
+    'lgd-section--bleed',
+    'lgd-section--demo',
+    'lgd-section--wrapped',
+  ],
+} %}
+  {% block section_content %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}
