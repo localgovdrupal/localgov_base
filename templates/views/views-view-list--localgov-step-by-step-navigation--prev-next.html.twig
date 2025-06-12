@@ -36,8 +36,14 @@
  */
 #}
 
+{% set nav_id = 'step-by-step-prev-next' %}
+{% set prevNextAttributes = create_attribute({ id: nav_id }) %}
 {% set prev_next_type = 'step_by_step' %}
 {% set prev_url = has_prev_step ? path('entity.node.canonical', {'node': prev_step_nid }) : '' %}
 {% set next_url = has_next_step ? path('entity.node.canonical', {'node': next_step_nid }) : ''  %}
 
-{% include 'localgov_base:prev-next' %}
+{% embed 'localgov_base:prev-next' %}
+  {% block prev_next_pre_content %}
+    <h2 class="visually-hidden" aria-labelledby="{{ nav_id }}">{{ 'Step by step navigation'|t }}</h2>
+  {% endblock %}
+{% endembed %}
