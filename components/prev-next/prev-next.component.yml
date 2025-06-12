@@ -74,3 +74,20 @@ props:
       description: >
         The actual URL for the Next link. If empty, the entire link will
         not be rendered.
+    prev_next_nav_aria_label:
+      type: string
+      title: Prev-Next nav label
+      description: Translated label for parent <nav> element. Optional since
+        an aria-label may also be set in prevNextAttributes or an accessible
+        value provided as part of the prev_next_pre_content slot.
+slots:
+  prev_next_pre_content:
+    title: Prev-Next pre-content
+    description:
+      Use this slot to add arbitrary content prior to the nav list in the
+      component. This is useful for adding an accessible text label when
+      aria-label isn't used.
+  prev_next_post_content:
+    title: Prev-Next post-content
+    description:
+      Use this slot to add arbitrary content after nav list in the component.
