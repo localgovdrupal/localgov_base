@@ -10,6 +10,11 @@ status: stable
 props:
   type: object
   properties:
+    prevNextAttributes:
+      type: object
+      title: Prev-Next attributes
+      description: a Drupal attributes object. Will not override default
+        classes.
     prev_next_type:
       type: string
       title: Prev-Next type
