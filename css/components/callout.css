@@ -5,6 +5,7 @@
   padding: 1.5rem;
   text-align: center;
   color: var(--color-white);
+  background-color: var(--color-accent);
   font-size: var(--font-size-large);
   font-weight: bold;
 }

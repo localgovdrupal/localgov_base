@@ -29,7 +29,7 @@
 
   .region-secondary-menu .menu {
     overflow-y: initial;
-    max-height: auto;
+    max-height: none;
     column-count: var(--secondary-menu-column-count);
   }
 }
