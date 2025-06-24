@@ -20,49 +20,29 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     return;
   }
 
-  $form['localgov_base_remove_css'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Remove CSS libraries from base theme.'),
-    '#default_value' => theme_get_setting('localgov_base_remove_css'),
-    '#description'   => t("Check this box to disable the base theme's CSS"),
+  // Add settings in a details element for better organization
+  $form['localgov_base_settings'] = [
+    '#type' => 'details',
+    '#title' => t('LocalGov Base Settings'),
+    '#open' => TRUE,
   ];
 
-  $form['localgov_base_remove_js'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Remove JS libraries from base theme.'),
-    '#default_value' => theme_get_setting('localgov_base_remove_js'),
-    '#description'   => t("Check this box to disable the base theme's JavaScript"),
+  // Create a fieldset for general settings and place at the top
+  $form['localgov_base_settings']['general_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('General Settings'),
+    '#description' => t('General layout and display settings.'),
+    '#weight' => -10,
   ];
 
-  $form['localgov_base_add_unpublished_background_colour'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Add background colour to unpublished content.'),
-    '#default_value' => theme_get_setting('localgov_base_add_unpublished_background_colour'),
-    '#description'   => t("If you remove the background colour, you should probably also check the box below to add '[Draft]' to the title of unpublished content."),
-  ];
-
-  $form['localgov_base_add_draft_note_to_unpublished_content'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Add "Draft" to title of draft unpublished content.'),
-    '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
-    '#description'   => t('This adds the word "Draft" to the title of any draft unpublished content. This is useful if you have removed the pink background from unpublished content.'),
-  ];
-
-  $form['localgov_base_add_archived_note_to_archived_content'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Add "Archived" to title of archived content.'),
-    '#default_value' => theme_get_setting('localgov_base_add_archived_note_to_archived_content'),
-    '#description'   => t('This adds the word "Archived" to the title of any content with the "archived" moderation state.'),
-  ];
-
-  $form['localgov_base_show_back_to_top_link'] = [
+  $form['localgov_base_settings']['general_fieldset']['localgov_base_show_back_to_top_link'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Display a "Back to Top" link on long pages.'),
     '#default_value' => theme_get_setting('localgov_base_show_back_to_top_link'),
     '#description'   => t('This adds a link to the beginning of the page content (<code>#main-content</code>).'),
   ];
 
-  $form['localgov_base_header_behaviour'] = [
+  $form['localgov_base_settings']['general_fieldset']['localgov_base_header_behaviour'] = [
     '#type' => 'radios',
     '#title' => t('Header behaviour'),
     '#default_value' => theme_get_setting('localgov_base_header_behaviour'),
@@ -74,21 +54,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description' => t('Select how you want the header to behave. This setting only apply to anonymous users.'),
   ];
 
-  $form['localgov_base_localgov_guides_stacked_heading'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use stacked heading pattern for guides.'),
-    '#default_value' => theme_get_setting('localgov_base_localgov_guides_stacked_heading'),
-    '#description'   => t('This will stack the Guide title and page heading on top of each other.'),
-  ];
-
-  $form['localgov_base_localgov_guides_vertical_navigation'] = [
-    '#type'          => 'checkbox',
-    '#title'         => t('Use vertical navigation for guides.'),
-    '#default_value' => theme_get_setting('localgov_base_localgov_guides_vertical_navigation'),
-    '#description'   => t('This will display the guide navigation vertically above the guide.'),
-  ];
-
-  $form['localgov_base_mobile_breakpoint_js'] = [
+  $form['localgov_base_settings']['general_fieldset']['localgov_base_mobile_breakpoint_js'] = [
     '#type'          => 'number',
     '#title'         => t('Mobile breakpoint for JavaScript'),
     '#default_value' => theme_get_setting('localgov_base_mobile_breakpoint_js') ? theme_get_setting('localgov_base_mobile_breakpoint_js') : 768,
@@ -97,6 +63,76 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#attributes' => [
       'placeholder' => '768',
     ],
+  ];
+
+  // Create a fieldset for the CSS/JS library options
+  $form['localgov_base_settings']['libraries_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Theme Libraries'),
+    '#description' => t('Control whether to load base theme CSS and JavaScript libraries.'),
+  ];
+
+  $form['localgov_base_settings']['libraries_fieldset']['localgov_base_remove_css'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Remove CSS libraries from base theme.'),
+    '#default_value' => theme_get_setting('localgov_base_remove_css'),
+    '#description'   => t("Check this box to disable the base theme's CSS"),
+  ];
+
+  $form['localgov_base_settings']['libraries_fieldset']['localgov_base_remove_js'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Remove JS libraries from base theme.'),
+    '#default_value' => theme_get_setting('localgov_base_remove_js'),
+    '#description'   => t("Check this box to disable the base theme's JavaScript"),
+  ];
+
+  // Create a fieldset for content status related settings
+  $form['localgov_base_settings']['content_status_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Content Status Display'),
+    '#description' => t('Control how unpublished and archived content is displayed.'),
+  ];
+
+  $form['localgov_base_settings']['content_status_fieldset']['localgov_base_add_unpublished_background_colour'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add background colour to unpublished content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_unpublished_background_colour'),
+    '#description'   => t("If you remove the background colour, you should probably also check the box below to add '[Draft]' to the title of unpublished content."),
+  ];
+
+  $form['localgov_base_settings']['content_status_fieldset']['localgov_base_add_draft_note_to_unpublished_content'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add "Draft" to title of draft unpublished content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_draft_note_to_unpublished_content'),
+    '#description'   => t('This adds the word "Draft" to the title of any draft unpublished content. This is useful if you have removed the pink background from unpublished content.'),
+  ];
+
+  $form['localgov_base_settings']['content_status_fieldset']['localgov_base_add_archived_note_to_archived_content'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Add "Archived" to title of archived content.'),
+    '#default_value' => theme_get_setting('localgov_base_add_archived_note_to_archived_content'),
+    '#description'   => t('This adds the word "Archived" to the title of any content with the "archived" moderation state.'),
+  ];
+
+  // Create a fieldset for guide-related settings
+  $form['localgov_base_settings']['guides_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Guide Display Settings'),
+    '#description' => t('Control how guides are displayed on the site.'),
+  ];
+
+  $form['localgov_base_settings']['guides_fieldset']['localgov_base_localgov_guides_stacked_heading'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use stacked heading pattern for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_stacked_heading'),
+    '#description'   => t('This will stack the Guide title and page heading on top of each other.'),
+  ];
+
+  $form['localgov_base_settings']['guides_fieldset']['localgov_base_localgov_guides_vertical_navigation'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Use vertical navigation for guides.'),
+    '#default_value' => theme_get_setting('localgov_base_localgov_guides_vertical_navigation'),
+    '#description'   => t('This will display the guide navigation vertically above the guide.'),
   ];
 
   $form['#validate'][] = 'localgov_base_theme_settings_validate';
