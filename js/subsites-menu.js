@@ -14,6 +14,10 @@
       const [subsitesMenuToggle] = once('allSubsitesMenuToggles', '.subsite-extra__header-toggle-button', context);
       const [subsitesMenu] = once('allSubsitesMenuToggles', '.subsite-extra-menu', context);
 
+      if (!subsitesMenuToggle || !subsitesMenu) {
+        return;
+      }
+
       subsitesMenuToggle.addEventListener('click', () => {
         subsitesMenuToggle.setAttribute(
           'aria-expanded',
