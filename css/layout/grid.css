@@ -47,6 +47,14 @@
 }
 
 @media screen and (min-width: 48rem) {
+  .lgd-row {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .lgd-row__full {
+    grid-column: span 12;
+  }
+
   .lgd-row__one-quarter,
   .lgd-row--quarters > *,
   .lgd-row__one-third,
