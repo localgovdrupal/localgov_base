@@ -36,7 +36,7 @@
  */
 #}
 
-{% set nav_id = 'step-by-step-prev-next' %}
+{% set nav_id = 'step-by-step-prev-next-' ~ random() %}
 {% set prevNextAttributes = create_attribute({ id: nav_id }) %}
 {% set prev_next_type = 'step_by_step' %}
 {% set prev_url = has_prev_step ? path('entity.node.canonical', {'node': prev_step_nid }) : '' %}

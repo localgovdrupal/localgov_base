@@ -32,7 +32,7 @@
 #}
 
 {% if has_links %}
-  {% set nav_id = 'publication-prev-next' %}
+  {% set nav_id = 'publication-prev-next-' ~ random() %}
   {% set prevNextAttributes = create_attribute({ id: nav_id }) %}
   {# This uses previous_* vars, prev-next uses prev_*, so we translate. #}
   {% set show_title = true %}

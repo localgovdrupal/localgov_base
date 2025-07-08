@@ -1,4 +1,4 @@
-{% set nav_id = 'guides-prev-next' %}
+{% set nav_id = 'guides-prev-next-' ~ random() %}
 {% set prevNextAttributes = create_attribute({ id: nav_id }) %}
 {% set prev_next_type = 'guides' %}
 {#
