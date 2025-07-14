@@ -365,9 +365,17 @@ accordion:
     theme:
       css/components/accordion.css: {}
 
+responsive-tables:
+  css:
+    theme:
+      css/components/responsive-tables.css: {}
+  js:
+    js/responsive-tables.js: {}
+
 images:
   js:
     js/images.js: {}
+
   dependencies:
     - core/drupal
     - core/once

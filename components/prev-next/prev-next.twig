@@ -7,7 +7,7 @@
  */
 #}
 
-{% set prevNextAttributes = prevNextAttributes|default(create_attribute) %}
+{% set prevNextAttributes = create_attribute(prevNextAttributes|default({})) %}
 
 {% set icon_path = icon_path|default('@localgov_base/includes/icons') %}
 {% set prev_icon = prev_icon|default('chevron-left') %}
