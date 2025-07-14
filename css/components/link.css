@@ -1,4 +1,5 @@
 .link-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -7,13 +8,18 @@
   display: flex;
 }
 
+.link-content > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 .link-icon {
   flex-shrink: 0;
   margin-inline-end: var(--link-icon-margin);
 }
 
 .link--button-style .link-wrapper {
-  position: relative;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal) var(--button-padding-vertical) var(--button-padding-horizontal);
   color: var(--button-text-color);
   border: var(--border);
@@ -37,11 +43,7 @@
   text-decoration: none;
   color: inherit;
 }
-.link--button-style a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
+
 .link--button-style:focus .link-wrapper,
 .link--button-style:hover .link-wrapper {
   text-decoration: underline;
