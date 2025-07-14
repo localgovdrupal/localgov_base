@@ -41,8 +41,8 @@
 .lgd-row__two-thirds,
 .lgd-row__three-quarters,
 .lgd-row__full {
-  width: 100%;
   grid-column: span 1;
+  width: 100%;
 }
 
 @media screen and (min-width: 48rem) {
