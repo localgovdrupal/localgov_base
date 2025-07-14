@@ -21,9 +21,11 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
   }
 
   // Add settings in a details element for better organization
+  $theme_info = \Drupal::service('theme.manager')->getActiveTheme()->getExtension()->info;
+  $theme_human_name = $theme_info['name'] ?? \Drupal::service('theme.manager')->getActiveTheme()->getName();
   $form['localgov_base_settings'] = [
     '#type' => 'details',
-    '#title' => t('LocalGov Base Settings'),
+    '#title' => t('@theme Settings', ['@theme' => $theme_human_name]),
     '#open' => TRUE,
   ];
 
