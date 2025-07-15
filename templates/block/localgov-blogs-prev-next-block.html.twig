@@ -1,2 +1,8 @@
+{% set nav_id = 'blogs-prev-next-' ~ random() %}
+{% set prevNextAttributes = create_attribute({ id: nav_id }) %}
 {% set prev_next_type = 'blog' %}
-{% include 'localgov_base:prev-next' %}
+{% embed 'localgov_base:prev-next' %}
+  {% block prev_next_pre_content %}
+    <h2 class="visually-hidden" aria-labelledby="{{ nav_id }}">{{ 'Blog navigation'|t }}</h2>
+  {% endblock %}
+{% endembed %}
