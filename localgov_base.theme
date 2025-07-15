@@ -20,7 +20,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     return;
   }
 
-  // Add settings in a details element for better organization
+  // Add settings in a details element for better organization.
   $theme_info = \Drupal::service('theme.manager')->getActiveTheme()->getExtension()->info;
   $theme_human_name = $theme_info['name'] ?? \Drupal::service('theme.manager')->getActiveTheme()->getName();
   $form['localgov_base_settings'] = [
@@ -29,7 +29,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#open' => TRUE,
   ];
 
-  // Create a fieldset for general settings and place at the top
+  // Create a fieldset for general settings and place at the top.
   $form['localgov_base_settings']['general_fieldset'] = [
     '#type' => 'fieldset',
     '#title' => t('General Settings'),
@@ -74,7 +74,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#default_value' => theme_get_setting('localgov_base_responsive_wysiwyg_tables') ? theme_get_setting('localgov_base_responsive_wysiwyg_tables') : FALSE,
   ];
 
-  // Create a fieldset for the CSS/JS library options
+  // Create a fieldset for the CSS/JS library options.
   $form['localgov_base_settings']['libraries_fieldset'] = [
     '#type' => 'fieldset',
     '#title' => t('Theme Libraries'),
@@ -95,7 +95,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t("Check this box to disable the base theme's JavaScript"),
   ];
 
-  // Create a fieldset for content status related settings
+  // Create a fieldset for content status related settings.
   $form['localgov_base_settings']['content_status_fieldset'] = [
     '#type' => 'fieldset',
     '#title' => t('Content Status Display'),
@@ -123,7 +123,7 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t('This adds the word "Archived" to the title of any content with the "archived" moderation state.'),
   ];
 
-  // Create a fieldset for guide-related settings
+  // Create a fieldset for guide-related settings.
   $form['localgov_base_settings']['guides_fieldset'] = [
     '#type' => 'fieldset',
     '#title' => t('Guide Display Settings'),
