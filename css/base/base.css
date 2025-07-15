@@ -151,8 +151,8 @@ img {
 img[alt] {
   text-wrap: balance;
   font-size: var(--image-alt-font-size-large);
-  font-style: var(--image-alt-font-style);
   color: var(--image-alt-color);
+  font-style: var(--image-alt-font-style);
 }
 img[data-img-loading-error] {
   padding: var(--image-alt-spacing);
