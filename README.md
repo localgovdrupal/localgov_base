@@ -8,6 +8,14 @@ Welcome to the LocalGov Drupal base theme.
 
 We developed this theme with scalability, ease of use, and ease of customisation in mind. Making this base theme a great start point for any website using the LocalGov Drupal distribution.
 
+## Sites using 1.x of localgov_base should upgrade to 2.x
+
+All new feature development work will be against the 2.x branch
+The 1.x branch will continue to have bug fixes until the end of December 2025.
+
+In some cases, if you have made customisations to the child theme, changes may be needed to the child theme to upgrade from 1.x to 2.x
+Please see release notes for information https://github.com/localgovdrupal/localgov_base/releases
+
 ## Inline Documentation
 Instead of creating documentation for the theme and storing it in a wiki or something else that is likely to not be updated, we have written detailed comments inline with the code. This should make it easier to know exactly what code block any specific documentation item refers to.
 
