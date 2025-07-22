@@ -8,6 +8,30 @@ Welcome to the LocalGov Drupal base theme.
 
 We developed this theme with scalability, ease of use, and ease of customisation in mind. Making this base theme a great start point for any website using the LocalGov Drupal distribution.
 
+## Supported releases
+
+We now have a 2.x and a 1.x branch.
+
+- All new feature development work will be against the 2.x branch
+- The 1.x branch will continue to have bug fixes until the end of December 2025.
+
+Everyone is encouraged to upgrade to the 2.x branch, but please see release notes regarding changes to the grid system layouts, moving from flex to css grids.
+
+https://github.com/localgovdrupal/localgov_base/releases/tag/2.0.0
+
+## Notes on upgrading from 1.x to 2.x
+
+In the 2.x branch, we have re-written our grid system to use CSS Grid instead of Flexbox.
+
+This makes the CSS for the grid simpler. It should also fix lots of minor spacing issues (negative left/right margin on grid containers).
+
+Important: We recommend testing your layouts before deploying.
+
+In some cases, if you have made customisations to the layout in a child theme, removing these changes might be advisable.
+
+In some cases, the changes needed in child themes are to change the width specification on grid child items from
+"width: calc(...) " to "grid-column: span 3" for example.
+
 ## Inline Documentation
 Instead of creating documentation for the theme and storing it in a wiki or something else that is likely to not be updated, we have written detailed comments inline with the code. This should make it easier to know exactly what code block any specific documentation item refers to.
 
