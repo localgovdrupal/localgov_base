@@ -1,3 +1,31 @@
+/*
+  Overrides from
+  localgov_paragraphs/modules/localgov_subsites_paragraphs/css/localgov-subsites-paragraphs.css
+
+  This is so that we only have the gap specified in our grid/custom CSS between
+  columns in page sections, rather than our gap + this extra padding.
+*/
+.paragraph--type--page-section .layout__region {
+  padding-bottom: 0;
+}
+.paragraph--type--page-section .layout--twocol .layout__region--first {
+  padding-right: 0;
+}
+.paragraph--type--page-section .layout--twocol .layout__region--second {
+  padding-left: 0;
+}
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--first {
+  padding-right: 0;
+}
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--second {
+  padding-right: 0;
+  padding-left: 0;
+}
+.paragraph--type--page-section .layout--threecol-33-34-33 .layout__region--third {
+  padding-left: 0;
+}
+
+/* Page sections */
 .lgd-page-section {
   color: var(--color-page-section-text-color);
   background-color: var(--color-page-section-background-color);
