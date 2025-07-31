@@ -11,8 +11,16 @@
 
       const { mobileBreakpointJS } = drupalSettings.localgov_base;
 
-      const [subsitesMenuToggle] = once('allSubsitesMenuToggles', '.subsite-extra__header-toggle-button', context);
-      const [subsitesMenu] = once('allSubsitesMenuToggles', '.subsite-extra-menu', context);
+      const [subsitesMenuToggle] = once(
+        'allSubsitesMenuToggles',
+        '.subsite-extra__header-toggle-button',
+        context,
+      );
+      const [subsitesMenu] = once(
+        'allSubsitesMenuToggles',
+        '.subsite-extra-menu',
+        context,
+      );
 
       if (!subsitesMenuToggle || !subsitesMenu) {
         return;
