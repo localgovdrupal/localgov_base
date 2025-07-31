@@ -15,6 +15,13 @@ props:
       title: Prev-Next type
       description: >
         String used to create a class specific to this usage of the component.
+    show_title:
+      type: boolean
+      title: Show title
+      description: >
+        Whether or not to show prev_title/next_title below prev_label/next_label
+        in links. Works regardless of whether or not prev_title and next_title
+        are empty.
     icon_path:
       type: string
       title: Icon path
