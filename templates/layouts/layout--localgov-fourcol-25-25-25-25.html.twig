@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a three column layout.
+ *
+ * This template provides a three column 33%-34%-33% display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--fourcol-25-25-25-25',
+    'lgd-row',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first', 'lgd-row__one-quarter') }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second', 'lgd-row__one-quarter') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.third %}
+      <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third', 'lgd-row__one-quarter') }}>
+        {{ content.third }}
+      </div>
+    {% endif %}
+
+    {% if content.fourth %}
+      <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth', 'lgd-row__one-quarter') }}>
+        {{ content.fourth }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}
