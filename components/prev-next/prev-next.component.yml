@@ -1,5 +1,5 @@
 ---
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Previous-next
 description: >
   Provides common Previous-Next navigation element for LGD themes and modules.
@@ -11,7 +11,7 @@ props:
   type: object
   properties:
     prevNextAttributes:
-      type: object
+      type: 'Drupal\Core\Template\Attribute'
       title: Prev-Next attributes
       description: a Drupal attributes object. Will not override default
         classes.
