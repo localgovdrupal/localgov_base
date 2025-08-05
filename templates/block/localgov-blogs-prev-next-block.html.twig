@@ -1,10 +1,9 @@
-{% set prev_next_type = 'blog' %}
-{% set icon_path = icon_path|default('@localgov_base/includes/icons') %}
-{% set prev_icon = prev_icon|default('chevron-left') %}
-{% set next_icon = next_icon|default('chevron-right') %}
-{% set prev_label = prev_label|default('Previous'|t) %}
-{% set next_label = next_label|default('Next'|t) %}
-{% set prev_aria_label = prev_title ? (prev_label ~ ': ' ~ prev_title) : prev_label %}
-{% set next_aria_label = next_title ? (next_label ~ ': ' ~ next_title) : next_label %}
-{% set show_title = show_title|default(false) %}
-{% include 'localgov_base:prev-next' %}
+{# Some variables for this block are set in localgov_blog module. Override them in this template. #}
+{{ include ('localgov_base:prev-next', {
+    prev_next_type = 'blog',
+    previous_url = false,
+    previous_title = false,
+    next_url = false,
+    next_title = false,
+    show_title = false
+}) }}
