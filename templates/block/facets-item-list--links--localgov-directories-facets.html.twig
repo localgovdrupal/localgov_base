@@ -41,7 +41,9 @@
 
     {% if items %}
       {% for group in items %}
-        <h4 class="facet-group__title">{{ group.title }}</h4>
+        {% if group.title %}
+          <h4 class="facet-group__title">{{ group.title }}</h4>
+        {% endif %}
         <{{ list_type }}{{ attributes }}>
           {% for item in group.items %}
             <li{{ item.attributes }}>{{ item.value }}</li>

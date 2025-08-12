@@ -1,6 +1,17 @@
 .link-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
+}
+
+.link-content > a {
+  display: flex;
+}
+
+.link-content > a::after {
+  position: absolute;
+  inset: 0;
+  content: "";
 }
 
 .link-icon {
