@@ -149,10 +149,10 @@ img {
 }
 
 img[alt] {
-  font-style: var(--image-alt-font-style);
-  font-size: var(--image-alt-font-size-large);
   text-wrap: balance;
   color: var(--image-alt-color);
+  font-size: var(--image-alt-font-size-large);
+  font-style: var(--image-alt-font-style);
 }
 img[data-img-loading-error] {
   padding: var(--image-alt-spacing);

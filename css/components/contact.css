@@ -6,8 +6,8 @@
 }
 
 .lgd-contact__headings {
-  border: var(--contact-border);
   color: var(--contact-accent-color-contrast);
+  border: var(--contact-border);
   border-block-end: 0;
   background-color: var(--contact-accent-color);
 }
@@ -26,7 +26,7 @@
 .lgd-contact__group {
   padding-block-end: var(--contact-spacing);
   border-block-end: var(--contact-border);
-  border-color: var(--contact-accent-color);
+  border-block-end-color: var(--contact-accent-color);
 }
 
 .lgd-contact__group .field--name-localgov-contact-other-social > .field__item + .field__item,
