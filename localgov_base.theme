@@ -385,6 +385,17 @@ function localgov_base_preprocess_block(&$variables): void {
     }
   }
 
+  // Add a decent aria label to the facets blocks.
+  if (in_array($variables['base_plugin_id'], ['localgov_directories_channel_search_block', 'facet_block'])) {
+    if ($variables['elements']['#configuration']['label_display'] === '0') {
+      $routeMatch = \Drupal::routeMatch();
+      $node = $routeMatch->getParameter('node');
+      $node_title = $node instanceof NodeInterface ? $node->getTitle() : '';
+      $variables['attributes']['aria-label'] = t('Search') . ' ' . $node_title;
+      $variables['attributes']['role'] = 'search';
+    }
+  }
+
   // Add vertical or horizontal class to the guides navigation block.
   // In config, this will default to vertical for new installations, but remain
   // horizontal for existing installations.
