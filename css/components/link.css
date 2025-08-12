@@ -9,9 +9,9 @@
 }
 
 .link-content > a::after {
-  content: "";
   position: absolute;
   inset: 0;
+  content: "";
 }
 
 .link-icon {
