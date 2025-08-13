@@ -112,10 +112,26 @@
       - if there are sidebars, OR the page is not a node, the content region
         is contained
   #}
+
+  {% if has_sidebars %}
+    {% set section_types = [] %}
+  {% endif %}
+
+  {% if not node %}
+    {% set section_types = [] %}
+  {% endif %}
+
+  {% if node.bundle() in [
+    'localgov_subsites_overview',
+    'localgov_subsites_page',
+  ] %}
+    {% set section_types = [ 'bleed', 'uncontained' ] %}
+  {% endif %}
+
   {% embed 'localgov_base:section' with {
-    section_types: has_sidebars or not node
-      ? []
-      : [ 'bleed', 'separated-block', 'uncontained' ],
+    section_types: [
+      'separated-block',
+    ]|merge(section_types|default([])),
   } %}
     {% block section_content %}
       {% if has_sidebars %}
