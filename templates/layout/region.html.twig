@@ -12,32 +12,26 @@
  * @see template_preprocess_region()
  */
 #}
-{%
-  set classes = [
-    'lgd-region',
-    'lgd-region--' ~ region|clean_class,
-    'region',
-    'region-' ~ region|clean_class,
-  ]
-%}
 
 {#
   If we need to create a new template just to add a library to it,
   let's do that here instead. We could do this in hook_preprocess_region()
   but I prefer to keep as much as I can in these templates so we don't
-  have to go hunting so much.
+  have to go hunting so much. The section_library var is passed directly to
+  the localgov_base:section SDC below.
 #}
+{% set section_library = '' %}
 {% if not localgov_base_remove_css %}
   {% if region == 'tabs' %}
-    {{ attach_library('localgov_base/region-tabs') }}
+    {% set section_library = 'localgov_base/region-tabs' %}
   {% endif %}
 
   {% if region == 'subsites_menu' %}
-    {{ attach_library('localgov_base/subsites-menu') }}
+    {% set section_library = 'localgov_base/subsites-menu' %}
   {% endif %}
 
   {% if region == 'sidebar_first' or region == 'sidebar_second' %}
-    {{ attach_library('localgov_base/sidebar') }}
+    {% set section_library = 'localgov_base/sidebar' %}
   {% endif %}
 {% endif %}
 
@@ -47,40 +41,78 @@
   array of regions that might need that, and then not print the container
   class for those regions.
 
-  If it comes to an issue later, we can easily create a region template
-  for each of these.
+  Often if we need a custom region template, it's because that region's margins
+  or padding need adjustment. Using the localgov_base:section SDC, we can do
+  most of that work here.
 
-  The reason the header regions are listed here is because we want them to
-  take up 100% of their container, rather than the screen. We will take care
-  of their layout via CSS in the header.css file.
+  The various *_regions variables below are used to assign values to the SDC's
+  section_types parameter. Since any given instance can have multiple 'types',
+  region names may appear in more than one of the arrays. For example, the
+  'banner' region is set in both the bleed_regions and 'separated_block_regions'
+  arrays.
+
+  Some regions, like e.g. the header region, are too complex to be handled in
+  this minimal template.
 #}
-{%
-  set full_width_regions = [
-    'banner',
-    'header',
-    'primary_menu',
-    'secondary_menu',
-    'search',
-    'sidebar_first',
-    'sidebar_second',
-    'content'
-  ]
-%}
+
+{% set bleed_regions = [
+  'banner',
+  'content',
+  'footer_first',
+  'footer_second',
+  'footer_third',
+  'header',
+  'tabs',
+] %}
+{% set expanded_regions = [] %}
+{% set separated_regions = [] %}
+{% set separated_block_regions = [
+  'banner',
+  'content_bottom',
+] %}
+{% set separated_inline_regions = [] %}
+{% set uncontained_regions = [
+  'banner',
+  'tabs',
+] %}
+{% set wrapped_regions = [] %}
+{% set wrapped_block_regions = [] %}
+{% set wrapped_inline_regions = [] %}
+{% set demo_regions = [] %}
 
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-
-    {% if region not in full_width_regions %}
-      <div class="lgd-container padding-horizontal">
-    {% endif %}
-
-    <div class="lgd-region__inner lgd-region__inner--{{ region|clean_class }}">
-      {{ content }}
-    </div>
-
-    {% if region not in full_width_regions %}
-      </div>
-    {% endif %}
-
-  </div>
+  {# The content region's layout is handled in page.html.twig. #}
+  {% if region == 'content' %}
+    {{ content }}
+  {% else %}
+    {% embed 'localgov_base:section' with {
+      section_outer_classes: [
+        'lgd-region',
+        'lgd-region--' ~ region|clean_class,
+        'region',
+        'region-' ~ region|clean_class,
+      ],
+      section_inner_classes: [
+        'lgd-region__inner',
+        'lgd-region__inner--' ~ region|clean_class,
+      ],
+      section_library: section_library,
+      section_types: [
+        region in bleed_regions ? 'bleed',
+        region in expanded_regions ? 'expanded',
+        region in separated_regions ? 'separated',
+        region in separated_block_regions ? 'separated-block',
+        region in separated_inline_regions ? 'separated-inline',
+        region in uncontained_regions ? 'uncontained',
+        region in wrapped_regions ? 'wrapped',
+        region in wrapped_block_regions ? 'wrapped-block',
+        region in wrapped_inline_regions ? 'wrapped-inline',
+        region in demo_regions ? 'demo',
+      ],
+    } %}
+      {% block section_content %}
+        {{ content }}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
 {% endif %}

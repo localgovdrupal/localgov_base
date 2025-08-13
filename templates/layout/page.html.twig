@@ -104,71 +104,62 @@
     {{ page.content_top }}
   {% endif %}
 
-  {# Begin Sidebars #}
-  {% if has_sidebars %}
-    <div class="lgd-container">
-      <div class="lgd-row">
-        {% if has_sidebar_first and not has_sidebar_second %}
-          <aside class="lgd-row__one-third sidebar sidebar--first">
-            {{ page.sidebar_first }}
-          </aside>
-          <div class="lgd-row__two-thirds">
-            <div class="padding-horizontal">
+  {#
+    The content region's layout is handled here, not in a region template:
+
+      - if there are no sidebars AND the page is a node, the content region
+        takes up 100% of the viewport
+      - if there are sidebars, OR the page is not a node, the content region
+        is contained
+  #}
+  {% embed 'localgov_base:section' with {
+    section_types: has_sidebars or not node
+      ? []
+      : [ 'bleed', 'separated-block', 'uncontained' ],
+  } %}
+    {% block section_content %}
+      {% if has_sidebars %}
+        <div class="lgd-row">
+          {% if has_sidebar_first and not has_sidebar_second %}
+            <aside class="lgd-row__one-third sidebar sidebar--first">
+              {{ page.sidebar_first }}
+            </aside>
+            <div class="lgd-row__two-thirds">
               {{ page.content }}
             </div>
-          </div>
-        {% endif %}
+          {% endif %}
 
-        {% if has_sidebar_second and not has_sidebar_first %}
-          <div class="lgd-row__two-thirds">
-            <div class="padding-horizontal">
+          {% if has_sidebar_second and not has_sidebar_first %}
+            <div class="lgd-row__two-thirds">
               {{ page.content }}
             </div>
-          </div>
-          <aside class="lgd-row__one-third sidebar sidebar--second">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
+            <aside class="lgd-row__one-third sidebar sidebar--second">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
 
-        {% if has_sidebar_first and has_sidebar_second %}
-          <aside class="lgd-row__one-quarter sidebar sidebar--first">
-            {{ page.sidebar_first }}
-          </aside>
-          <div class="lgd-row__one-half">
-            <div class="padding-horizontal">
+          {% if has_sidebar_first and has_sidebar_second %}
+            <aside class="lgd-row__one-quarter sidebar sidebar--first">
+              {{ page.sidebar_first }}
+            </aside>
+            <div class="lgd-row__one-half">
               {{ page.content }}
             </div>
-          </div>
-          <aside class="lgd-row__one-quarter sidebar sidebar--second">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
-      </div>
-    </div>
-
-    {% else %}
-    {# When we have no sidebars #}
-    {#
-      If there are no sidebars, the content region take up 100% of the space, but:
-      1.  If we are on a node page, we do not constrain the content (this will be handled
-          by the node templates, so some parts of the template (hero, etc) can be the full
-          width of the screen).
-      2.  If we are not on a node page, we'll contain the content, so views pages, taxonomy
-          pages, login page, etc are not bleeding to the edge of the screen.
-    #}
-    {% if not node %}
-      <div class="lgd-container padding-horizontal">
-        {{ page.content }}
-      </div>
+            <aside class="lgd-row__one-quarter sidebar sidebar--second">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+        </div>
       {% else %}
         {{ page.content }}
-    {% endif %}
-  {% endif %}
-  {# End Sidebars #}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
 
   {% if has_content_bottom %}
     {{ page.content_bottom }}
   {% endif %}
+
 </main>
 
 {% if back_to_top %}
@@ -188,14 +179,20 @@
       This should ensure that all the contact/housekeeping links/etc
       are within the footer element to assist screenreaders and other
       automated tools.
+
+      The pre-footer, footer, and post-footer regions are each contained in
+      their own layout sections.
     #}
     <footer class="lgd-footer">
 
     {# Begin Pre-footer #}
     {% block pre_footer %}
       {% if has_footer_first or has_footer_second or has_footer_third %}
-        <div class="lgd-footer__pre-footer">
-          <div class="lgd-container">
+
+        {% embed 'localgov_base:section' with {
+          section_outer_classes: [ 'lgd-footer__pre-footer' ],
+        } %}
+          {% block section_content %}
             <div class="lgd-row">
               {% if has_footer_first %}
                 <div class="lgd-row__one-third">
@@ -215,8 +212,9 @@
                 </div>
               {% endif %}
             </div>
-          </div>
-        </div>
+          {% endblock %}
+        {% endembed %}
+
       {% endif %}
     {% endblock %}
     {# End Pre-footer #}
@@ -224,15 +222,19 @@
     {# Begin Footer #}
     {% block footer %}
       {% if has_footer %}
-        <div class="lgd-footer__footer">
-          <div class="lgd-container">
+
+        {% embed 'localgov_base:section' with {
+          section_outer_classes: [ 'lgd-footer__footer' ],
+        } %}
+          {% block section_content %}
             <div class="lgd-row">
               <div class="lgd-row__full">
                 {{ page.footer }}
               </div>
             </div>
-          </div>
-        </div>
+          {% endblock %}
+        {% endembed %}
+
       {% endif %}
     {% endblock %}
     {# End Footer #}
@@ -240,8 +242,12 @@
     {# Begin Post-footer #}
     {% block post_footer %}
       {% if has_lower_footer_first or has_lower_footer_second or has_lower_footer_third %}
-        <div class="lgd-footer__post-footer">
-          <div class="lgd-container">
+
+        {% embed 'localgov_base:section' with {
+          section_outer_classes: [ 'lgd-footer__post-footer' ],
+        } %}
+          {% block section_content %}
+
             <div class="lgd-row">
               {% if has_lower_footer_first %}
                 <div class="lgd-row__one-third">
@@ -261,16 +267,21 @@
                 </div>
               {% endif %}
             </div>
-          </div>
-        </div>
+          {% endblock %}
+        {% endembed %}
+
       {% endif %}
     {% endblock %}
     {# End Post-footer #}
 
     {% if has_housekeeping %}
-      <div class="lgd-footer__housekeeping">
-      {{ page.housekeeping }}
-      </div>
+      {% embed 'localgov_base:section' with {
+        section_outer_classes: [ 'lgd-footer__housekeeping' ],
+      } %}
+        {% block section_content %}
+          {{ page.housekeeping }}
+        {% endblock %}
+      {% endembed %}
     {% endif %}
 
     </footer>
