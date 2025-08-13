@@ -15,7 +15,8 @@ props:
       title: Section inner classes
       description: An array of html classes to be added to the INNER element of the section markup. Classes may also be provided directly to section_inner_attributes.
     section_outer_attributes:
-      type: object
+      type: ['object', 'string']
+      additionalProperties: true
       title: Section outer attributes
       description: A ready-for render Drupal attributes object for the OUTER element of the section markup.
     section_outer_classes:
@@ -30,6 +31,24 @@ props:
       type: string
       title: Section library
       description: Library, if any, to attach to the section.
+    section_types:
+      type: array
+      title: Section types
+      description: >
+        One or more of the following keywords:
+
+          - bleed'
+          - expanded'
+          - separated'
+          - separated-block'
+          - separated-inline'
+          - uncontained'
+          - wrapped'
+          - wrapped-block'
+          - wrapped-inline'
+          - demo'
+
+        These will be used to apply specific classes to the outer html element.
   slots:
     section_content:
       type: object

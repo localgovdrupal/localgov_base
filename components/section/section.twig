@@ -1,13 +1,28 @@
 {# Set up wrapper div attributes #}
-{% set section_outer_attributes = section_outer_attributes|default(create_attribute()) %}
-{% set section_outer_classes = section_outer_classes|default([])|merge([
-  'lgd-section',
-  'lgd-section--' ~ section|clean_class,
-  'section',
-  'section-' ~ section|clean_class,
-]) %}
 
-{# Set up inner div attributes #}
+{% set default_section_types = [
+  'bleed',
+  'expanded',
+  'separated',
+  'separated-block',
+  'separated-inline',
+  'uncontained',
+  'wrapped',
+  'wrapped-block',
+  'wrapped-inline',
+  'demo',
+] %}
+
+{# Create section type classes from section_types prop. #}
+{% set section_type_classes = section_types|default([])|filter(
+  section_type => section_type in default_section_types
+)|map(section_type => 'lgd-section--' ~ section_type)|merge(['lgd-section']) %}
+
+{# Set up outer div attributes. #}
+{% set section_outer_attributes = section_outer_attributes|default(create_attribute()) %}
+{% set section_outer_classes = section_outer_classes|default([])|merge(section_type_classes) %}
+
+{# Set up inner div attributes. #}
 {% set section_inner_attributes = section_inner_attributes|default(create_attribute()) %}
 {% set section_inner_classes = section_inner_classes|default([])|merge([
   'lgd-section__inner',
@@ -23,7 +38,7 @@
 {% set section_outer_element = section_outer_element ?? 'div' %}
 
 {# Set up library, if any #}
-{% if section_library %}
+{% if section_library is not empty %}
   {{ attach_library(section_library) }}
 {% endif %}
 
