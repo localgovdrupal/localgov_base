@@ -28,18 +28,19 @@
 {% set has_link = content.link.0 is not empty %}
 {% set type_of_alert =  type_of_alert|split('--')[1]|clean_class %}
 
-{% set classes = [
+{% embed 'localgov_base:section' with {
+  section_outer_classes: [
     'js-localgov-alert-banner',
     'localgov-alert-banner',
     type_of_alert ? 'localgov-alert-banner--' ~ type_of_alert,
     is_front ? 'localgov-alert-banner--homepage',
     has_link ? 'localgov-alert-banner--has-link' : 'localgov-alert-banner--no-link'
-  ]
-%}
+  ],
+  section_outer_element: 'article',
+  section_types: [ 'separated' ],
+} %}
+  {% block section_content %}
 
-<article {{ attributes.addClass(classes) }}>
-  {# Begin Wrapper #}
-  <div class="lgd-container padding-horizontal">
     {# Begin Inner #}
     <div class="localgov-alert-banner__inner">
       {# Begin Content #}
@@ -49,7 +50,7 @@
             {{ content.title['#items'].value }}
           </h2>
         {% endif %}
-        
+
         {% if content.short_description.0['#text'] %}
           <div class="localgov-alert-banner__body">
             {{ content.short_description }}
@@ -69,5 +70,6 @@
         </div>
       {% endif %}
     </div> {# End Inner #}
-  </div> {# End Wrapper #}
-</article>
+
+  {% endblock %}
+{% endembed %}
