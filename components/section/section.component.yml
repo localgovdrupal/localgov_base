@@ -37,16 +37,17 @@ props:
       description: >
         One or more of the following keywords:
 
-          - bleed'
-          - expanded'
-          - separated'
-          - separated-block'
-          - separated-inline'
-          - uncontained'
-          - wrapped'
-          - wrapped-block'
-          - wrapped-inline'
-          - demo'
+          - bleed
+          - expanded
+          - restricted
+          - separated
+          - separated-block
+          - separated-inline
+          - uncontained
+          - wrapped
+          - wrapped-block
+          - wrapped-inline
+          - demo
 
         These will be used to apply specific classes to the outer html element.
   slots:

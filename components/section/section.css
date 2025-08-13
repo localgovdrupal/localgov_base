@@ -7,6 +7,11 @@
   max-width: var(--width-container, 73.75rem);
 }
 
+/* RESTRICTED: inner element uses narrower max-width. */
+.lgd-section--restricted > .lgd-section__inner {
+  max-width: var(--width-restricted-width-section, 48rem);
+}
+
 /* UNCONTAINED: inner element has occupies 100% parent width */
 .lgd-section--uncontained > .lgd-section__inner {
   max-width: none;
