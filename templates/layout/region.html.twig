@@ -62,9 +62,12 @@
   'footer_second',
   'footer_third',
   'header',
+  'sidebar_first',
+  'sidebar_second',
   'tabs',
 ] %}
 {% set expanded_regions = [] %}
+{% set restricted_regions = [] %}
 {% set separated_regions = [] %}
 {% set separated_block_regions = [
   'banner',
@@ -100,6 +103,7 @@
       section_types: [
         region in bleed_regions ? 'bleed',
         region in expanded_regions ? 'expanded',
+        region in restricted_regions ? 'restricted',
         region in separated_regions ? 'separated',
         region in separated_block_regions ? 'separated-block',
         region in separated_inline_regions ? 'separated-inline',
