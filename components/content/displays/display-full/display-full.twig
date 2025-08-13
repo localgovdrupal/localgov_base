@@ -5,14 +5,18 @@
 
 {% if not localgov_base_remove_css %}
   {{ attach_library('localgov_base/full') }}
-  {% if content_type == 'localgov_directories_venue'
-        or content_type == 'localgov_directories_page'
-        or content_type == 'localgov_directory' %}
+  {% if content_type in [
+    'localgov_directories_page',
+    'localgov_directories_venue',
+    'localgov_directory',
+  ] %}
     {{ attach_library('localgov_base/directories') }}
   {% endif %}
 
-  {% if content_type == 'localgov_step_by_step_overview'
-        or content_type == 'localgov_step_by_step_page' %}
+  {% if content_type in [
+    'localgov_step_by_step_overview',
+    'localgov_step_by_step_page',
+  ] %}
     {{ attach_library('localgov_base/step-by-step') }}
   {% endif %}
 {% endif %}
@@ -30,9 +34,17 @@
   ]
 %}
 
-<article{{ attributes.addClass(classes).removeAttribute('role') }}>
-
-  <div class="lgd-container padding-horizontal">
+{% embed 'localgov_base:section' with {
+  section_outer_attributes: attributes.removeAttribute('role'),
+  section_outer_classes: classes,
+  section_outer_element: 'article',
+  section_types: [
+    'bleed',
+    'uncontained',
+    content_type in restricted_width_content_types ? 'restricted',
+  ],
+} %}
+  {% block section_content %}
     {{ title_prefix }}
     {{ title_suffix }}
 
@@ -46,22 +58,12 @@
       </footer>
     {% endif %}
 
-    {% if content_type in restricted_width_content_types %}
-      <div class="node__restricted-width-section">
-    {% endif %}
-
-      <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
-        {{ display_full_content }}
-      </div>
-  </div>
-
-  {% if localgov_subsites_content %}
-    {{ localgov_subsites_content }}
-  {% endif %}
-
-
-  {% if content_type in restricted_width_content_types %}
+    <div{{ content_attributes.addClass(content_type|clean_class ~ '__content', 'node__content') }}>
+      {{ display_full_content }}
     </div>
-  {% endif %}
 
-</article>
+    {% if localgov_subsites_content %}
+      {{ localgov_subsites_content }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}
