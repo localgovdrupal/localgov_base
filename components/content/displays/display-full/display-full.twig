@@ -40,7 +40,7 @@
   section_outer_element: 'article',
   section_types: [
     'bleed',
-    'uncontained',
+    content_type not in restricted_width_content_types ? 'uncontained',
     content_type in restricted_width_content_types ? 'restricted',
   ],
 } %}
