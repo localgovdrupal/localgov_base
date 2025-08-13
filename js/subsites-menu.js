@@ -11,10 +11,20 @@
 
       const { mobileBreakpointJS } = drupalSettings.localgov_base;
 
-      const subsitesMenuToggle = document.querySelector(
+      const [subsitesMenuToggle] = once(
+        'allSubsitesMenuToggles',
         '.subsite-extra__header-toggle-button',
+        context,
       );
-      const subsitesMenu = document.querySelector('.subsite-extra-menu');
+      const [subsitesMenu] = once(
+        'allSubsitesMenuToggles',
+        '.subsite-extra-menu',
+        context,
+      );
+
+      if (!subsitesMenuToggle || !subsitesMenu) {
+        return;
+      }
 
       subsitesMenuToggle.addEventListener('click', () => {
         subsitesMenuToggle.setAttribute(
@@ -54,7 +64,7 @@
       });
 
       // Close the menu when a click is made outside of it.
-      document.addEventListener('click', (e) => {
+      context.addEventListener('click', (e) => {
         if (!e.target.closest('#lgd-header__nav--subsites-menu')) {
           handleReset();
         }

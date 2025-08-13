@@ -1,5 +1,5 @@
 ---
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Previous-next
 description: >
   Provides common Previous-Next navigation element for LGD themes and modules.
@@ -10,6 +10,11 @@ status: stable
 props:
   type: object
   properties:
+    prevNextAttributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Prev-Next attributes
+      description: a Drupal attributes object. Will not override default
+        classes.
     prev_next_type:
       type: string
       title: Prev-Next type
@@ -74,3 +79,20 @@ props:
       description: >
         The actual URL for the Next link. If empty, the entire link will
         not be rendered.
+    prev_next_nav_aria_label:
+      type: string
+      title: Prev-Next nav label
+      description: Translated label for parent <nav> element. Optional since
+        an aria-label may also be set in prevNextAttributes or an accessible
+        value provided as part of the prev_next_pre_content slot.
+slots:
+  prev_next_pre_content:
+    title: Prev-Next pre-content
+    description:
+      Use this slot to add arbitrary content prior to the nav list in the
+      component. This is useful for adding an accessible text label when
+      aria-label isn't used.
+  prev_next_post_content:
+    title: Prev-Next post-content
+    description:
+      Use this slot to add arbitrary content after nav list in the component.
