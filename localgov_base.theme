@@ -386,7 +386,7 @@ function localgov_base_preprocess_block(&$variables): void {
   }
 
   // Add a decent aria label to the facets blocks.
-  if (in_array($variables['base_plugin_id'], ['localgov_directories_channel_search_block', 'facet_block'])) {
+  if (in_array($variables['base_plugin_id'], ['localgov_directories_channel_search_block', 'facet_block'], TRUE)) {
     if ($variables['elements']['#configuration']['label_display'] === '0') {
       $routeMatch = \Drupal::routeMatch();
       $node = $routeMatch->getParameter('node');
