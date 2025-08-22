@@ -2,11 +2,26 @@
   @file Base styles for call out paragraphs / advanced callout div container
 */
 .callout {
+  display: flex;
+  gap: var(--spacing);
   padding: 1.5rem;
-  text-align: center;
   color: var(--color-white);
   font-size: var(--font-size-large);
   font-weight: bold;
+}
+
+.callout::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 2.5rem;
+  padding: var(--spacing-small);
+  content: "!";
+  color: var(--color-black);
+  border-radius: 999rem;
+  background-color: var(--color-white);
+  font-size: 1.5rem;
 }
 
 .callout a {
@@ -26,25 +41,40 @@
 .callout-primary {
   background-color: var(--color-accent);
 }
+.callout-primary::before {
+  color: var(--color-accent);
+}
 
 /* Callout success bg and link colour */
 .callout-success {
   background-color: var(--color-success);
+}
+.callout-success::before {
+  color: var(--color-success);
 }
 
 /* Callout danger bg and link colour */
 .callout-danger {
   background-color: var(--color-danger);
 }
+.callout-danger::before {
+  color: var(--color-danger);
+}
 
 /* Callout teal bg and link colour */
 .callout-teal {
   background-color: teal;
 }
+.callout-teal::before {
+  color: teal;
+}
 
 /* Callout carbon bg and link colour */
 .callout-carbon {
   background-color: var(--color-grey-dark);
+}
+.callout-carbon::before {
+  color: var(--color-grey-dark);
 }
 
 /* Callout yellow bg and link colour */
