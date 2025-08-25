@@ -420,9 +420,22 @@ function localgov_base_preprocess_file_link(&$variables): void {
   // 123.45 KB -> 123.45KB
   $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
 
+  // Load media entity from file.
+  $media_id = $file->_referringItem->getParent()->getParent()->getEntity()->get('mid')->getString();
+  $media = \Drupal\media\Entity\Media::load($media_id);
+  $media_name = $media->get('name')->getString();
+
   if (isset($variables['link']['#title'])) {
+    $document_title = $variables['link']['#title'];
+
+    if ($media_name && $media_name !== $document_title) {
+      // If the media name is set and different to the $variables['link']['#title'],
+      // we will use that instead.
+      $document_title = $media_name;
+    }
+
     $variables['link']['#title'] = [
-      '#markup' => "{$variables['link']['#title']} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
+      '#markup' => "{$document_title} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
     ];
   }
   else {
