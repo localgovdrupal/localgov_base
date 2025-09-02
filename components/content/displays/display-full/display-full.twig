@@ -42,6 +42,7 @@
     'bleed',
     content_type not in restricted_width_content_types ? 'uncontained',
     content_type in restricted_width_content_types ? 'restricted',
+    content_type in restricted_width_content_types ? 'uncentered',
   ],
 } %}
   {% block section_content %}
