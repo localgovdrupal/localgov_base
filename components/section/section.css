@@ -7,40 +7,14 @@
   max-width: var(--width-container, 73.75rem);
 }
 
-/* RESTRICTED: inner element uses narrower max-width. */
-.lgd-section--restricted > .lgd-section__inner {
-  max-width: var(--width-restricted-width-section, 48rem);
-}
-
-/* UNCONTAINED: inner element has occupies 100% parent width */
-.lgd-section--uncontained > .lgd-section__inner {
-  max-width: none;
-}
-
 /* BLEED: outer element has no inline padding */
 .lgd-section--bleed {
   padding-inline: 0;
 }
 
-/* WRAPPED: inner element has block and inner padding */
-.lgd-section--wrapped > .lgd-section__inner {
-  padding-block: var(--vertical-rhythm-spacing, 1.5rem);
-  padding-inline: var(--spacing, 1rem);
-}
-
-/* WRAPPED BLOCK: inner element has block padding */
-.lgd-section--wrapped-block > .lgd-section__inner {
-  padding-block: var(--spacing, 1rem);
-}
-
-/* WRAPPED INLINE: inner element has inline padding */
-.lgd-section--wrapped-inline > .lgd-section__inner {
-  padding-inline: var(--spacing, 1rem);
-}
-
-/* EXPANDED: outer element has block padding */
-.lgd-section--expanded {
-  padding-block: var(--vertical-rhythm-spacing, 1.5rem);
+/* RESTRICTED: inner element uses narrower max-width. */
+.lgd-section--restricted > .lgd-section__inner {
+  max-width: var(--width-restricted-width-section, 48rem);
 }
 
 /**
@@ -68,6 +42,37 @@
 /* SEPARATED INLINE: outer element has inline margin. */
 .lgd-section--separated-inline {
   margin-inline: var(--spacing);
+}
+
+/* UNCONTAINED: inner element has occupies 100% parent width */
+.lgd-section--uncontained > .lgd-section__inner {
+  max-width: none;
+}
+
+/* UNCENTERED: inner element has no inline margin. */
+.lgd-section--uncentered > .lgd-section__inner {
+  margin-inline: 0;
+}
+
+/* WRAPPED: inner element has block and inner padding */
+.lgd-section--wrapped > .lgd-section__inner {
+  padding-block: var(--vertical-rhythm-spacing, 1.5rem);
+  padding-inline: var(--spacing, 1rem);
+}
+
+/* WRAPPED BLOCK: inner element has block padding */
+.lgd-section--wrapped-block > .lgd-section__inner {
+  padding-block: var(--spacing, 1rem);
+}
+
+/* WRAPPED INLINE: inner element has inline padding */
+.lgd-section--wrapped-inline > .lgd-section__inner {
+  padding-inline: var(--spacing, 1rem);
+}
+
+/* EXPANDED: outer element has block padding */
+.lgd-section--expanded {
+  padding-block: var(--vertical-rhythm-spacing, 1.5rem);
 }
 
 /* DEMO: visualise inner and outer elements with background colours */
