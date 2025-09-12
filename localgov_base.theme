@@ -429,10 +429,10 @@ function localgov_base_preprocess_file_link(&$variables): void {
     $media_name = $media->get('name')->getString();
   }
 
-  if ($media instanceof MediaInterface && isset($variables['link']['#title'])) {
+  if (isset($variables['link']['#title'])) {
     $document_title = $variables['link']['#title'];
 
-    if ($media_name && $media_name !== $document_title) {
+    if ($media instanceof MediaInterface && $media_name && $media_name !== $document_title) {
       // If the media name is set and different to the
       // $variables['link']['#title'], we will use that instead.
       $document_title = $media_name;
@@ -443,7 +443,7 @@ function localgov_base_preprocess_file_link(&$variables): void {
     ];
   }
   else {
-    $file_title = $variables['link']['#title'] ?? $variables['link'];
+    $file_title = $variables['link'];
     $variables['link'] = [
       '#markup' => "{$file_title} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
     ];
