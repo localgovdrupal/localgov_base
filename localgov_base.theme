@@ -145,6 +145,19 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t('This will display the guide navigation vertically above the guide.'),
   ];
 
+  $form['localgov_base_settings']['theme_styles_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Theme Styles'),
+    '#description' => t('Control various theme styles.'),
+  ];
+
+  $form['localgov_base_settings']['theme_styles_fieldset']['localgov_base_extra_css'] = [
+    '#type' => 'textarea',
+    '#title' => t('Extra CSS'),
+    '#default_value' => theme_get_setting('localgov_base_extra_css') ?: '',
+    '#description' => t('Add any additional CSS styles you want to include. We suggest this box should only be used for small amounts of CSS during development. CSS should ideally be added in your sub-theme and tracked in version control.'),
+  ];
+
   $form['#validate'][] = 'localgov_base_theme_settings_validate';
 }
 
@@ -199,6 +212,12 @@ function localgov_base_preprocess_html(&$variables): void {
     if (theme_get_setting('localgov_base_responsive_wysiwyg_tables') === TRUE || 1) {
       $variables['#attached']['library'][] = 'localgov_base/responsive-tables';
     }
+  }
+
+  // Add CSS variables for accent colour, line height, and default spacing.
+  if (!empty(theme_get_setting('localgov_base_extra_css'))) {
+    // Add a style tag with the custom CSS to the head.
+    $variables['localgov_base_extra_css'] = theme_get_setting('localgov_base_extra_css');
   }
 }
 
