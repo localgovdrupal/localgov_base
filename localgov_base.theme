@@ -145,6 +145,35 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t('This will display the guide navigation vertically above the guide.'),
   ];
 
+  $form['localgov_base_settings']['theme_styles_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Theme Styles'),
+    '#description' => t('Control various theme styles.'),
+  ];
+
+  $form['localgov_base_settings']['theme_styles_fieldset']['colour_accent'] = [
+    '#type' => 'textfield',
+    '#title' => t('Accent Colour'),
+    '#default_value' => theme_get_setting('colour_accent') ?: '',
+    '#description' => t('Select the accent colour for the theme.'),
+  ];
+
+  $form['localgov_base_settings']['theme_styles_fieldset']['line_height'] = [
+    '#type' => 'textfield',
+    '#title' => t('Line Height'),
+    '#default_value' => theme_get_setting('line_height') ?: '',
+    '#description' => t('Select the line height for the theme. Choose a number without "em" or "px", e.g. "1.5" or "2".'),
+  ];
+
+  $form['localgov_base_settings']['theme_styles_fieldset']['spacing_default'] = [
+    '#type' => 'textfield',
+    '#title' => t('Spacing Default'),
+    '#default_value' => theme_get_setting('spacing_default') ?: '',
+    '#description' => t('Select the default spacing for the theme. Choose a number with "rem" or "px", e.g. "1.5rem" or "20px".'),
+  ];
+
+
+
   $form['#validate'][] = 'localgov_base_theme_settings_validate';
 }
 
@@ -199,6 +228,22 @@ function localgov_base_preprocess_html(&$variables): void {
     if (theme_get_setting('localgov_base_responsive_wysiwyg_tables') === TRUE || 1) {
       $variables['#attached']['library'][] = 'localgov_base/responsive-tables';
     }
+  }
+
+  // Add CSS variables for accent colour, line height, and default spacing.
+  if (!empty(theme_get_setting('colour_accent'))) {
+    $colour_accent = theme_get_setting('colour_accent');
+    $variables['attributes']['style'][] = '--color-accent: ' . $colour_accent . ';';
+  }
+
+  if (!empty(theme_get_setting('line_height'))) {
+    $line_height = theme_get_setting('line_height');
+    $variables['attributes']['style'][] = '--line-height: ' . $line_height . ';';
+  }
+
+  if (!empty(theme_get_setting('spacing_default'))) {
+    $spacing_default = theme_get_setting('spacing_default');
+    $variables['attributes']['style'][] = '--spacing: ' . $spacing_default . ';';
   }
 }
 
