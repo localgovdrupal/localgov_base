@@ -9,6 +9,7 @@ use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
+use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
@@ -422,17 +423,17 @@ function localgov_base_preprocess_file_link(&$variables): void {
   $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
 
   // Load media entity from file.
-  $media_id = $file->_referringItem->getParent()->getParent()->getEntity()->get('mid')->getString();
-  $media = Media::load($media_id);
-  $media_name = $media->get('name')->getString();
+  $media_id = $file->_referringItem?->getParent()?->getParent()?->getEntity()?->get('mid')?->getString();
+  $media = $media_id ? Media::load($media_id) : NULL;
 
   if (isset($variables['link']['#title'])) {
     $document_title = $variables['link']['#title'];
 
-    if ($media_name && $media_name !== $document_title) {
+    if ($media instanceof MediaInterface) {
+      $media_name = $media->get('name')->getString();
       // If the media name is set and different to the
       // $variables['link']['#title'], we will use that instead.
-      $document_title = $media_name;
+      $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
     }
 
     $variables['link']['#title'] = [
