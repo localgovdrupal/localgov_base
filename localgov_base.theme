@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
@@ -420,9 +421,22 @@ function localgov_base_preprocess_file_link(&$variables): void {
   // 123.45 KB -> 123.45KB
   $variables['file_size'] = strtr($variables['file_size'], [' ' => '']);
 
+  // Load media entity from file.
+  $entity = $file->_referringItem?->getParent()?->getParent()?->getEntity();
+  $media = ($entity instanceof MediaInterface) ? $entity : NULL;
+
   if (isset($variables['link']['#title'])) {
+    $document_title = $variables['link']['#title'];
+
+    if ($media) {
+      $media_name = $media->get('name')->getString();
+      // If the media name is set and different to the
+      // $variables['link']['#title'], we will use that instead.
+      $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
+    }
+
     $variables['link']['#title'] = [
-      '#markup' => "{$variables['link']['#title']} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
+      '#markup' => "{$document_title} <span class=\"file-meta\">(<span class=\"file-type\">{$variables['file_type']}</span>, <span class=\"file-size\">{$variables['file_size']}</span>)</span>",
     ];
   }
   else {
