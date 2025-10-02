@@ -3,5 +3,8 @@
     "description": "The base theme for LocalGov Drupal websites.",
     "type": "drupal-theme",
     "homepage": "https://github.com/localgovdrupal/localgov_base",
-    "license": "GPL-2.0-or-later"
+    "license": "GPL-2.0-or-later",
+    "require-dev": {
+        "drupal/localgov": "^3.1"
+    }
 }
