@@ -97,7 +97,7 @@
     are adding that here specifically. Hopefully all other content types
     will use the same `field_media_image` field.
   #}
-  {% if node.field_media_image.value or node.localgov_event_image.value %}
+  {% if (node.field_media_image.value and content.field_media_image) or (node.localgov_event_image.value and content.localgov_event_image) %}
     <div class="lgd-teaser__image">
       {{ content.field_media_image }}
       {{ content.localgov_event_image }}
