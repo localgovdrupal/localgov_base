@@ -66,12 +66,16 @@
     {% endif %}
 
     {{ content|without('localgov_button', 'localgov_background_image', 'localgov_colour_theme', 'localgov_header_text', 'localgov_heading_level', 'localgov_opens_in_a_new_window') }}
-    <a href="{{ button_url }}" class="call-out-box__link"
-      {% if open_in_new_window %} target="_blank" {% endif %}>
-      <span>{{ paragraph.localgov_button.getValue[0].title }}</span>
-      {% if open_in_new_window %}
-        <span class="visually-hidden"> {{ '(opens in a new window)'|t }}</span>
-      {% endif %}
-    </a>
+
+    {% if button_url %}
+      <a href="{{ button_url }}" class="call-out-box__link"
+        {% if open_in_new_window %} target="_blank" {% endif %}>
+        <span>{{ paragraph.localgov_button.getValue[0].title }}</span>
+        {% if open_in_new_window %}
+          <span class="visually-hidden"> {{ '(opens in a new window)'|t }}</span>
+        {% endif %}
+      </a>
+    {% endif %}
+
   </div>
 </div>

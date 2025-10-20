@@ -18,7 +18,14 @@
   background: var(--call-out-box-bg-color);
 }
 
+.call-out-box__content .field--name-localgov-body-text > :last-child {
+  /* Ensure we don't have extra space if there is no call out link */
+  margin-block-end: 0;
+}
+
 .call-out-box__link {
+  display: inline-block;
+  margin-block-start: var(--vertical-rhythm-spacing);
   padding: var(--call-out-box-link-padding);
   color: var(--call-out-box-bg-color);
   background-color: var(--call-out-box-text-color);
