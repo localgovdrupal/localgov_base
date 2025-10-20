@@ -1,13 +1,54 @@
 {#
   @file Adding icons to our website, without loading an icon library.
 
-  To use this, you need to add this html to your template:
+  Available variables:
+  - icon_name: The name of the icon svg file to load. (without the .svg extension)
+  - icon_path: (optional) The path to the icon svg file. If not provided, it
+    defaults to 'includes/icons' within the theme specified in the 'theme'
+    variable.
+    You can provide a full path starting with '@theme_name/' to load from
+    another theme. For example: '@localgov_base/includes/icons'.
+  - theme: (optional) The theme to load the icon from if 'icon_path' is not provided.
+    Defaults to 'localgov_base'.
+  - icon_classes: (optional) A string of additional classes to add to the icon
+    wrapper element.
+  - icon_wrapper_element: (optional) The HTML element to use to wrap the icon.
+    Defaults to 'div'.
+  - decoration: (optional) If set to 'true', the icon will have aria-hidden="true"
+    added to the wrapper element. Defaults to 'true'. This is useful for decorative
+    icons that do not add any meaning to the content.
 
+  Examples of usage:
+
+  Basic example usage, loading from LocalGov Base theme:
   {% include 'localgov_base:icon' with {
-    theme: 'localgov_base',
-    icon_name: 'facebook-square',
-    icon_wrapper_element: 'div',
-    icon_classes: 'service-landing-page__service-icon',
+      icon_name: 'facebook',
+    }
+  %}
+
+  Basic example, adding custom icon and span as element
+  {% include 'localgov_base:icon' with {
+    icon_name: 'twitter',
+    icon_classes: 'lgd-icon--large',
+    icon_wrapper_element: 'span',
+  } %}
+
+  Advanced example, loading from LocalGov Base theme:
+  {% include 'localgov_base:icon' with {
+    icon_name: 'whatsapp',
+    icon_path: '@localgov_base/templates/includes/icons/font-awesome/brands',
+    icon_classes: 'my-custom-icon-class',
+    icon_wrapper_element: 'span',
+  } %}
+
+
+  Advanced example, loading from custom theme:
+  {% include 'localgov_base:icon' with {
+    icon_name: 'custom-icon',
+    theme: '@my_custom_theme',
+    icon_path: '@my_custom_theme/icons',
+    icon_classes: 'my-custom-icon-class',
+    icon_wrapper_element: 'span',
   } %}
 
   The only option above that is necessary is the 'icon_name' one. The others
