@@ -428,11 +428,40 @@ function localgov_base_preprocess_file_link(&$variables): void {
   if (isset($variables['link']['#title'])) {
     $document_title = $variables['link']['#title'];
 
+    // Check for use_description_as_link_text setting and description field.
+    $use_description = FALSE;
+    $description = '';
+
     if ($media) {
-      $media_name = $media->get('name')->getString();
-      // If the media name is set and different to the
-      // $variables['link']['#title'], we will use that instead.
-      $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
+      // Get the current view mode and field display settings.
+      $view_mode = $variables['element']['#view_mode'] ?? 'default';
+      $field_name = $variables['element']['#field_name'] ?? NULL;
+
+      if ($field_name) {
+        $entity_display = \Drupal\Core\Entity\Entity\EntityViewDisplay::collectRenderDisplay($media, $view_mode);
+        $field_display = $entity_display->getComponent($field_name);
+
+        if ($field_display && isset($field_display['settings']['use_description_as_link_text'])) {
+          $use_description = $field_display['settings']['use_description_as_link_text'];
+        }
+      }
+
+      // Get the description from the file field if available.
+      if ($use_description && $file->_referringItem) {
+        $description = $file->_referringItem->description ?? '';
+      }
+
+      // Use description as link text if setting is enabled and description exists.
+      if ($use_description && !empty($description)) {
+        $document_title = $description;
+      }
+      else {
+        // Otherwise, see about using the media name.
+        $media_name = $media->get('name')->getString();
+        // If the media name is set and different to the
+        // $variables['link']['#title'], we will use that instead.
+        $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
+      }
     }
 
     $variables['link']['#title'] = [
