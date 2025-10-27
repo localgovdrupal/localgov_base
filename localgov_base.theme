@@ -428,14 +428,13 @@ function localgov_base_preprocess_file_link(&$variables): void {
   if (isset($variables['link']['#title'])) {
     $document_title = $variables['link']['#title'];
 
-    // Check for use_description_as_link_text setting and description field.
-    $use_description = FALSE;
-    $description = '';
-
     if ($media) {
       // Get the current view mode and field display settings.
       $view_mode = $variables['element']['#view_mode'] ?? 'default';
       $field_name = $variables['element']['#field_name'] ?? NULL;
+
+      // Initialise this variable as false
+      $use_description = FALSE;
 
       if ($field_name) {
         $entity_display = \Drupal\Core\Entity\Entity\EntityViewDisplay::collectRenderDisplay($media, $view_mode);
