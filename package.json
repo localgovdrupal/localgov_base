@@ -20,13 +20,14 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-formatter-gitlab": "^5.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-no-jquery": "^3.0.2",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-yml": "^1.8.0",
     "prettier": "^3.0.3",
-    "stylelint": "^15.10.1",
+    "stylelint": "^16.11.0",
     "stylelint-checkstyle-formatter": "^0.1.2",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^5.0.2"
   }
 }
