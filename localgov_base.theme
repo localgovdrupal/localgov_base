@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Crypt;
-use Drupal\Core\Entity\EntityDisplayRepository;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\media\MediaInterface;
@@ -452,7 +451,7 @@ function localgov_base_preprocess_file_link(&$variables): void {
         $description = $file->_referringItem->description ?? '';
       }
 
-      // Use description as link text if setting is enabled and description exists.
+      // Use description as link text if enabled and description exists.
       if ($use_description && !empty($description)) {
         $document_title = $description;
       }
