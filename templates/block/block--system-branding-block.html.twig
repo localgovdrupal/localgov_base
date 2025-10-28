@@ -15,18 +15,23 @@
 #}
 
 {% block content %}
-  {% if site_logo %}
-    <div class="branding">
-      <div class="branding__item branding__item--logo">
-        <a href="{{ path('<front>') }}" rel="home" class="branding__logo">
-          <img src="{{ site_logo }}" alt="{{ site_name ? site_name : 'Home'|t }}" />
-        </a>
-      </div>
-    </div>
-  {% endif %}
-  {% if site_slogan %}
-    <div class="branding__item branding__item--slogan">
-      {{ site_slogan }}
-    </div>
-  {% endif %}
+	{% if site_logo or site_slogan %}
+		<div class="branding">
+
+      {% if site_logo %}
+				<div class="branding__item branding__item--logo">
+					<a href="{{ path('<front>') }}" rel="home" class="branding__logo">
+						<img src="{{ site_logo }}" alt="{{ site_name ? site_name : 'Home'|t }}"/>
+					</a>
+				</div>
+			{% endif %}
+
+			{% if site_slogan %}
+				<div class="branding__item branding__item--slogan">
+					{{ site_slogan }}
+				</div>
+			{% endif %}
+
+		</div>
+	{% endif %}
 {% endblock %}
