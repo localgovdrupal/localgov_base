@@ -429,17 +429,17 @@ function localgov_base_preprocess_file_link(&$variables): void {
     $document_title = $variables['link']['#title'];
 
     if ($media) {
-      // Get the current view mode and field display settings.
-      $view_mode = $variables['element']['#view_mode'] ?? 'default';
-      $field_name = $variables['element']['#field_name'] ?? NULL;
+      // Assume some defaults for document media type.
+      $view_mode = 'default';
+      $media_file_field_name = ($media->bundle() === 'document') ? 'field_media_file' : NULL;
 
       // Initialise this variable as false.
       $use_description = FALSE;
 
-      if ($field_name) {
+      if ($media_file_field_name) {
         $entity_display_repository = \Drupal::service('entity_display.repository');
         $entity_display = $entity_display_repository->getViewDisplay($media->getEntityTypeId(), $media->bundle(), $view_mode);
-        $field_display = $entity_display->getComponent($field_name);
+        $field_display = $entity_display->getComponent($media_file_field_name);
 
         if ($field_display && isset($field_display['settings']['use_description_as_link_text'])) {
           $use_description = $field_display['settings']['use_description_as_link_text'];
