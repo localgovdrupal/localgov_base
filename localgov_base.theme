@@ -431,7 +431,7 @@ function localgov_base_preprocess_file_link(&$variables): void {
     if ($media) {
       // Assume some defaults for document media type.
       $view_mode = 'default';
-      $media_file_field_name = ($media->bundle() === 'document') ? 'field_media_file' : NULL;
+      $media_file_field_name = ($media->bundle() === 'document') ? 'field_media_document' : NULL;
 
       // Initialise description variables.
       $use_description = FALSE;
