@@ -433,8 +433,9 @@ function localgov_base_preprocess_file_link(&$variables): void {
       $view_mode = 'default';
       $media_file_field_name = ($media->bundle() === 'document') ? 'field_media_file' : NULL;
 
-      // Initialise this variable as false.
+      // Initialise description variables.
       $use_description = FALSE;
+      $description = '';
 
       if ($media_file_field_name) {
         $entity_display_repository = \Drupal::service('entity_display.repository');
@@ -445,7 +446,7 @@ function localgov_base_preprocess_file_link(&$variables): void {
           $use_description = $field_display['settings']['use_description_as_link_text'];
         }
       }
-
+      
       // Get the description from the file field if available.
       if ($use_description && $file->_referringItem) {
         $description = $file->_referringItem->description ?? '';
