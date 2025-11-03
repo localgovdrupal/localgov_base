@@ -3,6 +3,13 @@ description: "Your sub-theme, which uses localgov_base as its base theme."
 type: theme
 core_version_requirement: ^10 || ^11
 base theme: "localgov_base"
+ckeditor5-stylesheets:
+  # List any stylesheets you want to apply to the CKEditor
+  # interface here. This allows you to match your content editing
+  # experience to the front-end styles of your site (e.g. for headings,
+  # links, etc).
+  - css/base/variables.css
+  - css/base/ckeditor5.css
 
 libraries-extend:
   # Add libraries that you want to load on every page of your site to the list
