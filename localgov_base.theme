@@ -429,10 +429,40 @@ function localgov_base_preprocess_file_link(&$variables): void {
     $document_title = $variables['link']['#title'];
 
     if ($media) {
-      $media_name = $media->get('name')->getString();
-      // If the media name is set and different to the
-      // $variables['link']['#title'], we will use that instead.
-      $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
+      // Assume some defaults for document media type.
+      $view_mode = 'default';
+      $media_file_field_name = ($media->bundle() === 'document') ? 'field_media_document' : NULL;
+
+      // Initialise description variables.
+      $use_description = FALSE;
+      $description = '';
+
+      if ($media_file_field_name) {
+        $entity_display_repository = \Drupal::service('entity_display.repository');
+        $entity_display = $entity_display_repository->getViewDisplay($media->getEntityTypeId(), $media->bundle(), $view_mode);
+        $field_display = $entity_display->getComponent($media_file_field_name);
+
+        if ($field_display && isset($field_display['settings']['use_description_as_link_text'])) {
+          $use_description = $field_display['settings']['use_description_as_link_text'];
+        }
+      }
+
+      // Get the description from the file field if available.
+      if ($use_description && $file->_referringItem) {
+        $description = $file->_referringItem->description ?? '';
+      }
+
+      // Use description as link text if enabled and description exists.
+      if ($use_description && !empty($description)) {
+        $document_title = $description;
+      }
+      else {
+        // Otherwise, see about using the media name.
+        $media_name = $media->get('name')->getString();
+        // If the media name is set and different to the
+        // $variables['link']['#title'], we will use that instead.
+        $document_title = ($media_name && $media_name !== $document_title) ? $media_name : $document_title;
+      }
     }
 
     $variables['link']['#title'] = [
