@@ -118,11 +118,14 @@
 				<div class="lgd-row__two-thirds">
 					{{ content|without('body', 'localgov_blog_channel_featured') }}
 				</div>
-				<aside class="lgd-row__one-third">
-					<div class="blog-channel__sidebar">
-						{{ content.body }}
-					</div>
-				</aside>
+
+				{% if node.body.value %}
+					<aside class="lgd-row__one-third">
+						<div class="blog-channel__sidebar">
+							{{ content.body }}
+						</div>
+					</aside>
+				{% endif %}
 			</div>
 
 		</div>
