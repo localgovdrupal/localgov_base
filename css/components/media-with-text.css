@@ -54,12 +54,8 @@
   width: 100%;
 }
 
-.media-with-text--media-left .media-with-text__body {
-  padding-inline-start: var(--spacing);
-}
-
-.media-with-text--media-right .media-with-text__body {
-  padding-inline-end: var(--spacing);
+.media-with-text .media-with-text__body {
+  padding-inline: var(--spacing);
 }
 
 .media-with-text--media-top .media-with-text__media {
