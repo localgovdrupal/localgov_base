@@ -42,11 +42,11 @@
 
 {% set classes = [
     'box-links-listing__list-item',
-  ] 
+  ]
 %}
 {% for item in items %}
-  {# 
-    We are checking the parent here, and then using whatever layout style is chosen 
+  {#
+    We are checking the parent here, and then using whatever layout style is chosen
     to set the width of the items.
   #}
   {% set parent = item.content['#paragraph']._referringItem.parent.parent.entity %}
@@ -54,6 +54,10 @@
 
   {% if theme == 'grid' %}
     {% set row_size = 'lgd-row__one-half' %}
+    {% elseif theme == 'grid-3' %}
+      {% set row_size = 'lgd-row__one-third' %}
+    {% elseif theme == 'grid-4' %}
+      {% set row_size = 'lgd-row__one-quarter' %}
     {% else %}
       {% set row_size = 'lgd-row__full' %}
   {% endif %}
