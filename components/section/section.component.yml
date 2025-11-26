@@ -1,0 +1,57 @@
+---
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: LGD Section
+description: Provides common section markup and classes to localgov_base.
+status: stable
+props:
+  type: object
+  properties:
+    section_inner_attributes:
+      type: object
+      title: Section inner attributes
+      description: A ready-for render Drupal attributes object for the INNER element of the section markup.
+    section_inner_classes:
+      type: array
+      title: Section inner classes
+      description: An array of html classes to be added to the INNER element of the section markup. Classes may also be provided directly to section_inner_attributes.
+    section_outer_attributes:
+      type: ['object', 'string']
+      additionalProperties: true
+      title: Section outer attributes
+      description: A ready-for render Drupal attributes object for the OUTER element of the section markup.
+    section_outer_classes:
+      type: array
+      title: Section outer classes
+      description: An array of html classes to be added to the OUTER element of the section markup. Classes may also be provided directly to section_outer_attributes.
+    section_outer_element:
+      type: string
+      title: Section outer element
+      description: Name of HTML tag to use for the section's outermost element. Seldom needs changing.
+    section_library:
+      type: string
+      title: Section library
+      description: Library, if any, to attach to the section.
+    section_types:
+      type: array
+      title: Section types
+      description: >
+        One or more of the following keywords:
+
+          - bleed
+          - expanded
+          - restricted
+          - separated
+          - separated-block
+          - separated-inline
+          - uncontained
+          - wrapped
+          - wrapped-block
+          - wrapped-inline
+          - demo
+
+        These will be used to apply specific classes to the outer html element.
+  slots:
+    section_content:
+      type: object
+      title: Section content
+      description: Content for the section!

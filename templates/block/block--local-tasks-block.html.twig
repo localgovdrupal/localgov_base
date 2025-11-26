@@ -7,8 +7,16 @@
 #}
 {% block content %}
   {% if content %}
-    <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
-      {{ content }}
-    </nav>
+    {% embed 'localgov_base:section' with {
+      section_inner_classes: [ 'tabs' ],
+      section_outer_attributes: create_attribute({
+        'aria-label': 'Tabs'|t,
+      }),
+      section_outer_element: 'nav',
+    } %}
+      {% block section_content %}
+        {{ content }}
+      {% endblock %}
+    {% endembed %}
   {% endif %}
 {% endblock %}
