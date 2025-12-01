@@ -40,7 +40,7 @@
 <nav{{ attributes.addClass(classes).setAttribute('aria-label', 'Section Navigation'|t) }}>
   <ul class="lgd-row service-cta-block__list">
     {% for button in buttons %}
-      <li class="lgd-row__one-third service-cta-block__list-item service-cta-block__list-item--{{ loop.index}}">
+      <li class="lgd-row__{{ top_task_row_size }} service-cta-block__list-item service-cta-block__list-item--{{ loop.index}}">
         <a href="{{ button.url }}" class="service-cta-block__link service-cta-block__link--{{ button.type }}">
           <span class="service-cta-block__link-title">{{ button.title }}</span>
           {% include "@localgov_base/includes/icons/icon.html.twig" with {

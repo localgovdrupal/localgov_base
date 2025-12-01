@@ -145,6 +145,26 @@ function localgov_base_form_system_theme_settings_alter(&$form, FormStateInterfa
     '#description'   => t('This will display the guide navigation vertically above the guide.'),
   ];
 
+  // Create a fieldset for Services-related settings.
+  $form['localgov_base_settings']['services_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Services Display Settings'),
+    '#description' => t('Control how services are displayed on the site.'),
+  ];
+
+  // Add form element to allow users to choose how many Top Tasks links to show.
+  $form['localgov_base_settings']['services_fieldset']['localgov_base_services_top_tasks_per_row'] = [
+    '#type'          => 'number',
+    '#title'         => t('Number of Top Tasks per row in Service Landing pages'),
+    '#default_value' => theme_get_setting('localgov_base_services_top_tasks_per_row') ? theme_get_setting('localgov_base_services_top_tasks_per_row') : 4,
+    '#description'   => t('The number of Top Tasks links to show in a row for Service Landing pages on desktop (they will automatically be stacked on smaller screens).'),
+    '#min'           => 1,
+    '#max'           => 4,
+  ];
+
+  // Add a custom validation handler for our theme settings.
+  $form['#validate'][] = 'localgov_base_theme_settings_validate';
+
   $form['#validate'][] = 'localgov_base_theme_settings_validate';
 }
 
@@ -398,6 +418,41 @@ function localgov_base_preprocess_block(&$variables): void {
     }
   }
 
+}
+
+/**
+ * Implements hook_preprocess_services_cta_block().
+ */
+function localgov_base_preprocess_services_cta_block(&$variables): void {
+  $top_tasks_per_row = theme_get_setting('localgov_base_services_top_tasks_per_row');
+
+  // Allowing is_null will mean current sites that have not set this value
+  // will default to 3 items per row, as per previous behaviour.
+  if (is_null($top_tasks_per_row)) {
+    $top_tasks_per_row = 3;
+  }
+  if ($top_tasks_per_row < 1 || $top_tasks_per_row > 4) {
+    $top_tasks_per_row = 4;
+  }
+
+  switch ($top_tasks_per_row) {
+    case 1:
+      $variables['top_task_row_size'] = 'full';
+      break;
+
+    case 2:
+      $variables['top_task_row_size'] = 'one-half';
+      break;
+
+    case 3:
+      $variables['top_task_row_size'] = 'one-third';
+      break;
+
+    case 4:
+    default:
+      $variables['top_task_row_size'] = 'one-quarter';
+      break;
+  }
 }
 
 /**
