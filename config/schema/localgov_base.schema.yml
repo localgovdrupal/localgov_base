@@ -41,3 +41,8 @@ localgov_base.settings:
       label: 'Responsive WYSIWYG tables'
       description: 'Choose whether to make WYSIWYG tables responsive or not.'
       default_value: TRUE
+    localgov_base_services_top_tasks_per_row:
+      type: integer
+      label: 'Top tasks per row'
+      description: 'Number of top tasks to display per row in the Services CTA block (1-4).'
+      default_value: 4
