@@ -426,12 +426,6 @@ function localgov_base_preprocess_block(&$variables): void {
 function localgov_base_preprocess_services_cta_block(&$variables): void {
   $top_tasks_per_row = theme_get_setting('localgov_base_services_top_tasks_per_row');
 
-  // Allowing is_null will mean current sites that have not set this value
-  // will default to 3 items per row, as per previous behaviour.
-  if (is_null($top_tasks_per_row)) {
-    $top_tasks_per_row = 3;
-  }
-
   switch ($top_tasks_per_row) {
     case 1:
       $variables['top_task_row_size'] = 'full';
