@@ -41,3 +41,8 @@ localgov_base.settings:
       label: 'Responsive WYSIWYG tables'
       description: 'Choose whether to make WYSIWYG tables responsive or not.'
       default_value: TRUE
+    localgov_base_extra_css:
+      type: string
+      label: 'Extra CSS'
+      description: 'Add any additional CSS styles you want to include.'
+      default_value: ''
